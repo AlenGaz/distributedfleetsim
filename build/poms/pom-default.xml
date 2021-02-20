@@ -3,9 +3,33 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>se.oru.coordination</groupId>
-  <artifactId>coordination_oru</artifactId>
+  <artifactId>coordination_alen</artifactId>
   <version>0.6.3</version>
   <dependencies>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty</artifactId>
+      <version>1.29.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+      <version>1.29.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+      <version>1.29.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <version>3.12.2</version>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>com.github.FedericoPecora</groupId>
       <artifactId>meta-csp-framework</artifactId>

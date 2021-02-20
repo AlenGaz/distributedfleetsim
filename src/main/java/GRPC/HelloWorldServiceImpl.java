@@ -17,7 +17,7 @@ public class HelloWorldServiceImpl
 
     public int it = 0;
     String text;
-    public List<Integer> ID_list = new ArrayList();
+    public ArrayList ID_list = new ArrayList();
     public int x;
 
     @Override
@@ -27,31 +27,30 @@ public class HelloWorldServiceImpl
         System.out.println("handling [" + request.getName() + "]"+ " endpoint: [" + request.toString() + "]");
 
 
-        if(request.getName().toString().equals("Hello")){
+        if(request.getName().equals("Hello")){
 
             text = request.getName() + " World";
             respondWithSendingMsg(responseObserver);
         }
 
-        if(request.getName().toString().equals("Boss")) {
+        if(request.getName().equals("Boss")) {
             text = "Hello big" + request.getName();
 
             respondWithSendingMsg(responseObserver);
         }
-
     }
 
     @Override
     public void grobotID(
             Hello.getRobotID request,
             StreamObserver<Hello.robotID> responseObserver) {
-        System.out.println("handling [" + request.getKey() + "]"+ " endpoint: [" + request.toString() + "]");
+        //System.out.println("handling [" + request.getKey() + "]"+ " endpoint: [" + request.toString() + "]");
 
-        if(request.getKey().toString().equals("My ID")) {
-
-            text = "Hello robot:" + request.getValue();
-            System.out.println("got Robot id; " + request.getValue());
+        if(request.getKey().equals("My ID")) {
+            //text = "Hello robot:" + request.getValue();
+            System.out.println("got Robot id: " + request.getValue());
             ID_list.add(request.getValue()); ////// if id not in list, append
+            System.out.println("The ID_list: " + ID_list);
 
             respondWithSendingIDreceived(responseObserver);
         }
@@ -65,10 +64,6 @@ public class HelloWorldServiceImpl
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
-
-
-
-
 
     private void respondWithSendingMsg(StreamObserver<Hello.HelloResponse> responseObserver) {
         Hello.HelloResponse response =

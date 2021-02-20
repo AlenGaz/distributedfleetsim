@@ -19,8 +19,6 @@ public class HelloWorldClient {
     private static final Logger logger = Logger.getLogger(HelloWorldClient.class.getName());
     private final HelloWorldServiceGrpc.HelloWorldServiceBlockingStub blockingStub;
 
-  
-
     // object using in cord
     public GRPC.HelloWorldClient HelloWorldClient;
 
@@ -30,7 +28,6 @@ public class HelloWorldClient {
     }
 
     public void makeGreeting(String name){
-
 
         Hello.HelloRequest request = Hello.HelloRequest.newBuilder().setName(name).build();
         Hello.HelloResponse response;
@@ -48,26 +45,20 @@ public class HelloWorldClient {
         System.out.println(" Response is: "+ response.getName());
     }
 
-
-
     public void makeGreeting2(Pair<String,Integer> pair){
-
-
 
         Hello.getRobotID getrobotid = Hello.getRobotID.newBuilder().setKey(pair.getFirst()).setValue(pair.getSecond()).build();
         Hello.robotID robotid;
 
         try
         {
-            System.out.println("making greeting with: " + pair + pair.getFirst() );
-            robotid = blockingStub.grobotID(getrobotid);        ////////////////////////////////////////////////////////
-
+            System.out.println("making greeting with: " + pair);
+            robotid = blockingStub.grobotID(getrobotid);
         }
         catch(StatusRuntimeException e){
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
             return;
         }
-
         System.out.println("Logging the response of the server ...");
     }
 
@@ -98,7 +89,5 @@ public class HelloWorldClient {
 
             channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
         }
-
     }
-
 }

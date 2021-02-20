@@ -386,10 +386,12 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 		if (forwardModels.containsKey(robotID)) return forwardModels.get(robotID);
 		System.out.println("Returning default FM for " + robotID);
 
-		/////////////////////////////////////////////////////////////
-		pair2 = new Pair<String, Integer>("My ID", robotID);
+/*		/////////////////////////////////////////////////////////////
 
-		System.out.println("Iam in getForwardModel method:" + pair2);
+		pair2 = new Pair<String, Integer>("My ID", robotID);
+		//System.out.println("in getForwardModel method:" + pair2);
+
+		//System.out.println("Fahad:" + robotID);
 
 		ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
 
@@ -401,7 +403,7 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 
 			//channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
 		}
-		/////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////*/
 
 		return new ForwardModel() {
 			@Override
@@ -483,6 +485,28 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	 * @param retransmitt True if the message should be send once again.
 	 */
 	public void setCriticalPoint(int robotID, int criticalPoint, boolean retransmitt) {
+
+		/////////////////////////////////////////////////////////////
+
+		System.out.println("#########: " + robotID);
+
+		pair2 = new Pair<String, Integer>("My ID", robotID);
+		//System.out.println("in getForwardModel method:" + pair2);
+
+		//System.out.println("Fahad:" + robotID);
+
+		ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
+
+		try{
+			HelloWorldClient client = new HelloWorldClient(channel);
+			client.makeGreeting2(pair2);
+		}
+		finally{
+
+			//channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
+		}
+		/////////////////////////////////////////////////////////////
+
 		
 		synchronized (trackers) {
 			AbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);

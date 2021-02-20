@@ -140,7 +140,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 						try { Thread.sleep(2000);
 
 							// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-							String messageToSend;
+/*							String messageToSend;
 							String target = "localhost:50051";
 
 							Random rd = new Random();
@@ -162,7 +162,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 							finally{
 
 								channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
-							}
+							}*/
 							// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 						}
 						catch (InterruptedException e) { e.printStackTrace(); }
