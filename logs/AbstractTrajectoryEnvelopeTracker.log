@@ -1,0 +1,1393 @@
+1613469022255@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469022258@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469022262@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469022624@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469022633@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot2) -1 was already set!
+1613469023604@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469024000@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469024603@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469024604@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469025260@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((0.0942, 0.0053, 0.0192))...
+1613469025260@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((0.0942, 0.0053, 0.0192))
+1613469025560@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 1 (Robot 2, SE 4) [0;0] Parking ((-25.6948, 11.5911, -1.2945))...
+1613469025560@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 1 (Robot 2, SE 4) [0;0] Parking ((-25.6948, 11.5911, -1.2945))
+1613469025563@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 2 (Robot 3, SE 7) [0;0] Parking ((-12.8272, -28.7825, 0.3854))...
+1613469025563@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 2 (Robot 3, SE 7) [0;0] Parking ((-12.8272, -28.7825, 0.3854))
+1613469035922@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 4 (Robot 3, SE 13) [0;33] Driving...
+1613469035923@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 4 (Robot 3, SE 13) [0;33] Driving
+1613469035933@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469036233@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 7 (Robot 3, SE 22) [0;0] Parking (whatever)...
+1613469036233@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 7 (Robot 3, SE 22) [0;0] Parking (whatever)
+1613469036597@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469039296@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 4)
+1613469041732@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 3 (Robot 1, SE 10) [0;55] Driving...
+1613469041732@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 3 (Robot 1, SE 10) [0;55] Driving
+1613469041741@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469042605@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469042606@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469043718@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 5 (Robot 2, SE 16) [0;58] Driving...
+1613469043718@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 5 (Robot 2, SE 16) [0;58] Driving
+1613469043722@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469045042@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 8 (Robot 1, SE 25) [0;0] Parking (whatever)...
+1613469045043@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 8 (Robot 1, SE 25) [0;0] Parking (whatever)
+1613469045411@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 3)
+1613469045601@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469046723@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 6 (Robot 2, SE 19) [0;0] Parking (whatever)...
+1613469046723@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 6 (Robot 2, SE 19) [0;0] Parking (whatever)
+1613469047141@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 5)
+1613469049577@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 9 (Robot 3, SE 28) [0;33] Driving...
+1613469049577@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 9 (Robot 3, SE 28) [0;33] Driving
+1613469049579@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469051601@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469052880@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 10 (Robot 3, SE 31) [0;0] Parking (whatever)...
+1613469052880@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 10 (Robot 3, SE 31) [0;0] Parking (whatever)
+1613469052959@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 9)
+1613469056284@[AbstractTrajectoryEnvelopeTracker] At critical point (Robot2): 24 (24)
+1613469057613@[AbstractTrajectoryEnvelopeTracker] Resuming from critical point (Robot2)
+1613469062316@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 11 (Robot 1, SE 34) [0;55] Driving...
+1613469062316@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 11 (Robot 1, SE 34) [0;55] Driving
+1613469062320@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469063339@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 15 (Robot 3, SE 46) [0;33] Driving...
+1613469063339@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 15 (Robot 3, SE 46) [0;33] Driving
+1613469063342@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469063596@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469063598@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469065597@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469065597@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469065599@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 11)
+1613469065622@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 12 (Robot 1, SE 37) [0;0] Parking (whatever)...
+1613469065622@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 12 (Robot 1, SE 37) [0;0] Parking (whatever)
+1613469066612@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 15)
+1613469066643@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 16 (Robot 3, SE 49) [0;0] Parking (whatever)...
+1613469066643@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 16 (Robot 3, SE 49) [0;0] Parking (whatever)
+1613469068054@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 13 (Robot 2, SE 40) [0;58] Driving...
+1613469068054@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 13 (Robot 2, SE 40) [0;58] Driving
+1613469068057@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469069600@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469071275@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 13)
+1613469071358@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 14 (Robot 2, SE 43) [0;0] Parking (whatever)...
+1613469071358@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 14 (Robot 2, SE 43) [0;0] Parking (whatever)
+1613469076945@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 19 (Robot 3, SE 58) [0;33] Driving...
+1613469076945@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 19 (Robot 3, SE 58) [0;33] Driving
+1613469076948@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469079600@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469080249@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 20 (Robot 3, SE 61) [0;0] Parking (whatever)...
+1613469080249@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 20 (Robot 3, SE 61) [0;0] Parking (whatever)
+1613469080369@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 19)
+1613469081663@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 17 (Robot 1, SE 52) [0;55] Driving...
+1613469081663@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 17 (Robot 1, SE 52) [0;55] Driving
+1613469081665@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469083597@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469083598@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469084966@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 18 (Robot 1, SE 55) [0;0] Parking (whatever)...
+1613469084966@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 18 (Robot 1, SE 55) [0;0] Parking (whatever)
+1613469085336@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 17)
+1613469086911@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 21 (Robot 2, SE 64) [0;58] Driving...
+1613469086911@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 21 (Robot 2, SE 64) [0;58] Driving
+1613469086913@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469089600@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469090214@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 22 (Robot 2, SE 67) [0;0] Parking (whatever)...
+1613469090214@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 22 (Robot 2, SE 67) [0;0] Parking (whatever)
+1613469090296@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 21)
+1613469092965@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 23 (Robot 3, SE 70) [0;33] Driving...
+1613469092965@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 23 (Robot 3, SE 70) [0;33] Driving
+1613469092968@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469095597@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469095603@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469095969@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 24 (Robot 3, SE 73) [0;0] Parking (whatever)...
+1613469095969@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 24 (Robot 3, SE 73) [0;0] Parking (whatever)
+1613469096438@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 23)
+1613469102281@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 25 (Robot 1, SE 76) [0;55] Driving...
+1613469102281@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 25 (Robot 1, SE 76) [0;55] Driving
+1613469102284@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469103597@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469103598@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469105585@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 26 (Robot 1, SE 79) [0;0] Parking (whatever)...
+1613469105585@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 26 (Robot 1, SE 79) [0;0] Parking (whatever)
+1613469105671@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 25)
+1613469106464@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 29 (Robot 3, SE 88) [0;33] Driving...
+1613469106464@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 29 (Robot 3, SE 88) [0;33] Driving
+1613469106468@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469106768@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 30 (Robot 3, SE 91) [0;0] Parking (whatever)...
+1613469106768@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 30 (Robot 3, SE 91) [0;0] Parking (whatever)
+1613469106845@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 27 (Robot 2, SE 82) [0;58] Driving...
+1613469106847@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 27 (Robot 2, SE 82) [0;58] Driving
+1613469106849@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469107598@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469108597@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469108605@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469109995@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 29)
+1613469110150@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 28 (Robot 2, SE 85) [0;0] Parking (whatever)...
+1613469110150@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 28 (Robot 2, SE 85) [0;0] Parking (whatever)
+1613469110326@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 27)
+1613469120036@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 33 (Robot 3, SE 100) [0;33] Driving...
+1613469120036@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 33 (Robot 3, SE 100) [0;33] Driving
+1613469120038@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469120338@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 36 (Robot 3, SE 109) [0;0] Parking (whatever)...
+1613469120338@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 36 (Robot 3, SE 109) [0;0] Parking (whatever)
+1613469121599@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469121796@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 31 (Robot 1, SE 94) [0;55] Driving...
+1613469121796@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 31 (Robot 1, SE 94) [0;55] Driving
+1613469121799@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469123506@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 33)
+1613469123597@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469123599@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469125100@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 32 (Robot 1, SE 97) [0;0] Parking (whatever)...
+1613469125100@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 32 (Robot 1, SE 97) [0;0] Parking (whatever)
+1613469125335@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 31)
+1613469125917@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 34 (Robot 2, SE 103) [0;58] Driving...
+1613469125917@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 34 (Robot 2, SE 103) [0;58] Driving
+1613469125919@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469127599@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469129071@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 34)
+1613469129220@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 35 (Robot 2, SE 106) [0;0] Parking (whatever)...
+1613469129220@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 35 (Robot 2, SE 106) [0;0] Parking (whatever)
+1613469133788@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 37 (Robot 3, SE 112) [0;33] Driving...
+1613469133788@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 37 (Robot 3, SE 112) [0;33] Driving
+1613469133790@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469135598@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469135604@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469137074@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 37)
+1613469137091@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 38 (Robot 3, SE 115) [0;0] Parking (whatever)...
+1613469137091@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 38 (Robot 3, SE 115) [0;0] Parking (whatever)
+1613469142224@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 39 (Robot 1, SE 118) [0;55] Driving...
+1613469142224@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 39 (Robot 1, SE 118) [0;55] Driving
+1613469142226@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469143599@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469143601@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469145527@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 40 (Robot 1, SE 121) [0;0] Parking (whatever)...
+1613469145527@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 40 (Robot 1, SE 121) [0;0] Parking (whatever)
+1613469145589@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 39)
+1613469146921@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 41 (Robot 2, SE 124) [0;58] Driving...
+1613469146921@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 41 (Robot 2, SE 124) [0;58] Driving
+1613469146923@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469147399@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 43 (Robot 3, SE 130) [0;33] Driving...
+1613469147399@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 43 (Robot 3, SE 130) [0;33] Driving
+1613469147400@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469147599@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469149598@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469149601@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469150224@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 42 (Robot 2, SE 127) [0;0] Parking (whatever)...
+1613469150224@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 42 (Robot 2, SE 127) [0;0] Parking (whatever)
+1613469150584@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 41)
+1613469150702@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 44 (Robot 3, SE 133) [0;0] Parking (whatever)...
+1613469150702@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 44 (Robot 3, SE 133) [0;0] Parking (whatever)
+1613469150840@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 43)
+1613469160963@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 49 (Robot 3, SE 148) [0;33] Driving...
+1613469160963@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 49 (Robot 3, SE 148) [0;33] Driving
+1613469160965@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469161600@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469162010@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 45 (Robot 1, SE 136) [0;55] Driving...
+1613469162010@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 45 (Robot 1, SE 136) [0;55] Driving
+1613469162012@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469163603@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469163604@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469164266@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 50 (Robot 3, SE 151) [0;0] Parking (whatever)...
+1613469164266@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 50 (Robot 3, SE 151) [0;0] Parking (whatever)
+1613469164460@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 49)
+1613469165314@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 46 (Robot 1, SE 139) [0;0] Parking (whatever)...
+1613469165314@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 46 (Robot 1, SE 139) [0;0] Parking (whatever)
+1613469165388@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 45)
+1613469165744@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 47 (Robot 2, SE 142) [0;58] Driving...
+1613469165744@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 47 (Robot 2, SE 142) [0;58] Driving
+1613469165746@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469167603@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469169048@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 48 (Robot 2, SE 145) [0;0] Parking (whatever)...
+1613469169048@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 48 (Robot 2, SE 145) [0;0] Parking (whatever)
+1613469169150@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 47)
+1613469174680@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 51 (Robot 3, SE 154) [0;33] Driving...
+1613469174680@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 51 (Robot 3, SE 154) [0;33] Driving
+1613469174682@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469175602@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469175604@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469177983@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 52 (Robot 3, SE 157) [0;0] Parking (whatever)...
+1613469177983@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 52 (Robot 3, SE 157) [0;0] Parking (whatever)
+1613469177998@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 51)
+1613469182222@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 53 (Robot 1, SE 160) [0;55] Driving...
+1613469182222@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 53 (Robot 1, SE 160) [0;55] Driving
+1613469182224@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469182524@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 54 (Robot 1, SE 163) [0;0] Parking (whatever)...
+1613469182524@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 54 (Robot 1, SE 163) [0;0] Parking (whatever)
+1613469183606@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469183607@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469185557@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 53)
+1613469186992@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 55 (Robot 2, SE 166) [0;58] Driving...
+1613469186992@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 55 (Robot 2, SE 166) [0;58] Driving
+1613469186994@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469187604@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469188448@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 57 (Robot 3, SE 172) [0;33] Driving...
+1613469188448@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 57 (Robot 3, SE 172) [0;33] Driving
+1613469188450@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469189604@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469189607@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469189995@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 56 (Robot 2, SE 169) [0;0] Parking (whatever)...
+1613469189995@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 56 (Robot 2, SE 169) [0;0] Parking (whatever)
+1613469190570@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 55)
+1613469191702@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 57)
+1613469191751@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 58 (Robot 3, SE 175) [0;0] Parking (whatever)...
+1613469191751@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 58 (Robot 3, SE 175) [0;0] Parking (whatever)
+1613469201673@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 59 (Robot 1, SE 178) [0;55] Driving...
+1613469201673@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 59 (Robot 1, SE 178) [0;55] Driving
+1613469201675@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469201959@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 63 (Robot 3, SE 190) [0;33] Driving...
+1613469201959@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 63 (Robot 3, SE 190) [0;33] Driving
+1613469201961@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469202261@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 64 (Robot 3, SE 193) [0;0] Parking (whatever)...
+1613469202261@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 64 (Robot 3, SE 193) [0;0] Parking (whatever)
+1613469203607@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469203607@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469204604@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469204605@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469204977@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 60 (Robot 1, SE 181) [0;0] Parking (whatever)...
+1613469204977@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 60 (Robot 1, SE 181) [0;0] Parking (whatever)
+1613469205417@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 59)
+1613469205503@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 63)
+1613469205817@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 61 (Robot 2, SE 184) [0;58] Driving...
+1613469205818@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 61 (Robot 2, SE 184) [0;58] Driving
+1613469205819@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469207607@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469209120@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 62 (Robot 2, SE 187) [0;0] Parking (whatever)...
+1613469209120@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 62 (Robot 2, SE 187) [0;0] Parking (whatever)
+1613469209219@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 61)
+1613469211746@[AbstractTrajectoryEnvelopeTracker] At critical point (Robot3): 12 (12)
+1613469214611@[AbstractTrajectoryEnvelopeTracker] Resuming from critical point (Robot3)
+1613469222201@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 65 (Robot 1, SE 196) [0;55] Driving...
+1613469222201@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 65 (Robot 1, SE 196) [0;55] Driving
+1613469222203@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469222266@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 66 (Robot 3, SE 199) [0;33] Driving...
+1613469222266@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 66 (Robot 3, SE 199) [0;33] Driving
+1613469222268@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469222568@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 67 (Robot 3, SE 202) [0;0] Parking (whatever)...
+1613469222568@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 67 (Robot 3, SE 202) [0;0] Parking (whatever)
+1613469223608@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469223608@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469224609@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469224610@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469225504@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 68 (Robot 1, SE 205) [0;0] Parking (whatever)...
+1613469225504@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 68 (Robot 1, SE 205) [0;0] Parking (whatever)
+1613469225684@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 65)
+1613469225792@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 66)
+1613469227118@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 69 (Robot 2, SE 208) [0;58] Driving...
+1613469227118@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 69 (Robot 2, SE 208) [0;58] Driving
+1613469227119@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469229609@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469230420@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 70 (Robot 2, SE 211) [0;0] Parking (whatever)...
+1613469230420@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 70 (Robot 2, SE 211) [0;0] Parking (whatever)
+1613469230717@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 69)
+1613469235816@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 72 (Robot 3, SE 217) [0;33] Driving...
+1613469235816@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 72 (Robot 3, SE 217) [0;33] Driving
+1613469235817@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469236117@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 73 (Robot 3, SE 220) [0;0] Parking (whatever)...
+1613469236118@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 73 (Robot 3, SE 220) [0;0] Parking (whatever)
+1613469237609@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469239290@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 72)
+1613469241961@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 71 (Robot 1, SE 214) [0;55] Driving...
+1613469241961@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 71 (Robot 1, SE 214) [0;55] Driving
+1613469241962@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469243609@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469243610@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469245264@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 74 (Robot 1, SE 223) [0;0] Parking (whatever)...
+1613469245264@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 74 (Robot 1, SE 223) [0;0] Parking (whatever)
+1613469245432@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 71)
+1613469246001@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 75 (Robot 2, SE 226) [0;58] Driving...
+1613469246001@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 75 (Robot 2, SE 226) [0;58] Driving
+1613469246003@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469246303@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 76 (Robot 2, SE 229) [0;0] Parking (whatever)...
+1613469246303@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 76 (Robot 2, SE 229) [0;0] Parking (whatever)
+1613469247613@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469249345@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 75)
+1613469250767@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 77 (Robot 3, SE 232) [0;33] Driving...
+1613469250767@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 77 (Robot 3, SE 232) [0;33] Driving
+1613469250769@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469251611@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469253793@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 77)
+1613469254070@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 78 (Robot 3, SE 235) [0;0] Parking (whatever)...
+1613469254070@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 78 (Robot 3, SE 235) [0;0] Parking (whatever)
+1613469262019@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 79 (Robot 1, SE 238) [0;55] Driving...
+1613469262019@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 79 (Robot 1, SE 238) [0;55] Driving
+1613469262020@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469262320@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 80 (Robot 1, SE 241) [0;0] Parking (whatever)...
+1613469262320@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 80 (Robot 1, SE 241) [0;0] Parking (whatever)
+1613469263613@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469263614@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469264567@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 83 (Robot 3, SE 250) [0;33] Driving...
+1613469264567@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 83 (Robot 3, SE 250) [0;33] Driving
+1613469264569@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469264868@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 84 (Robot 3, SE 253) [0;0] Parking (whatever)...
+1613469264868@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 84 (Robot 3, SE 253) [0;0] Parking (whatever)
+1613469265611@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469265611@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469265649@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 79)
+1613469267182@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 81 (Robot 2, SE 244) [0;58] Driving...
+1613469267182@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 81 (Robot 2, SE 244) [0;58] Driving
+1613469267184@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469267793@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 83)
+1613469269611@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469270486@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 82 (Robot 2, SE 247) [0;0] Parking (whatever)...
+1613469270486@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 82 (Robot 2, SE 247) [0;0] Parking (whatever)
+1613469270560@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 81)
+1613469278202@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 87 (Robot 3, SE 262) [0;33] Driving...
+1613469278202@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 87 (Robot 3, SE 262) [0;33] Driving
+1613469278204@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469278504@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 88 (Robot 3, SE 265) [0;0] Parking (whatever)...
+1613469278504@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 88 (Robot 3, SE 265) [0;0] Parking (whatever)
+1613469279610@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469281593@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 87)
+1613469281875@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 85 (Robot 1, SE 256) [0;55] Driving...
+1613469281875@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 85 (Robot 1, SE 256) [0;55] Driving
+1613469281877@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469283610@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469283611@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469285178@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 86 (Robot 1, SE 259) [0;0] Parking (whatever)...
+1613469285178@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 86 (Robot 1, SE 259) [0;0] Parking (whatever)
+1613469285575@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 85)
+1613469286120@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 89 (Robot 2, SE 268) [0;58] Driving...
+1613469286120@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 89 (Robot 2, SE 268) [0;58] Driving
+1613469286122@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469286422@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 90 (Robot 2, SE 271) [0;0] Parking (whatever)...
+1613469286422@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 90 (Robot 2, SE 271) [0;0] Parking (whatever)
+1613469287613@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469289409@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 89)
+1613469291747@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 91 (Robot 3, SE 274) [0;33] Driving...
+1613469291747@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 91 (Robot 3, SE 274) [0;33] Driving
+1613469291748@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469292048@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 92 (Robot 3, SE 277) [0;0] Parking (whatever)...
+1613469292048@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 92 (Robot 3, SE 277) [0;0] Parking (whatever)
+1613469293613@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469295238@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 91)
+1613469301896@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 93 (Robot 1, SE 280) [0;55] Driving...
+1613469301896@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 93 (Robot 1, SE 280) [0;55] Driving
+1613469301897@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469302197@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 94 (Robot 1, SE 283) [0;0] Parking (whatever)...
+1613469302197@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 94 (Robot 1, SE 283) [0;0] Parking (whatever)
+1613469303613@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469303615@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469305323@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 97 (Robot 3, SE 292) [0;33] Driving...
+1613469305323@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 97 (Robot 3, SE 292) [0;33] Driving
+1613469305325@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469305563@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 93)
+1613469307101@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 95 (Robot 2, SE 286) [0;58] Driving...
+1613469307101@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 95 (Robot 2, SE 286) [0;58] Driving
+1613469307103@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469307403@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 96 (Robot 2, SE 289) [0;0] Parking (whatever)...
+1613469307403@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 96 (Robot 2, SE 289) [0;0] Parking (whatever)
+1613469307614@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469307614@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469308615@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469308626@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 98 (Robot 3, SE 295) [0;0] Parking (whatever)...
+1613469308626@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 98 (Robot 3, SE 295) [0;0] Parking (whatever)
+1613469308778@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 97)
+1613469310539@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 95)
+1613469318849@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 102 (Robot 3, SE 307) [0;33] Driving...
+1613469318850@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 102 (Robot 3, SE 307) [0;33] Driving
+1613469318851@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469319614@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469321852@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 103 (Robot 3, SE 310) [0;0] Parking (whatever)...
+1613469321853@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 103 (Robot 3, SE 310) [0;0] Parking (whatever)
+1613469322075@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 99 (Robot 1, SE 298) [0;55] Driving...
+1613469322075@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 99 (Robot 1, SE 298) [0;55] Driving
+1613469322077@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469322375@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 102)
+1613469323613@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469323614@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469325378@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 100 (Robot 1, SE 301) [0;0] Parking (whatever)...
+1613469325378@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 100 (Robot 1, SE 301) [0;0] Parking (whatever)
+1613469325664@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 99)
+1613469325965@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 101 (Robot 2, SE 304) [0;58] Driving...
+1613469325965@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 101 (Robot 2, SE 304) [0;58] Driving
+1613469325967@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469327615@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469329269@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 104 (Robot 2, SE 313) [0;0] Parking (whatever)...
+1613469329269@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 104 (Robot 2, SE 313) [0;0] Parking (whatever)
+1613469329346@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 101)
+1613469332511@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 105 (Robot 3, SE 316) [0;33] Driving...
+1613469332511@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 105 (Robot 3, SE 316) [0;33] Driving
+1613469332512@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469333615@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469335814@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 106 (Robot 3, SE 319) [0;0] Parking (whatever)...
+1613469335814@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 106 (Robot 3, SE 319) [0;0] Parking (whatever)
+1613469335854@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 105)
+1613469342101@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 107 (Robot 1, SE 322) [0;55] Driving...
+1613469342101@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 107 (Robot 1, SE 322) [0;55] Driving
+1613469342103@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469343615@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469343616@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469345404@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 108 (Robot 1, SE 325) [0;0] Parking (whatever)...
+1613469345404@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 108 (Robot 1, SE 325) [0;0] Parking (whatever)
+1613469345542@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 107)
+1613469346058@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 111 (Robot 3, SE 334) [0;33] Driving...
+1613469346058@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 111 (Robot 3, SE 334) [0;33] Driving
+1613469346060@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469346360@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 112 (Robot 3, SE 337) [0;0] Parking (whatever)...
+1613469346360@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 112 (Robot 3, SE 337) [0;0] Parking (whatever)
+1613469347090@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 109 (Robot 2, SE 328) [0;58] Driving...
+1613469347090@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 109 (Robot 2, SE 328) [0;58] Driving
+1613469347092@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469347392@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 110 (Robot 2, SE 331) [0;0] Parking (whatever)...
+1613469347392@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 110 (Robot 2, SE 331) [0;0] Parking (whatever)
+1613469347615@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469347615@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469348617@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469349546@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 111)
+1613469350631@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 109)
+1613469359798@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 116 (Robot 3, SE 349) [0;33] Driving...
+1613469359798@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 116 (Robot 3, SE 349) [0;33] Driving
+1613469359799@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469361621@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469361875@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 113 (Robot 1, SE 340) [0;55] Driving...
+1613469361876@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 113 (Robot 1, SE 340) [0;55] Driving
+1613469361877@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469363081@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 116)
+1613469363101@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 117 (Robot 3, SE 352) [0;0] Parking (whatever)...
+1613469363101@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 117 (Robot 3, SE 352) [0;0] Parking (whatever)
+1613469363618@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469363619@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469365178@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 114 (Robot 1, SE 343) [0;0] Parking (whatever)...
+1613469365178@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 114 (Robot 1, SE 343) [0;0] Parking (whatever)
+1613469365468@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 113)
+1613469365928@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 115 (Robot 2, SE 346) [0;58] Driving...
+1613469365928@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 115 (Robot 2, SE 346) [0;58] Driving
+1613469365930@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469366230@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 118 (Robot 2, SE 355) [0;0] Parking (whatever)...
+1613469366230@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 118 (Robot 2, SE 355) [0;0] Parking (whatever)
+1613469367620@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469369317@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 115)
+1613469373341@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 119 (Robot 3, SE 358) [0;33] Driving...
+1613469373341@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 119 (Robot 3, SE 358) [0;33] Driving
+1613469373342@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469375621@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469375623@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469376643@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 120 (Robot 3, SE 361) [0;0] Parking (whatever)...
+1613469376643@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 120 (Robot 3, SE 361) [0;0] Parking (whatever)
+1613469376834@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 119)
+1613469382205@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 121 (Robot 1, SE 364) [0;55] Driving...
+1613469382205@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 121 (Robot 1, SE 364) [0;55] Driving
+1613469382206@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469382506@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 122 (Robot 1, SE 367) [0;0] Parking (whatever)...
+1613469382506@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 122 (Robot 1, SE 367) [0;0] Parking (whatever)
+1613469383622@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469383623@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469385532@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 121)
+1613469387029@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 125 (Robot 3, SE 376) [0;33] Driving...
+1613469387029@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 125 (Robot 3, SE 376) [0;33] Driving
+1613469387030@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469387104@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 123 (Robot 2, SE 370) [0;58] Driving...
+1613469387104@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 123 (Robot 2, SE 370) [0;58] Driving
+1613469387105@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469387330@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 126 (Robot 3, SE 379) [0;0] Parking (whatever)...
+1613469387331@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 126 (Robot 3, SE 379) [0;0] Parking (whatever)
+1613469387627@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469388624@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469388626@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469390353@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 125)
+1613469390406@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 124 (Robot 2, SE 373) [0;0] Parking (whatever)...
+1613469390406@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 124 (Robot 2, SE 373) [0;0] Parking (whatever)
+1613469390654@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 123)
+1613469400731@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 129 (Robot 3, SE 388) [0;33] Driving...
+1613469400731@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 129 (Robot 3, SE 388) [0;33] Driving
+1613469400733@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469401626@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469401782@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 127 (Robot 1, SE 382) [0;55] Driving...
+1613469401782@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 127 (Robot 1, SE 382) [0;55] Driving
+1613469401783@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469403625@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469403626@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469404034@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 132 (Robot 3, SE 397) [0;0] Parking (whatever)...
+1613469404034@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 132 (Robot 3, SE 397) [0;0] Parking (whatever)
+1613469404054@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 129)
+1613469405085@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 128 (Robot 1, SE 385) [0;0] Parking (whatever)...
+1613469405085@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 128 (Robot 1, SE 385) [0;0] Parking (whatever)
+1613469405472@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 127)
+1613469406321@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 130 (Robot 2, SE 391) [0;58] Driving...
+1613469406321@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 130 (Robot 2, SE 391) [0;58] Driving
+1613469406323@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469406623@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 131 (Robot 2, SE 394) [0;0] Parking (whatever)...
+1613469406623@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 131 (Robot 2, SE 394) [0;0] Parking (whatever)
+1613469407628@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469409349@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 130)
+1613469414540@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 133 (Robot 3, SE 400) [0;33] Driving...
+1613469414540@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 133 (Robot 3, SE 400) [0;33] Driving
+1613469414541@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469414841@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 134 (Robot 3, SE 403) [0;0] Parking (whatever)...
+1613469414841@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 134 (Robot 3, SE 403) [0;0] Parking (whatever)
+1613469415627@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469415629@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469418072@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 133)
+1613469422115@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 135 (Robot 1, SE 406) [0;55] Driving...
+1613469422115@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 135 (Robot 1, SE 406) [0;55] Driving
+1613469422116@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469423626@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469423627@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469425418@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 136 (Robot 1, SE 409) [0;0] Parking (whatever)...
+1613469425418@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 136 (Robot 1, SE 409) [0;0] Parking (whatever)
+1613469425634@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 135)
+1613469426777@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 137 (Robot 2, SE 412) [0;58] Driving...
+1613469426777@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 137 (Robot 2, SE 412) [0;58] Driving
+1613469426779@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469427079@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 138 (Robot 2, SE 415) [0;0] Parking (whatever)...
+1613469427079@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 138 (Robot 2, SE 415) [0;0] Parking (whatever)
+1613469427628@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469428040@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 139 (Robot 3, SE 418) [0;33] Driving...
+1613469428040@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 139 (Robot 3, SE 418) [0;33] Driving
+1613469428042@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469429627@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469429628@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469430366@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 137)
+1613469431344@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 140 (Robot 3, SE 421) [0;0] Parking (whatever)...
+1613469431344@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 140 (Robot 3, SE 421) [0;0] Parking (whatever)
+1613469431614@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 139)
+1613469441754@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 145 (Robot 3, SE 436) [0;33] Driving...
+1613469441754@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 145 (Robot 3, SE 436) [0;33] Driving
+1613469441755@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469441811@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 141 (Robot 1, SE 424) [0;55] Driving...
+1613469441811@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 141 (Robot 1, SE 424) [0;55] Driving
+1613469441813@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469443632@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469443633@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469444630@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469444630@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469445056@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 146 (Robot 3, SE 439) [0;0] Parking (whatever)...
+1613469445056@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 146 (Robot 3, SE 439) [0;0] Parking (whatever)
+1613469445074@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 145)
+1613469445114@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 142 (Robot 1, SE 427) [0;0] Parking (whatever)...
+1613469445114@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 142 (Robot 1, SE 427) [0;0] Parking (whatever)
+1613469445547@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 141)
+1613469445621@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 143 (Robot 2, SE 430) [0;58] Driving...
+1613469445621@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 143 (Robot 2, SE 430) [0;58] Driving
+1613469445622@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469447630@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469448923@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 144 (Robot 2, SE 433) [0;0] Parking (whatever)...
+1613469448923@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 144 (Robot 2, SE 433) [0;0] Parking (whatever)
+1613469449047@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 143)
+1613469456127@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 147 (Robot 3, SE 442) [0;33] Driving...
+1613469456127@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 147 (Robot 3, SE 442) [0;33] Driving
+1613469456129@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469457631@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469457633@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469459430@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 150 (Robot 3, SE 451) [0;0] Parking (whatever)...
+1613469459430@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 150 (Robot 3, SE 451) [0;0] Parking (whatever)
+1613469459604@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 147)
+1613469462197@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 148 (Robot 1, SE 445) [0;55] Driving...
+1613469462197@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 148 (Robot 1, SE 445) [0;55] Driving
+1613469462198@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469462498@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 149 (Robot 1, SE 448) [0;0] Parking (whatever)...
+1613469462499@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 149 (Robot 1, SE 448) [0;0] Parking (whatever)
+1613469463630@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469463631@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469465627@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 148)
+1613469467222@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 151 (Robot 2, SE 454) [0;58] Driving...
+1613469467222@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 151 (Robot 2, SE 454) [0;58] Driving
+1613469467223@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469467523@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 152 (Robot 2, SE 457) [0;0] Parking (whatever)...
+1613469467523@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 152 (Robot 2, SE 457) [0;0] Parking (whatever)
+1613469467632@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469469899@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 153 (Robot 3, SE 460) [0;33] Driving...
+1613469469899@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 153 (Robot 3, SE 460) [0;33] Driving
+1613469469900@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469469902@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot2) 21 was already set!
+1613469470444@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 151)
+1613469471632@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469471634@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469473154@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 153)
+1613469473202@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 154 (Robot 3, SE 463) [0;0] Parking (whatever)...
+1613469473202@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 154 (Robot 3, SE 463) [0;0] Parking (whatever)
+1613469482048@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 155 (Robot 1, SE 466) [0;55] Driving...
+1613469482048@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 155 (Robot 1, SE 466) [0;55] Driving
+1613469482050@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469482350@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 156 (Robot 1, SE 469) [0;0] Parking (whatever)...
+1613469482350@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 156 (Robot 1, SE 469) [0;0] Parking (whatever)
+1613469483568@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 159 (Robot 3, SE 478) [0;33] Driving...
+1613469483568@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 159 (Robot 3, SE 478) [0;33] Driving
+1613469483569@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469483633@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469483634@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469483869@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 160 (Robot 3, SE 481) [0;0] Parking (whatever)...
+1613469483869@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 160 (Robot 3, SE 481) [0;0] Parking (whatever)
+1613469485434@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 155)
+1613469485634@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469485634@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469485979@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 157 (Robot 2, SE 472) [0;58] Driving...
+1613469485979@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 157 (Robot 2, SE 472) [0;58] Driving
+1613469485981@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469486912@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 159)
+1613469487634@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469489282@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 158 (Robot 2, SE 475) [0;0] Parking (whatever)...
+1613469489282@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 158 (Robot 2, SE 475) [0;0] Parking (whatever)
+1613469489485@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 157)
+1613469493352@[AbstractTrajectoryEnvelopeTracker] At critical point (Robot3): 12 (12)
+1613469494646@[AbstractTrajectoryEnvelopeTracker] Resuming from critical point (Robot3)
+1613469502171@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 161 (Robot 1, SE 484) [0;55] Driving...
+1613469502171@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 161 (Robot 1, SE 484) [0;55] Driving
+1613469502172@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469502277@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 163 (Robot 3, SE 490) [0;33] Driving...
+1613469502277@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 163 (Robot 3, SE 490) [0;33] Driving
+1613469502279@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469502472@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 162 (Robot 1, SE 487) [0;0] Parking (whatever)...
+1613469502472@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 162 (Robot 1, SE 487) [0;0] Parking (whatever)
+1613469503634@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469503635@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469504638@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469504638@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469505280@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 164 (Robot 3, SE 493) [0;0] Parking (whatever)...
+1613469505280@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 164 (Robot 3, SE 493) [0;0] Parking (whatever)
+1613469505594@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 161)
+1613469505811@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 163)
+1613469507198@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 165 (Robot 2, SE 496) [0;58] Driving...
+1613469507198@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 165 (Robot 2, SE 496) [0;58] Driving
+1613469507199@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469507636@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469510501@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 166 (Robot 2, SE 499) [0;0] Parking (whatever)...
+1613469510501@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 166 (Robot 2, SE 499) [0;0] Parking (whatever)
+1613469510642@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 165)
+1613469515931@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 167 (Robot 3, SE 502) [0;33] Driving...
+1613469515931@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 167 (Robot 3, SE 502) [0;33] Driving
+1613469515932@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469516232@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 170 (Robot 3, SE 511) [0;0] Parking (whatever)...
+1613469516232@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 170 (Robot 3, SE 511) [0;0] Parking (whatever)
+1613469517636@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469519281@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 167)
+1613469521884@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 168 (Robot 1, SE 505) [0;55] Driving...
+1613469521884@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 168 (Robot 1, SE 505) [0;55] Driving
+1613469521885@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469523636@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469523637@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469525186@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 169 (Robot 1, SE 508) [0;0] Parking (whatever)...
+1613469525187@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 169 (Robot 1, SE 508) [0;0] Parking (whatever)
+1613469525501@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 168)
+1613469526007@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 171 (Robot 2, SE 514) [0;58] Driving...
+1613469526007@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 171 (Robot 2, SE 514) [0;58] Driving
+1613469526008@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469527639@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469529310@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 172 (Robot 2, SE 517) [0;0] Parking (whatever)...
+1613469529310@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 172 (Robot 2, SE 517) [0;0] Parking (whatever)
+1613469529448@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 171)
+1613469530791@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 173 (Robot 3, SE 520) [0;33] Driving...
+1613469530791@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 173 (Robot 3, SE 520) [0;33] Driving
+1613469530793@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469531638@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469533810@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 173)
+1613469534094@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 174 (Robot 3, SE 523) [0;0] Parking (whatever)...
+1613469534094@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 174 (Robot 3, SE 523) [0;0] Parking (whatever)
+1613469542208@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 175 (Robot 1, SE 526) [0;55] Driving...
+1613469542208@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 175 (Robot 1, SE 526) [0;55] Driving
+1613469542209@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469543639@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469543640@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469544349@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 179 (Robot 3, SE 538) [0;33] Driving...
+1613469544349@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 179 (Robot 3, SE 538) [0;33] Driving
+1613469544350@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469545511@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 176 (Robot 1, SE 529) [0;0] Parking (whatever)...
+1613469545511@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 176 (Robot 1, SE 529) [0;0] Parking (whatever)
+1613469545531@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 175)
+1613469545639@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469545640@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469547105@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 177 (Robot 2, SE 532) [0;58] Driving...
+1613469547105@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 177 (Robot 2, SE 532) [0;58] Driving
+1613469547106@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469547406@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 178 (Robot 2, SE 535) [0;0] Parking (whatever)...
+1613469547406@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 178 (Robot 2, SE 535) [0;0] Parking (whatever)
+1613469547641@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469547651@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 180 (Robot 3, SE 541) [0;0] Parking (whatever)...
+1613469547651@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 180 (Robot 3, SE 541) [0;0] Parking (whatever)
+1613469547837@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 179)
+1613469550629@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 177)
+1613469557890@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 183 (Robot 3, SE 550) [0;33] Driving...
+1613469557890@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 183 (Robot 3, SE 550) [0;33] Driving
+1613469557892@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469559641@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469561193@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 184 (Robot 3, SE 553) [0;0] Parking (whatever)...
+1613469561193@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 184 (Robot 3, SE 553) [0;0] Parking (whatever)
+1613469561391@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 183)
+1613469561885@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 181 (Robot 1, SE 544) [0;55] Driving...
+1613469561886@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 181 (Robot 1, SE 544) [0;55] Driving
+1613469561887@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469562187@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 182 (Robot 1, SE 547) [0;0] Parking (whatever)...
+1613469562187@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 182 (Robot 1, SE 547) [0;0] Parking (whatever)
+1613469563640@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469563641@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469565484@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 181)
+1613469565919@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 185 (Robot 2, SE 556) [0;58] Driving...
+1613469565919@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 185 (Robot 2, SE 556) [0;58] Driving
+1613469565920@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469566220@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 186 (Robot 2, SE 559) [0;0] Parking (whatever)...
+1613469566220@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 186 (Robot 2, SE 559) [0;0] Parking (whatever)
+1613469567643@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469569343@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 185)
+1613469571504@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 187 (Robot 3, SE 562) [0;33] Driving...
+1613469571504@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 187 (Robot 3, SE 562) [0;33] Driving
+1613469571505@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469571805@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 188 (Robot 3, SE 565) [0;0] Parking (whatever)...
+1613469571805@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 188 (Robot 3, SE 565) [0;0] Parking (whatever)
+1613469573641@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469575041@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 187)
+1613469582090@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 189 (Robot 1, SE 568) [0;55] Driving...
+1613469582090@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 189 (Robot 1, SE 568) [0;55] Driving
+1613469582092@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469582392@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 190 (Robot 1, SE 571) [0;0] Parking (whatever)...
+1613469582392@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 190 (Robot 1, SE 571) [0;0] Parking (whatever)
+1613469583640@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469583641@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469585201@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 193 (Robot 3, SE 580) [0;33] Driving...
+1613469585201@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 193 (Robot 3, SE 580) [0;33] Driving
+1613469585202@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469585502@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 194 (Robot 3, SE 583) [0;0] Parking (whatever)...
+1613469585502@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 194 (Robot 3, SE 583) [0;0] Parking (whatever)
+1613469585504@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 189)
+1613469585642@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469585642@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469587323@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 191 (Robot 2, SE 574) [0;58] Driving...
+1613469587323@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 191 (Robot 2, SE 574) [0;58] Driving
+1613469587325@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469587625@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 192 (Robot 2, SE 577) [0;0] Parking (whatever)...
+1613469587625@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 192 (Robot 2, SE 577) [0;0] Parking (whatever)
+1613469587643@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469588523@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 193)
+1613469590649@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 191)
+1613469598798@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 197 (Robot 3, SE 592) [0;33] Driving...
+1613469598798@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 197 (Robot 3, SE 592) [0;33] Driving
+1613469598800@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469599643@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469601904@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 195 (Robot 1, SE 586) [0;55] Driving...
+1613469601904@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 195 (Robot 1, SE 586) [0;55] Driving
+1613469601906@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469602101@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 198 (Robot 3, SE 595) [0;0] Parking (whatever)...
+1613469602101@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 198 (Robot 3, SE 595) [0;0] Parking (whatever)
+1613469602230@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 197)
+1613469603642@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469603643@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469605206@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 196 (Robot 1, SE 589) [0;0] Parking (whatever)...
+1613469605207@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 196 (Robot 1, SE 589) [0;0] Parking (whatever)
+1613469605562@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 195)
+1613469606031@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 199 (Robot 2, SE 598) [0;58] Driving...
+1613469606031@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 199 (Robot 2, SE 598) [0;58] Driving
+1613469606042@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469606332@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 200 (Robot 2, SE 601) [0;0] Parking (whatever)...
+1613469606332@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 200 (Robot 2, SE 601) [0;0] Parking (whatever)
+1613469607644@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469609566@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 199)
+1613469612356@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 201 (Robot 3, SE 604) [0;33] Driving...
+1613469612356@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 201 (Robot 3, SE 604) [0;33] Driving
+1613469612357@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469613645@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469615660@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 202 (Robot 3, SE 607) [0;0] Parking (whatever)...
+1613469615660@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 202 (Robot 3, SE 607) [0;0] Parking (whatever)
+1613469615863@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 201)
+1613469622326@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 203 (Robot 1, SE 610) [0;55] Driving...
+1613469622326@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 203 (Robot 1, SE 610) [0;55] Driving
+1613469622327@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469622627@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 204 (Robot 1, SE 613) [0;0] Parking (whatever)...
+1613469622627@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 204 (Robot 1, SE 613) [0;0] Parking (whatever)
+1613469623647@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469623649@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469625554@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 203)
+1613469626306@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 207 (Robot 3, SE 622) [0;33] Driving...
+1613469626306@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 207 (Robot 3, SE 622) [0;33] Driving
+1613469626308@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469626608@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 208 (Robot 3, SE 625) [0;0] Parking (whatever)...
+1613469626608@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 208 (Robot 3, SE 625) [0;0] Parking (whatever)
+1613469627119@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 205 (Robot 2, SE 616) [0;58] Driving...
+1613469627119@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 205 (Robot 2, SE 616) [0;58] Driving
+1613469627120@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469627421@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 206 (Robot 2, SE 619) [0;0] Parking (whatever)...
+1613469627421@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 206 (Robot 2, SE 619) [0;0] Parking (whatever)
+1613469627648@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469627648@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469628649@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469629389@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 207)
+1613469630654@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 205)
+1613469639781@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 212 (Robot 3, SE 637) [0;33] Driving...
+1613469639781@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 212 (Robot 3, SE 637) [0;33] Driving
+1613469639783@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469640083@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 213 (Robot 3, SE 640) [0;0] Parking (whatever)...
+1613469640083@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 213 (Robot 3, SE 640) [0;0] Parking (whatever)
+1613469641649@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469641794@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 209 (Robot 1, SE 628) [0;55] Driving...
+1613469641794@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 209 (Robot 1, SE 628) [0;55] Driving
+1613469641795@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469642096@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 210 (Robot 1, SE 631) [0;0] Parking (whatever)...
+1613469642096@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 210 (Robot 1, SE 631) [0;0] Parking (whatever)
+1613469643348@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 212)
+1613469643648@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469643649@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469645437@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 209)
+1613469645854@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 211 (Robot 2, SE 634) [0;58] Driving...
+1613469645854@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 211 (Robot 2, SE 634) [0;58] Driving
+1613469645856@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469647654@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469649158@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 214 (Robot 2, SE 643) [0;0] Parking (whatever)...
+1613469649158@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 214 (Robot 2, SE 643) [0;0] Parking (whatever)
+1613469649394@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 211)
+1613469653537@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 215 (Robot 3, SE 646) [0;33] Driving...
+1613469653537@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 215 (Robot 3, SE 646) [0;33] Driving
+1613469653538@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469653838@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 216 (Robot 3, SE 649) [0;0] Parking (whatever)...
+1613469653838@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 216 (Robot 3, SE 649) [0;0] Parking (whatever)
+1613469655652@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469655654@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469656827@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 215)
+1613469662289@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 217 (Robot 1, SE 652) [0;55] Driving...
+1613469662289@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 217 (Robot 1, SE 652) [0;55] Driving
+1613469662291@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469662591@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 218 (Robot 1, SE 655) [0;0] Parking (whatever)...
+1613469662591@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 218 (Robot 1, SE 655) [0;0] Parking (whatever)
+1613469663652@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469663653@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469665626@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 217)
+1613469667135@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 221 (Robot 3, SE 664) [0;33] Driving...
+1613469667135@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 221 (Robot 3, SE 664) [0;33] Driving
+1613469667136@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469667437@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 222 (Robot 3, SE 667) [0;0] Parking (whatever)...
+1613469667437@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 222 (Robot 3, SE 667) [0;0] Parking (whatever)
+1613469667454@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 219 (Robot 2, SE 658) [0;58] Driving...
+1613469667454@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 219 (Robot 2, SE 658) [0;58] Driving
+1613469667456@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469667652@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469667653@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469668655@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469670608@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 221)
+1613469670758@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 220 (Robot 2, SE 661) [0;0] Parking (whatever)...
+1613469670758@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 220 (Robot 2, SE 661) [0;0] Parking (whatever)
+1613469670758@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 219)
+1613469680677@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 226 (Robot 3, SE 679) [0;33] Driving...
+1613469680677@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 226 (Robot 3, SE 679) [0;33] Driving
+1613469680678@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469680978@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 227 (Robot 3, SE 682) [0;0] Parking (whatever)...
+1613469680978@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 227 (Robot 3, SE 682) [0;0] Parking (whatever)
+1613469681660@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469681984@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 223 (Robot 1, SE 670) [0;55] Driving...
+1613469681984@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 223 (Robot 1, SE 670) [0;55] Driving
+1613469681986@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469682285@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 224 (Robot 1, SE 673) [0;0] Parking (whatever)...
+1613469682286@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 224 (Robot 1, SE 673) [0;0] Parking (whatever)
+1613469683663@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469683664@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469684180@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 226)
+1613469685429@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 223)
+1613469686697@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 225 (Robot 2, SE 676) [0;58] Driving...
+1613469686697@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 225 (Robot 2, SE 676) [0;58] Driving
+1613469686699@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469686999@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 228 (Robot 2, SE 685) [0;0] Parking (whatever)...
+1613469686999@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 228 (Robot 2, SE 685) [0;0] Parking (whatever)
+1613469687663@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469689720@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 225)
+1613469694474@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 229 (Robot 3, SE 688) [0;33] Driving...
+1613469694474@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 229 (Robot 3, SE 688) [0;33] Driving
+1613469694475@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469694775@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 230 (Robot 3, SE 691) [0;0] Parking (whatever)...
+1613469694775@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 230 (Robot 3, SE 691) [0;0] Parking (whatever)
+1613469695661@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469695663@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469698002@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 229)
+1613469702053@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 231 (Robot 1, SE 694) [0;55] Driving...
+1613469702053@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 231 (Robot 1, SE 694) [0;55] Driving
+1613469702055@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469702355@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 232 (Robot 1, SE 697) [0;0] Parking (whatever)...
+1613469702355@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 232 (Robot 1, SE 697) [0;0] Parking (whatever)
+1613469703662@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469703663@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469705507@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 231)
+1613469707039@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 233 (Robot 2, SE 700) [0;58] Driving...
+1613469707039@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 233 (Robot 2, SE 700) [0;58] Driving
+1613469707040@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469707340@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 234 (Robot 2, SE 703) [0;0] Parking (whatever)...
+1613469707341@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 234 (Robot 2, SE 703) [0;0] Parking (whatever)
+1613469707663@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469708054@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 235 (Robot 3, SE 706) [0;33] Driving...
+1613469708054@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 235 (Robot 3, SE 706) [0;33] Driving
+1613469708055@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469708355@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 236 (Robot 3, SE 709) [0;0] Parking (whatever)...
+1613469708356@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 236 (Robot 3, SE 709) [0;0] Parking (whatever)
+1613469709664@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469709666@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469710379@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 233)
+1613469711499@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 235)
+1613469721607@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 241 (Robot 3, SE 724) [0;33] Driving...
+1613469721607@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 241 (Robot 3, SE 724) [0;33] Driving
+1613469721608@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469721666@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469722088@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 237 (Robot 1, SE 712) [0;55] Driving...
+1613469722088@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 237 (Robot 1, SE 712) [0;55] Driving
+1613469722089@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469722390@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 238 (Robot 1, SE 715) [0;0] Parking (whatever)...
+1613469722390@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 238 (Robot 1, SE 715) [0;0] Parking (whatever)
+1613469723665@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469723666@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469724911@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 242 (Robot 3, SE 727) [0;0] Parking (whatever)...
+1613469724911@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 242 (Robot 3, SE 727) [0;0] Parking (whatever)
+1613469725109@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 241)
+1613469725655@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 237)
+1613469725957@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 239 (Robot 2, SE 718) [0;58] Driving...
+1613469725957@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 239 (Robot 2, SE 718) [0;58] Driving
+1613469725959@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469726259@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 240 (Robot 2, SE 721) [0;0] Parking (whatever)...
+1613469726259@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 240 (Robot 2, SE 721) [0;0] Parking (whatever)
+1613469727668@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469729285@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 239)
+1613469735311@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 243 (Robot 3, SE 730) [0;33] Driving...
+1613469735311@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 243 (Robot 3, SE 730) [0;33] Driving
+1613469735312@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469735612@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 244 (Robot 3, SE 733) [0;0] Parking (whatever)...
+1613469735612@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 244 (Robot 3, SE 733) [0;0] Parking (whatever)
+1613469735670@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469735672@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469738617@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 243)
+1613469742582@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 245 (Robot 1, SE 736) [0;55] Driving...
+1613469742582@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 245 (Robot 1, SE 736) [0;55] Driving
+1613469742583@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469743673@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469743674@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469745682@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 245)
+1613469745886@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 246 (Robot 1, SE 739) [0;0] Parking (whatever)...
+1613469745886@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 246 (Robot 1, SE 739) [0;0] Parking (whatever)
+1613469747274@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 247 (Robot 2, SE 742) [0;58] Driving...
+1613469747275@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 247 (Robot 2, SE 742) [0;58] Driving
+1613469747276@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469747576@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 248 (Robot 2, SE 745) [0;0] Parking (whatever)...
+1613469747576@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 248 (Robot 2, SE 745) [0;0] Parking (whatever)
+1613469747676@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469748845@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 249 (Robot 3, SE 748) [0;33] Driving...
+1613469748845@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 249 (Robot 3, SE 748) [0;33] Driving
+1613469748846@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469749146@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 250 (Robot 3, SE 751) [0;0] Parking (whatever)...
+1613469749146@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 250 (Robot 3, SE 751) [0;0] Parking (whatever)
+1613469749677@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469749679@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469750661@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 247)
+1613469752358@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 249)
+1613469761726@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 251 (Robot 1, SE 754) [0;55] Driving...
+1613469761726@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 251 (Robot 1, SE 754) [0;55] Driving
+1613469761728@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469762451@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 255 (Robot 3, SE 766) [0;33] Driving...
+1613469762452@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 255 (Robot 3, SE 766) [0;33] Driving
+1613469762453@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469763682@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469763682@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469764684@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469764685@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469765031@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 252 (Robot 1, SE 757) [0;0] Parking (whatever)...
+1613469765031@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 252 (Robot 1, SE 757) [0;0] Parking (whatever)
+1613469765354@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 251)
+1613469765757@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 256 (Robot 3, SE 769) [0;0] Parking (whatever)...
+1613469765757@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 256 (Robot 3, SE 769) [0;0] Parking (whatever)
+1613469765900@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 255)
+1613469766021@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 253 (Robot 2, SE 760) [0;58] Driving...
+1613469766021@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 253 (Robot 2, SE 760) [0;58] Driving
+1613469766022@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469767687@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469769327@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 254 (Robot 2, SE 763) [0;0] Parking (whatever)...
+1613469769327@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 254 (Robot 2, SE 763) [0;0] Parking (whatever)
+1613469769532@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 253)
+1613469772231@[AbstractTrajectoryEnvelopeTracker] At critical point (Robot3): 12 (12)
+1613469774687@[AbstractTrajectoryEnvelopeTracker] Resuming from critical point (Robot3)
+1613469782435@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 258 (Robot 3, SE 775) [0;33] Driving...
+1613469782435@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 258 (Robot 3, SE 775) [0;33] Driving
+1613469782437@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469782526@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 257 (Robot 1, SE 772) [0;55] Driving...
+1613469782526@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 257 (Robot 1, SE 772) [0;55] Driving
+1613469782528@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469782737@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 259 (Robot 3, SE 778) [0;0] Parking (whatever)...
+1613469782737@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 259 (Robot 3, SE 778) [0;0] Parking (whatever)
+1613469782828@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 260 (Robot 1, SE 781) [0;0] Parking (whatever)...
+1613469782828@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 260 (Robot 1, SE 781) [0;0] Parking (whatever)
+1613469784686@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469784687@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469785687@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469785688@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469785692@[AbstractTrajectoryEnvelopeTracker] Finishing @ 764199 TrajectoryEnvelope 259 (Robot 3, SE 778) [0;0] Parking (whatever) (ET bounds: [763947,99978604])
+1613469785708@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 257)
+1613469785869@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 258)
+1613469787343@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 261 (Robot 2, SE 784) [0;58] Driving...
+1613469787343@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 261 (Robot 2, SE 784) [0;58] Driving
+1613469787344@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469788691@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469790649@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 262 (Robot 2, SE 787) [0;0] Parking (whatever)...
+1613469790649@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 262 (Robot 2, SE 787) [0;0] Parking (whatever)
+1613469790680@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 261)
+1613469796296@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 263 (Robot 3, SE 790) [0;33] Driving...
+1613469796296@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 263 (Robot 3, SE 790) [0;33] Driving
+1613469796298@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469796598@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 266 (Robot 3, SE 799) [0;0] Parking (whatever)...
+1613469796598@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 266 (Robot 3, SE 799) [0;0] Parking (whatever)
+1613469798694@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469799815@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 263)
+1613469801744@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 264 (Robot 1, SE 793) [0;55] Driving...
+1613469801744@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 264 (Robot 1, SE 793) [0;55] Driving
+1613469801746@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469802046@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 265 (Robot 1, SE 796) [0;0] Parking (whatever)...
+1613469802046@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 265 (Robot 1, SE 796) [0;0] Parking (whatever)
+1613469804695@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469804696@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469805387@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 264)
+1613469806127@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 267 (Robot 2, SE 802) [0;58] Driving...
+1613469806127@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 267 (Robot 2, SE 802) [0;58] Driving
+1613469806128@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469806428@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 268 (Robot 2, SE 805) [0;0] Parking (whatever)...
+1613469806428@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 268 (Robot 2, SE 805) [0;0] Parking (whatever)
+1613469808699@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469809597@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 267)
+1613469810308@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 269 (Robot 3, SE 808) [0;33] Driving...
+1613469810308@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 269 (Robot 3, SE 808) [0;33] Driving
+1613469810309@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469812699@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469813613@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 270 (Robot 3, SE 811) [0;0] Parking (whatever)...
+1613469813613@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 270 (Robot 3, SE 811) [0;0] Parking (whatever)
+1613469813908@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 269)
+1613469822349@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 271 (Robot 1, SE 814) [0;55] Driving...
+1613469822349@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 271 (Robot 1, SE 814) [0;55] Driving
+1613469822351@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469822651@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 272 (Robot 1, SE 817) [0;0] Parking (whatever)...
+1613469822651@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 272 (Robot 1, SE 817) [0;0] Parking (whatever)
+1613469823936@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 275 (Robot 3, SE 826) [0;33] Driving...
+1613469823936@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 275 (Robot 3, SE 826) [0;33] Driving
+1613469823938@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469824238@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 276 (Robot 3, SE 829) [0;0] Parking (whatever)...
+1613469824238@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 276 (Robot 3, SE 829) [0;0] Parking (whatever)
+1613469824701@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469824702@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469825712@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 271)
+1613469826705@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469826705@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469827341@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 273 (Robot 2, SE 820) [0;58] Driving...
+1613469827341@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 273 (Robot 2, SE 820) [0;58] Driving
+1613469827342@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469827352@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 275)
+1613469828705@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469830645@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 274 (Robot 2, SE 823) [0;0] Parking (whatever)...
+1613469830645@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 274 (Robot 2, SE 823) [0;0] Parking (whatever)
+1613469830704@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 273)
+1613469837578@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 279 (Robot 3, SE 838) [0;33] Driving...
+1613469837578@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 279 (Robot 3, SE 838) [0;33] Driving
+1613469837579@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469838706@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469840882@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 280 (Robot 3, SE 841) [0;0] Parking (whatever)...
+1613469840882@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 280 (Robot 3, SE 841) [0;0] Parking (whatever)
+1613469840997@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 279)
+1613469842014@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 277 (Robot 1, SE 832) [0;55] Driving...
+1613469842014@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 277 (Robot 1, SE 832) [0;55] Driving
+1613469842016@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469842316@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 278 (Robot 1, SE 835) [0;0] Parking (whatever)...
+1613469842316@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 278 (Robot 1, SE 835) [0;0] Parking (whatever)
+1613469844706@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469844707@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469845464@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 277)
+1613469846084@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 281 (Robot 2, SE 844) [0;58] Driving...
+1613469846084@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 281 (Robot 2, SE 844) [0;58] Driving
+1613469846085@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469846385@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 282 (Robot 2, SE 847) [0;0] Parking (whatever)...
+1613469846385@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 282 (Robot 2, SE 847) [0;0] Parking (whatever)
+1613469848710@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469849603@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 281)
+1613469851566@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 283 (Robot 3, SE 850) [0;33] Driving...
+1613469851566@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 283 (Robot 3, SE 850) [0;33] Driving
+1613469851568@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469851868@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 284 (Robot 3, SE 853) [0;0] Parking (whatever)...
+1613469851868@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 284 (Robot 3, SE 853) [0;0] Parking (whatever)
+1613469852710@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469855107@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 283)
+1613469861730@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 285 (Robot 1, SE 856) [0;55] Driving...
+1613469861730@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 285 (Robot 1, SE 856) [0;55] Driving
+1613469861731@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469862712@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469862713@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469865034@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 286 (Robot 1, SE 859) [0;0] Parking (whatever)...
+1613469865034@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 286 (Robot 1, SE 859) [0;0] Parking (whatever)
+1613469865135@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 289 (Robot 3, SE 868) [0;33] Driving...
+1613469865135@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 289 (Robot 3, SE 868) [0;33] Driving
+1613469865136@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469865334@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 285)
+1613469866717@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469866718@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469867438@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 287 (Robot 2, SE 862) [0;58] Driving...
+1613469867438@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 287 (Robot 2, SE 862) [0;58] Driving
+1613469867440@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469868439@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 290 (Robot 3, SE 871) [0;0] Parking (whatever)...
+1613469868439@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 290 (Robot 3, SE 871) [0;0] Parking (whatever)
+1613469868620@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 289)
+1613469868716@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469870682@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 287)
+1613469870742@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 288 (Robot 2, SE 865) [0;0] Parking (whatever)...
+1613469870742@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 288 (Robot 2, SE 865) [0;0] Parking (whatever)
+1613469878689@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 293 (Robot 3, SE 880) [0;33] Driving...
+1613469878689@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 293 (Robot 3, SE 880) [0;33] Driving
+1613469878690@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469878990@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 294 (Robot 3, SE 883) [0;0] Parking (whatever)...
+1613469878990@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 294 (Robot 3, SE 883) [0;0] Parking (whatever)
+1613469880716@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469880826@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 291 (Robot 1, SE 874) [0;55] Driving...
+1613469880826@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 291 (Robot 1, SE 874) [0;55] Driving
+1613469880827@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469882197@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 293)
+1613469882715@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469882716@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469884129@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 292 (Robot 1, SE 877) [0;0] Parking (whatever)...
+1613469884129@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 292 (Robot 1, SE 877) [0;0] Parking (whatever)
+1613469884308@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 291)
+1613469886270@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 295 (Robot 2, SE 886) [0;58] Driving...
+1613469886270@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 295 (Robot 2, SE 886) [0;58] Driving
+1613469886272@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469888717@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469889575@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 296 (Robot 2, SE 889) [0;0] Parking (whatever)...
+1613469889575@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 296 (Robot 2, SE 889) [0;0] Parking (whatever)
+1613469889670@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 295)
+1613469892371@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 297 (Robot 3, SE 892) [0;33] Driving...
+1613469892371@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 297 (Robot 3, SE 892) [0;33] Driving
+1613469892373@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469894722@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469894724@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469895676@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 298 (Robot 3, SE 895) [0;0] Parking (whatever)...
+1613469895676@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 298 (Robot 3, SE 895) [0;0] Parking (whatever)
+1613469895732@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 297)
+1613469901283@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 299 (Robot 1, SE 898) [0;55] Driving...
+1613469901283@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 299 (Robot 1, SE 898) [0;55] Driving
+1613469901284@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469902720@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469902722@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469904587@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 300 (Robot 1, SE 901) [0;0] Parking (whatever)...
+1613469904587@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 300 (Robot 1, SE 901) [0;0] Parking (whatever)
+1613469904734@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 299)
+1613469906214@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 303 (Robot 3, SE 910) [0;33] Driving...
+1613469906214@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 303 (Robot 3, SE 910) [0;33] Driving
+1613469906215@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469906425@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 301 (Robot 2, SE 904) [0;58] Driving...
+1613469906425@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 301 (Robot 2, SE 904) [0;58] Driving
+1613469906426@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469908722@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469909405@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 303)
+1613469909427@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 302 (Robot 2, SE 907) [0;0] Parking (whatever)...
+1613469909427@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 302 (Robot 2, SE 907) [0;0] Parking (whatever)
+1613469909464@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 301)
+1613469909722@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469909725@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469909725@[AbstractTrajectoryEnvelopeTracker] Finishing @ 888236 TrajectoryEnvelope 304 (Robot 3, SE 913) [0;0] Parking (whatever) (ET bounds: [887725,99978605])
+1613469910116@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 304 (Robot 3, SE 913) [0;0] Parking (whatever)...
+1613469910116@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 304 (Robot 3, SE 913) [0;0] Parking (whatever)
+1613469920724@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 307 (Robot 3, SE 922) [0;33] Driving...
+1613469920724@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 307 (Robot 3, SE 922) [0;33] Driving
+1613469920726@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469921026@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 310 (Robot 3, SE 931) [0;0] Parking (whatever)...
+1613469921026@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 310 (Robot 3, SE 931) [0;0] Parking (whatever)
+1613469921116@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 305 (Robot 1, SE 916) [0;55] Driving...
+1613469921116@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 305 (Robot 1, SE 916) [0;55] Driving
+1613469921117@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469922722@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469922724@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469923723@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469923723@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469923832@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 307)
+1613469924419@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 306 (Robot 1, SE 919) [0;0] Parking (whatever)...
+1613469924419@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 306 (Robot 1, SE 919) [0;0] Parking (whatever)
+1613469924558@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 305)
+1613469925255@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 308 (Robot 2, SE 925) [0;58] Driving...
+1613469925255@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 308 (Robot 2, SE 925) [0;58] Driving
+1613469925257@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469926723@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469928558@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 309 (Robot 2, SE 928) [0;0] Parking (whatever)...
+1613469928558@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 309 (Robot 2, SE 928) [0;0] Parking (whatever)
+1613469928664@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 308)
+1613469935309@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 311 (Robot 3, SE 934) [0;33] Driving...
+1613469935309@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 311 (Robot 3, SE 934) [0;33] Driving
+1613469935311@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469936723@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469936725@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469938612@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 314 (Robot 3, SE 943) [0;0] Parking (whatever)...
+1613469938612@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 314 (Robot 3, SE 943) [0;0] Parking (whatever)
+1613469938628@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 311)
+1613469941156@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 312 (Robot 1, SE 937) [0;55] Driving...
+1613469941156@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 312 (Robot 1, SE 937) [0;55] Driving
+1613469941157@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469942723@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469942724@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469944460@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 313 (Robot 1, SE 940) [0;0] Parking (whatever)...
+1613469944460@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 313 (Robot 1, SE 940) [0;0] Parking (whatever)
+1613469944483@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 312)
+1613469946083@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 315 (Robot 2, SE 946) [0;58] Driving...
+1613469946083@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 315 (Robot 2, SE 946) [0;58] Driving
+1613469946084@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469948724@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469948950@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 317 (Robot 3, SE 952) [0;33] Driving...
+1613469948950@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 317 (Robot 3, SE 952) [0;33] Driving
+1613469948952@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469949252@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 318 (Robot 3, SE 955) [0;0] Parking (whatever)...
+1613469949253@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 318 (Robot 3, SE 955) [0;0] Parking (whatever)
+1613469949386@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 316 (Robot 2, SE 949) [0;0] Parking (whatever)...
+1613469949386@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 316 (Robot 2, SE 949) [0;0] Parking (whatever)
+1613469949492@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 315)
+1613469950725@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469950728@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469952367@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 317)
+1613469960958@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 319 (Robot 1, SE 958) [0;55] Driving...
+1613469960958@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 319 (Robot 1, SE 958) [0;55] Driving
+1613469960960@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469962494@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 323 (Robot 3, SE 970) [0;33] Driving...
+1613469962494@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 323 (Robot 3, SE 970) [0;33] Driving
+1613469962495@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469962726@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613469962727@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469964261@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 320 (Robot 1, SE 961) [0;0] Parking (whatever)...
+1613469964261@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 320 (Robot 1, SE 961) [0;0] Parking (whatever)
+1613469964689@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 319)
+1613469964729@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469964729@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469965140@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 321 (Robot 2, SE 964) [0;58] Driving...
+1613469965140@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 321 (Robot 2, SE 964) [0;58] Driving
+1613469965141@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469965441@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 322 (Robot 2, SE 967) [0;0] Parking (whatever)...
+1613469965441@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 322 (Robot 2, SE 967) [0;0] Parking (whatever)
+1613469965797@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 324 (Robot 3, SE 973) [0;0] Parking (whatever)...
+1613469965797@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 324 (Robot 3, SE 973) [0;0] Parking (whatever)
+1613469966015@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 323)
+1613469966729@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469968319@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 321)
+1613469972302@[AbstractTrajectoryEnvelopeTracker] At critical point (Robot3): 12 (12)
+1613469973756@[AbstractTrajectoryEnvelopeTracker] Resuming from critical point (Robot3)
+1613469981283@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 325 (Robot 1, SE 976) [0;55] Driving...
+1613469981283@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 325 (Robot 1, SE 976) [0;55] Driving
+1613469981285@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613469981677@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 327 (Robot 3, SE 982) [0;33] Driving...
+1613469981677@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 327 (Robot 3, SE 982) [0;33] Driving
+1613469981679@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469982730@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613469982731@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613469983731@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469983731@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613469984589@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 326 (Robot 1, SE 979) [0;0] Parking (whatever)...
+1613469984589@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 326 (Robot 1, SE 979) [0;0] Parking (whatever)
+1613469984699@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 325)
+1613469984918@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 327)
+1613469984982@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 328 (Robot 3, SE 985) [0;0] Parking (whatever)...
+1613469984982@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 328 (Robot 3, SE 985) [0;0] Parking (whatever)
+1613469986397@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 329 (Robot 2, SE 988) [0;58] Driving...
+1613469986397@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 329 (Robot 2, SE 988) [0;58] Driving
+1613469986399@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613469988733@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613469989697@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 329)
+1613469989703@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 330 (Robot 2, SE 991) [0;0] Parking (whatever)...
+1613469989703@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 330 (Robot 2, SE 991) [0;0] Parking (whatever)
+1613469995329@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 331 (Robot 3, SE 994) [0;33] Driving...
+1613469995329@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 331 (Robot 3, SE 994) [0;33] Driving
+1613469995330@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613469996737@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613469998634@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 334 (Robot 3, SE 1003) [0;0] Parking (whatever)...
+1613469998634@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 334 (Robot 3, SE 1003) [0;0] Parking (whatever)
+1613469998741@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 331)
+1613470001166@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 332 (Robot 1, SE 997) [0;55] Driving...
+1613470001166@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 332 (Robot 1, SE 997) [0;55] Driving
+1613470001167@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613470002736@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613470002738@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613470004469@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 333 (Robot 1, SE 1000) [0;0] Parking (whatever)...
+1613470004469@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 333 (Robot 1, SE 1000) [0;0] Parking (whatever)
+1613470004557@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 332)
+1613470005104@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 335 (Robot 2, SE 1006) [0;58] Driving...
+1613470005104@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 335 (Robot 2, SE 1006) [0;58] Driving
+1613470005105@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613470006741@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613470008407@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 336 (Robot 2, SE 1009) [0;0] Parking (whatever)...
+1613470008407@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 336 (Robot 2, SE 1009) [0;0] Parking (whatever)
+1613470008641@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 335)
+1613470009551@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 337 (Robot 3, SE 1012) [0;33] Driving...
+1613470009551@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 337 (Robot 3, SE 1012) [0;33] Driving
+1613470009553@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613470010741@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613470012856@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 338 (Robot 3, SE 1015) [0;0] Parking (whatever)...
+1613470012856@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 338 (Robot 3, SE 1015) [0;0] Parking (whatever)
+1613470012965@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 337)
+1613470020890@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 339 (Robot 1, SE 1018) [0;55] Driving...
+1613470020890@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 339 (Robot 1, SE 1018) [0;55] Driving
+1613470020891@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613470022745@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613470022746@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613470023337@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 343 (Robot 3, SE 1030) [0;33] Driving...
+1613470023337@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 343 (Robot 3, SE 1030) [0;33] Driving
+1613470023338@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613470024193@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 340 (Robot 1, SE 1021) [0;0] Parking (whatever)...
+1613470024193@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 340 (Robot 1, SE 1021) [0;0] Parking (whatever)
+1613470024529@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 339)
+1613470024747@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613470024747@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613470026590@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 343)
+1613470026635@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 341 (Robot 2, SE 1024) [0;58] Driving...
+1613470026636@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 341 (Robot 2, SE 1024) [0;58] Driving
+1613470026637@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613470026641@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 344 (Robot 3, SE 1033) [0;0] Parking (whatever)...
+1613470026641@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 344 (Robot 3, SE 1033) [0;0] Parking (whatever)
+1613470026937@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 342 (Robot 2, SE 1027) [0;0] Parking (whatever)...
+1613470026937@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 342 (Robot 2, SE 1027) [0;0] Parking (whatever)
+1613470028748@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613470029754@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 341)
+1613470036876@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 347 (Robot 3, SE 1042) [0;33] Driving...
+1613470036876@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 347 (Robot 3, SE 1042) [0;33] Driving
+1613470036877@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613470038748@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613470039879@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 348 (Robot 3, SE 1045) [0;0] Parking (whatever)...
+1613470039879@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 348 (Robot 3, SE 1045) [0;0] Parking (whatever)
+1613470040408@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 347)
+1613470041365@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 345 (Robot 1, SE 1036) [0;55] Driving...
+1613470041365@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 345 (Robot 1, SE 1036) [0;55] Driving
+1613470041367@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613470041667@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 346 (Robot 1, SE 1039) [0;0] Parking (whatever)...
+1613470041667@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 346 (Robot 1, SE 1039) [0;0] Parking (whatever)
+1613470042748@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613470042749@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613470044887@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 345)
+1613470045522@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 349 (Robot 2, SE 1048) [0;58] Driving...
+1613470045522@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 349 (Robot 2, SE 1048) [0;58] Driving
+1613470045523@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613470045823@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 58) of TrajectoryEnvelope 350 (Robot 2, SE 1051) [0;0] Parking (whatever)...
+1613470045823@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 350 (Robot 2, SE 1051) [0;0] Parking (whatever)
+1613470046751@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613470046753@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot2) -1 was already set!
+1613470048879@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 349)
+1613470050624@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 351 (Robot 3, SE 1054) [0;33] Driving...
+1613470050624@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 351 (Robot 3, SE 1054) [0;33] Driving
+1613470050625@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613470050925@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 352 (Robot 3, SE 1057) [0;0] Parking (whatever)...
+1613470050925@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 352 (Robot 3, SE 1057) [0;0] Parking (whatever)
+1613470052750@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613470054112@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 351)
+1613470061334@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 353 (Robot 1, SE 1060) [0;55] Driving...
+1613470061334@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 353 (Robot 1, SE 1060) [0;55] Driving
+1613470061335@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613470062752@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 37
+1613470062753@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613470064280@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 357 (Robot 3, SE 1072) [0;33] Driving...
+1613470064280@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 357 (Robot 3, SE 1072) [0;33] Driving
+1613470064281@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613470064380@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 353)
+1613470064638@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 354 (Robot 1, SE 1063) [0;0] Parking (whatever)...
+1613470064638@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 354 (Robot 1, SE 1063) [0;0] Parking (whatever)
+1613470066027@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 355 (Robot 2, SE 1066) [0;58] Driving...
+1613470066027@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 355 (Robot 2, SE 1066) [0;58] Driving
+1613470066029@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613470066754@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613470066755@[AbstractTrajectoryEnvelopeTracker] Critical point (Robot3) -1 was already set!
+1613470067585@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 358 (Robot 3, SE 1075) [0;0] Parking (whatever)...
+1613470067585@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 358 (Robot 3, SE 1075) [0;0] Parking (whatever)
+1613470067682@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 357)
+1613470068756@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613470069331@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 356 (Robot 2, SE 1069) [0;0] Parking (whatever)...
+1613470069332@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 356 (Robot 2, SE 1069) [0;0] Parking (whatever)
+1613470069575@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 355)
+1613470077904@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 33, prev: 32) of TrajectoryEnvelope 361 (Robot 3, SE 1084) [0;33] Driving...
+1613470077904@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 361 (Robot 3, SE 1084) [0;33] Driving
+1613470077905@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1613470078205@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 33) of TrajectoryEnvelope 362 (Robot 3, SE 1087) [0;0] Parking (whatever)...
+1613470078205@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 362 (Robot 3, SE 1087) [0;0] Parking (whatever)
+1613470078756@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1613470080972@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 55, prev: 54) of TrajectoryEnvelope 359 (Robot 1, SE 1078) [0;55] Driving...
+1613470080972@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 359 (Robot 1, SE 1078) [0;55] Driving
+1613470080974@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1613470081274@[AbstractTrajectoryEnvelopeTracker] At last path point (current: -1, prev: 55) of TrajectoryEnvelope 360 (Robot 1, SE 1081) [0;0] Parking (whatever)...
+1613470081274@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 360 (Robot 1, SE 1081) [0;0] Parking (whatever)
+1613470081341@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 3, TrajectoryEnvelope 361)
+1613470082756@[AbstractTrajectoryEnvelopeTracker] Found internal critical point (Robot1): 18
+1613470082757@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1613470084596@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 1, TrajectoryEnvelope 359)
+1613470084926@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 58, prev: 57) of TrajectoryEnvelope 363 (Robot 2, SE 1090) [0;58] Driving...
+1613470084926@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 363 (Robot 2, SE 1090) [0;58] Driving
+1613470084927@[AbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1613470086760@[AbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1613470088230@[AbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 364 (Robot 2, SE 1093) [0;0] Parking (whatever)...
+1613470088230@[AbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 364 (Robot 2, SE 1093) [0;0] Parking (whatever)
+1613470088273@[AbstractTrajectoryEnvelopeTracker] RK4 tracking thread terminates (Robot 2, TrajectoryEnvelope 363)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
