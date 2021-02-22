@@ -384,26 +384,7 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	 */
 	public ForwardModel getForwardModel(int robotID) {
 		if (forwardModels.containsKey(robotID)) return forwardModels.get(robotID);
-		System.out.println("Returning default FM for " + robotID);
-
-/*		/////////////////////////////////////////////////////////////
-
-		pair2 = new Pair<String, Integer>("My ID", robotID);
-		//System.out.println("in getForwardModel method:" + pair2);
-
-		//System.out.println("Fahad:" + robotID);
-
-		ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
-
-		try{
-			HelloWorldClient client = new HelloWorldClient(channel);
-			client.makeGreeting2(pair2);
-		}
-		finally{
-
-			//channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
-		}
-		/////////////////////////////////////////////////////////////*/
+		//System.out.println("Returning default FM for " + robotID);
 
 		return new ForwardModel() {
 			@Override
@@ -486,9 +467,9 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	 */
 	public void setCriticalPoint(int robotID, int criticalPoint, boolean retransmitt) {
 
-		/////////////////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////
 
-		System.out.println("#########: " + robotID);
+		//System.out.println("#########: " + robotID);
 
 		pair2 = new Pair<String, Integer>("My ID", robotID);
 		//System.out.println("in getForwardModel method:" + pair2);
@@ -501,7 +482,7 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 			HelloWorldClient client = new HelloWorldClient(channel);
 			client.makeGreeting2(pair2);
 		}
-		finally{
+		finally {
 
 			//channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
 		}

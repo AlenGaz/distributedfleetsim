@@ -20,10 +20,12 @@ public final class Hello {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -31,7 +33,7 @@ public final class Hello {
   /**
    * Protobuf type {@code gradlegRPC.HelloRequest}
    */
-  public  static final class HelloRequest extends
+  public static final class HelloRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.HelloRequest)
       HelloRequestOrBuilder {
@@ -42,6 +44,13 @@ public final class Hello {
     }
     private HelloRequest() {
       name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new HelloRequest();
     }
 
     @java.lang.Override
@@ -57,7 +66,6 @@ public final class Hello {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -75,7 +83,7 @@ public final class Hello {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -110,7 +118,9 @@ public final class Hello {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -125,7 +135,9 @@ public final class Hello {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -184,11 +196,10 @@ public final class Hello {
       }
       io.grpc.hellos.Hello.HelloRequest other = (io.grpc.hellos.Hello.HelloRequest) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -368,35 +379,35 @@ public final class Hello {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -446,6 +457,7 @@ public final class Hello {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -461,6 +473,7 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -477,6 +490,8 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -490,6 +505,7 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -499,6 +515,8 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -514,7 +532,7 @@ public final class Hello {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -570,10 +588,12 @@ public final class Hello {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -581,7 +601,7 @@ public final class Hello {
   /**
    * Protobuf type {@code gradlegRPC.HelloResponse}
    */
-  public  static final class HelloResponse extends
+  public static final class HelloResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.HelloResponse)
       HelloResponseOrBuilder {
@@ -592,6 +612,13 @@ public final class Hello {
     }
     private HelloResponse() {
       name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new HelloResponse();
     }
 
     @java.lang.Override
@@ -607,7 +634,6 @@ public final class Hello {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -625,7 +651,7 @@ public final class Hello {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -660,7 +686,9 @@ public final class Hello {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -675,7 +703,9 @@ public final class Hello {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -734,11 +764,10 @@ public final class Hello {
       }
       io.grpc.hellos.Hello.HelloResponse other = (io.grpc.hellos.Hello.HelloResponse) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -918,35 +947,35 @@ public final class Hello {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -996,6 +1025,7 @@ public final class Hello {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1011,6 +1041,7 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1027,6 +1058,8 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1040,6 +1073,7 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1049,6 +1083,8 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1064,7 +1100,7 @@ public final class Hello {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1120,23 +1156,26 @@ public final class Hello {
 
     /**
      * <code>string key = 1;</code>
+     * @return The key.
      */
     java.lang.String getKey();
     /**
      * <code>string key = 1;</code>
+     * @return The bytes for key.
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
      * <code>int32 value = 2;</code>
+     * @return The value.
      */
     int getValue();
   }
   /**
    * Protobuf type {@code gradlegRPC.getRobotID}
    */
-  public  static final class getRobotID extends
+  public static final class getRobotID extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.getRobotID)
       getRobotIDOrBuilder {
@@ -1147,7 +1186,13 @@ public final class Hello {
     }
     private getRobotID() {
       key_ = "";
-      value_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getRobotID();
     }
 
     @java.lang.Override
@@ -1163,7 +1208,6 @@ public final class Hello {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1186,7 +1230,7 @@ public final class Hello {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1221,7 +1265,9 @@ public final class Hello {
     private volatile java.lang.Object key_;
     /**
      * <code>string key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -1236,7 +1282,9 @@ public final class Hello {
     }
     /**
      * <code>string key = 1;</code>
+     * @return The bytes for key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKeyBytes() {
       java.lang.Object ref = key_;
@@ -1255,7 +1303,9 @@ public final class Hello {
     private int value_;
     /**
      * <code>int32 value = 2;</code>
+     * @return The value.
      */
+    @java.lang.Override
     public int getValue() {
       return value_;
     }
@@ -1311,13 +1361,12 @@ public final class Hello {
       }
       io.grpc.hellos.Hello.getRobotID other = (io.grpc.hellos.Hello.getRobotID) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && (getValue()
-          == other.getValue());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (getValue()
+          != other.getValue()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1502,35 +1551,35 @@ public final class Hello {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1583,6 +1632,7 @@ public final class Hello {
       private java.lang.Object key_ = "";
       /**
        * <code>string key = 1;</code>
+       * @return The key.
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -1598,6 +1648,7 @@ public final class Hello {
       }
       /**
        * <code>string key = 1;</code>
+       * @return The bytes for key.
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -1614,6 +1665,8 @@ public final class Hello {
       }
       /**
        * <code>string key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(
           java.lang.String value) {
@@ -1627,6 +1680,7 @@ public final class Hello {
       }
       /**
        * <code>string key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -1636,6 +1690,8 @@ public final class Hello {
       }
       /**
        * <code>string key = 1;</code>
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -1652,12 +1708,16 @@ public final class Hello {
       private int value_ ;
       /**
        * <code>int32 value = 2;</code>
+       * @return The value.
        */
+      @java.lang.Override
       public int getValue() {
         return value_;
       }
       /**
        * <code>int32 value = 2;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(int value) {
         
@@ -1667,6 +1727,7 @@ public final class Hello {
       }
       /**
        * <code>int32 value = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -1677,7 +1738,7 @@ public final class Hello {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1733,10 +1794,12 @@ public final class Hello {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -1744,7 +1807,7 @@ public final class Hello {
   /**
    * Protobuf type {@code gradlegRPC.robotID}
    */
-  public  static final class robotID extends
+  public static final class robotID extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.robotID)
       robotIDOrBuilder {
@@ -1755,6 +1818,13 @@ public final class Hello {
     }
     private robotID() {
       name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new robotID();
     }
 
     @java.lang.Override
@@ -1770,7 +1840,6 @@ public final class Hello {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1788,7 +1857,7 @@ public final class Hello {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1823,7 +1892,9 @@ public final class Hello {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1838,7 +1909,9 @@ public final class Hello {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -1897,11 +1970,10 @@ public final class Hello {
       }
       io.grpc.hellos.Hello.robotID other = (io.grpc.hellos.Hello.robotID) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2081,35 +2153,35 @@ public final class Hello {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2159,6 +2231,7 @@ public final class Hello {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -2174,6 +2247,7 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -2190,6 +2264,8 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -2203,6 +2279,7 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -2212,6 +2289,8 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2227,7 +2306,7 @@ public final class Hello {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2283,10 +2362,12 @@ public final class Hello {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -2294,7 +2375,7 @@ public final class Hello {
   /**
    * Protobuf type {@code gradlegRPC.robotReportResponse}
    */
-  public  static final class robotReportResponse extends
+  public static final class robotReportResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.robotReportResponse)
       robotReportResponseOrBuilder {
@@ -2305,6 +2386,13 @@ public final class Hello {
     }
     private robotReportResponse() {
       name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new robotReportResponse();
     }
 
     @java.lang.Override
@@ -2320,7 +2408,6 @@ public final class Hello {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2338,7 +2425,7 @@ public final class Hello {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -2373,7 +2460,9 @@ public final class Hello {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2388,7 +2477,9 @@ public final class Hello {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -2447,11 +2538,10 @@ public final class Hello {
       }
       io.grpc.hellos.Hello.robotReportResponse other = (io.grpc.hellos.Hello.robotReportResponse) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2631,35 +2721,35 @@ public final class Hello {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2709,6 +2799,7 @@ public final class Hello {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -2724,6 +2815,7 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -2740,6 +2832,8 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -2753,6 +2847,7 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -2762,6 +2857,8 @@ public final class Hello {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2777,7 +2874,7 @@ public final class Hello {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2837,6 +2934,7 @@ public final class Hello {
      * </pre>
      *
      * <code>string kan = 1;</code>
+     * @return The kan.
      */
     java.lang.String getKan();
     /**
@@ -2845,69 +2943,81 @@ public final class Hello {
      * </pre>
      *
      * <code>string kan = 1;</code>
+     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>int32 robotID = 2;</code>
+     * @return The robotID.
      */
     int getRobotID();
 
     /**
      * <code>double x = 3;</code>
+     * @return The x.
      */
     double getX();
 
     /**
      * <code>double y = 4;</code>
+     * @return The y.
      */
     double getY();
 
     /**
      * <code>double z = 5;</code>
+     * @return The z.
      */
     double getZ();
 
     /**
      * <code>double roll = 6;</code>
+     * @return The roll.
      */
     double getRoll();
 
     /**
      * <code>double pitch = 7;</code>
+     * @return The pitch.
      */
     double getPitch();
 
     /**
      * <code>double yaw = 8;</code>
+     * @return The yaw.
      */
     double getYaw();
 
     /**
      * <code>int32 pathIndex = 9;</code>
+     * @return The pathIndex.
      */
     int getPathIndex();
 
     /**
      * <code>double velocity = 10;</code>
+     * @return The velocity.
      */
     double getVelocity();
 
     /**
      * <code>double distanceTraveled = 11;</code>
+     * @return The distanceTraveled.
      */
     double getDistanceTraveled();
 
     /**
      * <code>int32 criticalPoint = 12;</code>
+     * @return The criticalPoint.
      */
     int getCriticalPoint();
   }
   /**
    * Protobuf type {@code gradlegRPC.getRobotReport}
    */
-  public  static final class getRobotReport extends
+  public static final class getRobotReport extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.getRobotReport)
       getRobotReportOrBuilder {
@@ -2918,17 +3028,13 @@ public final class Hello {
     }
     private getRobotReport() {
       kan_ = "";
-      robotID_ = 0;
-      x_ = 0D;
-      y_ = 0D;
-      z_ = 0D;
-      roll_ = 0D;
-      pitch_ = 0D;
-      yaw_ = 0D;
-      pathIndex_ = 0;
-      velocity_ = 0D;
-      distanceTraveled_ = 0D;
-      criticalPoint_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getRobotReport();
     }
 
     @java.lang.Override
@@ -2944,7 +3050,6 @@ public final class Hello {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3017,7 +3122,7 @@ public final class Hello {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -3056,7 +3161,9 @@ public final class Hello {
      * </pre>
      *
      * <code>string kan = 1;</code>
+     * @return The kan.
      */
+    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -3075,7 +3182,9 @@ public final class Hello {
      * </pre>
      *
      * <code>string kan = 1;</code>
+     * @return The bytes for kan.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -3094,7 +3203,9 @@ public final class Hello {
     private int robotID_;
     /**
      * <code>int32 robotID = 2;</code>
+     * @return The robotID.
      */
+    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -3103,7 +3214,9 @@ public final class Hello {
     private double x_;
     /**
      * <code>double x = 3;</code>
+     * @return The x.
      */
+    @java.lang.Override
     public double getX() {
       return x_;
     }
@@ -3112,7 +3225,9 @@ public final class Hello {
     private double y_;
     /**
      * <code>double y = 4;</code>
+     * @return The y.
      */
+    @java.lang.Override
     public double getY() {
       return y_;
     }
@@ -3121,7 +3236,9 @@ public final class Hello {
     private double z_;
     /**
      * <code>double z = 5;</code>
+     * @return The z.
      */
+    @java.lang.Override
     public double getZ() {
       return z_;
     }
@@ -3130,7 +3247,9 @@ public final class Hello {
     private double roll_;
     /**
      * <code>double roll = 6;</code>
+     * @return The roll.
      */
+    @java.lang.Override
     public double getRoll() {
       return roll_;
     }
@@ -3139,7 +3258,9 @@ public final class Hello {
     private double pitch_;
     /**
      * <code>double pitch = 7;</code>
+     * @return The pitch.
      */
+    @java.lang.Override
     public double getPitch() {
       return pitch_;
     }
@@ -3148,7 +3269,9 @@ public final class Hello {
     private double yaw_;
     /**
      * <code>double yaw = 8;</code>
+     * @return The yaw.
      */
+    @java.lang.Override
     public double getYaw() {
       return yaw_;
     }
@@ -3157,7 +3280,9 @@ public final class Hello {
     private int pathIndex_;
     /**
      * <code>int32 pathIndex = 9;</code>
+     * @return The pathIndex.
      */
+    @java.lang.Override
     public int getPathIndex() {
       return pathIndex_;
     }
@@ -3166,7 +3291,9 @@ public final class Hello {
     private double velocity_;
     /**
      * <code>double velocity = 10;</code>
+     * @return The velocity.
      */
+    @java.lang.Override
     public double getVelocity() {
       return velocity_;
     }
@@ -3175,7 +3302,9 @@ public final class Hello {
     private double distanceTraveled_;
     /**
      * <code>double distanceTraveled = 11;</code>
+     * @return The distanceTraveled.
      */
+    @java.lang.Override
     public double getDistanceTraveled() {
       return distanceTraveled_;
     }
@@ -3184,7 +3313,9 @@ public final class Hello {
     private int criticalPoint_;
     /**
      * <code>int32 criticalPoint = 12;</code>
+     * @return The criticalPoint.
      */
+    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -3310,49 +3441,40 @@ public final class Hello {
       }
       io.grpc.hellos.Hello.getRobotReport other = (io.grpc.hellos.Hello.getRobotReport) obj;
 
-      boolean result = true;
-      result = result && getKan()
-          .equals(other.getKan());
-      result = result && (getRobotID()
-          == other.getRobotID());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getX())
-          == java.lang.Double.doubleToLongBits(
-              other.getX()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getY())
-          == java.lang.Double.doubleToLongBits(
-              other.getY()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getZ())
-          == java.lang.Double.doubleToLongBits(
-              other.getZ()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getRoll())
-          == java.lang.Double.doubleToLongBits(
-              other.getRoll()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getPitch())
-          == java.lang.Double.doubleToLongBits(
-              other.getPitch()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getYaw())
-          == java.lang.Double.doubleToLongBits(
-              other.getYaw()));
-      result = result && (getPathIndex()
-          == other.getPathIndex());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getVelocity())
-          == java.lang.Double.doubleToLongBits(
-              other.getVelocity()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getDistanceTraveled())
-          == java.lang.Double.doubleToLongBits(
-              other.getDistanceTraveled()));
-      result = result && (getCriticalPoint()
-          == other.getCriticalPoint());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getKan()
+          .equals(other.getKan())) return false;
+      if (getRobotID()
+          != other.getRobotID()) return false;
+      if (java.lang.Double.doubleToLongBits(getX())
+          != java.lang.Double.doubleToLongBits(
+              other.getX())) return false;
+      if (java.lang.Double.doubleToLongBits(getY())
+          != java.lang.Double.doubleToLongBits(
+              other.getY())) return false;
+      if (java.lang.Double.doubleToLongBits(getZ())
+          != java.lang.Double.doubleToLongBits(
+              other.getZ())) return false;
+      if (java.lang.Double.doubleToLongBits(getRoll())
+          != java.lang.Double.doubleToLongBits(
+              other.getRoll())) return false;
+      if (java.lang.Double.doubleToLongBits(getPitch())
+          != java.lang.Double.doubleToLongBits(
+              other.getPitch())) return false;
+      if (java.lang.Double.doubleToLongBits(getYaw())
+          != java.lang.Double.doubleToLongBits(
+              other.getYaw())) return false;
+      if (getPathIndex()
+          != other.getPathIndex()) return false;
+      if (java.lang.Double.doubleToLongBits(getVelocity())
+          != java.lang.Double.doubleToLongBits(
+              other.getVelocity())) return false;
+      if (java.lang.Double.doubleToLongBits(getDistanceTraveled())
+          != java.lang.Double.doubleToLongBits(
+              other.getDistanceTraveled())) return false;
+      if (getCriticalPoint()
+          != other.getCriticalPoint()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3595,35 +3717,35 @@ public final class Hello {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3710,6 +3832,7 @@ public final class Hello {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -3729,6 +3852,7 @@ public final class Hello {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -3749,6 +3873,8 @@ public final class Hello {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @param value The kan to set.
+       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -3766,6 +3892,7 @@ public final class Hello {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -3779,6 +3906,8 @@ public final class Hello {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @param value The bytes for kan to set.
+       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -3795,12 +3924,16 @@ public final class Hello {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 2;</code>
+       * @return The robotID.
        */
+      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 2;</code>
+       * @param value The robotID to set.
+       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -3810,6 +3943,7 @@ public final class Hello {
       }
       /**
        * <code>int32 robotID = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -3821,12 +3955,16 @@ public final class Hello {
       private double x_ ;
       /**
        * <code>double x = 3;</code>
+       * @return The x.
        */
+      @java.lang.Override
       public double getX() {
         return x_;
       }
       /**
        * <code>double x = 3;</code>
+       * @param value The x to set.
+       * @return This builder for chaining.
        */
       public Builder setX(double value) {
         
@@ -3836,6 +3974,7 @@ public final class Hello {
       }
       /**
        * <code>double x = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearX() {
         
@@ -3847,12 +3986,16 @@ public final class Hello {
       private double y_ ;
       /**
        * <code>double y = 4;</code>
+       * @return The y.
        */
+      @java.lang.Override
       public double getY() {
         return y_;
       }
       /**
        * <code>double y = 4;</code>
+       * @param value The y to set.
+       * @return This builder for chaining.
        */
       public Builder setY(double value) {
         
@@ -3862,6 +4005,7 @@ public final class Hello {
       }
       /**
        * <code>double y = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearY() {
         
@@ -3873,12 +4017,16 @@ public final class Hello {
       private double z_ ;
       /**
        * <code>double z = 5;</code>
+       * @return The z.
        */
+      @java.lang.Override
       public double getZ() {
         return z_;
       }
       /**
        * <code>double z = 5;</code>
+       * @param value The z to set.
+       * @return This builder for chaining.
        */
       public Builder setZ(double value) {
         
@@ -3888,6 +4036,7 @@ public final class Hello {
       }
       /**
        * <code>double z = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearZ() {
         
@@ -3899,12 +4048,16 @@ public final class Hello {
       private double roll_ ;
       /**
        * <code>double roll = 6;</code>
+       * @return The roll.
        */
+      @java.lang.Override
       public double getRoll() {
         return roll_;
       }
       /**
        * <code>double roll = 6;</code>
+       * @param value The roll to set.
+       * @return This builder for chaining.
        */
       public Builder setRoll(double value) {
         
@@ -3914,6 +4067,7 @@ public final class Hello {
       }
       /**
        * <code>double roll = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRoll() {
         
@@ -3925,12 +4079,16 @@ public final class Hello {
       private double pitch_ ;
       /**
        * <code>double pitch = 7;</code>
+       * @return The pitch.
        */
+      @java.lang.Override
       public double getPitch() {
         return pitch_;
       }
       /**
        * <code>double pitch = 7;</code>
+       * @param value The pitch to set.
+       * @return This builder for chaining.
        */
       public Builder setPitch(double value) {
         
@@ -3940,6 +4098,7 @@ public final class Hello {
       }
       /**
        * <code>double pitch = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPitch() {
         
@@ -3951,12 +4110,16 @@ public final class Hello {
       private double yaw_ ;
       /**
        * <code>double yaw = 8;</code>
+       * @return The yaw.
        */
+      @java.lang.Override
       public double getYaw() {
         return yaw_;
       }
       /**
        * <code>double yaw = 8;</code>
+       * @param value The yaw to set.
+       * @return This builder for chaining.
        */
       public Builder setYaw(double value) {
         
@@ -3966,6 +4129,7 @@ public final class Hello {
       }
       /**
        * <code>double yaw = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearYaw() {
         
@@ -3977,12 +4141,16 @@ public final class Hello {
       private int pathIndex_ ;
       /**
        * <code>int32 pathIndex = 9;</code>
+       * @return The pathIndex.
        */
+      @java.lang.Override
       public int getPathIndex() {
         return pathIndex_;
       }
       /**
        * <code>int32 pathIndex = 9;</code>
+       * @param value The pathIndex to set.
+       * @return This builder for chaining.
        */
       public Builder setPathIndex(int value) {
         
@@ -3992,6 +4160,7 @@ public final class Hello {
       }
       /**
        * <code>int32 pathIndex = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPathIndex() {
         
@@ -4003,12 +4172,16 @@ public final class Hello {
       private double velocity_ ;
       /**
        * <code>double velocity = 10;</code>
+       * @return The velocity.
        */
+      @java.lang.Override
       public double getVelocity() {
         return velocity_;
       }
       /**
        * <code>double velocity = 10;</code>
+       * @param value The velocity to set.
+       * @return This builder for chaining.
        */
       public Builder setVelocity(double value) {
         
@@ -4018,6 +4191,7 @@ public final class Hello {
       }
       /**
        * <code>double velocity = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVelocity() {
         
@@ -4029,12 +4203,16 @@ public final class Hello {
       private double distanceTraveled_ ;
       /**
        * <code>double distanceTraveled = 11;</code>
+       * @return The distanceTraveled.
        */
+      @java.lang.Override
       public double getDistanceTraveled() {
         return distanceTraveled_;
       }
       /**
        * <code>double distanceTraveled = 11;</code>
+       * @param value The distanceTraveled to set.
+       * @return This builder for chaining.
        */
       public Builder setDistanceTraveled(double value) {
         
@@ -4044,6 +4222,7 @@ public final class Hello {
       }
       /**
        * <code>double distanceTraveled = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDistanceTraveled() {
         
@@ -4055,12 +4234,16 @@ public final class Hello {
       private int criticalPoint_ ;
       /**
        * <code>int32 criticalPoint = 12;</code>
+       * @return The criticalPoint.
        */
+      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
        * <code>int32 criticalPoint = 12;</code>
+       * @param value The criticalPoint to set.
+       * @return This builder for chaining.
        */
       public Builder setCriticalPoint(int value) {
         
@@ -4070,6 +4253,7 @@ public final class Hello {
       }
       /**
        * <code>int32 criticalPoint = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
         
@@ -4080,7 +4264,7 @@ public final class Hello {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -4187,18 +4371,10 @@ public final class Hello {
       "PC.robotReportResponseB\020\n\016io.grpc.hellos" +
       "b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_gradlegRPC_HelloRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_gradlegRPC_HelloRequest_fieldAccessorTable = new

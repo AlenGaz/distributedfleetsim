@@ -90,28 +90,28 @@ public final class HelloWorldServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<io.grpc.hellos.Hello.getRobotReport,
-      io.grpc.hellos.Hello.robotID> getGrobotReportMethod;
+      io.grpc.hellos.Hello.robotReportResponse> getGrobotReportMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "grobotReport",
       requestType = io.grpc.hellos.Hello.getRobotReport.class,
-      responseType = io.grpc.hellos.Hello.robotID.class,
+      responseType = io.grpc.hellos.Hello.robotReportResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<io.grpc.hellos.Hello.getRobotReport,
-      io.grpc.hellos.Hello.robotID> getGrobotReportMethod() {
-    io.grpc.MethodDescriptor<io.grpc.hellos.Hello.getRobotReport, io.grpc.hellos.Hello.robotID> getGrobotReportMethod;
+      io.grpc.hellos.Hello.robotReportResponse> getGrobotReportMethod() {
+    io.grpc.MethodDescriptor<io.grpc.hellos.Hello.getRobotReport, io.grpc.hellos.Hello.robotReportResponse> getGrobotReportMethod;
     if ((getGrobotReportMethod = HelloWorldServiceGrpc.getGrobotReportMethod) == null) {
       synchronized (HelloWorldServiceGrpc.class) {
         if ((getGrobotReportMethod = HelloWorldServiceGrpc.getGrobotReportMethod) == null) {
           HelloWorldServiceGrpc.getGrobotReportMethod = getGrobotReportMethod =
-              io.grpc.MethodDescriptor.<io.grpc.hellos.Hello.getRobotReport, io.grpc.hellos.Hello.robotID>newBuilder()
+              io.grpc.MethodDescriptor.<io.grpc.hellos.Hello.getRobotReport, io.grpc.hellos.Hello.robotReportResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "grobotReport"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   io.grpc.hellos.Hello.getRobotReport.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.grpc.hellos.Hello.robotID.getDefaultInstance()))
+                  io.grpc.hellos.Hello.robotReportResponse.getDefaultInstance()))
               .setSchemaDescriptor(new HelloWorldServiceMethodDescriptorSupplier("grobotReport"))
               .build();
         }
@@ -185,7 +185,7 @@ public final class HelloWorldServiceGrpc {
     /**
      */
     public void grobotReport(io.grpc.hellos.Hello.getRobotReport request,
-        io.grpc.stub.StreamObserver<io.grpc.hellos.Hello.robotID> responseObserver) {
+        io.grpc.stub.StreamObserver<io.grpc.hellos.Hello.robotReportResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGrobotReportMethod(), responseObserver);
     }
 
@@ -210,7 +210,7 @@ public final class HelloWorldServiceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 io.grpc.hellos.Hello.getRobotReport,
-                io.grpc.hellos.Hello.robotID>(
+                io.grpc.hellos.Hello.robotReportResponse>(
                   this, METHODID_GROBOT_REPORT)))
           .build();
     }
@@ -249,7 +249,7 @@ public final class HelloWorldServiceGrpc {
     /**
      */
     public void grobotReport(io.grpc.hellos.Hello.getRobotReport request,
-        io.grpc.stub.StreamObserver<io.grpc.hellos.Hello.robotID> responseObserver) {
+        io.grpc.stub.StreamObserver<io.grpc.hellos.Hello.robotReportResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGrobotReportMethod(), getCallOptions()), request, responseObserver);
     }
@@ -285,7 +285,7 @@ public final class HelloWorldServiceGrpc {
 
     /**
      */
-    public io.grpc.hellos.Hello.robotID grobotReport(io.grpc.hellos.Hello.getRobotReport request) {
+    public io.grpc.hellos.Hello.robotReportResponse grobotReport(io.grpc.hellos.Hello.getRobotReport request) {
       return blockingUnaryCall(
           getChannel(), getGrobotReportMethod(), getCallOptions(), request);
     }
@@ -323,7 +323,7 @@ public final class HelloWorldServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.grpc.hellos.Hello.robotID> grobotReport(
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.hellos.Hello.robotReportResponse> grobotReport(
         io.grpc.hellos.Hello.getRobotReport request) {
       return futureUnaryCall(
           getChannel().newCall(getGrobotReportMethod(), getCallOptions()), request);
@@ -361,7 +361,7 @@ public final class HelloWorldServiceGrpc {
           break;
         case METHODID_GROBOT_REPORT:
           serviceImpl.grobotReport((io.grpc.hellos.Hello.getRobotReport) request,
-              (io.grpc.stub.StreamObserver<io.grpc.hellos.Hello.robotID>) responseObserver);
+              (io.grpc.stub.StreamObserver<io.grpc.hellos.Hello.robotReportResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();

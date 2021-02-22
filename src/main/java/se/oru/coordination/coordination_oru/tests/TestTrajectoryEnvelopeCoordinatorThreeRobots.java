@@ -149,9 +149,14 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 
 							Random rd = new Random();
 
-							messageToSend = "my robotReport" + tec.getRobotReport(robotID).getRobotID()
+							 messageToSend = tec.getRobotReport(robotID).getRobotID() + " "
+									+ tec.getRobotReport(robotID).getPose().getX() + " " + tec.getRobotReport(robotID).getPose().getY()
+									 + " " + tec.getRobotReport(robotID).getPose().getZ() + " " + tec.getRobotReport(robotID).getPose().getPitch()
+									 + " " + tec.getRobotReport(robotID).getPose().getYaw() + " " + tec.getRobotReport(robotID).getVelocity()
+									 + " " + tec.getRobotReport(robotID).getPathIndex() + " " + tec.getRobotReport(robotID).getDistanceTraveled();
+
 							ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
-							System.out.println("my robotReport" + messageToSend);
+							System.out.println("My robotReport: " + messageToSend);
 							try{
 
 								HelloWorldClient client = new HelloWorldClient(channel);

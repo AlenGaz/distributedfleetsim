@@ -39,7 +39,7 @@ public class HelloWorldClient {
 
         try
         {
-            System.out.println("making greeting with : " + name);
+            //System.out.println("making greeting with : " + name);
             response = blockingStub.hello(request);
         }
         catch(StatusRuntimeException e){
@@ -57,7 +57,7 @@ public class HelloWorldClient {
 
         try
         {
-            System.out.println("making greeting with: " + pair);
+            //System.out.println("making greeting with: " + pair);
             robotid = blockingStub.grobotID(getrobotid);
         }
         catch(StatusRuntimeException e){

@@ -3,22 +3,12 @@ package GRPC;
 import io.grpc.hellos.Hello;
 import io.grpc.hellos.HelloWorldServiceGrpc;
 import io.grpc.stub.StreamObserver;
-import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
-import se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeTracker;
-import se.oru.coordination.coordination_oru.RobotReport;
-import se.oru.coordination.coordination_oru.TrajectoryEnvelopeCoordinator;
-import se.oru.coordination.coordination_oru.TrajectoryEnvelopeTrackerDummy;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
-public abstract class HelloWorldServiceImpl
-
-
-        extends HelloWorldServiceGrpc.HelloWorldServiceImplBase implements HelloWorldServiceImpls {
+public class HelloWorldServiceImpl
+        extends HelloWorldServiceGrpc.HelloWorldServiceImplBase {
 
 
     public int it = 0;
@@ -75,7 +65,7 @@ public abstract class HelloWorldServiceImpl
 
  @Override
  public void grobotReport(Hello.getRobotReport request,
-                          StreamObserver<Hello.robotID> responseObserver){
+                          StreamObserver<Hello.robotReportResponse> responseObserver){
 
         if(request.getKan().equals("my robotReport")){
 
