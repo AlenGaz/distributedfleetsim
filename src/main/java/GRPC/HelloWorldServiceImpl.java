@@ -3,22 +3,30 @@ package GRPC;
 import io.grpc.hellos.Hello;
 import io.grpc.hellos.HelloWorldServiceGrpc;
 import io.grpc.stub.StreamObserver;
+import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
+import se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeTracker;
+import se.oru.coordination.coordination_oru.RobotReport;
+import se.oru.coordination.coordination_oru.TrajectoryEnvelopeCoordinator;
+import se.oru.coordination.coordination_oru.TrajectoryEnvelopeTrackerDummy;
+import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-public class HelloWorldServiceImpl
+public abstract class HelloWorldServiceImpl
 
 
-        extends HelloWorldServiceGrpc.HelloWorldServiceImplBase {
+        extends HelloWorldServiceGrpc.HelloWorldServiceImplBase implements HelloWorldServiceImpls {
 
 
     public int it = 0;
     String text;
     public ArrayList ID_list = new ArrayList();
     public int x;
+
+
 
     @Override
     public void hello(
@@ -49,13 +57,46 @@ public class HelloWorldServiceImpl
         if(request.getKey().equals("My ID")) {
             //text = "Hello robot:" + request.getValue();
             System.out.println("got Robot id: " + request.getValue());
-            ID_list.add(request.getValue()); ////// if id not in list, append
-            System.out.println("The ID_list: " + ID_list);
+            if(!ID_list.contains(request.getValue())){
+                ID_list.add(request.getValue()); ////// if id not in list, append
+            }
+            TrajectoryEnvelopeCoordinatorSimulation tes = new TrajectoryEnvelopeCoordinatorSimulation();
 
+            System.out.println(tes.getRobotReport(request.getValue()));
+
+            System.out.println("The ID_list: " + ID_list);
+            System.out.println("HAAA "+ String.valueOf(tes.getRobotReport(request.getValue()).getPathIndex()));
+            System.out.println("KAHHH" + tes.getRobotReport(request.getValue()).getPose().toString());
             respondWithSendingIDreceived(responseObserver);
+
         }
 
     }
+
+ @Override
+ public void grobotReport(Hello.getRobotReport request,
+                          StreamObserver<Hello.robotID> responseObserver){
+
+        if(request.getKan().equals("my robotReport")){
+
+            System.out.println("Got robotID" + request.getRobotID());
+
+            System.out.println("Got pathIndex" + request.getPathIndex());
+            System.out.println("Got velocity" + request.getVelocity());
+            System.out.println("Got distTraveled" + request.getDistanceTraveled());
+            System.out.println("Got criticalPoint" + request.getCriticalPoint());
+
+        }
+
+ }
+    private void respondToRobotReport(StreamObserver<Hello.getRobotReport> responseObserver) {
+        Hello.getRobotReport response =
+                Hello.getRobotReport.newBuilder()
+                        .setKan(text + "&id received" ).build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
 
     private void respondWithSendingIDreceived(StreamObserver<Hello.robotID> responseObserver) {
         Hello.robotID response =

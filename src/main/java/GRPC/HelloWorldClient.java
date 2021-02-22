@@ -1,9 +1,13 @@
 package GRPC;
 
 import aima.core.util.datastructure.Pair;
+
+
 import io.grpc.Channel;
 import io.grpc.ManagedChannel;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -12,6 +16,7 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
 import io.grpc.hellos.Hello;
 import io.grpc.hellos.HelloWorldServiceGrpc;
+import org.metacsp.multi.spatioTemporal.paths.Pose;
 
 
 public class HelloWorldClient {
@@ -54,6 +59,23 @@ public class HelloWorldClient {
         {
             System.out.println("making greeting with: " + pair);
             robotid = blockingStub.grobotID(getrobotid);
+        }
+        catch(StatusRuntimeException e){
+            logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
+            return;
+        }
+        System.out.println("Logging the response of the server ...");
+    }
+
+    public void makeRobotReport(String msg, Integer id, Double x, Double y, Double z, Double roll, Double pitch, Double yaw, Integer pathindex, Double velocity, Double distTraveled, Integer criticalPoint){
+        Hello.getRobotReport getRR = Hello.getRobotReport.newBuilder().setKan(msg).setRobotID(id).setX(x).setY(y).setZ(z).setRoll(roll).setPitch(pitch).setYaw(yaw).setPathIndex(pathindex).setVelocity(velocity).setDistanceTraveled(distTraveled).setCriticalPoint(criticalPoint).build();
+        Hello.robotReportResponse robotRsp;
+
+
+        try
+        {
+            System.out.println("sending robotReport pathindex " + pathindex );
+            robotRsp = blockingStub.grobotReport(getRR);
         }
         catch(StatusRuntimeException e){
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());

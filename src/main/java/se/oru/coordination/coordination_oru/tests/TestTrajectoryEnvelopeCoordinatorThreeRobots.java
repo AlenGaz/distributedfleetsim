@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import GRPC.HelloWorldClient;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import se.oru.coordination.coordination_oru.ConstantAccelerationForwardModel;
 import se.oru.coordination.coordination_oru.CriticalSection;
 import se.oru.coordination.coordination_oru.Mission;
@@ -121,6 +122,9 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 
 		System.out.println("Added missions " + Missions.getMissions());
 
+
+
+
 		//Start a mission dispatching thread for each robot, which will run forever
 		for (int i = 1; i <= 3; i++) {
 			final int robotID = i;
@@ -139,21 +143,15 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 						//Sleep for a little (2 sec)
 						try { Thread.sleep(2000);
 
-							// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*							String messageToSend;
+
+							String messageToSend;
 							String target = "localhost:50051";
 
 							Random rd = new Random();
 
-							if(rd.nextFloat()> 0.5){
-								messageToSend = "Boss";
-							}
-							else{
-								messageToSend= "Hello";
-							}
-
+							messageToSend = "my robotReport" + tec.getRobotReport(robotID).getRobotID()
 							ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
-
+							System.out.println("my robotReport" + messageToSend);
 							try{
 
 								HelloWorldClient client = new HelloWorldClient(channel);
@@ -162,8 +160,8 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 							finally{
 
 								channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
-							}*/
-							// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+							}
+							tec.getRobotReport(robotID);
 						}
 						catch (InterruptedException e) { e.printStackTrace(); }
 					}

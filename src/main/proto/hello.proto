@@ -6,8 +6,8 @@ option java_package = "io.grpc.hellos";
 service HelloWorldService{
   rpc hello(HelloRequest) returns (HelloResponse){}
   rpc grobotID(getRobotID) returns (robotID){}
+  rpc grobotReport(getRobotReport) returns (robotReportResponse);
 }
-
 
 message HelloRequest{
   string name = 1;
@@ -25,3 +25,25 @@ message getRobotID {
 message robotID{
   string name = 1;
 }
+
+message robotReportResponse{
+  string name = 1;
+}
+
+
+message getRobotReport{
+  string kan = 1; // for typing (my robotReport) in the request; so in server we look for a request that starts with (my robotReport)
+  int32 robotID = 2;
+  double x = 3;
+  double y = 4;
+  double z = 5;
+  double roll = 6;
+  double pitch = 7;
+  double yaw = 8;
+  int32 pathIndex = 9;
+  double velocity = 10;
+  double distanceTraveled = 11;
+  int32 criticalPoint = 12;
+
+}
+

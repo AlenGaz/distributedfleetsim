@@ -235,6 +235,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
 	 * @return A {@link RobotReport}, describing the last known state state of the robot.
 	 */
 	public RobotReport getLastRobotReport() {
+		System.out.println("In getLastRobotReport" + getCurrentTimeInMillis());
 		return getRobotReport();
 	}
 	

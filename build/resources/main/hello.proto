@@ -6,8 +6,8 @@ option java_package = "io.grpc.hellos";
 service HelloWorldService{
   rpc hello(HelloRequest) returns (HelloResponse){}
   rpc grobotID(getRobotID) returns (robotID){}
+  rpc grobotReport(getRobotReport) returns (robotID);
 }
-
 
 message HelloRequest{
   string name = 1;
@@ -24,4 +24,23 @@ message getRobotID {
 
 message robotID{
   string name = 1;
+}
+
+
+message getRobotReport{
+  int32 robotID = 1;
+  Pose pose = 2;
+  int32 pathIndex = 3;
+  double velocity = 4;
+  double distanceTraveled = 5;
+  int32 criticalPoint = 6;
+}
+
+message Pose{
+  double x = 1;
+  double y = 2;
+  double z = 3;
+  double roll = 4;
+  double pitch = 5;
+  double yaw = 6;
 }
