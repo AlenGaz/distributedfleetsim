@@ -147,20 +147,14 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 							String messageToSend;
 							String target = "localhost:50051";
 
-							Random rd = new Random();
-
-							 messageToSend = tec.getRobotReport(robotID).getRobotID() + " "
-									+ tec.getRobotReport(robotID).getPose().getX() + " " + tec.getRobotReport(robotID).getPose().getY()
-									 + " " + tec.getRobotReport(robotID).getPose().getZ() + " " + tec.getRobotReport(robotID).getPose().getPitch()
-									 + " " + tec.getRobotReport(robotID).getPose().getYaw() + " " + tec.getRobotReport(robotID).getVelocity()
-									 + " " + tec.getRobotReport(robotID).getPathIndex() + " " + tec.getRobotReport(robotID).getDistanceTraveled();
-
 							ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
-							System.out.println("My robotReport: " + messageToSend);
 							try{
-
+								System.out.println("Trying to send my robotReport");
 								HelloWorldClient client = new HelloWorldClient(channel);
-								client.makeGreeting(messageToSend);
+								client.makeRobotReport("my RobotReport", tec.getRobotReport(robotID).getRobotID()
+										, tec.getRobotReport(robotID).getPose().getX(), tec.getRobotReport(robotID).getPose().getY(), tec.getRobotReport(robotID).getPose().getZ(), tec.getRobotReport(robotID).getPose().getRoll()
+										 ,tec.getRobotReport(robotID).getPose().getPitch(),tec.getRobotReport(robotID).getPose().getYaw(), tec.getRobotReport(robotID).getVelocity()
+										, tec.getRobotReport(robotID).getPathIndex(), tec.getRobotReport(robotID).getDistanceTraveled(), tec.getRobotReport(robotID).getCriticalPoint());
 							}
 							finally{
 

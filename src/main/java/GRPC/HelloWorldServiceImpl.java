@@ -1,11 +1,13 @@
 package GRPC;
 
+import aima.core.util.datastructure.Triplet;
 import io.grpc.hellos.Hello;
 import io.grpc.hellos.HelloWorldServiceGrpc;
 import io.grpc.stub.StreamObserver;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class HelloWorldServiceImpl
         extends HelloWorldServiceGrpc.HelloWorldServiceImplBase {
@@ -16,6 +18,9 @@ public class HelloWorldServiceImpl
     public ArrayList ID_list = new ArrayList();
     public int x;
 
+
+    public HashMap<Integer, Triplet<Double, Double, Double>> robotIDToPosXYZ = new HashMap<Integer, Triplet<Double, Double, Double>>();
+    public HashMap<Integer, Double> robotIDtoVelocity = new HashMap<Integer, Double>();
 
 
     @Override
@@ -36,6 +41,12 @@ public class HelloWorldServiceImpl
 
             respondWithSendingMsg(responseObserver);
         }
+
+        if(request.getName().equals("my RobotReport")){
+            System.out.println("in hello override ");
+
+        }
+
     }
 
     @Override
@@ -52,11 +63,8 @@ public class HelloWorldServiceImpl
             }
             TrajectoryEnvelopeCoordinatorSimulation tes = new TrajectoryEnvelopeCoordinatorSimulation();
 
-            System.out.println(tes.getRobotReport(request.getValue()));
+            System.out.println("Current ID's connected: " + ID_list);
 
-            System.out.println("The ID_list: " + ID_list);
-            System.out.println("HAAA "+ String.valueOf(tes.getRobotReport(request.getValue()).getPathIndex()));
-            System.out.println("KAHHH" + tes.getRobotReport(request.getValue()).getPose().toString());
             respondWithSendingIDreceived(responseObserver);
 
         }
@@ -67,17 +75,34 @@ public class HelloWorldServiceImpl
  public void grobotReport(Hello.getRobotReport request,
                           StreamObserver<Hello.robotReportResponse> responseObserver){
 
-        if(request.getKan().equals("my robotReport")){
 
-            System.out.println("Got robotID" + request.getRobotID());
+        double rahman = 2.3;
 
-            System.out.println("Got pathIndex" + request.getPathIndex());
-            System.out.println("Got velocity" + request.getVelocity());
-            System.out.println("Got distTraveled" + request.getDistanceTraveled());
-            System.out.println("Got criticalPoint" + request.getCriticalPoint());
+       // System.out.println("Here in gRobotReport; \n" + request + " !");
+        if(request.getKan().equals("my RobotReport")){
+
+
+            System.out.println("Got robotID: " + request.getRobotID());
+            System.out.println("Got posx: " + request.getX());
+            System.out.println("Got posy: " + request.getY());
+            System.out.println("Got posz: " + request.getZ());
+            System.out.println("Got roll: " + request.getRoll());
+            System.out.println("Got pitch: " + request.getPitch());
+            System.out.println("Got yaw: " + request.getYaw());
+            System.out.println("Got velocity: " + request.getVelocity());
+            System.out.println("Got pathIndex: " + request.getPathIndex());
+            System.out.println("Got distTraveled: " + request.getDistanceTraveled());
+            System.out.println("Got criticalPoint: " + request.getCriticalPoint()+"\n");
+
+            int _robotID = request.getRobotID();
+            Triplet <Double, Double, Double> posTriplet = new Triplet<Double, Double, Double>(request.getX(), request.getY(), request.getZ());
+            robotIDToPosXYZ.put(_robotID,posTriplet);
+            robotIDtoVelocity.put(_robotID, request.getVelocity());
+
 
         }
-
+        System.out.println("Positions (x,y,z) HashMap: " + robotIDToPosXYZ + "\n");
+        System.out.println("Velocity HashMap" + robotIDtoVelocity + "\n");
  }
     private void respondToRobotReport(StreamObserver<Hello.getRobotReport> responseObserver) {
         Hello.getRobotReport response =
@@ -107,5 +132,6 @@ public class HelloWorldServiceImpl
         it++;
         responseObserver.onNext(response);
         responseObserver.onCompleted();
+        System.out.println("Size of RobotIDTOPOSXYZ hashmap" + robotIDToPosXYZ.size());
     }
 }

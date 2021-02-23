@@ -67,14 +67,15 @@ public class HelloWorldClient {
         System.out.println("Logging the response of the server ...");
     }
 
-    public void makeRobotReport(String msg, Integer id, Double x, Double y, Double z, Double roll, Double pitch, Double yaw, Integer pathindex, Double velocity, Double distTraveled, Integer criticalPoint){
-        Hello.getRobotReport getRR = Hello.getRobotReport.newBuilder().setKan(msg).setRobotID(id).setX(x).setY(y).setZ(z).setRoll(roll).setPitch(pitch).setYaw(yaw).setPathIndex(pathindex).setVelocity(velocity).setDistanceTraveled(distTraveled).setCriticalPoint(criticalPoint).build();
+    public void makeRobotReport(String my_robotReport, int robotid, double x, double y, double z, double roll, double pitch, double yaw, double velocity, int pathIndex, double distanceTraveled, int criticalPoint){
+        Hello.getRobotReport getRR = Hello.getRobotReport.newBuilder().setKan(my_robotReport).setRobotID(robotid).setX(x).setY(y).setZ(z).setRoll(roll).setPitch(pitch).setYaw(yaw).setVelocity(velocity).setPathIndex(pathIndex).setDistanceTraveled(distanceTraveled).setCriticalPoint(criticalPoint).build();
         Hello.robotReportResponse robotRsp;
 
+        System.out.println("Received makeRobotReport: " + String.valueOf(getRR));
 
         try
         {
-            System.out.println("sending robotReport pathindex " + pathindex );
+            System.out.println("sending robotReport pathindex " + pathIndex );
             robotRsp = blockingStub.grobotReport(getRR);
         }
         catch(StatusRuntimeException e){
@@ -111,5 +112,8 @@ public class HelloWorldClient {
 
             channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
         }
+    }
+
+    public void makeRobotReportH(String my_robotReport, int robotID, double x, double y, double z, double roll, double pitch, double yaw, double velocity, int pathIndex, double distanceTraveled, int criticalPoint) {
     }
 }
