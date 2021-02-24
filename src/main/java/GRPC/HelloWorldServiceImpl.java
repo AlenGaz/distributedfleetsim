@@ -75,9 +75,6 @@ public class HelloWorldServiceImpl
  public void grobotReport(Hello.getRobotReport request,
                           StreamObserver<Hello.robotReportResponse> responseObserver){
 
-
-        double rahman = 2.3;
-
        // System.out.println("Here in gRobotReport; \n" + request + " !");
         if(request.getKan().equals("my RobotReport")){
 
