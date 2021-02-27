@@ -404,8 +404,12 @@ io/grpc/hellos/HelloWorldServiceGrpc.java
  io.grpc.hellos.HelloWorldServiceGrpc$MethodHandlers
 se/oru/coordination/coordination_oru/util/BrowserVisualizationServlet.java
  se.oru.coordination.coordination_oru.util.BrowserVisualizationServlet
-GRPC/HelloWorldServiceImpl.java
- GRPC.HelloWorldServiceImpl
+se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorThreeRobots.java
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$1
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$2
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$3
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$4
 se/oru/coordination/coordination_oru/RobotReport.java
  se.oru.coordination.coordination_oru.RobotReport
 se/oru/coordination/coordination_oru/tests/icaps2018/eval/TrajectoryEnvelopeCoordinatorSimulationICAPS.java
@@ -492,9 +496,5 @@ se/oru/coordination/coordination_oru/util/splines/BezierSpline.java
  se.oru.coordination.coordination_oru.util.splines.BezierSpline
 GRPC/HelloWorldServer.java
  GRPC.HelloWorldServer
-se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorThreeRobots.java
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$1
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$2
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$3
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$4
+GRPC/HelloWorldServiceImpl.java
+ GRPC.HelloWorldServiceImpl
