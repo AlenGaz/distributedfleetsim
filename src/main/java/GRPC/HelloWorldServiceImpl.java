@@ -92,7 +92,7 @@ public class HelloWorldServiceImpl
             robotIDtoRobotReport.put(_robotID, rR);
         }
 
-        System.out.println("!!robotReport!just.!" + robotIDtoRobotReport+ "\n");
+        System.out.println("RobotReports ->>>  " + robotIDtoRobotReport+ "\n");
 
 
         respondToRobotReport(responseObserver);
