@@ -73,11 +73,10 @@ public class HelloWorldServiceImpl
  public void grobotReport(Hello.getRobotReport request,
                           StreamObserver<Hello.robotReportResponse> responseObserver){
 
-<<<<<<< HEAD
+
       int _robotID = 0;
         
-=======
->>>>>>> a0d4f5b60a3afbe4b88b6b72065cbd0cab2b811d
+
        // System.out.println("Here in gRobotReport; \n" + request + " !");
         if(request.getKan().equals("my RobotReport")){
 
