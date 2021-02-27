@@ -4,8 +4,6 @@ import aima.core.util.datastructure.Triplet;
 import io.grpc.hellos.Hello;
 import io.grpc.hellos.HelloWorldServiceGrpc;
 import io.grpc.stub.StreamObserver;
-import org.metacsp.multi.spatioTemporal.paths.Pose;
-import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
 
 import java.util.ArrayList;
@@ -23,7 +21,6 @@ public class HelloWorldServiceImpl
 
     public HashMap<Integer, Triplet<Double, Double, Double>> robotIDToPosXYZ = new HashMap<Integer, Triplet<Double, Double, Double>>();
     public HashMap<Integer, Double> robotIDtoVelocity = new HashMap<Integer, Double>();
-    public HashMap<Integer, RobotReport> robotIDtoRobotReport = new HashMap<Integer, RobotReport>();
 
 
     @Override
@@ -43,6 +40,11 @@ public class HelloWorldServiceImpl
             text = "Hello big" + request.getName();
 
             respondWithSendingMsg(responseObserver);
+        }
+
+        if(request.getName().equals("my RobotReport")){
+            System.out.println("in hello override ");
+
         }
 
     }
@@ -73,34 +75,36 @@ public class HelloWorldServiceImpl
  public void grobotReport(Hello.getRobotReport request,
                           StreamObserver<Hello.robotReportResponse> responseObserver){
 
-
-      int _robotID = 0;
-        
-
        // System.out.println("Here in gRobotReport; \n" + request + " !");
         if(request.getKan().equals("my RobotReport")){
 
 
-            // Necessary fields to set gotten values into robotReport type so it goes into a robot report hashMap
-            _robotID = request.getRobotID();
-            Triplet <Double, Double, Double> posTriplet = new Triplet<Double, Double, Double>(request.getX(), request.getY(), request.getZ());
-            Pose _pose = new Pose(request.getX(), request.getY(),request.getZ(), request.getRoll(),request.getPitch(),request.getYaw());
-            RobotReport rR = new RobotReport(_robotID, _pose, request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
+            System.out.println("Got robotID: " + request.getRobotID());
+            System.out.println("Got posx: " + request.getX());
+            System.out.println("Got posy: " + request.getY());
+            System.out.println("Got posz: " + request.getZ());
+            System.out.println("Got roll: " + request.getRoll());
+            System.out.println("Got pitch: " + request.getPitch());
+            System.out.println("Got yaw: " + request.getYaw());
+            System.out.println("Got velocity: " + request.getVelocity());
+            System.out.println("Got pathIndex: " + request.getPathIndex());
+            System.out.println("Got distTraveled: " + request.getDistanceTraveled());
+            System.out.println("Got criticalPoint: " + request.getCriticalPoint()+"\n");
 
+            int _robotID = request.getRobotID();
+            Triplet <Double, Double, Double> posTriplet = new Triplet<Double, Double, Double>(request.getX(), request.getY(), request.getZ());
             robotIDToPosXYZ.put(_robotID,posTriplet);
             robotIDtoVelocity.put(_robotID, request.getVelocity());
-            robotIDtoRobotReport.put(_robotID, rR);
+
+
         }
-
-        System.out.println("!!robotReport!just.!" + robotIDtoRobotReport+ "\n");
-
-
-        respondToRobotReport(responseObserver);
+        System.out.println("Positions (x,y,z) HashMap: " + robotIDToPosXYZ + "\n");
+        System.out.println("Velocity HashMap" + robotIDtoVelocity + "\n");
  }
-    private void respondToRobotReport(StreamObserver<Hello.robotReportResponse> responseObserver) {
-        Hello.robotReportResponse response =
-                Hello.robotReportResponse.newBuilder()
-                        .setName(text + "&id received" ).build();
+    private void respondToRobotReport(StreamObserver<Hello.getRobotReport> responseObserver) {
+        Hello.getRobotReport response =
+                Hello.getRobotReport.newBuilder()
+                        .setKan(text + "&id received" ).build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
