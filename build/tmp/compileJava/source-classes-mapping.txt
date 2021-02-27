@@ -115,8 +115,8 @@ se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorThre
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobotsReverseEnvelope$4
 se/oru/coordination/coordination_oru/util/splines/SplineFactory.java
  se.oru.coordination.coordination_oru.util.splines.SplineFactory
-se/oru/coordination/coordination_oru/util/splines/BezierSpline.java
- se.oru.coordination.coordination_oru.util.splines.BezierSpline
+GRPC/HelloWorldClient.java
+ GRPC.HelloWorldClient
 se/oru/coordination/coordination_oru/tests/icaps2018/eval/Experiment1Test2.java
  se.oru.coordination.coordination_oru.tests.icaps2018.eval.Experiment1Test2
  se.oru.coordination.coordination_oru.tests.icaps2018.eval.Experiment1Test2$1
@@ -198,12 +198,10 @@ se/oru/coordination/coordination_oru/motionplanning/ompl/ReedsSheppCarPlannerLib
  se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlannerLib$PathPose$ByReference
 se/oru/coordination/coordination_oru/util/Pair.java
  se.oru.coordination.coordination_oru.util.Pair
-se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorThreeRobots.java
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$1
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$2
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$3
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$4
+se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18.java
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18$1
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18$2
 se/oru/coordination/coordination_oru/util/MissionDispatchingCallback.java
  se.oru.coordination.coordination_oru.util.MissionDispatchingCallback
 se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner20.java
@@ -233,8 +231,16 @@ se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWith
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlannerFollowing
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlannerFollowing$1
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlannerFollowing$2
-GRPC/HelloWorldClient.java
- GRPC.HelloWorldClient
+se/oru/coordination/coordination_oru/AbstractTrajectoryEnvelopeCoordinator.java
+ se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator
+ se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$1
+ se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$2
+ se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$3
+ se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$4
+ se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$5
+ se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$6
+ se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$7
+ se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$8
 se/oru/coordination/coordination_oru/util/splines/Spline.java
  se.oru.coordination.coordination_oru.util.splines.Spline
 se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner9.java
@@ -398,10 +404,8 @@ io/grpc/hellos/HelloWorldServiceGrpc.java
  io.grpc.hellos.HelloWorldServiceGrpc$MethodHandlers
 se/oru/coordination/coordination_oru/util/BrowserVisualizationServlet.java
  se.oru.coordination.coordination_oru.util.BrowserVisualizationServlet
-se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18.java
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18$1
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18$2
+GRPC/HelloWorldServiceImpl.java
+ GRPC.HelloWorldServiceImpl
 se/oru/coordination/coordination_oru/RobotReport.java
  se.oru.coordination.coordination_oru.RobotReport
 se/oru/coordination/coordination_oru/tests/icaps2018/eval/TrajectoryEnvelopeCoordinatorSimulationICAPS.java
@@ -484,17 +488,13 @@ se/oru/coordination/coordination_oru/tests/icaps2018/talk/ThreeDifferentRobotsLi
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.ThreeDifferentRobotsLinear$2
 se/oru/coordination/coordination_oru/util/splines/CatmullRomSpline.java
  se.oru.coordination.coordination_oru.util.splines.CatmullRomSpline
-se/oru/coordination/coordination_oru/AbstractTrajectoryEnvelopeCoordinator.java
- se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator
- se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$1
- se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$2
- se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$3
- se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$4
- se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$5
- se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$6
- se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$7
- se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator$8
+se/oru/coordination/coordination_oru/util/splines/BezierSpline.java
+ se.oru.coordination.coordination_oru.util.splines.BezierSpline
 GRPC/HelloWorldServer.java
  GRPC.HelloWorldServer
-GRPC/HelloWorldServiceImpl.java
- GRPC.HelloWorldServiceImpl
+se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorThreeRobots.java
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$1
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$2
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$3
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$4
