@@ -1457,3 +1457,559 @@
 1614456995661@[TrajectoryEnvelopeCoordinator] Placed Robot2 in pose (-25.6948, 11.5911, -1.2945): TrajectoryEnvelope 40 (Robot 2, SE 121) [0;0] Parking (whatever)
 1614456995662@[TrajectoryEnvelopeCoordinator] There are now 0 critical sections
 1614456995662@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614456996516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614456996516@[TrajectoryEnvelopeCoordinator] Status @ 117120 ms
+1614456996516@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1614456996516@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614456996516@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 21   Robot2 (P): -1   Robot3 (D): 0   
+1614456996516@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 21   Robot2 (P): -1   Robot3 (D): 0   
+1614456996516@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614456996516@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 16.
+1614456996516@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 50, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614456996516@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614456996516@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614456997521@[TrajectoryEnvelopeCoordinator] There are now 2 critical sections
+1614456997524@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614456997525@[TrajectoryEnvelopeCoordinator] Status @ 118129 ms
+1614456997525@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614456997525@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614456997525@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 25   Robot2 (D): -1   Robot3 (D): 1   
+1614456997525@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 25   Robot2 (D): -1   Robot3 (D): 1   
+1614456997525@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/21(TE45)-1/38(TE41)]
+1614456997525@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 16.
+1614456997525@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 51, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614456997525@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614456997525@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614456998516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614456998517@[TrajectoryEnvelopeCoordinator] Status @ 119121 ms
+1614456998517@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614456998517@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614456998517@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 29   Robot2 (D): -1   Robot3 (D): 3   
+1614456998517@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 29   Robot2 (D): -1   Robot3 (D): 3   
+1614456998517@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/21(TE45)-1/38(TE41)]
+1614456998517@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 16.
+1614456998517@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 51, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614456998517@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614456998517@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614456999516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614456999518@[TrajectoryEnvelopeCoordinator] Status @ 120122 ms
+1614456999518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614456999518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614456999518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 34   Robot2 (D): 0   Robot3 (D): 7   
+1614456999518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 34   Robot2 (D): 0   Robot3 (D): 7   
+1614456999518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/21(TE45)-1/38(TE41)]
+1614456999518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 16.
+1614456999518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 51, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614456999518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614456999518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457000516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457000518@[TrajectoryEnvelopeCoordinator] Status @ 121122 ms
+1614457000518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457000518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457000518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 39   Robot2 (D): 2   Robot3 (D): 12   
+1614457000518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 39   Robot2 (D): 2   Robot3 (D): 12   
+1614457000518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/44(TE45)-3/18(TE43)]
+1614457000518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1614457000518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 52, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457000518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457000518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457001517@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457001518@[TrajectoryEnvelopeCoordinator] Status @ 122121 ms
+1614457001518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457001518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457001518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 44   Robot2 (D): 5   Robot3 (D): 17   
+1614457001518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 44   Robot2 (D): 5   Robot3 (D): 17   
+1614457001518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/44(TE45)-3/18(TE43)]
+1614457001518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1614457001518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 52, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457001518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457001518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457002516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457002517@[TrajectoryEnvelopeCoordinator] Status @ 123121 ms
+1614457002517@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457002517@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457002517@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 49   Robot2 (D): 10   Robot3 (D): 21   
+1614457002517@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 49   Robot2 (D): 10   Robot3 (D): 21   
+1614457002517@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457002517@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 18.
+1614457002517@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 53, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457002517@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457002517@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457003516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457003517@[TrajectoryEnvelopeCoordinator] Status @ 124120 ms
+1614457003517@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457003517@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457003517@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 52   Robot2 (D): 15   Robot3 (D): 25   
+1614457003517@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 52   Robot2 (D): 15   Robot3 (D): 25   
+1614457003517@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457003517@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 18.
+1614457003517@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 53, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457003517@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457003517@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457004516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457004516@[TrajectoryEnvelopeCoordinator] Status @ 125120 ms
+1614457004516@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457004516@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457004516@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 54   Robot2 (D): 20   Robot3 (D): 29   
+1614457004516@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 54   Robot2 (D): 20   Robot3 (D): 29   
+1614457004516@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457004516@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 18.
+1614457004516@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 53, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457004516@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457004516@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457004872@[TrajectoryEnvelopeCoordinator] Tracking finished for TrajectoryEnvelope 41 (Robot 1, SE 124) [0;55] Driving
+1614457004872@[TrajectoryEnvelopeCoordinator] Cleaning up critical sections of Robot1
+1614457004872@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 36 (Robot 1, SE 109) [0;0] Parking (whatever)
+1614457004873@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 41 (Robot 1, SE 124) [0;55] Driving
+1614457004874@[TrajectoryEnvelopeCoordinator] Placed Robot1 in pose (0.0942, 0.0053, 0.0192): TrajectoryEnvelope 42 (Robot 1, SE 127) [0;0] Parking (whatever)
+1614457004875@[TrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1614457005517@[TrajectoryEnvelopeCoordinator] Status @ 126121 ms
+1614457005517@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457005517@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457005517@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (P): -1   Robot2 (D): 25   Robot3 (D): 31   
+1614457005517@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (P): -1   Robot2 (D): 25   Robot3 (D): 31   
+1614457005517@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457005517@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 18.
+1614457005517@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 53, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457005517@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457005517@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457005533@[TrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot1: [36]
+1614457006517@[TrajectoryEnvelopeCoordinator] There are now 1 critical sections
+1614457006520@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457006521@[TrajectoryEnvelopeCoordinator] Status @ 127125 ms
+1614457006521@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457006521@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457006521@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): -1   Robot2 (D): 30   Robot3 (D): 32   
+1614457006521@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): -1   Robot2 (D): 30   Robot3 (D): 32   
+1614457006521@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/14(TE47)-2/31(TE45)]
+1614457006521@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 18.
+1614457006521@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 54, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457006521@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457006521@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457006761@[TrajectoryEnvelopeCoordinator] Tracking finished for TrajectoryEnvelope 43 (Robot 3, SE 130) [0;33] Driving
+1614457006761@[TrajectoryEnvelopeCoordinator] Cleaning up critical sections of Robot3
+1614457006761@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 38 (Robot 3, SE 115) [0;0] Parking (whatever)
+1614457006762@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 43 (Robot 3, SE 130) [0;33] Driving
+1614457006762@[TrajectoryEnvelopeCoordinator] Placed Robot3 in pose (10.4541, -13.7123, 0.5269): TrajectoryEnvelope 44 (Robot 3, SE 133) [0;0] Parking (whatever)
+1614457006763@[TrajectoryEnvelopeCoordinator] There are now 1 critical sections
+1614457006763@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457007517@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457007518@[TrajectoryEnvelopeCoordinator] Status @ 128121 ms
+1614457007518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457007518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457007518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): -1   Robot2 (D): 34   Robot3 (P): -1   
+1614457007518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): -1   Robot2 (D): 34   Robot3 (P): -1   
+1614457007518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/36(TE47)-0/0(TE0)]
+1614457007518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 19.
+1614457007518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 55, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457007518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457007518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457008517@[TrajectoryEnvelopeCoordinator] There are now 1 critical sections
+1614457008519@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457008521@[TrajectoryEnvelopeCoordinator] Status @ 129124 ms
+1614457008521@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457008521@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457008521@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 0   Robot2 (D): 39   Robot3 (D): -1   
+1614457008521@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 0   Robot2 (D): 39   Robot3 (D): -1   
+1614457008521@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [3/12(TE49)-2/53(TE45), 1/36(TE47)-0/0(TE0)]
+1614457008521@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 19.
+1614457008521@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 56, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457008521@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457008521@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457009516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457009517@[TrajectoryEnvelopeCoordinator] Status @ 130121 ms
+1614457009517@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457009517@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457009517@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 1   Robot2 (D): 44   Robot3 (D): -1   
+1614457009517@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 1   Robot2 (D): 44   Robot3 (D): -1   
+1614457009517@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [3/12(TE49)-2/53(TE45), 1/36(TE47)-0/0(TE0)]
+1614457009517@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 19.
+1614457009517@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 56, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457009517@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457009517@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457010516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457010518@[TrajectoryEnvelopeCoordinator] Status @ 131122 ms
+1614457010518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457010518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457010518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 4   Robot2 (D): 49   Robot3 (D): 0   
+1614457010518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 4   Robot2 (D): 49   Robot3 (D): 0   
+1614457010518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [3/12(TE49)-2/53(TE45), 1/36(TE47)-0/0(TE0)]
+1614457010518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 19.
+1614457010518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 56, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457010518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457010518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457011516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457011517@[TrajectoryEnvelopeCoordinator] Status @ 132121 ms
+1614457011517@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457011517@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457011517@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 8   Robot2 (D): 53   Robot3 (D): 1   
+1614457011517@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 8   Robot2 (D): 53   Robot3 (D): 1   
+1614457011517@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [3/12(TE49)-2/53(TE45), 1/36(TE47)-0/0(TE0)]
+1614457011517@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 19.
+1614457011517@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 56, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457011517@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457011517@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457012517@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457012518@[TrajectoryEnvelopeCoordinator] Status @ 133122 ms
+1614457012518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457012518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457012518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 13   Robot2 (D): 55   Robot3 (D): 3   
+1614457012518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 13   Robot2 (D): 55   Robot3 (D): 3   
+1614457012518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/36(TE47)-0/0(TE0)]
+1614457012518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 20.
+1614457012518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 57, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457012518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457012518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457013516@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457013516@[TrajectoryEnvelopeCoordinator] Status @ 134120 ms
+1614457013516@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457013516@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457013516@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 18   Robot2 (D): 57   Robot3 (D): 7   
+1614457013516@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 18   Robot2 (D): 57   Robot3 (D): 7   
+1614457013516@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/36(TE47)-0/0(TE0)]
+1614457013516@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 20.
+1614457013516@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 57, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457013516@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457013516@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457014372@[TrajectoryEnvelopeCoordinator] Tracking finished for TrajectoryEnvelope 45 (Robot 2, SE 136) [0;58] Driving
+1614457014372@[TrajectoryEnvelopeCoordinator] Cleaning up critical sections of Robot2
+1614457014372@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 40 (Robot 2, SE 121) [0;0] Parking (whatever)
+1614457014373@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 45 (Robot 2, SE 136) [0;58] Driving
+1614457014374@[TrajectoryEnvelopeCoordinator] Placed Robot2 in pose (2.2179, -27.9390, -0.7224): TrajectoryEnvelope 46 (Robot 2, SE 139) [0;0] Parking (whatever)
+1614457014374@[TrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1614457014374@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457014517@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457014517@[TrajectoryEnvelopeCoordinator] Status @ 135121 ms
+1614457014517@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457014517@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457014517@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 23   Robot2 (P): -1   Robot3 (D): 11   
+1614457014517@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 23   Robot2 (P): -1   Robot3 (D): 11   
+1614457014517@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/36(TE47)-0/0(TE0)]
+1614457014517@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 20.
+1614457014517@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 57, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457014517@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457014517@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457015517@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457015518@[TrajectoryEnvelopeCoordinator] Status @ 136122 ms
+1614457015518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457015518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457015518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 28   Robot2 (P): -1   Robot3 (D): 16   
+1614457015518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 28   Robot2 (P): -1   Robot3 (D): 16   
+1614457015518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/36(TE47)-0/0(TE0)]
+1614457015518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 20.
+1614457015518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 57, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457015518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457015518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457016519@[TrajectoryEnvelopeCoordinator] There are now 1 critical sections
+1614457016523@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457016524@[TrajectoryEnvelopeCoordinator] Status @ 137128 ms
+1614457016524@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457016524@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457016524@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 31   Robot2 (D): -1   Robot3 (D): 20   
+1614457016524@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 31   Robot2 (D): -1   Robot3 (D): 20   
+1614457016524@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/2(TE51)-3/21(TE49), 1/36(TE47)-0/0(TE0)]
+1614457016524@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 20.
+1614457016524@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 58, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457016524@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457016524@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457017517@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457017522@[TrajectoryEnvelopeCoordinator] Status @ 138126 ms
+1614457017522@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457017522@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457017522@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 34   Robot2 (D): 0   Robot3 (D): 25   
+1614457017522@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 34   Robot2 (D): 0   Robot3 (D): 25   
+1614457017522@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/36(TE47)-0/0(TE0)]
+1614457017522@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457017522@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 59, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457017522@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457017522@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457018517@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [36]
+1614457018517@[TrajectoryEnvelopeCoordinator] Waiting thread starts for 1
+1614457018518@[TrajectoryEnvelopeCoordinator] Status @ 139122 ms
+1614457018518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457018518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457018518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 35   Robot2 (D): 0   Robot3 (D): 29   
+1614457018518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 35   Robot2 (D): 0   Robot3 (D): 29   
+1614457018518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/36(TE47)-0/0(TE0)]
+1614457018518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457018518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 59, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457018518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457018518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457018618@[TrajectoryEnvelopeCoordinator] Waiting thread finishes for 1
+1614457018618@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457019517@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457019517@[TrajectoryEnvelopeCoordinator] Status @ 140121 ms
+1614457019517@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457019517@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457019517@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 38   Robot2 (D): 1   Robot3 (D): 32   
+1614457019517@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 38   Robot2 (D): 1   Robot3 (D): 32   
+1614457019517@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457019517@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457019517@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 60, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457019517@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457019517@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457020345@[TrajectoryEnvelopeCoordinator] Tracking finished for TrajectoryEnvelope 49 (Robot 3, SE 148) [0;33] Driving
+1614457020345@[TrajectoryEnvelopeCoordinator] Cleaning up critical sections of Robot3
+1614457020345@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 44 (Robot 3, SE 133) [0;0] Parking (whatever)
+1614457020346@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 49 (Robot 3, SE 148) [0;33] Driving
+1614457020347@[TrajectoryEnvelopeCoordinator] Placed Robot3 in pose (-12.8272, -28.7825, 0.3854): TrajectoryEnvelope 50 (Robot 3, SE 151) [0;0] Parking (whatever)
+1614457020347@[TrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1614457020347@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457020518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457020518@[TrajectoryEnvelopeCoordinator] Status @ 141122 ms
+1614457020518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457020518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457020518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 41   Robot2 (D): 4   Robot3 (P): -1   
+1614457020518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 41   Robot2 (D): 4   Robot3 (P): -1   
+1614457020518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457020518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457020518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 60, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457020518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457020518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457021517@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457021517@[TrajectoryEnvelopeCoordinator] Status @ 142121 ms
+1614457021517@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457021517@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457021517@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 45   Robot2 (D): 7   Robot3 (P): -1   
+1614457021517@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 45   Robot2 (D): 7   Robot3 (P): -1   
+1614457021517@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457021517@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457021517@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 60, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457021517@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457021517@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457022519@[TrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1614457022521@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457022522@[TrajectoryEnvelopeCoordinator] Status @ 143125 ms
+1614457022522@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1614457022522@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457022522@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 49   Robot2 (D): 12   Robot3 (D): -1   
+1614457022522@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 49   Robot2 (D): 12   Robot3 (D): -1   
+1614457022522@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457022522@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457022522@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 61, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457022522@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457022522@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457023518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457023518@[TrajectoryEnvelopeCoordinator] Status @ 144122 ms
+1614457023518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457023518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457023518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 52   Robot2 (D): 17   Robot3 (D): 0   
+1614457023518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 52   Robot2 (D): 17   Robot3 (D): 0   
+1614457023518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457023518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457023518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 61, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457023518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457023518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457024519@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457024519@[TrajectoryEnvelopeCoordinator] Status @ 145123 ms
+1614457024519@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457024519@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457024519@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 54   Robot2 (D): 22   Robot3 (D): 0   
+1614457024519@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 54   Robot2 (D): 22   Robot3 (D): 0   
+1614457024519@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457024519@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457024519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 61, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457024519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457024519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457024810@[TrajectoryEnvelopeCoordinator] Tracking finished for TrajectoryEnvelope 47 (Robot 1, SE 142) [0;55] Driving
+1614457024810@[TrajectoryEnvelopeCoordinator] Cleaning up critical sections of Robot1
+1614457024810@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 42 (Robot 1, SE 127) [0;0] Parking (whatever)
+1614457024811@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 47 (Robot 1, SE 142) [0;55] Driving
+1614457024812@[TrajectoryEnvelopeCoordinator] Placed Robot1 in pose (-33.6142, -9.5588, -2.7696): TrajectoryEnvelope 48 (Robot 1, SE 145) [0;0] Parking (whatever)
+1614457024812@[TrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1614457025518@[TrajectoryEnvelopeCoordinator] Status @ 146122 ms
+1614457025518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457025518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457025518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (P): -1   Robot2 (D): 26   Robot3 (D): 3   
+1614457025518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (P): -1   Robot2 (D): 26   Robot3 (D): 3   
+1614457025518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... []
+1614457025518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457025519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 61, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457025519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457025519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457025632@[TrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot1: [17]
+1614457026519@[TrajectoryEnvelopeCoordinator] There are now 1 critical sections
+1614457026522@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457026523@[TrajectoryEnvelopeCoordinator] Status @ 147127 ms
+1614457026523@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457026523@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457026523@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): -1   Robot2 (D): 31   Robot3 (D): 6   
+1614457026523@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): -1   Robot2 (D): 31   Robot3 (D): 6   
+1614457026523@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/17(TE55)-0/0(TE0)]
+1614457026523@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 21.
+1614457026523@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 62, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457026523@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457026523@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457027518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457027519@[TrajectoryEnvelopeCoordinator] Status @ 148123 ms
+1614457027519@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457027519@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457027519@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): -1   Robot2 (D): 36   Robot3 (D): 11   
+1614457027519@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): -1   Robot2 (D): 36   Robot3 (D): 11   
+1614457027519@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/17(TE55)-0/0(TE0)]
+1614457027519@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457027519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 62, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457027519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457027519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457028518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457028519@[TrajectoryEnvelopeCoordinator] Status @ 149123 ms
+1614457028519@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457028519@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457028519@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 0   Robot2 (D): 41   Robot3 (D): 16   
+1614457028519@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 0   Robot2 (D): 41   Robot3 (D): 16   
+1614457028519@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/17(TE55)-0/0(TE0)]
+1614457028519@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457028519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 62, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457028519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457028519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457029518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457029518@[TrajectoryEnvelopeCoordinator] Status @ 150122 ms
+1614457029518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457029519@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457029519@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 1   Robot2 (D): 46   Robot3 (D): 21   
+1614457029519@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 1   Robot2 (D): 46   Robot3 (D): 21   
+1614457029519@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/17(TE55)-0/0(TE0)]
+1614457029519@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457029519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 62, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457029519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457029519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457030518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457030518@[TrajectoryEnvelopeCoordinator] Status @ 151122 ms
+1614457030518@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457030518@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457030518@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 4   Robot2 (D): 51   Robot3 (D): 25   
+1614457030518@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 4   Robot2 (D): 51   Robot3 (D): 25   
+1614457030518@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/17(TE55)-0/0(TE0)]
+1614457030518@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457030518@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 62, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457030518@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457030518@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457031519@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457031519@[TrajectoryEnvelopeCoordinator] Status @ 152123 ms
+1614457031519@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457031519@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457031519@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 8   Robot2 (D): 54   Robot3 (D): 28   
+1614457031519@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 8   Robot2 (D): 54   Robot3 (D): 28   
+1614457031519@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/17(TE55)-0/0(TE0)]
+1614457031519@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457031519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 62, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457031519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457031519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457032518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457032519@[TrajectoryEnvelopeCoordinator] Status @ 153122 ms
+1614457032519@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457032519@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457032519@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 12   Robot2 (D): 57   Robot3 (D): 31   
+1614457032519@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 12   Robot2 (D): 57   Robot3 (D): 31   
+1614457032519@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/17(TE55)-0/0(TE0)]
+1614457032519@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457032519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 62, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457032519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457032519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457033102@[TrajectoryEnvelopeCoordinator] Tracking finished for TrajectoryEnvelope 51 (Robot 2, SE 154) [0;58] Driving
+1614457033102@[TrajectoryEnvelopeCoordinator] Cleaning up critical sections of Robot2
+1614457033102@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 46 (Robot 2, SE 139) [0;0] Parking (whatever)
+1614457033103@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 51 (Robot 2, SE 154) [0;58] Driving
+1614457033103@[TrajectoryEnvelopeCoordinator] Placed Robot2 in pose (-25.6948, 11.5911, -1.2945): TrajectoryEnvelope 52 (Robot 2, SE 157) [0;0] Parking (whatever)
+1614457033104@[TrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1614457033104@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457033518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457033520@[TrajectoryEnvelopeCoordinator] Status @ 154123 ms
+1614457033520@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457033520@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457033520@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 15   Robot2 (P): -1   Robot3 (D): 32   
+1614457033520@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 15   Robot2 (P): -1   Robot3 (D): 32   
+1614457033520@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [1/17(TE55)-0/0(TE0)]
+1614457033520@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457033520@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 62, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457033520@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457033520@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457033956@[TrajectoryEnvelopeCoordinator] Tracking finished for TrajectoryEnvelope 53 (Robot 3, SE 160) [0;33] Driving
+1614457033956@[TrajectoryEnvelopeCoordinator] Cleaning up critical sections of Robot3
+1614457033956@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 50 (Robot 3, SE 151) [0;0] Parking (whatever)
+1614457033957@[TrajectoryEnvelopeCoordinator] Cleaning up TrajectoryEnvelope 53 (Robot 3, SE 160) [0;33] Driving
+1614457033958@[TrajectoryEnvelopeCoordinator] Placed Robot3 in pose (10.4541, -13.7123, 0.5269): TrajectoryEnvelope 54 (Robot 3, SE 163) [0;0] Parking (whatever)
+1614457033958@[TrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1614457033958@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: [17]
+1614457033958@[TrajectoryEnvelopeCoordinator] Waiting thread starts for 1
+1614457034058@[TrajectoryEnvelopeCoordinator] Waiting thread finishes for 1
+1614457034058@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457034519@[TrajectoryEnvelopeCoordinator] There are now 1 critical sections
+1614457034522@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457034523@[TrajectoryEnvelopeCoordinator] Status @ 155126 ms
+1614457034523@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457034523@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457034523@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 18   Robot2 (D): -1   Robot3 (P): -1   
+1614457034523@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 18   Robot2 (D): -1   Robot3 (P): -1   
+1614457034523@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/21(TE57)-1/38(TE55)]
+1614457034523@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457034523@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 64, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457034523@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457034523@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457035518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457035519@[TrajectoryEnvelopeCoordinator] Status @ 156123 ms
+1614457035519@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457035519@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 7 variables, 19 constraints
+1614457035519@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 21   Robot2 (D): -1   Robot3 (P): -1   
+1614457035519@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 21   Robot2 (D): -1   Robot3 (P): -1   
+1614457035519@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/21(TE57)-1/38(TE55)]
+1614457035519@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457035519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 64, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457035519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457035519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457036519@[TrajectoryEnvelopeCoordinator] There are now 2 critical sections
+1614457036521@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457036522@[TrajectoryEnvelopeCoordinator] Status @ 157126 ms
+1614457036522@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457036522@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457036523@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 24   Robot2 (D): 0   Robot3 (D): -1   
+1614457036523@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 24   Robot2 (D): 0   Robot3 (D): -1   
+1614457036523@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/21(TE57)-1/38(TE55)]
+1614457036523@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457036523@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 65, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457036523@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457036523@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457037518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457037519@[TrajectoryEnvelopeCoordinator] Status @ 158123 ms
+1614457037519@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457037519@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457037519@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 29   Robot2 (D): 1   Robot3 (D): 0   
+1614457037519@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 29   Robot2 (D): 1   Robot3 (D): 0   
+1614457037519@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/21(TE57)-1/38(TE55)]
+1614457037519@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457037519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 65, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457037519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457037519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457038518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457038520@[TrajectoryEnvelopeCoordinator] Status @ 159124 ms
+1614457038520@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457038520@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457038520@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 33   Robot2 (D): 4   Robot3 (D): 1   
+1614457038520@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 33   Robot2 (D): 4   Robot3 (D): 1   
+1614457038520@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/21(TE57)-1/38(TE55)]
+1614457038520@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457038520@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 65, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457038520@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457038520@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457039518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457039520@[TrajectoryEnvelopeCoordinator] Status @ 160124 ms
+1614457039520@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457039520@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457039521@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 38   Robot2 (D): 8   Robot3 (D): 3   
+1614457039521@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 38   Robot2 (D): 8   Robot3 (D): 3   
+1614457039521@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/22(TE57)-1/38(TE55)]
+1614457039521@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 22.
+1614457039521@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 66, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457039521@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457039521@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1614457040518@[TrajectoryEnvelopeCoordinator] Stopping points Robot1: []
+1614457040519@[TrajectoryEnvelopeCoordinator] Status @ 161123 ms
+1614457040519@[TrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1614457040519@[TrajectoryEnvelopeCoordinator] ├─ Network ........ 9 variables, 24 constraints
+1614457040519@[TrajectoryEnvelopeCoordinator] ├─ Robots really .. Robot1 (D): 43   Robot2 (D): 13   Robot3 (D): 6   
+1614457040519@[TrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 43   Robot2 (D): 13   Robot3 (D): 6   
+1614457040519@[TrajectoryEnvelopeCoordinator] ├─ Dependencies ... [2/44(TE57)-3/21(TE59)]
+1614457040519@[TrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 23.
+1614457040519@[TrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 67, lost: 0, retransmitted: 1. Packets lost: 0, number of replicas: 1.
+1614457040519@[TrajectoryEnvelopeCoordinator] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1614457040519@[TrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
