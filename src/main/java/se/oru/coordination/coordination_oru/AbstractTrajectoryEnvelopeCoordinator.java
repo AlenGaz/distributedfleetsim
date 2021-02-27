@@ -122,8 +122,8 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	protected ArrayList<TrajectoryEnvelope> envelopesToTrack = new ArrayList<TrajectoryEnvelope>();
 	protected ArrayList<TrajectoryEnvelope> currentParkingEnvelopes = new ArrayList<TrajectoryEnvelope>();
 	protected HashSet<CriticalSection> allCriticalSections = new HashSet<CriticalSection>();
-	protected HashMap<CriticalSection,Pair<Integer,Integer>> CSToDepsOrder = new HashMap<CriticalSection,Pair<Integer,Integer>>(); 
-	HashMap<Dependency,CriticalSection> depsToCS = new HashMap<Dependency, CriticalSection>();
+	protected HashMap<CriticalSection,Pair<Integer,Integer>> CSToDepsOrder = new HashMap<CriticalSection,Pair<Integer,Integer>>();
+	protected HashMap<Dependency,CriticalSection> depsToCS = new HashMap<Dependency, CriticalSection>(); /////////// <- la till protected
 	protected HashMap<CriticalSection,Pair<Integer,Integer>> escapingCSToWaitingRobotIDandCP = new HashMap<CriticalSection, Pair<Integer,Integer>>(); 
 	protected HashMap<Integer,ArrayList<Integer>> stoppingPoints = new HashMap<Integer,ArrayList<Integer>>();
 	protected HashMap<Integer,ArrayList<Integer>> stoppingTimes = new HashMap<Integer,ArrayList<Integer>>();
@@ -467,7 +467,26 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	 */
 	public void setCriticalPoint(int robotID, int criticalPoint, boolean retransmitt) {
 
+		///////////////////////////////////////////////////////////
 
+		//System.out.println("#########: " + robotID);
+
+		pair2 = new Pair<String, Integer>("My ID", robotID);
+		//System.out.println("in getForwardModel method:" + pair2);
+
+		//System.out.println("Fahad:" + robotID);
+
+		ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
+
+		try{
+			HelloWorldClient client = new HelloWorldClient(channel);
+			client.makeGreeting2(pair2);
+		}
+		finally {
+
+			//channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
+		}
+		/////////////////////////////////////////////////////////////
 
 		
 		synchronized (trackers) {
