@@ -1,0 +1,10 @@
+syntax = "proto3";
+package gradlegRPC;
+option java_package = "io.grpc.hellos";
+
+
+service CoordinatorService {
+
+}
+
+

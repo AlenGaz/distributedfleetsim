@@ -1,8 +1,5 @@
 package se.oru.coordination.coordination_oru;
 
-import GRPC.HelloWorldClient;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.utility.logging.MetaCSPLogging;
 

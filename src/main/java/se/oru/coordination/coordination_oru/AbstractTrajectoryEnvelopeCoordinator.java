@@ -21,13 +21,10 @@ import java.util.logging.Logger;
 
 import javax.swing.SwingUtilities;
 
-import GRPC.HelloWorldClient;
+import GRPC.FleetClient;
 import org.apache.commons.collections.comparators.ComparatorChain;
 import org.metacsp.framework.Constraint;
-import org.metacsp.meta.spatioTemporal.paths.Map;
 import org.metacsp.multi.allenInterval.AllenIntervalConstraint;
-import org.metacsp.multi.spatial.DE9IM.GeometricShapeDomain;
-import org.metacsp.multi.spatial.DE9IM.GeometricShapeVariable;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
@@ -47,19 +44,8 @@ import se.oru.coordination.coordination_oru.motionplanning.AbstractMotionPlanner
 import se.oru.coordination.coordination_oru.util.FleetVisualization;
 import se.oru.coordination.coordination_oru.util.StringUtils;
 
-import io.grpc.Channel;
 import io.grpc.ManagedChannel;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.StatusRuntimeException;
-import io.grpc.hellos.Hello;
-import io.grpc.hellos.HelloWorldServiceGrpc;
-import io.grpc.hellos.Hello;
-
-import GRPC.HelloWorldClient;
 
 
 /**
@@ -122,8 +108,8 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	protected ArrayList<TrajectoryEnvelope> envelopesToTrack = new ArrayList<TrajectoryEnvelope>();
 	protected ArrayList<TrajectoryEnvelope> currentParkingEnvelopes = new ArrayList<TrajectoryEnvelope>();
 	protected HashSet<CriticalSection> allCriticalSections = new HashSet<CriticalSection>();
-	protected HashMap<CriticalSection,Pair<Integer,Integer>> CSToDepsOrder = new HashMap<CriticalSection,Pair<Integer,Integer>>(); 
-	HashMap<Dependency,CriticalSection> depsToCS = new HashMap<Dependency, CriticalSection>();
+	protected HashMap<CriticalSection,Pair<Integer,Integer>> CSToDepsOrder = new HashMap<CriticalSection,Pair<Integer,Integer>>();
+	protected HashMap<Dependency,CriticalSection> depsToCS = new HashMap<Dependency, CriticalSection>(); /////////// <- la till protected
 	protected HashMap<CriticalSection,Pair<Integer,Integer>> escapingCSToWaitingRobotIDandCP = new HashMap<CriticalSection, Pair<Integer,Integer>>(); 
 	protected HashMap<Integer,ArrayList<Integer>> stoppingPoints = new HashMap<Integer,ArrayList<Integer>>();
 	protected HashMap<Integer,ArrayList<Integer>> stoppingTimes = new HashMap<Integer,ArrayList<Integer>>();
@@ -467,7 +453,26 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	 */
 	public void setCriticalPoint(int robotID, int criticalPoint, boolean retransmitt) {
 
+		///////////////////////////////////////////////////////////
 
+		//System.out.println("#########: " + robotID);
+
+		pair2 = new Pair<String, Integer>("My ID", robotID);
+		//System.out.println("in getForwardModel method:" + pair2);
+
+		//System.out.println("Fahad:" + robotID);
+
+		//ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
+
+		try{
+			//FleetClient client = new FleetClient(channel);
+			//client.makeGreeting2(pair2);
+		}
+		finally {
+
+			//channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
+		}
+		/////////////////////////////////////////////////////////////
 
 		
 		synchronized (trackers) {
@@ -507,11 +512,18 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	 * @return The current state of a given robot.
 	 */
 	public RobotReport getRobotReport(int robotID) {
-		
+		//HelloWorldServiceImpl hWs = new HelloWorldServiceImpl();
+
 		//Read the last message received
 		synchronized (trackers) {
 			if (!trackers.containsKey(robotID)) return null;
+
+			//System.out.println("[Abstract...Coordinator]" + hWs.robotIDtoRobotReport.get(robotID));
+			//System.out.println("[Abstract...Coordinator]" + hWs.robotIDtoRobotReport );
+
 			return trackers.get(robotID).getLastRobotReport();
+
+
 		}
 		
 	}
@@ -1964,7 +1976,5 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 		}
 		System.out.println();
 	}
-
-	
 }
 
