@@ -21,13 +21,10 @@ import java.util.logging.Logger;
 
 import javax.swing.SwingUtilities;
 
-import GRPC.HelloWorldClient;
+import GRPC.FleetClient;
 import org.apache.commons.collections.comparators.ComparatorChain;
 import org.metacsp.framework.Constraint;
-import org.metacsp.meta.spatioTemporal.paths.Map;
 import org.metacsp.multi.allenInterval.AllenIntervalConstraint;
-import org.metacsp.multi.spatial.DE9IM.GeometricShapeDomain;
-import org.metacsp.multi.spatial.DE9IM.GeometricShapeVariable;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
@@ -47,19 +44,8 @@ import se.oru.coordination.coordination_oru.motionplanning.AbstractMotionPlanner
 import se.oru.coordination.coordination_oru.util.FleetVisualization;
 import se.oru.coordination.coordination_oru.util.StringUtils;
 
-import io.grpc.Channel;
 import io.grpc.ManagedChannel;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.StatusRuntimeException;
-import io.grpc.hellos.Hello;
-import io.grpc.hellos.HelloWorldServiceGrpc;
-import io.grpc.hellos.Hello;
-
-import GRPC.HelloWorldClient;
 
 
 /**
@@ -476,11 +462,11 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 
 		//System.out.println("Fahad:" + robotID);
 
-		ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
+		//ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
 
 		try{
-			HelloWorldClient client = new HelloWorldClient(channel);
-			client.makeGreeting2(pair2);
+			//FleetClient client = new FleetClient(channel);
+			//client.makeGreeting2(pair2);
 		}
 		finally {
 
@@ -526,11 +512,18 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	 * @return The current state of a given robot.
 	 */
 	public RobotReport getRobotReport(int robotID) {
-		
+		//HelloWorldServiceImpl hWs = new HelloWorldServiceImpl();
+
 		//Read the last message received
 		synchronized (trackers) {
 			if (!trackers.containsKey(robotID)) return null;
+
+			//System.out.println("[Abstract...Coordinator]" + hWs.robotIDtoRobotReport.get(robotID));
+			//System.out.println("[Abstract...Coordinator]" + hWs.robotIDtoRobotReport );
+
 			return trackers.get(robotID).getLastRobotReport();
+
+
 		}
 		
 	}
@@ -1983,7 +1976,5 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 		}
 		System.out.println();
 	}
-
-	
 }
 

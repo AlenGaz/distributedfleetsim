@@ -1,13 +1,11 @@
 package se.oru.coordination.coordination_oru.tests;
 
 import java.util.Comparator;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
-import GRPC.HelloWorldClient;
+import GRPC.FleetClient;
+import aima.core.util.datastructure.Pair;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import se.oru.coordination.coordination_oru.ConstantAccelerationForwardModel;
 import se.oru.coordination.coordination_oru.CriticalSection;
 import se.oru.coordination.coordination_oru.Mission;
@@ -17,7 +15,6 @@ import se.oru.coordination.coordination_oru.TrackingCallback;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
 import se.oru.coordination.coordination_oru.util.BrowserVisualization;
-import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
 import se.oru.coordination.coordination_oru.util.Missions;
 
 @DemoDescription(desc = "Simple test showing the use of pre-planned paths stored in files.")
@@ -134,33 +131,45 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 				@Override
 				public void run() {
 					while (true) {
+
+
+
 						//Mission to dispatch alternates between (rip -> desti) and (desti -> rip)
 						Mission m = Missions.getMission(robotID, iteration%2);
 						synchronized(tec) {
 							//addMission returns true iff the robot was free to accept a new mission
 							if (tec.addMissions(m)) iteration++;
 						}
+
+						String messageToSend;
+						String target = "localhost:50051";
+
+						ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
+
+
 						//Sleep for a little (2 sec)
 						try { Thread.sleep(2000);
 
+							///////////////////////////////////////////////////////////
+							Pair<String, Integer> pair2 = new Pair<String, Integer>("My ID", robotID);
 
-							String messageToSend;
-							String target = "localhost:50051";
-
-							ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
 							try{
-								System.out.println("Trying to send my robotReport");
-								HelloWorldClient client = new HelloWorldClient(channel);
+								FleetClient client = new FleetClient(channel);
+								client.makeGreeting2(pair2);
+
+
 								client.makeRobotReport("my RobotReport", tec.getRobotReport(robotID).getRobotID()
 										, tec.getRobotReport(robotID).getPose().getX(), tec.getRobotReport(robotID).getPose().getY(), tec.getRobotReport(robotID).getPose().getZ(), tec.getRobotReport(robotID).getPose().getRoll()
-										 ,tec.getRobotReport(robotID).getPose().getPitch(),tec.getRobotReport(robotID).getPose().getYaw(), tec.getRobotReport(robotID).getVelocity()
+										,tec.getRobotReport(robotID).getPose().getPitch(),tec.getRobotReport(robotID).getPose().getYaw(), tec.getRobotReport(robotID).getVelocity()
 										, tec.getRobotReport(robotID).getPathIndex(), tec.getRobotReport(robotID).getDistanceTraveled(), tec.getRobotReport(robotID).getCriticalPoint());
 							}
-							finally{
+							finally {
 
-								channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
 							}
-							tec.getRobotReport(robotID);
+
+
+							/////////////////////////////////////////////////////////////
+
 						}
 						catch (InterruptedException e) { e.printStackTrace(); }
 					}
@@ -169,8 +178,11 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 
 			//Start the thread!
 			t.start();
+
 		}
+
 		
 	}
+
 
 }

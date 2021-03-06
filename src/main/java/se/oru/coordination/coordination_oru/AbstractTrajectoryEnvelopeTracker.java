@@ -392,7 +392,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
 		return calledStartTracking;
 	}
 	
-	protected void startMonitoringThread() {
+	protected void startMonitoringThread() {           /////////////////////////////////////////// This is where Tracking Starts
 				
 		//Start a thread that monitors the sub-envelopes and finishes them when appropriate
 		Thread monitorSubEnvelopes = new Thread("Abstract tracker " + te.getComponent()) {

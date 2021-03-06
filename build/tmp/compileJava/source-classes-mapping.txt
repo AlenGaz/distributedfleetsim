@@ -12,34 +12,21 @@ se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWith
 se/oru/coordination/coordination_oru/util/RVizVisualization.java
  se.oru.coordination.coordination_oru.util.RVizVisualization
  se.oru.coordination.coordination_oru.util.RVizVisualization$1
+io/grpc/hellos/CoordinatorServiceGrpc.java
+ io.grpc.hellos.CoordinatorServiceGrpc
+ io.grpc.hellos.CoordinatorServiceGrpc$1
+ io.grpc.hellos.CoordinatorServiceGrpc$2
+ io.grpc.hellos.CoordinatorServiceGrpc$3
+ io.grpc.hellos.CoordinatorServiceGrpc$CoordinatorServiceBaseDescriptorSupplier
+ io.grpc.hellos.CoordinatorServiceGrpc$CoordinatorServiceBlockingStub
+ io.grpc.hellos.CoordinatorServiceGrpc$CoordinatorServiceFileDescriptorSupplier
+ io.grpc.hellos.CoordinatorServiceGrpc$CoordinatorServiceFutureStub
+ io.grpc.hellos.CoordinatorServiceGrpc$CoordinatorServiceImplBase
+ io.grpc.hellos.CoordinatorServiceGrpc$CoordinatorServiceMethodDescriptorSupplier
+ io.grpc.hellos.CoordinatorServiceGrpc$CoordinatorServiceStub
+ io.grpc.hellos.CoordinatorServiceGrpc$MethodHandlers
 se/oru/coordination/coordination_oru/util/splines/BezierSplineFactory.java
  se.oru.coordination.coordination_oru.util.splines.BezierSplineFactory
-io/grpc/hellos/Hello.java
- io.grpc.hellos.Hello
- io.grpc.hellos.Hello$HelloRequest
- io.grpc.hellos.Hello$HelloRequest$1
- io.grpc.hellos.Hello$HelloRequest$Builder
- io.grpc.hellos.Hello$HelloRequestOrBuilder
- io.grpc.hellos.Hello$HelloResponse
- io.grpc.hellos.Hello$HelloResponse$1
- io.grpc.hellos.Hello$HelloResponse$Builder
- io.grpc.hellos.Hello$HelloResponseOrBuilder
- io.grpc.hellos.Hello$getRobotID
- io.grpc.hellos.Hello$getRobotID$1
- io.grpc.hellos.Hello$getRobotID$Builder
- io.grpc.hellos.Hello$getRobotIDOrBuilder
- io.grpc.hellos.Hello$getRobotReport
- io.grpc.hellos.Hello$getRobotReport$1
- io.grpc.hellos.Hello$getRobotReport$Builder
- io.grpc.hellos.Hello$getRobotReportOrBuilder
- io.grpc.hellos.Hello$robotID
- io.grpc.hellos.Hello$robotID$1
- io.grpc.hellos.Hello$robotID$Builder
- io.grpc.hellos.Hello$robotIDOrBuilder
- io.grpc.hellos.Hello$robotReportResponse
- io.grpc.hellos.Hello$robotReportResponse$1
- io.grpc.hellos.Hello$robotReportResponse$Builder
- io.grpc.hellos.Hello$robotReportResponseOrBuilder
 se/oru/coordination/coordination_oru/tests/icaps2018/talk/TwoRobotsFollowing.java
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.TwoRobotsFollowing
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.TwoRobotsFollowing$1
@@ -115,16 +102,12 @@ se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWith
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner17$2
 se/oru/coordination/coordination_oru/util/splines/SplineFactory.java
  se.oru.coordination.coordination_oru.util.splines.SplineFactory
-GRPC/HelloWorldClient.java
- GRPC.HelloWorldClient
 se/oru/coordination/coordination_oru/tests/icaps2018/eval/Experiment1Test2.java
  se.oru.coordination.coordination_oru.tests.icaps2018.eval.Experiment1Test2
  se.oru.coordination.coordination_oru.tests.icaps2018.eval.Experiment1Test2$1
  se.oru.coordination.coordination_oru.tests.icaps2018.eval.Experiment1Test2$2
 se/oru/coordination/coordination_oru/NetworkConfiguration.java
  se.oru.coordination.coordination_oru.NetworkConfiguration
-GRPC/HelloWorldServiceImpl.java
- GRPC.HelloWorldServiceImpl
 se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner14.java
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner14
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner14$1
@@ -159,6 +142,8 @@ se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWith
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlannerReplanMiddle$2
 se/oru/coordination/coordination_oru/tests/icaps2018/talk/OneRobotPlacement.java
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.OneRobotPlacement
+GRPC/VisualizerServer.java
+ GRPC.VisualizerServer
 se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlannerReplan.java
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlannerReplan
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlannerReplan$1
@@ -167,6 +152,19 @@ se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWith
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner13
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner13$1
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner13$2
+io/grpc/hellos/VisualizerServiceGrpc.java
+ io.grpc.hellos.VisualizerServiceGrpc
+ io.grpc.hellos.VisualizerServiceGrpc$1
+ io.grpc.hellos.VisualizerServiceGrpc$2
+ io.grpc.hellos.VisualizerServiceGrpc$3
+ io.grpc.hellos.VisualizerServiceGrpc$MethodHandlers
+ io.grpc.hellos.VisualizerServiceGrpc$VisualizerServiceBaseDescriptorSupplier
+ io.grpc.hellos.VisualizerServiceGrpc$VisualizerServiceBlockingStub
+ io.grpc.hellos.VisualizerServiceGrpc$VisualizerServiceFileDescriptorSupplier
+ io.grpc.hellos.VisualizerServiceGrpc$VisualizerServiceFutureStub
+ io.grpc.hellos.VisualizerServiceGrpc$VisualizerServiceImplBase
+ io.grpc.hellos.VisualizerServiceGrpc$VisualizerServiceMethodDescriptorSupplier
+ io.grpc.hellos.VisualizerServiceGrpc$VisualizerServiceStub
 se/oru/coordination/coordination_oru/util/BrowserVisualizationSocket.java
  se.oru.coordination.coordination_oru.util.BrowserVisualizationSocket
 se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner19.java
@@ -176,6 +174,8 @@ se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWith
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner19$3
 se/oru/coordination/coordination_oru/motionplanning/AbstractMotionPlanner.java
  se.oru.coordination.coordination_oru.motionplanning.AbstractMotionPlanner
+GRPC/VisualizerService.java
+ GRPC.VisualizerService
 se/oru/coordination/coordination_oru/util/splines/CubicSpline.java
  se.oru.coordination.coordination_oru.util.splines.CubicSpline
 se/oru/coordination/coordination_oru/util/BrowserVisualization.java
@@ -190,12 +190,29 @@ se/oru/coordination/coordination_oru/tests/icaps2018/talk/ThreeRobotsFast.java
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.ThreeRobotsFast$1
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.ThreeRobotsFast$2
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.ThreeRobotsFast$3
+io/grpc/hellos/fleetClientGrpc.java
+ io.grpc.hellos.fleetClientGrpc
+ io.grpc.hellos.fleetClientGrpc$1
+ io.grpc.hellos.fleetClientGrpc$2
+ io.grpc.hellos.fleetClientGrpc$3
+ io.grpc.hellos.fleetClientGrpc$MethodHandlers
+ io.grpc.hellos.fleetClientGrpc$fleetClientBaseDescriptorSupplier
+ io.grpc.hellos.fleetClientGrpc$fleetClientBlockingStub
+ io.grpc.hellos.fleetClientGrpc$fleetClientFileDescriptorSupplier
+ io.grpc.hellos.fleetClientGrpc$fleetClientFutureStub
+ io.grpc.hellos.fleetClientGrpc$fleetClientImplBase
+ io.grpc.hellos.fleetClientGrpc$fleetClientMethodDescriptorSupplier
+ io.grpc.hellos.fleetClientGrpc$fleetClientStub
 se/oru/coordination/coordination_oru/motionplanning/ompl/ReedsSheppCarPlannerLib.java
  se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlannerLib
  se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlannerLib$PathPose
  se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlannerLib$PathPose$ByReference
 se/oru/coordination/coordination_oru/util/Pair.java
  se.oru.coordination.coordination_oru.util.Pair
+GRPC/FleetClient.java
+ GRPC.FleetClient
+GRPC/TestServer.java
+ GRPC.TestServer
 se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorThreeRobots.java
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobots$1
@@ -253,6 +270,8 @@ se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorThre
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobotsTruncateEnvelope$2
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobotsTruncateEnvelope$3
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorThreeRobotsTruncateEnvelope$4
+GRPC/FleetClientService.java
+ GRPC.FleetClientService
 se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner10.java
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner10
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner10$1
@@ -348,16 +367,6 @@ se/oru/coordination/coordination_oru/simulation2D/TrajectoryEnvelopeCoordinatorS
  se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation$2
 se/oru/coordination/coordination_oru/demo/DemoDescription.java
  se.oru.coordination.coordination_oru.demo.DemoDescription
-gradlegRPC/ClientTracker.java
- gradlegRPC.ClientTracker
- gradlegRPC.ClientTracker$byteRequest
- gradlegRPC.ClientTracker$byteRequest$1
- gradlegRPC.ClientTracker$byteRequest$Builder
- gradlegRPC.ClientTracker$byteRequestOrBuilder
- gradlegRPC.ClientTracker$emptym
- gradlegRPC.ClientTracker$emptym$1
- gradlegRPC.ClientTracker$emptym$Builder
- gradlegRPC.ClientTracker$emptymOrBuilder
 se/oru/coordination/coordination_oru/tests/safetyAndLiveness/ParkingArrayNew.java
  se.oru.coordination.coordination_oru.tests.safetyAndLiveness.ParkingArrayNew
  se.oru.coordination.coordination_oru.tests.safetyAndLiveness.ParkingArrayNew$1
@@ -365,51 +374,51 @@ se/oru/coordination/coordination_oru/tests/icaps2018/talk/FourRobotsCircle.java
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.FourRobotsCircle
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.FourRobotsCircle$1
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.FourRobotsCircle$2
+io/grpc/hellos/Client.java
+ io.grpc.hellos.Client
+ io.grpc.hellos.Client$getRobotID
+ io.grpc.hellos.Client$getRobotID$1
+ io.grpc.hellos.Client$getRobotID$Builder
+ io.grpc.hellos.Client$getRobotIDOrBuilder
+ io.grpc.hellos.Client$getRobotReport
+ io.grpc.hellos.Client$getRobotReport$1
+ io.grpc.hellos.Client$getRobotReport$Builder
+ io.grpc.hellos.Client$getRobotReportOrBuilder
+ io.grpc.hellos.Client$requestMessage
+ io.grpc.hellos.Client$requestMessage$1
+ io.grpc.hellos.Client$requestMessage$Builder
+ io.grpc.hellos.Client$requestMessageOrBuilder
+ io.grpc.hellos.Client$responseMessage
+ io.grpc.hellos.Client$responseMessage$1
+ io.grpc.hellos.Client$responseMessage$Builder
+ io.grpc.hellos.Client$responseMessageOrBuilder
+ io.grpc.hellos.Client$robotID
+ io.grpc.hellos.Client$robotID$1
+ io.grpc.hellos.Client$robotID$Builder
+ io.grpc.hellos.Client$robotIDOrBuilder
+ io.grpc.hellos.Client$robotReportResponse
+ io.grpc.hellos.Client$robotReportResponse$1
+ io.grpc.hellos.Client$robotReportResponse$Builder
+ io.grpc.hellos.Client$robotReportResponseOrBuilder
+GRPC/CoordinatorService.java
+ GRPC.CoordinatorService
 se/oru/coordination/coordination_oru/TrackingCallback.java
  se.oru.coordination.coordination_oru.TrackingCallback
-se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18.java
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18$1
- se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18$2
+GRPC/CoordinatorServer.java
+ GRPC.CoordinatorServer
+ GRPC.CoordinatorServer$1
+ GRPC.CoordinatorServer$2
 se/oru/coordination/coordination_oru/tests/safetyAndLiveness/Circle.java
  se.oru.coordination.coordination_oru.tests.safetyAndLiveness.Circle
  se.oru.coordination.coordination_oru.tests.safetyAndLiveness.Circle$1
-gradlegRPC/ClientTrackerServiceGrpc.java
- gradlegRPC.ClientTrackerServiceGrpc
- gradlegRPC.ClientTrackerServiceGrpc$1
- gradlegRPC.ClientTrackerServiceGrpc$2
- gradlegRPC.ClientTrackerServiceGrpc$3
- gradlegRPC.ClientTrackerServiceGrpc$ClientTrackerServiceBaseDescriptorSupplier
- gradlegRPC.ClientTrackerServiceGrpc$ClientTrackerServiceBlockingStub
- gradlegRPC.ClientTrackerServiceGrpc$ClientTrackerServiceFileDescriptorSupplier
- gradlegRPC.ClientTrackerServiceGrpc$ClientTrackerServiceFutureStub
- gradlegRPC.ClientTrackerServiceGrpc$ClientTrackerServiceImplBase
- gradlegRPC.ClientTrackerServiceGrpc$ClientTrackerServiceMethodDescriptorSupplier
- gradlegRPC.ClientTrackerServiceGrpc$ClientTrackerServiceStub
- gradlegRPC.ClientTrackerServiceGrpc$MethodHandlers
 se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner21.java
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner21
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner21$1
  se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner21$2
 se/oru/coordination/coordination_oru/util/FleetVisualization.java
  se.oru.coordination.coordination_oru.util.FleetVisualization
-io/grpc/hellos/HelloWorldServiceGrpc.java
- io.grpc.hellos.HelloWorldServiceGrpc
- io.grpc.hellos.HelloWorldServiceGrpc$1
- io.grpc.hellos.HelloWorldServiceGrpc$2
- io.grpc.hellos.HelloWorldServiceGrpc$3
- io.grpc.hellos.HelloWorldServiceGrpc$HelloWorldServiceBaseDescriptorSupplier
- io.grpc.hellos.HelloWorldServiceGrpc$HelloWorldServiceBlockingStub
- io.grpc.hellos.HelloWorldServiceGrpc$HelloWorldServiceFileDescriptorSupplier
- io.grpc.hellos.HelloWorldServiceGrpc$HelloWorldServiceFutureStub
- io.grpc.hellos.HelloWorldServiceGrpc$HelloWorldServiceImplBase
- io.grpc.hellos.HelloWorldServiceGrpc$HelloWorldServiceMethodDescriptorSupplier
- io.grpc.hellos.HelloWorldServiceGrpc$HelloWorldServiceStub
- io.grpc.hellos.HelloWorldServiceGrpc$MethodHandlers
 se/oru/coordination/coordination_oru/util/BrowserVisualizationServlet.java
  se.oru.coordination.coordination_oru.util.BrowserVisualizationServlet
-GRPC/HelloWorldServer.java
- GRPC.HelloWorldServer
 se/oru/coordination/coordination_oru/RobotReport.java
  se.oru.coordination.coordination_oru.RobotReport
 se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner6.java
@@ -498,7 +507,7 @@ se/oru/coordination/coordination_oru/tests/icaps2018/talk/ThreeRobotsSimple.java
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.ThreeRobotsSimple
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.ThreeRobotsSimple$1
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.ThreeRobotsSimple$2
-GRPC/CoordinatorServer.java
- GRPC.CoordinatorServer
- GRPC.CoordinatorServer$1
- GRPC.CoordinatorServer$2
+se/oru/coordination/coordination_oru/tests/TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18.java
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18$1
+ se.oru.coordination.coordination_oru.tests.TestTrajectoryEnvelopeCoordinatorWithMotionPlanner18$2

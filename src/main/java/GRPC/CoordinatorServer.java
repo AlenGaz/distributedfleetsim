@@ -187,6 +187,8 @@ public class CoordinatorServer extends AbstractTrajectoryEnvelopeCoordinator {
         List<List<Integer>> cycles = cycleFinder.findSimpleCycles();
         List<List<Integer>> nonliveCycles = new ArrayList<List<Integer>>();
 
+
+
         //Find all the nonlive cycles
 
         //For each cycle...
@@ -528,10 +530,12 @@ public class CoordinatorServer extends AbstractTrajectoryEnvelopeCoordinator {
 
     @Override
     protected void updateDependencies() {
+
         synchronized(solver) {
             if (this.avoidDeadlockGlobally.get()) globalCheckAndRevise();
             else localCheckAndRevise();
         }
+
     }
 
     protected void localCheckAndRevise() {
@@ -549,6 +553,8 @@ public class CoordinatorServer extends AbstractTrajectoryEnvelopeCoordinator {
             for (int robotID : robotIDs) {
                 AbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID);
                 //Update the coordinator view
+
+
                 RobotReport robotReport = robotTracker.getRobotReport();
                 currentReports.put(robotID, robotReport);
                 synchronized(stoppingPoints) {
@@ -1339,11 +1345,15 @@ public class CoordinatorServer extends AbstractTrajectoryEnvelopeCoordinator {
             TrajectoryEnvelope te = this.getCurrentTrajectoryEnvelope(robotID);
             AbstractTrajectoryEnvelopeTracker tet = this.trackers.get(robotID);
 
+
             if (!(tet instanceof TrajectoryEnvelopeTrackerDummy)) {
 
                 int earliestStoppingPathIndex = -1;
                 if (ensureDynamicFeasibility) earliestStoppingPathIndex = this.getForwardModel(robotID).getEarliestStoppingPathIndex(te, this.getRobotReport(robotID));
                 else earliestStoppingPathIndex = this.getRobotReport(robotID).getPathIndex();
+
+
+
 
                 if (earliestStoppingPathIndex != -1) {
                     metaCSPLogger.info("Truncating " + te + " at " + earliestStoppingPathIndex);
@@ -1550,7 +1560,7 @@ public class CoordinatorServer extends AbstractTrajectoryEnvelopeCoordinator {
     }
 
     protected void globalCheckAndRevise() {
-        System.out.println("HELLLLLLLLLLLLo");
+
 
         synchronized(solver) {
             HashMap<Integer,RobotReport> currentReports = new HashMap<Integer,RobotReport>();
@@ -1563,6 +1573,11 @@ public class CoordinatorServer extends AbstractTrajectoryEnvelopeCoordinator {
             HashMap<Pair<Integer,Integer>,Integer> edgesToDelete = new HashMap<Pair<Integer,Integer>,Integer> ();
             HashMap<Pair<Integer,Integer>,Integer> edgesToAdd = new HashMap<Pair<Integer,Integer>,Integer> ();
             HashSet<CriticalSection> reversibleCS = new HashSet<CriticalSection>();
+
+
+
+
+
 
             //Make deps from un-reached stopping points
             Set<Integer> robotIDs = trackers.keySet();
@@ -2204,11 +2219,16 @@ public class CoordinatorServer extends AbstractTrajectoryEnvelopeCoordinator {
     private Server server;
 
     public void start() throws IOException {
+
+        ///hWs = new HelloWorldServiceImpl();
+
         server = ServerBuilder.forPort(PORT)
-                .addService(new HelloWorldServiceImpl())
+                .addService(new CoordinatorService())
                 .build()
                 .start();
         System.out.println("Server started at port: " + server.getPort());
+
+        ///HelloWorldServiceImpl hWs = new HelloWorldServiceImpl();
     }
 
     public void blockUntilShutdown() throws InterruptedException {
