@@ -8,27 +8,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
-import org.metacsp.multi.spatioTemporal.paths.Trajectory;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
-import org.metacsp.utility.UI.Callback;
 
-import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.util.AffineTransformation;
 
-import se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeTracker;
-import se.oru.coordination.coordination_oru.CollisionEvent;
-import se.oru.coordination.coordination_oru.CriticalSection;
-import se.oru.coordination.coordination_oru.Dependency;
-import se.oru.coordination.coordination_oru.Mission;
-import se.oru.coordination.coordination_oru.RobotReport;
-import se.oru.coordination.coordination_oru.TrackingCallback;
-import se.oru.coordination.coordination_oru.TrajectoryEnvelopeCoordinator;
-import se.oru.coordination.coordination_oru.TrajectoryEnvelopeTrackerDummy;
-import se.oru.coordination.coordination_oru.motionplanning.AbstractMotionPlanner;
+import se.oru.coordination.coordination_oru.*;
+import Coordinator.CoordinatorServer;
+import Tracker.TrajectoryEnvelopeTrackerDummy;
+import Tracker.AbstractTrajectoryEnvelopeTracker;
 
-public class TrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnvelopeCoordinator {
+public class TrajectoryEnvelopeCoordinatorSimulation extends CoordinatorServer {
 
 	protected static final long START_TIME = Calendar.getInstance().getTimeInMillis();
 	protected double MAX_VELOCITY;

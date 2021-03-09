@@ -3,47 +3,8 @@ package gradlegRPC;
 option java_package = "io.grpc.hellos";
 
 
-service CoordinatorService{
-  rpc message1(requestMessageCo) returns (responseMessageCo){}
-  rpc grobotID1(getRobotIDCo) returns (robotIDCo){}
-  rpc grobotReport1(getRobotReportCo) returns (robotReportResponseCo);
-}
-
-message requestMessageCo{
-  string name = 1;
-}
-
-message responseMessageCo{
-  string name = 1;
-}
-
-message getRobotIDCo {
-  string key = 1;
-  int32 value = 2;
-}
-
-message robotIDCo {
-  string name = 1;
-}
-
-message robotReportResponseCo{
-  string name = 1;
-}
-
-
-message getRobotReportCo{
-  string kan = 1; // for typing (my robotReport) in the request; so in server we look for a request that starts with (my robotReport)
-  int32 robotID = 2;
-  double x = 3;
-  double y = 4;
-  double z = 5;
-  double roll = 6;
-  double pitch = 7;
-  double yaw = 8;
-  int32 pathIndex = 9;
-  double velocity = 10;
-  double distanceTraveled = 11;
-  int32 criticalPoint = 12;
+service CoordinatorService {
 
 }
+
 

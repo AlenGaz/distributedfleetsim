@@ -12,12 +12,12 @@ import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import org.metacsp.multi.spatioTemporal.paths.Trajectory;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 
-import se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeTracker;
+import Tracker.AbstractTrajectoryEnvelopeTracker;
 import se.oru.coordination.coordination_oru.NetworkConfiguration;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.TrackingCallback;
-import se.oru.coordination.coordination_oru.TrajectoryEnvelopeCoordinator;
-import se.oru.coordination.coordination_oru.util.Missions;
+import Coordinator.CoordinatorServer;
+import Visualizer.util.Missions;
 
 public abstract class TrajectoryEnvelopeTrackerRK4 extends AbstractTrajectoryEnvelopeTracker implements Runnable {
 
@@ -104,7 +104,7 @@ public abstract class TrajectoryEnvelopeTrackerRK4 extends AbstractTrajectoryEnv
 		return curvatureDampening[this.traj.getPose().length-1-index];
 	}
 	
-	public TrajectoryEnvelopeTrackerRK4(TrajectoryEnvelope te, int timeStep, double temporalResolution, double maxVelocity, double maxAcceleration, TrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
+	public TrajectoryEnvelopeTrackerRK4(TrajectoryEnvelope te, int timeStep, double temporalResolution, double maxVelocity, double maxAcceleration, CoordinatorServer tec, TrackingCallback cb) {
 		super(te, temporalResolution, tec, timeStep, cb);
 		this.MAX_VELOCITY = maxVelocity;
 		this.MAX_ACCELERATION = maxAcceleration;
@@ -226,7 +226,7 @@ public abstract class TrajectoryEnvelopeTrackerRK4 extends AbstractTrajectoryEnv
 			}
 			
 			//Check if the current status message is too old.
-			if (timeNow - reportTimeLists.get(reportTimeLists.size()-1) > tec.getControlPeriod() + TrajectoryEnvelopeCoordinator.MAX_TX_DELAY) { //the known delay
+			if (timeNow - reportTimeLists.get(reportTimeLists.size()-1) > tec.getControlPeriod() + CoordinatorServer.MAX_TX_DELAY) { //the known delay
 				metaCSPLogger.severe("* ERROR * Status of Robot"+ te.getRobotID() + " is too old.");
 				//FIXME add a function for stopping pausing the fleet and eventually restart
 				}

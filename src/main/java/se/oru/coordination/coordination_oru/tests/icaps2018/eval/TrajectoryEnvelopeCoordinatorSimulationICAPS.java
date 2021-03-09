@@ -8,8 +8,8 @@ import java.util.Calendar;
 
 import org.metacsp.utility.UI.Callback;
 
-import se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeTracker;
-import se.oru.coordination.coordination_oru.TrajectoryEnvelopeTrackerDummy;
+import Tracker.TrajectoryEnvelopeTrackerDummy;
+import Tracker.AbstractTrajectoryEnvelopeTracker;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
 
 public class TrajectoryEnvelopeCoordinatorSimulationICAPS extends TrajectoryEnvelopeCoordinatorSimulation {

@@ -6,9 +6,7 @@ import java.util.HashMap;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 
-import com.vividsolutions.jts.geom.Coordinate;
-
-import se.oru.coordination.coordination_oru.util.Missions;
+import Visualizer.util.Missions;
 
 /**
  * The {@link Mission} data structure represents a goal for a robot, to be reached via a given

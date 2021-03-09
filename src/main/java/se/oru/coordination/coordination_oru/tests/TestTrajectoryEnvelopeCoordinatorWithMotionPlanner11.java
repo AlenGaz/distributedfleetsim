@@ -1,6 +1,5 @@
 package se.oru.coordination.coordination_oru.tests;
 
-import java.io.File;
 import java.util.Comparator;
 
 import se.oru.coordination.coordination_oru.ConstantAccelerationForwardModel;
@@ -9,10 +8,10 @@ import se.oru.coordination.coordination_oru.Mission;
 import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
-import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
+import fleetClient.motionplanning.ompl.ReedsSheppCarPlanner;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
-import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
-import se.oru.coordination.coordination_oru.util.Missions;
+import Visualizer.util.JTSDrawingPanelVisualization;
+import Visualizer.util.Missions;
 
 @DemoDescription(desc = "Three robots coordinating at high speed (paths obtained with the ReedsSheppCarPlanner).")
 public class TestTrajectoryEnvelopeCoordinatorWithMotionPlanner11 {

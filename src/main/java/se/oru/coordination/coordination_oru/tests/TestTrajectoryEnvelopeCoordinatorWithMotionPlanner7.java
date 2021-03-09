@@ -1,6 +1,5 @@
 package se.oru.coordination.coordination_oru.tests;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -15,10 +14,9 @@ import se.oru.coordination.coordination_oru.Mission;
 import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
-import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
+import fleetClient.motionplanning.ompl.ReedsSheppCarPlanner;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
-import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
-import se.oru.coordination.coordination_oru.util.Missions;
+import Visualizer.util.JTSDrawingPanelVisualization;
 
 @DemoDescription(desc = "Coordination with heuristic that eliminates deadlock (paths obtained with the ReedsSheppCarPlanner).")
 public class TestTrajectoryEnvelopeCoordinatorWithMotionPlanner7 {

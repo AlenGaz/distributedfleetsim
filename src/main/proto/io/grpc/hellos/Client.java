@@ -1171,6 +1171,42 @@ public final class Client {
      * @return The value.
      */
     int getValue();
+
+    /**
+     * <code>string type = 3;</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <code>string type = 3;</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <code>string connection = 4;</code>
+     * @return The connection.
+     */
+    java.lang.String getConnection();
+    /**
+     * <code>string connection = 4;</code>
+     * @return The bytes for connection.
+     */
+    com.google.protobuf.ByteString
+        getConnectionBytes();
+
+    /**
+     * <code>string timeStamp = 5;</code>
+     * @return The timeStamp.
+     */
+    java.lang.String getTimeStamp();
+    /**
+     * <code>string timeStamp = 5;</code>
+     * @return The bytes for timeStamp.
+     */
+    com.google.protobuf.ByteString
+        getTimeStampBytes();
   }
   /**
    * Protobuf type {@code gradlegRPC.getRobotID}
@@ -1186,6 +1222,9 @@ public final class Client {
     }
     private getRobotID() {
       key_ = "";
+      type_ = "";
+      connection_ = "";
+      timeStamp_ = "";
     }
 
     @java.lang.Override
@@ -1227,6 +1266,24 @@ public final class Client {
             case 16: {
 
               value_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              connection_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              timeStamp_ = s;
               break;
             }
             default: {
@@ -1310,6 +1367,120 @@ public final class Client {
       return value_;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object type_;
+    /**
+     * <code>string type = 3;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string type = 3;</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONNECTION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object connection_;
+    /**
+     * <code>string connection = 4;</code>
+     * @return The connection.
+     */
+    @java.lang.Override
+    public java.lang.String getConnection() {
+      java.lang.Object ref = connection_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connection_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string connection = 4;</code>
+     * @return The bytes for connection.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getConnectionBytes() {
+      java.lang.Object ref = connection_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        connection_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 5;
+    private volatile java.lang.Object timeStamp_;
+    /**
+     * <code>string timeStamp = 5;</code>
+     * @return The timeStamp.
+     */
+    @java.lang.Override
+    public java.lang.String getTimeStamp() {
+      java.lang.Object ref = timeStamp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        timeStamp_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string timeStamp = 5;</code>
+     * @return The bytes for timeStamp.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTimeStampBytes() {
+      java.lang.Object ref = timeStamp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        timeStamp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1330,6 +1501,15 @@ public final class Client {
       if (value_ != 0) {
         output.writeInt32(2, value_);
       }
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
+      }
+      if (!getConnectionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, connection_);
+      }
+      if (!getTimeStampBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, timeStamp_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1345,6 +1525,15 @@ public final class Client {
       if (value_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, value_);
+      }
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
+      }
+      if (!getConnectionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, connection_);
+      }
+      if (!getTimeStampBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, timeStamp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1365,6 +1554,12 @@ public final class Client {
           .equals(other.getKey())) return false;
       if (getValue()
           != other.getValue()) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getConnection()
+          .equals(other.getConnection())) return false;
+      if (!getTimeStamp()
+          .equals(other.getTimeStamp())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1380,6 +1575,12 @@ public final class Client {
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + CONNECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getConnection().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeStamp().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1517,6 +1718,12 @@ public final class Client {
 
         value_ = 0;
 
+        type_ = "";
+
+        connection_ = "";
+
+        timeStamp_ = "";
+
         return this;
       }
 
@@ -1545,6 +1752,9 @@ public final class Client {
         io.grpc.hellos.Client.getRobotID result = new io.grpc.hellos.Client.getRobotID(this);
         result.key_ = key_;
         result.value_ = value_;
+        result.type_ = type_;
+        result.connection_ = connection_;
+        result.timeStamp_ = timeStamp_;
         onBuilt();
         return result;
       }
@@ -1599,6 +1809,18 @@ public final class Client {
         }
         if (other.getValue() != 0) {
           setValue(other.getValue());
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getConnection().isEmpty()) {
+          connection_ = other.connection_;
+          onChanged();
+        }
+        if (!other.getTimeStamp().isEmpty()) {
+          timeStamp_ = other.timeStamp_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1732,6 +1954,234 @@ public final class Client {
       public Builder clearValue() {
         
         value_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <code>string type = 3;</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string type = 3;</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string type = 3;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 3;</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object connection_ = "";
+      /**
+       * <code>string connection = 4;</code>
+       * @return The connection.
+       */
+      public java.lang.String getConnection() {
+        java.lang.Object ref = connection_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          connection_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string connection = 4;</code>
+       * @return The bytes for connection.
+       */
+      public com.google.protobuf.ByteString
+          getConnectionBytes() {
+        java.lang.Object ref = connection_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          connection_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string connection = 4;</code>
+       * @param value The connection to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnection(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        connection_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string connection = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConnection() {
+        
+        connection_ = getDefaultInstance().getConnection();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string connection = 4;</code>
+       * @param value The bytes for connection to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnectionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        connection_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object timeStamp_ = "";
+      /**
+       * <code>string timeStamp = 5;</code>
+       * @return The timeStamp.
+       */
+      public java.lang.String getTimeStamp() {
+        java.lang.Object ref = timeStamp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          timeStamp_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string timeStamp = 5;</code>
+       * @return The bytes for timeStamp.
+       */
+      public com.google.protobuf.ByteString
+          getTimeStampBytes() {
+        java.lang.Object ref = timeStamp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          timeStamp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string timeStamp = 5;</code>
+       * @param value The timeStamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimeStamp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        timeStamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string timeStamp = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimeStamp() {
+        
+        timeStamp_ = getDefaultInstance().getTimeStamp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string timeStamp = 5;</code>
+       * @param value The bytes for timeStamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimeStampBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        timeStamp_ = value;
         onChanged();
         return this;
       }
@@ -4355,21 +4805,22 @@ public final class Client {
     java.lang.String[] descriptorData = {
       "\n\014client.proto\022\ngradlegRPC\"\036\n\016requestMes" +
       "sage\022\014\n\004name\030\001 \001(\t\"\037\n\017responseMessage\022\014\n" +
-      "\004name\030\001 \001(\t\"(\n\ngetRobotID\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\005\"\027\n\007robotID\022\014\n\004name\030\001 \001(\t\"#" +
-      "\n\023robotReportResponse\022\014\n\004name\030\001 \001(\t\"\317\001\n\016" +
-      "getRobotReport\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002" +
-      " \001(\005\022\t\n\001x\030\003 \001(\001\022\t\n\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n" +
-      "\004roll\030\006 \001(\001\022\r\n\005pitch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022" +
-      "\021\n\tpathIndex\030\t \001(\005\022\020\n\010velocity\030\n \001(\001\022\030\n\020" +
-      "distanceTraveled\030\013 \001(\001\022\025\n\rcriticalPoint\030" +
-      "\014 \001(\0052\333\001\n\013fleetClient\022D\n\007message\022\032.gradl" +
-      "egRPC.requestMessage\032\033.gradlegRPC.respon" +
-      "seMessage\"\000\0229\n\010grobotID\022\026.gradlegRPC.get" +
-      "RobotID\032\023.gradlegRPC.robotID\"\000\022K\n\014grobot" +
-      "Report\022\032.gradlegRPC.getRobotReport\032\037.gra" +
-      "dlegRPC.robotReportResponseB\020\n\016io.grpc.h" +
-      "ellosb\006proto3"
+      "\004name\030\001 \001(\t\"]\n\ngetRobotID\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\005\022\014\n\004type\030\003 \001(\t\022\022\n\nconnectio" +
+      "n\030\004 \001(\t\022\021\n\ttimeStamp\030\005 \001(\t\"\027\n\007robotID\022\014\n" +
+      "\004name\030\001 \001(\t\"#\n\023robotReportResponse\022\014\n\004na" +
+      "me\030\001 \001(\t\"\317\001\n\016getRobotReport\022\013\n\003kan\030\001 \001(\t" +
+      "\022\017\n\007robotID\030\002 \001(\005\022\t\n\001x\030\003 \001(\001\022\t\n\001y\030\004 \001(\001\022" +
+      "\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006 \001(\001\022\r\n\005pitch\030\007 \001(\001\022" +
+      "\013\n\003yaw\030\010 \001(\001\022\021\n\tpathIndex\030\t \001(\005\022\020\n\010veloc" +
+      "ity\030\n \001(\001\022\030\n\020distanceTraveled\030\013 \001(\001\022\025\n\rc" +
+      "riticalPoint\030\014 \001(\0052\333\001\n\013fleetClient\022D\n\007me" +
+      "ssage\022\032.gradlegRPC.requestMessage\032\033.grad" +
+      "legRPC.responseMessage\"\000\0229\n\010grobotID\022\026.g" +
+      "radlegRPC.getRobotID\032\023.gradlegRPC.robotI" +
+      "D\"\000\022K\n\014grobotReport\022\032.gradlegRPC.getRobo" +
+      "tReport\032\037.gradlegRPC.robotReportResponse" +
+      "B\020\n\016io.grpc.hellosb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4392,7 +4843,7 @@ public final class Client {
     internal_static_gradlegRPC_getRobotID_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_getRobotID_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "Key", "Value", "Type", "Connection", "TimeStamp", });
     internal_static_gradlegRPC_robotID_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_gradlegRPC_robotID_fieldAccessorTable = new

@@ -11,9 +11,8 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.TrackingCallback;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
-import se.oru.coordination.coordination_oru.util.BrowserVisualization;
-import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
-import se.oru.coordination.coordination_oru.util.Missions;
+import Visualizer.util.BrowserVisualization;
+import Visualizer.util.Missions;
 
 @DemoDescription(desc = "Simple test showing the use of pre-planned paths stored in files, plus ability to truncate envelopes.")
 public class TestTrajectoryEnvelopeCoordinatorThreeRobotsReverseEnvelope {

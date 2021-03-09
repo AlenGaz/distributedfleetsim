@@ -1,8 +1,10 @@
 package se.oru.coordination.coordination_oru.tests;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Comparator;
 
-import GRPC.FleetClient;
+import fleetClient.FleetClient;
 import aima.core.util.datastructure.Pair;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -14,8 +16,8 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.TrackingCallback;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
-import se.oru.coordination.coordination_oru.util.BrowserVisualization;
-import se.oru.coordination.coordination_oru.util.Missions;
+import Visualizer.util.BrowserVisualization;
+import Visualizer.util.Missions;
 
 @DemoDescription(desc = "Simple test showing the use of pre-planned paths stored in files.")
 public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
@@ -155,7 +157,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 
 							try{
 								FleetClient client = new FleetClient(channel);
-								client.makeGreeting2(pair2);
+								client.makeGreeting2(pair2, "simulated", InetAddress.getLocalHost().toString(), String.valueOf( System.currentTimeMillis()));
 
 
 								client.makeRobotReport("my RobotReport", tec.getRobotReport(robotID).getRobotID()
@@ -171,7 +173,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 							/////////////////////////////////////////////////////////////
 
 						}
-						catch (InterruptedException e) { e.printStackTrace(); }
+						catch (InterruptedException | UnknownHostException e) { e.printStackTrace(); }
 					}
 				}
 			};

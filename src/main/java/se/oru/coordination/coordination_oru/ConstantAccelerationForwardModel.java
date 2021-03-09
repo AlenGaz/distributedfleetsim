@@ -1,5 +1,6 @@
 package se.oru.coordination.coordination_oru;
 
+import Coordinator.CoordinatorServer;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.Trajectory;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
@@ -29,7 +30,7 @@ public class ConstantAccelerationForwardModel implements ForwardModel {
 		State state = new State(0.0, currentState.getVelocity());
 		double time = 0.0;
 		double deltaTime = 0.0001;
-		long lookaheadInMillis = 2*(this.controlPeriodInMillis + TrajectoryEnvelopeCoordinator.MAX_TX_DELAY + trackingPeriodInMillis);
+		long lookaheadInMillis = 2*(this.controlPeriodInMillis + CoordinatorServer.MAX_TX_DELAY + trackingPeriodInMillis);
 		if (lookaheadInMillis > 0) {
 			while (time*this.temporalResolution < lookaheadInMillis) {
 				se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, false, maxVel, 1.0, maxAccel);
@@ -74,7 +75,7 @@ public class ConstantAccelerationForwardModel implements ForwardModel {
 		State state = new State(currentState.getDistanceTraveled(), currentState.getVelocity());
 		double time = 0.0;
 		double deltaTime = 0.0001;
-		long lookaheadInMillis = 2*(this.controlPeriodInMillis + TrajectoryEnvelopeCoordinator.MAX_TX_DELAY + trackingPeriodInMillis);
+		long lookaheadInMillis = 2*(this.controlPeriodInMillis + CoordinatorServer.MAX_TX_DELAY + trackingPeriodInMillis);
 		if (lookaheadInMillis > 0) {
 			while (time*temporalResolution < lookaheadInMillis) {
 				se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, false, maxVel, 1.0, maxAccel*1.1);

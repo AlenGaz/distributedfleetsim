@@ -1,8 +1,9 @@
 package se.oru.coordination.coordination_oru;
 
+import Tracker.AbstractTrajectoryEnvelopeTracker;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 
-import se.oru.coordination.coordination_oru.util.FleetVisualization;
+import Visualizer.util.FleetVisualization;
 
 /**
  * Implement this class to provide a callback to pass on to an {@link AbstractTrajectoryEnvelopeTracker} which
@@ -13,7 +14,7 @@ import se.oru.coordination.coordination_oru.util.FleetVisualization;
  */
 public abstract class TrackingCallback {
 
-	protected TrajectoryEnvelope myTE = null;
+	public TrajectoryEnvelope myTE = null;
 	
 	public void updateTrajectoryEnvelope(TrajectoryEnvelope newTE) {
 		this.myTE = newTE;
