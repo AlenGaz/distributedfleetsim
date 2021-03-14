@@ -14,7 +14,7 @@ import Tracker.AbstractTrajectoryEnvelopeTracker;
  * @author fpa
  *
  */
-public abstract class TrajectoryEnvelopeTrackerDummy extends TrackerServer implements Runnable {
+public abstract class TrajectoryEnvelopeTrackerDummy extends AbstractTrajectoryEnvelopeTracker implements Runnable {
 	
 	private Thread th = null;
 	private boolean parkingFinished = false;

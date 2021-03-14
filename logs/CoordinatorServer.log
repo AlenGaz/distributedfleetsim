@@ -1,0 +1,43 @@
+1615588049120@[CoordinatorServer] Status @ 568 ms
+1615588049120@[CoordinatorServer] ├─ Eff period ..... 0 ms
+1615588049121@[CoordinatorServer] ├─ Network ........ 0 variables, 0 constraints
+1615588049121@[CoordinatorServer] ├─ Robots really .. 
+1615588049121@[CoordinatorServer] ├─ Robots view .... 
+1615588049121@[CoordinatorServer] ├─ Dependencies ... []
+1615588049123@[CoordinatorServer] ├─ Total number of obsolete critical sections ... 0.
+1615588049123@[CoordinatorServer] ├─ Total messages sent: ... 0, lost: 0, retransmitted: 0. Packets lost: 0, number of replicas: 1.
+1615588049123@[CoordinatorServer] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1615588049124@[CoordinatorServer] └─ Total re-planned path: ... 0, successful: 0.
+1615588049983@[CoordinatorServer] Status @ 1670 ms
+1615588049983@[CoordinatorServer] ├─ Eff period ..... 1000 ms
+1615588049983@[CoordinatorServer] ├─ Network ........ 0 variables, 0 constraints
+1615588049983@[CoordinatorServer] ├─ Robots really .. 
+1615588049984@[CoordinatorServer] ├─ Robots view .... 
+1615588049989@[CoordinatorServer] ├─ Dependencies ... []
+1615588049990@[CoordinatorServer] ├─ Total number of obsolete critical sections ... 0.
+1615588049990@[CoordinatorServer] ├─ Total messages sent: ... 0, lost: 0, retransmitted: 0. Packets lost: 0, number of replicas: 1.
+1615588049990@[CoordinatorServer] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1615588049991@[CoordinatorServer] └─ Total re-planned path: ... 0, successful: 0.
+1615588050837@[CoordinatorServer] Placed Robot1 in pose (0.0942, 0.0053, 0.0192): TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((0.0942, 0.0053, 0.0192))
+1615588050897@[CoordinatorServer] Placed Robot2 in pose (-25.6948, 11.5911, -1.2945): TrajectoryEnvelope 1 (Robot 2, SE 4) [0;0] Parking ((-25.6948, 11.5911, -1.2945))
+1615588051453@[CoordinatorServer] Status @ 3136 ms
+1615588051453@[CoordinatorServer] ├─ Eff period ..... 1022 ms
+1615588051455@[CoordinatorServer] ├─ Network ........ 2 variables, 6 constraints
+1615588051455@[CoordinatorServer] ├─ Robots really .. Robot1 (P): -1   Robot2 (P): -1   
+1615588051456@[CoordinatorServer] ├─ Robots view .... Robot1 (P): -1   Robot2 (P): -1   
+1615588051456@[CoordinatorServer] ├─ Dependencies ... []
+1615588051456@[CoordinatorServer] ├─ Total number of obsolete critical sections ... 0.
+1615588051456@[CoordinatorServer] ├─ Total messages sent: ... 0, lost: 0, retransmitted: 0. Packets lost: 0, number of replicas: 1.
+1615588051456@[CoordinatorServer] ├─ Total unalive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1615588051456@[CoordinatorServer] └─ Total re-planned path: ... 0, successful: 0.
+1615588051511@[CoordinatorServer] Placed Robot3 in pose (-12.8272, -28.7825, 0.3854): TrajectoryEnvelope 2 (Robot 3, SE 7) [0;0] Parking ((-12.8272, -28.7825, 0.3854))
+1615588051906@[CoordinatorServer] Stopping points along trajectory for Robot1: [36]
+1615588051988@[CoordinatorServer] There are now 0 critical sections
+1615588052076@[CoordinatorServer] Stopping points Robot1: [36]
+1615588065232@[CoordinatorServer] Tracking finished for TrajectoryEnvelope 4 (Robot 3, SE 13) [0;33] Driving
+1615588065235@[CoordinatorServer] Cleaning up critical sections of Robot3
+1615588065236@[CoordinatorServer] Cleaning up TrajectoryEnvelope 2 (Robot 3, SE 7) [0;0] Parking ((-12.8272, -28.7825, 0.3854))
+1615588065258@[CoordinatorServer] Cleaning up TrajectoryEnvelope 4 (Robot 3, SE 13) [0;33] Driving
+1615588065269@[CoordinatorServer] Placed Robot3 in pose (10.4541, -13.7123, 0.5269): TrajectoryEnvelope 5 (Robot 3, SE 16) [0;0] Parking (whatever)
+1615588065283@[CoordinatorServer] There are now 0 critical sections
+1615588065283@[CoordinatorServer] Stopping points Robot1: [36]

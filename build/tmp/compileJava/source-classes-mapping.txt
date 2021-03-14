@@ -44,6 +44,8 @@ se/oru/coordination/coordination_oru/tests/icaps2018/talk/TwoRobotsFollowing.jav
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.TwoRobotsFollowing
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.TwoRobotsFollowing$1
  se.oru.coordination.coordination_oru.tests.icaps2018.talk.TwoRobotsFollowing$2
+GRPC/TrackerService.java
+ GRPC.TrackerService
 fleetClient/FleetClient.java
  fleetClient.FleetClient
  fleetClient.FleetClient$1
@@ -57,6 +59,14 @@ se/oru/coordination/coordination_oru/tests/safetyAndLiveness/Basement.java
  se.oru.coordination.coordination_oru.tests.safetyAndLiveness.Basement$1
 io/grpc/hellos/Tracker.java
  io.grpc.hellos.Tracker
+ io.grpc.hellos.Tracker$getCriticalPointRequestMessage
+ io.grpc.hellos.Tracker$getCriticalPointRequestMessage$1
+ io.grpc.hellos.Tracker$getCriticalPointRequestMessage$Builder
+ io.grpc.hellos.Tracker$getCriticalPointRequestMessageOrBuilder
+ io.grpc.hellos.Tracker$getCriticalPointResponseMessage
+ io.grpc.hellos.Tracker$getCriticalPointResponseMessage$1
+ io.grpc.hellos.Tracker$getCriticalPointResponseMessage$Builder
+ io.grpc.hellos.Tracker$getCriticalPointResponseMessageOrBuilder
 se/oru/coordination/coordination_oru/tests/MinimalExample.java
  se.oru.coordination.coordination_oru.tests.MinimalExample
  se.oru.coordination.coordination_oru.tests.MinimalExample$1

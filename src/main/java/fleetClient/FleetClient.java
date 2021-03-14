@@ -14,6 +14,8 @@ import java.util.logging.Logger;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
 import io.grpc.hellos.Client;
+import io.grpc.hellos.Coordinator;
+import io.grpc.hellos.CoordinatorServiceGrpc;
 import io.grpc.hellos.fleetClientGrpc;
 import se.oru.coordination.coordination_oru.*;
 import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
@@ -25,6 +27,7 @@ public class FleetClient {
 
     private static final Logger logger = Logger.getLogger(FleetClient.class.getName());
     private final fleetClientGrpc.fleetClientBlockingStub blockingStub;
+    private final CoordinatorServiceGrpc.CoordinatorServiceBlockingStub blockingStub2;
 
     // object using in cord
     public fleetClient.FleetClient FleetClient;
@@ -32,6 +35,7 @@ public class FleetClient {
     public FleetClient(Channel channel) {
         //blockingStub = HelloWorldServiceGrpc.newBlockingStub(channel);
         blockingStub = fleetClientGrpc.newBlockingStub(channel);
+        blockingStub2 = CoordinatorServiceGrpc.newBlockingStub(channel);
     }
 
     public void makeGreeting(String name) {
@@ -66,6 +70,22 @@ public class FleetClient {
         System.out.println("Logging the response of the server ...");
     }
 
+    /*public Integer requestCriticalPoint (Pair<Integer, Integer> critcalPoint) {
+
+        Coordinator.getCriticalPoint getcriticalpoint = Coordinator.getCriticalPoint.newBuilder().setRobotID(critcalPoint.getFirst()).setCriticalPoint(critcalPoint.getSecond()).build();
+        Coordinator.getCriticalPointResponseMessage robotid = null;
+
+        try {
+            //System.out.println("making greeting with: " + pair);
+            robotid = blockingStub2.gCriticalPoint(getcriticalpoint);
+        } catch (StatusRuntimeException e) {
+            logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
+            //return;
+        }
+        System.out.println("Logging the response of the server ...");
+
+        return robotid.getCriticalPoint();
+    }*/
 
     public void makeRobotReport(String my_robotReport, int robotid, double x, double y, double z, double roll, double pitch, double yaw, double velocity, int pathIndex, double distanceTraveled, int criticalPoint) {
         Client.getRobotReport getRR = Client.getRobotReport.newBuilder().setKan(my_robotReport).setRobotID(robotid).setX(x).setY(y).setZ(z).setRoll(roll).setPitch(pitch).setYaw(yaw).setVelocity(velocity).setPathIndex(pathIndex).setDistanceTraveled(distanceTraveled).setCriticalPoint(criticalPoint).build();
@@ -262,9 +282,9 @@ public class FleetClient {
 
         try {
             //FleetClient client = new FleetClient(channel);
-            //client.makeGreeting((messageToSend));
+            //client.makeGreeting3((messageToSend));
 
-            test();
+            //test();
 
         }catch (StatusRuntimeException e) {
                 System.out.println("Could not connect");

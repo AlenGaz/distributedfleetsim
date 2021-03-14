@@ -35,10 +35,10 @@ public final class FleetClientService extends fleetClientGrpc.fleetClientImplBas
 
         if(request.getKey().equals("My ID")) {
 
-            System.out.println("got Robot id: " + request.getValue());
-            System.out.println("got Robot type: " + request.getType());
-            System.out.println("got Robot connectionIP: " + request.getConnection());
-            System.out.println("got Robot Timestamp: " + request.getTimeStamp());
+            //System.out.println("got Robot id: " + request.getValue());
+            //System.out.println("got Robot type: " + request.getType());
+            //System.out.println("got Robot connectionIP: " + request.getConnection());
+            //System.out.println("got Robot Timestamp: " + request.getTimeStamp());
 
             clientConnection cC = new clientConnection(request.getType(),request.getConnection(),request.getTimeStamp());
             clientConnectionInfos.put(request.getValue(), cC);
@@ -50,7 +50,7 @@ public final class FleetClientService extends fleetClientGrpc.fleetClientImplBas
             }
 
             TrajectoryEnvelopeCoordinatorSimulation tes = new TrajectoryEnvelopeCoordinatorSimulation();
-            System.out.println("Current ID's connected: " + ID_list);
+            //System.out.println("Current ID's connected: " + ID_list);
             // System.out.println("Current clientConnections: " + clientConnectionInfos); The client Connection infos are not displaying correct
 
             respondWithSendingIDreceived(responseObserver);
@@ -75,7 +75,7 @@ public final class FleetClientService extends fleetClientGrpc.fleetClientImplBas
 
         }
 
-        System.out.println("RobotReports ->>>  " + robotIDtoRobotReport+ "\n");
+        //System.out.println("RobotReports ->>>  " + robotIDtoRobotReport+ "\n");
         respondToRobotReport(responseObserver);
     }
 

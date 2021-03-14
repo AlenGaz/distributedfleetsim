@@ -23,6 +23,11 @@ import javax.swing.SwingUtilities;
 
 import Tracker.AbstractTrajectoryEnvelopeTracker;
 import Tracker.TrajectoryEnvelopeTrackerDummy;
+import fleetClient.FleetClient;
+import Tracker.TrackerServer;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.hellos.Tracker;
 import org.apache.commons.collections.comparators.ComparatorChain;
 import org.metacsp.framework.Constraint;
 import org.metacsp.multi.allenInterval.AllenIntervalConstraint;
@@ -41,10 +46,10 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.util.AffineTransformation;
 
 import aima.core.util.datastructure.Pair;
-import se.oru.coordination.coordination_oru.*;
 import fleetClient.motionplanning.AbstractMotionPlanner;
 import Visualizer.util.FleetVisualization;
 import Visualizer.util.StringUtils;
+import se.oru.coordination.coordination_oru.*;
 
 
 /**
@@ -59,6 +64,7 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 
 	////////////////////
 	public Pair <String,Integer> pair2;
+	public Pair <Integer,Integer> critcalPoint2;
 	///////////////////
 
 	public static String TITLE = "coordination_oru - Robot-agnostic online coordination for multiple robots";
@@ -461,22 +467,24 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 
 		//System.out.println("Fahad:" + robotID);
 
-		//ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
+		ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
 
-		try{
+		//try{
 			//FleetClient client = new FleetClient(channel);
 			//client.makeGreeting2(pair2);
-		}
-		finally {
+		//}
+		//finally {
 
 			//channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
-		}
+		//}
 		/////////////////////////////////////////////////////////////
 
 		
 		synchronized (trackers) {
+
 			AbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
-		
+
+
 			//If the robot is not muted
 			if (tracker != null && !muted.contains(robotID) && !(tracker instanceof TrajectoryEnvelopeTrackerDummy)) {
 					
@@ -484,9 +492,19 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 					communicatedCPs.put(tracker, new Pair<Integer,Long>(criticalPoint, Calendar.getInstance().getTimeInMillis()));
 					externalCPCounters.replace(tracker,externalCPCounters.get(tracker)+1);
 					tracker.setCriticalPoint(criticalPoint, externalCPCounters.get(tracker)%Integer.MAX_VALUE);
-					
+
+
+					/////////////////////////////////////////
+					critcalPoint2 = new Pair<Integer, Integer>(robotID, criticalPoint);
+					TrackerServer tracker2 = new TrackerServer(channel);
+					tracker2.requestCriticalPoint(criticalPoint);
+					/////////////////////////////////////////
+
+
 					//for statistics
-					totalMsgsSent.incrementAndGet(); 
+					totalMsgsSent.incrementAndGet();
+
+
 					if (retransmitt) totalMsgsReTx.incrementAndGet();
 					
 					//metaCSPLogger.info("Sent critical point " + criticalPoint + " to Robot" + robotID +".");

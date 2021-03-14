@@ -13,7 +13,7 @@ public class TestServer {
 
     public void start() throws IOException {
         server = ServerBuilder.forPort(PORT)
-                .addService(new FleetClientService() )
+                .addService(new CoordinatorService() )
                 .build()
                 .start();
         System.out.println("Server started at port: " + server.getPort());

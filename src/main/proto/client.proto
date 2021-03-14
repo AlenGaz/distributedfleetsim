@@ -7,7 +7,6 @@ service fleetClient {
   rpc message(requestMessage) returns (responseMessage){}
   rpc grobotID(getRobotID) returns (robotID){}
   rpc grobotReport(getRobotReport) returns (robotReportResponse);
-
 }
 
 
@@ -50,3 +49,4 @@ message getRobotReport {
   double distanceTraveled = 11;
   int32 criticalPoint = 12;
 }
+

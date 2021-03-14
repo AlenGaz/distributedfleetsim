@@ -27,6 +27,37 @@ public final class TrackerServiceGrpc {
   public static final String SERVICE_NAME = "gradlegRPC.TrackerService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<io.grpc.hellos.Tracker.getCriticalPointRequestMessage,
+      io.grpc.hellos.Tracker.getCriticalPointResponseMessage> getGCriticalPointMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "gCriticalPoint",
+      requestType = io.grpc.hellos.Tracker.getCriticalPointRequestMessage.class,
+      responseType = io.grpc.hellos.Tracker.getCriticalPointResponseMessage.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.hellos.Tracker.getCriticalPointRequestMessage,
+      io.grpc.hellos.Tracker.getCriticalPointResponseMessage> getGCriticalPointMethod() {
+    io.grpc.MethodDescriptor<io.grpc.hellos.Tracker.getCriticalPointRequestMessage, io.grpc.hellos.Tracker.getCriticalPointResponseMessage> getGCriticalPointMethod;
+    if ((getGCriticalPointMethod = TrackerServiceGrpc.getGCriticalPointMethod) == null) {
+      synchronized (TrackerServiceGrpc.class) {
+        if ((getGCriticalPointMethod = TrackerServiceGrpc.getGCriticalPointMethod) == null) {
+          TrackerServiceGrpc.getGCriticalPointMethod = getGCriticalPointMethod =
+              io.grpc.MethodDescriptor.<io.grpc.hellos.Tracker.getCriticalPointRequestMessage, io.grpc.hellos.Tracker.getCriticalPointResponseMessage>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "gCriticalPoint"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.hellos.Tracker.getCriticalPointRequestMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.hellos.Tracker.getCriticalPointResponseMessage.getDefaultInstance()))
+              .setSchemaDescriptor(new TrackerServiceMethodDescriptorSupplier("gCriticalPoint"))
+              .build();
+        }
+      }
+    }
+    return getGCriticalPointMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -75,8 +106,22 @@ public final class TrackerServiceGrpc {
    */
   public static abstract class TrackerServiceImplBase implements io.grpc.BindableService {
 
+    /**
+     */
+    public void gCriticalPoint(io.grpc.hellos.Tracker.getCriticalPointRequestMessage request,
+        io.grpc.stub.StreamObserver<io.grpc.hellos.Tracker.getCriticalPointResponseMessage> responseObserver) {
+      asyncUnimplementedUnaryCall(getGCriticalPointMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getGCriticalPointMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.hellos.Tracker.getCriticalPointRequestMessage,
+                io.grpc.hellos.Tracker.getCriticalPointResponseMessage>(
+                  this, METHODID_G_CRITICAL_POINT)))
           .build();
     }
   }
@@ -94,6 +139,14 @@ public final class TrackerServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new TrackerServiceStub(channel, callOptions);
     }
+
+    /**
+     */
+    public void gCriticalPoint(io.grpc.hellos.Tracker.getCriticalPointRequestMessage request,
+        io.grpc.stub.StreamObserver<io.grpc.hellos.Tracker.getCriticalPointResponseMessage> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGCriticalPointMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -108,6 +161,13 @@ public final class TrackerServiceGrpc {
     protected TrackerServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new TrackerServiceBlockingStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public io.grpc.hellos.Tracker.getCriticalPointResponseMessage gCriticalPoint(io.grpc.hellos.Tracker.getCriticalPointRequestMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getGCriticalPointMethod(), getCallOptions(), request);
     }
   }
 
@@ -124,8 +184,17 @@ public final class TrackerServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new TrackerServiceFutureStub(channel, callOptions);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.hellos.Tracker.getCriticalPointResponseMessage> gCriticalPoint(
+        io.grpc.hellos.Tracker.getCriticalPointRequestMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGCriticalPointMethod(), getCallOptions()), request);
+    }
   }
 
+  private static final int METHODID_G_CRITICAL_POINT = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -144,6 +213,10 @@ public final class TrackerServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_G_CRITICAL_POINT:
+          serviceImpl.gCriticalPoint((io.grpc.hellos.Tracker.getCriticalPointRequestMessage) request,
+              (io.grpc.stub.StreamObserver<io.grpc.hellos.Tracker.getCriticalPointResponseMessage>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -205,6 +278,7 @@ public final class TrackerServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new TrackerServiceFileDescriptorSupplier())
+              .addMethod(getGCriticalPointMethod())
               .build();
         }
       }

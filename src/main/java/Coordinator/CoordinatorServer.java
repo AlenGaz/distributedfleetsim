@@ -891,8 +891,7 @@ public class CoordinatorServer extends AbstractTrajectoryEnvelopeCoordinator {
                         boolean retransmitt = communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == dep.getWaitingPoint() && currentReports.get(robotID).getCriticalPoint() != dep.getWaitingPoint()
                                 && ((int)(Calendar.getInstance().getTimeInMillis()-communicatedCPs.get(tracker).getSecond()) > maxDelay);
                         setCriticalPoint(dep.getWaitingRobotID(), dep.getWaitingPoint(), retransmitt);
-
-                    }
+                        }
                     else {
                         boolean retransmitt = communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == -1 && currentReports.get(robotID).getCriticalPoint() != -1
                                 && ((int)(Calendar.getInstance().getTimeInMillis()-communicatedCPs.get(tracker).getSecond()) > maxDelay);

@@ -7,6 +7,10 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.TreeMap;
 
+import aima.core.util.datastructure.Pair;
+import fleetClient.FleetClient;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import org.metacsp.multi.spatioTemporal.paths.Trajectory;
@@ -346,7 +350,8 @@ public abstract class TrajectoryEnvelopeTrackerRK4 extends AbstractTrajectoryEnv
 		    state.setVelocity(state.getVelocity()+dvdt*deltaTime);
 		}
 	}
-	
+
+	public Pair <Integer,Integer> pair5;
 
 	@Override
 	public void setCriticalPoint(int criticalPointToSet, int extCPCounter) {
@@ -354,6 +359,7 @@ public abstract class TrajectoryEnvelopeTrackerRK4 extends AbstractTrajectoryEnv
 		final int criticalPoint = criticalPointToSet;
 		final int externalCPCount = extCPCounter;
 		final int numberOfReplicas = tec.getNumberOfReplicas();
+
 		
 		//Define a thread that will send the information
 		Thread waitToTXThread = new Thread("Wait to TX thread for robot " + te.getRobotID()) {
@@ -417,7 +423,12 @@ public abstract class TrajectoryEnvelopeTrackerRK4 extends AbstractTrajectoryEnv
 	
 	@Override
 	protected void setCriticalPoint(int criticalPointToSet) {
-				
+
+		System.out.println("criticalPoint: " + criticalPoint);
+		System.out.println("criticalPointToSet: " + criticalPointToSet);
+
+
+
 		if (this.criticalPoint != criticalPointToSet) {
 			
 			//A new intermediate index to stop at has been given
@@ -544,6 +555,14 @@ public abstract class TrajectoryEnvelopeTrackerRK4 extends AbstractTrajectoryEnv
 	
 	@Override
 	public void run() {
+
+/*		pair5 = new Pair<Integer, Integer>(1, criticalPoint);
+		ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
+		FleetClient test = new FleetClient(channel);
+		System.out.println("TracjectoryRK4....... ->" + test.requestCriticalPoint(pair5));
+		System.out.println("###RK4");*/
+
+
 		this.elapsedTrackingTime = 0.0;
 		double deltaTime = 0.0;
 		boolean atCP = false;
@@ -552,8 +571,8 @@ public abstract class TrajectoryEnvelopeTrackerRK4 extends AbstractTrajectoryEnv
 		
 		
 		while (true) {
-						
-			//End condition: passed the middle AND velocity < 0 AND no criticalPoint 			
+
+			//End condition: passed the middle AND velocity < 0 AND no criticalPoint
 			boolean skipIntegration = false;
 			//if (state.getPosition() >= totalDistance/2.0 && state.getVelocity() < 0.0) {
 			if (state.getPosition() >= this.positionToSlowDown && state.getVelocity() < 0.0) {
