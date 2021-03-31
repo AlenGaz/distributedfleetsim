@@ -1,12 +1,12 @@
 package se.oru.coordination.coordination_oru;
 
-import Coordinator.CoordinatorServer;
+import fleetClient.TrajectoryEnvelopeCoordinator;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.Trajectory;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 
+import se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeTrackerRK4;
 import se.oru.coordination.coordination_oru.simulation2D.State;
-import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeTrackerRK4;
 
 public class ConstantAccelerationForwardModel implements ForwardModel {
 		
@@ -26,21 +26,21 @@ public class ConstantAccelerationForwardModel implements ForwardModel {
 	@Override
 	public boolean canStop(TrajectoryEnvelope te, RobotReport currentState, int targetPathIndex, boolean useVelocity) {
 		if (useVelocity && currentState.getVelocity() <= 0.0) return true;
-		double distance = se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeTrackerRK4.computeDistance(te.getTrajectory(), (currentState.getPathIndex() != -1 ? currentState.getPathIndex() : 0), targetPathIndex);
+		double distance = RemoteTrajectoryEnvelopeTrackerRK4.computeDistance(te.getTrajectory(), (currentState.getPathIndex() != -1 ? currentState.getPathIndex() : 0), targetPathIndex);
 		State state = new State(0.0, currentState.getVelocity());
 		double time = 0.0;
 		double deltaTime = 0.0001;
-		long lookaheadInMillis = 2*(this.controlPeriodInMillis + CoordinatorServer.MAX_TX_DELAY + trackingPeriodInMillis);
+		long lookaheadInMillis = 2*(this.controlPeriodInMillis + TrajectoryEnvelopeCoordinator.MAX_TX_DELAY + trackingPeriodInMillis);
 		if (lookaheadInMillis > 0) {
 			while (time*this.temporalResolution < lookaheadInMillis) {
-				se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, false, maxVel, 1.0, maxAccel);
+				RemoteTrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, false, maxVel, 1.0, maxAccel);
 				time += deltaTime;
 			}
 		}
 		//decelerate from maximum to stop
 		while (state.getVelocity() > 0) {
 			if (state.getPosition() > distance) return false;
-			se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, true, maxVel, 1.0, maxAccel);
+			RemoteTrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, true, maxVel, 1.0, maxAccel);
 			time += deltaTime;
 		}
 		return true;
@@ -75,15 +75,15 @@ public class ConstantAccelerationForwardModel implements ForwardModel {
 		State state = new State(currentState.getDistanceTraveled(), currentState.getVelocity());
 		double time = 0.0;
 		double deltaTime = 0.0001;
-		long lookaheadInMillis = 2*(this.controlPeriodInMillis + CoordinatorServer.MAX_TX_DELAY + trackingPeriodInMillis);
+		long lookaheadInMillis = 2*(this.controlPeriodInMillis + TrajectoryEnvelopeCoordinator.MAX_TX_DELAY + trackingPeriodInMillis);
 		if (lookaheadInMillis > 0) {
 			while (time*temporalResolution < lookaheadInMillis) {
-				se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, false, maxVel, 1.0, maxAccel*1.1);
+				RemoteTrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, false, maxVel, 1.0, maxAccel*1.1);
 				time += deltaTime;
 			}
 		}
 		while (state.getVelocity() > 0) {
-			se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, true, maxVel, 1.0, maxAccel*0.9);
+			RemoteTrajectoryEnvelopeTrackerRK4.integrateRK4(state, time, deltaTime, true, maxVel, 1.0, maxAccel*0.9);
 			time += deltaTime;
 		}
 		return getPathIndex(te,state);

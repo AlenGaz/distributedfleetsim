@@ -1,10 +1,54 @@
 syntax = "proto3";
 package gradlegRPC;
-option java_package = "io.grpc.hellos";
+option java_package = "io.grpc.coordinator";
 
 
 service CoordinatorService {
+  rpc coordinatorrobotreport(requestrobotreport) returns (responserobotreport){}
+  rpc coordinatorcriticalpoint(coordinatorGetCriticalPointRequestMessage) returns (coordinatorGetCriticalPointResponseMessage);
+  rpc coordinatordependencies(getCurrentDependencies) returns (noneResponse);
+
+//google.protobuf.Empty
 
 }
 
+// service rpc not used
+message requestrobotreport{
+    string req = 1;
+    int32 robotid = 2;
+    double x = 3;
+    double y = 4;
+    double z = 5;
+    double roll = 6;
+    double pitch = 7;
+    double yaw = 8;
+    int32 pathIndex = 9;
+    double velocity = 10;
+    double distanceTraveled = 11;
+    int32 criticalPoint = 12;
+    }
 
+//service rpc not used
+message responserobotreport{
+  string name = 1;
+  int32 criticalPoint =2;
+}
+
+message coordinatorGetCriticalPointRequestMessage {
+  string kan = 1;
+  int32 robotID = 2;
+}
+
+message coordinatorGetCriticalPointResponseMessage {
+  int32 criticalPoint = 1;
+}
+
+message getCurrentDependencies{
+  string kan = 1;
+  bytes depBytes = 2;
+}
+
+message noneResponse{
+  string none = 1;
+
+}

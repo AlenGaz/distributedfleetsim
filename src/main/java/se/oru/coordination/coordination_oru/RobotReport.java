@@ -1,6 +1,6 @@
 package se.oru.coordination.coordination_oru;
 
-import Tracker.AbstractTrajectoryEnvelopeTracker;
+import fleetClient.AbstractTrajectoryEnvelopeTracker;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.utility.logging.MetaCSPLogging;
 
@@ -42,8 +42,12 @@ public class RobotReport {
 		HelloWorldClient client = new HelloWorldClient(channel);
 		client.makeGreeting(Integer.toString(robotID));*/
 	}
-	
-	/**
+
+    public RobotReport() {
+
+    }
+
+    /**
 	 * Get the ID of the robot to which this report refers to.
 	 * @return The ID of the robot.
 	 */

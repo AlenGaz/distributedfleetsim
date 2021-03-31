@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
-import fleetClient.motionplanning.OccupancyMap;
+import se.oru.coordination.coordination_oru.motionplanning.OccupancyMap;
 
 public class MapInspector extends JPanel implements MouseListener, MouseMotionListener, KeyListener {
 

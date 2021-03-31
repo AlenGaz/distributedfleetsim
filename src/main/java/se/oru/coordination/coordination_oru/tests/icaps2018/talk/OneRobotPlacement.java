@@ -8,9 +8,9 @@ import com.vividsolutions.jts.geom.Coordinate;
 import se.oru.coordination.coordination_oru.ConstantAccelerationForwardModel;
 import se.oru.coordination.coordination_oru.Mission;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
-import fleetClient.motionplanning.ompl.ReedsSheppCarPlanner;
-import fleetClient.motionplanning.ompl.ReedsSheppCarPlanner.PLANNING_ALGORITHM;
-import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
+import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
+import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner.PLANNING_ALGORITHM;
+import se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import Visualizer.util.BrowserVisualization;
 import Visualizer.util.Missions;
 
@@ -21,7 +21,7 @@ public class OneRobotPlacement {
 
 		double MAX_ACCEL = 1.0;
 		double MAX_VEL = 4.0;
-		final TrajectoryEnvelopeCoordinatorSimulation tec = new TrajectoryEnvelopeCoordinatorSimulation(MAX_VEL,MAX_ACCEL);
+		final RemoteTrajectoryEnvelopeCoordinatorSimulation tec = new RemoteTrajectoryEnvelopeCoordinatorSimulation(MAX_VEL,MAX_ACCEL);
 		
 		//ST-18 Footprint
 		Coordinate[] st18footprint = new Coordinate[] {

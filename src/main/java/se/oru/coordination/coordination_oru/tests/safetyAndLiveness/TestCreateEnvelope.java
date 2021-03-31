@@ -8,9 +8,9 @@ import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope.SpatialEnvelope
 
 import com.vividsolutions.jts.geom.Coordinate;
 
-import Coordinator.AbstractTrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.AbstractTrajectoryEnvelopeCoordinator;
 import se.oru.coordination.coordination_oru.CriticalSection;
-import fleetClient.motionplanning.ompl.ReedsSheppCarPlanner;
+import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 
 public class TestCreateEnvelope {
 

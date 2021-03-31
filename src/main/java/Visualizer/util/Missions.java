@@ -25,6 +25,7 @@ import java.util.zip.ZipOutputStream;
 
 import javax.imageio.ImageIO;
 
+import fleetClient.TrajectoryEnvelopeCoordinator;
 import org.jgrapht.GraphPath;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultWeightedEdge;
@@ -43,8 +44,7 @@ import com.vividsolutions.jts.geom.Geometry;
 
 import se.oru.coordination.coordination_oru.Mission;
 //import se.oru.coordination.coordination_oru.TrajectoryEnvelopeCoordinator;
-import Coordinator.CoordinatorServer;
-import fleetClient.motionplanning.AbstractMotionPlanner;
+import se.oru.coordination.coordination_oru.motionplanning.AbstractMotionPlanner;
 
 /**
  * This class collects utility methods for storing {@link Mission}s, regulating their dispatch, maintaining locations
@@ -951,7 +951,7 @@ public class Missions {
 	 * @param tec The {@link TrajectoryEnvelopeCoordinator} that coordinates the missions.
 	 * @param robotIDs The robot IDs for which a dispatching thread should be started.
 	 */
-	public static void startMissionDispatchers(final CoordinatorServer tec, int ... robotIDs) {
+	public static void startMissionDispatchers(final TrajectoryEnvelopeCoordinator tec, int ... robotIDs) {
 		startMissionDispatchers(tec, true, robotIDs);
 	}
 	
@@ -962,7 +962,7 @@ public class Missions {
 	 * @param loop Set to <code>false</code> if missions should be de-queued once dispatched. 
 	 * @param robotIDs The robot IDs for which a dispatching thread should be started.
 	 */
-	public static void startMissionDispatchers(final CoordinatorServer tec, final boolean loop, int ... robotIDs) {
+	public static void startMissionDispatchers(final TrajectoryEnvelopeCoordinator tec, final boolean loop, int ... robotIDs) {
 		//Start a mission dispatching thread for each robot, which will run forever
 		for (final int robotID : robotIDs) {
 			//For each robot, create a thread that dispatches the "next" mission when the robot is free 

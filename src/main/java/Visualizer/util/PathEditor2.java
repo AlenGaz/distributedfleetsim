@@ -30,9 +30,9 @@ import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.util.AffineTransformation;
 
-import fleetClient.motionplanning.OccupancyMap;
-import fleetClient.motionplanning.ompl.ReedsSheppCarPlanner;
-import fleetClient.motionplanning.ompl.ReedsSheppCarPlanner.PLANNING_ALGORITHM;
+import se.oru.coordination.coordination_oru.motionplanning.OccupancyMap;
+import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
+import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner.PLANNING_ALGORITHM;
 import Visualizer.util.splines.BezierSplineFactory;
 
 public class PathEditor2 {

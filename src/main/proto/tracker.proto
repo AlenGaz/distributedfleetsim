@@ -1,18 +1,8 @@
 syntax = "proto3";
 package gradlegRPC;
-option java_package = "io.grpc.hellos";
+option java_package = "io.grpc.tracker";
 
 
 service TrackerService {
-  rpc gCriticalPoint(getCriticalPointRequestMessage) returns (getCriticalPointResponseMessage);
-}
-
-message getCriticalPointRequestMessage {
-  int32 robotID = 1;
-  int32 criticalPoint = 2;
-}
-
-message getCriticalPointResponseMessage {
-  int32 criticalPoint = 1;
 }
 

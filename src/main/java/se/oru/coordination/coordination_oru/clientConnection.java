@@ -8,9 +8,6 @@ public class clientConnection {
     public String timeStamp;
 
 
-
-
-
     public clientConnection(String type, String connection, String timeStamp) {
         this.type = type;
         this.connection = connection;

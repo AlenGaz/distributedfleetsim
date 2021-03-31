@@ -1,7 +1,6 @@
 
 
 package se.oru.coordination.coordination_oru;
-import Coordinator.AbstractTrajectoryEnvelopeCoordinator;
 //import java.io.File;
 //import java.util.ArrayList;
 //import java.util.Arrays;
