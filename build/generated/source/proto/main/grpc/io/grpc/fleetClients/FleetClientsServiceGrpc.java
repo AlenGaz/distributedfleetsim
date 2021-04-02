@@ -89,35 +89,35 @@ public final class FleetClientsServiceGrpc {
     return getMessageMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<io.grpc.fleetClients.Fleetclients.getRobotID,
-      io.grpc.fleetClients.Fleetclients.robotID> getGrobotIDMethod;
+  private static volatile io.grpc.MethodDescriptor<io.grpc.fleetClients.Fleetclients.makeGreeting,
+      io.grpc.fleetClients.Fleetclients.greetingResponse> getGreetingMessageMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "grobotID",
-      requestType = io.grpc.fleetClients.Fleetclients.getRobotID.class,
-      responseType = io.grpc.fleetClients.Fleetclients.robotID.class,
+      fullMethodName = SERVICE_NAME + '/' + "greetingMessage",
+      requestType = io.grpc.fleetClients.Fleetclients.makeGreeting.class,
+      responseType = io.grpc.fleetClients.Fleetclients.greetingResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.grpc.fleetClients.Fleetclients.getRobotID,
-      io.grpc.fleetClients.Fleetclients.robotID> getGrobotIDMethod() {
-    io.grpc.MethodDescriptor<io.grpc.fleetClients.Fleetclients.getRobotID, io.grpc.fleetClients.Fleetclients.robotID> getGrobotIDMethod;
-    if ((getGrobotIDMethod = FleetClientsServiceGrpc.getGrobotIDMethod) == null) {
+  public static io.grpc.MethodDescriptor<io.grpc.fleetClients.Fleetclients.makeGreeting,
+      io.grpc.fleetClients.Fleetclients.greetingResponse> getGreetingMessageMethod() {
+    io.grpc.MethodDescriptor<io.grpc.fleetClients.Fleetclients.makeGreeting, io.grpc.fleetClients.Fleetclients.greetingResponse> getGreetingMessageMethod;
+    if ((getGreetingMessageMethod = FleetClientsServiceGrpc.getGreetingMessageMethod) == null) {
       synchronized (FleetClientsServiceGrpc.class) {
-        if ((getGrobotIDMethod = FleetClientsServiceGrpc.getGrobotIDMethod) == null) {
-          FleetClientsServiceGrpc.getGrobotIDMethod = getGrobotIDMethod =
-              io.grpc.MethodDescriptor.<io.grpc.fleetClients.Fleetclients.getRobotID, io.grpc.fleetClients.Fleetclients.robotID>newBuilder()
+        if ((getGreetingMessageMethod = FleetClientsServiceGrpc.getGreetingMessageMethod) == null) {
+          FleetClientsServiceGrpc.getGreetingMessageMethod = getGreetingMessageMethod =
+              io.grpc.MethodDescriptor.<io.grpc.fleetClients.Fleetclients.makeGreeting, io.grpc.fleetClients.Fleetclients.greetingResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "grobotID"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "greetingMessage"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.grpc.fleetClients.Fleetclients.getRobotID.getDefaultInstance()))
+                  io.grpc.fleetClients.Fleetclients.makeGreeting.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.grpc.fleetClients.Fleetclients.robotID.getDefaultInstance()))
-              .setSchemaDescriptor(new FleetClientsServiceMethodDescriptorSupplier("grobotID"))
+                  io.grpc.fleetClients.Fleetclients.greetingResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FleetClientsServiceMethodDescriptorSupplier("greetingMessage"))
               .build();
         }
       }
     }
-    return getGrobotIDMethod;
+    return getGreetingMessageMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<io.grpc.fleetClients.Fleetclients.robotReportRequest,
@@ -280,9 +280,9 @@ public final class FleetClientsServiceGrpc {
 
     /**
      */
-    public void grobotID(io.grpc.fleetClients.Fleetclients.getRobotID request,
-        io.grpc.stub.StreamObserver<io.grpc.fleetClients.Fleetclients.robotID> responseObserver) {
-      asyncUnimplementedUnaryCall(getGrobotIDMethod(), responseObserver);
+    public void greetingMessage(io.grpc.fleetClients.Fleetclients.makeGreeting request,
+        io.grpc.stub.StreamObserver<io.grpc.fleetClients.Fleetclients.greetingResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGreetingMessageMethod(), responseObserver);
     }
 
     /**
@@ -323,12 +323,12 @@ public final class FleetClientsServiceGrpc {
                 io.grpc.fleetClients.Fleetclients.responseMessage>(
                   this, METHODID_MESSAGE)))
           .addMethod(
-            getGrobotIDMethod(),
+            getGreetingMessageMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                io.grpc.fleetClients.Fleetclients.getRobotID,
-                io.grpc.fleetClients.Fleetclients.robotID>(
-                  this, METHODID_GROBOT_ID)))
+                io.grpc.fleetClients.Fleetclients.makeGreeting,
+                io.grpc.fleetClients.Fleetclients.greetingResponse>(
+                  this, METHODID_GREETING_MESSAGE)))
           .addMethod(
             getGrobotReportMethod(),
             asyncUnaryCall(
@@ -389,10 +389,10 @@ public final class FleetClientsServiceGrpc {
 
     /**
      */
-    public void grobotID(io.grpc.fleetClients.Fleetclients.getRobotID request,
-        io.grpc.stub.StreamObserver<io.grpc.fleetClients.Fleetclients.robotID> responseObserver) {
+    public void greetingMessage(io.grpc.fleetClients.Fleetclients.makeGreeting request,
+        io.grpc.stub.StreamObserver<io.grpc.fleetClients.Fleetclients.greetingResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGrobotIDMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGreetingMessageMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -453,9 +453,9 @@ public final class FleetClientsServiceGrpc {
 
     /**
      */
-    public io.grpc.fleetClients.Fleetclients.robotID grobotID(io.grpc.fleetClients.Fleetclients.getRobotID request) {
+    public io.grpc.fleetClients.Fleetclients.greetingResponse greetingMessage(io.grpc.fleetClients.Fleetclients.makeGreeting request) {
       return blockingUnaryCall(
-          getChannel(), getGrobotIDMethod(), getCallOptions(), request);
+          getChannel(), getGreetingMessageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -515,10 +515,10 @@ public final class FleetClientsServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.grpc.fleetClients.Fleetclients.robotID> grobotID(
-        io.grpc.fleetClients.Fleetclients.getRobotID request) {
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.fleetClients.Fleetclients.greetingResponse> greetingMessage(
+        io.grpc.fleetClients.Fleetclients.makeGreeting request) {
       return futureUnaryCall(
-          getChannel().newCall(getGrobotIDMethod(), getCallOptions()), request);
+          getChannel().newCall(getGreetingMessageMethod(), getCallOptions()), request);
     }
 
     /**
@@ -548,7 +548,7 @@ public final class FleetClientsServiceGrpc {
 
   private static final int METHODID_G_CRITICAL_POINT = 0;
   private static final int METHODID_MESSAGE = 1;
-  private static final int METHODID_GROBOT_ID = 2;
+  private static final int METHODID_GREETING_MESSAGE = 2;
   private static final int METHODID_GROBOT_REPORT = 3;
   private static final int METHODID_COORDINATORROBOTREPORT = 4;
   private static final int METHODID_CLIENT_CRITICALPOINT = 5;
@@ -578,9 +578,9 @@ public final class FleetClientsServiceGrpc {
           serviceImpl.message((io.grpc.fleetClients.Fleetclients.requestMessage) request,
               (io.grpc.stub.StreamObserver<io.grpc.fleetClients.Fleetclients.responseMessage>) responseObserver);
           break;
-        case METHODID_GROBOT_ID:
-          serviceImpl.grobotID((io.grpc.fleetClients.Fleetclients.getRobotID) request,
-              (io.grpc.stub.StreamObserver<io.grpc.fleetClients.Fleetclients.robotID>) responseObserver);
+        case METHODID_GREETING_MESSAGE:
+          serviceImpl.greetingMessage((io.grpc.fleetClients.Fleetclients.makeGreeting) request,
+              (io.grpc.stub.StreamObserver<io.grpc.fleetClients.Fleetclients.greetingResponse>) responseObserver);
           break;
         case METHODID_GROBOT_REPORT:
           serviceImpl.grobotReport((io.grpc.fleetClients.Fleetclients.robotReportRequest) request,
@@ -657,7 +657,7 @@ public final class FleetClientsServiceGrpc {
               .setSchemaDescriptor(new FleetClientsServiceFileDescriptorSupplier())
               .addMethod(getGCriticalPointMethod())
               .addMethod(getMessageMethod())
-              .addMethod(getGrobotIDMethod())
+              .addMethod(getGreetingMessageMethod())
               .addMethod(getGrobotReportMethod())
               .addMethod(getCoordinatorrobotreportMethod())
               .addMethod(getClientCriticalpointMethod())

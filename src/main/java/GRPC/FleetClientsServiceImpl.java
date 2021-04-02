@@ -45,18 +45,18 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
     //int criticalPointResponse = 0;
 
 
-    public void grobotID(Fleetclients.getRobotID request, StreamObserver<Fleetclients.robotID> responseObserver) {
+   /* public void greetingMessage(Fleetclients.makeGreeting request, StreamObserver<Fleetclients.robotID> responseObserver) {
         System.out.println("handling [" + request + "]"+ " endpoint: [" + request.toString() + "]");
 
         if(request.getKey().equals("My ID")) {
 
             System.out.println("got Robot id: " + request.getValue());
             System.out.println("got Robot type: " + request.getType());
-            System.out.println("got Robot connectionIP: " + request.getConnection());
+            System.out.println("got Robot connectionIP: " + request.getIP());
             System.out.println("got Robot Timestamp: " + request.getTimeStamp());
             System.out.println("got Robot port: " + request.getPort());
 
-            clientConnection cC = new clientConnection(request.getType(),request.getConnection(),request.getTimeStamp(),request.getPort());
+            clientConnection cC = new clientConnection(request.getType(),request.getIP(),request.getTimeStamp(),request.getPort());
             clientConnectionInfos.put(request.getValue(), cC);
             System.out.println("Current clientconnections: " + clientConnectionInfos);
 
@@ -72,7 +72,7 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
         }
 
     }
-
+*/
 
     public void grobotReport(Fleetclients.robotReportRequest request,StreamObserver<Fleetclients.robotReportResponse> responseObserver) {
 
@@ -164,9 +164,9 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
 
 
     //Generic response to stub
-    private void respondWithSendingIDreceived(StreamObserver<Fleetclients.robotID> responseObserver) {
-        Fleetclients.robotID response =
-                Fleetclients.robotID.newBuilder()
+    private void respondWithSendingIDreceived(StreamObserver<Fleetclients.responseMessage> responseObserver) {
+        Fleetclients.responseMessage response =
+                Fleetclients.responseMessage.newBuilder()
                         .setName(text + "&id received" ).build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();

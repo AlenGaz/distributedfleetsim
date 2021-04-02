@@ -19,6 +19,7 @@ import io.grpc.coordinator.Coordinator;
 import io.grpc.coordinator.CoordinatorServiceGrpc;
 import io.grpc.fleetClients.FleetClientsServiceGrpc;
 import io.grpc.fleetClients.Fleetclients;
+import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.sat4j.pb.tools.DependencyHelper;
 import se.oru.coordination.coordination_oru.Dependency;
 
@@ -38,36 +39,24 @@ public class FleetClient {
     }
 
 
-    public void makeGreeting(String name) {
+    public void makeGreeting(String kan, int robotID, String type, String IP, int port, Pose pose,
+            String timeStamp, double maxAccel, double maxVel,
+                             double trackingPeriodInMillis, MakeFootPrint makeFootPrint) {
 
-        Fleetclients.requestMessage request = Fleetclients.requestMessage.newBuilder().setName(name).build();
-
-        Fleetclients.responseMessage response;
+        Fleetclients.makeGreeting makegreeting = Fleetclients.makeGreeting.newBuilder().setKan(kan).setRobotID(robotID).setType(type).setIP(IP).setPort(port)
+                .setRpose(Fleetclients.robotPose.newBuilder().setX(pose.getX()).setY(pose.getY()).setZ(pose.getZ())
+                        .setRoll(pose.getRoll()).setPitch(pose.getPitch()).setYaw(pose.getYaw()).build()).setTimeStamp(timeStamp).setMaxAccel(maxAccel).setMaxVel(maxVel)
+                .setTrackingPeriodInMillis(trackingPeriodInMillis)
+                .setMakeFootPrint(Fleetclients.MakeFootPrint.newBuilder().setCenterX(makeFootPrint.getCenterX()).setCenterY(makeFootPrint.centerY).setMinVerts(makeFootPrint.minVerts).setMaxVerts(makeFootPrint.maxVerts).setMinRadius(makeFootPrint.minRadius).setMaxRadius(makeFootPrint.maxRadius).build()).build();
+        Fleetclients.greetingResponse greetingresponse;
 
         try {
-            //System.out.println("making greeting with : " + name);
-            response = blockingStub.message(request);
+            System.out.println("making greeting");
+            greetingresponse = blockingStub.greetingMessage(makegreeting);
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
             return;
         }
-        System.out.println("Logging the response of the server ...");
-        System.out.println(" Response is: " + response.getName());
-    }
-
-    public void makeGreeting2(Pair<String, Integer> pair, String type, String connection, String timeStamp) {
-
-        Fleetclients.getRobotID getrobotid = Fleetclients.getRobotID.newBuilder().setKey(pair.getFirst()).setValue(pair.getSecond()).setType(type).setConnection(connection).setTimeStamp(timeStamp).build();
-        Fleetclients.robotID robotid;
-
-        try {
-            System.out.println("making greeting with: " + pair);
-            robotid = blockingStub.grobotID(getrobotid);
-        } catch (StatusRuntimeException e) {
-            logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
-            return;
-        }
-        System.out.println("Logging the response of the server ...");
     }
 
     public void makeRobotReport(String my_robotReport, int robotid, double x, double y, double z, double roll, double pitch, double yaw, double velocity, int pathIndex, double distanceTraveled, int criticalPoint) {

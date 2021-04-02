@@ -61,7 +61,7 @@ import Visualizer.util.StringUtils;
  * @author fpa
  *
  */
-public abstract class AbstractTrajectoryEnvelopeCoordinator extends CoordinatorServiceImpl {
+public abstract class AbstractTrajectoryEnvelopeCoordinator {
 
 	////////////////////
 	public Pair <String,Integer> pair2;
@@ -535,14 +535,10 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator extends CoordinatorS
 
 		CoordinatorServiceImpl y = new CoordinatorServiceImpl();
 		HashMap<Integer, RobotReport> people = y.robotIDtoRobotReport;
-
 		//System.out.println("-_-" + y.robotIDtoRobotReport);
 
-
-		synchronized (robotIDtoRobotReport) {
-			//TODO robotIDtoRobotReport empty
-			//System.out.println("[Abstract Coordinator] get robotIDtoRobotReport: " + robotIDtoRobotReport.get(robotID));
-		}
+		//TODO robotIDtoRobotReport empty
+		//System.out.println("[Abstract Coordinator] get robotIDtoRobotReport: " + robotIDtoRobotReport.get(robotID));
 
 		// In the coordinator service have to reqeuest from the tracker for the latest report and set it to return here
 		//Read the last message received

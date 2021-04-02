@@ -107,6 +107,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 		tec.placeRobot(2, Missions.getLocation("r2p"));
 		tec.placeRobot(3, Missions.getLocation("r3p"));
 
+
 		// Make a mission for each robot, and store it in the global hashmap:
 		// -- from parking location of robot i (rip)
 		// -- to destination location of robot i (desti)
@@ -143,7 +144,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 							if (tec.addMissions(m)) iteration++;
 						}
 
-
+/*
 						String messageToSend;
 						String target = "localhost:50051";
 						ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
@@ -155,7 +156,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 
 							try {
 								FleetClient client = new FleetClient(channel);
-								client.makeGreeting2(pair2, "simulated", InetAddress.getLocalHost().toString(), String.valueOf( System.currentTimeMillis()));
+								//client.makeGreeting(pair2, "simulated", InetAddress.getLocalHost().toString(), String.valueOf( System.currentTimeMillis()));
 
 								client.makeRobotReport("my RobotReport", tec.getRobotReport(robotID).getRobotID()
 										, tec.getRobotReport(robotID).getPose().getX(), tec.getRobotReport(robotID).getPose().getY(), tec.getRobotReport(robotID).getPose().getZ(), tec.getRobotReport(robotID).getPose().getRoll()
@@ -171,7 +172,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 							finally {
 							}
 						}
-						catch (InterruptedException | IOException e) { e.printStackTrace(); }
+						catch (InterruptedException | IOException e) { e.printStackTrace(); }*/
 
 
 					}
