@@ -120,6 +120,37 @@ public final class CoordinatorServiceGrpc {
     return getCoordinatordependenciesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.robotsGreeting,
+      io.grpc.coordinator.Coordinator.robotgreetingResponse> getCoordinatorgetGreetingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "coordinatorgetGreeting",
+      requestType = io.grpc.coordinator.Coordinator.robotsGreeting.class,
+      responseType = io.grpc.coordinator.Coordinator.robotgreetingResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.robotsGreeting,
+      io.grpc.coordinator.Coordinator.robotgreetingResponse> getCoordinatorgetGreetingMethod() {
+    io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.robotsGreeting, io.grpc.coordinator.Coordinator.robotgreetingResponse> getCoordinatorgetGreetingMethod;
+    if ((getCoordinatorgetGreetingMethod = CoordinatorServiceGrpc.getCoordinatorgetGreetingMethod) == null) {
+      synchronized (CoordinatorServiceGrpc.class) {
+        if ((getCoordinatorgetGreetingMethod = CoordinatorServiceGrpc.getCoordinatorgetGreetingMethod) == null) {
+          CoordinatorServiceGrpc.getCoordinatorgetGreetingMethod = getCoordinatorgetGreetingMethod =
+              io.grpc.MethodDescriptor.<io.grpc.coordinator.Coordinator.robotsGreeting, io.grpc.coordinator.Coordinator.robotgreetingResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "coordinatorgetGreeting"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.robotsGreeting.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.robotgreetingResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoordinatorServiceMethodDescriptorSupplier("coordinatorgetGreeting"))
+              .build();
+        }
+      }
+    }
+    return getCoordinatorgetGreetingMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -189,6 +220,16 @@ public final class CoordinatorServiceGrpc {
       asyncUnimplementedUnaryCall(getCoordinatordependenciesMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     *google.protobuf.Empty
+     * </pre>
+     */
+    public void coordinatorgetGreeting(io.grpc.coordinator.Coordinator.robotsGreeting request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.robotgreetingResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCoordinatorgetGreetingMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -212,6 +253,13 @@ public final class CoordinatorServiceGrpc {
                 io.grpc.coordinator.Coordinator.getCurrentDependencies,
                 io.grpc.coordinator.Coordinator.noneResponse>(
                   this, METHODID_COORDINATORDEPENDENCIES)))
+          .addMethod(
+            getCoordinatorgetGreetingMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.coordinator.Coordinator.robotsGreeting,
+                io.grpc.coordinator.Coordinator.robotgreetingResponse>(
+                  this, METHODID_COORDINATORGET_GREETING)))
           .build();
     }
   }
@@ -253,6 +301,17 @@ public final class CoordinatorServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getCoordinatordependenciesMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     *google.protobuf.Empty
+     * </pre>
+     */
+    public void coordinatorgetGreeting(io.grpc.coordinator.Coordinator.robotsGreeting request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.robotgreetingResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCoordinatorgetGreetingMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -288,6 +347,16 @@ public final class CoordinatorServiceGrpc {
     public io.grpc.coordinator.Coordinator.noneResponse coordinatordependencies(io.grpc.coordinator.Coordinator.getCurrentDependencies request) {
       return blockingUnaryCall(
           getChannel(), getCoordinatordependenciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *google.protobuf.Empty
+     * </pre>
+     */
+    public io.grpc.coordinator.Coordinator.robotgreetingResponse coordinatorgetGreeting(io.grpc.coordinator.Coordinator.robotsGreeting request) {
+      return blockingUnaryCall(
+          getChannel(), getCoordinatorgetGreetingMethod(), getCallOptions(), request);
     }
   }
 
@@ -328,11 +397,23 @@ public final class CoordinatorServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getCoordinatordependenciesMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *google.protobuf.Empty
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.robotgreetingResponse> coordinatorgetGreeting(
+        io.grpc.coordinator.Coordinator.robotsGreeting request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCoordinatorgetGreetingMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_COORDINATORROBOTREPORT = 0;
   private static final int METHODID_COORDINATORCRITICALPOINT = 1;
   private static final int METHODID_COORDINATORDEPENDENCIES = 2;
+  private static final int METHODID_COORDINATORGET_GREETING = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -362,6 +443,10 @@ public final class CoordinatorServiceGrpc {
         case METHODID_COORDINATORDEPENDENCIES:
           serviceImpl.coordinatordependencies((io.grpc.coordinator.Coordinator.getCurrentDependencies) request,
               (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse>) responseObserver);
+          break;
+        case METHODID_COORDINATORGET_GREETING:
+          serviceImpl.coordinatorgetGreeting((io.grpc.coordinator.Coordinator.robotsGreeting) request,
+              (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.robotgreetingResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -427,6 +512,7 @@ public final class CoordinatorServiceGrpc {
               .addMethod(getCoordinatorrobotreportMethod())
               .addMethod(getCoordinatorcriticalpointMethod())
               .addMethod(getCoordinatordependenciesMethod())
+              .addMethod(getCoordinatorgetGreetingMethod())
               .build();
         }
       }

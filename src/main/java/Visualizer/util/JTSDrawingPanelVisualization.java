@@ -8,8 +8,7 @@ import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-import CoordinatorPackage.CoordinatorServer;
-import fleetClient.TrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.TrajectoryEnvelopeCoordinator;
 import org.metacsp.multi.spatial.DE9IM.GeometricShapeDomain;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import org.metacsp.utility.UI.JTSDrawingPanel;

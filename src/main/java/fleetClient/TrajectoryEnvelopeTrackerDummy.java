@@ -30,7 +30,7 @@ public abstract class TrajectoryEnvelopeTrackerDummy extends AbstractTrajectoryE
 	 * @param cb An optional callback that will be called during tracking.
 	 */
 	public TrajectoryEnvelopeTrackerDummy(TrajectoryEnvelope te, int timeStep, double temporalResolution, AbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
-		super(te, temporalResolution, tec, timeStep, cb);
+		super(te, temporalResolution, timeStep, cb);
 		this.te = te;
 		this.traj = te.getTrajectory();
 		this.temporalResolution = temporalResolution;

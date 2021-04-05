@@ -1,8 +1,7 @@
 package GRPC;
 
 import CoordinatorPackage.AbstractTrajectoryEnvelopeCoordinator;
-import fleetClient.AbstractTrajectoryEnvelopeTracker;
-import fleetClient.TrajectoryEnvelopeCoordinator;
+import Launch.MakeFootPrint;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
@@ -14,11 +13,7 @@ import io.grpc.fleetClients.FleetClientsServiceGrpc;
 import io.grpc.fleetClients.Fleetclients;
 import io.grpc.stub.StreamObserver;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
-import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
-import se.oru.coordination.coordination_oru.Dependency;
-import se.oru.coordination.coordination_oru.NetworkConfiguration;
-import se.oru.coordination.coordination_oru.RobotReport;
-import se.oru.coordination.coordination_oru.TrackingCallback;
+import se.oru.coordination.coordination_oru.*;
 
 
 import java.io.*;
@@ -31,21 +26,9 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
     private static final Logger logger = Logger.getLogger(CoordinatorServiceImpl.class.getName());
     private final FleetClientsServiceGrpc.FleetClientsServiceBlockingStub blockingStubClient;
-    public static HashMap<Integer, RobotReport> robotIDtoRobotReport = new HashMap<Integer, RobotReport>();
+    public HashMap<Integer, RobotReport> robotIDtoRobotReport = new HashMap<Integer, RobotReport>();
+    public HashMap<Integer, clientConnection> robotIDtoClientConnection = new HashMap<Integer,clientConnection>();
 
-    private static final CoordinatorServiceImpl instance = new CoordinatorServiceImpl ();
-
-
-    public void printDependencies() {
-
-        //Set up infrastructure that maintains the representation
-        //tec.setupSolver(0, 100000000);
-        //Start the thread that revises precedences at every period
-        //tec.startInference();
-
-        System.out.println("getCurrentDependencies->: " + tec.getCurrentDependencies());
-
-    }
 
     AbstractTrajectoryEnvelopeCoordinator tec = null;
 
@@ -67,6 +50,45 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
     }
 
 
+    public void coordinatorgetGreeting(Coordinator.robotsGreeting request,
+                                       StreamObserver<Coordinator.robotgreetingResponse> responseObserver){
+
+        if(request.getKan().equals("greeting")){
+
+            int _robotID = request.getRobotID();
+            String _type= request.getType();
+            String _ip= request.getIP();
+            int _port= request.getPort();
+            Pose _pose = new Pose(request.getRpose().getX(),request.getRpose().getY(),request.getRpose().getZ(),
+                                  request.getRpose().getRoll(), request.getRpose().getPitch(),request.getRpose().getYaw());
+            String _timeStamp = request.getTimeStamp();
+            double _maxAccel = request.getMaxAccel();
+            double _maxVel = request.getMaxVel();
+            double _trackingPeriod = request.getTrackingPeriodInMillis();
+            MakeFootPrint _footprint = new MakeFootPrint(request.getMakeFootPrint().getCenterX(),request.getMakeFootPrint().getCenterY()
+                                                        ,request.getMakeFootPrint().getMinVerts(), request.getMakeFootPrint().getMaxVerts(),
+                                                        request.getMakeFootPrint().getMinRadius(),request.getMakeFootPrint().getMaxRadius());
+            clientConnection _clientConnection = new clientConnection(_type,_ip,_port,_pose,_timeStamp,_maxAccel,_maxVel,_trackingPeriod,_footprint);
+            robotIDtoClientConnection.put(_robotID, _clientConnection);
+
+            System.out.println("Got ClientConnections timeStamp: " + robotIDtoClientConnection.get(1).getTimeStamp());
+            System.out.println("Got ClientConnections type: " + robotIDtoClientConnection.get(1).getType());
+
+
+
+            robotgreetingResponse(responseObserver);
+        }
+    }
+
+    public void robotgreetingResponse(StreamObserver<Coordinator.robotgreetingResponse> responseObserver){
+
+        System.out.println("[CoordinatorServiceImpl] tec.numberOfReplicas is: " + tec.getNumberOfReplicas());
+        Coordinator.robotgreetingResponse response = Coordinator.robotgreetingResponse.newBuilder().setName("Response").setNumofReplicas(tec.getNumberOfReplicas()).build();
+
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
     public void coordinatorrobotreport(Coordinator.requestrobotreport request,
                                        StreamObserver<Coordinator.responserobotreport> responseObserver) {
 
@@ -83,26 +105,25 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             RobotReport rR = new RobotReport(_robotID, _pose, request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
 
 
-            printDependencies();
-
             robotIDtoRobotReport.put(_robotID,rR);
 
         }
+
 
 
         //System.out.println("RobotReports" + robotIDtoRobotReport);
 
 
 
-   /*   System.out.println("Tec timeInMil" + tec.getCurrentTimeInMillis());
+        System.out.println("Tec timeInMil" + tec.getCurrentTimeInMillis());
         System.out.println("Tec CurrentDependencies" + tec.getCurrentDependencies());
-        System.out.println("Tec trackers" + tec.trackers.get(1));
-        System.out.println("Tec staticDep" + tec.currentDependencies);
-        System.out.println("Tec getNofRepls" + tec.getNumberOfReplicas());
-        System.out.println("TEC tenvelope" + tec.getCurrentTrajectoryEnvelope(1));
+        //System.out.println("Tec trackers" + tec.trackers.get(1));
+        //System.out.println("Tec staticDep" + tec.currentDependencies);
+        //System.out.println("Tec getNofRepls" + tec.getNumberOfReplicas());
+        //System.out.println("TEC tenvelope" + tec.getCurrentTrajectoryEnvelope(1));
         System.out.println("Tec superEnvelopes" + tec.getCurrentSuperEnvelope(1));
 
-        */
+
 
         //AbstractTrajectoryEnvelopeCoordinator.metaCSPLogger.info("Printing something from tec" + tec.getCurrentDependencies());
         //AbstractTrajectoryEnvelopeCoordinator.metaCSPLogger.info("Printing something from metaCSP");
@@ -111,10 +132,6 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
         responsetorobotreport(responseObserver);
     }
 
-    public HashMap<Integer, RobotReport> getHashMap() {
-        System.out.println("ZZZZ" + robotIDtoRobotReport);
-        return robotIDtoRobotReport;
-    }
 
     public void responsetorobotreport(StreamObserver<Coordinator.responserobotreport> responseObserver){
 
@@ -210,15 +227,16 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
         HashSet<Dependency> depdes = null;
         byte[] dependenciesBytes = null;
 
+        System.out.println("Inside coordinatordependencies ");
 
         if(request.getKan().equals("currentDependencies")){
 
-            //System.out.println("[CoordinatorServiceImpl] inside the request + " +  request.getKan());
+            System.out.println("[CoordinatorServiceImpl] inside the request + " +  request.getKan());
             dependenciesBytes= request.getDepBytes().toByteArray();
 
             try {
                 depdes = (HashSet<Dependency>) convertFromBytes(dependenciesBytes);
-                //System.out.println("[CoordinatorServiceImpl] after depdes");
+                System.out.println("[CoordinatorServiceImpl] after depdes");
             } catch (IOException e) {
                 e.printStackTrace();
 
@@ -261,4 +279,11 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             return in.readObject();
         }
     }
+
+    public static void main(String[] args) throws InterruptedException, IOException {
+
+
+    }
+
+
 }

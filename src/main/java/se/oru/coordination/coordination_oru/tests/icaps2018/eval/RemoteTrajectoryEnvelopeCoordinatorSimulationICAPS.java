@@ -10,7 +10,7 @@ import org.metacsp.utility.UI.Callback;
 
 import fleetClient.TrajectoryEnvelopeTrackerDummy;
 import fleetClient.AbstractTrajectoryEnvelopeTracker;
-import se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeCoordinatorSimulation;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 
 public class RemoteTrajectoryEnvelopeCoordinatorSimulationICAPS extends RemoteTrajectoryEnvelopeCoordinatorSimulation {
 	

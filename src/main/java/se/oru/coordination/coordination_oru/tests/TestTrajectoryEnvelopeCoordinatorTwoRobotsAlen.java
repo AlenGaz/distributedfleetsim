@@ -1,7 +1,7 @@
 package se.oru.coordination.coordination_oru.tests;
 
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
-import se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeCoordinatorSimulation;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import Visualizer.util.BrowserVisualization;
 import Visualizer.util.Missions;
 

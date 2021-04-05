@@ -1,6 +1,7 @@
 package fleetClient;
 
 
+import Launch.MakeFootPrint;
 import aima.core.util.datastructure.Pair;
 import com.google.protobuf.ByteString;
 import io.grpc.Channel;
@@ -39,24 +40,50 @@ public class FleetClient {
     }
 
 
-    public void makeGreeting(String kan, int robotID, String type, String IP, int port, Pose pose,
-            String timeStamp, double maxAccel, double maxVel,
-                             double trackingPeriodInMillis, MakeFootPrint makeFootPrint) {
+    public int makeGreeting(String kan, int robotID, String type, String IP, int port, Pose pose,
+                               String timeStamp, double maxAccel, double maxVel,
+                               double trackingPeriodInMillis, MakeFootPrint makeFootPrint) {
 
-        Fleetclients.makeGreeting makegreeting = Fleetclients.makeGreeting.newBuilder().setKan(kan).setRobotID(robotID).setType(type).setIP(IP).setPort(port)
-                .setRpose(Fleetclients.robotPose.newBuilder().setX(pose.getX()).setY(pose.getY()).setZ(pose.getZ())
-                        .setRoll(pose.getRoll()).setPitch(pose.getPitch()).setYaw(pose.getYaw()).build()).setTimeStamp(timeStamp).setMaxAccel(maxAccel).setMaxVel(maxVel)
-                .setTrackingPeriodInMillis(trackingPeriodInMillis)
-                .setMakeFootPrint(Fleetclients.MakeFootPrint.newBuilder().setCenterX(makeFootPrint.getCenterX()).setCenterY(makeFootPrint.centerY).setMinVerts(makeFootPrint.minVerts).setMaxVerts(makeFootPrint.maxVerts).setMinRadius(makeFootPrint.minRadius).setMaxRadius(makeFootPrint.maxRadius).build()).build();
-        Fleetclients.greetingResponse greetingresponse;
+        Coordinator.robotsGreeting greetingBuild = Coordinator.robotsGreeting.newBuilder().setKan(kan).setRobotID(robotID).setType(type).setIP(IP).setPort(port)
+                .setRpose(Coordinator.robotPose.newBuilder().setX(pose.getX()).setY(pose.getY()).setZ(pose.getZ())
+                        .setRoll(pose.getRoll()).setPitch(pose.getPitch()).setYaw(pose.getYaw()).build()).
+                        setTimeStamp(timeStamp).setMaxAccel(maxAccel).setMaxVel(maxVel).setTrackingPeriodInMillis(trackingPeriodInMillis)
+                .setMakeFootPrint(Coordinator.MakeFootPrint.newBuilder().setCenterX(makeFootPrint.getCenterX())
+                        .setCenterY(makeFootPrint.getCenterY()).setMinVerts(makeFootPrint.getMinVerts()).setMaxVerts(makeFootPrint.getMaxVerts())
+                        .setMinRadius(makeFootPrint.getMinRadius()).setMaxRadius(makeFootPrint.getMaxRadius()).build()).build();
+
+        Coordinator.robotgreetingResponse greetingresponse = null;
 
         try {
             System.out.println("making greeting");
-            greetingresponse = blockingStub.greetingMessage(makegreeting);
+            greetingresponse = coordinatorBlockingStub.coordinatorgetGreeting(greetingBuild);
+        } catch (StatusRuntimeException e) {
+            logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
+
+        }
+        if(greetingresponse!=null){
+            return greetingresponse.getNumofReplicas();
+        }
+        else{
+            return -1;
+        }
+
+    }
+
+
+    public void makeGreeting2(Pair<String, Integer> pair, String type, String connection, String timeStamp) {
+
+        Fleetclients.getRobotID getrobotid = Fleetclients.getRobotID.newBuilder().setKey(pair.getFirst()).setValue(pair.getSecond()).setType(type).setConnection(connection).setTimeStamp(timeStamp).build();
+        Fleetclients.robotID robotid;
+
+        try {
+            System.out.println("making greeting with: " + pair);
+            robotid = blockingStub.grobotID(getrobotid);
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
             return;
         }
+        System.out.println("Logging the response of the server ...");
     }
 
     public void makeRobotReport(String my_robotReport, int robotid, double x, double y, double z, double roll, double pitch, double yaw, double velocity, int pathIndex, double distanceTraveled, int criticalPoint) {

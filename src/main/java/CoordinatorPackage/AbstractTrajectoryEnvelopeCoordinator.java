@@ -23,13 +23,8 @@ import javax.swing.SwingUtilities;
 
 import GRPC.CoordinatorServiceImpl;
 import fleetClient.AbstractTrajectoryEnvelopeTracker;
-import fleetClient.TrajectoryEnvelopeCoordinator;
 import fleetClient.TrajectoryEnvelopeTrackerDummy;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
-import io.grpc.coordinator.CoordinatorServiceGrpc;
 import org.apache.commons.collections.comparators.ComparatorChain;
-import org.eclipse.jetty.util.ConcurrentHashSet;
 import org.metacsp.framework.Constraint;
 import org.metacsp.multi.allenInterval.AllenIntervalConstraint;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
@@ -136,12 +131,17 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 
 	protected HashMap<Integer,Coordinate[]> footprints = new HashMap<Integer, Coordinate[]>();
 	protected HashMap<Integer,Double> maxFootprintDimensions = new HashMap<Integer, Double>();
+
+
+	public CoordinatorServiceImpl coordinatorServicImpl = null;
 	
 	/**
 	 * Default robot tracking period in millis
 	 */
 	protected int DEFAULT_ROBOT_TRACKING_PERIOD = 30;
 	protected HashMap<Integer, Integer> robotTrackingPeriodInMillis = new HashMap<Integer, Integer>();
+	protected HashMap<Integer, Double> robotMaxVelocity = new HashMap<Integer, Double>();
+	protected HashMap<Integer, Double> robotMaxAcceleration = new HashMap<Integer, Double>();
 
 	protected HashSet<Integer> muted = new HashSet<Integer>();
 
@@ -161,7 +161,7 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	
 	//State knowledge
 	protected HashMap<Integer,Boolean> isDriving = new HashMap<Integer, Boolean>();
-	public CoordinatorServiceImpl cs = new CoordinatorServiceImpl(this);
+
 
 	/**
 	 * Check if a robot is known to the coordinator and parked.
@@ -250,7 +250,16 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 		this.numberOfReplicas =  (packetLossProbability > 0 && maxFaultsProbability > 0) ? (int)Math.ceil(Math.log(1-Math.sqrt(1-maxFaultsProbability))/Math.log(packetLossProbability)) : 1;
 		metaCSPLogger.info("Number of replicas for each send: " + numberOfReplicas);
 	}
-	
+
+
+	public void testCoordReference(){
+		System.out.println("[Abstract..Coordinator] testCoordreference -> " + coordinatorServicImpl.robotIDtoClientConnection.get(1).getTimeStamp());
+	}
+
+	public void setupCoordinationServer(CoordinatorServiceImpl csi){
+		this.coordinatorServicImpl= csi;
+	}
+
 	/**
 	 * Set a {@link Callback} that will be called at every cycle.
 	 * @param cb A {@link Callback} that will be called at every cycle.
@@ -496,6 +505,8 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 					tracker.setCriticalPoint(criticalPoint, externalCPCounters.get(tracker)%Integer.MAX_VALUE);
 
 
+
+
 					//for statistics
 					totalMsgsSent.incrementAndGet(); 
 					if (retransmitt) totalMsgsReTx.incrementAndGet();
@@ -527,18 +538,15 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	 *
 	 * Changing it to a message response from the Tracker .. but the problem is there is no robotreport when doing this robotreport request
 	 */
-
-
 	public RobotReport getRobotReport(int robotID) {
 
-		//printDependencies();
 
-		CoordinatorServiceImpl y = new CoordinatorServiceImpl();
-		HashMap<Integer, RobotReport> people = y.robotIDtoRobotReport;
-		//System.out.println("-_-" + y.robotIDtoRobotReport);
+
+
 
 		//TODO robotIDtoRobotReport empty
 		//System.out.println("[Abstract Coordinator] get robotIDtoRobotReport: " + robotIDtoRobotReport.get(robotID));
+
 
 		// In the coordinator service have to reqeuest from the tracker for the latest report and set it to return here
 		//Read the last message received
@@ -547,9 +555,11 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 
 		return trackers.get(robotID).getLastRobotReport();
 	}
-
 	}
 
+
+
+		
 
 
 	/**
@@ -1870,7 +1880,7 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 	}
 
 	protected void setupInferenceCallback() {
-
+		
 		this.stopInference = false;
 		this.inference = new Thread("Coordinator inference") {
 			
@@ -2007,8 +2017,6 @@ public abstract class AbstractTrajectoryEnvelopeCoordinator {
 			for (String st : lic) System.out.println(st);
 		}
 		System.out.println();
-
 	}
-
 }
 

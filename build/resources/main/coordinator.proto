@@ -7,7 +7,7 @@ service CoordinatorService {
   rpc coordinatorrobotreport(requestrobotreport) returns (responserobotreport){}
   rpc coordinatorcriticalpoint(coordinatorGetCriticalPointRequestMessage) returns (coordinatorGetCriticalPointResponseMessage);
   rpc coordinatordependencies(getCurrentDependencies) returns (noneResponse);
-
+  rpc coordinatorgetGreeting(robotsGreeting) returns (robotgreetingResponse);
 //google.protobuf.Empty
 
 }
@@ -41,6 +41,47 @@ message coordinatorGetCriticalPointRequestMessage {
 
 message coordinatorGetCriticalPointResponseMessage {
   int32 criticalPoint = 1;
+}
+
+
+
+
+message robotsGreeting {
+  string kan = 1;
+  int32 robotID = 2;
+  string type = 3;
+  string IP = 4;
+  int32 port = 5;
+  robotPose rpose = 6;
+  // footPrint
+  string timeStamp = 7;
+  double maxAccel = 8;
+  double maxVel = 9;
+  double trackingPeriodInMillis = 10;
+  MakeFootPrint makeFootPrint = 11;
+}
+
+message robotPose {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+  double roll = 4;
+  double pitch = 5;
+  double yaw = 6;
+}
+
+message MakeFootPrint {
+  int32 centerX = 1;
+  int32 centerY = 2;
+  int32 minVerts = 3;
+  int32 maxVerts = 4;
+  double minRadius = 5;
+  double maxRadius = 6;
+}
+
+message robotgreetingResponse {
+  string name = 1;
+  int32 numofReplicas = 2;
 }
 
 message getCurrentDependencies{

@@ -14,7 +14,7 @@ import se.oru.coordination.coordination_oru.Mission;
 import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
-import se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeCoordinatorSimulation;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import Visualizer.util.BrowserVisualization;
 
 public class FourRobotsCircle {

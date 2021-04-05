@@ -25,7 +25,7 @@ import java.util.zip.ZipOutputStream;
 
 import javax.imageio.ImageIO;
 
-import fleetClient.TrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.TrajectoryEnvelopeCoordinator;
 import org.jgrapht.GraphPath;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultWeightedEdge;

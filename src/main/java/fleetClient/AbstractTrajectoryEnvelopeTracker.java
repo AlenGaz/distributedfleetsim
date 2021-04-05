@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.logging.Logger;
 
 import CoordinatorPackage.AbstractTrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.TrajectoryEnvelopeCoordinator;
 import org.metacsp.framework.Constraint;
 import org.metacsp.framework.Variable;
 import org.metacsp.meta.spatioTemporal.paths.Map;
@@ -21,7 +22,6 @@ import org.metacsp.utility.logging.MetaCSPLogging;
 import se.oru.coordination.coordination_oru.Dependency;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.TrackingCallback;
-import se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeTrackerRK4;
 
 /**
  * This class provides the basic functionalities of a {@link TrajectoryEnvelope} tracker. Implementing
@@ -45,7 +45,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
     protected HashSet<TrajectoryEnvelope> finishedGroundEnvelopes = new HashSet<TrajectoryEnvelope>();
     protected HashMap<TrajectoryEnvelope,AllenIntervalConstraint> deadlines = new HashMap<TrajectoryEnvelope, AllenIntervalConstraint>();
     protected int trackingPeriodInMillis = 0;
-    protected TrackingCallback cb = null;
+    public TrackingCallback cb = null;
     protected Map mapMetaConstraint = null;
     protected boolean calledOnTrackingStart = false;
     protected boolean calledStartTracking = false;
@@ -60,15 +60,15 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
      * with a given tracking period in a given temporal resolution. The tracker will post temporal constraints
      * to the given solver representing when the robot transitions from one sub-envelope to the next. An optional
      * callback function will be called at every period.
+     * @param solver The {@link TrajectoryEnvelopeSolver} to which temporal constraints will be posted.
      * @param te The {@link TrajectoryEnvelope} to track.
      * @param temporalResolution The temporal unit of measure in which the period is represented.
-     * @param solver The {@link TrajectoryEnvelopeSolver} to which temporal constraints will be posted.
      * @param trackingPeriodInMillis The tracking period.
      * @param cb An optional callback function.
      */
-    public AbstractTrajectoryEnvelopeTracker(TrajectoryEnvelope te, double temporalResolution, AbstractTrajectoryEnvelopeCoordinator tec, int trackingPeriodInMillis, TrackingCallback cb) {
+    public AbstractTrajectoryEnvelopeTracker(TrajectoryEnvelope te, double temporalResolution, int trackingPeriodInMillis, TrackingCallback cb) {
         this.te = te;
-        this.traj = te.getTrajectory();
+       // this.traj = te.getTrajectory();
         this.externalCPCounter = -1;
         this.criticalPoint = -1;
         this.temporalResolution = temporalResolution;

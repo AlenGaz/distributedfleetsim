@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Comparator;
 
+import CoordinatorPackage.CoordinatorServer;
+import GRPC.CoordinatorServiceImpl;
 import fleetClient.FleetClient;
 import aima.core.util.datastructure.Pair;
 import io.grpc.ManagedChannel;
@@ -15,7 +17,7 @@ import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.TrackingCallback;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
-import se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeCoordinatorSimulation;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import Visualizer.util.BrowserVisualization;
 import Visualizer.util.Missions;
 
@@ -27,11 +29,15 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 		double MAX_ACCEL = 2.0;
 		double MAX_VEL = 4.0;
 		// Instantiate a trajectory envelope coordinator.
+
 		// The TrajectoryEnvelopeCoordinatorSimulation implementation provides
 		// -- the factory method getNewTracker() which returns a trajectory envelope tracker
 		// -- the getCurrentTimeInMillis() method, which is used by the coordinator to keep time
 		// You still need to add one or more comparators to determine robot orderings thru critical sections (comparators are evaluated in the order in which they are added)
 		final RemoteTrajectoryEnvelopeCoordinatorSimulation tec = new RemoteTrajectoryEnvelopeCoordinatorSimulation(MAX_VEL,MAX_ACCEL);
+
+
+
 		tec.addComparator(new Comparator<RobotAtCriticalSection> () {
 			@Override
 			public int compare(RobotAtCriticalSection o1, RobotAtCriticalSection o2) {
@@ -144,7 +150,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 							if (tec.addMissions(m)) iteration++;
 						}
 
-/*
+
 						String messageToSend;
 						String target = "localhost:50051";
 						ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
@@ -156,23 +162,27 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 
 							try {
 								FleetClient client = new FleetClient(channel);
-								//client.makeGreeting(pair2, "simulated", InetAddress.getLocalHost().toString(), String.valueOf( System.currentTimeMillis()));
+								client.makeGreeting2(pair2, "simulated", InetAddress.getLocalHost().toString(), String.valueOf( System.currentTimeMillis()));
 
 								client.makeRobotReport("my RobotReport", tec.getRobotReport(robotID).getRobotID()
 										, tec.getRobotReport(robotID).getPose().getX(), tec.getRobotReport(robotID).getPose().getY(), tec.getRobotReport(robotID).getPose().getZ(), tec.getRobotReport(robotID).getPose().getRoll()
 										,tec.getRobotReport(robotID).getPose().getPitch(),tec.getRobotReport(robotID).getPose().getYaw(), tec.getRobotReport(robotID).getVelocity()
 										, tec.getRobotReport(robotID).getPathIndex(), tec.getRobotReport(robotID).getDistanceTraveled(), tec.getRobotReport(robotID).getCriticalPoint());
 
-								//System.out.println("[Three test] getCurrentDependencies: " + tec.getCurrentDependencies());
 
 								//client.makeCurrentDependenciesMessage(tec.getCurrentDependencies());
 
+								CoordinatorServiceImpl cs = CoordinatorServer.getInstance();
+								System.out.println("Singleton Instance RobotReport: " + cs.robotIDtoRobotReport);
+
+
 
 							}
+
 							finally {
 							}
 						}
-						catch (InterruptedException | IOException e) { e.printStackTrace(); }*/
+						catch (InterruptedException | IOException e) { e.printStackTrace(); }
 
 
 					}

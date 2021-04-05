@@ -16,7 +16,7 @@ import se.oru.coordination.coordination_oru.NetworkConfiguration;
 import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
-import se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeCoordinatorSimulation;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import Visualizer.util.BrowserVisualization;
 import Visualizer.util.Missions;
 import Visualizer.util.Pair;
@@ -93,7 +93,7 @@ public class MinimalExample {
 
 		//Start the thread that revises precedences at every period
 		tec.startInference();
-		System.out.println("[M E] after IF" + tec.getCurrentDependencies());
+		System.out.println("[MinimalExample] after if" + tec.getCurrentDependencies());
 
 		//Robot IDs can be non-sequential (but must be unique)
 		int[] robotIDs = new int[] {22,7,54,13,1,14};
@@ -126,6 +126,7 @@ public class MinimalExample {
 			//Plan path from start to goal and vice-versa
 			rsp.setStart(startAndGoal[0]);
 			rsp.setGoals(startAndGoal[1]);
+
 			if (!rsp.plan()) throw new Error ("No path between " + startAndGoal[0] + " and " + startAndGoal[1]);
 			PoseSteering[] path = rsp.getPath();
 			PoseSteering[] pathInv = rsp.getPathInv();

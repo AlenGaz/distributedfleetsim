@@ -1,11 +1,11 @@
 package se.oru.coordination.coordination_oru;
 
-import fleetClient.TrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.TrajectoryEnvelopeCoordinator;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.Trajectory;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 
-import se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeTrackerRK4;
+import fleetClient.RemoteTrajectoryEnvelopeTrackerRK4;
 import se.oru.coordination.coordination_oru.simulation2D.State;
 
 public class ConstantAccelerationForwardModel implements ForwardModel {
