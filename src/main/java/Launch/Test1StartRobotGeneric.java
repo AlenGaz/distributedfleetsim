@@ -184,15 +184,15 @@ public class Test1StartRobotGeneric {
 			System.out.println("tracker.te/tracker.cb is null");
 		}
 
-
-		RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(tracker.te, 30, 1000, 2, 1.0, tracker.cb) {
+		// the rk4 must be outcommented else null exceptions will just break it right now, we have problems here
+	/*	RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(tracker.te, 30, 1000, 2, 1.0, tracker.cb) {
 
 			@Override
 			public long getCurrentTimeInMillis() {
 				return 0;
 			}
 		};
-
+	*/
 
 		MakeFootPrint footprint = new MakeFootPrint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
 
