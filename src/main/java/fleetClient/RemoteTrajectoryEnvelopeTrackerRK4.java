@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.TreeMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import se.oru.coordination.coordination_oru.util.Missions;
@@ -45,6 +46,8 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 	private boolean useInternalCPs = true;
 	protected ArrayList<RobotReport> reportsList = new ArrayList<RobotReport>();
 	protected ArrayList<Long> reportTimeLists = new ArrayList<Long>();
+	protected AtomicInteger totalMsgsLost = new AtomicInteger(0);
+	protected AtomicInteger totalPacketsLost = new AtomicInteger(0);
 
 	private HashMap<Integer,Integer> userCPReplacements = null;
 
@@ -362,6 +365,21 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 	}
 
 
+	/**
+	 * Just for statistic purposes (simulation).
+	 */
+	public void incrementLostPacketsCounter() {
+		this.totalPacketsLost.incrementAndGet();
+	}
+
+	/**
+	 * Just for statistic purposes (simulation).
+	 */
+	public void incrementLostMsgsCounter() {
+		this.totalMsgsLost.incrementAndGet();
+	}
+
+
 	@Override
 	public void setCriticalPoint(int criticalPointToSet, int extCPCounter) {
 
@@ -394,8 +412,9 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 						if (rand.nextDouble() < (1-NetworkConfiguration.PROBABILITY_OF_PACKET_LOSS)) //the real one
 							send = true;
 						else {
-							RemoteTrajectoryEnvelopeCoordinatorSimulation tc = (RemoteTrajectoryEnvelopeCoordinatorSimulation)tec;
-							tc.incrementLostPacketsCounter();
+							//RemoteTrajectoryEnvelopeCoordinatorSimulation tc = (RemoteTrajectoryEnvelopeCoordinatorSimulation)tec;
+							//tc.incrementLostPacketsCounter();
+							incrementLostPacketsCounter();
 						}
 						trial++;
 					}
@@ -416,8 +435,9 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 						}
 					}
 					else {
-						RemoteTrajectoryEnvelopeCoordinatorSimulation tc = (RemoteTrajectoryEnvelopeCoordinatorSimulation)tec;
-						tc.incrementLostMsgsCounter();
+						//RemoteTrajectoryEnvelopeCoordinatorSimulation tc = (RemoteTrajectoryEnvelopeCoordinatorSimulation)tec;
+						//tc.incrementLostMsgsCounter();
+						incrementLostMsgsCounter();
 						metaCSPLogger.info("PACKET to Robot" + te.getRobotID() + " LOST, criticalPoint: " + criticalPoint + ", externalCPCounter: " + externalCPCount);
 					}
 				}

@@ -2,14 +2,11 @@ package fleetClient;
 
 import java.io.IOException;
 
-import CoordinatorPackage.AbstractTrajectoryEnvelopeCoordinator;
 //import GRPC.FleetClientService;
 import GRPC.FleetClientsServiceImpl;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
-import se.oru.coordination.coordination_oru.RobotReport;
-import se.oru.coordination.coordination_oru.TrackingCallback;
 
 
 public class fleetClientsServer {

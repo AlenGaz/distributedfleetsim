@@ -70,7 +70,7 @@ public class Experiment1Test2 {
 		// -- the factory method getNewTracker() which returns a trajectory envelope tracker
 		// -- the getCurrentTimeInMillis() method, which is used by the coordinator to keep time
 		//You still need to add one or more comparators to determine robot orderings thru critical sections (comparators are evaluated in the order in which they are added)
-		final RemoteTrajectoryEnvelopeCoordinatorSimulationICAPS tec = new RemoteTrajectoryEnvelopeCoordinatorSimulationICAPS(0, 1000.0, MAX_VEL, MAX_ACCEL, logFile, logHeading, robotsInUse);
+		final TrajectoryEnvelopeCoordinatorSimulationICAPS tec = new TrajectoryEnvelopeCoordinatorSimulationICAPS(0, 1000.0, MAX_VEL, MAX_ACCEL, logFile, logHeading, robotsInUse);
 		tec.addComparator(new Comparator<RobotAtCriticalSection> () {
 			@Override
 			public int compare(RobotAtCriticalSection o1, RobotAtCriticalSection o2) {

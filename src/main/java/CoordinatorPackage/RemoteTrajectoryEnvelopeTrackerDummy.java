@@ -1,6 +1,5 @@
 package CoordinatorPackage;
 
-import CoordinatorPackage.AbstractTrajectoryEnvelopeCoordinator;
 import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelopeSolver;

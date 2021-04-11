@@ -7,8 +7,8 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import CoordinatorPackage.containers.MakeFootPrint;
-import fleetClient.AbstractTrajectoryEnvelopeTracker;
 import fleetClient.FleetClient;
+import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
@@ -139,7 +139,7 @@ public class Test1StartRobotFileMp {
         //2. instantiating tracker
         //TODO Trajectory Envelope te??
 
-        AbstractTrajectoryEnvelopeTracker tracker = new AbstractTrajectoryEnvelopeTracker() {
+        RemoteAbstractTrajectoryEnvelopeTracker tracker = new RemoteAbstractTrajectoryEnvelopeTracker() {
             @Override
             protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te) {
 

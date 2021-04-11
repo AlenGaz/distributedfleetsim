@@ -24,7 +24,6 @@ import javax.swing.SwingUtilities;
 
 import GRPC.CoordinatorServiceImpl;
 import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
-import fleetClient.AbstractTrajectoryEnvelopeTracker;
 import org.apache.commons.collections.comparators.ComparatorChain;
 import org.metacsp.framework.Constraint;
 import org.metacsp.multi.allenInterval.AllenIntervalConstraint;

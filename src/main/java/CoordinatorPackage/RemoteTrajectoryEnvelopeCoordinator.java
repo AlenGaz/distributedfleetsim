@@ -13,9 +13,7 @@ import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import fleetClient.AbstractTrajectoryEnvelopeTracker;
 import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
-import CoordinatorPackage.RemoteTrajectoryEnvelopeTrackerDummy;
 import org.jgrapht.alg.ConnectivityInspector;
 import org.jgrapht.alg.KosarajuStrongConnectivityInspector;
 import org.jgrapht.alg.cycle.JohnsonSimpleCycles;

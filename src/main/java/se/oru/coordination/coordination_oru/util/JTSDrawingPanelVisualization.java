@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import org.metacsp.multi.spatial.DE9IM.GeometricShapeDomain;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import org.metacsp.utility.UI.JTSDrawingPanel;
@@ -81,8 +82,8 @@ public class JTSDrawingPanelVisualization implements FleetVisualization {
 		//setPriorityOfEDT(Thread.MIN_PRIORITY);
 		//setPriorityOfEDT(Thread.MAX_PRIORITY);
 		panel.setSmoothTransitions(true);
-		panel.setArrowHeadSizeInMeters(0.6* RemoteTrajectoryEnvelopeCoordinator.MAX_DEFAULT_FOOTPRINT_DIMENSION);
-		panel.setTextSizeInMeters(0.8* RemoteTrajectoryEnvelopeCoordinator.MAX_DEFAULT_FOOTPRINT_DIMENSION);
+		panel.setArrowHeadSizeInMeters(0.6* RemoteTrajectoryEnvelopeCoordinatorSimulation.MAX_DEFAULT_FOOTPRINT_DIMENSION);
+		panel.setTextSizeInMeters(0.8* RemoteTrajectoryEnvelopeCoordinatorSimulation.MAX_DEFAULT_FOOTPRINT_DIMENSION);
 		//System.out.println("TEXT SIZE IN METERS IS " + 0.5*getMaxFootprintDimension(1));
 		if (mapYAMLFile != null) panel.setMap(mapYAMLFile);
 		panel.addKeyListener(new KeyListener() {

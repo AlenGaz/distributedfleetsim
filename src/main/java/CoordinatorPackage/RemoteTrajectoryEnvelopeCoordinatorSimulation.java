@@ -30,8 +30,8 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 	protected ArrayList<CollisionEvent> collisionsList = new ArrayList<CollisionEvent>();
 	protected Thread collisionThread = null;
 
-	protected AtomicInteger totalMsgsLost = new AtomicInteger(0);
-	protected AtomicInteger totalPacketsLost = new AtomicInteger(0);
+	//protected AtomicInteger totalMsgsLost = new AtomicInteger(0);
+	//protected AtomicInteger totalPacketsLost = new AtomicInteger(0);
 
 	//protected int DEFAULT_ROBOT_TRACKING_PERIOD;
 	protected double DEFAULT_MAX_VELOCITY;
@@ -69,19 +69,19 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 		this.fake = fake;
 	}
 
-	/**
+/*	*//**
 	 * Just for statistic purposes (simulation).
-	 */
+	 *//*
 	public void incrementLostMsgsCounter() {
 		this.totalMsgsLost.incrementAndGet();
-	}
+	}*/
 
-	/**
+/*	*//**
 	 * Just for statistic purposes (simulation).
-	 */
+	 *//*
 	public void incrementLostPacketsCounter() {
 		this.totalPacketsLost.incrementAndGet();
-	}
+	}*/
 
 	/**
 	 * Create a new {@link RemoteTrajectoryEnvelopeCoordinatorSimulation} with given parameters.
@@ -279,11 +279,11 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 
 			}
 
-			//Method for measuring time in the trajectory envelope tracker
 			@Override
 			public long getCurrentTimeInMillis() {
-				return tec.getCurrentTimeInMillis();
+				return 0;
 			}
+
 
 			@Override
 			public void startTracking() {
