@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import fleetClient.AbstractTrajectoryEnvelopeTracker;
+import CoordinatorPackage.containers.MakeFootPrint;
+import se.oru.coordination.coordination_oru.util.Missions;
 import fleetClient.FleetClient;
+import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
 import fleetClient.RemoteTrajectoryEnvelopeTrackerRK4;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -15,21 +17,25 @@ import org.metacsp.multi.spatioTemporal.paths.Pose;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
+import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
+import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelopeSolver;
 import se.oru.coordination.coordination_oru.*;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
-import Visualizer.util.Pair;
+import se.oru.coordination.coordination_oru.util.Pair;
 
 
 public class Test1StartRobotGeneric {
 
 	private static Random rand = new Random(123213);
 	private static ArrayList<Pair<Integer>> placements = new ArrayList<Pair<Integer>>();
-
+	public static PoseSteering[] overallPath = null;
 
 	/**
 	 * We make random footprint and goal pairs for the read ReedsSheppCarPlanner.
 	 */
+
+
 	private static Coordinate[] makeRandomFootprint(int centerX, int centerY, int minVerts, int maxVerts, double minRadius, double maxRadius) {
 		// Split a full circle into numVerts step, this is how much to advance each part
 		int numVerts = minVerts+rand.nextInt(maxVerts-minVerts);
@@ -109,7 +115,7 @@ public class Test1StartRobotGeneric {
 
 
 		String target = "localhost:50051";  // coordinator IP
-		ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
+		ManagedChannel channel = ManagedChannelBuilder.forTarget(target).maxInboundMessageSize(100*1000*1000).usePlaintext().build();
 
 
 
@@ -120,8 +126,7 @@ public class Test1StartRobotGeneric {
 
 
 		System.out.println("Below this point nothing is printed if Pose[] startAndGoal is run ...");
-		//Pose[] startAndGoal = makeRandomStartGoalPair(1, 1.5*maxRobotRadius, 1.1*maxRobotRadius, 1.1*maxRobotRadius);
-
+		Pose[] startAndGoal = makeRandomStartGoalPair(3, 1.5*maxRobotRadius, 1.1*maxRobotRadius, 1.1*maxRobotRadius);
 		System.out.println("Aaa");
 
 
@@ -131,38 +136,41 @@ public class Test1StartRobotGeneric {
 		rsp.setDistanceBetweenPathPoints(0.5);
 		rsp.setFootprint(fp);
 
-
+		//Missions.getLocationPose("r1p");
 
 		//Plan path from start to goal and vice-versa
-		//FIXME: 1 (numRobots) is hardcoded
+
+		rsp.setStart(startAndGoal[0]);
+		rsp.setGoals(startAndGoal[1]);
 
 
-		//rsp.setStart(startAndGoal[0]);
-		//rsp.setGoals(startAndGoal[1]);
-
-
-		//if (!rsp.plan()) throw new Error ("No path between " + startAndGoal[0] + " and " + startAndGoal[1]);
-		//PoseSteering[] path = rsp.getPath();
-		//PoseSteering[] pathInv = rsp.getPathInv();
+		if (!rsp.plan()) throw new Error ("No path between " + startAndGoal[0] + " and " + startAndGoal[1]);
+		// making the rsp path from setStart to setGoal as overallPath for sending a poseSteering.. this way the
+		// solver can be recreated from this on the trajectoryenvelopeCoordinator...?
+		overallPath = rsp.getPath();
+		PoseSteering[] pathInv = rsp.getPathInv();
 
 		//Define forward and backward missions and enqueue them
-		//Missions.enqueueMission(new Mission(robotID,path));
-		//Missions.enqueueMission(new Mission(robotID,pathInv));
+		Missions.enqueueMission(new Mission(robotID,overallPath));
+		Missions.enqueueMission(new Mission(robotID,pathInv));
 
 
 		//2. instantiating tracker
-		//TODO Trajectory Envelope te??
+		//TODO Trajectory Envelope te?? // get parking envelope
+		TrajectoryEnvelope parkingEnvelope;
+		int PARKING_DURATION = 3000;
 
-		AbstractTrajectoryEnvelopeTracker tracker = new AbstractTrajectoryEnvelopeTracker() {
+		// We are making a solver to be able to make a parked envelope as in solver.createParkingEnvelope....
+		TrajectoryEnvelopeSolver solver = new TrajectoryEnvelopeSolver(0,100000000);
+
+
+		parkingEnvelope = solver.createParkingEnvelope(robotID,PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp );
+		RemoteAbstractTrajectoryEnvelopeTracker tracker = new RemoteAbstractTrajectoryEnvelopeTracker() {
 			@Override
-			protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te) {
-
-			}
+			protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te) { }
 
 			@Override
-			protected void setCriticalPoint(int criticalPoint) {
-
-			}
+			protected void setCriticalPoint(int criticalPoint) { }
 
 			@Override
 			public RobotReport getRobotReport() {
@@ -180,19 +188,18 @@ public class Test1StartRobotGeneric {
 			}
 		};
 
-		if(tracker.te == null || tracker.te == null){
-			System.out.println("tracker.te/tracker.cb is null");
+		if(tracker.cb == null){
+			System.out.println("tracker.cb is null");
 		}
 
 		// the rk4 must be outcommented else null exceptions will just break it right now, we have problems here
-	/*	RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(tracker.te, 30, 1000, 2, 1.0, tracker.cb) {
+	  	RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(parkingEnvelope, 30, 1000, 2, 1.0,tracker.cb ) {
 
 			@Override
 			public long getCurrentTimeInMillis() {
 				return 0;
 			}
 		};
-	*/
 
 		MakeFootPrint footprint = new MakeFootPrint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
 
@@ -201,21 +208,22 @@ public class Test1StartRobotGeneric {
 		 * that is made as a greeting to the CoordinatorServer
 		 * it should return the string "Response", for now it is
 		 * hardcoded in the CoordinatorServiceImpl to signal back
-		 *
-		 * */
+		 **/
 
 		int coordinatorResponse = 0;
 
-		coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint);
+		coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
 
 		// to send id = 2 and 3 gonna remove these 2 greetings below later
-		coordinatorResponse = simpleGreeting(2, maxAccel, maxVel, port, testPose, client, footprint);
-		coordinatorResponse = simpleGreeting(3, maxAccel, maxVel, port, testPose, client, footprint);
+		coordinatorResponse = simpleGreeting(2, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
+		coordinatorResponse = simpleGreeting(3, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
 
 
 		System.out.println("coordinatorResponse is: " + coordinatorResponse);
+		//client.makeTecStuffRequest(1);
 
-		while(coordinatorResponse!= 0){
+
+		while(coordinatorResponse!= -1){
 
 			try {
 				TimeUnit.SECONDS.sleep(1);
@@ -225,8 +233,9 @@ public class Test1StartRobotGeneric {
 			System.out.println("CoordinatorServer is alive... numberOfReplicas: " +coordinatorResponse);
 
 
-			coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint);
-			// rk4.setNumberOfReplicas(coordinatorResponse);
+			coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
+			rk4.setNumberOfReplicas(coordinatorResponse); //<<<- should be setting it
+			//
 		}
 
 		// FleetClient.makeGreeting will return -1 if coordinator isnt there
@@ -238,19 +247,16 @@ public class Test1StartRobotGeneric {
 
 
 
-
-
-
 	/**
 	 * This is our simple greeting for now that is going to the client, just calling this
 	 * with the correct parameters will handle rest of the messaging to the server,
 	 * note that the String target declaration in this class needs to be correct
 	 * */
-	public static int simpleGreeting(int robotID, double maxAccel, double maxVel, int port, Pose testPose, FleetClient client, MakeFootPrint footprint) {
+	public static int simpleGreeting(int robotID, double maxAccel, double maxVel, int port, Pose testPose, FleetClient client, MakeFootPrint footprint, PoseSteering[] poseSteerings) {
 		int requestResponse = 0;
 		try {
 			requestResponse = client.makeGreeting("greeting", robotID, "simulated", InetAddress.getLocalHost().toString(), port, testPose,
-					String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint);
+					String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint, poseSteerings);
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}

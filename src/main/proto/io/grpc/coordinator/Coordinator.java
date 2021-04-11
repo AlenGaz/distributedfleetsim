@@ -85,7 +85,7 @@ public final class Coordinator {
   }
   /**
    * <pre>
-   * service rpc not used
+   * this one is used for robots just sending their robot reports to the coordinator
    * </pre>
    *
    * Protobuf type {@code gradlegRPC.requestrobotreport}
@@ -666,7 +666,7 @@ public final class Coordinator {
     }
     /**
      * <pre>
-     * service rpc not used
+     * this one is used for robots just sending their robot reports to the coordinator
      * </pre>
      *
      * Protobuf type {@code gradlegRPC.requestrobotreport}
@@ -1309,10 +1309,6 @@ public final class Coordinator {
     int getCriticalPoint();
   }
   /**
-   * <pre>
-   *service rpc not used
-   * </pre>
-   *
    * Protobuf type {@code gradlegRPC.responserobotreport}
    */
   public  static final class responserobotreport extends
@@ -1606,10 +1602,6 @@ public final class Coordinator {
       return builder;
     }
     /**
-     * <pre>
-     *service rpc not used
-     * </pre>
-     *
      * Protobuf type {@code gradlegRPC.responserobotreport}
      */
     public static final class Builder extends
@@ -1905,6 +1897,627 @@ public final class Coordinator {
 
     @java.lang.Override
     public io.grpc.coordinator.Coordinator.responserobotreport getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface trackerRobotReportRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gradlegRPC.trackerRobotReportRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string kan = 1;</code>
+     */
+    java.lang.String getKan();
+    /**
+     * <code>string kan = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKanBytes();
+
+    /**
+     * <code>int32 robotID = 2;</code>
+     */
+    int getRobotID();
+  }
+  /**
+   * <pre>
+   * tracker (on the client) asks coordinator for the report of a robots id
+   * </pre>
+   *
+   * Protobuf type {@code gradlegRPC.trackerRobotReportRequest}
+   */
+  public  static final class trackerRobotReportRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:gradlegRPC.trackerRobotReportRequest)
+      trackerRobotReportRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use trackerRobotReportRequest.newBuilder() to construct.
+    private trackerRobotReportRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private trackerRobotReportRequest() {
+      kan_ = "";
+      robotID_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private trackerRobotReportRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              kan_ = s;
+              break;
+            }
+            case 16: {
+
+              robotID_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_trackerRobotReportRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_trackerRobotReportRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grpc.coordinator.Coordinator.trackerRobotReportRequest.class, io.grpc.coordinator.Coordinator.trackerRobotReportRequest.Builder.class);
+    }
+
+    public static final int KAN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object kan_;
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public java.lang.String getKan() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kan_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKanBytes() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROBOTID_FIELD_NUMBER = 2;
+    private int robotID_;
+    /**
+     * <code>int32 robotID = 2;</code>
+     */
+    public int getRobotID() {
+      return robotID_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKanBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kan_);
+      }
+      if (robotID_ != 0) {
+        output.writeInt32(2, robotID_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKanBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kan_);
+      }
+      if (robotID_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, robotID_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.grpc.coordinator.Coordinator.trackerRobotReportRequest)) {
+        return super.equals(obj);
+      }
+      io.grpc.coordinator.Coordinator.trackerRobotReportRequest other = (io.grpc.coordinator.Coordinator.trackerRobotReportRequest) obj;
+
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && (getRobotID()
+          == other.getRobotID());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KAN_FIELD_NUMBER;
+      hash = (53 * hash) + getKan().hashCode();
+      hash = (37 * hash) + ROBOTID_FIELD_NUMBER;
+      hash = (53 * hash) + getRobotID();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.grpc.coordinator.Coordinator.trackerRobotReportRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * tracker (on the client) asks coordinator for the report of a robots id
+     * </pre>
+     *
+     * Protobuf type {@code gradlegRPC.trackerRobotReportRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gradlegRPC.trackerRobotReportRequest)
+        io.grpc.coordinator.Coordinator.trackerRobotReportRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_trackerRobotReportRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_trackerRobotReportRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grpc.coordinator.Coordinator.trackerRobotReportRequest.class, io.grpc.coordinator.Coordinator.trackerRobotReportRequest.Builder.class);
+      }
+
+      // Construct using io.grpc.coordinator.Coordinator.trackerRobotReportRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        kan_ = "";
+
+        robotID_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_trackerRobotReportRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.trackerRobotReportRequest getDefaultInstanceForType() {
+        return io.grpc.coordinator.Coordinator.trackerRobotReportRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.trackerRobotReportRequest build() {
+        io.grpc.coordinator.Coordinator.trackerRobotReportRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.trackerRobotReportRequest buildPartial() {
+        io.grpc.coordinator.Coordinator.trackerRobotReportRequest result = new io.grpc.coordinator.Coordinator.trackerRobotReportRequest(this);
+        result.kan_ = kan_;
+        result.robotID_ = robotID_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grpc.coordinator.Coordinator.trackerRobotReportRequest) {
+          return mergeFrom((io.grpc.coordinator.Coordinator.trackerRobotReportRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grpc.coordinator.Coordinator.trackerRobotReportRequest other) {
+        if (other == io.grpc.coordinator.Coordinator.trackerRobotReportRequest.getDefaultInstance()) return this;
+        if (!other.getKan().isEmpty()) {
+          kan_ = other.kan_;
+          onChanged();
+        }
+        if (other.getRobotID() != 0) {
+          setRobotID(other.getRobotID());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.grpc.coordinator.Coordinator.trackerRobotReportRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.grpc.coordinator.Coordinator.trackerRobotReportRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object kan_ = "";
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public java.lang.String getKan() {
+        java.lang.Object ref = kan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKanBytes() {
+        java.lang.Object ref = kan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKan(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder clearKan() {
+        
+        kan_ = getDefaultInstance().getKan();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int robotID_ ;
+      /**
+       * <code>int32 robotID = 2;</code>
+       */
+      public int getRobotID() {
+        return robotID_;
+      }
+      /**
+       * <code>int32 robotID = 2;</code>
+       */
+      public Builder setRobotID(int value) {
+        
+        robotID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 robotID = 2;</code>
+       */
+      public Builder clearRobotID() {
+        
+        robotID_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:gradlegRPC.trackerRobotReportRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:gradlegRPC.trackerRobotReportRequest)
+    private static final io.grpc.coordinator.Coordinator.trackerRobotReportRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.trackerRobotReportRequest();
+    }
+
+    public static io.grpc.coordinator.Coordinator.trackerRobotReportRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<trackerRobotReportRequest>
+        PARSER = new com.google.protobuf.AbstractParser<trackerRobotReportRequest>() {
+      @java.lang.Override
+      public trackerRobotReportRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new trackerRobotReportRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<trackerRobotReportRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<trackerRobotReportRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grpc.coordinator.Coordinator.trackerRobotReportRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3101,6 +3714,11 @@ public final class Coordinator {
      * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
      */
     io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder getMakeFootPrintOrBuilder();
+
+    /**
+     * <code>bytes poseSteering = 12;</code>
+     */
+    com.google.protobuf.ByteString getPoseSteering();
   }
   /**
    * Protobuf type {@code gradlegRPC.robotsGreeting}
@@ -3124,6 +3742,7 @@ public final class Coordinator {
       maxAccel_ = 0D;
       maxVel_ = 0D;
       trackingPeriodInMillis_ = 0D;
+      poseSteering_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -3223,6 +3842,11 @@ public final class Coordinator {
                 makeFootPrint_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 98: {
+
+              poseSteering_ = input.readBytes();
               break;
             }
             default: {
@@ -3488,6 +4112,15 @@ public final class Coordinator {
       return getMakeFootPrint();
     }
 
+    public static final int POSESTEERING_FIELD_NUMBER = 12;
+    private com.google.protobuf.ByteString poseSteering_;
+    /**
+     * <code>bytes poseSteering = 12;</code>
+     */
+    public com.google.protobuf.ByteString getPoseSteering() {
+      return poseSteering_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3534,6 +4167,9 @@ public final class Coordinator {
       }
       if (makeFootPrint_ != null) {
         output.writeMessage(11, getMakeFootPrint());
+      }
+      if (!poseSteering_.isEmpty()) {
+        output.writeBytes(12, poseSteering_);
       }
       unknownFields.writeTo(output);
     }
@@ -3583,6 +4219,10 @@ public final class Coordinator {
       if (makeFootPrint_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getMakeFootPrint());
+      }
+      if (!poseSteering_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, poseSteering_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3634,6 +4274,8 @@ public final class Coordinator {
         result = result && getMakeFootPrint()
             .equals(other.getMakeFootPrint());
       }
+      result = result && getPoseSteering()
+          .equals(other.getPoseSteering());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3674,6 +4316,8 @@ public final class Coordinator {
         hash = (37 * hash) + MAKEFOOTPRINT_FIELD_NUMBER;
         hash = (53 * hash) + getMakeFootPrint().hashCode();
       }
+      hash = (37 * hash) + POSESTEERING_FIELD_NUMBER;
+      hash = (53 * hash) + getPoseSteering().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3837,6 +4481,8 @@ public final class Coordinator {
           makeFootPrint_ = null;
           makeFootPrintBuilder_ = null;
         }
+        poseSteering_ = com.google.protobuf.ByteString.EMPTY;
+
         return this;
       }
 
@@ -3882,6 +4528,7 @@ public final class Coordinator {
         } else {
           result.makeFootPrint_ = makeFootPrintBuilder_.build();
         }
+        result.poseSteering_ = poseSteering_;
         onBuilt();
         return result;
       }
@@ -3966,6 +4613,9 @@ public final class Coordinator {
         }
         if (other.hasMakeFootPrint()) {
           mergeMakeFootPrint(other.getMakeFootPrint());
+        }
+        if (other.getPoseSteering() != com.google.protobuf.ByteString.EMPTY) {
+          setPoseSteering(other.getPoseSteering());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4654,6 +5304,35 @@ public final class Coordinator {
           makeFootPrint_ = null;
         }
         return makeFootPrintBuilder_;
+      }
+
+      private com.google.protobuf.ByteString poseSteering_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes poseSteering = 12;</code>
+       */
+      public com.google.protobuf.ByteString getPoseSteering() {
+        return poseSteering_;
+      }
+      /**
+       * <code>bytes poseSteering = 12;</code>
+       */
+      public Builder setPoseSteering(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        poseSteering_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes poseSteering = 12;</code>
+       */
+      public Builder clearPoseSteering() {
+        
+        poseSteering_ = getDefaultInstance().getPoseSteering();
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8093,6 +8772,3907 @@ public final class Coordinator {
 
   }
 
+  public interface tecrequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gradlegRPC.tecrequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string kan = 1;</code>
+     */
+    java.lang.String getKan();
+    /**
+     * <code>string kan = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKanBytes();
+
+    /**
+     * <code>int32 robotID = 2;</code>
+     */
+    int getRobotID();
+  }
+  /**
+   * Protobuf type {@code gradlegRPC.tecrequest}
+   */
+  public  static final class tecrequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:gradlegRPC.tecrequest)
+      tecrequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use tecrequest.newBuilder() to construct.
+    private tecrequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private tecrequest() {
+      kan_ = "";
+      robotID_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private tecrequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              kan_ = s;
+              break;
+            }
+            case 16: {
+
+              robotID_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecrequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecrequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grpc.coordinator.Coordinator.tecrequest.class, io.grpc.coordinator.Coordinator.tecrequest.Builder.class);
+    }
+
+    public static final int KAN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object kan_;
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public java.lang.String getKan() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kan_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKanBytes() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROBOTID_FIELD_NUMBER = 2;
+    private int robotID_;
+    /**
+     * <code>int32 robotID = 2;</code>
+     */
+    public int getRobotID() {
+      return robotID_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKanBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kan_);
+      }
+      if (robotID_ != 0) {
+        output.writeInt32(2, robotID_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKanBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kan_);
+      }
+      if (robotID_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, robotID_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.grpc.coordinator.Coordinator.tecrequest)) {
+        return super.equals(obj);
+      }
+      io.grpc.coordinator.Coordinator.tecrequest other = (io.grpc.coordinator.Coordinator.tecrequest) obj;
+
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && (getRobotID()
+          == other.getRobotID());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KAN_FIELD_NUMBER;
+      hash = (53 * hash) + getKan().hashCode();
+      hash = (37 * hash) + ROBOTID_FIELD_NUMBER;
+      hash = (53 * hash) + getRobotID();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.tecrequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.grpc.coordinator.Coordinator.tecrequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gradlegRPC.tecrequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gradlegRPC.tecrequest)
+        io.grpc.coordinator.Coordinator.tecrequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecrequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecrequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grpc.coordinator.Coordinator.tecrequest.class, io.grpc.coordinator.Coordinator.tecrequest.Builder.class);
+      }
+
+      // Construct using io.grpc.coordinator.Coordinator.tecrequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        kan_ = "";
+
+        robotID_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecrequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.tecrequest getDefaultInstanceForType() {
+        return io.grpc.coordinator.Coordinator.tecrequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.tecrequest build() {
+        io.grpc.coordinator.Coordinator.tecrequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.tecrequest buildPartial() {
+        io.grpc.coordinator.Coordinator.tecrequest result = new io.grpc.coordinator.Coordinator.tecrequest(this);
+        result.kan_ = kan_;
+        result.robotID_ = robotID_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grpc.coordinator.Coordinator.tecrequest) {
+          return mergeFrom((io.grpc.coordinator.Coordinator.tecrequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grpc.coordinator.Coordinator.tecrequest other) {
+        if (other == io.grpc.coordinator.Coordinator.tecrequest.getDefaultInstance()) return this;
+        if (!other.getKan().isEmpty()) {
+          kan_ = other.kan_;
+          onChanged();
+        }
+        if (other.getRobotID() != 0) {
+          setRobotID(other.getRobotID());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.grpc.coordinator.Coordinator.tecrequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.grpc.coordinator.Coordinator.tecrequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object kan_ = "";
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public java.lang.String getKan() {
+        java.lang.Object ref = kan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKanBytes() {
+        java.lang.Object ref = kan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKan(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder clearKan() {
+        
+        kan_ = getDefaultInstance().getKan();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int robotID_ ;
+      /**
+       * <code>int32 robotID = 2;</code>
+       */
+      public int getRobotID() {
+        return robotID_;
+      }
+      /**
+       * <code>int32 robotID = 2;</code>
+       */
+      public Builder setRobotID(int value) {
+        
+        robotID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 robotID = 2;</code>
+       */
+      public Builder clearRobotID() {
+        
+        robotID_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:gradlegRPC.tecrequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:gradlegRPC.tecrequest)
+    private static final io.grpc.coordinator.Coordinator.tecrequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.tecrequest();
+    }
+
+    public static io.grpc.coordinator.Coordinator.tecrequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<tecrequest>
+        PARSER = new com.google.protobuf.AbstractParser<tecrequest>() {
+      @java.lang.Override
+      public tecrequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new tecrequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<tecrequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<tecrequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grpc.coordinator.Coordinator.tecrequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface tecresponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gradlegRPC.tecresponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string stringresponse = 1;</code>
+     */
+    java.lang.String getStringresponse();
+    /**
+     * <code>string stringresponse = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getStringresponseBytes();
+
+    /**
+     * <code>bytes tecStuff = 2;</code>
+     */
+    com.google.protobuf.ByteString getTecStuff();
+  }
+  /**
+   * Protobuf type {@code gradlegRPC.tecresponse}
+   */
+  public  static final class tecresponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:gradlegRPC.tecresponse)
+      tecresponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use tecresponse.newBuilder() to construct.
+    private tecresponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private tecresponse() {
+      stringresponse_ = "";
+      tecStuff_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private tecresponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stringresponse_ = s;
+              break;
+            }
+            case 18: {
+
+              tecStuff_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecresponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecresponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grpc.coordinator.Coordinator.tecresponse.class, io.grpc.coordinator.Coordinator.tecresponse.Builder.class);
+    }
+
+    public static final int STRINGRESPONSE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object stringresponse_;
+    /**
+     * <code>string stringresponse = 1;</code>
+     */
+    public java.lang.String getStringresponse() {
+      java.lang.Object ref = stringresponse_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stringresponse_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string stringresponse = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStringresponseBytes() {
+      java.lang.Object ref = stringresponse_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stringresponse_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TECSTUFF_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString tecStuff_;
+    /**
+     * <code>bytes tecStuff = 2;</code>
+     */
+    public com.google.protobuf.ByteString getTecStuff() {
+      return tecStuff_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getStringresponseBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stringresponse_);
+      }
+      if (!tecStuff_.isEmpty()) {
+        output.writeBytes(2, tecStuff_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getStringresponseBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stringresponse_);
+      }
+      if (!tecStuff_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, tecStuff_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.grpc.coordinator.Coordinator.tecresponse)) {
+        return super.equals(obj);
+      }
+      io.grpc.coordinator.Coordinator.tecresponse other = (io.grpc.coordinator.Coordinator.tecresponse) obj;
+
+      boolean result = true;
+      result = result && getStringresponse()
+          .equals(other.getStringresponse());
+      result = result && getTecStuff()
+          .equals(other.getTecStuff());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STRINGRESPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getStringresponse().hashCode();
+      hash = (37 * hash) + TECSTUFF_FIELD_NUMBER;
+      hash = (53 * hash) + getTecStuff().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.tecresponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.grpc.coordinator.Coordinator.tecresponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gradlegRPC.tecresponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gradlegRPC.tecresponse)
+        io.grpc.coordinator.Coordinator.tecresponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecresponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecresponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grpc.coordinator.Coordinator.tecresponse.class, io.grpc.coordinator.Coordinator.tecresponse.Builder.class);
+      }
+
+      // Construct using io.grpc.coordinator.Coordinator.tecresponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        stringresponse_ = "";
+
+        tecStuff_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_tecresponse_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.tecresponse getDefaultInstanceForType() {
+        return io.grpc.coordinator.Coordinator.tecresponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.tecresponse build() {
+        io.grpc.coordinator.Coordinator.tecresponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.tecresponse buildPartial() {
+        io.grpc.coordinator.Coordinator.tecresponse result = new io.grpc.coordinator.Coordinator.tecresponse(this);
+        result.stringresponse_ = stringresponse_;
+        result.tecStuff_ = tecStuff_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grpc.coordinator.Coordinator.tecresponse) {
+          return mergeFrom((io.grpc.coordinator.Coordinator.tecresponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grpc.coordinator.Coordinator.tecresponse other) {
+        if (other == io.grpc.coordinator.Coordinator.tecresponse.getDefaultInstance()) return this;
+        if (!other.getStringresponse().isEmpty()) {
+          stringresponse_ = other.stringresponse_;
+          onChanged();
+        }
+        if (other.getTecStuff() != com.google.protobuf.ByteString.EMPTY) {
+          setTecStuff(other.getTecStuff());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.grpc.coordinator.Coordinator.tecresponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.grpc.coordinator.Coordinator.tecresponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object stringresponse_ = "";
+      /**
+       * <code>string stringresponse = 1;</code>
+       */
+      public java.lang.String getStringresponse() {
+        java.lang.Object ref = stringresponse_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stringresponse_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string stringresponse = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStringresponseBytes() {
+        java.lang.Object ref = stringresponse_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stringresponse_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string stringresponse = 1;</code>
+       */
+      public Builder setStringresponse(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        stringresponse_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stringresponse = 1;</code>
+       */
+      public Builder clearStringresponse() {
+        
+        stringresponse_ = getDefaultInstance().getStringresponse();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stringresponse = 1;</code>
+       */
+      public Builder setStringresponseBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        stringresponse_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString tecStuff_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes tecStuff = 2;</code>
+       */
+      public com.google.protobuf.ByteString getTecStuff() {
+        return tecStuff_;
+      }
+      /**
+       * <code>bytes tecStuff = 2;</code>
+       */
+      public Builder setTecStuff(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tecStuff_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes tecStuff = 2;</code>
+       */
+      public Builder clearTecStuff() {
+        
+        tecStuff_ = getDefaultInstance().getTecStuff();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:gradlegRPC.tecresponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:gradlegRPC.tecresponse)
+    private static final io.grpc.coordinator.Coordinator.tecresponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.tecresponse();
+    }
+
+    public static io.grpc.coordinator.Coordinator.tecresponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<tecresponse>
+        PARSER = new com.google.protobuf.AbstractParser<tecresponse>() {
+      @java.lang.Override
+      public tecresponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new tecresponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<tecresponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<tecresponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grpc.coordinator.Coordinator.tecresponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface timerequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gradlegRPC.timerequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string kan = 1;</code>
+     */
+    java.lang.String getKan();
+    /**
+     * <code>string kan = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKanBytes();
+  }
+  /**
+   * Protobuf type {@code gradlegRPC.timerequest}
+   */
+  public  static final class timerequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:gradlegRPC.timerequest)
+      timerequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use timerequest.newBuilder() to construct.
+    private timerequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private timerequest() {
+      kan_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private timerequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              kan_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timerequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timerequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grpc.coordinator.Coordinator.timerequest.class, io.grpc.coordinator.Coordinator.timerequest.Builder.class);
+    }
+
+    public static final int KAN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object kan_;
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public java.lang.String getKan() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kan_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKanBytes() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKanBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kan_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKanBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kan_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.grpc.coordinator.Coordinator.timerequest)) {
+        return super.equals(obj);
+      }
+      io.grpc.coordinator.Coordinator.timerequest other = (io.grpc.coordinator.Coordinator.timerequest) obj;
+
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KAN_FIELD_NUMBER;
+      hash = (53 * hash) + getKan().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.timerequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.grpc.coordinator.Coordinator.timerequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gradlegRPC.timerequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gradlegRPC.timerequest)
+        io.grpc.coordinator.Coordinator.timerequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timerequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timerequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grpc.coordinator.Coordinator.timerequest.class, io.grpc.coordinator.Coordinator.timerequest.Builder.class);
+      }
+
+      // Construct using io.grpc.coordinator.Coordinator.timerequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        kan_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timerequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.timerequest getDefaultInstanceForType() {
+        return io.grpc.coordinator.Coordinator.timerequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.timerequest build() {
+        io.grpc.coordinator.Coordinator.timerequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.timerequest buildPartial() {
+        io.grpc.coordinator.Coordinator.timerequest result = new io.grpc.coordinator.Coordinator.timerequest(this);
+        result.kan_ = kan_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grpc.coordinator.Coordinator.timerequest) {
+          return mergeFrom((io.grpc.coordinator.Coordinator.timerequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grpc.coordinator.Coordinator.timerequest other) {
+        if (other == io.grpc.coordinator.Coordinator.timerequest.getDefaultInstance()) return this;
+        if (!other.getKan().isEmpty()) {
+          kan_ = other.kan_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.grpc.coordinator.Coordinator.timerequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.grpc.coordinator.Coordinator.timerequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object kan_ = "";
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public java.lang.String getKan() {
+        java.lang.Object ref = kan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKanBytes() {
+        java.lang.Object ref = kan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKan(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder clearKan() {
+        
+        kan_ = getDefaultInstance().getKan();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:gradlegRPC.timerequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:gradlegRPC.timerequest)
+    private static final io.grpc.coordinator.Coordinator.timerequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.timerequest();
+    }
+
+    public static io.grpc.coordinator.Coordinator.timerequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<timerequest>
+        PARSER = new com.google.protobuf.AbstractParser<timerequest>() {
+      @java.lang.Override
+      public timerequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new timerequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<timerequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<timerequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grpc.coordinator.Coordinator.timerequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface timeresponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gradlegRPC.timeresponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 currentTime = 1;</code>
+     */
+    long getCurrentTime();
+  }
+  /**
+   * Protobuf type {@code gradlegRPC.timeresponse}
+   */
+  public  static final class timeresponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:gradlegRPC.timeresponse)
+      timeresponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use timeresponse.newBuilder() to construct.
+    private timeresponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private timeresponse() {
+      currentTime_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private timeresponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              currentTime_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timeresponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timeresponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grpc.coordinator.Coordinator.timeresponse.class, io.grpc.coordinator.Coordinator.timeresponse.Builder.class);
+    }
+
+    public static final int CURRENTTIME_FIELD_NUMBER = 1;
+    private long currentTime_;
+    /**
+     * <code>uint64 currentTime = 1;</code>
+     */
+    public long getCurrentTime() {
+      return currentTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (currentTime_ != 0L) {
+        output.writeUInt64(1, currentTime_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (currentTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, currentTime_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.grpc.coordinator.Coordinator.timeresponse)) {
+        return super.equals(obj);
+      }
+      io.grpc.coordinator.Coordinator.timeresponse other = (io.grpc.coordinator.Coordinator.timeresponse) obj;
+
+      boolean result = true;
+      result = result && (getCurrentTime()
+          == other.getCurrentTime());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CURRENTTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCurrentTime());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.timeresponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.grpc.coordinator.Coordinator.timeresponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gradlegRPC.timeresponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gradlegRPC.timeresponse)
+        io.grpc.coordinator.Coordinator.timeresponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timeresponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timeresponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grpc.coordinator.Coordinator.timeresponse.class, io.grpc.coordinator.Coordinator.timeresponse.Builder.class);
+      }
+
+      // Construct using io.grpc.coordinator.Coordinator.timeresponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        currentTime_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_timeresponse_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.timeresponse getDefaultInstanceForType() {
+        return io.grpc.coordinator.Coordinator.timeresponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.timeresponse build() {
+        io.grpc.coordinator.Coordinator.timeresponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.timeresponse buildPartial() {
+        io.grpc.coordinator.Coordinator.timeresponse result = new io.grpc.coordinator.Coordinator.timeresponse(this);
+        result.currentTime_ = currentTime_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grpc.coordinator.Coordinator.timeresponse) {
+          return mergeFrom((io.grpc.coordinator.Coordinator.timeresponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grpc.coordinator.Coordinator.timeresponse other) {
+        if (other == io.grpc.coordinator.Coordinator.timeresponse.getDefaultInstance()) return this;
+        if (other.getCurrentTime() != 0L) {
+          setCurrentTime(other.getCurrentTime());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.grpc.coordinator.Coordinator.timeresponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.grpc.coordinator.Coordinator.timeresponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long currentTime_ ;
+      /**
+       * <code>uint64 currentTime = 1;</code>
+       */
+      public long getCurrentTime() {
+        return currentTime_;
+      }
+      /**
+       * <code>uint64 currentTime = 1;</code>
+       */
+      public Builder setCurrentTime(long value) {
+        
+        currentTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 currentTime = 1;</code>
+       */
+      public Builder clearCurrentTime() {
+        
+        currentTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:gradlegRPC.timeresponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:gradlegRPC.timeresponse)
+    private static final io.grpc.coordinator.Coordinator.timeresponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.timeresponse();
+    }
+
+    public static io.grpc.coordinator.Coordinator.timeresponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<timeresponse>
+        PARSER = new com.google.protobuf.AbstractParser<timeresponse>() {
+      @java.lang.Override
+      public timeresponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new timeresponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<timeresponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<timeresponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grpc.coordinator.Coordinator.timeresponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface visualizerrequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gradlegRPC.visualizerrequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string kan = 1;</code>
+     */
+    java.lang.String getKan();
+    /**
+     * <code>string kan = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKanBytes();
+  }
+  /**
+   * Protobuf type {@code gradlegRPC.visualizerrequest}
+   */
+  public  static final class visualizerrequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:gradlegRPC.visualizerrequest)
+      visualizerrequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use visualizerrequest.newBuilder() to construct.
+    private visualizerrequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private visualizerrequest() {
+      kan_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private visualizerrequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              kan_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grpc.coordinator.Coordinator.visualizerrequest.class, io.grpc.coordinator.Coordinator.visualizerrequest.Builder.class);
+    }
+
+    public static final int KAN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object kan_;
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public java.lang.String getKan() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kan_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKanBytes() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKanBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kan_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKanBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kan_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.grpc.coordinator.Coordinator.visualizerrequest)) {
+        return super.equals(obj);
+      }
+      io.grpc.coordinator.Coordinator.visualizerrequest other = (io.grpc.coordinator.Coordinator.visualizerrequest) obj;
+
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KAN_FIELD_NUMBER;
+      hash = (53 * hash) + getKan().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.grpc.coordinator.Coordinator.visualizerrequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gradlegRPC.visualizerrequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gradlegRPC.visualizerrequest)
+        io.grpc.coordinator.Coordinator.visualizerrequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grpc.coordinator.Coordinator.visualizerrequest.class, io.grpc.coordinator.Coordinator.visualizerrequest.Builder.class);
+      }
+
+      // Construct using io.grpc.coordinator.Coordinator.visualizerrequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        kan_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.visualizerrequest getDefaultInstanceForType() {
+        return io.grpc.coordinator.Coordinator.visualizerrequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.visualizerrequest build() {
+        io.grpc.coordinator.Coordinator.visualizerrequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.visualizerrequest buildPartial() {
+        io.grpc.coordinator.Coordinator.visualizerrequest result = new io.grpc.coordinator.Coordinator.visualizerrequest(this);
+        result.kan_ = kan_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grpc.coordinator.Coordinator.visualizerrequest) {
+          return mergeFrom((io.grpc.coordinator.Coordinator.visualizerrequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grpc.coordinator.Coordinator.visualizerrequest other) {
+        if (other == io.grpc.coordinator.Coordinator.visualizerrequest.getDefaultInstance()) return this;
+        if (!other.getKan().isEmpty()) {
+          kan_ = other.kan_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.grpc.coordinator.Coordinator.visualizerrequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.grpc.coordinator.Coordinator.visualizerrequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object kan_ = "";
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public java.lang.String getKan() {
+        java.lang.Object ref = kan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKanBytes() {
+        java.lang.Object ref = kan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKan(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder clearKan() {
+        
+        kan_ = getDefaultInstance().getKan();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:gradlegRPC.visualizerrequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:gradlegRPC.visualizerrequest)
+    private static final io.grpc.coordinator.Coordinator.visualizerrequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.visualizerrequest();
+    }
+
+    public static io.grpc.coordinator.Coordinator.visualizerrequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<visualizerrequest>
+        PARSER = new com.google.protobuf.AbstractParser<visualizerrequest>() {
+      @java.lang.Override
+      public visualizerrequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new visualizerrequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<visualizerrequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<visualizerrequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grpc.coordinator.Coordinator.visualizerrequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface visualizerresponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gradlegRPC.visualizerresponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes visualizer = 1;</code>
+     */
+    com.google.protobuf.ByteString getVisualizer();
+  }
+  /**
+   * Protobuf type {@code gradlegRPC.visualizerresponse}
+   */
+  public  static final class visualizerresponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:gradlegRPC.visualizerresponse)
+      visualizerresponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use visualizerresponse.newBuilder() to construct.
+    private visualizerresponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private visualizerresponse() {
+      visualizer_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private visualizerresponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              visualizer_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grpc.coordinator.Coordinator.visualizerresponse.class, io.grpc.coordinator.Coordinator.visualizerresponse.Builder.class);
+    }
+
+    public static final int VISUALIZER_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString visualizer_;
+    /**
+     * <code>bytes visualizer = 1;</code>
+     */
+    public com.google.protobuf.ByteString getVisualizer() {
+      return visualizer_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!visualizer_.isEmpty()) {
+        output.writeBytes(1, visualizer_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!visualizer_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, visualizer_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.grpc.coordinator.Coordinator.visualizerresponse)) {
+        return super.equals(obj);
+      }
+      io.grpc.coordinator.Coordinator.visualizerresponse other = (io.grpc.coordinator.Coordinator.visualizerresponse) obj;
+
+      boolean result = true;
+      result = result && getVisualizer()
+          .equals(other.getVisualizer());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + VISUALIZER_FIELD_NUMBER;
+      hash = (53 * hash) + getVisualizer().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.grpc.coordinator.Coordinator.visualizerresponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gradlegRPC.visualizerresponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gradlegRPC.visualizerresponse)
+        io.grpc.coordinator.Coordinator.visualizerresponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grpc.coordinator.Coordinator.visualizerresponse.class, io.grpc.coordinator.Coordinator.visualizerresponse.Builder.class);
+      }
+
+      // Construct using io.grpc.coordinator.Coordinator.visualizerresponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        visualizer_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.visualizerresponse getDefaultInstanceForType() {
+        return io.grpc.coordinator.Coordinator.visualizerresponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.visualizerresponse build() {
+        io.grpc.coordinator.Coordinator.visualizerresponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.visualizerresponse buildPartial() {
+        io.grpc.coordinator.Coordinator.visualizerresponse result = new io.grpc.coordinator.Coordinator.visualizerresponse(this);
+        result.visualizer_ = visualizer_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grpc.coordinator.Coordinator.visualizerresponse) {
+          return mergeFrom((io.grpc.coordinator.Coordinator.visualizerresponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grpc.coordinator.Coordinator.visualizerresponse other) {
+        if (other == io.grpc.coordinator.Coordinator.visualizerresponse.getDefaultInstance()) return this;
+        if (other.getVisualizer() != com.google.protobuf.ByteString.EMPTY) {
+          setVisualizer(other.getVisualizer());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.grpc.coordinator.Coordinator.visualizerresponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.grpc.coordinator.Coordinator.visualizerresponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString visualizer_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes visualizer = 1;</code>
+       */
+      public com.google.protobuf.ByteString getVisualizer() {
+        return visualizer_;
+      }
+      /**
+       * <code>bytes visualizer = 1;</code>
+       */
+      public Builder setVisualizer(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        visualizer_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes visualizer = 1;</code>
+       */
+      public Builder clearVisualizer() {
+        
+        visualizer_ = getDefaultInstance().getVisualizer();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:gradlegRPC.visualizerresponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:gradlegRPC.visualizerresponse)
+    private static final io.grpc.coordinator.Coordinator.visualizerresponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.visualizerresponse();
+    }
+
+    public static io.grpc.coordinator.Coordinator.visualizerresponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<visualizerresponse>
+        PARSER = new com.google.protobuf.AbstractParser<visualizerresponse>() {
+      @java.lang.Override
+      public visualizerresponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new visualizerresponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<visualizerresponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<visualizerresponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grpc.coordinator.Coordinator.visualizerresponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface allenIntervalOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gradlegRPC.allenInterval)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string kan = 1;</code>
+     */
+    java.lang.String getKan();
+    /**
+     * <code>string kan = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKanBytes();
+
+    /**
+     * <code>bytes allenIntervalBytes = 2;</code>
+     */
+    com.google.protobuf.ByteString getAllenIntervalBytes();
+  }
+  /**
+   * Protobuf type {@code gradlegRPC.allenInterval}
+   */
+  public  static final class allenInterval extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:gradlegRPC.allenInterval)
+      allenIntervalOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use allenInterval.newBuilder() to construct.
+    private allenInterval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private allenInterval() {
+      kan_ = "";
+      allenIntervalBytes_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private allenInterval(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              kan_ = s;
+              break;
+            }
+            case 18: {
+
+              allenIntervalBytes_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grpc.coordinator.Coordinator.allenInterval.class, io.grpc.coordinator.Coordinator.allenInterval.Builder.class);
+    }
+
+    public static final int KAN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object kan_;
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public java.lang.String getKan() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kan_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kan = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKanBytes() {
+      java.lang.Object ref = kan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALLENINTERVALBYTES_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString allenIntervalBytes_;
+    /**
+     * <code>bytes allenIntervalBytes = 2;</code>
+     */
+    public com.google.protobuf.ByteString getAllenIntervalBytes() {
+      return allenIntervalBytes_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKanBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kan_);
+      }
+      if (!allenIntervalBytes_.isEmpty()) {
+        output.writeBytes(2, allenIntervalBytes_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKanBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kan_);
+      }
+      if (!allenIntervalBytes_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, allenIntervalBytes_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.grpc.coordinator.Coordinator.allenInterval)) {
+        return super.equals(obj);
+      }
+      io.grpc.coordinator.Coordinator.allenInterval other = (io.grpc.coordinator.Coordinator.allenInterval) obj;
+
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && getAllenIntervalBytes()
+          .equals(other.getAllenIntervalBytes());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KAN_FIELD_NUMBER;
+      hash = (53 * hash) + getKan().hashCode();
+      hash = (37 * hash) + ALLENINTERVALBYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getAllenIntervalBytes().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.grpc.coordinator.Coordinator.allenInterval prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gradlegRPC.allenInterval}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gradlegRPC.allenInterval)
+        io.grpc.coordinator.Coordinator.allenIntervalOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grpc.coordinator.Coordinator.allenInterval.class, io.grpc.coordinator.Coordinator.allenInterval.Builder.class);
+      }
+
+      // Construct using io.grpc.coordinator.Coordinator.allenInterval.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        kan_ = "";
+
+        allenIntervalBytes_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.allenInterval getDefaultInstanceForType() {
+        return io.grpc.coordinator.Coordinator.allenInterval.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.allenInterval build() {
+        io.grpc.coordinator.Coordinator.allenInterval result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.allenInterval buildPartial() {
+        io.grpc.coordinator.Coordinator.allenInterval result = new io.grpc.coordinator.Coordinator.allenInterval(this);
+        result.kan_ = kan_;
+        result.allenIntervalBytes_ = allenIntervalBytes_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grpc.coordinator.Coordinator.allenInterval) {
+          return mergeFrom((io.grpc.coordinator.Coordinator.allenInterval)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grpc.coordinator.Coordinator.allenInterval other) {
+        if (other == io.grpc.coordinator.Coordinator.allenInterval.getDefaultInstance()) return this;
+        if (!other.getKan().isEmpty()) {
+          kan_ = other.kan_;
+          onChanged();
+        }
+        if (other.getAllenIntervalBytes() != com.google.protobuf.ByteString.EMPTY) {
+          setAllenIntervalBytes(other.getAllenIntervalBytes());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.grpc.coordinator.Coordinator.allenInterval parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.grpc.coordinator.Coordinator.allenInterval) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object kan_ = "";
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public java.lang.String getKan() {
+        java.lang.Object ref = kan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKanBytes() {
+        java.lang.Object ref = kan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKan(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder clearKan() {
+        
+        kan_ = getDefaultInstance().getKan();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kan = 1;</code>
+       */
+      public Builder setKanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        kan_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString allenIntervalBytes_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes allenIntervalBytes = 2;</code>
+       */
+      public com.google.protobuf.ByteString getAllenIntervalBytes() {
+        return allenIntervalBytes_;
+      }
+      /**
+       * <code>bytes allenIntervalBytes = 2;</code>
+       */
+      public Builder setAllenIntervalBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        allenIntervalBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes allenIntervalBytes = 2;</code>
+       */
+      public Builder clearAllenIntervalBytes() {
+        
+        allenIntervalBytes_ = getDefaultInstance().getAllenIntervalBytes();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:gradlegRPC.allenInterval)
+    }
+
+    // @@protoc_insertion_point(class_scope:gradlegRPC.allenInterval)
+    private static final io.grpc.coordinator.Coordinator.allenInterval DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.allenInterval();
+    }
+
+    public static io.grpc.coordinator.Coordinator.allenInterval getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<allenInterval>
+        PARSER = new com.google.protobuf.AbstractParser<allenInterval>() {
+      @java.lang.Override
+      public allenInterval parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new allenInterval(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<allenInterval> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<allenInterval> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grpc.coordinator.Coordinator.allenInterval getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_gradlegRPC_requestrobotreport_descriptor;
   private static final 
@@ -8103,6 +12683,11 @@ public final class Coordinator {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_gradlegRPC_responserobotreport_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gradlegRPC_trackerRobotReportRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_gradlegRPC_trackerRobotReportRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_gradlegRPC_coordinatorGetCriticalPointRequestMessage_descriptor;
   private static final 
@@ -8143,6 +12728,41 @@ public final class Coordinator {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_gradlegRPC_noneResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gradlegRPC_tecrequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_gradlegRPC_tecrequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gradlegRPC_tecresponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_gradlegRPC_tecresponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gradlegRPC_timerequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_gradlegRPC_timerequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gradlegRPC_timeresponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_gradlegRPC_timeresponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gradlegRPC_visualizerrequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_gradlegRPC_visualizerrequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gradlegRPC_visualizerresponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_gradlegRPC_visualizerresponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gradlegRPC_allenInterval_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_gradlegRPC_allenInterval_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8152,45 +12772,66 @@ public final class Coordinator {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021coordinator.proto\022\ngradlegRPC\"\323\001\n\022requ" +
-      "estrobotreport\022\013\n\003req\030\001 \001(\t\022\017\n\007robotid\030\002" +
-      " \001(\005\022\t\n\001x\030\003 \001(\001\022\t\n\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n" +
-      "\004roll\030\006 \001(\001\022\r\n\005pitch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022" +
-      "\021\n\tpathIndex\030\t \001(\005\022\020\n\010velocity\030\n \001(\001\022\030\n\020" +
-      "distanceTraveled\030\013 \001(\001\022\025\n\rcriticalPoint\030" +
-      "\014 \001(\005\":\n\023responserobotreport\022\014\n\004name\030\001 \001" +
-      "(\t\022\025\n\rcriticalPoint\030\002 \001(\005\"I\n)coordinator" +
-      "GetCriticalPointRequestMessage\022\013\n\003kan\030\001 " +
-      "\001(\t\022\017\n\007robotID\030\002 \001(\005\"C\n*coordinatorGetCr" +
-      "iticalPointResponseMessage\022\025\n\rcriticalPo" +
-      "int\030\001 \001(\005\"\203\002\n\016robotsGreeting\022\013\n\003kan\030\001 \001(" +
-      "\t\022\017\n\007robotID\030\002 \001(\005\022\014\n\004type\030\003 \001(\t\022\n\n\002IP\030\004" +
-      " \001(\t\022\014\n\004port\030\005 \001(\005\022$\n\005rpose\030\006 \001(\0132\025.grad" +
-      "legRPC.robotPose\022\021\n\ttimeStamp\030\007 \001(\t\022\020\n\010m" +
-      "axAccel\030\010 \001(\001\022\016\n\006maxVel\030\t \001(\001\022\036\n\026trackin" +
-      "gPeriodInMillis\030\n \001(\001\0220\n\rmakeFootPrint\030\013" +
-      " \001(\0132\031.gradlegRPC.MakeFootPrint\"V\n\trobot" +
-      "Pose\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\022\014\n" +
-      "\004roll\030\004 \001(\001\022\r\n\005pitch\030\005 \001(\001\022\013\n\003yaw\030\006 \001(\001\"" +
-      "{\n\rMakeFootPrint\022\017\n\007centerX\030\001 \001(\005\022\017\n\007cen" +
-      "terY\030\002 \001(\005\022\020\n\010minVerts\030\003 \001(\005\022\020\n\010maxVerts" +
-      "\030\004 \001(\005\022\021\n\tminRadius\030\005 \001(\001\022\021\n\tmaxRadius\030\006" +
-      " \001(\001\"<\n\025robotgreetingResponse\022\014\n\004name\030\001 " +
-      "\001(\t\022\025\n\rnumofReplicas\030\002 \001(\005\"7\n\026getCurrent" +
-      "Dependencies\022\013\n\003kan\030\001 \001(\t\022\020\n\010depBytes\030\002 " +
-      "\001(\014\"\034\n\014noneResponse\022\014\n\004none\030\001 \001(\t2\257\003\n\022Co" +
-      "ordinatorService\022[\n\026coordinatorrobotrepo" +
-      "rt\022\036.gradlegRPC.requestrobotreport\032\037.gra" +
-      "dlegRPC.responserobotreport\"\000\022\211\001\n\030coordi" +
-      "natorcriticalpoint\0225.gradlegRPC.coordina" +
-      "torGetCriticalPointRequestMessage\0326.grad" +
-      "legRPC.coordinatorGetCriticalPointRespon" +
-      "seMessage\022W\n\027coordinatordependencies\022\".g" +
-      "radlegRPC.getCurrentDependencies\032\030.gradl" +
-      "egRPC.noneResponse\022W\n\026coordinatorgetGree" +
-      "ting\022\032.gradlegRPC.robotsGreeting\032!.gradl" +
-      "egRPC.robotgreetingResponseB\025\n\023io.grpc.c" +
-      "oordinatorb\006proto3"
+      "\n\021coordinator.proto\022\ngradlegRPC\032\033google/" +
+      "protobuf/empty.proto\"\323\001\n\022requestrobotrep" +
+      "ort\022\013\n\003req\030\001 \001(\t\022\017\n\007robotid\030\002 \001(\005\022\t\n\001x\030\003" +
+      " \001(\001\022\t\n\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006 \001(\001" +
+      "\022\r\n\005pitch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpathInde" +
+      "x\030\t \001(\005\022\020\n\010velocity\030\n \001(\001\022\030\n\020distanceTra" +
+      "veled\030\013 \001(\001\022\025\n\rcriticalPoint\030\014 \001(\005\":\n\023re" +
+      "sponserobotreport\022\014\n\004name\030\001 \001(\t\022\025\n\rcriti" +
+      "calPoint\030\002 \001(\005\"9\n\031trackerRobotReportRequ" +
+      "est\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"I\n)coo" +
+      "rdinatorGetCriticalPointRequestMessage\022\013" +
+      "\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"C\n*coordina" +
+      "torGetCriticalPointResponseMessage\022\025\n\rcr" +
+      "iticalPoint\030\001 \001(\005\"\231\002\n\016robotsGreeting\022\013\n\003" +
+      "kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\022\014\n\004type\030\003 \001(\t" +
+      "\022\n\n\002IP\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\022$\n\005rpose\030\006 \001(" +
+      "\0132\025.gradlegRPC.robotPose\022\021\n\ttimeStamp\030\007 " +
+      "\001(\t\022\020\n\010maxAccel\030\010 \001(\001\022\016\n\006maxVel\030\t \001(\001\022\036\n" +
+      "\026trackingPeriodInMillis\030\n \001(\001\0220\n\rmakeFoo" +
+      "tPrint\030\013 \001(\0132\031.gradlegRPC.MakeFootPrint\022" +
+      "\024\n\014poseSteering\030\014 \001(\014\"V\n\trobotPose\022\t\n\001x\030" +
+      "\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\022\014\n\004roll\030\004 \001(" +
+      "\001\022\r\n\005pitch\030\005 \001(\001\022\013\n\003yaw\030\006 \001(\001\"{\n\rMakeFoo" +
+      "tPrint\022\017\n\007centerX\030\001 \001(\005\022\017\n\007centerY\030\002 \001(\005" +
+      "\022\020\n\010minVerts\030\003 \001(\005\022\020\n\010maxVerts\030\004 \001(\005\022\021\n\t" +
+      "minRadius\030\005 \001(\001\022\021\n\tmaxRadius\030\006 \001(\001\"<\n\025ro" +
+      "botgreetingResponse\022\014\n\004name\030\001 \001(\t\022\025\n\rnum" +
+      "ofReplicas\030\002 \001(\005\"7\n\026getCurrentDependenci" +
+      "es\022\013\n\003kan\030\001 \001(\t\022\020\n\010depBytes\030\002 \001(\014\"\034\n\014non" +
+      "eResponse\022\014\n\004none\030\001 \001(\t\"*\n\ntecrequest\022\013\n" +
+      "\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"7\n\013tecrespon" +
+      "se\022\026\n\016stringresponse\030\001 \001(\t\022\020\n\010tecStuff\030\002" +
+      " \001(\014\"\032\n\013timerequest\022\013\n\003kan\030\001 \001(\t\"#\n\014time" +
+      "response\022\023\n\013currentTime\030\001 \001(\004\" \n\021visuali" +
+      "zerrequest\022\013\n\003kan\030\001 \001(\t\"(\n\022visualizerres" +
+      "ponse\022\022\n\nvisualizer\030\001 \001(\014\"8\n\rallenInterv" +
+      "al\022\013\n\003kan\030\001 \001(\t\022\032\n\022allenIntervalBytes\030\002 " +
+      "\001(\0142\344\006\n\022CoordinatorService\022[\n\026coordinato" +
+      "rrobotreport\022\036.gradlegRPC.requestrobotre" +
+      "port\032\037.gradlegRPC.responserobotreport\"\000\022" +
+      "\211\001\n\030coordinatorcriticalpoint\0225.gradlegRP" +
+      "C.coordinatorGetCriticalPointRequestMess" +
+      "age\0326.gradlegRPC.coordinatorGetCriticalP" +
+      "ointResponseMessage\022W\n\027coordinatordepend" +
+      "encies\022\".gradlegRPC.getCurrentDependenci" +
+      "es\032\030.gradlegRPC.noneResponse\022W\n\026coordina" +
+      "torgetGreeting\022\032.gradlegRPC.robotsGreeti" +
+      "ng\032!.gradlegRPC.robotgreetingResponse\022I\n" +
+      "\026coordinatorgetTecStuff\022\026.gradlegRPC.tec" +
+      "request\032\027.gradlegRPC.tecresponse\022N\n\031coor" +
+      "dinatorgetCurrentTime\022\027.gradlegRPC.timer" +
+      "equest\032\030.gradlegRPC.timeresponse\022Y\n\030coor" +
+      "dinatorgetVisualizer\022\035.gradlegRPC.visual" +
+      "izerrequest\032\036.gradlegRPC.visualizerrespo" +
+      "nse\022R\n\033coordinatorgetAllenInterval\022\031.gra" +
+      "dlegRPC.allenInterval\032\030.gradlegRPC.noneR" +
+      "esponse\022i\n coordinatorgetRobotReportRequ" +
+      "est\022%.gradlegRPC.trackerRobotReportReque" +
+      "st\032\036.gradlegRPC.requestrobotreportB\025\n\023io" +
+      ".grpc.coordinatorb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8203,6 +12844,7 @@ public final class Coordinator {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.EmptyProto.getDescriptor(),
         }, assigner);
     internal_static_gradlegRPC_requestrobotreport_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -8216,54 +12858,103 @@ public final class Coordinator {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_responserobotreport_descriptor,
         new java.lang.String[] { "Name", "CriticalPoint", });
-    internal_static_gradlegRPC_coordinatorGetCriticalPointRequestMessage_descriptor =
+    internal_static_gradlegRPC_trackerRobotReportRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_gradlegRPC_trackerRobotReportRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_gradlegRPC_trackerRobotReportRequest_descriptor,
+        new java.lang.String[] { "Kan", "RobotID", });
+    internal_static_gradlegRPC_coordinatorGetCriticalPointRequestMessage_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_gradlegRPC_coordinatorGetCriticalPointRequestMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_coordinatorGetCriticalPointRequestMessage_descriptor,
         new java.lang.String[] { "Kan", "RobotID", });
     internal_static_gradlegRPC_coordinatorGetCriticalPointResponseMessage_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_gradlegRPC_coordinatorGetCriticalPointResponseMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_coordinatorGetCriticalPointResponseMessage_descriptor,
         new java.lang.String[] { "CriticalPoint", });
     internal_static_gradlegRPC_robotsGreeting_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_gradlegRPC_robotsGreeting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotsGreeting_descriptor,
-        new java.lang.String[] { "Kan", "RobotID", "Type", "IP", "Port", "Rpose", "TimeStamp", "MaxAccel", "MaxVel", "TrackingPeriodInMillis", "MakeFootPrint", });
+        new java.lang.String[] { "Kan", "RobotID", "Type", "IP", "Port", "Rpose", "TimeStamp", "MaxAccel", "MaxVel", "TrackingPeriodInMillis", "MakeFootPrint", "PoseSteering", });
     internal_static_gradlegRPC_robotPose_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_gradlegRPC_robotPose_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotPose_descriptor,
         new java.lang.String[] { "X", "Y", "Z", "Roll", "Pitch", "Yaw", });
     internal_static_gradlegRPC_MakeFootPrint_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_gradlegRPC_MakeFootPrint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_MakeFootPrint_descriptor,
         new java.lang.String[] { "CenterX", "CenterY", "MinVerts", "MaxVerts", "MinRadius", "MaxRadius", });
     internal_static_gradlegRPC_robotgreetingResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_gradlegRPC_robotgreetingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotgreetingResponse_descriptor,
         new java.lang.String[] { "Name", "NumofReplicas", });
     internal_static_gradlegRPC_getCurrentDependencies_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_gradlegRPC_getCurrentDependencies_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_getCurrentDependencies_descriptor,
         new java.lang.String[] { "Kan", "DepBytes", });
     internal_static_gradlegRPC_noneResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_gradlegRPC_noneResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_noneResponse_descriptor,
         new java.lang.String[] { "None", });
+    internal_static_gradlegRPC_tecrequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_gradlegRPC_tecrequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_gradlegRPC_tecrequest_descriptor,
+        new java.lang.String[] { "Kan", "RobotID", });
+    internal_static_gradlegRPC_tecresponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_gradlegRPC_tecresponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_gradlegRPC_tecresponse_descriptor,
+        new java.lang.String[] { "Stringresponse", "TecStuff", });
+    internal_static_gradlegRPC_timerequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_gradlegRPC_timerequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_gradlegRPC_timerequest_descriptor,
+        new java.lang.String[] { "Kan", });
+    internal_static_gradlegRPC_timeresponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_gradlegRPC_timeresponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_gradlegRPC_timeresponse_descriptor,
+        new java.lang.String[] { "CurrentTime", });
+    internal_static_gradlegRPC_visualizerrequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_gradlegRPC_visualizerrequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_gradlegRPC_visualizerrequest_descriptor,
+        new java.lang.String[] { "Kan", });
+    internal_static_gradlegRPC_visualizerresponse_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_gradlegRPC_visualizerresponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_gradlegRPC_visualizerresponse_descriptor,
+        new java.lang.String[] { "Visualizer", });
+    internal_static_gradlegRPC_allenInterval_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_gradlegRPC_allenInterval_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_gradlegRPC_allenInterval_descriptor,
+        new java.lang.String[] { "Kan", "AllenIntervalBytes", });
+    com.google.protobuf.EmptyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

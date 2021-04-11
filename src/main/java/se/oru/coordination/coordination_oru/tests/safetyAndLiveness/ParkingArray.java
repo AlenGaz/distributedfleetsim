@@ -15,8 +15,8 @@ import se.oru.coordination.coordination_oru.Mission;
 import se.oru.coordination.coordination_oru.NetworkConfiguration;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.Missions;
-import Visualizer.util.RVizVisualization;
+import se.oru.coordination.coordination_oru.util.Missions;
+import se.oru.coordination.coordination_oru.util.RVizVisualization;
 
 public class ParkingArray {
 	

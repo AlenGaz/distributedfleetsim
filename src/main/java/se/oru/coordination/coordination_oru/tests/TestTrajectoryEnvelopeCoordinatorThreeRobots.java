@@ -18,8 +18,8 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.TrackingCallback;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.BrowserVisualization;
-import Visualizer.util.Missions;
+import se.oru.coordination.coordination_oru.util.BrowserVisualization;
+import se.oru.coordination.coordination_oru.util.Missions;
 
 @DemoDescription(desc = "Simple test showing the use of pre-planned paths stored in files.")
 public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
@@ -30,6 +30,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 		double MAX_VEL = 4.0;
 		// Instantiate a trajectory envelope coordinator.
 
+
 		// The TrajectoryEnvelopeCoordinatorSimulation implementation provides
 		// -- the factory method getNewTracker() which returns a trajectory envelope tracker
 		// -- the getCurrentTimeInMillis() method, which is used by the coordinator to keep time
@@ -39,6 +40,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 
 
 		tec.addComparator(new Comparator<RobotAtCriticalSection> () {
+
 			@Override
 			public int compare(RobotAtCriticalSection o1, RobotAtCriticalSection o2) {
 				CriticalSection cs = o1.getCriticalSection();
@@ -46,6 +48,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 				RobotReport robotReport2 = o2.getRobotReport();
 				return ((cs.getTe1Start()-robotReport1.getPathIndex())-(cs.getTe2Start()-robotReport2.getPathIndex()));
 			}
+
 		});
 		tec.addComparator(new Comparator<RobotAtCriticalSection> () {
 			@Override

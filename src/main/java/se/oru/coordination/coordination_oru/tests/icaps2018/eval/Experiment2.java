@@ -19,8 +19,8 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.Missions;
-import Visualizer.util.RVizVisualization;
+import se.oru.coordination.coordination_oru.util.Missions;
+import se.oru.coordination.coordination_oru.util.RVizVisualization;
 
 @DemoDescription(desc = "Coordination on paths obtained from the ReedsSheppCarPlanner for two robots navigating in the same direction.")
 public class Experiment2 {

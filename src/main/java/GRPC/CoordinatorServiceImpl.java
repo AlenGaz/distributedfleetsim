@@ -1,18 +1,20 @@
 package GRPC;
 
-import CoordinatorPackage.AbstractTrajectoryEnvelopeCoordinator;
-import Launch.MakeFootPrint;
+import CoordinatorPackage.RemoteAbstractTrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.containers.tecStuff;
+import CoordinatorPackage.containers.MakeFootPrint;
+import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
 import io.grpc.coordinator.Coordinator;
 import io.grpc.coordinator.CoordinatorServiceGrpc;
-//import io.grpc.fleetClients.FleetClientGrpc;
-//import io.grpc.fleetClients.FleetClientServiceGrpc;
 import io.grpc.fleetClients.FleetClientsServiceGrpc;
 import io.grpc.fleetClients.Fleetclients;
 import io.grpc.stub.StreamObserver;
+import org.metacsp.multi.allenInterval.AllenIntervalConstraint;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
+import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import se.oru.coordination.coordination_oru.*;
 
 
@@ -21,6 +23,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 
 public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorServiceImplBase {
 
@@ -30,7 +33,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
     public HashMap<Integer, clientConnection> robotIDtoClientConnection = new HashMap<Integer,clientConnection>();
 
 
-    AbstractTrajectoryEnvelopeCoordinator tec = null;
+    RemoteAbstractTrajectoryEnvelopeCoordinator tec = null;
 
 
     String target = "localhost:50057";
@@ -42,7 +45,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
     }
 
-    public CoordinatorServiceImpl(AbstractTrajectoryEnvelopeCoordinator tec) {
+    public CoordinatorServiceImpl(RemoteAbstractTrajectoryEnvelopeCoordinator tec) {
 
         this.tec = tec;
         blockingStubClient = FleetClientsServiceGrpc.newBlockingStub(fleetServiceChannel);
@@ -68,7 +71,19 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             MakeFootPrint _footprint = new MakeFootPrint(request.getMakeFootPrint().getCenterX(),request.getMakeFootPrint().getCenterY()
                                                         ,request.getMakeFootPrint().getMinVerts(), request.getMakeFootPrint().getMaxVerts(),
                                                         request.getMakeFootPrint().getMinRadius(),request.getMakeFootPrint().getMaxRadius());
-            clientConnection _clientConnection = new clientConnection(_type,_ip,_port,_pose,_timeStamp,_maxAccel,_maxVel,_trackingPeriod,_footprint);
+
+            // deserializing poseSteering that comes from the robot
+            PoseSteering[] _poseSteering = null;
+            try {
+                _poseSteering = (PoseSteering[]) convertFromBytes(request.getPoseSteering().toByteArray());
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+
+            clientConnection _clientConnection = new clientConnection(_type,_ip,_port,_pose,_timeStamp,_maxAccel,_maxVel,_trackingPeriod,_footprint,_poseSteering);
             robotIDtoClientConnection.put(_robotID, _clientConnection);
 
             System.out.println("Got ClientConnections timeStamp: " + robotIDtoClientConnection.get(1).getTimeStamp());
@@ -104,30 +119,9 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             Pose _pose = new Pose(request.getX(), request.getY(),request.getZ(), request.getRoll(),request.getPitch(),request.getYaw());
             RobotReport rR = new RobotReport(_robotID, _pose, request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
 
-
             robotIDtoRobotReport.put(_robotID,rR);
 
         }
-
-
-
-        //System.out.println("RobotReports" + robotIDtoRobotReport);
-
-
-
-        System.out.println("Tec timeInMil" + tec.getCurrentTimeInMillis());
-        System.out.println("Tec CurrentDependencies" + tec.getCurrentDependencies());
-        //System.out.println("Tec trackers" + tec.trackers.get(1));
-        //System.out.println("Tec staticDep" + tec.currentDependencies);
-        //System.out.println("Tec getNofRepls" + tec.getNumberOfReplicas());
-        //System.out.println("TEC tenvelope" + tec.getCurrentTrajectoryEnvelope(1));
-        System.out.println("Tec superEnvelopes" + tec.getCurrentSuperEnvelope(1));
-
-
-
-        //AbstractTrajectoryEnvelopeCoordinator.metaCSPLogger.info("Printing something from tec" + tec.getCurrentDependencies());
-        //AbstractTrajectoryEnvelopeCoordinator.metaCSPLogger.info("Printing something from metaCSP");
-        //System.out.println("Printing something from tec" + tec.getCurrentDependencies());
 
         responsetorobotreport(responseObserver);
     }
@@ -158,9 +152,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
         if (request.getKan().equals("requestcriticalpoint")) {
 
-            //System.out.println("[CoordinatorService] getting request: " + request + "\n");
 
-            // SHOULD NOT BE NULL TO READ FROM THIS
             criticalPoint = robotIDtoRobotReport.get(request.getRobotID()).getCriticalPoint();
             System.out.println("[CoordinatorService] responding to criticalpoint1 request with: " + criticalPoint);
 
@@ -174,7 +166,6 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
     public int coordinatorcriticalpointresponse(StreamObserver<Coordinator.coordinatorGetCriticalPointResponseMessage> responseObserver,
                                                 int criticalPoint) {
-
         Coordinator.coordinatorGetCriticalPointResponseMessage response =
                 Coordinator.coordinatorGetCriticalPointResponseMessage.newBuilder().setCriticalPoint(criticalPoint).build();
 
@@ -194,7 +185,6 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
         Fleetclients.robotReportRequest request = Fleetclients.robotReportRequest.newBuilder().setKan(myreq).setRobotID(robotID).build();
 
         RobotReport rR = null;
-
         Fleetclients.robotReportResponse response = null;
 
 
@@ -202,7 +192,6 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             //TODO stoops before blocking stub (no response)
 
             response = blockingStubClient.grobotReport(request);
-
 
 
             int _robotID = 0;
@@ -260,6 +249,107 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
+
+    public void coordinatorgetTecStuff(Coordinator.tecrequest request,
+                                       StreamObserver<Coordinator.tecresponse> responseObserver){
+
+        tecStuff tes = null;
+        /**
+         * Works to serialize Solver, Visualization, Dependencies etc..
+         * but wont be used I think because we can avoid sending this much data over the network
+         * */
+
+        if(request.getKan().equals("RequestTecStuff")){
+
+
+            tes = new tecStuff(request.getRobotID());
+            tes.setCurrentTimeInMill(tec.getCurrentTimeInMillis());
+            tes.setTeSolver(tec.getSolver());
+            tes.setFleetVisualizer(tec.getVisualization());
+            tes.setCurrDependencies(tec.getCurrentDependencies());
+            
+        }
+        byte[] tecStuffSerialized = new byte[0];
+        try {
+           tecStuffSerialized = convertToBytes(tes);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("[CoordinatorServiceImpl] Size of tes" + tecStuffSerialized.length);
+
+        coordinatorRespondTecStuff(responseObserver, tecStuffSerialized);
+    }
+
+
+    public void coordinatorRespondTecStuff(StreamObserver<Coordinator.tecresponse> responseObserver, byte[] tecStuffSerialized){
+
+        ByteString tecStuffSerializedInByteString = ByteString.copyFrom(tecStuffSerialized);
+        Coordinator.tecresponse response = Coordinator.tecresponse.newBuilder().setStringresponse("ResponseTecStuff").setTecStuff(tecStuffSerializedInByteString).build();
+
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
+
+    // Handling a time request without string Kan parameter, just responding in this
+    public void coordinatorgetCurrentTime(Coordinator.timerequest request,
+                                       StreamObserver<Coordinator.timeresponse> responseObserver){
+
+        System.out.println("[CoordinatorServiceImpl] got request of current time, answering with: " + tec.getCurrentTimeInMillis());
+
+        Coordinator.timeresponse response = Coordinator.timeresponse.newBuilder().setCurrentTime(tec.getCurrentTimeInMillis()).build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
+    public void coordinatorgetAllenInterval(Coordinator.allenInterval message,
+                                            StreamObserver<Coordinator.noneResponse> streamObserver){
+        AllenIntervalConstraint allenIntervalConstraint = null;
+        try {
+           allenIntervalConstraint = (AllenIntervalConstraint) convertFromBytes(message.getAllenIntervalBytes().toByteArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        synchronized (tec.getSolver()){
+            if(message.getKan().equals("Add")){
+                tec.getSolver().addConstraint(allenIntervalConstraint);
+            }
+            if(message.getKan().equals("Remove")){
+                tec.getSolver().removeConstraint(allenIntervalConstraint);
+            }
+        }
+    }
+
+
+    public void coordinatorgetRobotReportRequest(Coordinator.trackerRobotReportRequest request,
+                                                 StreamObserver<Coordinator.requestrobotreport> responseObserver){
+
+        System.out.println("[CoordinatorServiceImpl] Getting RobotReport Request from tracker ");
+        if(request.getKan().equals("TrackerRequestRobotReport")){
+
+            RobotReport robotReport = new RobotReport();
+            robotReport = tec.getRobotReport(request.getRobotID());
+            coordinatorgetRobotReportResponse(responseObserver, robotReport);
+        }
+
+    }
+public void coordinatorgetRobotReportResponse(StreamObserver<Coordinator.requestrobotreport> responseObserver, RobotReport rr){
+
+        Coordinator.requestrobotreport response = Coordinator.requestrobotreport.newBuilder()
+                .setRobotid(rr.getRobotID()).setX(rr.getPose().getX()).setY(rr.getPose().getY()).setZ(rr.getPose().getZ())
+                .setRoll(rr.getPose().getRoll()).setPitch(rr.getPose().getPitch()).setYaw(rr.getPose().getYaw())
+                .setPathIndex(rr.getPathIndex()).setVelocity(rr.getVelocity()).setDistanceTraveled(rr.getDistanceTraveled())
+                .setCriticalPoint(rr.getCriticalPoint()).build();
+
+        System.out.println("[CoordinatorServiceImpl] responding with RobotReport to Tracker ");
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+}
 
 
 

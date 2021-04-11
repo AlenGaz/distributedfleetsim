@@ -17,8 +17,8 @@ import com.vividsolutions.jts.geom.Polygon;
 import se.oru.coordination.coordination_oru.motionplanning.AbstractMotionPlanner;
 import se.oru.coordination.coordination_oru.motionplanning.OccupancyMap;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlannerLib.PathPose;
-import Visualizer.util.GeometrySmoother;
-import Visualizer.util.GeometrySmoother.SmootherControl;
+import se.oru.coordination.coordination_oru.util.GeometrySmoother;
+import se.oru.coordination.coordination_oru.util.GeometrySmoother.SmootherControl;
 
 public class ReedsSheppCarPlanner extends AbstractMotionPlanner {
 	

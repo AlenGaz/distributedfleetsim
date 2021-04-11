@@ -14,8 +14,8 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.JTSDrawingPanelVisualization;
-import Visualizer.util.Missions;
+import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
+import se.oru.coordination.coordination_oru.util.Missions;
 
 @DemoDescription(desc = "Example showing case where robots would immediately collide after starting to drive.")
 public class TestTrajectoryEnvelopeCoordinatorWithMotionPlanner21 {

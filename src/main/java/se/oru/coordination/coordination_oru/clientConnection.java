@@ -1,7 +1,8 @@
 package se.oru.coordination.coordination_oru;
 
-import Launch.MakeFootPrint;
+import CoordinatorPackage.containers.MakeFootPrint;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
+import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 
 public class clientConnection {
 
@@ -14,10 +15,11 @@ public class clientConnection {
     private double maxVel;
     private double trackingPeriodInMillis;
     private MakeFootPrint footPrint;
+    private PoseSteering[] poseSteerings;
 
     public clientConnection(String type, String ip, int port, Pose pose,
                             String timeStamp, double maxAccel, double maxVel,
-                            double trackingPeriodInMillis, MakeFootPrint footPrint) {
+                            double trackingPeriodInMillis, MakeFootPrint footPrint, PoseSteering[] poseSteering) {
         this.setType(type);
         this.setIp(ip);
         this.setTimeStamp(timeStamp);
@@ -25,6 +27,8 @@ public class clientConnection {
         this.setMaxVel(maxVel);
         this.setTrackingPeriodInMillis(trackingPeriodInMillis);
         this.setFootPrint(footPrint);
+        this.setPoseSteerings(poseSteering);
+
     }
 
 
@@ -98,5 +102,13 @@ public class clientConnection {
 
     public void setFootPrint(MakeFootPrint footPrint) {
         this.footPrint = footPrint;
+    }
+
+    public PoseSteering[] getPoseSteerings() {
+        return poseSteerings;
+    }
+
+    public void setPoseSteerings(PoseSteering[] poseSteerings) {
+        this.poseSteerings = poseSteerings;
     }
 }

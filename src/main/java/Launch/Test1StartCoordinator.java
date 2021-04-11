@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
 
 import GRPC.CoordinatorServiceImpl;
-import Visualizer.util.BrowserVisualization;
+import se.oru.coordination.coordination_oru.util.BrowserVisualization;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import se.oru.coordination.coordination_oru.CriticalSection;
@@ -93,7 +93,7 @@ public class Test1StartCoordinator {
 		//2. INSTANTIATE THE COORDINATIONSERVER
 		try {
 			server = ServerBuilder.forPort(PORT)
-					.addService(coordinatorServiceImpl)
+					.addService(coordinatorServiceImpl).maxInboundMessageSize(100000000)
 					.build()
 					.start();
 		} catch (IOException e) {

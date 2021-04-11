@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.logging.Logger;
 
 import CoordinatorPackage.AbstractTrajectoryEnvelopeCoordinator;
-import CoordinatorPackage.TrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinator;
 import org.metacsp.framework.Constraint;
 import org.metacsp.framework.Variable;
 import org.metacsp.meta.spatioTemporal.paths.Map;
@@ -19,7 +19,6 @@ import org.metacsp.time.Bounds;
 import org.metacsp.utility.UI.Callback;
 import org.metacsp.utility.logging.MetaCSPLogging;
 
-import se.oru.coordination.coordination_oru.Dependency;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.TrackingCallback;
 
@@ -60,7 +59,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
      * with a given tracking period in a given temporal resolution. The tracker will post temporal constraints
      * to the given solver representing when the robot transitions from one sub-envelope to the next. An optional
      * callback function will be called at every period.
-     * @param solver The {@link TrajectoryEnvelopeSolver} to which temporal constraints will be posted.
+     * @param //solver The {@link TrajectoryEnvelopeSolver} to which temporal constraints will be posted.
      * @param te The {@link TrajectoryEnvelope} to track.
      * @param temporalResolution The temporal unit of measure in which the period is represented.
      * @param trackingPeriodInMillis The tracking period.
@@ -68,7 +67,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
      */
     public AbstractTrajectoryEnvelopeTracker(TrajectoryEnvelope te, double temporalResolution, int trackingPeriodInMillis, TrackingCallback cb) {
         this.te = te;
-       // this.traj = te.getTrajectory();
+        this.traj = te.getTrajectory();
         this.externalCPCounter = -1;
         this.criticalPoint = -1;
         this.temporalResolution = temporalResolution;
@@ -141,7 +140,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
     }
 
     /**
-     * Used by the {@link TrajectoryEnvelopeCoordinator} to indicate that this tracker can start the tracking thread.
+     * Used by the {@link RemoteTrajectoryEnvelopeCoordinator} to indicate that this tracker can start the tracking thread.
      */
     public void setCanStartTracking() {
         this.canStartTracking = true;
@@ -149,7 +148,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
 
     /**
      * Indicates whether this tracker can start the tracking thread
-     * (this is set to true by the {@link TrajectoryEnvelopeCoordinator} when appropriate).
+     * (this is set to true by the {@link RemoteTrajectoryEnvelopeCoordinator} when appropriate).
      */
     public boolean canStartTracking() {
         return this.canStartTracking;
@@ -196,7 +195,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
     /**
      * This method should implement the mechanisms for notifying a robot of a new critical point, caring about network delays.
      * Critical point are "timestamped" so that only critical points more recent than the already known will be notified.
-     * @param criticalPoint The critical point to set (index of pose along the reference trajectory
+     * @param //criticalPoint The critical point to set (index of pose along the reference trajectory
      * beyond which the robot may not navigate).
      * @param externalCPCounter A counter related to the current notification ("timestamp").
      */
@@ -215,7 +214,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
 
     /**
      * Set the current report counter.
-     * @param The current report counter.
+     * @param //the current report counter.
      */
     public void setReportCounter(int reportCounter) {
         this.reportCounter = reportCounter;
@@ -278,7 +277,7 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
 
             //Draw an arrow if there is a critical point
             RobotReport rrWaiting = getRobotReport();
-            synchronized (tec.getCurrentDependencies()) {
+            /* synchronized (tec.getCurrentDependencies()) {
                 for (Dependency dep : tec.getCurrentDependencies()) {
                     synchronized (tec.trackers) {
                         AbstractTrajectoryEnvelopeTracker waitingTrackers = tec.trackers.get(dep.getWaitingRobotID());
@@ -291,8 +290,10 @@ public abstract class AbstractTrajectoryEnvelopeTracker {
                             }
                         }
                     }
-                }
+               }
             }
+
+            */
 
             tec.getVisualization().updateVisualization();
         }

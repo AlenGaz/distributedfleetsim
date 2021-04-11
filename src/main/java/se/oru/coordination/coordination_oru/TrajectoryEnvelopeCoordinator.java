@@ -2,17 +2,17 @@
 
 package se.oru.coordination.coordination_oru;
 //import java.io.File;
-//import java.util.ArrayList;
-//import java.util.Arrays;
-//import java.util.Calendar;
-//import java.util.Collections;
-//import java.util.HashMap;
-//import java.util.HashSet;
-//import java.util.List;
-//import java.util.Set;
-//import java.util.TreeSet;
-//import java.util.concurrent.atomic.AtomicBoolean;
-//import java.util.concurrent.atomic.AtomicInteger;
+//import java.se.oru.coordination.coordination_oru.util.ArrayList;
+//import java.se.oru.coordination.coordination_oru.util.Arrays;
+//import java.se.oru.coordination.coordination_oru.util.Calendar;
+//import java.se.oru.coordination.coordination_oru.util.Collections;
+//import java.se.oru.coordination.coordination_oru.util.HashMap;
+//import java.se.oru.coordination.coordination_oru.util.HashSet;
+//import java.se.oru.coordination.coordination_oru.util.List;
+//import java.se.oru.coordination.coordination_oru.util.Set;
+//import java.se.oru.coordination.coordination_oru.util.TreeSet;
+//import java.se.oru.coordination.coordination_oru.util.concurrent.atomic.AtomicBoolean;
+//import java.se.oru.coordination.coordination_oru.util.concurrent.atomic.AtomicInteger;
 //
 //import org.jgrapht.alg.ConnectivityInspector;
 //import org.jgrapht.alg.KosarajuStrongConnectivityInspector;
@@ -32,7 +32,7 @@ package se.oru.coordination.coordination_oru;
 //
 //import com.vividsolutions.jts.geom.Geometry;
 //
-//import aima.core.util.datastructure.Pair;
+//import aima.core.se.oru.coordination.coordination_oru.util.datastructure.Pair;
 //import fleetClient.motionplanning.AbstractMotionPlanner;
 //
 //

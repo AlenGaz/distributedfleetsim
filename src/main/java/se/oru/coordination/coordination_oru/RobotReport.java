@@ -1,6 +1,5 @@
 package se.oru.coordination.coordination_oru;
 
-import fleetClient.AbstractTrajectoryEnvelopeTracker;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.utility.logging.MetaCSPLogging;
 

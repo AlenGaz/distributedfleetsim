@@ -1,8 +1,7 @@
 package GRPC;
 
 
-import fleetClient.AbstractTrajectoryEnvelopeTracker;
-
+import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
 import io.grpc.fleetClients.FleetClientsServiceGrpc;
 import io.grpc.fleetClients.Fleetclients;
 
@@ -185,7 +184,7 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
     public void clientCriticalpoint(Fleetclients.clientGetCriticalPointRequestMessage request,
                                      StreamObserver<Fleetclients.clientGetCriticalPointResponseMessage> responseObserver){
 
-        AbstractTrajectoryEnvelopeTracker tracker = new AbstractTrajectoryEnvelopeTracker() {
+        RemoteAbstractTrajectoryEnvelopeTracker tracker = new RemoteAbstractTrajectoryEnvelopeTracker() {
             @Override
             protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te) {}
             @Override

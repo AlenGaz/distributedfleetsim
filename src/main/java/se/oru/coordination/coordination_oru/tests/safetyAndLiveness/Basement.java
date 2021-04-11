@@ -18,9 +18,9 @@ import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.BrowserVisualization;
-import Visualizer.util.Missions;
-import Visualizer.util.Pair;
+import se.oru.coordination.coordination_oru.util.BrowserVisualization;
+import se.oru.coordination.coordination_oru.util.Missions;
+import se.oru.coordination.coordination_oru.util.Pair;
 
 public class Basement {
 

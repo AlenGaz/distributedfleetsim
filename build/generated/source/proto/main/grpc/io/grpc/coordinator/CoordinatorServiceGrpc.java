@@ -151,6 +151,161 @@ public final class CoordinatorServiceGrpc {
     return getCoordinatorgetGreetingMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.tecrequest,
+      io.grpc.coordinator.Coordinator.tecresponse> getCoordinatorgetTecStuffMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "coordinatorgetTecStuff",
+      requestType = io.grpc.coordinator.Coordinator.tecrequest.class,
+      responseType = io.grpc.coordinator.Coordinator.tecresponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.tecrequest,
+      io.grpc.coordinator.Coordinator.tecresponse> getCoordinatorgetTecStuffMethod() {
+    io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.tecrequest, io.grpc.coordinator.Coordinator.tecresponse> getCoordinatorgetTecStuffMethod;
+    if ((getCoordinatorgetTecStuffMethod = CoordinatorServiceGrpc.getCoordinatorgetTecStuffMethod) == null) {
+      synchronized (CoordinatorServiceGrpc.class) {
+        if ((getCoordinatorgetTecStuffMethod = CoordinatorServiceGrpc.getCoordinatorgetTecStuffMethod) == null) {
+          CoordinatorServiceGrpc.getCoordinatorgetTecStuffMethod = getCoordinatorgetTecStuffMethod =
+              io.grpc.MethodDescriptor.<io.grpc.coordinator.Coordinator.tecrequest, io.grpc.coordinator.Coordinator.tecresponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "coordinatorgetTecStuff"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.tecrequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.tecresponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoordinatorServiceMethodDescriptorSupplier("coordinatorgetTecStuff"))
+              .build();
+        }
+      }
+    }
+    return getCoordinatorgetTecStuffMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.timerequest,
+      io.grpc.coordinator.Coordinator.timeresponse> getCoordinatorgetCurrentTimeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "coordinatorgetCurrentTime",
+      requestType = io.grpc.coordinator.Coordinator.timerequest.class,
+      responseType = io.grpc.coordinator.Coordinator.timeresponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.timerequest,
+      io.grpc.coordinator.Coordinator.timeresponse> getCoordinatorgetCurrentTimeMethod() {
+    io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.timerequest, io.grpc.coordinator.Coordinator.timeresponse> getCoordinatorgetCurrentTimeMethod;
+    if ((getCoordinatorgetCurrentTimeMethod = CoordinatorServiceGrpc.getCoordinatorgetCurrentTimeMethod) == null) {
+      synchronized (CoordinatorServiceGrpc.class) {
+        if ((getCoordinatorgetCurrentTimeMethod = CoordinatorServiceGrpc.getCoordinatorgetCurrentTimeMethod) == null) {
+          CoordinatorServiceGrpc.getCoordinatorgetCurrentTimeMethod = getCoordinatorgetCurrentTimeMethod =
+              io.grpc.MethodDescriptor.<io.grpc.coordinator.Coordinator.timerequest, io.grpc.coordinator.Coordinator.timeresponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "coordinatorgetCurrentTime"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.timerequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.timeresponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoordinatorServiceMethodDescriptorSupplier("coordinatorgetCurrentTime"))
+              .build();
+        }
+      }
+    }
+    return getCoordinatorgetCurrentTimeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.visualizerrequest,
+      io.grpc.coordinator.Coordinator.visualizerresponse> getCoordinatorgetVisualizerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "coordinatorgetVisualizer",
+      requestType = io.grpc.coordinator.Coordinator.visualizerrequest.class,
+      responseType = io.grpc.coordinator.Coordinator.visualizerresponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.visualizerrequest,
+      io.grpc.coordinator.Coordinator.visualizerresponse> getCoordinatorgetVisualizerMethod() {
+    io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.visualizerrequest, io.grpc.coordinator.Coordinator.visualizerresponse> getCoordinatorgetVisualizerMethod;
+    if ((getCoordinatorgetVisualizerMethod = CoordinatorServiceGrpc.getCoordinatorgetVisualizerMethod) == null) {
+      synchronized (CoordinatorServiceGrpc.class) {
+        if ((getCoordinatorgetVisualizerMethod = CoordinatorServiceGrpc.getCoordinatorgetVisualizerMethod) == null) {
+          CoordinatorServiceGrpc.getCoordinatorgetVisualizerMethod = getCoordinatorgetVisualizerMethod =
+              io.grpc.MethodDescriptor.<io.grpc.coordinator.Coordinator.visualizerrequest, io.grpc.coordinator.Coordinator.visualizerresponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "coordinatorgetVisualizer"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.visualizerrequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.visualizerresponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoordinatorServiceMethodDescriptorSupplier("coordinatorgetVisualizer"))
+              .build();
+        }
+      }
+    }
+    return getCoordinatorgetVisualizerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.allenInterval,
+      io.grpc.coordinator.Coordinator.noneResponse> getCoordinatorgetAllenIntervalMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "coordinatorgetAllenInterval",
+      requestType = io.grpc.coordinator.Coordinator.allenInterval.class,
+      responseType = io.grpc.coordinator.Coordinator.noneResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.allenInterval,
+      io.grpc.coordinator.Coordinator.noneResponse> getCoordinatorgetAllenIntervalMethod() {
+    io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.allenInterval, io.grpc.coordinator.Coordinator.noneResponse> getCoordinatorgetAllenIntervalMethod;
+    if ((getCoordinatorgetAllenIntervalMethod = CoordinatorServiceGrpc.getCoordinatorgetAllenIntervalMethod) == null) {
+      synchronized (CoordinatorServiceGrpc.class) {
+        if ((getCoordinatorgetAllenIntervalMethod = CoordinatorServiceGrpc.getCoordinatorgetAllenIntervalMethod) == null) {
+          CoordinatorServiceGrpc.getCoordinatorgetAllenIntervalMethod = getCoordinatorgetAllenIntervalMethod =
+              io.grpc.MethodDescriptor.<io.grpc.coordinator.Coordinator.allenInterval, io.grpc.coordinator.Coordinator.noneResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "coordinatorgetAllenInterval"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.allenInterval.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.noneResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoordinatorServiceMethodDescriptorSupplier("coordinatorgetAllenInterval"))
+              .build();
+        }
+      }
+    }
+    return getCoordinatorgetAllenIntervalMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.trackerRobotReportRequest,
+      io.grpc.coordinator.Coordinator.requestrobotreport> getCoordinatorgetRobotReportRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "coordinatorgetRobotReportRequest",
+      requestType = io.grpc.coordinator.Coordinator.trackerRobotReportRequest.class,
+      responseType = io.grpc.coordinator.Coordinator.requestrobotreport.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.trackerRobotReportRequest,
+      io.grpc.coordinator.Coordinator.requestrobotreport> getCoordinatorgetRobotReportRequestMethod() {
+    io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.trackerRobotReportRequest, io.grpc.coordinator.Coordinator.requestrobotreport> getCoordinatorgetRobotReportRequestMethod;
+    if ((getCoordinatorgetRobotReportRequestMethod = CoordinatorServiceGrpc.getCoordinatorgetRobotReportRequestMethod) == null) {
+      synchronized (CoordinatorServiceGrpc.class) {
+        if ((getCoordinatorgetRobotReportRequestMethod = CoordinatorServiceGrpc.getCoordinatorgetRobotReportRequestMethod) == null) {
+          CoordinatorServiceGrpc.getCoordinatorgetRobotReportRequestMethod = getCoordinatorgetRobotReportRequestMethod =
+              io.grpc.MethodDescriptor.<io.grpc.coordinator.Coordinator.trackerRobotReportRequest, io.grpc.coordinator.Coordinator.requestrobotreport>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "coordinatorgetRobotReportRequest"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.trackerRobotReportRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.requestrobotreport.getDefaultInstance()))
+              .setSchemaDescriptor(new CoordinatorServiceMethodDescriptorSupplier("coordinatorgetRobotReportRequest"))
+              .build();
+        }
+      }
+    }
+    return getCoordinatorgetRobotReportRequestMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -214,6 +369,9 @@ public final class CoordinatorServiceGrpc {
     }
 
     /**
+     * <pre>
+     *google.protobuf.Empty?
+     * </pre>
      */
     public void coordinatordependencies(io.grpc.coordinator.Coordinator.getCurrentDependencies request,
         io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse> responseObserver) {
@@ -221,13 +379,52 @@ public final class CoordinatorServiceGrpc {
     }
 
     /**
-     * <pre>
-     *google.protobuf.Empty
-     * </pre>
      */
     public void coordinatorgetGreeting(io.grpc.coordinator.Coordinator.robotsGreeting request,
         io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.robotgreetingResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getCoordinatorgetGreetingMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void coordinatorgetTecStuff(io.grpc.coordinator.Coordinator.tecrequest request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.tecresponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCoordinatorgetTecStuffMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * RemoteAbstract...Tracker stuff
+     * </pre>
+     */
+    public void coordinatorgetCurrentTime(io.grpc.coordinator.Coordinator.timerequest request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.timeresponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCoordinatorgetCurrentTimeMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void coordinatorgetVisualizer(io.grpc.coordinator.Coordinator.visualizerrequest request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.visualizerresponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCoordinatorgetVisualizerMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * an update of the allenInterval in the coordinator coming from the tracker
+     * (can return google/protobuf/empty.proto also but not atm since not sure if it will block
+     * </pre>
+     */
+    public void coordinatorgetAllenInterval(io.grpc.coordinator.Coordinator.allenInterval request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCoordinatorgetAllenIntervalMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void coordinatorgetRobotReportRequest(io.grpc.coordinator.Coordinator.trackerRobotReportRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.requestrobotreport> responseObserver) {
+      asyncUnimplementedUnaryCall(getCoordinatorgetRobotReportRequestMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -260,6 +457,41 @@ public final class CoordinatorServiceGrpc {
                 io.grpc.coordinator.Coordinator.robotsGreeting,
                 io.grpc.coordinator.Coordinator.robotgreetingResponse>(
                   this, METHODID_COORDINATORGET_GREETING)))
+          .addMethod(
+            getCoordinatorgetTecStuffMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.coordinator.Coordinator.tecrequest,
+                io.grpc.coordinator.Coordinator.tecresponse>(
+                  this, METHODID_COORDINATORGET_TEC_STUFF)))
+          .addMethod(
+            getCoordinatorgetCurrentTimeMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.coordinator.Coordinator.timerequest,
+                io.grpc.coordinator.Coordinator.timeresponse>(
+                  this, METHODID_COORDINATORGET_CURRENT_TIME)))
+          .addMethod(
+            getCoordinatorgetVisualizerMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.coordinator.Coordinator.visualizerrequest,
+                io.grpc.coordinator.Coordinator.visualizerresponse>(
+                  this, METHODID_COORDINATORGET_VISUALIZER)))
+          .addMethod(
+            getCoordinatorgetAllenIntervalMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.coordinator.Coordinator.allenInterval,
+                io.grpc.coordinator.Coordinator.noneResponse>(
+                  this, METHODID_COORDINATORGET_ALLEN_INTERVAL)))
+          .addMethod(
+            getCoordinatorgetRobotReportRequestMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.coordinator.Coordinator.trackerRobotReportRequest,
+                io.grpc.coordinator.Coordinator.requestrobotreport>(
+                  this, METHODID_COORDINATORGET_ROBOT_REPORT_REQUEST)))
           .build();
     }
   }
@@ -295,6 +527,9 @@ public final class CoordinatorServiceGrpc {
     }
 
     /**
+     * <pre>
+     *google.protobuf.Empty?
+     * </pre>
      */
     public void coordinatordependencies(io.grpc.coordinator.Coordinator.getCurrentDependencies request,
         io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse> responseObserver) {
@@ -303,14 +538,58 @@ public final class CoordinatorServiceGrpc {
     }
 
     /**
-     * <pre>
-     *google.protobuf.Empty
-     * </pre>
      */
     public void coordinatorgetGreeting(io.grpc.coordinator.Coordinator.robotsGreeting request,
         io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.robotgreetingResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCoordinatorgetGreetingMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void coordinatorgetTecStuff(io.grpc.coordinator.Coordinator.tecrequest request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.tecresponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCoordinatorgetTecStuffMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * RemoteAbstract...Tracker stuff
+     * </pre>
+     */
+    public void coordinatorgetCurrentTime(io.grpc.coordinator.Coordinator.timerequest request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.timeresponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCoordinatorgetCurrentTimeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void coordinatorgetVisualizer(io.grpc.coordinator.Coordinator.visualizerrequest request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.visualizerresponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCoordinatorgetVisualizerMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * an update of the allenInterval in the coordinator coming from the tracker
+     * (can return google/protobuf/empty.proto also but not atm since not sure if it will block
+     * </pre>
+     */
+    public void coordinatorgetAllenInterval(io.grpc.coordinator.Coordinator.allenInterval request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCoordinatorgetAllenIntervalMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void coordinatorgetRobotReportRequest(io.grpc.coordinator.Coordinator.trackerRobotReportRequest request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.requestrobotreport> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCoordinatorgetRobotReportRequestMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -343,6 +622,9 @@ public final class CoordinatorServiceGrpc {
     }
 
     /**
+     * <pre>
+     *google.protobuf.Empty?
+     * </pre>
      */
     public io.grpc.coordinator.Coordinator.noneResponse coordinatordependencies(io.grpc.coordinator.Coordinator.getCurrentDependencies request) {
       return blockingUnaryCall(
@@ -350,13 +632,52 @@ public final class CoordinatorServiceGrpc {
     }
 
     /**
-     * <pre>
-     *google.protobuf.Empty
-     * </pre>
      */
     public io.grpc.coordinator.Coordinator.robotgreetingResponse coordinatorgetGreeting(io.grpc.coordinator.Coordinator.robotsGreeting request) {
       return blockingUnaryCall(
           getChannel(), getCoordinatorgetGreetingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.grpc.coordinator.Coordinator.tecresponse coordinatorgetTecStuff(io.grpc.coordinator.Coordinator.tecrequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCoordinatorgetTecStuffMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * RemoteAbstract...Tracker stuff
+     * </pre>
+     */
+    public io.grpc.coordinator.Coordinator.timeresponse coordinatorgetCurrentTime(io.grpc.coordinator.Coordinator.timerequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCoordinatorgetCurrentTimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.grpc.coordinator.Coordinator.visualizerresponse coordinatorgetVisualizer(io.grpc.coordinator.Coordinator.visualizerrequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCoordinatorgetVisualizerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * an update of the allenInterval in the coordinator coming from the tracker
+     * (can return google/protobuf/empty.proto also but not atm since not sure if it will block
+     * </pre>
+     */
+    public io.grpc.coordinator.Coordinator.noneResponse coordinatorgetAllenInterval(io.grpc.coordinator.Coordinator.allenInterval request) {
+      return blockingUnaryCall(
+          getChannel(), getCoordinatorgetAllenIntervalMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.grpc.coordinator.Coordinator.requestrobotreport coordinatorgetRobotReportRequest(io.grpc.coordinator.Coordinator.trackerRobotReportRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCoordinatorgetRobotReportRequestMethod(), getCallOptions(), request);
     }
   }
 
@@ -391,6 +712,9 @@ public final class CoordinatorServiceGrpc {
     }
 
     /**
+     * <pre>
+     *google.protobuf.Empty?
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.noneResponse> coordinatordependencies(
         io.grpc.coordinator.Coordinator.getCurrentDependencies request) {
@@ -399,14 +723,58 @@ public final class CoordinatorServiceGrpc {
     }
 
     /**
-     * <pre>
-     *google.protobuf.Empty
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.robotgreetingResponse> coordinatorgetGreeting(
         io.grpc.coordinator.Coordinator.robotsGreeting request) {
       return futureUnaryCall(
           getChannel().newCall(getCoordinatorgetGreetingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.tecresponse> coordinatorgetTecStuff(
+        io.grpc.coordinator.Coordinator.tecrequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCoordinatorgetTecStuffMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * RemoteAbstract...Tracker stuff
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.timeresponse> coordinatorgetCurrentTime(
+        io.grpc.coordinator.Coordinator.timerequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCoordinatorgetCurrentTimeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.visualizerresponse> coordinatorgetVisualizer(
+        io.grpc.coordinator.Coordinator.visualizerrequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCoordinatorgetVisualizerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * an update of the allenInterval in the coordinator coming from the tracker
+     * (can return google/protobuf/empty.proto also but not atm since not sure if it will block
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.noneResponse> coordinatorgetAllenInterval(
+        io.grpc.coordinator.Coordinator.allenInterval request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCoordinatorgetAllenIntervalMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.requestrobotreport> coordinatorgetRobotReportRequest(
+        io.grpc.coordinator.Coordinator.trackerRobotReportRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCoordinatorgetRobotReportRequestMethod(), getCallOptions()), request);
     }
   }
 
@@ -414,6 +782,11 @@ public final class CoordinatorServiceGrpc {
   private static final int METHODID_COORDINATORCRITICALPOINT = 1;
   private static final int METHODID_COORDINATORDEPENDENCIES = 2;
   private static final int METHODID_COORDINATORGET_GREETING = 3;
+  private static final int METHODID_COORDINATORGET_TEC_STUFF = 4;
+  private static final int METHODID_COORDINATORGET_CURRENT_TIME = 5;
+  private static final int METHODID_COORDINATORGET_VISUALIZER = 6;
+  private static final int METHODID_COORDINATORGET_ALLEN_INTERVAL = 7;
+  private static final int METHODID_COORDINATORGET_ROBOT_REPORT_REQUEST = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -447,6 +820,26 @@ public final class CoordinatorServiceGrpc {
         case METHODID_COORDINATORGET_GREETING:
           serviceImpl.coordinatorgetGreeting((io.grpc.coordinator.Coordinator.robotsGreeting) request,
               (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.robotgreetingResponse>) responseObserver);
+          break;
+        case METHODID_COORDINATORGET_TEC_STUFF:
+          serviceImpl.coordinatorgetTecStuff((io.grpc.coordinator.Coordinator.tecrequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.tecresponse>) responseObserver);
+          break;
+        case METHODID_COORDINATORGET_CURRENT_TIME:
+          serviceImpl.coordinatorgetCurrentTime((io.grpc.coordinator.Coordinator.timerequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.timeresponse>) responseObserver);
+          break;
+        case METHODID_COORDINATORGET_VISUALIZER:
+          serviceImpl.coordinatorgetVisualizer((io.grpc.coordinator.Coordinator.visualizerrequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.visualizerresponse>) responseObserver);
+          break;
+        case METHODID_COORDINATORGET_ALLEN_INTERVAL:
+          serviceImpl.coordinatorgetAllenInterval((io.grpc.coordinator.Coordinator.allenInterval) request,
+              (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse>) responseObserver);
+          break;
+        case METHODID_COORDINATORGET_ROBOT_REPORT_REQUEST:
+          serviceImpl.coordinatorgetRobotReportRequest((io.grpc.coordinator.Coordinator.trackerRobotReportRequest) request,
+              (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.requestrobotreport>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -513,6 +906,11 @@ public final class CoordinatorServiceGrpc {
               .addMethod(getCoordinatorcriticalpointMethod())
               .addMethod(getCoordinatordependenciesMethod())
               .addMethod(getCoordinatorgetGreetingMethod())
+              .addMethod(getCoordinatorgetTecStuffMethod())
+              .addMethod(getCoordinatorgetCurrentTimeMethod())
+              .addMethod(getCoordinatorgetVisualizerMethod())
+              .addMethod(getCoordinatorgetAllenIntervalMethod())
+              .addMethod(getCoordinatorgetRobotReportRequestMethod())
               .build();
         }
       }

@@ -16,7 +16,7 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.JTSDrawingPanelVisualization;
+import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
 
 @DemoDescription(desc = "Four robots navigating in a loop (paths obtained with the ReedsSheppCarPlanner).")
 public class TestTrajectoryEnvelopeCoordinatorWithMotionPlanner5 {

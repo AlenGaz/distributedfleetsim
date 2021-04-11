@@ -2,8 +2,8 @@ package se.oru.coordination.coordination_oru.tests;
 
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.BrowserVisualization;
-import Visualizer.util.Missions;
+import se.oru.coordination.coordination_oru.util.BrowserVisualization;
+import se.oru.coordination.coordination_oru.util.Missions;
 
 import java.util.Comparator;
 

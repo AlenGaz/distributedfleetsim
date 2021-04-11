@@ -13,8 +13,8 @@ import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.BrowserVisualization;
-import Visualizer.util.Missions;
+import se.oru.coordination.coordination_oru.util.BrowserVisualization;
+import se.oru.coordination.coordination_oru.util.Missions;
 
 @DemoDescription(desc = "One-shot navigation of 3 robots coordinating on static paths that overlap in a straight portion.")
 public class ThreeRobotsGoalPosting {

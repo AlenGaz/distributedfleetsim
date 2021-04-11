@@ -17,7 +17,7 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.JTSDrawingPanelVisualization;
+import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
 
 @DemoDescription(desc = "One-shot navigation of 2 robots showing multiple overlapping critical sections.")
 public class TestTrajectoryEnvelopeCoordinatorWithMotionPlanner9 {

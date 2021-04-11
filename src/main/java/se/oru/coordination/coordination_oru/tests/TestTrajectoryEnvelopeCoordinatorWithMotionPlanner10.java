@@ -12,8 +12,8 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.JTSDrawingPanelVisualization;
-import Visualizer.util.Missions;
+import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
+import se.oru.coordination.coordination_oru.util.Missions;
 
 @DemoDescription(desc = "Four robots cycling through rooms in a large environment (paths obtained with the ReedsSheppCarPlanner).")
 public abstract class TestTrajectoryEnvelopeCoordinatorWithMotionPlanner10 {

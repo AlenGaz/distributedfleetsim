@@ -14,7 +14,7 @@ import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.util.AffineTransformation;
 
-import Visualizer.util.Missions;
+import se.oru.coordination.coordination_oru.util.Missions;
 
 public abstract class AbstractMotionPlanner {
 

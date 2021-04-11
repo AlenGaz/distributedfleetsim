@@ -1,7 +1,10 @@
 package fleetClient;
 
 
-import Launch.MakeFootPrint;
+import CoordinatorPackage.containers.MakeFootPrint;
+import CoordinatorPackage.containers.tecAllenIntervalContainer;
+import CoordinatorPackage.containers.tecStuff;
+
 import aima.core.util.datastructure.Pair;
 import com.google.protobuf.ByteString;
 import io.grpc.Channel;
@@ -11,7 +14,6 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.io.Serializable;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -21,8 +23,9 @@ import io.grpc.coordinator.CoordinatorServiceGrpc;
 import io.grpc.fleetClients.FleetClientsServiceGrpc;
 import io.grpc.fleetClients.Fleetclients;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
-import org.sat4j.pb.tools.DependencyHelper;
+import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import se.oru.coordination.coordination_oru.Dependency;
+import se.oru.coordination.coordination_oru.RobotReport;
 
 public class FleetClient {
 
@@ -41,8 +44,16 @@ public class FleetClient {
 
 
     public int makeGreeting(String kan, int robotID, String type, String IP, int port, Pose pose,
-                               String timeStamp, double maxAccel, double maxVel,
-                               double trackingPeriodInMillis, MakeFootPrint makeFootPrint) {
+                            String timeStamp, double maxAccel, double maxVel,
+                            double trackingPeriodInMillis, MakeFootPrint makeFootPrint, PoseSteering[] poseSteerings) {
+
+
+        ByteString poseSteeringBytes = null;
+        try {
+            poseSteeringBytes= ByteString.copyFrom(convertToBytes(poseSteerings));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         Coordinator.robotsGreeting greetingBuild = Coordinator.robotsGreeting.newBuilder().setKan(kan).setRobotID(robotID).setType(type).setIP(IP).setPort(port)
                 .setRpose(Coordinator.robotPose.newBuilder().setX(pose.getX()).setY(pose.getY()).setZ(pose.getZ())
@@ -50,7 +61,7 @@ public class FleetClient {
                         setTimeStamp(timeStamp).setMaxAccel(maxAccel).setMaxVel(maxVel).setTrackingPeriodInMillis(trackingPeriodInMillis)
                 .setMakeFootPrint(Coordinator.MakeFootPrint.newBuilder().setCenterX(makeFootPrint.getCenterX())
                         .setCenterY(makeFootPrint.getCenterY()).setMinVerts(makeFootPrint.getMinVerts()).setMaxVerts(makeFootPrint.getMaxVerts())
-                        .setMinRadius(makeFootPrint.getMinRadius()).setMaxRadius(makeFootPrint.getMaxRadius()).build()).build();
+                        .setMinRadius(makeFootPrint.getMinRadius()).setMaxRadius(makeFootPrint.getMaxRadius()).build()).setPoseSteering(poseSteeringBytes).build();
 
         Coordinator.robotgreetingResponse greetingresponse = null;
 
@@ -169,11 +180,71 @@ public class FleetClient {
             e.printStackTrace();
         }
 
-
         System.out.println("dependencyData deserialized" + depdes);
 
-
     }
+
+    public void makeTecStuffRequest(int robotID){
+        Coordinator.tecrequest request = Coordinator.tecrequest.newBuilder().setKan("RequestTecStuff").setRobotID(robotID).build();
+        Coordinator.tecresponse response;
+
+        System.out.println("[FleetClient] requesting tecStuff ");
+        response = coordinatorBlockingStub.coordinatorgetTecStuff(request);
+        try {
+            tecStuff tesObject = (tecStuff) convertFromBytes(response.getTecStuff().toByteArray());
+            System.out.println("tecStuff responded with: " + tesObject.getCurrentTimeInM());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+public long makeCurrentTimeRequest(){
+        Coordinator.timerequest request = Coordinator.timerequest.newBuilder().build();
+        Coordinator.timeresponse response;
+
+        System.out.println("[FleetClient] requesting time from Cooridnator");
+        return coordinatorBlockingStub.coordinatorgetCurrentTime(request).getCurrentTime();
+
+}
+
+public void sendAllenInterval(String kan, tecAllenIntervalContainer allen){
+    ByteString allenIntervalByteString = null;
+    try {
+        allenIntervalByteString = ByteString.copyFrom(convertToBytes(allen));
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    Coordinator.allenInterval message = Coordinator.allenInterval.newBuilder().setKan(kan).setAllenIntervalBytes(allenIntervalByteString).build();
+    coordinatorBlockingStub.coordinatorgetAllenInterval(message);
+
+}
+
+public RobotReport makeRobotReportRequest(int robotID) {
+    Coordinator.trackerRobotReportRequest request = Coordinator.trackerRobotReportRequest.newBuilder().setKan("TrackerRequestRobotReport").setRobotID(robotID).build();
+    Coordinator.requestrobotreport response= null;
+
+
+    coordinatorBlockingStub.coordinatorgetRobotReportRequest(request);
+
+
+    int _robotID = response.getRobotid();
+    Pose _pose = new Pose(response.getX(), response.getY(), response.getZ(), response.getRoll(), response.getPitch(), response.getYaw());
+    RobotReport rR = new RobotReport(_robotID, _pose, response.getPathIndex(), response.getVelocity(), response.getDistanceTraveled(), response.getCriticalPoint());
+
+
+    return rR;
+}
+
+    /*
+    public FleetVisualization makeVisualizerRequest(){
+
+    not needed to make as a msg request if the visualzier will still be on the coordinator
+    }
+    */
+
 
 
     public static void main(String[] args) throws InterruptedException {
@@ -182,7 +253,7 @@ public class FleetClient {
         String target = "localhost:50050";
 
 
-        ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
+        ManagedChannel channel = ManagedChannelBuilder.forTarget(target).maxInboundMessageSize(40*1000*1000).usePlaintext().build();
 
         try {
             //FleetClient client = new FleetClient(channel);

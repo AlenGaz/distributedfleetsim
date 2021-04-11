@@ -15,8 +15,8 @@ import se.oru.coordination.coordination_oru.NetworkConfiguration;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.Missions;
-import Visualizer.util.RVizVisualization;
+import se.oru.coordination.coordination_oru.util.Missions;
+import se.oru.coordination.coordination_oru.util.RVizVisualization;
 
 @DemoDescription(desc = "Coordination of robots along a circle. Start and goals are placed along the circumference of a circle with a fixed radious, and are continually posted to robots. Paths are computed by using the ReedsSheppCarPlanner.")
 public class Circle {

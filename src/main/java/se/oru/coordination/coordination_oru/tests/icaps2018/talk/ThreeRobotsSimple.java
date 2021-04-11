@@ -16,7 +16,7 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
-import Visualizer.util.BrowserVisualization;
+import se.oru.coordination.coordination_oru.util.BrowserVisualization;
 
 @DemoDescription(desc = "Coordination with heuristic that eliminates deadlock (paths obtained with the ReedsSheppCarPlanner).")
 public class ThreeRobotsSimple {

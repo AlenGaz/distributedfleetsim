@@ -3,35 +3,56 @@ package CoordinatorPackage;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
 import fleetClient.RemoteTrajectoryEnvelopeTrackerRK4;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 
+import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 
-import se.oru.coordination.coordination_oru.*;
-import fleetClient.TrajectoryEnvelopeTrackerDummy;
-import fleetClient.AbstractTrajectoryEnvelopeTracker;
+import se.oru.coordination.coordination_oru.CollisionEvent;
+import se.oru.coordination.coordination_oru.CriticalSection;
+import se.oru.coordination.coordination_oru.Mission;
+import se.oru.coordination.coordination_oru.RobotReport;
+import se.oru.coordination.coordination_oru.TrackingCallback;
 
-public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnvelopeCoordinator {
+public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTrajectoryEnvelopeCoordinator {
 
 	protected static final long START_TIME = Calendar.getInstance().getTimeInMillis();
-	protected double MAX_VELOCITY;
-	protected double MAX_ACCELERATION;
 	protected boolean useInternalCPs = true;
-	
+
 	protected boolean fake = false;
 	protected boolean checkCollisions = false;
 	protected ArrayList<CollisionEvent> collisionsList = new ArrayList<CollisionEvent>();
 	protected Thread collisionThread = null;
-	
+
 	protected AtomicInteger totalMsgsLost = new AtomicInteger(0);
 	protected AtomicInteger totalPacketsLost = new AtomicInteger(0);
-	
+
+	//protected int DEFAULT_ROBOT_TRACKING_PERIOD;
+	protected double DEFAULT_MAX_VELOCITY;
+	protected double DEFAULT_MAX_ACCELERATION;
+
+	/**
+	 * The default footprint used for robots if none is specified.
+	 * NOTE: coordinates in footprints must be given in in CCW or CW order.
+	 */
+	public static Coordinate[] DEFAULT_FOOTPRINT = new Coordinate[] {
+			new Coordinate(-1.7, 0.7),	//back left
+			new Coordinate(-1.7, -0.7),	//back right
+			new Coordinate(2.7, -0.7),	//front right
+			new Coordinate(2.7, 0.7)	//front left
+	};
+
+	/**
+	 * Dimension of the default footprint.
+	 */
+	public static double MAX_DEFAULT_FOOTPRINT_DIMENSION = 4.4;
+
 	/**
 	 * Enable the collision checking thread.
 	 * @param enable <code>true</code>  if the thread for checking collisions should be enabled.
@@ -39,7 +60,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 	public void setCheckCollisions(boolean enable) {
 		this.checkCollisions = enable;
 	}
-		
+
 	/**
 	 * Enable fake coordination.
 	 * @param enable <code>true</code> whether the coordinator does not impose any precedence constraints.
@@ -48,33 +69,33 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 		this.fake = fake;
 	}
 
-	/** 
+	/**
 	 * Just for statistic purposes (simulation).
 	 */
 	public void incrementLostMsgsCounter() {
 		this.totalMsgsLost.incrementAndGet();
 	}
-	
-	/** 
+
+	/**
 	 * Just for statistic purposes (simulation).
 	 */
 	public void incrementLostPacketsCounter() {
 		this.totalPacketsLost.incrementAndGet();
 	}
-	
+
 	/**
-	 * Create a new {@link RemoteTrajectoryEnvelopeCoordinatorSimulation} with the following default values:
-	 * <ul>
-	 * <li><code>CONTROL_PERIOD</code> = 1000</li>
-	 * <li><code>TEMPORAL_RESOLUTION</code> = 1000</li>
-	 * <li><code>MAX_VELOCITY</code> = 10.0</li>
-	 * <li><code>MAX_ACCELERATION</code> = 1.0</li>
-	 * <li><code>trackingPeriodInMillis</code> = 30</li>
-	 * <li><code>PARKING_DURATION</code> = 3000</li>
-	 * </ul>
+	 * Create a new {@link RemoteTrajectoryEnvelopeCoordinatorSimulation} with given parameters.
+	 * @param CONTROL_PERIOD The control period of the coordinator (e.g., 1000 msec)
+	 * @param TEMPORAL_RESOLUTION The temporal resolution at which the control period is specified (e.g., 1000)
+	 * @param MAX_VELOCITY The maximum speed of a robot (used to appropriately instantiate the {@link RemoteTrajectoryEnvelopeTrackerRK4} instances).
+	 * @param MAX_ACCELERATION The maximum acceleration/deceleration of a robot (used to appropriately instantiate the {@link RemoteTrajectoryEnvelopeTrackerRK4} instances).
+	 * @param DEFAULT_ROBOT_TRACKING_PERIOD The default tracking period in milliseconds (used to appropriately instantiate the {@link RemoteTrajectoryEnvelopeTrackerRK4} instances).
 	 */
-	public RemoteTrajectoryEnvelopeCoordinatorSimulation() {
-		this(1000, 1000, 10.0, 1.0, 30);
+	public RemoteTrajectoryEnvelopeCoordinatorSimulation(int CONTROL_PERIOD, double TEMPORAL_RESOLUTION, double MAX_VELOCITY, double MAX_ACCELERATION, int DEFAULT_ROBOT_TRACKING_PERIOD) {
+		super(CONTROL_PERIOD, TEMPORAL_RESOLUTION);
+		this.DEFAULT_MAX_VELOCITY = MAX_VELOCITY;
+		this.DEFAULT_MAX_ACCELERATION = MAX_ACCELERATION;
+		this.DEFAULT_ROBOT_TRACKING_PERIOD = DEFAULT_ROBOT_TRACKING_PERIOD;
 	}
 
 	/**
@@ -82,7 +103,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 	 * <ul>
 	 * <li><code>CONTROL_PERIOD</code> = 1000</li>
 	 * <li><code>TEMPORAL_RESOLUTION</code> = 1000</li>
-	 * <li><code>trackingPeriodInMillis</code> = 30</li>
+	 * <li><code>DEFAULT_ROBOT_TRACKING_PERIOD</code> = 30</li>
 	 * <li><code>PARKING_DURATION</code> = 3000</li>
 	 * </ul>
 	 */
@@ -95,7 +116,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 	 * <ul>
 	 * <li><code>CONTROL_PERIOD</code> = 1000</li>
 	 * <li><code>TEMPORAL_RESOLUTION</code> = 1000</li>
-	 * <li><code>trackingPeriodInMillis</code> = 30</li>
+	 * <li><code>DEFAULT_ROBOT_TRACKING_PERIOD</code> = 30</li>
 	 * <li><code>PARKING_DURATION</code> = 3000</li>
 	 * </ul>
 	 */
@@ -105,17 +126,17 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 
 	/**
 	 * Create a new {@link RemoteTrajectoryEnvelopeCoordinatorSimulation} with the following default values:
+	 * <ul>
+	 * <li><code>CONTROL_PERIOD</code> = 1000</li>
+	 * <li><code>TEMPORAL_RESOLUTION</code> = 1000</li>
 	 * <li><code>MAX_VELOCITY</code> = 10.0</li>
 	 * <li><code>MAX_ACCELERATION</code> = 1.0</li>
-	 * <li><code>trackingPeriodInMillis</code> = 30</li>
+	 * <li><code>DEFAULT_ROBOT_TRACKING_PERIOD</code> = 30</li>
 	 * <li><code>PARKING_DURATION</code> = 3000</li>
 	 * </ul>
-	 * and given parameters.
-	 * @param CONTROL_PERIOD The control period of the coordinator (e.g., 1000 msec)
-	 * @param TEMPORAL_RESOLUTION The temporal resolution at which the control period is specified (e.g., 1000)
 	 */
-	public RemoteTrajectoryEnvelopeCoordinatorSimulation(int CONTROL_PERIOD, double TEMPORAL_RESOLUTION) {
-		this(CONTROL_PERIOD, TEMPORAL_RESOLUTION, 10.0, 1.0, 30);
+	public RemoteTrajectoryEnvelopeCoordinatorSimulation() {
+		this(1000, 1000, 10.0, 1.0, 30);
 	}
 
 	private ArrayList<Integer> computeStoppingPoints(PoseSteering[] poses) {
@@ -141,7 +162,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 				PoseSteering[] path = m.getPath();
 				ArrayList<Integer> sps = computeStoppingPoints(path);
 				userStoppingPoints.put(m, m.getStoppingPoints());
-				for (Integer i : sps) m.setStoppingPoint(path[i-1].getPose(), 100);				
+				for (Integer i : sps) m.setStoppingPoint(path[i-1].getPose(), 100);
 			}
 		}
 		if (!super.addMissions(missions)) {
@@ -151,28 +172,13 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 					for (Pose p : userStoppingPoints.get(m).keySet()) {
 						m.setStoppingPoint(p, userStoppingPoints.get(m).get(p));
 					}
-				}			
+				}
 			}
 			return false;
 		}
 		return true;
 	}
 
-
-	/**
-	 * Create a new {@link RemoteTrajectoryEnvelopeCoordinatorSimulation} with given parameters.
-	 * @param CONTROL_PERIOD The control period of the coordinator (e.g., 1000 msec)
-	 * @param TEMPORAL_RESOLUTION The temporal resolution at which the control period is specified (e.g., 1000)
-	 * @param MAX_VELOCITY The maximum speed of a robot (used to appropriately instantiate the {@link RemoteTrajectoryEnvelopeTrackerRK4} instances).
-	 * @param MAX_ACCELERATION The maximum acceleration/deceleration of a robot (used to appropriately instantiate the {@link RemoteTrajectoryEnvelopeTrackerRK4} instances).
-	 * @param DEFAULT_ROBOT_TRACKING_PERIOD The default tracking period in milliseconds (used to appropriately instantiate the {@link RemoteTrajectoryEnvelopeTrackerRK4} instances).
-	 */
-	public RemoteTrajectoryEnvelopeCoordinatorSimulation(int CONTROL_PERIOD, double TEMPORAL_RESOLUTION, double MAX_VELOCITY, double MAX_ACCELERATION, int DEFAULT_ROBOT_TRACKING_PERIOD) {
-		super(CONTROL_PERIOD, TEMPORAL_RESOLUTION);
-		this.MAX_VELOCITY = MAX_VELOCITY;
-		this.MAX_ACCELERATION = MAX_ACCELERATION;
-		this.DEFAULT_ROBOT_TRACKING_PERIOD = DEFAULT_ROBOT_TRACKING_PERIOD;
-	}
 
 	/**
 	 * Enable (default) or disable the use of internal critical points in the {@link RemoteTrajectoryEnvelopeTrackerRK4} trackers.
@@ -182,52 +188,132 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 		this.useInternalCPs = value;
 	}
 
+	/*	*//**
+	 * Get the tracking period of a given robot in millis.
+	 * @param robotID The ID of the robot.
+	 * @return The tracking period of the robot (or the default value if not specified).
+	 *//*
 	@Override
-	public AbstractTrajectoryEnvelopeTracker getNewTracker(TrajectoryEnvelope te, TrackingCallback cb) {
-		RemoteTrajectoryEnvelopeTrackerRK4 ret = new RemoteTrajectoryEnvelopeTrackerRK4(te, this.getRobotTrackingPeriodInMillis(te.getRobotID()), TEMPORAL_RESOLUTION, MAX_VELOCITY, MAX_ACCELERATION,  cb) {
+	public Integer getRobotTrackingPeriodInMillis(int robotID) {
+		if (this.robotTrackingPeriodInMillis.containsKey(robotID))
+			return this.robotTrackingPeriodInMillis.get(robotID);
+		return DEFAULT_ROBOT_TRACKING_PERIOD;
+	}*/
 
+	/**
+	 * Get the maximum velocity of a given robot (m/s).
+	 * @param robotID The ID of the robot.
+	 * @return The maximum velocity of the robot (or the default value if not specified).
+	 */
+	//@Override
+	public Double getRobotMaxVelocity(int robotID) {
+		if (this.robotMaxVelocity.containsKey(robotID))
+			return this.robotMaxVelocity.get(robotID);
+		return DEFAULT_MAX_VELOCITY;
+	}
+
+	/**
+	 * Get the maximum acceleration of a given robot (m/s^2).
+	 * @param robotID The ID of the robot.
+	 * @return The maximum acceleration of the robot (or the default value if not specified).
+	 */
+	//@Override
+	public Double getRobotMaxAcceleration(int robotID) {
+		if (this.robotMaxAcceleration.containsKey(robotID))
+			return this.robotMaxAcceleration.get(robotID);
+		return DEFAULT_MAX_ACCELERATION;
+	}
+
+	@Override
+	protected Double getMaxFootprintDimension(int robotID) {
+		if (this.footprints.containsKey(robotID)) return maxFootprintDimensions.get(robotID);
+		return MAX_DEFAULT_FOOTPRINT_DIMENSION;
+	}
+
+	/**
+	 * Get the {@link Coordinate}s defining the default footprint of robots.
+	 * @return The {@link Coordinate}s defining the default footprint of robots.
+	 */
+	public Coordinate[] getDefaultFootprint() {
+		return DEFAULT_FOOTPRINT;
+	}
+
+	/**
+	 * Get the {@link Coordinate}s defining the footprint of a given robot.
+	 * @param robotID the ID of the robot
+	 * @return The {@link Coordinate}s defining the footprint of a given robot.
+	 */
+	@Override
+	public Coordinate[] getFootprint(int robotID) {
+		if (this.footprints.containsKey(robotID)) return this.footprints.get(robotID);
+		return DEFAULT_FOOTPRINT;
+	}
+
+	/**
+	 * Get a {@link Geometry} representing the default footprint of robots.
+	 * @return A {@link Geometry} representing the default footprint of robots.
+	 */
+	public Geometry getDefaultFootprintPolygon() {
+		Geometry fpGeom = TrajectoryEnvelope.createFootprintPolygon(DEFAULT_FOOTPRINT);
+		return fpGeom;
+	}
+
+	/**
+	 * Set the default footprint of robots, which is used for computing spatial envelopes.
+	 * Provide the bounding polygon of the machine assuming its reference point is in (0,0), and its
+	 * orientation is aligned with the x-axis. The coordinates must be in CW or CCW order.
+	 * @param coordinates The coordinates delimiting bounding polygon of the footprint.
+	 */
+	public void setDefaultFootprint(Coordinate ... coordinates) {
+		DEFAULT_FOOTPRINT = coordinates;
+		MAX_DEFAULT_FOOTPRINT_DIMENSION = computeMaxFootprintDimension(coordinates);
+	}
+
+	@Override
+	public TrajectoryEnvelopeTrackerLight getNewTracker(TrajectoryEnvelope te, TrackingCallback cb) {
+		if (this.getRobotTrackingPeriodInMillis(te.getRobotID()) == null || this.getRobotMaxVelocity(te.getRobotID()) == null || this.getRobotMaxAcceleration(te.getRobotID()) == null) throw new Error("Robot" +  te.getRobotID() + ": missing kinodynamic parameters.");
+		TrajectoryEnvelopeTrackerLight ret = new TrajectoryEnvelopeTrackerLight(te, this.getRobotTrackingPeriodInMillis(te.getRobotID()), TEMPORAL_RESOLUTION, this.getRobotMaxVelocity(te.getRobotID()), this.getRobotMaxAcceleration(te.getRobotID()), this, cb) {
+
+			@Override
+			protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te) {
+
+			}
 
 			//Method for measuring time in the trajectory envelope tracker
 			@Override
 			public long getCurrentTimeInMillis() {
-				//System.out.println("In TrajectoryEnvelopeCoordinatorSimulation currentTime: " + tec.getCurrentTimeInMillis());
-				//getCurrentDependencies();
-				// HÄR VI MÅSTE GÖRA EN RPC SOM GÖR EN REQUEST FRÅN TRACKERN FÖR SIN CURRENT TIME, DVS EN RPC TILL CLIENTEN
-
 				return tec.getCurrentTimeInMillis();
 			}
 
+			@Override
+			public void startTracking() {
 
+			}
 		};
-
 		//ret.setUseInternalCriticalPoints(this.useInternalCPs);
 		ret.setUseInternalCriticalPoints(false);
 		return ret;
 	}
 
-
-	//@Override
-	//public HashSet<Dependency> getCurrentDependencies() {
-		//System.out.println("Outter In TrajectoryEnvelopeCoordinatorSimulation currentDependencies:" + getCurrentDependencies());
-		//return currentDependencies;
-	//}
-
-
 	//Method for measuring time in the trajectory envelope coordinator
 	@Override
-	public long getCurrentTimeInMillis() { return Calendar.getInstance().getTimeInMillis()-START_TIME; }
+	public long getCurrentTimeInMillis() {
+		return Calendar.getInstance().getTimeInMillis()-START_TIME;
+	}
 
+	/**
+	 * Ignoring Statistics Atm... ((Alen))
 
 
 	@Override
 	protected String[] getStatistics() {
-		
+
 		String CONNECTOR_BRANCH = (char)0x251C + "" + (char)0x2500 + " ";
 		String CONNECTOR_LEAF = (char)0x2514 + "" + (char)0x2500 + " ";
 		ArrayList<String> ret = new ArrayList<String>();
 		int numVar = solver.getConstraintNetwork().getVariables().length;
 		int numCon = solver.getConstraintNetwork().getConstraints().length;
-		
+
 		synchronized (trackers) {
 			ret.add("Status @ "  + getCurrentTimeInMillis() + " ms");
 			ret.add(CONNECTOR_BRANCH + "Eff period ..... " + EFFECTIVE_CONTROL_PERIOD + " ms");
@@ -238,8 +324,8 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 			}
 			String st = CONNECTOR_BRANCH + "Robots really .. ";
 			for (Integer robotID : allRobots) {
-				AbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
-				RobotReport rr = tracker.getRobotReport(); 
+				RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
+				RobotReport rr = tracker.getRobotReport();
 				int currentPP = rr.getPathIndex();
 				st += tracker.getTrajectoryEnvelope().getComponent();
 				if (tracker instanceof TrajectoryEnvelopeTrackerDummy) st += " (P)";
@@ -249,8 +335,8 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 			ret.add(st);
 			st = CONNECTOR_BRANCH + "Robots view .... ";
 			for (Integer robotID : allRobots) {
-				AbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
-				RobotReport rr = getRobotReport(robotID); 
+				RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
+				RobotReport rr = getRobotReport(robotID);
 				if (rr != null ) {
 					int currentPP = rr.getPathIndex();
 					st += tracker.getTrajectoryEnvelope().getComponent();
@@ -267,7 +353,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 		if (checkCollisions) {
 			int numberOfCollisions = 0;
 			synchronized (collisionsList) {
-				numberOfCollisions = collisionsList.size();		
+				numberOfCollisions = collisionsList.size();
 				ret.add(CONNECTOR_BRANCH + "Number of collisions ... " + numberOfCollisions + ".");
 				if (numberOfCollisions>0) {
 					for (CollisionEvent ce : collisionsList) {
@@ -275,7 +361,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 					}
 				}
 			}
-			
+
 		}
 		ret.add(CONNECTOR_BRANCH + "Total number of obsolete critical sections ... " + criticalSectionCounter.get() + ".");
 		ret.add(CONNECTOR_BRANCH + "Total messages sent: ... " + totalMsgsSent.get() + ", lost: " + totalMsgsLost.get() + ", retransmitted: " + totalMsgsReTx.get() + ". Packets lost: " + totalPacketsLost.get() + ", number of replicas: " + numberOfReplicas + ".");
@@ -283,12 +369,13 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 		ret.add(CONNECTOR_LEAF + "Total re-planned path: ... " + replanningTrialsCounter.get() + ", successful: " + successfulReplanningTrialsCounter.get() + ".");
 		return ret.toArray(new String[ret.size()]);
 	}
-	
+*/
+
 	@Override
 	public void onCriticalSectionUpdate() {
-		
+
 		if (checkCollisions && (collisionThread == null) && (this.allCriticalSections.size() > 0)) {
-			// Start the collision checking thread. 
+			// Start the collision checking thread.
 			// The tread will be alive until there will be almost one critical section.
 			collisionThread = new Thread("Collision checking thread.") {
 
@@ -297,44 +384,44 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 					metaCSPLogger.info("Starting the collision checking thread.");
 					ArrayList<CriticalSection> previousCollidingCS = new ArrayList<CriticalSection>();
 					ArrayList<CriticalSection> newCollidingCS = new ArrayList<CriticalSection>();
-					
+
 					while(true) {
 						newCollidingCS.clear();
-						
-						//collisions can happen only in critical sections						
+
+						//collisions can happen only in critical sections
 						synchronized (allCriticalSections) {
 							if (allCriticalSections.isEmpty())
 								break; //break the thread if there are no critical sections to control
-							
+
 							for (CriticalSection cs : allCriticalSections) {
 								//check if both the robots are inside the critical section
-								
+
 								//FIXME sample the real pose of the robots (ok in simulation, but not otherwise)
 								RobotReport robotReport1, robotReport2;
-								AbstractTrajectoryEnvelopeTracker tracker1, tracker2;
+								RemoteAbstractTrajectoryEnvelopeTracker tracker1, tracker2;
 								try {
 									synchronized (trackers)	{
-										tracker1 = trackers.get(cs.getTe1().getRobotID());
+										tracker1 = trackers.get(cs.getTe1().getRobotID()).getTracker();
 										robotReport1 = tracker1.getRobotReport();
-										tracker2 = trackers.get(cs.getTe2().getRobotID());
+										tracker2 = trackers.get(cs.getTe2().getRobotID()).getTracker();
 										robotReport2 = tracker2.getRobotReport();
 									}
 								}
 								catch (NullPointerException e) {
 									continue; //skip this cycle
 								}
-								
+
 								if ( robotReport1 != null && robotReport2 != null &&
-								(robotReport1.getPathIndex() <= cs.getTe1End()) && (robotReport1.getPathIndex() >= cs.getTe1Start()) && //robot1 is inside
-								(robotReport2.getPathIndex() <= cs.getTe2End()) && (robotReport2.getPathIndex() >= cs.getTe2Start())  	//robot2 is inside
+										(robotReport1.getPathIndex() <= cs.getTe1End()) && (robotReport1.getPathIndex() >= cs.getTe1Start()) && //robot1 is inside
+										(robotReport2.getPathIndex() <= cs.getTe2End()) && (robotReport2.getPathIndex() >= cs.getTe2Start())  	//robot2 is inside
 								) {
 									//place robot  in pose and get geometry
 									PoseSteering[] path1 = cs.getTe1().getTrajectory().getPoseSteering();
 									Geometry placement1 = cs.getTe1().makeFootprint(path1[robotReport1.getPathIndex()]);
-									
+
 									PoseSteering[] path2 = cs.getTe2().getTrajectory().getPoseSteering();
 									Geometry placement2 = cs.getTe2().makeFootprint(path2[robotReport2.getPathIndex()]);
-									
+
 									//check intersection
 									if (placement1.intersects(placement2)) {
 										if (!previousCollidingCS.contains(cs)) {
@@ -342,7 +429,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 											CollisionEvent ce = new CollisionEvent(Calendar.getInstance().getTimeInMillis(),robotReport1,robotReport2);
 											synchronized (collisionsList) {
 												collisionsList.add(ce);
-											}		
+											}
 											newCollidingCS.add(cs);
 										}
 									}
@@ -352,18 +439,18 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 							}
 						}
 						previousCollidingCS.addAll(newCollidingCS);
-						
+
 						try { Thread.sleep((long)(1000.0/30.0)); }
 						catch (InterruptedException e) { e.printStackTrace(); }
 					}
 					metaCSPLogger.info("Ending the collision checking thread.");
 				}
-					
+
 			};
 			collisionThread.start();
 		}
 	}
-	
+
 	@Override
 	protected void updateDependencies() {
 		synchronized(solver) {
@@ -372,12 +459,8 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends TrajectoryEnv
 				return;
 			}
 			if (this.avoidDeadlockGlobally.get()) globalCheckAndRevise();
-			else localCheckAndRevise(); 
-			
+			else localCheckAndRevise();
+
 		}
 	}
-
-
-
-
 }

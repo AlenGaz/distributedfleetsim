@@ -7,8 +7,9 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.TreeMap;
 
-import Visualizer.util.Missions;
-import CoordinatorPackage.TrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
+import se.oru.coordination.coordination_oru.util.Missions;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinator;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import org.metacsp.multi.spatioTemporal.paths.Trajectory;
@@ -20,11 +21,10 @@ import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.TrackingCallback;
 import se.oru.coordination.coordination_oru.simulation2D.Derivative;
 import se.oru.coordination.coordination_oru.simulation2D.State;
-import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
 //import se.oru.coordination.coordination_oru.TrajectoryEnvelopeCoordinator;
 //import se.oru.coordination.coordination_oru.util.Missions;
 
-public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends AbstractTrajectoryEnvelopeTracker implements Runnable {
+public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractTrajectoryEnvelopeTracker implements Runnable {
 
 	protected static final long WAIT_AMOUNT_AT_END = 3000;
 	protected static final double EPSILON = 0.01;
@@ -48,13 +48,18 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends AbstractTraject
 
 	private HashMap<Integer,Integer> userCPReplacements = null;
 
+
+	public int RK4controlPeriod=1000;
+	//public static int RK4numberOfReplicas = 0;
+
+
 	public void setUseInternalCriticalPoints(boolean value) {
 		this.useInternalCPs = value;
 	}
 
 	public RemoteTrajectoryEnvelopeTrackerRK4(TrajectoryEnvelope te, int timeStep, double temporalResolution, TrackingCallback cb) {
 		this(te, timeStep, temporalResolution, 1.0, 0.1, cb);
-		setNumberOfReplicas(tec.getNumberOfReplicas(), tec.getControlPeriod());
+		setNumberOfReplicas(0, RK4controlPeriod); // @TODO set 0 atm i dont think it matters that much
 	}
 
 	private void computeInternalCriticalPoints() {
@@ -232,9 +237,10 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends AbstractTraject
 				for (Long time : reportTimeToRemove) reportTimeLists.remove(time);
 				for (RobotReport report : reportToRemove) reportsList.remove(report);
 			}
-
 			//Check if the current status message is too old.
-			if (timeNow - reportTimeLists.get(reportTimeLists.size()-1) > tec.getControlPeriod() + TrajectoryEnvelopeCoordinator.MAX_TX_DELAY) { //the known delay
+			// Setting the controlperiod as 1000 ms by default atm
+
+			if (timeNow - reportTimeLists.get(reportTimeLists.size()-1) > RK4controlPeriod + RemoteTrajectoryEnvelopeCoordinator.MAX_TX_DELAY) { //the known delay
 				metaCSPLogger.severe("* ERROR * Status of Robot"+ te.getRobotID() + " is too old.");
 				//FIXME add a function for stopping pausing the fleet and eventually restart
 			}
@@ -388,7 +394,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends AbstractTraject
 						if (rand.nextDouble() < (1-NetworkConfiguration.PROBABILITY_OF_PACKET_LOSS)) //the real one
 							send = true;
 						else {
-							TrajectoryEnvelopeCoordinatorSimulation tc = (TrajectoryEnvelopeCoordinatorSimulation)tec;
+							RemoteTrajectoryEnvelopeCoordinatorSimulation tc = (RemoteTrajectoryEnvelopeCoordinatorSimulation)tec;
 							tc.incrementLostPacketsCounter();
 						}
 						trial++;
@@ -410,7 +416,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends AbstractTraject
 						}
 					}
 					else {
-						TrajectoryEnvelopeCoordinatorSimulation tc = (TrajectoryEnvelopeCoordinatorSimulation)tec;
+						RemoteTrajectoryEnvelopeCoordinatorSimulation tc = (RemoteTrajectoryEnvelopeCoordinatorSimulation)tec;
 						tc.incrementLostMsgsCounter();
 						metaCSPLogger.info("PACKET to Robot" + te.getRobotID() + " LOST, criticalPoint: " + criticalPoint + ", externalCPCounter: " + externalCPCount);
 					}
@@ -625,7 +631,16 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends AbstractTraject
 		}
 
 		//continue transmitting until the coordinator will be informed of having reached the last position.
-		while (tec.getRobotReport(te.getRobotID()).getPathIndex() != -1)
+
+		/* "continue transmitting.." So here we are supposed to send the pose or something, until the coordinator
+		* sets that the robot has a pathindex of -1, meaning its reached the last position, this is last position is read as
+		* tec.getRobotReport(te.getRobotID()).getPathIndex.. so each robots pathindex is stored in the trajectoryenvelope hashmap te
+		* in the Abstract...Coordinator class*/
+
+		// @TODO replace instead of getRobotReport() from local RobotReport class with a rpc that gets from the tec.
+		// this wil be done with a rpc.. while (client.makePathIndexRequest(robotID) != -1){}.. instead of tec.getRobotReport(..).getPathIndex
+
+		while (getRobotReport().getPathIndex() != -1)
 
 		{
 			enqueueOneReport();

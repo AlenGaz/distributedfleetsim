@@ -1,0 +1,14 @@
+/.gradle/
+/CoordinatorPackage/
+/GRPC/
+/Launch/
+/Tracker/
+/Visualizer/
+/coordinator.proto
+/fleetClient/
+/fleetclients.proto
+/io/
+/protoc-3.13.0-linux-x86_64.zip
+/se/
+/tracker.proto
+/visualizer.proto
