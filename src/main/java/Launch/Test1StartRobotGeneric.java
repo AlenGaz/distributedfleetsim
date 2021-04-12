@@ -125,9 +125,9 @@ public class Test1StartRobotGeneric {
 		FleetClient client = new FleetClient(channel);
 
 
-		System.out.println("Below this point nothing is printed if Pose[] startAndGoal is run ...");
+
 		Pose[] startAndGoal = makeRandomStartGoalPair(3, 1.5*maxRobotRadius, 1.1*maxRobotRadius, 1.1*maxRobotRadius);
-		System.out.println("Aaa");
+
 
 
 
@@ -192,7 +192,7 @@ public class Test1StartRobotGeneric {
 			System.out.println("tracker.cb is null");
 		}
 
-		// the rk4 must be outcommented else null exceptions will just break it right now, we have problems here
+		//
 	  	RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(parkingEnvelope, 30, 1000, 2, 1.0,tracker.cb ) {
 
 			@Override
@@ -211,6 +211,14 @@ public class Test1StartRobotGeneric {
 		 **/
 
 		int coordinatorResponse = 0;
+
+
+		RobotReport rR = rk4.getRobotReport();
+		client.makeRobotReport("myRobotReport", rR.getRobotID(), rR.getPose().getX()
+				, rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
+				rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
+				, rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
+
 
 		coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
 
@@ -232,6 +240,14 @@ public class Test1StartRobotGeneric {
 			}
 			System.out.println("CoordinatorServer is alive... numberOfReplicas: " +coordinatorResponse);
 
+
+			rR = rk4.getRobotReport();
+			client.makeRobotReport("myRobotReport", rR.getRobotID(), rR.getPose().getX()
+					, rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
+					rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
+					, rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
+
+			System.out.println("[Test1StartRobotGeneric] asked the coordinator for currentTime and got: " + client.makeCurrentTimeRequest());
 
 			coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
 			rk4.setNumberOfReplicas(coordinatorResponse); //<<<- should be setting it
