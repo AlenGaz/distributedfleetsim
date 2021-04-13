@@ -8,7 +8,6 @@ import java.util.Calendar;
 
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import CoordinatorPackage.TrajectoryEnvelopeTrackerLight;
-import CoordinatorPackage.containers.trackersReplacement;
 import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
 import org.metacsp.utility.UI.Callback;
 
@@ -38,8 +37,8 @@ public class TrajectoryEnvelopeCoordinatorSimulationICAPS extends RemoteTrajecto
         if (robotsInUse.size() > 0) {
             try {
                 int numDrivingRobots = 0;
-                for (trackersReplacement et : trackers.values()) {
-                    if (!(et instanceof trackersReplacement)) numDrivingRobots++;
+                for (TrajectoryEnvelopeTrackerLight et : trackers.values()) {
+                    if (!(et instanceof TrajectoryEnvelopeTrackerLight)) numDrivingRobots++;
                 }
                 writer.write(robotsInUse.size()+"\t"+numDrivingRobots+"\t"+EFFECTIVE_CONTROL_PERIOD+"\t"+allCriticalSections.size()+"\n");
                 writer.flush();

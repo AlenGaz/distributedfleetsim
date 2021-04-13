@@ -112,10 +112,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     protected HashMap<Integer,ArrayList<Integer>> stoppingTimes = new HashMap<Integer,ArrayList<Integer>>();
     protected HashMap<Integer,Thread> stoppingPointTimers = new HashMap<Integer,Thread>();
 
-
-    // The trackers.. hashmap below needs to be RemoteAbstract...Tracker so that
-   // public HashMap<Integer,RemoteAbstractTrajectoryEnvelopeTracker> trackers = new HashMap<Integer, RemoteAbstractTrajectoryEnvelopeTracker>();
-    public HashMap<Integer, trackersReplacement> trackers = new HashMap<Integer, trackersReplacement>();
+    public HashMap<Integer, TrajectoryEnvelopeTrackerLight> trackers = new HashMap<Integer, TrajectoryEnvelopeTrackerLight>();
     protected HashMap<Integer, Dependency> currentDependencies = new HashMap<Integer, Dependency>();
 
     protected static Logger metaCSPLogger = MetaCSPLogging.getLogger(RemoteTrajectoryEnvelopeCoordinator.class);
@@ -128,8 +125,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
      * critical point
      * ------------ or it should be TrajectoryEnvelopeTrackerLight ......
      */
-    protected HashMap<TrajectoryEnvelopeTrackerLight,Pair<Integer,Long>> communicatedCPs = new HashMap<TrajectoryEnvelopeTrackerLight, Pair<Integer,Long>>();
-    protected HashMap<TrajectoryEnvelopeTrackerLight,Integer> externalCPCounters = new HashMap<TrajectoryEnvelopeTrackerLight, Integer>();
+    protected HashMap<RemoteAbstractTrajectoryEnvelopeTracker,Pair<Integer,Long>> communicatedCPs = new HashMap<RemoteAbstractTrajectoryEnvelopeTracker, Pair<Integer,Long>>();
+    protected HashMap<RemoteAbstractTrajectoryEnvelopeTracker,Integer> externalCPCounters = new HashMap<RemoteAbstractTrajectoryEnvelopeTracker, Integer>();
     /**------------*/
     //public HashMap<Integer, Integer> RobotIDtoexternalCPCounters ..
 
@@ -493,7 +490,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     public void setCriticalPoint(int robotID, int criticalPoint, boolean retransmitt) {
 
         synchronized (trackers) {
-            RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID).getTracker();
+            RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
 
 
             //If the robot is not muted
@@ -501,9 +498,9 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                 if (!communicatedCPs.containsKey(tracker) || communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() != criticalPoint || retransmitt ) {
 
-                    //communicatedCPs.put(tracker, new Pair<Integer,Long>(criticalPoint, Calendar.getInstance().getTimeInMillis()));
+                    communicatedCPs.put(tracker, new Pair<Integer,Long>(criticalPoint, Calendar.getInstance().getTimeInMillis()));
                     // kan göra om den till communicated CPs
-                    trackers.get(robotID).setCommunicatedCPs(new Pair<Integer,Long>(criticalPoint,Calendar.getInstance().getTimeInMillis()));
+                    //trackers.get(robotID).setCommunicatedCPs(new Pair<Integer,Long>(criticalPoint,Calendar.getInstance().getTimeInMillis()));
 
                     // Commenting out it for now (Alen))) 04-09
                     // externalCPCounters.replace(tracker,externalCPCounters.get(tracker)+1);
@@ -714,20 +711,12 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             currentParkingEnvelopes.add(tracker.getTrajectoryEnvelope());
 
             synchronized (trackers) {
-                /***
-                 * Here the robots from tracker and externalCP are removed so that they may be added back as
-                 * dummytrackers instead,
-                 * (((Alen))) dealing with the change of trackers by using a trackersReplacement class.
-                 *
-                 * //trackers.put(robotID, tracker); <<--- solution to setting a tracker for a robot thats parked without the Int->Abstract..Tracker key
-                 */
 
                 externalCPCounters.remove(trackers.get(robotID));
-                //trackers.remove(robotID); (((instead of removing setting tracker to dummy in the line below
+                trackers.remove(robotID);
 
-
-                trackers.get(robotID).setTracker(tracker);
-                //externalCPCounters.put(tracker, -1);
+                trackers.put(robotID, tracker);
+                externalCPCounters.put(tracker, -1);
             }
         }
 
@@ -1036,7 +1025,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                 ArrayList<TrajectoryEnvelope> drivingEnvelopes = new ArrayList<TrajectoryEnvelope>();
 
                 for(int i = 0;  i<= trackers.keySet().size(); i++){
-                    if (!(trackers.get(i).getTracker() instanceof RemoteTrajectoryEnvelopeTrackerDummy)) {
+                    if (!(trackers.get(i) instanceof RemoteTrajectoryEnvelopeTrackerDummy)) {
                         drivingEnvelopes.add(trackers.get(i).getTrajectoryEnvelope());
                         //metaCSPLogger.info(atet.getRobotReport().getRobotID() + " is driving.");
                     }
@@ -1486,7 +1475,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             for (final TrajectoryEnvelope te : envelopesToTrack) {
                 RemoteTrajectoryEnvelopeTrackerDummy startParkingTracker = null;
                 synchronized (trackers) {
-                    startParkingTracker = (RemoteTrajectoryEnvelopeTrackerDummy) trackers.get(te.getRobotID()).getTracker();
+                    startParkingTracker = (RemoteTrajectoryEnvelopeTrackerDummy) trackers.get(te.getRobotID());
                 }
                 final TrajectoryEnvelope startParking = startParkingTracker.getTrajectoryEnvelope();
                 //Create end parking envelope
@@ -1619,7 +1608,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                     //Make a new tracker for the driving trajectory envelope
                     TrajectoryEnvelopeTrackerLight tracker = getNewTracker(te, cb);
                     //trackers.put(te.getRobotID(), tracker);
-                    trackers.get(te.getRobotID()).setTracker(tracker);
+                    trackers.get(te.getRobotID());
 
                     externalCPCounters.put(tracker, -1);
                 }
@@ -1666,7 +1655,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             int robotID = e.getKey();
             synchronized (solver) {
                 //Get start parking tracker and envelope
-                RemoteTrajectoryEnvelopeTrackerDummy startParkingTracker = (RemoteTrajectoryEnvelopeTrackerDummy)trackers.get(robotID).getTracker();
+                RemoteTrajectoryEnvelopeTrackerDummy startParkingTracker = (RemoteTrajectoryEnvelopeTrackerDummy)trackers.get(robotID);
                 TrajectoryEnvelope startParking = startParkingTracker.getTrajectoryEnvelope();
                 ArrayList<Constraint> consToAdd = new ArrayList<Constraint>();
                 //				String finalDestLocation = "";
@@ -1793,7 +1782,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             }
             String st = CONNECTOR_BRANCH + "Robots ......... ";
             for (Integer robotID : allRobots) {
-                RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID).getTracker();
+                RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
                 RobotReport rr = tracker.getRobotReport();
                 int currentPP = rr.getPathIndex();
                 st += tracker.te.getComponent();
@@ -1855,7 +1844,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 							missionsPool.remove(oldestMissionRobotID);*/
                             //FIXME critical sections should be computed incrementally/asynchronously
                             for (Integer robotID : trackers.keySet())
-                                if (!(trackers.get(robotID).getTracker() instanceof RemoteTrajectoryEnvelopeTrackerDummy)) numberDrivingRobots++;
+                                if (!(trackers.get(robotID) instanceof RemoteTrajectoryEnvelopeTrackerDummy)) numberDrivingRobots++;
 
                             while (!missionsPool.isEmpty() && numberNewAddedMissions < MAX_ADDED_MISSIONS) {
                                 Pair<TrajectoryEnvelope,Long> te = missionsPool.pollFirst();
@@ -1945,7 +1934,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             if (muted.contains(robotID)) return false;
             for (Pair<TrajectoryEnvelope,Long> te : missionsPool) if (te.getFirst().getRobotID() == robotID) return false;
             synchronized (trackers) {
-                RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID).getTracker();
+                RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
                 if (!(tracker instanceof RemoteTrajectoryEnvelopeTrackerDummy)) return false;
                 RemoteTrajectoryEnvelopeTrackerDummy trackerDummy = (RemoteTrajectoryEnvelopeTrackerDummy)tracker;
                 return (!trackerDummy.isParkingFinished());

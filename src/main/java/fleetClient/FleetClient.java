@@ -66,8 +66,8 @@ public class FleetClient {
         Coordinator.robotgreetingResponse greetingresponse = null;
 
         try {
-            System.out.println("making greeting");
             greetingresponse = coordinatorBlockingStub.coordinatorgetGreeting(greetingBuild);
+            System.out.println("[FleetClient] making greeting");
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
 
@@ -88,7 +88,7 @@ public class FleetClient {
         Fleetclients.robotID robotid;
 
         try {
-            System.out.println("making greeting with: " + pair);
+            System.out.println("[FleetClient] making greeting with: " + pair);
             robotid = blockingStub.grobotID(getrobotid);
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());

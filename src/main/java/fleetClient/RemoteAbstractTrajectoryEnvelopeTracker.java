@@ -1,6 +1,7 @@
 package fleetClient;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.logging.Logger;
@@ -139,16 +140,16 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
     /**
      * Update the {@link TrajectoryEnvelope} of this tracker (used for truncating/reversing/re-planning {@link TrajectoryEnvelope}s online).
      * This method calls the {@link #onTrajectoryEnvelopeUpdate(TrajectoryEnvelope)} method of the particular implementation
-     * of this {@link AbstractTrajectoryEnvelopeTracker} class.
+     * of this {@link //AbstractTrajectoryEnvelopeTracker} class.
      * @param te The new {@link TrajectoryEnvelope} of this tracker.
      */
     public void updateTrajectoryEnvelope(TrajectoryEnvelope te) {
-       // synchronized(tec.getSolver()) {
-            metaCSPLogger.info("Updating trajectory Robot" +this.te.getRobotID()+". TEID: " + this.te.getID() + "--> TEID: " + te.getID()+ ".");
-            this.te = te;
-            this.cb.updateTrajectoryEnvelope(te);
-            this.traj = te.getTrajectory();
-            this.onTrajectoryEnvelopeUpdate(te);
+        // synchronized(tec.getSolver()) {
+        metaCSPLogger.info("Updating trajectory Robot" +this.te.getRobotID()+". TEID: " + this.te.getID() + "--> TEID: " + te.getID()+ ".");
+        this.te = te;
+        this.cb.updateTrajectoryEnvelope(te);
+        this.traj = te.getTrajectory();
+        this.onTrajectoryEnvelopeUpdate(te);
 
     }
 
@@ -289,16 +290,16 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         /**
          *  This part has been moved to the coordinator or atleast to the BrowserVisualization class
          *
-        if (tec.getVisualization() != null) {
-            //Update the position of the robot in the GUI
-            RobotReport rr = getRobotReport();
-            tec.getVisualization().displayRobotState(te.getFootprint(), rr, extraRobotState);
+         if (tec.getVisualization() != null) {
+         //Update the position of the robot in the GUI
+         RobotReport rr = getRobotReport();
+         tec.getVisualization().displayRobotState(te.getFootprint(), rr, extraRobotState);
 
-            //Draw an arrow if there is a critical point
-            RobotReport rrWaiting = getRobotReport();
+         //Draw an arrow if there is a critical point
+         RobotReport rrWaiting = getRobotReport();
 
-            tec.getVisualization().updateVisualization();
-        }*/
+         tec.getVisualization().updateVisualization();
+         }*/
     }
 
     /**
@@ -326,100 +327,100 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
     protected void updateDeadline(TrajectoryEnvelope trajEnv, long delta) {
 
         // synchronized(tec.getSolver()) {
-            long time = getCurrentTimeInMillis()+delta;
-            if (time > trajEnv.getTemporalVariable().getEET()) {
+        long time = getCurrentTimeInMillis()+delta;
+        if (time > trajEnv.getTemporalVariable().getEET()) {
 
-                tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
-                client.sendAllenInterval("Remove", deadLines);
-                // ^ this client.sendinterval ... replaces tec.getSolver().removeConstraint(deadlines.get)
-                //tec.getSolver().removeConstraint(deadlines.get)
+            tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
+            client.sendAllenInterval("Remove", deadLines);
+            // ^ this client.sendinterval ... replaces tec.getSolver().removeConstraint(deadlines.get)
+            //tec.getSolver().removeConstraint(deadlines.get)
 
-                long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
-                //long bound1 = time;
-                long bound2 = APSPSolver.INF;
-                //metaCSPLogger.info("Finishing @ " + time + " " + trajEnv + " (ET bounds: [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() + "])");
-                AllenIntervalConstraint deadline = new AllenIntervalConstraint(AllenIntervalConstraint.Type.Deadline, new Bounds(bound1, bound2));
-                tecAllenIntervalContainer deadLine = new tecAllenIntervalContainer(deadline);
+            long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
+            //long bound1 = time;
+            long bound2 = APSPSolver.INF;
+            //metaCSPLogger.info("Finishing @ " + time + " " + trajEnv + " (ET bounds: [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() + "])");
+            AllenIntervalConstraint deadline = new AllenIntervalConstraint(AllenIntervalConstraint.Type.Deadline, new Bounds(bound1, bound2));
+            tecAllenIntervalContainer deadLine = new tecAllenIntervalContainer(deadline);
 
-                deadline.setFrom(trajEnv);
-                deadline.setTo(trajEnv);
+            deadline.setFrom(trajEnv);
+            deadline.setTo(trajEnv);
 
-                /*
-                * this replaces the  //boolean added = tec.getSolver().addConstraint(deadline); */
-                client.sendAllenInterval("Add",deadLine);
-                boolean added = true;
-                /*
-                * */
+            /*
+             * this replaces the  //boolean added = tec.getSolver().addConstraint(deadline); */
+            client.sendAllenInterval("Add",deadLine);
+            boolean added = true;
+            /*
+             * */
 
-                if (!added) {
-                    metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
-                    throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
-                }
-                else deadlines.put(trajEnv, deadline);
+            if (!added) {
+                metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
+                throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
             }
+            else deadlines.put(trajEnv, deadline);
         }
+    }
 
 
     protected void fixDeadline(TrajectoryEnvelope trajEnv, long delta) {
         //
         // synchronized(tec.getSolver()) {
-            long time = getCurrentTimeInMillis()+delta;
-            if (time > trajEnv.getTemporalVariable().getEET()) {
+        long time = getCurrentTimeInMillis()+delta;
+        if (time > trajEnv.getTemporalVariable().getEET()) {
 
-                // - tec.getSolver().removeConstraint(deadlines.get(trajEnv));
-                tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
-                client.sendAllenInterval("Remove", deadLines);
-                // -
-                long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
-                //long bound1 = time;
-                long bound2 = bound1;
-                metaCSPLogger.info("Finishing @ " + time + " " + trajEnv + " (ET bounds: [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() + "])");
-                AllenIntervalConstraint deadline = new AllenIntervalConstraint(AllenIntervalConstraint.Type.Deadline, new Bounds(bound1, bound2));
-                tecAllenIntervalContainer deadLine = new tecAllenIntervalContainer(deadline);
+            // - tec.getSolver().removeConstraint(deadlines.get(trajEnv));
+            tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
+            client.sendAllenInterval("Remove", deadLines);
+            // -
+            long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
+            //long bound1 = time;
+            long bound2 = bound1;
+            metaCSPLogger.info("Finishing @ " + time + " " + trajEnv + " (ET bounds: [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() + "])");
+            AllenIntervalConstraint deadline = new AllenIntervalConstraint(AllenIntervalConstraint.Type.Deadline, new Bounds(bound1, bound2));
+            tecAllenIntervalContainer deadLine = new tecAllenIntervalContainer(deadline);
 
-                deadline.setFrom(trajEnv);
-                deadline.setTo(trajEnv);
+            deadline.setFrom(trajEnv);
+            deadline.setTo(trajEnv);
 
-                // - boolean added = tec.getSolver().addConstraint(deadline);
-                client.sendAllenInterval("Add",deadLine);
-                boolean added = true;
-                // -
-
-
-                if (!added) {
-                    metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
-                    throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
-                }
-                else deadlines.put(trajEnv, deadline);
-            }
-        }
-
-
-    protected void setRelease(TrajectoryEnvelope trajEnv) {
-        //synchronized(tec.getSolver()) {
-
-            long time = client.makeCurrentTimeRequest();
-            time = Math.max(time, trajEnv.getTemporalVariable().getEST());
-            metaCSPLogger.info("Releasing @ " + time + " " + trajEnv + " (ST bounds: [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() + "])");
-
-            AllenIntervalConstraint release = new AllenIntervalConstraint(AllenIntervalConstraint.Type.Release, new Bounds(time, time));
-            tecAllenIntervalContainer Release = new tecAllenIntervalContainer(release);
-
-            release.setFrom(trajEnv);
-            release.setTo(trajEnv);
-
-            //  boolean added = tec.getSolver().addConstraint(release);
-            client.sendAllenInterval("Add",Release);
+            // - boolean added = tec.getSolver().addConstraint(deadline);
+            client.sendAllenInterval("Add",deadLine);
             boolean added = true;
             // -
 
 
             if (!added) {
-                metaCSPLogger.severe("ERROR: Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
-                throw new Error("Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
+                metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
+                throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
             }
-
+            else deadlines.put(trajEnv, deadline);
         }
+    }
+
+
+    protected void setRelease(TrajectoryEnvelope trajEnv) {
+        //synchronized(tec.getSolver()) {
+
+        long time = client.makeCurrentTimeRequest();
+        time = Math.max(time, trajEnv.getTemporalVariable().getEST());
+        metaCSPLogger.info("Releasing @ " + time + " " + trajEnv + " (ST bounds: [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() + "])");
+
+        AllenIntervalConstraint release = new AllenIntervalConstraint(AllenIntervalConstraint.Type.Release, new Bounds(time, time));
+        tecAllenIntervalContainer Release = new tecAllenIntervalContainer(release);
+
+        release.setFrom(trajEnv);
+        release.setTo(trajEnv);
+
+        //  boolean added = tec.getSolver().addConstraint(release);
+        client.sendAllenInterval("Add",Release);
+        boolean added = true;
+        // -
+
+
+        if (!added) {
+            metaCSPLogger.severe("ERROR: Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
+            throw new Error("Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
+        }
+
+    }
 
 
 
@@ -452,6 +453,9 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
     public boolean trackingStrated() {
         return calledStartTracking;
     }
+
+
+    boolean controlRR = false;
 
     protected void startMonitoringThread() {           /////////////////////////////////////////// This is where Tracking Starts
 
@@ -486,8 +490,23 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
                         RobotReport rr = null;
                         //while ((rr = tec.getRobotReport(te.getRobotID())) == null).. replaced with the rpc below
 
-                        rr = client.makeRobotReportRequest(te.getRobotID());
-                        // -
+                        /**
+                         * FIXME quick fix for not having the robotreport from the coordinator before its needed in the rk4
+                         * this is done to avoid requesting rr (RobotReport) parameter before the coordinator receives
+                         * updates of RobotReports from clients
+                         * */
+
+                        if(!controlRR){
+                            rr=getRobotReport();
+                            controlRR=true;
+                        }
+                        else{
+                            // if first time requesting-> * getRobotReport(); else rr = cliuent......
+                            rr = client.makeRobotReportRequest(te.getRobotID());
+                            System.out.println("[RemoteAbstract..Tracker] AFTER requesting the robotReport");
+                            //
+                        }
+
                         if(rr==null) {
                             metaCSPLogger.info("(waiting for "+te.getComponent()+"'s tracker to come online)");
                             try { Thread.sleep(100); }
@@ -534,11 +553,11 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
                     try { Thread.sleep(trackingPeriodInMillis); }
                     catch (InterruptedException e) { e.printStackTrace(); }
                 }
-               // synchronized(tec.getSolver()) {
-                    if (cb != null) cb.beforeTrackingFinished();
-                    finishTracking();
-                    if (cb != null) cb.onTrackingFinished();
-                }
+                // synchronized(tec.getSolver()) {
+                if (cb != null) cb.beforeTrackingFinished();
+                finishTracking();
+                if (cb != null) cb.onTrackingFinished();
+            }
 
             //}
         };

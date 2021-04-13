@@ -161,9 +161,7 @@ public class Test1StartRobotFileMp {
             }
 
             @Override
-            public void startTracking() {
-
-            }
+            public void startTracking() { }
         };
 
         if(tracker.te == null || tracker.te == null){

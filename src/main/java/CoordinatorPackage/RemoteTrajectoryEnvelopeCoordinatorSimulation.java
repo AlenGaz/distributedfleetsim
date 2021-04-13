@@ -401,9 +401,9 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 								RemoteAbstractTrajectoryEnvelopeTracker tracker1, tracker2;
 								try {
 									synchronized (trackers)	{
-										tracker1 = trackers.get(cs.getTe1().getRobotID()).getTracker();
+										tracker1 = trackers.get(cs.getTe1().getRobotID());
 										robotReport1 = tracker1.getRobotReport();
-										tracker2 = trackers.get(cs.getTe2().getRobotID()).getTracker();
+										tracker2 = trackers.get(cs.getTe2().getRobotID());
 										robotReport2 = tracker2.getRobotReport();
 									}
 								}

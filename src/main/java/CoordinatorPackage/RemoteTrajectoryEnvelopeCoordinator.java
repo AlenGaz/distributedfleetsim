@@ -170,7 +170,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             }
             String st = CONNECTOR_BRANCH + "Robots view .... ";
             for (Integer robotID : allRobots) {
-                RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID).getTracker();
+                RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
                 RobotReport rr = getRobotReport(robotID);
                 if (rr != null ) {
                     int currentPP = rr.getPathIndex();
@@ -310,7 +310,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                 this.isDeadlocked = true;
                 for (int i = 0; i < cycle.size(); i++) {
                     int robotID = cycle.get(i);
-                    RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID).getTracker();
+                    RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
                     RobotReport rr = tracker.getLastRobotReport();
                     if (!(communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == rr.getCriticalPoint() && rr.getCriticalPoint() == rr.getPathIndex())) {
                         this.isDeadlocked = false;
@@ -501,7 +501,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             if (dep == null) {
                 RemoteAbstractTrajectoryEnvelopeTracker tracker = null;
                 synchronized (trackers) {
-                    tracker = trackers.get(robotID).getTracker();
+                    tracker = trackers.get(robotID);
                 }
                 if (tracker instanceof RemoteTrajectoryEnvelopeTrackerDummy) return false;
                 TrajectoryEnvelope te = tracker.getTrajectoryEnvelope();
@@ -607,7 +607,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             //Make deps from un-reached stopping points
             Set<Integer> robotIDs = trackers.keySet();
             for (int robotID : robotIDs) {
-                RemoteAbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID).getTracker();
+                RemoteAbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID);
                 //Update the coordinator view
                 RobotReport robotReport = robotTracker.getRobotReport();
                 currentReports.put(robotID, robotReport);
@@ -647,7 +647,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                 //FIXME Add a CriticalSectionManager class
                 if (allCriticalSections.size() > 0)
                     for (int robotID : robotIDs)
-                        earliestStoppingPoints.put(robotID, getForwardModel(robotID).getEarliestStoppingPathIndex(trackers.get(robotID).getTracker().getTrajectoryEnvelope(), currentReports.get(robotID)));
+                        earliestStoppingPoints.put(robotID, getForwardModel(robotID).getEarliestStoppingPathIndex(trackers.get(robotID).getTrajectoryEnvelope(), currentReports.get(robotID)));
 
                 depsToCS.clear();
                 this.isBlocked = false;
@@ -660,9 +660,9 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                     RemoteAbstractTrajectoryEnvelopeTracker drivingTracker = null;
                     int drivingCurrentIndex = -1;
 
-                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker1 = trackers.get(cs.getTe1().getRobotID()).getTracker();
+                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker1 = trackers.get(cs.getTe1().getRobotID());
                     RobotReport robotReport1 = currentReports.get(cs.getTe1().getRobotID());
-                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker2 = trackers.get(cs.getTe2().getRobotID()).getTracker();
+                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker2 = trackers.get(cs.getTe2().getRobotID());
                     RobotReport robotReport2 = currentReports.get(cs.getTe2().getRobotID());
 
                     //One or both robots past end of the critical section --> critical section is obsolete
@@ -1099,7 +1099,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
                     synchronized (solver) {
                         for (Integer robotID : trackers.keySet())
-                            if (!(trackers.get(robotID).getTracker() instanceof RemoteTrajectoryEnvelopeTrackerDummy)) numberDrivingRobots++;
+                            if (!(trackers.get(robotID) instanceof RemoteTrajectoryEnvelopeTrackerDummy)) numberDrivingRobots++;
 
                         if (!missionsPool.isEmpty()) {
 
@@ -1244,7 +1244,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
                 //Notify tracker
                 synchronized (trackers) {
-                    this.trackers.get(robotID).getTracker().updateTrajectoryEnvelope(newTE);
+                    this.trackers.get(robotID).updateTrajectoryEnvelope(newTE);
                 }
 
                 //Stitch together with rest of constraint network (temporal constraints with parking envelopes etc.)
@@ -1365,7 +1365,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             TrajectoryEnvelope te = this.getCurrentTrajectoryEnvelope(robotID);
             RemoteAbstractTrajectoryEnvelopeTracker tet = null;
             synchronized(trackers) {
-                tet = this.trackers.get(robotID).getTracker();
+                tet = this.trackers.get(robotID);
             }
 
             int earliestStoppingPathIndex = -1;
@@ -1408,7 +1408,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             TrajectoryEnvelope te = this.getCurrentTrajectoryEnvelope(robotID);
             RemoteAbstractTrajectoryEnvelopeTracker tet = null;
             synchronized(trackers) {
-                tet = this.trackers.get(robotID).getTracker();
+                tet = this.trackers.get(robotID);
             }
 
             int earliestStoppingPathIndex = -1;
@@ -1598,7 +1598,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             //Make deps from un-reached stopping points
             Set<Integer> robotIDs = trackers.keySet();
             for (int robotID : robotIDs) {
-                RemoteAbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID).getTracker();
+                RemoteAbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID);
                 //Update the coordinator view
                 RobotReport robotReport = robotTracker.getRobotReport();
                 currentReports.put(robotID, robotReport);
@@ -1641,7 +1641,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                 //FIXME Add a CriticalSectionManager class
                 if (allCriticalSections.size() > 0)
                     for (int robotID : robotIDs)
-                        earliestStoppingPoints.put(robotID, getForwardModel(robotID).getEarliestStoppingPathIndex(trackers.get(robotID).getTracker().getTrajectoryEnvelope(), currentReports.get(robotID)));
+                        earliestStoppingPoints.put(robotID, getForwardModel(robotID).getEarliestStoppingPathIndex(trackers.get(robotID).getTrajectoryEnvelope(), currentReports.get(robotID)));
 
                 depsToCS.clear();
                 this.isBlocked = false;
@@ -1655,9 +1655,9 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                     RemoteAbstractTrajectoryEnvelopeTracker drivingTracker = null;
                     RemoteAbstractTrajectoryEnvelopeTracker waitingTracker = null;
 
-                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker1 = trackers.get(cs.getTe1().getRobotID()).getTracker();
+                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker1 = trackers.get(cs.getTe1().getRobotID());
                     RobotReport robotReport1 = currentReports.get(cs.getTe1().getRobotID());
-                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker2 = trackers.get(cs.getTe2().getRobotID()).getTracker();
+                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker2 = trackers.get(cs.getTe2().getRobotID());
                     RobotReport robotReport2 = currentReports.get(cs.getTe2().getRobotID());
 
                     //One or both robots past end of the critical section --> critical section is obsolete
@@ -1967,9 +1967,9 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                     edgesToDelete.clear();
                     edgesToAdd.clear();
 
-                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker1 = trackers.get(cs.getTe1().getRobotID()).getTracker();
+                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker1 = trackers.get(cs.getTe1().getRobotID());
                     RobotReport robotReport1 = currentReports.get(cs.getTe1().getRobotID());
-                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker2 = trackers.get(cs.getTe2().getRobotID()).getTracker();
+                    RemoteAbstractTrajectoryEnvelopeTracker robotTracker2 = trackers.get(cs.getTe2().getRobotID());
                     RobotReport robotReport2 = currentReports.get(cs.getTe2().getRobotID());
 
                     boolean robot2Yields = getOrder(robotTracker1, robotReport1, robotTracker2, robotReport2, cs);
@@ -2174,7 +2174,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
     private void sendCriticalPoint(int robotID, HashMap<Integer, RobotReport> currentReports) {
         RemoteAbstractTrajectoryEnvelopeTracker tracker = null;
         synchronized (trackers) {
-            tracker = trackers.get(robotID).getTracker();
+            tracker = trackers.get(robotID);
         }
         int maxDelay = 2*(MAX_TX_DELAY+CONTROL_PERIOD+tracker.getTrackingPeriodInMillis()) + CONTROL_PERIOD; //add an extra control period to the theoretical upperbound to handle the case o equality
         boolean retransmitt = forceCriticalPointReTransmission.containsKey(robotID) && forceCriticalPointReTransmission.get(robotID);

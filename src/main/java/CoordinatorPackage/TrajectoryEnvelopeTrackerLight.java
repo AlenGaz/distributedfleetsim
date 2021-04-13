@@ -19,6 +19,9 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	private boolean parkingFinished = false;
 	private Thread th = null;
 
+	private TrajectoryEnvelope envelope; // A envelope will be set in the coordinator at some point, not needed to be sent
+	private RobotReport robotReport;
+
 
 	/**
 	 * Create a new {@link TrajectoryEnvelopeTrackerLight} to track a given {@link TrajectoryEnvelope},
@@ -52,6 +55,10 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 		this.th.start();
 	}
 
+	public TrajectoryEnvelopeTrackerLight() {
+
+	}
+
 /*	public TrajectoryEnvelopeTrackerLight(TrajectoryEnvelope te, int timeStep, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
 		super(te, temporalResolution, timeStep, cb);
 		this.te = te;
@@ -72,8 +79,14 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 */
 	public RobotReport getRobotReport() {
 		//return the last communicated robot report.
-		return null;
+		//return getLastRobotReport();
+		return robotReport;
 	};
+
+
+	public TrajectoryEnvelope getTrajectoryEnvelope() {
+		return envelope;
+	}
 
 	/**
 	 * This method should implement the mechanisms for notifying a robot of a new critical point.

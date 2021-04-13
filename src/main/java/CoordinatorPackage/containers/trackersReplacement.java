@@ -1,3 +1,4 @@
+/*
 package CoordinatorPackage.containers;
 
 import aima.core.util.datastructure.Pair;
@@ -10,11 +11,13 @@ import java.io.Serializable;
 public class trackersReplacement implements Serializable {
 
 
-    /**
+    */
+/**
      * This is a class to replace the data that would been a key: robotID, value: Abstract..Tracker
      *
      * author: Alen
-     */
+     *//*
+
 
     private RobotReport robotReport;
     private Pair<Integer,Long> communicatedCPs;
@@ -63,3 +66,4 @@ public class trackersReplacement implements Serializable {
         this.communicatedCPs = communicatedCPs;
     }
 }
+*/

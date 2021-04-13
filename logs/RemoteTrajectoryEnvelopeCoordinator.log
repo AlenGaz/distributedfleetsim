@@ -1,0 +1,325 @@
+1618330292615@[RemoteTrajectoryEnvelopeCoordinator] Number of replicas for each send: 3
+1618330293078@[RemoteTrajectoryEnvelopeCoordinator] Status @ 729 ms
+1618330293082@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 0 ms
+1618330293083@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330293083@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330293083@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330293084@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330293084@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330293085@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330293085@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330293926@[RemoteTrajectoryEnvelopeCoordinator] Status @ 1781 ms
+1618330293927@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330293927@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330293927@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330293927@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330293928@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330293928@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330293928@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330293929@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330294856@[RemoteTrajectoryEnvelopeCoordinator] Status @ 2711 ms
+1618330294856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330294856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330294856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330294856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330294856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330294857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330294857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330294857@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330295856@[RemoteTrajectoryEnvelopeCoordinator] Status @ 3711 ms
+1618330295856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330295856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330295856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330295857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330295857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330295857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330295857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330295857@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330296856@[RemoteTrajectoryEnvelopeCoordinator] Status @ 4711 ms
+1618330296856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330296856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330296857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330296857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330296857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330296857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330296858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330296858@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330297856@[RemoteTrajectoryEnvelopeCoordinator] Status @ 5711 ms
+1618330297856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330297856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330297856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330297856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330297856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330297856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330297856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330297857@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330298856@[RemoteTrajectoryEnvelopeCoordinator] Status @ 6710 ms
+1618330298856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330298856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330298856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330298856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330298856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330298856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330298856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330298856@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330299862@[RemoteTrajectoryEnvelopeCoordinator] Status @ 7717 ms
+1618330299862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330299863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330299863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330299863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330299863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330299863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330299863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330299866@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330300856@[RemoteTrajectoryEnvelopeCoordinator] Status @ 8711 ms
+1618330300856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330300856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330300856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330300856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330300856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330300856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330300856@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330300856@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330301858@[RemoteTrajectoryEnvelopeCoordinator] Status @ 9713 ms
+1618330301858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1618330301858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330301858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330301858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330301859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330301859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330301859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330301859@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330302857@[RemoteTrajectoryEnvelopeCoordinator] Status @ 10712 ms
+1618330302857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330302857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330302857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330302857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330302857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330302857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330302858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330302858@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330303857@[RemoteTrajectoryEnvelopeCoordinator] Status @ 11711 ms
+1618330303857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330303857@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330303859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330303859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330303859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330303859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330303859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330303859@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330304856@[RemoteTrajectoryEnvelopeCoordinator] Status @ 12711 ms
+1618330304862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330304862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330304862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330304862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330304862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330304862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330304862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330304862@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330305857@[RemoteTrajectoryEnvelopeCoordinator] Status @ 13712 ms
+1618330305858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1618330305858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330305858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330305858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330305858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330305858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330305858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330305858@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330306858@[RemoteTrajectoryEnvelopeCoordinator] Status @ 14713 ms
+1618330306858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330306858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330306858@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330306860@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330306860@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330306861@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330306861@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330306861@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330307859@[RemoteTrajectoryEnvelopeCoordinator] Status @ 15714 ms
+1618330307859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1618330307859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330307859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330307859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330307859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330307860@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330307860@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330307860@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330308859@[RemoteTrajectoryEnvelopeCoordinator] Status @ 16714 ms
+1618330308859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330308859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330308859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330308859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330308859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330308859@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330308860@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330308860@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330309861@[RemoteTrajectoryEnvelopeCoordinator] Status @ 17715 ms
+1618330309868@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1002 ms
+1618330309869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330309869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330309869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330309869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330309869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330309869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330309870@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330310861@[RemoteTrajectoryEnvelopeCoordinator] Status @ 18716 ms
+1618330310861@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330310861@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330310861@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330310861@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330310861@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330310861@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330310861@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330310861@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330311862@[RemoteTrajectoryEnvelopeCoordinator] Status @ 19716 ms
+1618330311862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1618330311862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330311862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330311862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330311862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330311862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330311862@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330311862@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330312863@[RemoteTrajectoryEnvelopeCoordinator] Status @ 20717 ms
+1618330312863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1618330312863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330312863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330312863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330312863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330312863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330312863@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330312863@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330313864@[RemoteTrajectoryEnvelopeCoordinator] Status @ 21718 ms
+1618330313864@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1618330313864@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330313864@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330313864@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330313864@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330313864@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330313864@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330313864@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330314865@[RemoteTrajectoryEnvelopeCoordinator] Status @ 22719 ms
+1618330314865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1618330314865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330314865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330314865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330314865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330314865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330314865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330314865@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330315865@[RemoteTrajectoryEnvelopeCoordinator] Status @ 23720 ms
+1618330315865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330315865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330315865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330315866@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330315866@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330315866@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330315866@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330315866@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330316865@[RemoteTrajectoryEnvelopeCoordinator] Status @ 24719 ms
+1618330316865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330316865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330316865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330316865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330316865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330316865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330316865@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330316865@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330317868@[RemoteTrajectoryEnvelopeCoordinator] Status @ 25723 ms
+1618330317868@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1003 ms
+1618330317868@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330317868@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330317868@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330317868@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330317868@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330317869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330317869@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330318869@[RemoteTrajectoryEnvelopeCoordinator] Status @ 26724 ms
+1618330318869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330318869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330318869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330318869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330318869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330318869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330318869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330318869@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330319869@[RemoteTrajectoryEnvelopeCoordinator] Status @ 27724 ms
+1618330319869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330319869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330319869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330319870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330319870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330319870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330319870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330319870@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330320869@[RemoteTrajectoryEnvelopeCoordinator] Status @ 28724 ms
+1618330320869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330320869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330320869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330320869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330320869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330320869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330320870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330320870@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330321869@[RemoteTrajectoryEnvelopeCoordinator] Status @ 29724 ms
+1618330321869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330321869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330321869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330321869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330321869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330321869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330321869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330321869@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330322869@[RemoteTrajectoryEnvelopeCoordinator] Status @ 30724 ms
+1618330322869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330322869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330322869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330322869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330322869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330322869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330322869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330322869@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330323869@[RemoteTrajectoryEnvelopeCoordinator] Status @ 31724 ms
+1618330323869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330323869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330323869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330323869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330323869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330323869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330323869@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330323870@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330324870@[RemoteTrajectoryEnvelopeCoordinator] Status @ 32725 ms
+1618330324870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330324870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330324870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330324870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330324870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330324871@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330324871@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330324871@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330325869@[RemoteTrajectoryEnvelopeCoordinator] Status @ 33724 ms
+1618330325870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330325870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330325870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330325870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330325870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330325870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330325870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330325870@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330326870@[RemoteTrajectoryEnvelopeCoordinator] Status @ 34724 ms
+1618330326870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1618330326870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330326870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330326870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330326870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330326870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330326870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330326870@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1618330327870@[RemoteTrajectoryEnvelopeCoordinator] Status @ 35725 ms
+1618330327870@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1618330327871@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1618330327871@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1618330327871@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1618330327871@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1618330327871@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1618330327871@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1618330327871@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.

@@ -7,6 +7,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import CoordinatorPackage.containers.MakeFootPrint;
+import javassist.compiler.ast.Symbol;
 import se.oru.coordination.coordination_oru.util.Missions;
 import fleetClient.FleetClient;
 import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
@@ -150,6 +151,9 @@ public class Test1StartRobotGeneric {
 		overallPath = rsp.getPath();
 		PoseSteering[] pathInv = rsp.getPathInv();
 
+
+		//System.out.println("##### overallPath" + overallPath + "pathInv" + pathInv );
+
 		//Define forward and backward missions and enqueue them
 		Missions.enqueueMission(new Mission(robotID,overallPath));
 		Missions.enqueueMission(new Mission(robotID,pathInv));
@@ -164,7 +168,8 @@ public class Test1StartRobotGeneric {
 		TrajectoryEnvelopeSolver solver = new TrajectoryEnvelopeSolver(0,100000000);
 
 
-		parkingEnvelope = solver.createParkingEnvelope(robotID,PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp );
+		parkingEnvelope = solver.createParkingEnvelope(robotID,PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp);
+
 		RemoteAbstractTrajectoryEnvelopeTracker tracker = new RemoteAbstractTrajectoryEnvelopeTracker() {
 			@Override
 			protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te) { }
@@ -189,7 +194,7 @@ public class Test1StartRobotGeneric {
 		};
 
 		if(tracker.cb == null){
-			System.out.println("tracker.cb is null");
+			System.out.println("[Test1StartRobotGeneric] tracker.cb is null");
 		}
 
 		//
@@ -227,7 +232,7 @@ public class Test1StartRobotGeneric {
 		coordinatorResponse = simpleGreeting(3, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
 
 
-		System.out.println("coordinatorResponse is: " + coordinatorResponse);
+		System.out.println("[Test1StartRobotGeneric] coordinatorResponse is: " + coordinatorResponse);
 		//client.makeTecStuffRequest(1);
 
 
@@ -238,7 +243,7 @@ public class Test1StartRobotGeneric {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println("CoordinatorServer is alive... numberOfReplicas: " +coordinatorResponse);
+			System.out.println("[Test1StartRobotGeneric] CoordinatorServer is alive, numberOfReplicas: " +coordinatorResponse);
 
 
 			rR = rk4.getRobotReport();
