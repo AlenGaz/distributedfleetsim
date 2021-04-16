@@ -418,7 +418,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
                         //while ((rr = tec.getRobotReport(te.getRobotID())) == null).. replaced with the rpc below
 
                         /**
-                         * FIXME quick fix for not having the robotreport from the coordinator before its needed in the rk4
+                         * FIXME quick fix for not having the RobotReport from the coordinator before its needed in the rk4
                          * this is done to avoid requesting rr (RobotReport) parameter before the coordinator receives
                          * updates of RobotReports from clients
                          * */

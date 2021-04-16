@@ -14,13 +14,13 @@ import se.oru.coordination.coordination_oru.TrackingCallback;
  * author: Alen G
  *
  */
-public abstract class RemoteTrajectoryEnvelopeTrackerDummy extends TrajectoryEnvelopeTrackerLight implements Runnable {
+public abstract class RemoteTrajectoryEnvelopeTrackerDummy extends RemoteAbstractTrajectoryEnvelopeTracker implements Runnable {
 
     private Thread th = null;
     private boolean parkingFinished = false;
     private int currentIndex = -1;
     private long DELTA_FUTURE = 0;
-    public RemoteAbstractTrajectoryEnvelopeCoordinator tec; ///OKAY Because DummyTracker in the Coordinator can pass its RemoteAbstract..Coordinator instance..
+    private RemoteAbstractTrajectoryEnvelopeCoordinator tec; ///OKAY Because DummyTracker in the Coordinator can pass its RemoteAbstract..Coordinator instance..
 
     /**
      * Create a new {@link RemoteTrajectoryEnvelopeTrackerDummy} representing that a robot with a given ID is parked
@@ -32,11 +32,8 @@ public abstract class RemoteTrajectoryEnvelopeTrackerDummy extends TrajectoryEnv
      * @param cb An optional callback that will be called during tracking.
      */
     public RemoteTrajectoryEnvelopeTrackerDummy(TrajectoryEnvelope te, int timeStep, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
-        super();
-        //super(te, temporalResolution, timeStep, cb);
-        this.te = te;
-        this.traj = te.getTrajectory();
-        this.temporalResolution = temporalResolution;
+        super(te, temporalResolution, timeStep, cb);
+        this.tec = tec;
         this.th = new Thread(this, "Parking tracker " + te.getComponent());
         this.th.start();
     }

@@ -30,7 +30,7 @@ public class Test1StartRobotGeneric {
 
 	private static Random rand = new Random(123213);
 	private static ArrayList<Pair<Integer>> placements = new ArrayList<Pair<Integer>>();
-	private int PARKING_DURATION = 3000;
+	static private int PARKING_DURATION = 3000;
 
 	/**
 	 * We make random footprint and goal pairs for the read ReedsSheppCarPlanner.
@@ -148,7 +148,7 @@ public class Test1StartRobotGeneric {
 		//Create the parking envelope of the robot and use it to initialize a TE-tracker
 		TrajectoryEnvelopeSolver solver = new TrajectoryEnvelopeSolver(0,100000000);
 		TrajectoryEnvelope parkingEnvelope = solver.createParkingEnvelope(robotID, PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp);
-	  	RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(parkingEnvelope, 30, 1000, 2, 1.0,tracker.cb ) {
+	  	RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(parkingEnvelope, 30, 1000, 2, 1.0, null) {
 			@Override
 			public long getCurrentTimeInMillis() {
 				return 0;

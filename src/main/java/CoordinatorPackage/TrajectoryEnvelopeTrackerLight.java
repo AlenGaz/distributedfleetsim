@@ -33,9 +33,6 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 
 	public TrajectoryEnvelopeTrackerLight(TrajectoryEnvelope te, int timeStep, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
 		super(te, temporalResolution, timeStep, cb);
-		this.te = te;
-		this.traj = te.getTrajectory();
-		this.temporalResolution = temporalResolution;
 		this.th = new Thread((Runnable) this, "Parking tracker " + te.getComponent());
 		this.th.start();
 	}

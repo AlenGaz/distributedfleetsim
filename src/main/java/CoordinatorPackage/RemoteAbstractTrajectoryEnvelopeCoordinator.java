@@ -112,7 +112,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     protected HashMap<Integer,ArrayList<Integer>> stoppingTimes = new HashMap<Integer,ArrayList<Integer>>();
     protected HashMap<Integer,Thread> stoppingPointTimers = new HashMap<Integer,Thread>();
 
-    public HashMap<Integer, TrajectoryEnvelopeTrackerLight> trackers = new HashMap<Integer, TrajectoryEnvelopeTrackerLight>();
+    public HashMap<Integer, RemoteAbstractTrajectoryEnvelopeTracker> trackers = new HashMap<Integer, RemoteAbstractTrajectoryEnvelopeTracker>();
     protected HashMap<Integer, Dependency> currentDependencies = new HashMap<Integer, Dependency>();
 
     protected static Logger metaCSPLogger = MetaCSPLogging.getLogger(RemoteTrajectoryEnvelopeCoordinator.class);
@@ -703,7 +703,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             final RemoteTrajectoryEnvelopeTrackerDummy tracker = new RemoteTrajectoryEnvelopeTrackerDummy(parking, 300, TEMPORAL_RESOLUTION, this, cb) {
                 @Override
                 public long getCurrentTimeInMillis() {
-                    return tec.getCurrentTimeInMillis();
+                    return this.getCurrentTimeInMillis();
                 }
             };
 

@@ -272,11 +272,23 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 	@Override
 	public TrajectoryEnvelopeTrackerLight getNewTracker(TrajectoryEnvelope te, TrackingCallback cb) {
 		if (this.getRobotTrackingPeriodInMillis(te.getRobotID()) == null || this.getRobotMaxVelocity(te.getRobotID()) == null || this.getRobotMaxAcceleration(te.getRobotID()) == null) throw new Error("Robot" +  te.getRobotID() + ": missing kinodynamic parameters.");
-		TrajectoryEnvelopeTrackerLight ret = new TrajectoryEnvelopeTrackerLight(te, this.getRobotTrackingPeriodInMillis(te.getRobotID()), TEMPORAL_RESOLUTION, this.getRobotMaxVelocity(te.getRobotID()), this.getRobotMaxAcceleration(te.getRobotID()), this, cb) {
+		TrajectoryEnvelopeTrackerLight ret = new TrajectoryEnvelopeTrackerLight(te, this.DEFAULT_ROBOT_TRACKING_PERIOD, TEMPORAL_RESOLUTION, this, cb) { //FIXME
 			//Method for measuring time in the trajectory envelope tracker
 			@Override
 			public long getCurrentTimeInMillis() {
-				return tec.getCurrentTimeInMillis();
+				return this.getCurrentTimeInMillis();
+			}
+
+			@Override
+			protected void onTrajectoryEnvelopeUpdate(fleetClient.TrajectoryEnvelope te) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void startTracking() {
+				// TODO Auto-generated method stub
+				
 			}
 		};
 		return ret;
