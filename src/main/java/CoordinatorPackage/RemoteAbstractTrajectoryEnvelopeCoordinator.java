@@ -1784,7 +1784,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                 RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
                 RobotReport rr = tracker.getRobotReport();
                 int currentPP = rr.getPathIndex();
-                st += tracker.te.getComponent();
+                st += tracker.getTrajectoryEnvelope().getComponent();
                 if (tracker instanceof RemoteTrajectoryEnvelopeTrackerDummy) st += " (P)";
                 else st += " (D)";
                 st += ": " + currentPP + "   ";
