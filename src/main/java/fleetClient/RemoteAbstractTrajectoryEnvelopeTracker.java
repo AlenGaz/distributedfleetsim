@@ -38,7 +38,7 @@ import se.oru.coordination.coordination_oru.TrackingCallback;
  */
 public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
-    public TrajectoryEnvelope te = null;
+    protected TrajectoryEnvelope te = null;
     protected Trajectory traj = null;
     protected double temporalResolution = 0.0;
     protected Integer externalCPCounter = -1;
@@ -63,13 +63,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
     String target = "localhost:50051";  // coordinator IP
     ManagedChannel channel = ManagedChannelBuilder.forTarget(target).maxInboundMessageSize(100*1000*1000).usePlaintext().build();
-
-
-
     public FleetClient client = new FleetClient(channel);
-
-
-
 
 
     /**
@@ -89,25 +83,11 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         this.externalCPCounter = -1;
         this.criticalPoint = -1;
         this.temporalResolution = temporalResolution;
-        //this.startingTimeInMillis = tec.getCurrentTimeInMillis(); Removing tec. and making a function that will be called instead
+        this.startingTimeInMillis = Calendar.getInstance().getTimeInMillis();
         this.trackingPeriodInMillis = trackingPeriodInMillis;
         this.cb = cb;
         startMonitoringThread();
     }
-
-
-    public RemoteAbstractTrajectoryEnvelopeTracker() {
-
-    }
-
-    /*
-    Coordinatorn,
-    Robot id 1, trajectory, criticalpointen, externalCPcounters,
-    Robot id 2,
-
-     */
-
-
 
     /**
      * Return the tracking period in milli-seconds.
@@ -143,14 +123,12 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
      * of this {@link //AbstractTrajectoryEnvelopeTracker} class.
      * @param te The new {@link TrajectoryEnvelope} of this tracker.
      */
-    public void updateTrajectoryEnvelope(TrajectoryEnvelope te) {
-        // synchronized(tec.getSolver()) {
-        metaCSPLogger.info("Updating trajectory Robot" +this.te.getRobotID()+". TEID: " + this.te.getID() + "--> TEID: " + te.getID()+ ".");
-        this.te = te;
-        this.cb.updateTrajectoryEnvelope(te);
-        this.traj = te.getTrajectory();
-        this.onTrajectoryEnvelopeUpdate(te);
-
+    public synchronized void updateTrajectoryEnvelope(TrajectoryEnvelope te) {
+	        metaCSPLogger.info("Updating trajectory Robot" +this.te.getRobotID()+". TEID: " + this.te.getID() + "--> TEID: " + te.getID()+ ".");
+	        this.te = te;
+	        this.cb.updateTrajectoryEnvelope(te);
+	        this.traj = te.getTrajectory();
+	        this.onTrajectoryEnvelopeUpdate(te);
     }
 
     @Deprecated
@@ -269,7 +247,6 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
      */
 
     public RobotReport getLastRobotReport() {
-        //System.out.println("In getLastRobotReport" + getCurrentTimeInMillis());
         return getRobotReport();
     }
 
@@ -280,35 +257,15 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
      */
     public abstract RobotReport getRobotReport();
 
-    protected void onPositionUpdate() {
-
-        String[] extraRobotState = null;
-        if (cb != null) {
-            extraRobotState = cb.onPositionUpdate();
-        }
-
-        /**
-         *  This part has been moved to the coordinator or atleast to the BrowserVisualization class
-         *
-         if (tec.getVisualization() != null) {
-         //Update the position of the robot in the GUI
-         RobotReport rr = getRobotReport();
-         tec.getVisualization().displayRobotState(te.getFootprint(), rr, extraRobotState);
-
-         //Draw an arrow if there is a critical point
-         RobotReport rrWaiting = getRobotReport();
-
-         tec.getVisualization().updateVisualization();
-         }*/
-    }
+    /** Moved the code from {@link AbstractTrajectoryEnvelopeTracker} to the {@link RemoteTrajectoryEnvelopeCoordinator}
+     */
+    protected void onPositionUpdate() {}
 
     /**
      * Should return the current time in milliseconds.
      * @return The current time in milliseconds.
      */
     public abstract long getCurrentTimeInMillis();
-
-
 
     protected static AllenIntervalConstraint[] getConstriants(AllenIntervalConstraint.Type type, TrajectoryEnvelope env, TrajectoryEnvelopeSolver solver) {
         ArrayList<AllenIntervalConstraint> ret = new ArrayList<AllenIntervalConstraint>();
@@ -324,35 +281,23 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         return ret.toArray(new AllenIntervalConstraint[ret.size()]);
     }
 
-    protected void updateDeadline(TrajectoryEnvelope trajEnv, long delta) {
-
-        // synchronized(tec.getSolver()) {
+    protected synchronized void updateDeadline(TrajectoryEnvelope trajEnv, long delta) {
         long time = getCurrentTimeInMillis()+delta;
         if (time > trajEnv.getTemporalVariable().getEET()) {
 
             tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
-            client.sendAllenInterval("Remove", deadLines);
-            // ^ this client.sendinterval ... replaces tec.getSolver().removeConstraint(deadlines.get)
-            //tec.getSolver().removeConstraint(deadlines.get)
+            client.sendAllenInterval("Remove", deadLines); // this client.sendinterval ... replaces tec.getSolver().removeConstraint(deadlines.get)
 
             long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
-            //long bound1 = time;
             long bound2 = APSPSolver.INF;
-            //metaCSPLogger.info("Finishing @ " + time + " " + trajEnv + " (ET bounds: [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() + "])");
             AllenIntervalConstraint deadline = new AllenIntervalConstraint(AllenIntervalConstraint.Type.Deadline, new Bounds(bound1, bound2));
             tecAllenIntervalContainer deadLine = new tecAllenIntervalContainer(deadline);
-
             deadline.setFrom(trajEnv);
             deadline.setTo(trajEnv);
 
             /*
              * this replaces the  //boolean added = tec.getSolver().addConstraint(deadline); */
-            client.sendAllenInterval("Add",deadLine);
-            boolean added = true;
-            /*
-             * */
-
-            if (!added) {
+            if (!client.sendAllenInterval("Add", deadLine);) {
                 metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
                 throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
             }
@@ -361,9 +306,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
     }
 
 
-    protected void fixDeadline(TrajectoryEnvelope trajEnv, long delta) {
-        //
-        // synchronized(tec.getSolver()) {
+    protected synchronized void fixDeadline(TrajectoryEnvelope trajEnv, long delta) {
         long time = getCurrentTimeInMillis()+delta;
         if (time > trajEnv.getTemporalVariable().getEET()) {
 
@@ -372,22 +315,14 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
             client.sendAllenInterval("Remove", deadLines);
             // -
             long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
-            //long bound1 = time;
             long bound2 = bound1;
             metaCSPLogger.info("Finishing @ " + time + " " + trajEnv + " (ET bounds: [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() + "])");
             AllenIntervalConstraint deadline = new AllenIntervalConstraint(AllenIntervalConstraint.Type.Deadline, new Bounds(bound1, bound2));
             tecAllenIntervalContainer deadLine = new tecAllenIntervalContainer(deadline);
-
             deadline.setFrom(trajEnv);
             deadline.setTo(trajEnv);
 
-            // - boolean added = tec.getSolver().addConstraint(deadline);
-            client.sendAllenInterval("Add",deadLine);
-            boolean added = true;
-            // -
-
-
-            if (!added) {
+            if (!client.sendAllenInterval("Add",deadLine);) {
                 metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
                 throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
             }
@@ -396,26 +331,18 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
     }
 
 
-    protected void setRelease(TrajectoryEnvelope trajEnv) {
-        //synchronized(tec.getSolver()) {
-
+    protected synchronized void setRelease(TrajectoryEnvelope trajEnv) {
         long time = client.makeCurrentTimeRequest();
         time = Math.max(time, trajEnv.getTemporalVariable().getEST());
         metaCSPLogger.info("Releasing @ " + time + " " + trajEnv + " (ST bounds: [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() + "])");
 
         AllenIntervalConstraint release = new AllenIntervalConstraint(AllenIntervalConstraint.Type.Release, new Bounds(time, time));
         tecAllenIntervalContainer Release = new tecAllenIntervalContainer(release);
-
         release.setFrom(trajEnv);
         release.setTo(trajEnv);
 
         //  boolean added = tec.getSolver().addConstraint(release);
-        client.sendAllenInterval("Add",Release);
-        boolean added = true;
-        // -
-
-
-        if (!added) {
+        if (!client.sendAllenInterval("Add",Release);) {
             metaCSPLogger.severe("ERROR: Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
             throw new Error("Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
         }
@@ -567,7 +494,6 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
     protected void finishTracking() {
         metaCSPLogger.info("<<<< Finished (super envelope) " + this.te);
-        //if (!(this instanceof TrajectoryEnvelopeTrackerDummy)) fixDeadline(te, 0);
         fixDeadline(te, 0);
     }
 

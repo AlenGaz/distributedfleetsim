@@ -209,17 +209,17 @@ public long makeCurrentTimeRequest(){
 
 }
 
-public void sendAllenInterval(String kan, tecAllenIntervalContainer allen){
+public boolean sendAllenInterval(String kan, tecAllenIntervalContainer allen){
     ByteString allenIntervalByteString = null;
     try {
         allenIntervalByteString = ByteString.copyFrom(convertToBytes(allen));
     } catch (IOException e) {
         e.printStackTrace();
+        return false;
     }
-
     Coordinator.allenInterval message = Coordinator.allenInterval.newBuilder().setKan(kan).setAllenIntervalBytes(allenIntervalByteString).build();
     coordinatorBlockingStub.coordinatorgetAllenInterval(message);
-
+    return true;
 }
 
 public RobotReport makeRobotReportRequest(int robotID) {

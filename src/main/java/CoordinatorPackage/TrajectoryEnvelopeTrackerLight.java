@@ -15,14 +15,10 @@ import se.oru.coordination.coordination_oru.TrackingCallback;
  */
 public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTrajectoryEnvelopeTracker {
 
-
 	private boolean parkingFinished = false;
 	private Thread th = null;
-
-	private TrajectoryEnvelope envelope; // A envelope will be set in the coordinator at some point, not needed to be sent
 	private RobotReport robotReport;
-
-
+	
 	/**
 	 * Create a new {@link TrajectoryEnvelopeTrackerLight} to track a given {@link TrajectoryEnvelope},
 	 * with a given tracking period in a given temporal resolution. The tracker will post temporal constraints
@@ -35,17 +31,6 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 * @param cb An optional callback function.
 	 */
 
-
-	private boolean useInternalCPs = false;
-
-	public TrajectoryEnvelopeTrackerLight(TrajectoryEnvelope te, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, int trackingPeriodInMillis, TrackingCallback cb) {
-
-	}
-
-	public TrajectoryEnvelopeTrackerLight(TrajectoryEnvelope te, Integer robotTrackingPeriodInMillis, double temporal_resolution, Double robotMaxVelocity, Double robotMaxAcceleration, RemoteTrajectoryEnvelopeCoordinatorSimulation remoteTrajectoryEnvelopeCoordinatorSimulation, TrackingCallback cb) {
-
-	}
-
 	public TrajectoryEnvelopeTrackerLight(TrajectoryEnvelope te, int timeStep, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
 		super(te, temporalResolution, timeStep, cb);
 		this.te = te;
@@ -54,19 +39,6 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 		this.th = new Thread((Runnable) this, "Parking tracker " + te.getComponent());
 		this.th.start();
 	}
-
-	public TrajectoryEnvelopeTrackerLight() {
-
-	}
-
-/*	public TrajectoryEnvelopeTrackerLight(TrajectoryEnvelope te, int timeStep, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
-		super(te, temporalResolution, timeStep, cb);
-		this.te = te;
-		this.traj = te.getTrajectory();
-		this.temporalResolution = temporalResolution;
-		this.th = new Thread(this, "Parking tracker " + te.getComponent());
-		this.th.start();
-	}*/
 
 
 	@Override
@@ -79,14 +51,8 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 */
 	public RobotReport getRobotReport() {
 		//return the last communicated robot report.
-		//return getLastRobotReport();
-		return robotReport;
+		return this.robotReport;
 	};
-
-
-	public TrajectoryEnvelope getTrajectoryEnvelope() {
-		return envelope;
-	}
 
 	/**
 	 * This method should implement the mechanisms for notifying a robot of a new critical point.
@@ -96,11 +62,6 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	public void setCriticalPoint(int criticalPoint) {
 		//call your service to set the critical point
 	}
-
-	public void setUseInternalCriticalPoints(boolean b) {
-		this.useInternalCPs=b;
-	}
-
 
 	/**
 	 * Instructs the {@link TrajectoryEnvelopeSolver} that the robot has ceased to be parked here.
@@ -118,4 +79,3 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 
 }
 
-//Customize the RemoteTrajectoryEnvelopeCoordinator to return this type of tracker.
