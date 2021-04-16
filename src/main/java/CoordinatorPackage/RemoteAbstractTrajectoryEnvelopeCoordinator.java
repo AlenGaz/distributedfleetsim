@@ -448,7 +448,6 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
         File dir = new File(logDirName);
         dir.mkdir();
         MetaCSPLogging.setLogDir(logDirName);
-
     }
 
     protected void writeStat(String fileName, String stat) {

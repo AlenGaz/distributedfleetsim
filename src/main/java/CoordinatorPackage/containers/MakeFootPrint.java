@@ -1,14 +1,10 @@
 package CoordinatorPackage.containers;
 
+/**
+ * This class provides the basic functionalities to break down robotFootprint into ints and longs for gRPC communication
+ */
 public class MakeFootPrint {
-
-
-    /**
-     * Class used to break down robotFootprint into ints and longs for gRPC communication
-     *
-     */
-
-    private int centerX;
+	private int centerX;
     private int centerY;
     private int minVerts;
     private int maxVerts;

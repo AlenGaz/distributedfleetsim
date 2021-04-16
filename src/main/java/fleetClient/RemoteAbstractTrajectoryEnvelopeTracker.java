@@ -297,7 +297,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
             /*
              * this replaces the  //boolean added = tec.getSolver().addConstraint(deadline); */
-            if (!client.sendAllenInterval("Add", deadLine);) {
+            if (!client.sendAllenInterval("Add", deadLine)) {
                 metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
                 throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
             }
@@ -322,7 +322,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
             deadline.setFrom(trajEnv);
             deadline.setTo(trajEnv);
 
-            if (!client.sendAllenInterval("Add",deadLine);) {
+            if (!client.sendAllenInterval("Add",deadLine)) {
                 metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
                 throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
             }
@@ -342,7 +342,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         release.setTo(trajEnv);
 
         //  boolean added = tec.getSolver().addConstraint(release);
-        if (!client.sendAllenInterval("Add",Release);) {
+        if (!client.sendAllenInterval("Add",Release)) {
             metaCSPLogger.severe("ERROR: Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
             throw new Error("Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
         }

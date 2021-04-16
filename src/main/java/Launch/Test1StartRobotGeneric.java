@@ -30,7 +30,7 @@ public class Test1StartRobotGeneric {
 
 	private static Random rand = new Random(123213);
 	private static ArrayList<Pair<Integer>> placements = new ArrayList<Pair<Integer>>();
-	public static PoseSteering[] overallPath = null;
+	private int PARKING_DURATION = 3000;
 
 	/**
 	 * We make random footprint and goal pairs for the read ReedsSheppCarPlanner.
@@ -80,7 +80,7 @@ public class Test1StartRobotGeneric {
 			 		- the footprint of the robot, 
 			 		- the forward model with max acceleration, max velocity, and the robot tracking period in millis.
 			 		- the planner of the robot.
-			All such information should be communicated to the cooordinator while greeting (so that the coordinator will call the
+			All such information should be communicated to the coordinator while greeting (so that the coordinator will call the
 			the functions setFootprint(..), setForwardModel(..), setMotionPlanner(..) and placeRobot(..).
 			
 			What should be started here?
@@ -102,110 +102,60 @@ public class Test1StartRobotGeneric {
 		* Necessary params for the class below
 		**/
 		String robotName = "r1p";
-		//Pose initPose = Missions.getLocationPose(robotName);
 		double minRobotRadius = 0.2;
 		double maxRobotRadius = 2.0;
 		int robotID = 1;
 		double maxAccel = 0.5;
 		double maxVel = 1;
-		int port = 50051;
+		Integer port = 50051;
 		double MAX_VELOCITY;
 		double MAX_ACCELERATION;
 		double TEMPORAL_RESOLUTION;
 		Pose testPose = new Pose(0.01,0.01,0.01,1,2,3);
 
 
-		String target = "localhost:50051";  // coordinator IP
+		String target = "localhost:" + port.toString();  // coordinator IP
 		ManagedChannel channel = ManagedChannelBuilder.forTarget(target).maxInboundMessageSize(100*1000*1000).usePlaintext().build();
-
-
-
-		Coordinate[] fp = makeRandomFootprint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
-
-		ReedsSheppCarPlanner rsp = new ReedsSheppCarPlanner();
 		FleetClient client = new FleetClient(channel);
 
 
-
+		Coordinate[] fp = makeRandomFootprint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
 		Pose[] startAndGoal = makeRandomStartGoalPair(3, 1.5*maxRobotRadius, 1.1*maxRobotRadius, 1.1*maxRobotRadius);
 
-
-
-
+		//Set the robot motion planner
+		ReedsSheppCarPlanner rsp = new ReedsSheppCarPlanner();
 		rsp.setRadius(0.2);
 		rsp.setTurningRadius(4.0);
 		rsp.setDistanceBetweenPathPoints(0.5);
 		rsp.setFootprint(fp);
-
-		//Missions.getLocationPose("r1p");
-
+		
 		//Plan path from start to goal and vice-versa
-
 		rsp.setStart(startAndGoal[0]);
 		rsp.setGoals(startAndGoal[1]);
-
-
 		if (!rsp.plan()) throw new Error ("No path between " + startAndGoal[0] + " and " + startAndGoal[1]);
 		// making the rsp path from setStart to setGoal as overallPath for sending a poseSteering.. this way the
 		// solver can be recreated from this on the trajectoryenvelopeCoordinator...?
-		overallPath = rsp.getPath();
-		PoseSteering[] pathInv = rsp.getPathInv();
-
-
-		//System.out.println("##### overallPath" + overallPath + "pathInv" + pathInv );
 
 		//Define forward and backward missions and enqueue them
-		Missions.enqueueMission(new Mission(robotID,overallPath));
-		Missions.enqueueMission(new Mission(robotID,pathInv));
+		Missions.enqueueMission(new Mission(robotID, rsp.getPath()));
+		Missions.enqueueMission(new Mission(robotID, rsp.getPathInv()));
 
 
 		//2. instantiating tracker
 		//TODO Trajectory Envelope te?? // get parking envelope
-		TrajectoryEnvelope parkingEnvelope;
-		int PARKING_DURATION = 3000;
 
-		// We are making a solver to be able to make a parked envelope as in solver.createParkingEnvelope....
+
+		//Create the parking envelope of the robot and use it to initialize a TE-tracker
 		TrajectoryEnvelopeSolver solver = new TrajectoryEnvelopeSolver(0,100000000);
-
-
-		parkingEnvelope = solver.createParkingEnvelope(robotID,PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp);
-
-		RemoteAbstractTrajectoryEnvelopeTracker tracker = new RemoteAbstractTrajectoryEnvelopeTracker() {
-			@Override
-			protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te) { }
-
-			@Override
-			protected void setCriticalPoint(int criticalPoint) { }
-
-			@Override
-			public RobotReport getRobotReport() {
-				return null;
-			}
-
-			@Override
-			public long getCurrentTimeInMillis() {
-				return 0;
-			}
-
-			@Override
-			public void startTracking() {
-
-			}
-		};
-
-		if(tracker.cb == null){
-			System.out.println("[Test1StartRobotGeneric] tracker.cb is null");
-		}
-
-		//
+		TrajectoryEnvelope parkingEnvelope = solver.createParkingEnvelope(robotID, PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp);
 	  	RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(parkingEnvelope, 30, 1000, 2, 1.0,tracker.cb ) {
-
 			@Override
 			public long getCurrentTimeInMillis() {
 				return 0;
 			}
 		};
 
+		//Prepare the message to communicate the robot footprint to the coordinator
 		MakeFootPrint footprint = new MakeFootPrint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
 
 		/**
@@ -216,34 +166,28 @@ public class Test1StartRobotGeneric {
 		 **/
 
 		int coordinatorResponse = 0;
-
-
 		RobotReport rR = rk4.getRobotReport();
 		client.makeRobotReport("myRobotReport", rR.getRobotID(), rR.getPose().getX()
 				, rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
 				rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
 				, rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
-
-
-		coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
+		coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint, rsp.getPath());
 
 		// to send id = 2 and 3 gonna remove these 2 greetings below later
-		coordinatorResponse = simpleGreeting(2, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
-		coordinatorResponse = simpleGreeting(3, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
+		coordinatorResponse = simpleGreeting(2, maxAccel, maxVel, port, testPose, client, footprint, rsp.getPath());
+		coordinatorResponse = simpleGreeting(3, maxAccel, maxVel, port, testPose, client, footprint, rsp.getPath());
 
 
 		System.out.println("[Test1StartRobotGeneric] coordinatorResponse is: " + coordinatorResponse);
 		//client.makeTecStuffRequest(1);
 
-
-		while(coordinatorResponse!= -1){
-
+		while (coordinatorResponse != -1) {
 			try {
 				TimeUnit.SECONDS.sleep(1);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println("[Test1StartRobotGeneric] CoordinatorServer is alive, numberOfReplicas: " +coordinatorResponse);
+			System.out.println("[Test1StartRobotGeneric] CoordinatorServer is alive, numberOfReplicas: " + coordinatorResponse);
 
 
 			rR = rk4.getRobotReport();
@@ -254,15 +198,12 @@ public class Test1StartRobotGeneric {
 
 			System.out.println("[Test1StartRobotGeneric] asked the coordinator for currentTime and got: " + client.makeCurrentTimeRequest());
 
-			coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint, overallPath);
-			rk4.setNumberOfReplicas(coordinatorResponse); //<<<- should be setting it
-			//
+			coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, testPose, client, footprint, rsp.getPath());
+			rk4.setNumberOfReplicas(coordinatorResponse); //FIXME is the coordinator answering only the number of replicas?
 		}
 
-		// FleetClient.makeGreeting will return -1 if coordinator isnt there
-		if(coordinatorResponse == -1){
-			System.out.println("[Test1StartRobotGeneric] exiting...CoordinatorServer not running");
-		}
+		// FleetClient.makeGreeting will return -1 if coordinator isnt there //FIXME: it will never be triggered
+		if (coordinatorResponse == -1) System.out.println("[Test1StartRobotGeneric] exiting...CoordinatorServer not running");
 
 	}
 
