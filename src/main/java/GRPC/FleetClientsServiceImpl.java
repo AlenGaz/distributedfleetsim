@@ -70,6 +70,7 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
     }
 
 
+/*
     public void grobotReport(Fleetclients.robotReportRequest request,StreamObserver<Fleetclients.robotReportResponse> responseObserver) {
 
         System.out.println("[FC S] in grobotReport (request)");
@@ -93,6 +94,7 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
         }
         //System.out.println("RobotReports ->>>  " + robotIDtoRobotReport + "\n");
     }
+*/
 
 
     //generic response to stub

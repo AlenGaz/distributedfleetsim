@@ -18,6 +18,7 @@ import com.vividsolutions.jts.geom.Coordinate;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import se.oru.coordination.coordination_oru.*;
+import se.oru.coordination.coordination_oru.util.Missions;
 import se.oru.coordination.coordination_oru.util.Pair;
 
 
@@ -119,9 +120,9 @@ public class Test1StartRobotFileMp {
         ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
         FleetClient client = new FleetClient(channel);
 
-        //Missions.loadLocationAndPathData("paths/test_poses_and_path_data.txt");
+        Missions.loadLocationAndPathData("paths/test_poses_and_path_data.txt");
 
-        //Pose placeRobot1 = Missions.getLocation("r1p");
+        Pose placeRobot1 = Missions.getLocation("r1p");
         //Pose placeRobot2 = Missions.getLocation("r2p");
         //Pose placeRobot3 = Missions.getLocation("r3p");
 

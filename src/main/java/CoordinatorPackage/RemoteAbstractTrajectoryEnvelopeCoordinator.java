@@ -118,6 +118,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     protected static Logger metaCSPLogger = MetaCSPLogging.getLogger(RemoteTrajectoryEnvelopeCoordinator.class);
     protected String logDirName = null;
 
+    public RemoteAbstractTrajectoryEnvelopeCoordinator tec; ///OKAY Because DummyTracker in the Coordinator can pass its RemoteAbstract..Coordinator instance..
+
 
     /**
      * These are hashmaps containing the values criticalpoints and time at which the critical point was set for a given tracker as key.
@@ -488,9 +490,11 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
      */
     public void setCriticalPoint(int robotID, int criticalPoint, boolean retransmitt) {
 
+        //criticalPoint = 8;
+        System.out.println("[Abstract Coordinator] the critical point: " + criticalPoint);
+
         synchronized (trackers) {
             RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
-
 
             //If the robot is not muted
             if (tracker != null && !muted.contains(robotID) && !(tracker instanceof RemoteTrajectoryEnvelopeTrackerDummy)) {
@@ -703,7 +707,10 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             final RemoteTrajectoryEnvelopeTrackerDummy tracker = new RemoteTrajectoryEnvelopeTrackerDummy(parking, 300, TEMPORAL_RESOLUTION, this, cb) {
                 @Override
                 public long getCurrentTimeInMillis() {
-                    return this.getCurrentTimeInMillis();
+                    //return tec.getCurrentTimeInMillis();
+                    //System.out.println("getCurrentTimeInMillis: " + getCurrentTimeInMillis());
+                    //return this.getCurrentTimeInMillis();
+                    return 0;
                 }
             };
 
@@ -1003,6 +1010,9 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
      */
     protected void computeCriticalSections() {
 
+        System.out.println("->>>>>>" + trackers.get(1).getTrajectoryEnvelope());
+
+
         int numberOfCriticalSections = 0;
 
         synchronized(allCriticalSections) {
@@ -1023,9 +1033,10 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                 ArrayList<TrajectoryEnvelope> drivingEnvelopes = new ArrayList<TrajectoryEnvelope>();
 
-                for(int i = 0;  i<= trackers.keySet().size(); i++){
-                    if (!(trackers.get(i) instanceof RemoteTrajectoryEnvelopeTrackerDummy)) {
-                        drivingEnvelopes.add(trackers.get(i).getTrajectoryEnvelope());
+                for (RemoteAbstractTrajectoryEnvelopeTracker atet : trackers.values()) {
+                    System.out.println("#->" + trackers.values() + "#->" + atet);
+                    if (!(atet instanceof RemoteTrajectoryEnvelopeTrackerDummy)) {
+                        drivingEnvelopes.add(atet.getTrajectoryEnvelope());
                         //metaCSPLogger.info(atet.getRobotReport().getRobotID() + " is driving.");
                     }
                 }

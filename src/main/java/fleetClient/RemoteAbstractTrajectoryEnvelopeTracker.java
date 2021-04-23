@@ -38,7 +38,7 @@ import se.oru.coordination.coordination_oru.TrackingCallback;
  */
 public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
-    protected TrajectoryEnvelope te = null;
+    public  TrajectoryEnvelope te = null;
     protected Trajectory traj = null;
     protected double temporalResolution = 0.0;
     protected Integer externalCPCounter = -1;
@@ -87,6 +87,10 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         this.trackingPeriodInMillis = trackingPeriodInMillis;
         this.cb = cb;
         startMonitoringThread();
+    }
+
+    public RemoteAbstractTrajectoryEnvelopeTracker() {
+
     }
 
     /**

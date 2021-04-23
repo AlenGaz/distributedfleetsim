@@ -175,7 +175,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                 if (rr != null ) {
                     int currentPP = rr.getPathIndex();
                     st += tracker.getTrajectoryEnvelope().getComponent();
-                    if (tracker instanceof RemoteTrajectoryEnvelopeTrackerDummy) st += " (P)";
+                    if (tracker instanceof TrajectoryEnvelopeTrackerLight) st += " (P)";
                     else st += " (D)";
                     st += ": " + currentPP + "   ";
                 }
@@ -2182,6 +2182,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             if (currentDependencies.containsKey(robotID)) {
                 Dependency dep = currentDependencies.get(robotID);
                 metaCSPLogger.finest("Set critical point " + dep.getWaitingPoint() + " to Robot" + dep.getWaitingRobotID() +".");
+                System.out.println("[TRACJ CORD]->>>dep.getWaitingPoint()" + dep.getWaitingPoint());
                 retransmitt = retransmitt || communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == dep.getWaitingPoint() && currentReports.get(robotID).getCriticalPoint() != dep.getWaitingPoint()
                         && ((int)(Calendar.getInstance().getTimeInMillis()-communicatedCPs.get(tracker).getSecond().longValue()) > maxDelay);
                 setCriticalPoint(dep.getWaitingRobotID(), dep.getWaitingPoint(), retransmitt);

@@ -18,6 +18,7 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	private boolean parkingFinished = false;
 	private Thread th = null;
 	private RobotReport robotReport;
+	private boolean useInternalCPs = true;
 	
 	/**
 	 * Create a new {@link TrajectoryEnvelopeTrackerLight} to track a given {@link TrajectoryEnvelope},
@@ -32,9 +33,9 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 */
 
 	public TrajectoryEnvelopeTrackerLight(TrajectoryEnvelope te, int timeStep, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
-		super(te, temporalResolution, timeStep, cb);
-		this.th = new Thread((Runnable) this, "Parking tracker " + te.getComponent());
-		this.th.start();
+		//super(te, temporalResolution, timeStep, cb);
+		//this.th = new Thread((Runnable) this, "Parking tracker " + te.getComponent());
+		//this.th.start();
 	}
 
 
@@ -58,6 +59,7 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 */
 	public void setCriticalPoint(int criticalPoint) {
 		//call your service to set the critical point
+		System.out.println("in CP()");
 	}
 
 	/**
@@ -72,6 +74,10 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 
 	public boolean isParkingFinished() {
 		return parkingFinished;
+	}
+
+	public void setUseInternalCriticalPoints(boolean value) {
+		this.useInternalCPs = value;
 	}
 
 }

@@ -76,6 +76,37 @@ public class Test1StartCoordinatorFileMp {
         viz.setInitialTransform(49, 5, 0);
         tec.setVisualization(viz);
 
+
+
+        //Example of how you can add extra info Strings to the visualization of robot status
+        TrackingCallback cb = new TrackingCallback(null) {
+
+            @Override
+            public void onTrackingStart() { }
+
+            @Override
+            public void onTrackingFinished() { }
+
+            @Override
+            public String[] onPositionUpdate() {
+                return new String[] {"a","b","c"};
+            }
+
+            @Override
+            public void onNewGroundEnvelope() { }
+
+            @Override
+            public void beforeTrackingStart() { }
+
+            @Override
+            public void beforeTrackingFinished() { }
+        };
+        tec.addTrackingCallback(1, cb);
+        //tec.addTrackingCallback(2, cb);
+        //tec.addTrackingCallback(3, cb);
+
+
+
         //Note: we need to pass and read a file containing the sequence of goals or missions to robots.
         //see the {@Missions} class.
 
@@ -118,24 +149,31 @@ public class Test1StartCoordinatorFileMp {
         // reading from the file for testing three robots
         Missions.loadLocationAndPathData("paths/test_poses_and_path_data.txt");
 
-        System.out.println("In before robotID forloop");
+        //System.out.println("In before robotID forloop");
 
 
-        int[] robotIDs = new int[] {22,7,54,13,1,14};
+        //int[] robotIDs = new int[] {22,7,54,13,1,14};
+        int[] robotIDs = new int[] {1};
 
-        System.out.println("Ha");
-        for (int robotID : robotIDs) {
+        //System.out.println("Ha");
+        //for (int robotID : robotIDs) {
 
             //set the forward model for every robot we have gotten greeting from
             tec.setForwardModel(1, new ConstantAccelerationForwardModel(1, 2
-                                 ,tec.getTemporalResolution(), tec.getControlPeriod(), tec.getRobotTrackingPeriodInMillis(robotID)));
+                                 ,tec.getTemporalResolution(), tec.getControlPeriod(), tec.getRobotTrackingPeriodInMillis(1)));
 
             System.out.println("HEJ HEJ HEJ HEJ HEJ HEJ HEJ HEJ ");
 
+
+            tec.placeRobot(1, Missions.getLocation("r1p"));
+            Missions.enqueueMission(new Mission(1, Missions.getShortestPath("r1p", "dest1")));
+            Missions.enqueueMission(new Mission(1, Missions.getShortestPath("dest1", "r1p")));
+
+
             // placing each robot
-            switch (robotID) {
+/*            switch (robotID) {
                 case 1:
-                    System.out.println("In switch 1");
+                    System.out.println("In switch 1" + robotID);
                     tec.placeRobot(robotID, Missions.getLocation("r1p"));
                     Missions.enqueueMission(new Mission(1, Missions.getShortestPath("r1p", "dest1")));
                     Missions.enqueueMission(new Mission(1, Missions.getShortestPath("dest1", "r1p")));
@@ -149,8 +187,9 @@ public class Test1StartCoordinatorFileMp {
                     tec.placeRobot(robotID, Missions.getLocation("r3p"));
                     Missions.enqueueMission(new Mission(3, Missions.getShortestPath("r3p", "dest3")));
                     Missions.enqueueMission(new Mission(3, Missions.getShortestPath("dest3", "r3p")));
-            }
+            }*/
 
+            //System.out.println("robotID: " + robotID);
             System.out.println("------------------------------------------------------------------------------------------------");
 
             Thread t = new Thread() {
@@ -161,7 +200,7 @@ public class Test1StartCoordinatorFileMp {
                     while (true) {
 
                         // Mission to dispatch alternates between (rip -> desti) and (desti -> rip)
-                        Mission m = Missions.getMission(robotID, iteration % 2);
+                        Mission m = Missions.getMission(1, iteration % 2);
                         synchronized (tec) {
                             // addMission returns true iff the robot was free to accept a new mission
                             if (tec.addMissions(m)) iteration++;
@@ -193,7 +232,7 @@ public class Test1StartCoordinatorFileMp {
             };
             // Start the thread!
             t.start();
-        }
+       // }
     }
 }
 
