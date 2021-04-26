@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinator;
 import CoordinatorPackage.containers.tecAllenIntervalContainer;
-import GRPC.CoordinatorServiceImpl;
+import Launch.Test1StartRobotGeneric;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.metacsp.framework.Constraint;
@@ -36,7 +36,7 @@ import se.oru.coordination.coordination_oru.TrackingCallback;
  * @author fpa
  *
  */
-public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
+public abstract class RemoteAbstractTrajectoryEnvelopeTracker extends Test1StartRobotGeneric {
 
     public  TrajectoryEnvelope te = null;
     protected Trajectory traj = null;
@@ -261,7 +261,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
      */
     public abstract RobotReport getRobotReport();
 
-    /** Moved the code from {@link AbstractTrajectoryEnvelopeTracker} to the {@link RemoteTrajectoryEnvelopeCoordinator}
+    /** Moved the code from { AbstractTrajectoryEnvelopeTracker} to the {@link RemoteTrajectoryEnvelopeCoordinator}
      */
     protected void onPositionUpdate() {}
 
@@ -269,6 +269,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
      * Should return the current time in milliseconds.
      * @return The current time in milliseconds.
      */
+
     public abstract long getCurrentTimeInMillis();
 
     protected static AllenIntervalConstraint[] getConstriants(AllenIntervalConstraint.Type type, TrajectoryEnvelope env, TrajectoryEnvelopeSolver solver) {
@@ -386,9 +387,24 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
     }
 
 
-    boolean controlRR = false;
+    public boolean controlRR = false;
 
     protected void startMonitoringThread() {           /////////////////////////////////////////// This is where Tracking Starts
+
+
+/*        //Create the parking envelope of the robot and use it to initialize a TE-tracker
+        TrajectoryEnvelopeSolver solver = new TrajectoryEnvelopeSolver(0,100000000);
+        //TrajectoryEnvelope parkingEnvelope = solver.createParkingEnvelope(robotID, PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp);
+        //TrajectoryEnvelope trajectoryenvelope = solver.createEnvelopeNoParking(te.getRobotID(), rsp.getPath() , "test", fp);
+        RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(te, 30, 1000, 2, 1.0, null) {
+            @Override
+            public long getCurrentTimeInMillis() {
+                //System.out.println("getCurrentTimeInMillis: " + this.getCurrentTimeInMillis());
+                //return this.getCurrentTimeInMillis();
+                return 0;
+            }
+        };*/
+
 
         //Start a thread that monitors the sub-envelopes and finishes them when appropriate
         Thread monitorSubEnvelopes = new Thread("Abstract tracker " + te.getComponent()) {
@@ -404,8 +420,9 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
                 while (true) {
 
                     //Track if past start time
-                    if (te.getTemporalVariable().getEST() <= getCurrentTimeInMillis()) {
 
+
+                    if (te.getTemporalVariable().getEST() <= getCurrentTimeInMillis()) {
                         if (cb != null && !calledOnTrackingStart) {
                             calledOnTrackingStart = true;
                             cb.onTrackingStart();
@@ -423,29 +440,24 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
                         /**
                          * FIXME quick fix for not having the RobotReport from the coordinator before its needed in the rk4
-                         * this is done to avoid requesting rr (RobotReport) parameter before the coordinator receives
-                         * updates of RobotReports from clients
+                         * Here if the robot report is needed in the coordinator server can just get from coordserviceimpl..
                          * */
-
-                        if(!controlRR){
-                            rr=getRobotReport();
-                            controlRR=true;
-                        }
-                        else{
-                            // if first time requesting-> * getRobotReport(); else rr = cliuent......
-                            rr = client.makeRobotReportRequest(te.getRobotID());
-                            System.out.println("[RemoteAbstract..Tracker] AFTER requesting the robotReport");
-                            //
-                        }
-
+                        int currentSeqNumber = 0;
+                        rr= getRobotReport();  // (((alen))) not sure if this is the correct way of getting robotreport.. (its not using id so which one is it getting when?
+                        //System.out.println("getRobotReport in Abstract Tracker" + getRobotReport());
                         if(rr==null) {
                             metaCSPLogger.info("(waiting for "+te.getComponent()+"'s tracker to come online)");
-                            try { Thread.sleep(100); }
+                            try { Thread.sleep(10); }
                             catch (InterruptedException e) { e.printStackTrace(); }
                         }
+/*                        else {
+                            //Get current sequence number from robot report...
+                             currentSeqNumber = rr.getPathIndex();
+                        }*/
 
                         //Get current sequence number from robot report...
-                        int currentSeqNumber = rr.getPathIndex();
+                        currentSeqNumber = rr.getPathIndex();
+
 
                         //Get all ground envelopes of this super-envelope that are not finished (except the last one)...
                         for (TrajectoryEnvelope subEnv : getAllSubEnvelopes()) {
@@ -495,6 +507,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
         monitorSubEnvelopes.start();
     }
+
+
 
     protected void finishTracking() {
         metaCSPLogger.info("<<<< Finished (super envelope) " + this.te);

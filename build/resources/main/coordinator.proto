@@ -74,14 +74,15 @@ message robotsGreeting {
   string type = 3;
   string IP = 4;
   int32 port = 5;
-  robotPose rpose = 6;
+  robotPose startPose = 6;
+  robotPose endPose = 7;
   // footPrint
-  string timeStamp = 7;
-  double maxAccel = 8;
-  double maxVel = 9;
-  double trackingPeriodInMillis = 10;
-  MakeFootPrint makeFootPrint = 11;
-  bytes poseSteering = 12;
+  string timeStamp = 8;
+  double maxAccel = 9;
+  double maxVel = 10;
+  double trackingPeriodInMillis = 11;
+  MakeFootPrint makeFootPrint = 12;
+  bytes poseSteering = 13;
 }
 
 message robotPose {

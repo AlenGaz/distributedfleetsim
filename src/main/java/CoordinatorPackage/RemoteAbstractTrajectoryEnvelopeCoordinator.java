@@ -49,7 +49,7 @@ import se.oru.coordination.coordination_oru.util.StringUtils;
 import CoordinatorPackage.containers.*;
 
 /**
- * This class provides coordination for a fleet of robots. An instantiatable {@link AbstractTrajectoryEnvelopeCoordinator}
+ * This class provides coordination for a fleet of robots. An instantiatable {AbstractTrajectoryEnvelopeCoordinator}
  * must provide an implementation of the updateDependency function and of a time keeping method, a {@link TrajectoryEnvelope} tracker factory, and
  * a criteria with which robots are to be prioritized.
  *
@@ -118,7 +118,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     protected static Logger metaCSPLogger = MetaCSPLogging.getLogger(RemoteTrajectoryEnvelopeCoordinator.class);
     protected String logDirName = null;
 
-    public RemoteAbstractTrajectoryEnvelopeCoordinator tec; ///OKAY Because DummyTracker in the Coordinator can pass its RemoteAbstract..Coordinator instance..
+
 
 
     /**
@@ -682,8 +682,11 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                 }
                 @Override
                 public void onTrackingStart() {
+                    System.out.println("on tracking start printing");
                     if (trackingCallbacks.containsKey(robotID)) trackingCallbacks.get(robotID).onTrackingStart();
                 }
+
+
                 @Override
                 public void onNewGroundEnvelope() {
                     if (trackingCallbacks.containsKey(robotID)) trackingCallbacks.get(robotID).onNewGroundEnvelope();
@@ -707,10 +710,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             final RemoteTrajectoryEnvelopeTrackerDummy tracker = new RemoteTrajectoryEnvelopeTrackerDummy(parking, 300, TEMPORAL_RESOLUTION, this, cb) {
                 @Override
                 public long getCurrentTimeInMillis() {
-                    //return tec.getCurrentTimeInMillis();
-                    //System.out.println("getCurrentTimeInMillis: " + getCurrentTimeInMillis());
-                    //return this.getCurrentTimeInMillis();
-                    return 0;
+
+                    return tec.getCurrentTimeInMillis();
                 }
             };
 
@@ -1480,6 +1481,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
         //FIXME: if this is not placed into the control loop (), then a robot can pass from (P) to (D) without
         //affecting the set of dependencies.
+        System.out.println("in StartTrackingAddedMissions");
 
         synchronized (solver) {
             for (final TrajectoryEnvelope te : envelopesToTrack) {
@@ -1518,10 +1520,12 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                         }
 
                         //canStartTracking becomes true when setCriticalPoint is called once
+                        /*
                         while (!trackers.containsKey(myTE.getRobotID()) || !trackers.get(myTE.getRobotID()).canStartTracking()) {
                             try { Thread.sleep(100); }
                             catch (InterruptedException e) { e.printStackTrace(); }
                         }
+                        */
 
 //						//Sleep for one control period
 //						//(allows to impose critical points before tracking actually starts)
@@ -1532,7 +1536,9 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                     @Override
                     public void onTrackingStart() {
                         if (trackingCallbacks.containsKey(myTE.getRobotID())) trackingCallbacks.get(myTE.getRobotID()).onTrackingStart();
-                        if (viz != null) viz.addEnvelope(myTE);
+                        if (viz != null){
+                            viz.addEnvelope(myTE);
+                        }
                     }
 
                     @Override
@@ -1613,11 +1619,16 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                 synchronized (trackers) {
                     externalCPCounters.remove(trackers.get(te.getRobotID()));
-                    //trackers.remove(te.getRobotID());
+                    trackers.remove(te.getRobotID());
 
                     //Make a new tracker for the driving trajectory envelope
+
                     TrajectoryEnvelopeTrackerLight tracker = getNewTracker(te, cb);
-                    //trackers.put(te.getRobotID(), tracker);
+
+
+
+                    trackers.put(te.getRobotID(), tracker);
+                    System.out.println("te. get robot id printing" + te.getRobotID());
                     trackers.get(te.getRobotID());
 
                     externalCPCounters.put(tracker, -1);
@@ -1827,14 +1838,16 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     }
 
     protected void setupInferenceCallback() {
-
+        System.out.println("in setupinferencecallback");
         this.stopInference = false;
         this.inference = new Thread("Coordinator inference") {
+
 
             @Override
             public void run() {
                 long threadLastUpdate = Calendar.getInstance().getTimeInMillis();
                 int MAX_ADDED_MISSIONS = 1;
+
 
                 while (!stopInference) {
                     int numberNewAddedMissions = 0;
@@ -1853,11 +1866,13 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 							envelopesToTrack.add(missionsPool.get(oldestMissionRobotID).getFirst());
 							missionsPool.remove(oldestMissionRobotID);*/
                             //FIXME critical sections should be computed incrementally/asynchronously
+
                             for (Integer robotID : trackers.keySet())
                                 if (!(trackers.get(robotID) instanceof RemoteTrajectoryEnvelopeTrackerDummy)) numberDrivingRobots++;
 
                             while (!missionsPool.isEmpty() && numberNewAddedMissions < MAX_ADDED_MISSIONS) {
                                 Pair<TrajectoryEnvelope,Long> te = missionsPool.pollFirst();
+
                                 envelopesToTrack.add(te.getFirst());
                                 numberNewAddedMissions++;
                             }

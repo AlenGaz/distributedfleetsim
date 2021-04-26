@@ -20,7 +20,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerDummy extends RemoteAbstrac
     private boolean parkingFinished = false;
     private int currentIndex = -1;
     private long DELTA_FUTURE = 0;
-    private RemoteAbstractTrajectoryEnvelopeCoordinator tec; ///OKAY Because DummyTracker in the Coordinator can pass its RemoteAbstract..Coordinator instance..
+    public RemoteAbstractTrajectoryEnvelopeCoordinator tec; ///OKAY Because DummyTracker in the Coordinator can pass its RemoteAbstract..Coordinator instance..
 
     /**
      * Create a new {@link RemoteTrajectoryEnvelopeTrackerDummy} representing that a robot with a given ID is parked

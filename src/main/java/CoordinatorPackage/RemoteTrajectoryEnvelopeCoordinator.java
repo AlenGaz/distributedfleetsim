@@ -609,7 +609,8 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             for (int robotID : robotIDs) {
                 RemoteAbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID);
                 //Update the coordinator view
-                RobotReport robotReport = robotTracker.getRobotReport();
+                //RobotReport robotReport = robotTracker.getRobotReport();
+                RobotReport robotReport = coordinatorServicImpl.robotIDtoRobotReport.get(robotID);
                 currentReports.put(robotID, robotReport);
                 synchronized(stoppingPoints) {
                     if (stoppingPoints.containsKey(robotID)) {
@@ -1063,8 +1064,10 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
     @Override
     protected void setupInferenceCallback() {
 
+        System.out.println("in setupinferencecallback");
         this.stopInference = false;
         this.inference = new Thread("Coordinator inference") {
+
 
             @Override
             public void run() {
@@ -1106,6 +1109,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                             //FIXME critical sections should be computed incrementally/asynchronously
                             while (!missionsPool.isEmpty() && numberNewAddedMissions < MAX_ADDED_MISSIONS) {
                                 Pair<TrajectoryEnvelope,Long> te = missionsPool.pollFirst();
+                                System.out.println("in envelopes to track");
                                 envelopesToTrack.add(te.getFirst());
                                 numberNewAddedMissions++;
                             }
@@ -1600,7 +1604,9 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             for (int robotID : robotIDs) {
                 RemoteAbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID);
                 //Update the coordinator view
-                RobotReport robotReport = robotTracker.getRobotReport();
+                //RobotReport robotReport = robotTracker.getRobotReport();
+                RobotReport robotReport = coordinatorServicImpl.robotIDtoRobotReport.get(robotID);
+                System.out.println("{RemoteTrajectoryEnvelopeCoordinator} coordserviceimpl<*>robotReport :" + robotReport);
                 currentReports.put(robotID, robotReport);
                 synchronized(stoppingPoints) {
                     if (stoppingPoints.containsKey(robotID)) {
@@ -1608,13 +1614,20 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                         for (int i = 0; i < stoppingPoints.get(robotID).size(); i++) {
                             int stoppingPoint = stoppingPoints.get(robotID).get(i);
                             int duration = stoppingTimes.get(robotID).get(i);
+
+                            /**
+                             * Skipping this part atm because robotTracker.getTrajectoryEnvelope() is null...
+                             * (((Alen)))
                             if (robotReport.getPathIndex() <= stoppingPoint) {
+                                System.out.println("{RemoteTrajectoryEnvelopeCoordinator} robottracker.getTrajectoryEnvelope: " + robotTracker.getTrajectoryEnvelope());
                                 Dependency dep = new Dependency(robotTracker.getTrajectoryEnvelope(), null, stoppingPoint, 0);
                                 if (!currentDeps.containsKey(robotID)) currentDeps.put(robotID, new HashSet<Dependency>());
                                 if (!currentDeps.get(robotID).add(dep)) {
                                     metaCSPLogger.severe("<<<<<<<<< Add dependency fails (1). Dep: " + dep);
                                 }
                             }
+                            */
+
                             //Start waiting thread if the stopping point has been reached
                             //if (Math.abs(robotReport.getPathIndex()-stoppingPoint) <= 1 && robotReport.getCriticalPoint() == stoppingPoint && !stoppingPointTimers.containsKey(robotID)) {
                             if (Math.abs(robotReport.getPathIndex()-stoppingPoint) <= 1 && robotReport.getCriticalPoint() <= stoppingPoint && !stoppingPointTimers.containsKey(robotID)) {
@@ -2182,7 +2195,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             if (currentDependencies.containsKey(robotID)) {
                 Dependency dep = currentDependencies.get(robotID);
                 metaCSPLogger.finest("Set critical point " + dep.getWaitingPoint() + " to Robot" + dep.getWaitingRobotID() +".");
-                System.out.println("[TRACJ CORD]->>>dep.getWaitingPoint()" + dep.getWaitingPoint());
+                System.out.println("[Trajectory Coordinator] the dep.getWaitingPoint(): " + dep.getWaitingPoint());
                 retransmitt = retransmitt || communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == dep.getWaitingPoint() && currentReports.get(robotID).getCriticalPoint() != dep.getWaitingPoint()
                         && ((int)(Calendar.getInstance().getTimeInMillis()-communicatedCPs.get(tracker).getSecond().longValue()) > maxDelay);
                 setCriticalPoint(dep.getWaitingRobotID(), dep.getWaitingPoint(), retransmitt);

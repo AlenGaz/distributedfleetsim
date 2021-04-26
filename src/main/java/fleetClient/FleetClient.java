@@ -43,7 +43,7 @@ public class FleetClient {
     }
 
 
-    public int makeGreeting(String kan, int robotID, String type, String IP, int port, Pose pose,
+    public int makeGreeting(String kan, int robotID, String type, String IP, int port, Pose startPose, Pose endPose,
                             String timeStamp, double maxAccel, double maxVel,
                             double trackingPeriodInMillis, MakeFootPrint makeFootPrint, PoseSteering[] poseSteerings) {
 
@@ -56,8 +56,10 @@ public class FleetClient {
         }
 
         Coordinator.robotsGreeting greetingBuild = Coordinator.robotsGreeting.newBuilder().setKan(kan).setRobotID(robotID).setType(type).setIP(IP).setPort(port)
-                .setRpose(Coordinator.robotPose.newBuilder().setX(pose.getX()).setY(pose.getY()).setZ(pose.getZ())
-                        .setRoll(pose.getRoll()).setPitch(pose.getPitch()).setYaw(pose.getYaw()).build()).
+                .setStartPose(Coordinator.robotPose.newBuilder().setX(startPose.getX()).setY(startPose.getY()).setZ(startPose.getZ())
+                        .setRoll(startPose.getRoll()).setPitch(startPose.getPitch()).setYaw(startPose.getYaw()).build()).
+                setEndPose(Coordinator.robotPose.newBuilder().setX(endPose.getX()).setY(endPose.getY()).setZ(endPose.getZ())
+                .setRoll(endPose.getRoll()).setPitch(endPose.getPitch()).setYaw(endPose.getYaw()).build()).
                         setTimeStamp(timeStamp).setMaxAccel(maxAccel).setMaxVel(maxVel).setTrackingPeriodInMillis(trackingPeriodInMillis)
                 .setMakeFootPrint(Coordinator.MakeFootPrint.newBuilder().setCenterX(makeFootPrint.getCenterX())
                         .setCenterY(makeFootPrint.getCenterY()).setMinVerts(makeFootPrint.getMinVerts()).setMaxVerts(makeFootPrint.getMaxVerts())
@@ -229,6 +231,7 @@ public RobotReport makeRobotReportRequest(int robotID) {
 
     coordinatorBlockingStub.coordinatorgetRobotReportRequest(request);
 
+    System.out.println("response from makeRobotReportRequest" + response);
 
     int _robotID = response.getRobotid();
     Pose _pose = new Pose(response.getX(), response.getY(), response.getZ(), response.getRoll(), response.getPitch(), response.getYaw());

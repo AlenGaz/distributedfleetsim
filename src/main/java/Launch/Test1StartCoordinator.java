@@ -6,19 +6,24 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import CoordinatorPackage.containers.MakeFootPrint;
 import GRPC.CoordinatorServiceImpl;
+import com.vividsolutions.jts.geom.Coordinate;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
+import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import se.oru.coordination.coordination_oru.*;
+import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
 import se.oru.coordination.coordination_oru.util.BrowserVisualization;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import se.oru.coordination.coordination_oru.util.Missions;
 
+
 public class Test1StartCoordinator {
-	
-	
-	
+
+
+
 	public static void main(String[] args) throws InterruptedException {
 
 		// Necessary server stuff
@@ -29,13 +34,9 @@ public class Test1StartCoordinator {
 
 
 		//1. INSTANTIATE THE COORDINATOR
-		//Create a coordinator with interfaces to robots in the built-in 2D simulator 
+		//Create a coordinator with interfaces to robots in the built-in 2D simulator
 		//(FIXME we don't need to communicate the max acceleration and velocity, which will be passed while greeting).
 		final RemoteTrajectoryEnvelopeCoordinatorSimulation tec = new RemoteTrajectoryEnvelopeCoordinatorSimulation();
-
-		// V Below to make a setup in AbstractTrajectoryEnvelopeCoordinator so it has instance of the service implemnent..
-		CoordinatorServiceImpl coordinatorServiceImpl = new CoordinatorServiceImpl(tec);
-		tec.setupCoordinationServer(coordinatorServiceImpl);
 
 		//Provide a heuristic (here, closest to critical section goes first)
 		tec.addComparator(new Comparator<RobotAtCriticalSection>() {
@@ -47,31 +48,20 @@ public class Test1StartCoordinator {
 				return ((cs.getTe1Start() - robotReport1.getPathIndex()) - (cs.getTe2Start() - robotReport2.getPathIndex()));
 			}
 		});
-		tec.addComparator(new Comparator<RobotAtCriticalSection> () {
-			@Override
-			public int compare(RobotAtCriticalSection o1, RobotAtCriticalSection o2) {
-				return (o2.getRobotReport().getRobotID()-o1.getRobotReport().getRobotID());
-			}
-		});
+
+		// V Below to make a setup in AbstractTrajectoryEnvelopeCoordinator so it has instance of the service implemnent..
+		CoordinatorServiceImpl coordinatorServiceImpl = new CoordinatorServiceImpl(tec);
+		tec.setupCoordinationServer(coordinatorServiceImpl);
 
 		//Define a network with uncertainties (see Mannucci et al., 2019)
-		//NetworkConfiguration.setDelays(0, 0);
-		//NetworkConfiguration.PROBABILITY_OF_PACKET_LOSS = 0.1;
+		NetworkConfiguration.setDelays(0, 0);
+		NetworkConfiguration.PROBABILITY_OF_PACKET_LOSS = 0.1;
 
-		//Tell the coordinator 
-		//FIXME These will be customized later 
+		//Tell the coordinator
+		//FIXME These will be customized later
 		// (1) what is known about the communication channel, and
 		// (2) the accepted probability of constraint violation
-		//tec.setNetworkParameters(NetworkConfiguration.PROBABILITY_OF_PACKET_LOSS, NetworkConfiguration.getMaximumTxDelay(), 0.01);
-
-		tec.setForwardModel(1, new ConstantAccelerationForwardModel(0.4, 0.3
-				,tec.getTemporalResolution(), tec.getControlPeriod(), tec.getRobotTrackingPeriodInMillis(1)));
-		tec.setForwardModel(2, new ConstantAccelerationForwardModel(0.4, 0.3
-				,tec.getTemporalResolution(), tec.getControlPeriod(), tec.getRobotTrackingPeriodInMillis(2)));
-		tec.setForwardModel(3, new ConstantAccelerationForwardModel(0.4, 0.3
-				,tec.getTemporalResolution(), tec.getControlPeriod(), tec.getRobotTrackingPeriodInMillis(3)));
-
-
+		tec.setNetworkParameters(NetworkConfiguration.PROBABILITY_OF_PACKET_LOSS, NetworkConfiguration.getMaximumTxDelay(), 0.01);
 
 		//Set up infrastructure that maintains the representation
 		tec.setupSolver(0, 100000000);
@@ -82,34 +72,13 @@ public class Test1StartCoordinator {
 		//Avoid deadlocks via global re-ordering
 		//tec.setBreakDeadlocks(true, false, false);
 
-		//Start a visualization (will open a new browser tab)
-
-
-		//FIXME This may run on a different PC in the future
-		BrowserVisualization viz = new BrowserVisualization();
-		viz.setInitialTransform(25, 5, 0);
-		tec.setVisualization(viz);
-
-
-
-
-
 		//Note: we need to pass and read a file containing the sequence of goals or missions to robots.
 		//see the {@Missions} class.
 
 
 		//2. INSTANTIATE THE COORDINATIONSERVER
 
-	/*
-		CoordinatorServer server = new CoordinatorServer(tec); <<--- CoordServiceImplementation
-        try {
-			server.start();
-			server.blockUntilShutdown();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	*/
+
 		//2. INSTANTIATE THE COORDINATIONSERVER
 		try {
 			server = ServerBuilder.forPort(PORT)
@@ -123,116 +92,83 @@ public class Test1StartCoordinator {
 		System.out.println("Server started at port: " + server.getPort());
 
 
+
+
 		//3. SET THE SERVER IN THE COORDINATOR (now both the classes can access each other members)
 		// Done with setupCoordinationServer(coordinatorServiceImpl); line 40
 
 		//4. WAIT FOR ROBOT'S GREETING (Let's assume that all robots are greetings before the simulation runs for now)
 
-		Missions.loadLocationAndPathData("paths/test_poses_and_path_data.txt");
-
 
 		//
 		//Start dispatching threads for each robot, each of which
 
-		//boolean dispatched = false;
-		//HashMap<Integer, Boolean> dispatchedRobot = new HashMap<Integer, Boolean>();
+		boolean dispatched = false;
+		HashMap<Integer, Boolean> dispatchedRobot = new HashMap<Integer, Boolean>();
+		while (true) {
 
-		TimeUnit.SECONDS.sleep(1);
-		System.out.println("[Test1StartCoordinator] robotIDtoClientConnection Keyset: " + coordinatorServiceImpl.robotIDtoClientConnection.keySet());
-
-		Pose test = new Pose(0.0942, 0.0053, 0 , 0 ,0,0);
-		//tec.placeRobot(10, test);
-
-		tec.placeRobot(1, Missions.getLocation("r1p"));
-		//tec.placeRobot(2, Missions.getLocation("r2p"));
-		//tec.placeRobot(3, Missions.getLocation("r3p"));
-		Missions.enqueueMission(new Mission(1, Missions.getShortestPath("r1p", "dest1")));
-		Missions.enqueueMission(new Mission(2, Missions.getShortestPath("r2p", "dest2")));
-		Missions.enqueueMission(new Mission(3, Missions.getShortestPath("r3p", "dest3")));
-		Missions.enqueueMission(new Mission(1, Missions.getShortestPath("dest1", "r1p")));
-		Missions.enqueueMission(new Mission(2, Missions.getShortestPath("dest2", "r2p")));
-		Missions.enqueueMission(new Mission(3, Missions.getShortestPath("dest3", "r3p")));
+			TimeUnit.SECONDS.sleep(1);
+			System.out.println("[Test1StartCoordinator] robotIDtoClientConnection Keyset: " + coordinatorServiceImpl.robotIDtoClientConnection.keySet());
 
 
+			// just a test of dispatching some robots
+			if (tec.coordinatorServicImpl.robotIDtoClientConnection.containsKey(1) && !dispatched) {
 
-		for (int i = 1; i <= 1; i++) {
-			final int robotID = i;
-		//while (true) {
-		
-			// just a test of dispatching one robot
-			//if (tec.coordinatorServicImpl.robotIDtoClientConnection.containsKey(1) && !dispatched) {
-
-				//Missions.enqueueMission(new Mission(1, coordinatorServiceImpl.robotIDtoClientConnection.get(1).getPoseSteerings()));
-				//dispatchedRobot.put(1, true);
-
-
-			//Missions.startMissionDispatchers(tec, new int[]{1, 2, 3});
-
-/*				//FIXME This may run on a different PC in the future
+				//FIXME This may run on a different PC in the future
 				BrowserVisualization viz = new BrowserVisualization();
-				viz.setInitialTransform(49, 5, 0);
-				tec.setVisualization(viz);*/
+				viz.setInitialTransform(18, 35, 20);
+				tec.setVisualization(viz);
 
-				//tec.testCoordReference();
+				//Example of how you can add extra info Strings to the visualization of robot status
+				TrackingCallback cb = new TrackingCallback(null) {
 
+					@Override
+					public void onTrackingStart() { }
 
-				//dispatched = true;
-			//}
+					@Override
+					public void onTrackingFinished() { }
 
-			Thread t = new Thread() {
-				int iteration = 0;
-
-				@Override
-				public void run() {
-					while (true) {
-
-						// Mission to dispatch alternates between (rip -> desti) and (desti -> rip)
-						Mission m = Missions.getMission(robotID, iteration % 2);
-						synchronized (tec) {
-							// addMission returns true iff the robot was free to accept a new mission
-							if (tec.addMissions(m)){
-								iteration++;
-
-							}
-
-/*							try {
-								TimeUnit.SECONDS.sleep(1);
-							} catch (InterruptedException e) {
-								e.printStackTrace();
-							}*/
-							System.out.println("robotIDtoClientConnection Keyset: " + coordinatorServiceImpl.robotIDtoClientConnection.keySet());
-							System.out.println("[Test1StartCoordinator] robotIDtoClientConnection Keyset: " + coordinatorServiceImpl.robotIDtoClientConnection.keySet());
-							System.out.println("[Test1StartCoordinator] robotIDtoClientConnection Type: " + coordinatorServiceImpl.robotIDtoClientConnection.get(1).getTimeStamp());
-
-/*							// This below is just test to see if the instance of the CoordinatorServiceImpl is the same in the server and Abstract..Coordinator
-							if (tec.coordinatorServicImpl.robotIDtoClientConnection.containsKey(1)) {
-
-								tec.testCoordReference();
-							}*/
-
-						}
-						//Sleep for a little (2 sec)
-						try { Thread.sleep(2000); }
-						catch (InterruptedException e) { e.printStackTrace(); }
-
-						//dispatches the next mission as soon as the robot is idle
-						//Missions.startMissionDispatchers(tec, robotIDs);
-
+					@Override
+					public String[] onPositionUpdate() {
+						return new String[] {"a","b","c"};
 					}
-				}
-			};
-			//Start the thread!
-			t.start();
-//}
+
+					@Override
+					public void onNewGroundEnvelope() { }
+
+					@Override
+					public void beforeTrackingStart() { }
+
+					@Override
+					public void beforeTrackingFinished() { }
+				};
+				tec.addTrackingCallback(1, cb);
+				//tec.addTrackingCallback(2, cb);
+				//tec.addTrackingCallback(3, cb);
+
+				TimeUnit.SECONDS.sleep(2);
+
+				Mission m = new Mission(1, coordinatorServiceImpl.robotIDtoClientConnection.get(1).getPoseSteerings());
+				Missions.enqueueMission(m);
+				dispatchedRobot.put(1, true);
+
+
+				Pose testpose = new Pose(8, 8, 0 ,3 ,0 ,0);
+
+				tec.placeRobot(1,coordinatorServiceImpl.robotIDtoClientConnection.get(1).getStartPose());
+				tec.addMissions(m);
+
+
+				Missions.startMissionDispatchers(tec, new int[]{1, 2, 3});
+
+
+				dispatched = true;
+
 			}
-
-
-			//dispatches the next mission as soon as the robot is idle
-			//Set<Integer> keys =  coordinatorServiceImpl.robotIDtoClientConnection.keySet(); need to make into array of integers instead.. can do it with forloop..
-			//Missions.startMissionDispatchers(tec, keys.size());
 
 		}
 
 
 	}
+}
 

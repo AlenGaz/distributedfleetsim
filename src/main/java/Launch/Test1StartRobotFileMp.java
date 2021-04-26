@@ -231,10 +231,10 @@ public class Test1StartRobotFileMp {
      * with the correct parameters will handle rest of the messaging to the server,
      * note that the String target declaration in this class needs to be correct
      * */
-    public static int simpleGreeting(int robotID, double maxAccel, double maxVel, int port, Pose testPose, FleetClient client, MakeFootPrint footprint, PoseSteering[] poseSteerings) {
+    public static int simpleGreeting(int robotID, double maxAccel, double maxVel, int port, Pose startPose, Pose endPose, FleetClient client, MakeFootPrint footprint, PoseSteering[] poseSteerings) {
         int requestResponse = 0;
         try {
-            requestResponse = client.makeGreeting("greeting", robotID, "simulated", InetAddress.getLocalHost().toString(), port, testPose,
+            requestResponse = client.makeGreeting("greeting", robotID, "simulated", InetAddress.getLocalHost().toString(), port, startPose, endPose,
                     String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint,poseSteerings);
         } catch (UnknownHostException e) {
             e.printStackTrace();

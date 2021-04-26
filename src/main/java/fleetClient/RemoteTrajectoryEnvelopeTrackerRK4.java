@@ -8,7 +8,6 @@ import java.util.Random;
 import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import se.oru.coordination.coordination_oru.util.Missions;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinator;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
@@ -53,6 +52,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 
 
 	public int RK4controlPeriod=1000;
+
 	//public static int RK4numberOfReplicas = 0;
 
 
@@ -360,7 +360,9 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			double dvdt = (1.0f / 6.0f) * ( a.getAcceleration() + 2.0f*(b.getAcceleration() + c.getAcceleration()) + d.getAcceleration() );
 
 			state.setPosition(state.getPosition()+dxdt*deltaTime);
+			System.out.println("state.getPosition()" + state.getPosition());
 			state.setVelocity(state.getVelocity()+dvdt*deltaTime);
+			System.out.println("statesetVelocity()" + state.getVelocity());
 		}
 	}
 
@@ -499,8 +501,9 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 
 	}
 
-	@Override
+	//@Override
 	public RobotReport getRobotReport() {
+		System.out.println("1-robotreport");
 		if (state == null) return null;
 		if (!this.th.isAlive()) return new RobotReport(te.getRobotID(), traj.getPose()[0], -1, 0.0, 0.0, -1);
 		synchronized(state) {
@@ -508,12 +511,15 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			int currentPathIndex = -1;
 			double accumulatedDist = 0.0;
 			Pose[] poses = traj.getPose();
+			System.out.println("traj.getPose() in rk4-> " + traj.getPose());
 			for (int i = 0; i < poses.length-1; i++) {
 				double deltaS = poses[i].distanceTo(poses[i+1]);
 				accumulatedDist += deltaS;
-				if (accumulatedDist > state.getPosition()) {
+				System.out.println("before if in rk4 -> accumulatedDist: " + accumulatedDist + "state.getPosition(): " + state.getPosition());
+				if (accumulatedDist > state.getPosition()-10) {
 					double ratio = 1.0-(accumulatedDist-state.getPosition())/deltaS;
 					pose = poses[i].interpolate(poses[i+1], ratio);
+					System.out.println("1-after pose in rk4" + pose);
 					currentPathIndex = i;
 					break;
 				}
@@ -527,6 +533,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 	}
 
 	private static RobotReport getRobotReport(Trajectory traj, State auxState) {
+		System.out.println("2-robotreport");
 		if (auxState == null) return null;
 		Pose pose = null;
 		int currentPathIndex = -1;
@@ -537,7 +544,9 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			accumulatedDist += deltaS;
 			if (accumulatedDist > auxState.getPosition()) {
 				double ratio = 1.0-(accumulatedDist-auxState.getPosition())/deltaS;
+				System.out.println("2-before pose" + pose);
 				pose = poses[i].interpolate(poses[i+1], ratio);
+				System.out.println("2-after pose" + pose);
 				currentPathIndex = i;
 				break;
 			}
@@ -550,6 +559,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 	}
 
 	public RobotReport getRobotReport(State auxState) {
+		System.out.println("3-robotreport");
 		if (auxState == null) return null;
 		Pose pose = null;
 		int currentPathIndex = -1;
@@ -560,7 +570,9 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			accumulatedDist += deltaS;
 			if (accumulatedDist > auxState.getPosition()) {
 				double ratio = 1.0-(accumulatedDist-auxState.getPosition())/deltaS;
+				System.out.println("3-before pose" + pose);
 				pose = poses[i].interpolate(poses[i+1], ratio);
+				System.out.println("3-after pose" + pose);
 				currentPathIndex = i;
 				break;
 			}
@@ -594,18 +606,17 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 
 
 		while (true) {
-
 			//End condition: passed the middle AND velocity < 0 AND no criticalPoint
 			boolean skipIntegration = false;
 			//if (state.getPosition() >= totalDistance/2.0 && state.getVelocity() < 0.0) {
 			if (state.getPosition() >= this.positionToSlowDown && state.getVelocity() < 0.0) {
 				if (criticalPoint == -1 && !atCP) {
+					System.out.println("1-pose in RK4: " + getRobotReport().getPose());
 					//set state to final position, just in case it didn't quite get there (it's certainly close enough)
 					state = new State(totalDistance, 0.0);
 					onPositionUpdate();
 					break;
 				}
-
 				//Vel < 0 hence we are at CP, thus we need to skip integration
 				if (!atCP /*&& getRobotReport().getPathIndex() == criticalPoint*/) {
 					int pathIndex = getRobotReport().getPathIndex();
@@ -613,14 +624,13 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 					if (pathIndex > criticalPoint) metaCSPLogger.severe("* ATTENTION! STOPPED AFTER!! *");
 					atCP = true;
 				}
-
+				//state.getpos
 				skipIntegration = true;
 
 			}
-
+			System.out.println("2-pose in RK4: " + getRobotReport().getPose());
 			//Compute deltaTime
 			long timeStart = Calendar.getInstance().getTimeInMillis();
-
 			//Update the robot's state via RK4 numerical integration
 			if (!skipIntegration) {
 				if (atCP) {
@@ -631,7 +641,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 				if (state.getPosition() >= positionToSlowDown) slowingDown = true;
 				double dampening = getCurvatureDampening(getRobotReport().getPathIndex(), false);
 				integrateRK4(state, elapsedTrackingTime, deltaTime, slowingDown, MAX_VELOCITY, dampening, MAX_ACCELERATION);
-
+				System.out.println("3-pose in RK4: " + getRobotReport().getPose());
 			}
 
 			//Do some user function on position update
@@ -649,7 +659,6 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			deltaTime = deltaTimeInMillis/this.temporalResolution;
 			elapsedTrackingTime += deltaTime;
 		}
-
 		//continue transmitting until the coordinator will be informed of having reached the last position.
 
 		/* "continue transmitting.." So here we are supposed to send the pose or something, until the coordinator
@@ -661,14 +670,13 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 		// this wil be done with a rpc.. while (client.makePathIndexRequest(robotID) != -1){}.. instead of tec.getRobotReport(..).getPathIndex
 
 		while (getRobotReport().getPathIndex() != -1)
-
 		{
 			enqueueOneReport();
 			try { Thread.sleep(trackingPeriodInMillis); }
 
 			catch (InterruptedException e) { e.printStackTrace(); }
 		}
-
+		System.out.println("777-posee in RK4: " + getRobotReport().getPose());
 		//persevere with last path point in case listeners didn't catch it!
 		long timerStart = getCurrentTimeInMillis();
 		while (getCurrentTimeInMillis()-timerStart < WAIT_AMOUNT_AT_END) {
@@ -677,6 +685,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			catch (InterruptedException e) { e.printStackTrace(); }
 		}
 		metaCSPLogger.info("RK4 tracking thread terminates (Robot " + myRobotID + ", TrajectoryEnvelope " + myTEID + ")");
+		System.out.println("4-pose in RK4: " + getRobotReport().getPose());
 	}
 
 	public static double[] computeDTs(Trajectory traj, double maxVel, double maxAccel) {

@@ -14,7 +14,7 @@ import org.metacsp.utility.logging.MetaCSPLogging;
 public class RobotReport {
 	
 	private Pose pose = null;
-	private int pathIndex = 5;
+	private int pathIndex = -1;
 	private double velocity = 0.0;
 	private double distanceTraveled = 0.0;
 	private int criticalPoint = -1;

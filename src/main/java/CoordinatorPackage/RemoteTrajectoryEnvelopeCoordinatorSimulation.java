@@ -272,26 +272,20 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 	@Override
 	public TrajectoryEnvelopeTrackerLight getNewTracker(TrajectoryEnvelope te, TrackingCallback cb) {
 		if (this.getRobotTrackingPeriodInMillis(te.getRobotID()) == null || this.getRobotMaxVelocity(te.getRobotID()) == null || this.getRobotMaxAcceleration(te.getRobotID()) == null) throw new Error("Robot" +  te.getRobotID() + ": missing kinodynamic parameters.");
-		TrajectoryEnvelopeTrackerLight ret = new TrajectoryEnvelopeTrackerLight(te, this.DEFAULT_ROBOT_TRACKING_PERIOD, TEMPORAL_RESOLUTION, this, cb) { //FIXME
+		TrajectoryEnvelopeTrackerLight ret = new TrajectoryEnvelopeTrackerLight(this, te, this.DEFAULT_ROBOT_TRACKING_PERIOD, TEMPORAL_RESOLUTION, cb) {
 
-			//Method for measuring time in the trajectory envelope tracker
 			@Override
-			public long getCurrentTimeInMillis() {
-				System.out.println("getCurrentTimeInMillis: " + this.getCurrentTimeInMillis());
-				return this.getCurrentTimeInMillis();
+			public long getCurrentTimeInMillis(){
+				return tec.getCurrentTimeInMillis();
 			}
 
 			@Override
-			protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te) {
-				// TODO Auto-generated method stub
-
-			}
+			protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te){}
 
 			@Override
-			public void startTracking() {
-				// TODO Auto-generated method stub
+			public void startTracking() {}
 
-			}
+
 		};
 		ret.setUseInternalCriticalPoints(false);
 		return ret;
@@ -460,6 +454,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 				for (int robotID : trackers.keySet()) setCriticalPoint(robotID, -1, true);
 				return;
 			}
+			System.out.println("{RemoteTrajectory..CoordinatorSimulation} trackers.keyset" + trackers.keySet());
 			if (this.avoidDeadlockGlobally.get()) globalCheckAndRevise();
 			else localCheckAndRevise();
 

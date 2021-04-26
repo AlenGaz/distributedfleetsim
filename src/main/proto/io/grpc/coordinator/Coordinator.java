@@ -3657,24 +3657,37 @@ public final class Coordinator {
     int getPort();
 
     /**
-     * <code>.gradlegRPC.robotPose rpose = 6;</code>
+     * <code>.gradlegRPC.robotPose startPose = 6;</code>
      */
-    boolean hasRpose();
+    boolean hasStartPose();
     /**
-     * <code>.gradlegRPC.robotPose rpose = 6;</code>
+     * <code>.gradlegRPC.robotPose startPose = 6;</code>
      */
-    io.grpc.coordinator.Coordinator.robotPose getRpose();
+    io.grpc.coordinator.Coordinator.robotPose getStartPose();
     /**
-     * <code>.gradlegRPC.robotPose rpose = 6;</code>
+     * <code>.gradlegRPC.robotPose startPose = 6;</code>
      */
-    io.grpc.coordinator.Coordinator.robotPoseOrBuilder getRposeOrBuilder();
+    io.grpc.coordinator.Coordinator.robotPoseOrBuilder getStartPoseOrBuilder();
+
+    /**
+     * <code>.gradlegRPC.robotPose endPose = 7;</code>
+     */
+    boolean hasEndPose();
+    /**
+     * <code>.gradlegRPC.robotPose endPose = 7;</code>
+     */
+    io.grpc.coordinator.Coordinator.robotPose getEndPose();
+    /**
+     * <code>.gradlegRPC.robotPose endPose = 7;</code>
+     */
+    io.grpc.coordinator.Coordinator.robotPoseOrBuilder getEndPoseOrBuilder();
 
     /**
      * <pre>
      * footPrint
      * </pre>
      *
-     * <code>string timeStamp = 7;</code>
+     * <code>string timeStamp = 8;</code>
      */
     java.lang.String getTimeStamp();
     /**
@@ -3682,41 +3695,41 @@ public final class Coordinator {
      * footPrint
      * </pre>
      *
-     * <code>string timeStamp = 7;</code>
+     * <code>string timeStamp = 8;</code>
      */
     com.google.protobuf.ByteString
         getTimeStampBytes();
 
     /**
-     * <code>double maxAccel = 8;</code>
+     * <code>double maxAccel = 9;</code>
      */
     double getMaxAccel();
 
     /**
-     * <code>double maxVel = 9;</code>
+     * <code>double maxVel = 10;</code>
      */
     double getMaxVel();
 
     /**
-     * <code>double trackingPeriodInMillis = 10;</code>
+     * <code>double trackingPeriodInMillis = 11;</code>
      */
     double getTrackingPeriodInMillis();
 
     /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
      */
     boolean hasMakeFootPrint();
     /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
      */
     io.grpc.coordinator.Coordinator.MakeFootPrint getMakeFootPrint();
     /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
      */
     io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder getMakeFootPrintOrBuilder();
 
     /**
-     * <code>bytes poseSteering = 12;</code>
+     * <code>bytes poseSteering = 13;</code>
      */
     com.google.protobuf.ByteString getPoseSteering();
   }
@@ -3799,39 +3812,52 @@ public final class Coordinator {
             }
             case 50: {
               io.grpc.coordinator.Coordinator.robotPose.Builder subBuilder = null;
-              if (rpose_ != null) {
-                subBuilder = rpose_.toBuilder();
+              if (startPose_ != null) {
+                subBuilder = startPose_.toBuilder();
               }
-              rpose_ = input.readMessage(io.grpc.coordinator.Coordinator.robotPose.parser(), extensionRegistry);
+              startPose_ = input.readMessage(io.grpc.coordinator.Coordinator.robotPose.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(rpose_);
-                rpose_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(startPose_);
+                startPose_ = subBuilder.buildPartial();
               }
 
               break;
             }
             case 58: {
+              io.grpc.coordinator.Coordinator.robotPose.Builder subBuilder = null;
+              if (endPose_ != null) {
+                subBuilder = endPose_.toBuilder();
+              }
+              endPose_ = input.readMessage(io.grpc.coordinator.Coordinator.robotPose.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endPose_);
+                endPose_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               timeStamp_ = s;
               break;
             }
-            case 65: {
+            case 73: {
 
               maxAccel_ = input.readDouble();
               break;
             }
-            case 73: {
+            case 81: {
 
               maxVel_ = input.readDouble();
               break;
             }
-            case 81: {
+            case 89: {
 
               trackingPeriodInMillis_ = input.readDouble();
               break;
             }
-            case 90: {
+            case 98: {
               io.grpc.coordinator.Coordinator.MakeFootPrint.Builder subBuilder = null;
               if (makeFootPrint_ != null) {
                 subBuilder = makeFootPrint_.toBuilder();
@@ -3844,7 +3870,7 @@ public final class Coordinator {
 
               break;
             }
-            case 98: {
+            case 106: {
 
               poseSteering_ = input.readBytes();
               break;
@@ -4001,35 +4027,56 @@ public final class Coordinator {
       return port_;
     }
 
-    public static final int RPOSE_FIELD_NUMBER = 6;
-    private io.grpc.coordinator.Coordinator.robotPose rpose_;
+    public static final int STARTPOSE_FIELD_NUMBER = 6;
+    private io.grpc.coordinator.Coordinator.robotPose startPose_;
     /**
-     * <code>.gradlegRPC.robotPose rpose = 6;</code>
+     * <code>.gradlegRPC.robotPose startPose = 6;</code>
      */
-    public boolean hasRpose() {
-      return rpose_ != null;
+    public boolean hasStartPose() {
+      return startPose_ != null;
     }
     /**
-     * <code>.gradlegRPC.robotPose rpose = 6;</code>
+     * <code>.gradlegRPC.robotPose startPose = 6;</code>
      */
-    public io.grpc.coordinator.Coordinator.robotPose getRpose() {
-      return rpose_ == null ? io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : rpose_;
+    public io.grpc.coordinator.Coordinator.robotPose getStartPose() {
+      return startPose_ == null ? io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : startPose_;
     }
     /**
-     * <code>.gradlegRPC.robotPose rpose = 6;</code>
+     * <code>.gradlegRPC.robotPose startPose = 6;</code>
      */
-    public io.grpc.coordinator.Coordinator.robotPoseOrBuilder getRposeOrBuilder() {
-      return getRpose();
+    public io.grpc.coordinator.Coordinator.robotPoseOrBuilder getStartPoseOrBuilder() {
+      return getStartPose();
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 7;
+    public static final int ENDPOSE_FIELD_NUMBER = 7;
+    private io.grpc.coordinator.Coordinator.robotPose endPose_;
+    /**
+     * <code>.gradlegRPC.robotPose endPose = 7;</code>
+     */
+    public boolean hasEndPose() {
+      return endPose_ != null;
+    }
+    /**
+     * <code>.gradlegRPC.robotPose endPose = 7;</code>
+     */
+    public io.grpc.coordinator.Coordinator.robotPose getEndPose() {
+      return endPose_ == null ? io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : endPose_;
+    }
+    /**
+     * <code>.gradlegRPC.robotPose endPose = 7;</code>
+     */
+    public io.grpc.coordinator.Coordinator.robotPoseOrBuilder getEndPoseOrBuilder() {
+      return getEndPose();
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 8;
     private volatile java.lang.Object timeStamp_;
     /**
      * <pre>
      * footPrint
      * </pre>
      *
-     * <code>string timeStamp = 7;</code>
+     * <code>string timeStamp = 8;</code>
      */
     public java.lang.String getTimeStamp() {
       java.lang.Object ref = timeStamp_;
@@ -4048,7 +4095,7 @@ public final class Coordinator {
      * footPrint
      * </pre>
      *
-     * <code>string timeStamp = 7;</code>
+     * <code>string timeStamp = 8;</code>
      */
     public com.google.protobuf.ByteString
         getTimeStampBytes() {
@@ -4064,58 +4111,58 @@ public final class Coordinator {
       }
     }
 
-    public static final int MAXACCEL_FIELD_NUMBER = 8;
+    public static final int MAXACCEL_FIELD_NUMBER = 9;
     private double maxAccel_;
     /**
-     * <code>double maxAccel = 8;</code>
+     * <code>double maxAccel = 9;</code>
      */
     public double getMaxAccel() {
       return maxAccel_;
     }
 
-    public static final int MAXVEL_FIELD_NUMBER = 9;
+    public static final int MAXVEL_FIELD_NUMBER = 10;
     private double maxVel_;
     /**
-     * <code>double maxVel = 9;</code>
+     * <code>double maxVel = 10;</code>
      */
     public double getMaxVel() {
       return maxVel_;
     }
 
-    public static final int TRACKINGPERIODINMILLIS_FIELD_NUMBER = 10;
+    public static final int TRACKINGPERIODINMILLIS_FIELD_NUMBER = 11;
     private double trackingPeriodInMillis_;
     /**
-     * <code>double trackingPeriodInMillis = 10;</code>
+     * <code>double trackingPeriodInMillis = 11;</code>
      */
     public double getTrackingPeriodInMillis() {
       return trackingPeriodInMillis_;
     }
 
-    public static final int MAKEFOOTPRINT_FIELD_NUMBER = 11;
+    public static final int MAKEFOOTPRINT_FIELD_NUMBER = 12;
     private io.grpc.coordinator.Coordinator.MakeFootPrint makeFootPrint_;
     /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
      */
     public boolean hasMakeFootPrint() {
       return makeFootPrint_ != null;
     }
     /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
      */
     public io.grpc.coordinator.Coordinator.MakeFootPrint getMakeFootPrint() {
       return makeFootPrint_ == null ? io.grpc.coordinator.Coordinator.MakeFootPrint.getDefaultInstance() : makeFootPrint_;
     }
     /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
      */
     public io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder getMakeFootPrintOrBuilder() {
       return getMakeFootPrint();
     }
 
-    public static final int POSESTEERING_FIELD_NUMBER = 12;
+    public static final int POSESTEERING_FIELD_NUMBER = 13;
     private com.google.protobuf.ByteString poseSteering_;
     /**
-     * <code>bytes poseSteering = 12;</code>
+     * <code>bytes poseSteering = 13;</code>
      */
     public com.google.protobuf.ByteString getPoseSteering() {
       return poseSteering_;
@@ -4150,26 +4197,29 @@ public final class Coordinator {
       if (port_ != 0) {
         output.writeInt32(5, port_);
       }
-      if (rpose_ != null) {
-        output.writeMessage(6, getRpose());
+      if (startPose_ != null) {
+        output.writeMessage(6, getStartPose());
+      }
+      if (endPose_ != null) {
+        output.writeMessage(7, getEndPose());
       }
       if (!getTimeStampBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, timeStamp_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, timeStamp_);
       }
       if (maxAccel_ != 0D) {
-        output.writeDouble(8, maxAccel_);
+        output.writeDouble(9, maxAccel_);
       }
       if (maxVel_ != 0D) {
-        output.writeDouble(9, maxVel_);
+        output.writeDouble(10, maxVel_);
       }
       if (trackingPeriodInMillis_ != 0D) {
-        output.writeDouble(10, trackingPeriodInMillis_);
+        output.writeDouble(11, trackingPeriodInMillis_);
       }
       if (makeFootPrint_ != null) {
-        output.writeMessage(11, getMakeFootPrint());
+        output.writeMessage(12, getMakeFootPrint());
       }
       if (!poseSteering_.isEmpty()) {
-        output.writeBytes(12, poseSteering_);
+        output.writeBytes(13, poseSteering_);
       }
       unknownFields.writeTo(output);
     }
@@ -4197,32 +4247,36 @@ public final class Coordinator {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, port_);
       }
-      if (rpose_ != null) {
+      if (startPose_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getRpose());
+          .computeMessageSize(6, getStartPose());
+      }
+      if (endPose_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getEndPose());
       }
       if (!getTimeStampBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, timeStamp_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, timeStamp_);
       }
       if (maxAccel_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, maxAccel_);
+          .computeDoubleSize(9, maxAccel_);
       }
       if (maxVel_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, maxVel_);
+          .computeDoubleSize(10, maxVel_);
       }
       if (trackingPeriodInMillis_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, trackingPeriodInMillis_);
+          .computeDoubleSize(11, trackingPeriodInMillis_);
       }
       if (makeFootPrint_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getMakeFootPrint());
+          .computeMessageSize(12, getMakeFootPrint());
       }
       if (!poseSteering_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(12, poseSteering_);
+          .computeBytesSize(13, poseSteering_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4250,10 +4304,15 @@ public final class Coordinator {
           .equals(other.getIP());
       result = result && (getPort()
           == other.getPort());
-      result = result && (hasRpose() == other.hasRpose());
-      if (hasRpose()) {
-        result = result && getRpose()
-            .equals(other.getRpose());
+      result = result && (hasStartPose() == other.hasStartPose());
+      if (hasStartPose()) {
+        result = result && getStartPose()
+            .equals(other.getStartPose());
+      }
+      result = result && (hasEndPose() == other.hasEndPose());
+      if (hasEndPose()) {
+        result = result && getEndPose()
+            .equals(other.getEndPose());
       }
       result = result && getTimeStamp()
           .equals(other.getTimeStamp());
@@ -4297,9 +4356,13 @@ public final class Coordinator {
       hash = (53 * hash) + getIP().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
       hash = (53 * hash) + getPort();
-      if (hasRpose()) {
-        hash = (37 * hash) + RPOSE_FIELD_NUMBER;
-        hash = (53 * hash) + getRpose().hashCode();
+      if (hasStartPose()) {
+        hash = (37 * hash) + STARTPOSE_FIELD_NUMBER;
+        hash = (53 * hash) + getStartPose().hashCode();
+      }
+      if (hasEndPose()) {
+        hash = (37 * hash) + ENDPOSE_FIELD_NUMBER;
+        hash = (53 * hash) + getEndPose().hashCode();
       }
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getTimeStamp().hashCode();
@@ -4461,11 +4524,17 @@ public final class Coordinator {
 
         port_ = 0;
 
-        if (rposeBuilder_ == null) {
-          rpose_ = null;
+        if (startPoseBuilder_ == null) {
+          startPose_ = null;
         } else {
-          rpose_ = null;
-          rposeBuilder_ = null;
+          startPose_ = null;
+          startPoseBuilder_ = null;
+        }
+        if (endPoseBuilder_ == null) {
+          endPose_ = null;
+        } else {
+          endPose_ = null;
+          endPoseBuilder_ = null;
         }
         timeStamp_ = "";
 
@@ -4514,10 +4583,15 @@ public final class Coordinator {
         result.type_ = type_;
         result.iP_ = iP_;
         result.port_ = port_;
-        if (rposeBuilder_ == null) {
-          result.rpose_ = rpose_;
+        if (startPoseBuilder_ == null) {
+          result.startPose_ = startPose_;
         } else {
-          result.rpose_ = rposeBuilder_.build();
+          result.startPose_ = startPoseBuilder_.build();
+        }
+        if (endPoseBuilder_ == null) {
+          result.endPose_ = endPose_;
+        } else {
+          result.endPose_ = endPoseBuilder_.build();
         }
         result.timeStamp_ = timeStamp_;
         result.maxAccel_ = maxAccel_;
@@ -4595,8 +4669,11 @@ public final class Coordinator {
         if (other.getPort() != 0) {
           setPort(other.getPort());
         }
-        if (other.hasRpose()) {
-          mergeRpose(other.getRpose());
+        if (other.hasStartPose()) {
+          mergeStartPose(other.getStartPose());
+        }
+        if (other.hasEndPose()) {
+          mergeEndPose(other.getEndPose());
         }
         if (!other.getTimeStamp().isEmpty()) {
           timeStamp_ = other.timeStamp_;
@@ -4905,121 +4982,238 @@ public final class Coordinator {
         return this;
       }
 
-      private io.grpc.coordinator.Coordinator.robotPose rpose_ = null;
+      private io.grpc.coordinator.Coordinator.robotPose startPose_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.grpc.coordinator.Coordinator.robotPose, io.grpc.coordinator.Coordinator.robotPose.Builder, io.grpc.coordinator.Coordinator.robotPoseOrBuilder> rposeBuilder_;
+          io.grpc.coordinator.Coordinator.robotPose, io.grpc.coordinator.Coordinator.robotPose.Builder, io.grpc.coordinator.Coordinator.robotPoseOrBuilder> startPoseBuilder_;
       /**
-       * <code>.gradlegRPC.robotPose rpose = 6;</code>
+       * <code>.gradlegRPC.robotPose startPose = 6;</code>
        */
-      public boolean hasRpose() {
-        return rposeBuilder_ != null || rpose_ != null;
+      public boolean hasStartPose() {
+        return startPoseBuilder_ != null || startPose_ != null;
       }
       /**
-       * <code>.gradlegRPC.robotPose rpose = 6;</code>
+       * <code>.gradlegRPC.robotPose startPose = 6;</code>
        */
-      public io.grpc.coordinator.Coordinator.robotPose getRpose() {
-        if (rposeBuilder_ == null) {
-          return rpose_ == null ? io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : rpose_;
+      public io.grpc.coordinator.Coordinator.robotPose getStartPose() {
+        if (startPoseBuilder_ == null) {
+          return startPose_ == null ? io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : startPose_;
         } else {
-          return rposeBuilder_.getMessage();
+          return startPoseBuilder_.getMessage();
         }
       }
       /**
-       * <code>.gradlegRPC.robotPose rpose = 6;</code>
+       * <code>.gradlegRPC.robotPose startPose = 6;</code>
        */
-      public Builder setRpose(io.grpc.coordinator.Coordinator.robotPose value) {
-        if (rposeBuilder_ == null) {
+      public Builder setStartPose(io.grpc.coordinator.Coordinator.robotPose value) {
+        if (startPoseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          rpose_ = value;
+          startPose_ = value;
           onChanged();
         } else {
-          rposeBuilder_.setMessage(value);
+          startPoseBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.gradlegRPC.robotPose rpose = 6;</code>
+       * <code>.gradlegRPC.robotPose startPose = 6;</code>
        */
-      public Builder setRpose(
+      public Builder setStartPose(
           io.grpc.coordinator.Coordinator.robotPose.Builder builderForValue) {
-        if (rposeBuilder_ == null) {
-          rpose_ = builderForValue.build();
+        if (startPoseBuilder_ == null) {
+          startPose_ = builderForValue.build();
           onChanged();
         } else {
-          rposeBuilder_.setMessage(builderForValue.build());
+          startPoseBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.gradlegRPC.robotPose rpose = 6;</code>
+       * <code>.gradlegRPC.robotPose startPose = 6;</code>
        */
-      public Builder mergeRpose(io.grpc.coordinator.Coordinator.robotPose value) {
-        if (rposeBuilder_ == null) {
-          if (rpose_ != null) {
-            rpose_ =
-              io.grpc.coordinator.Coordinator.robotPose.newBuilder(rpose_).mergeFrom(value).buildPartial();
+      public Builder mergeStartPose(io.grpc.coordinator.Coordinator.robotPose value) {
+        if (startPoseBuilder_ == null) {
+          if (startPose_ != null) {
+            startPose_ =
+              io.grpc.coordinator.Coordinator.robotPose.newBuilder(startPose_).mergeFrom(value).buildPartial();
           } else {
-            rpose_ = value;
+            startPose_ = value;
           }
           onChanged();
         } else {
-          rposeBuilder_.mergeFrom(value);
+          startPoseBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.gradlegRPC.robotPose rpose = 6;</code>
+       * <code>.gradlegRPC.robotPose startPose = 6;</code>
        */
-      public Builder clearRpose() {
-        if (rposeBuilder_ == null) {
-          rpose_ = null;
+      public Builder clearStartPose() {
+        if (startPoseBuilder_ == null) {
+          startPose_ = null;
           onChanged();
         } else {
-          rpose_ = null;
-          rposeBuilder_ = null;
+          startPose_ = null;
+          startPoseBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.gradlegRPC.robotPose rpose = 6;</code>
+       * <code>.gradlegRPC.robotPose startPose = 6;</code>
        */
-      public io.grpc.coordinator.Coordinator.robotPose.Builder getRposeBuilder() {
+      public io.grpc.coordinator.Coordinator.robotPose.Builder getStartPoseBuilder() {
         
         onChanged();
-        return getRposeFieldBuilder().getBuilder();
+        return getStartPoseFieldBuilder().getBuilder();
       }
       /**
-       * <code>.gradlegRPC.robotPose rpose = 6;</code>
+       * <code>.gradlegRPC.robotPose startPose = 6;</code>
        */
-      public io.grpc.coordinator.Coordinator.robotPoseOrBuilder getRposeOrBuilder() {
-        if (rposeBuilder_ != null) {
-          return rposeBuilder_.getMessageOrBuilder();
+      public io.grpc.coordinator.Coordinator.robotPoseOrBuilder getStartPoseOrBuilder() {
+        if (startPoseBuilder_ != null) {
+          return startPoseBuilder_.getMessageOrBuilder();
         } else {
-          return rpose_ == null ?
-              io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : rpose_;
+          return startPose_ == null ?
+              io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : startPose_;
         }
       }
       /**
-       * <code>.gradlegRPC.robotPose rpose = 6;</code>
+       * <code>.gradlegRPC.robotPose startPose = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.grpc.coordinator.Coordinator.robotPose, io.grpc.coordinator.Coordinator.robotPose.Builder, io.grpc.coordinator.Coordinator.robotPoseOrBuilder> 
-          getRposeFieldBuilder() {
-        if (rposeBuilder_ == null) {
-          rposeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getStartPoseFieldBuilder() {
+        if (startPoseBuilder_ == null) {
+          startPoseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               io.grpc.coordinator.Coordinator.robotPose, io.grpc.coordinator.Coordinator.robotPose.Builder, io.grpc.coordinator.Coordinator.robotPoseOrBuilder>(
-                  getRpose(),
+                  getStartPose(),
                   getParentForChildren(),
                   isClean());
-          rpose_ = null;
+          startPose_ = null;
         }
-        return rposeBuilder_;
+        return startPoseBuilder_;
+      }
+
+      private io.grpc.coordinator.Coordinator.robotPose endPose_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.grpc.coordinator.Coordinator.robotPose, io.grpc.coordinator.Coordinator.robotPose.Builder, io.grpc.coordinator.Coordinator.robotPoseOrBuilder> endPoseBuilder_;
+      /**
+       * <code>.gradlegRPC.robotPose endPose = 7;</code>
+       */
+      public boolean hasEndPose() {
+        return endPoseBuilder_ != null || endPose_ != null;
+      }
+      /**
+       * <code>.gradlegRPC.robotPose endPose = 7;</code>
+       */
+      public io.grpc.coordinator.Coordinator.robotPose getEndPose() {
+        if (endPoseBuilder_ == null) {
+          return endPose_ == null ? io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : endPose_;
+        } else {
+          return endPoseBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.gradlegRPC.robotPose endPose = 7;</code>
+       */
+      public Builder setEndPose(io.grpc.coordinator.Coordinator.robotPose value) {
+        if (endPoseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endPose_ = value;
+          onChanged();
+        } else {
+          endPoseBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.gradlegRPC.robotPose endPose = 7;</code>
+       */
+      public Builder setEndPose(
+          io.grpc.coordinator.Coordinator.robotPose.Builder builderForValue) {
+        if (endPoseBuilder_ == null) {
+          endPose_ = builderForValue.build();
+          onChanged();
+        } else {
+          endPoseBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.gradlegRPC.robotPose endPose = 7;</code>
+       */
+      public Builder mergeEndPose(io.grpc.coordinator.Coordinator.robotPose value) {
+        if (endPoseBuilder_ == null) {
+          if (endPose_ != null) {
+            endPose_ =
+              io.grpc.coordinator.Coordinator.robotPose.newBuilder(endPose_).mergeFrom(value).buildPartial();
+          } else {
+            endPose_ = value;
+          }
+          onChanged();
+        } else {
+          endPoseBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.gradlegRPC.robotPose endPose = 7;</code>
+       */
+      public Builder clearEndPose() {
+        if (endPoseBuilder_ == null) {
+          endPose_ = null;
+          onChanged();
+        } else {
+          endPose_ = null;
+          endPoseBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.gradlegRPC.robotPose endPose = 7;</code>
+       */
+      public io.grpc.coordinator.Coordinator.robotPose.Builder getEndPoseBuilder() {
+        
+        onChanged();
+        return getEndPoseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.gradlegRPC.robotPose endPose = 7;</code>
+       */
+      public io.grpc.coordinator.Coordinator.robotPoseOrBuilder getEndPoseOrBuilder() {
+        if (endPoseBuilder_ != null) {
+          return endPoseBuilder_.getMessageOrBuilder();
+        } else {
+          return endPose_ == null ?
+              io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : endPose_;
+        }
+      }
+      /**
+       * <code>.gradlegRPC.robotPose endPose = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.grpc.coordinator.Coordinator.robotPose, io.grpc.coordinator.Coordinator.robotPose.Builder, io.grpc.coordinator.Coordinator.robotPoseOrBuilder> 
+          getEndPoseFieldBuilder() {
+        if (endPoseBuilder_ == null) {
+          endPoseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.grpc.coordinator.Coordinator.robotPose, io.grpc.coordinator.Coordinator.robotPose.Builder, io.grpc.coordinator.Coordinator.robotPoseOrBuilder>(
+                  getEndPose(),
+                  getParentForChildren(),
+                  isClean());
+          endPose_ = null;
+        }
+        return endPoseBuilder_;
       }
 
       private java.lang.Object timeStamp_ = "";
@@ -5028,7 +5222,7 @@ public final class Coordinator {
        * footPrint
        * </pre>
        *
-       * <code>string timeStamp = 7;</code>
+       * <code>string timeStamp = 8;</code>
        */
       public java.lang.String getTimeStamp() {
         java.lang.Object ref = timeStamp_;
@@ -5047,7 +5241,7 @@ public final class Coordinator {
        * footPrint
        * </pre>
        *
-       * <code>string timeStamp = 7;</code>
+       * <code>string timeStamp = 8;</code>
        */
       public com.google.protobuf.ByteString
           getTimeStampBytes() {
@@ -5067,7 +5261,7 @@ public final class Coordinator {
        * footPrint
        * </pre>
        *
-       * <code>string timeStamp = 7;</code>
+       * <code>string timeStamp = 8;</code>
        */
       public Builder setTimeStamp(
           java.lang.String value) {
@@ -5084,7 +5278,7 @@ public final class Coordinator {
        * footPrint
        * </pre>
        *
-       * <code>string timeStamp = 7;</code>
+       * <code>string timeStamp = 8;</code>
        */
       public Builder clearTimeStamp() {
         
@@ -5097,7 +5291,7 @@ public final class Coordinator {
        * footPrint
        * </pre>
        *
-       * <code>string timeStamp = 7;</code>
+       * <code>string timeStamp = 8;</code>
        */
       public Builder setTimeStampBytes(
           com.google.protobuf.ByteString value) {
@@ -5113,13 +5307,13 @@ public final class Coordinator {
 
       private double maxAccel_ ;
       /**
-       * <code>double maxAccel = 8;</code>
+       * <code>double maxAccel = 9;</code>
        */
       public double getMaxAccel() {
         return maxAccel_;
       }
       /**
-       * <code>double maxAccel = 8;</code>
+       * <code>double maxAccel = 9;</code>
        */
       public Builder setMaxAccel(double value) {
         
@@ -5128,7 +5322,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double maxAccel = 8;</code>
+       * <code>double maxAccel = 9;</code>
        */
       public Builder clearMaxAccel() {
         
@@ -5139,13 +5333,13 @@ public final class Coordinator {
 
       private double maxVel_ ;
       /**
-       * <code>double maxVel = 9;</code>
+       * <code>double maxVel = 10;</code>
        */
       public double getMaxVel() {
         return maxVel_;
       }
       /**
-       * <code>double maxVel = 9;</code>
+       * <code>double maxVel = 10;</code>
        */
       public Builder setMaxVel(double value) {
         
@@ -5154,7 +5348,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double maxVel = 9;</code>
+       * <code>double maxVel = 10;</code>
        */
       public Builder clearMaxVel() {
         
@@ -5165,13 +5359,13 @@ public final class Coordinator {
 
       private double trackingPeriodInMillis_ ;
       /**
-       * <code>double trackingPeriodInMillis = 10;</code>
+       * <code>double trackingPeriodInMillis = 11;</code>
        */
       public double getTrackingPeriodInMillis() {
         return trackingPeriodInMillis_;
       }
       /**
-       * <code>double trackingPeriodInMillis = 10;</code>
+       * <code>double trackingPeriodInMillis = 11;</code>
        */
       public Builder setTrackingPeriodInMillis(double value) {
         
@@ -5180,7 +5374,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double trackingPeriodInMillis = 10;</code>
+       * <code>double trackingPeriodInMillis = 11;</code>
        */
       public Builder clearTrackingPeriodInMillis() {
         
@@ -5193,13 +5387,13 @@ public final class Coordinator {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.grpc.coordinator.Coordinator.MakeFootPrint, io.grpc.coordinator.Coordinator.MakeFootPrint.Builder, io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder> makeFootPrintBuilder_;
       /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
        */
       public boolean hasMakeFootPrint() {
         return makeFootPrintBuilder_ != null || makeFootPrint_ != null;
       }
       /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
        */
       public io.grpc.coordinator.Coordinator.MakeFootPrint getMakeFootPrint() {
         if (makeFootPrintBuilder_ == null) {
@@ -5209,7 +5403,7 @@ public final class Coordinator {
         }
       }
       /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
        */
       public Builder setMakeFootPrint(io.grpc.coordinator.Coordinator.MakeFootPrint value) {
         if (makeFootPrintBuilder_ == null) {
@@ -5225,7 +5419,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
        */
       public Builder setMakeFootPrint(
           io.grpc.coordinator.Coordinator.MakeFootPrint.Builder builderForValue) {
@@ -5239,7 +5433,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
        */
       public Builder mergeMakeFootPrint(io.grpc.coordinator.Coordinator.MakeFootPrint value) {
         if (makeFootPrintBuilder_ == null) {
@@ -5257,7 +5451,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
        */
       public Builder clearMakeFootPrint() {
         if (makeFootPrintBuilder_ == null) {
@@ -5271,7 +5465,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
        */
       public io.grpc.coordinator.Coordinator.MakeFootPrint.Builder getMakeFootPrintBuilder() {
         
@@ -5279,7 +5473,7 @@ public final class Coordinator {
         return getMakeFootPrintFieldBuilder().getBuilder();
       }
       /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
        */
       public io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder getMakeFootPrintOrBuilder() {
         if (makeFootPrintBuilder_ != null) {
@@ -5290,7 +5484,7 @@ public final class Coordinator {
         }
       }
       /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 11;</code>
+       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.grpc.coordinator.Coordinator.MakeFootPrint, io.grpc.coordinator.Coordinator.MakeFootPrint.Builder, io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder> 
@@ -5308,13 +5502,13 @@ public final class Coordinator {
 
       private com.google.protobuf.ByteString poseSteering_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes poseSteering = 12;</code>
+       * <code>bytes poseSteering = 13;</code>
        */
       public com.google.protobuf.ByteString getPoseSteering() {
         return poseSteering_;
       }
       /**
-       * <code>bytes poseSteering = 12;</code>
+       * <code>bytes poseSteering = 13;</code>
        */
       public Builder setPoseSteering(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5326,7 +5520,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>bytes poseSteering = 12;</code>
+       * <code>bytes poseSteering = 13;</code>
        */
       public Builder clearPoseSteering() {
         
@@ -12785,53 +12979,54 @@ public final class Coordinator {
       "rdinatorGetCriticalPointRequestMessage\022\013" +
       "\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"C\n*coordina" +
       "torGetCriticalPointResponseMessage\022\025\n\rcr" +
-      "iticalPoint\030\001 \001(\005\"\231\002\n\016robotsGreeting\022\013\n\003" +
+      "iticalPoint\030\001 \001(\005\"\305\002\n\016robotsGreeting\022\013\n\003" +
       "kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\022\014\n\004type\030\003 \001(\t" +
-      "\022\n\n\002IP\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\022$\n\005rpose\030\006 \001(" +
-      "\0132\025.gradlegRPC.robotPose\022\021\n\ttimeStamp\030\007 " +
-      "\001(\t\022\020\n\010maxAccel\030\010 \001(\001\022\016\n\006maxVel\030\t \001(\001\022\036\n" +
-      "\026trackingPeriodInMillis\030\n \001(\001\0220\n\rmakeFoo" +
-      "tPrint\030\013 \001(\0132\031.gradlegRPC.MakeFootPrint\022" +
-      "\024\n\014poseSteering\030\014 \001(\014\"V\n\trobotPose\022\t\n\001x\030" +
-      "\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\022\014\n\004roll\030\004 \001(" +
-      "\001\022\r\n\005pitch\030\005 \001(\001\022\013\n\003yaw\030\006 \001(\001\"{\n\rMakeFoo" +
-      "tPrint\022\017\n\007centerX\030\001 \001(\005\022\017\n\007centerY\030\002 \001(\005" +
-      "\022\020\n\010minVerts\030\003 \001(\005\022\020\n\010maxVerts\030\004 \001(\005\022\021\n\t" +
-      "minRadius\030\005 \001(\001\022\021\n\tmaxRadius\030\006 \001(\001\"<\n\025ro" +
-      "botgreetingResponse\022\014\n\004name\030\001 \001(\t\022\025\n\rnum" +
-      "ofReplicas\030\002 \001(\005\"7\n\026getCurrentDependenci" +
-      "es\022\013\n\003kan\030\001 \001(\t\022\020\n\010depBytes\030\002 \001(\014\"\034\n\014non" +
-      "eResponse\022\014\n\004none\030\001 \001(\t\"*\n\ntecrequest\022\013\n" +
-      "\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"7\n\013tecrespon" +
-      "se\022\026\n\016stringresponse\030\001 \001(\t\022\020\n\010tecStuff\030\002" +
-      " \001(\014\"\032\n\013timerequest\022\013\n\003kan\030\001 \001(\t\"#\n\014time" +
-      "response\022\023\n\013currentTime\030\001 \001(\004\" \n\021visuali" +
-      "zerrequest\022\013\n\003kan\030\001 \001(\t\"(\n\022visualizerres" +
-      "ponse\022\022\n\nvisualizer\030\001 \001(\014\"8\n\rallenInterv" +
-      "al\022\013\n\003kan\030\001 \001(\t\022\032\n\022allenIntervalBytes\030\002 " +
-      "\001(\0142\344\006\n\022CoordinatorService\022[\n\026coordinato" +
-      "rrobotreport\022\036.gradlegRPC.requestrobotre" +
-      "port\032\037.gradlegRPC.responserobotreport\"\000\022" +
-      "\211\001\n\030coordinatorcriticalpoint\0225.gradlegRP" +
-      "C.coordinatorGetCriticalPointRequestMess" +
-      "age\0326.gradlegRPC.coordinatorGetCriticalP" +
-      "ointResponseMessage\022W\n\027coordinatordepend" +
-      "encies\022\".gradlegRPC.getCurrentDependenci" +
-      "es\032\030.gradlegRPC.noneResponse\022W\n\026coordina" +
-      "torgetGreeting\022\032.gradlegRPC.robotsGreeti" +
-      "ng\032!.gradlegRPC.robotgreetingResponse\022I\n" +
-      "\026coordinatorgetTecStuff\022\026.gradlegRPC.tec" +
-      "request\032\027.gradlegRPC.tecresponse\022N\n\031coor" +
-      "dinatorgetCurrentTime\022\027.gradlegRPC.timer" +
-      "equest\032\030.gradlegRPC.timeresponse\022Y\n\030coor" +
-      "dinatorgetVisualizer\022\035.gradlegRPC.visual" +
-      "izerrequest\032\036.gradlegRPC.visualizerrespo" +
-      "nse\022R\n\033coordinatorgetAllenInterval\022\031.gra" +
-      "dlegRPC.allenInterval\032\030.gradlegRPC.noneR" +
-      "esponse\022i\n coordinatorgetRobotReportRequ" +
-      "est\022%.gradlegRPC.trackerRobotReportReque" +
-      "st\032\036.gradlegRPC.requestrobotreportB\025\n\023io" +
-      ".grpc.coordinatorb\006proto3"
+      "\022\n\n\002IP\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\022(\n\tstartPose\030" +
+      "\006 \001(\0132\025.gradlegRPC.robotPose\022&\n\007endPose\030" +
+      "\007 \001(\0132\025.gradlegRPC.robotPose\022\021\n\ttimeStam" +
+      "p\030\010 \001(\t\022\020\n\010maxAccel\030\t \001(\001\022\016\n\006maxVel\030\n \001(" +
+      "\001\022\036\n\026trackingPeriodInMillis\030\013 \001(\001\0220\n\rmak" +
+      "eFootPrint\030\014 \001(\0132\031.gradlegRPC.MakeFootPr" +
+      "int\022\024\n\014poseSteering\030\r \001(\014\"V\n\trobotPose\022\t" +
+      "\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\022\014\n\004roll\030" +
+      "\004 \001(\001\022\r\n\005pitch\030\005 \001(\001\022\013\n\003yaw\030\006 \001(\001\"{\n\rMak" +
+      "eFootPrint\022\017\n\007centerX\030\001 \001(\005\022\017\n\007centerY\030\002" +
+      " \001(\005\022\020\n\010minVerts\030\003 \001(\005\022\020\n\010maxVerts\030\004 \001(\005" +
+      "\022\021\n\tminRadius\030\005 \001(\001\022\021\n\tmaxRadius\030\006 \001(\001\"<" +
+      "\n\025robotgreetingResponse\022\014\n\004name\030\001 \001(\t\022\025\n" +
+      "\rnumofReplicas\030\002 \001(\005\"7\n\026getCurrentDepend" +
+      "encies\022\013\n\003kan\030\001 \001(\t\022\020\n\010depBytes\030\002 \001(\014\"\034\n" +
+      "\014noneResponse\022\014\n\004none\030\001 \001(\t\"*\n\ntecreques" +
+      "t\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"7\n\013tecre" +
+      "sponse\022\026\n\016stringresponse\030\001 \001(\t\022\020\n\010tecStu" +
+      "ff\030\002 \001(\014\"\032\n\013timerequest\022\013\n\003kan\030\001 \001(\t\"#\n\014" +
+      "timeresponse\022\023\n\013currentTime\030\001 \001(\004\" \n\021vis" +
+      "ualizerrequest\022\013\n\003kan\030\001 \001(\t\"(\n\022visualize" +
+      "rresponse\022\022\n\nvisualizer\030\001 \001(\014\"8\n\rallenIn" +
+      "terval\022\013\n\003kan\030\001 \001(\t\022\032\n\022allenIntervalByte" +
+      "s\030\002 \001(\0142\344\006\n\022CoordinatorService\022[\n\026coordi" +
+      "natorrobotreport\022\036.gradlegRPC.requestrob" +
+      "otreport\032\037.gradlegRPC.responserobotrepor" +
+      "t\"\000\022\211\001\n\030coordinatorcriticalpoint\0225.gradl" +
+      "egRPC.coordinatorGetCriticalPointRequest" +
+      "Message\0326.gradlegRPC.coordinatorGetCriti" +
+      "calPointResponseMessage\022W\n\027coordinatorde" +
+      "pendencies\022\".gradlegRPC.getCurrentDepend" +
+      "encies\032\030.gradlegRPC.noneResponse\022W\n\026coor" +
+      "dinatorgetGreeting\022\032.gradlegRPC.robotsGr" +
+      "eeting\032!.gradlegRPC.robotgreetingRespons" +
+      "e\022I\n\026coordinatorgetTecStuff\022\026.gradlegRPC" +
+      ".tecrequest\032\027.gradlegRPC.tecresponse\022N\n\031" +
+      "coordinatorgetCurrentTime\022\027.gradlegRPC.t" +
+      "imerequest\032\030.gradlegRPC.timeresponse\022Y\n\030" +
+      "coordinatorgetVisualizer\022\035.gradlegRPC.vi" +
+      "sualizerrequest\032\036.gradlegRPC.visualizerr" +
+      "esponse\022R\n\033coordinatorgetAllenInterval\022\031" +
+      ".gradlegRPC.allenInterval\032\030.gradlegRPC.n" +
+      "oneResponse\022i\n coordinatorgetRobotReport" +
+      "Request\022%.gradlegRPC.trackerRobotReportR" +
+      "equest\032\036.gradlegRPC.requestrobotreportB\025" +
+      "\n\023io.grpc.coordinatorb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12881,7 +13076,7 @@ public final class Coordinator {
     internal_static_gradlegRPC_robotsGreeting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotsGreeting_descriptor,
-        new java.lang.String[] { "Kan", "RobotID", "Type", "IP", "Port", "Rpose", "TimeStamp", "MaxAccel", "MaxVel", "TrackingPeriodInMillis", "MakeFootPrint", "PoseSteering", });
+        new java.lang.String[] { "Kan", "RobotID", "Type", "IP", "Port", "StartPose", "EndPose", "TimeStamp", "MaxAccel", "MaxVel", "TrackingPeriodInMillis", "MakeFootPrint", "PoseSteering", });
     internal_static_gradlegRPC_robotPose_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_gradlegRPC_robotPose_fieldAccessorTable = new

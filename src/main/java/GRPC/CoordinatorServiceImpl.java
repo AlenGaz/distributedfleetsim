@@ -62,8 +62,10 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             String _type= request.getType();
             String _ip= request.getIP();
             int _port= request.getPort();
-            Pose _pose = new Pose(request.getRpose().getX(),request.getRpose().getY(),request.getRpose().getZ(),
-                                  request.getRpose().getRoll(), request.getRpose().getPitch(),request.getRpose().getYaw());
+            Pose _startPose = new Pose(request.getStartPose().getX(),request.getStartPose().getY(),request.getStartPose().getZ(),
+                                  request.getStartPose().getRoll(), request.getStartPose().getPitch(),request.getStartPose().getYaw());
+            Pose _endPose = new Pose(request.getEndPose().getX(),request.getEndPose().getY(),request.getEndPose().getZ(),
+                    request.getEndPose().getRoll(), request.getEndPose().getPitch(),request.getEndPose().getYaw());
             String _timeStamp = request.getTimeStamp();
             double _maxAccel = request.getMaxAccel();
             double _maxVel = request.getMaxVel();
@@ -83,7 +85,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             }
 
 
-            clientConnection _clientConnection = new clientConnection(_type,_ip,_port,_pose,_timeStamp,_maxAccel,_maxVel,_trackingPeriod,_footprint,_poseSteering);
+            clientConnection _clientConnection = new clientConnection(_type,_ip,_port,_startPose,_endPose,_timeStamp,_maxAccel,_maxVel,_trackingPeriod,_footprint,_poseSteering);
             robotIDtoClientConnection.put(_robotID, _clientConnection);
 
             System.out.println("Got ClientConnections timeStamp: " + robotIDtoClientConnection.get(1).getTimeStamp());

@@ -9,7 +9,8 @@ public class clientConnection {
     private String type;
     private String ip;
     private int port;
-    private Pose rpose;
+    private Pose startPose;
+    private Pose endPose;
     private String timeStamp;
     private double maxAccel;
     private double maxVel;
@@ -17,7 +18,7 @@ public class clientConnection {
     private MakeFootPrint footPrint;
     private PoseSteering[] poseSteerings;
 
-    public clientConnection(String type, String ip, int port, Pose pose,
+    public clientConnection(String type, String ip, int port, Pose startPose, Pose endPose,
                             String timeStamp, double maxAccel, double maxVel,
                             double trackingPeriodInMillis, MakeFootPrint footPrint, PoseSteering[] poseSteering) {
         this.setType(type);
@@ -25,6 +26,8 @@ public class clientConnection {
         this.setTimeStamp(timeStamp);
         this.setMaxAccel(maxAccel);
         this.setMaxVel(maxVel);
+        this.setStartPose(startPose);
+        this.setEndPose(endPose);
         this.setTrackingPeriodInMillis(trackingPeriodInMillis);
         this.setFootPrint(footPrint);
         this.setPoseSteerings(poseSteering);
@@ -56,13 +59,7 @@ public class clientConnection {
         this.port = port;
     }
 
-    public Pose getRpose() {
-        return rpose;
-    }
 
-    public void setRpose(Pose rpose) {
-        this.rpose = rpose;
-    }
 
     public String getTimeStamp() {
         return timeStamp;
@@ -110,5 +107,21 @@ public class clientConnection {
 
     public void setPoseSteerings(PoseSteering[] poseSteerings) {
         this.poseSteerings = poseSteerings;
+    }
+
+    public Pose getStartPose() {
+        return startPose;
+    }
+
+    public void setStartPose(Pose startPose) {
+        this.startPose = startPose;
+    }
+
+    public Pose getEndPose() {
+        return endPose;
+    }
+
+    public void setEndPose(Pose endPose) {
+        this.endPose = endPose;
     }
 }

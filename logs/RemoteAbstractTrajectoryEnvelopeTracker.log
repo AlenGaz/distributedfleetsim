@@ -1,2 +1,5 @@
-1619179749970@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
-1619179751024@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1619437261855@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1619437262042@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1619437262159@[RemoteAbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((8.2000, 2.2000, 5.4141))...
+1619437262160@[RemoteAbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((8.2000, 2.2000, 5.4141))
+1619437264695@[RemoteAbstractTrajectoryEnvelopeTracker] (waiting for Robot1's tracker to come online)

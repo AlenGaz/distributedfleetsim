@@ -19,6 +19,7 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	private Thread th = null;
 	private RobotReport robotReport;
 	private boolean useInternalCPs = true;
+	public RemoteAbstractTrajectoryEnvelopeCoordinator tec;
 	
 	/**
 	 * Create a new {@link TrajectoryEnvelopeTrackerLight} to track a given {@link TrajectoryEnvelope},
@@ -28,19 +29,23 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 * @param te The {@link TrajectoryEnvelope} to track.
 	 * @param temporalResolution The temporal unit of measure in which the period is represented.
 	 * @param // solver The {@link TrajectoryEnvelopeSolver} to which temporal constraints will be posted.
-	 * @param trackingPeriodInMillis The tracking period.
+	 * @param // trackingPeriodInMillis The tracking period.
 	 * @param cb An optional callback function.
 	 */
 
-	public TrajectoryEnvelopeTrackerLight(TrajectoryEnvelope te, int timeStep, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
-		//super(te, temporalResolution, timeStep, cb);
-		//this.th = new Thread((Runnable) this, "Parking tracker " + te.getComponent());
+	public TrajectoryEnvelopeTrackerLight(RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrajectoryEnvelope te, int timeStep, double temporalResolution, TrackingCallback cb) {
+		super(te, temporalResolution, timeStep, cb);
+		this.tec = tec;
+		//this.th = new Thread((Runnable) this, "Light tracker " + te.getComponent());
 		//this.th.start();
 	}
 
-
 	@Override
-	protected void startMonitoringThread() {}
+	public long getCurrentTimeInMillis(){
+		System.out.println("[TrajectoryEnvelopeTrackerLight] .. inside getCurrentTimeInMillis()");
+		return tec.getCurrentTimeInMillis();
+	}
+
 
 
 	/**
@@ -59,7 +64,7 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 */
 	public void setCriticalPoint(int criticalPoint) {
 		//call your service to set the critical point
-		System.out.println("in CP()");
+		System.out.println("[Trajectory Light] in the setCriticalPoint method");
 	}
 
 	/**
