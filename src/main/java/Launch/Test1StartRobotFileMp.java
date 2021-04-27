@@ -157,6 +157,11 @@ public class Test1StartRobotFileMp {
             }
 
             @Override
+            public RobotReport getRobotReport(int robotID) {
+                return null;
+            }
+
+            @Override
             public long getCurrentTimeInMillis() {
                 return 0;
             }

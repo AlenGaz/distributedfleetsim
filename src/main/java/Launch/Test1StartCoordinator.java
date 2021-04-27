@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import CoordinatorPackage.containers.MakeFootPrint;
 import GRPC.CoordinatorServiceImpl;
 import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.Polygon;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import se.oru.coordination.coordination_oru.*;
@@ -16,6 +17,7 @@ import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPla
 import se.oru.coordination.coordination_oru.util.BrowserVisualization;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import se.oru.coordination.coordination_oru.util.Missions;
 
@@ -38,6 +40,10 @@ public class Test1StartCoordinator {
 		//(FIXME we don't need to communicate the max acceleration and velocity, which will be passed while greeting).
 		final RemoteTrajectoryEnvelopeCoordinatorSimulation tec = new RemoteTrajectoryEnvelopeCoordinatorSimulation();
 
+		// V Below to make a setup in AbstractTrajectoryEnvelopeCoordinator so it has instance of the service implemnent..
+		CoordinatorServiceImpl coordinatorServiceImpl = new CoordinatorServiceImpl(tec);
+		tec.setupCoordinationServer(coordinatorServiceImpl);
+
 		//Provide a heuristic (here, closest to critical section goes first)
 		tec.addComparator(new Comparator<RobotAtCriticalSection>() {
 			@Override
@@ -48,10 +54,6 @@ public class Test1StartCoordinator {
 				return ((cs.getTe1Start() - robotReport1.getPathIndex()) - (cs.getTe2Start() - robotReport2.getPathIndex()));
 			}
 		});
-
-		// V Below to make a setup in AbstractTrajectoryEnvelopeCoordinator so it has instance of the service implemnent..
-		CoordinatorServiceImpl coordinatorServiceImpl = new CoordinatorServiceImpl(tec);
-		tec.setupCoordinationServer(coordinatorServiceImpl);
 
 		//Define a network with uncertainties (see Mannucci et al., 2019)
 		NetworkConfiguration.setDelays(0, 0);
@@ -70,7 +72,7 @@ public class Test1StartCoordinator {
 		tec.startInference();
 
 		//Avoid deadlocks via global re-ordering
-		//tec.setBreakDeadlocks(true, false, false);
+		tec.setBreakDeadlocks(true, false, false);
 
 		//Note: we need to pass and read a file containing the sequence of goals or missions to robots.
 		//see the {@Missions} class.
@@ -90,8 +92,6 @@ public class Test1StartCoordinator {
 		}
 
 		System.out.println("Server started at port: " + server.getPort());
-
-
 
 
 		//3. SET THE SERVER IN THE COORDINATOR (now both the classes can access each other members)
@@ -119,33 +119,6 @@ public class Test1StartCoordinator {
 				viz.setInitialTransform(18, 35, 20);
 				tec.setVisualization(viz);
 
-				//Example of how you can add extra info Strings to the visualization of robot status
-				TrackingCallback cb = new TrackingCallback(null) {
-
-					@Override
-					public void onTrackingStart() { }
-
-					@Override
-					public void onTrackingFinished() { }
-
-					@Override
-					public String[] onPositionUpdate() {
-						return new String[] {"a","b","c"};
-					}
-
-					@Override
-					public void onNewGroundEnvelope() { }
-
-					@Override
-					public void beforeTrackingStart() { }
-
-					@Override
-					public void beforeTrackingFinished() { }
-				};
-				tec.addTrackingCallback(1, cb);
-				//tec.addTrackingCallback(2, cb);
-				//tec.addTrackingCallback(3, cb);
-
 				TimeUnit.SECONDS.sleep(2);
 
 				Mission m = new Mission(1, coordinatorServiceImpl.robotIDtoClientConnection.get(1).getPoseSteerings());
@@ -155,6 +128,8 @@ public class Test1StartCoordinator {
 
 				Pose testpose = new Pose(8, 8, 0 ,3 ,0 ,0);
 
+
+				//tec.placeRobot(1, testpose);
 				tec.placeRobot(1,coordinatorServiceImpl.robotIDtoClientConnection.get(1).getStartPose());
 				tec.addMissions(m);
 
@@ -163,6 +138,11 @@ public class Test1StartCoordinator {
 
 
 				dispatched = true;
+
+				TimeUnit.SECONDS.sleep(2);
+
+				//tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(1), coordinatorServiceImpl.robotIDtoRobotReport.get(1), "Yes");
+
 
 			}
 

@@ -3,32 +3,35 @@ package GRPC;
 import CoordinatorPackage.RemoteAbstractTrajectoryEnvelopeCoordinator;
 import CoordinatorPackage.containers.tecStuff;
 import CoordinatorPackage.containers.MakeFootPrint;
+import Launch.Test1StartCoordinator;
 import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.StatusRuntimeException;
 import io.grpc.coordinator.Coordinator;
 import io.grpc.coordinator.CoordinatorServiceGrpc;
 import io.grpc.fleetClients.FleetClientsServiceGrpc;
-import io.grpc.fleetClients.Fleetclients;
 import io.grpc.stub.StreamObserver;
 import org.metacsp.multi.allenInterval.AllenIntervalConstraint;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
+import com.vividsolutions.jts.geom.Polygon;
+
+import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import se.oru.coordination.coordination_oru.*;
 
 
+import java.awt.*;
 import java.io.*;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.logging.Level;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-import java.util.stream.Stream;
 
 public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorServiceImplBase {
 
     private static final Logger logger = Logger.getLogger(CoordinatorServiceImpl.class.getName());
     private final FleetClientsServiceGrpc.FleetClientsServiceBlockingStub blockingStubClient;
+
     public HashMap<Integer, RobotReport> robotIDtoRobotReport = new HashMap<Integer, RobotReport>();
     public HashMap<Integer, clientConnection> robotIDtoClientConnection = new HashMap<Integer,clientConnection>();
 
@@ -49,7 +52,6 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
         this.tec = tec;
         blockingStubClient = FleetClientsServiceGrpc.newBlockingStub(fleetServiceChannel);
-
     }
 
 
@@ -121,7 +123,10 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             Pose _pose = new Pose(request.getX(), request.getY(),request.getZ(), request.getRoll(),request.getPitch(),request.getYaw());
             RobotReport rR = new RobotReport(_robotID, _pose, request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
 
+
+            //System.out.println("[CoordinatorServiceImpl] got robotReport with report being: " + rR);
             robotIDtoRobotReport.put(_robotID,rR);
+
 
         }
 
@@ -182,34 +187,6 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
     }
 
-
-    public RobotReport makeRobotReportRequest(String myreq, int robotID) {
-        Fleetclients.robotReportRequest request = Fleetclients.robotReportRequest.newBuilder().setKan(myreq).setRobotID(robotID).build();
-
-        RobotReport rR = null;
-        Fleetclients.robotReportResponse response = null;
-
-
-        try {
-            //TODO stoops before blocking stub (no response)
-
-            response = blockingStubClient.grobotReport(request);
-
-
-            int _robotID = 0;
-            _robotID = request.getRobotID();
-            Pose _pose = new Pose(response.getX(), response.getY(),response.getZ(), response.getRoll(),response.getPitch(),response.getYaw());
-            rR = new RobotReport(_robotID, _pose, response.getPathIndex(),response.getVelocity(),response.getDistanceTraveled(),response.getCriticalPoint());
-
-            robotIDtoRobotReport.put(_robotID,rR);
-        }
-        catch(StatusRuntimeException e){
-            logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
-
-        }
-
-        return rR;
-    }
 
 
     public void coordinatordependencies(Coordinator.getCurrentDependencies request,
@@ -327,7 +304,6 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
         }
     }
 
-
     public void coordinatorgetRobotReportRequest(Coordinator.trackerRobotReportRequest request,
                                                  StreamObserver<Coordinator.requestrobotreport> responseObserver){
 
@@ -335,23 +311,88 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
         if(request.getKan().equals("TrackerRequestRobotReport")){
 
             RobotReport robotReport = new RobotReport();
-            robotReport = tec.getRobotReport(request.getRobotID());
+
+
+            /**
+             * The logic in this coordinator getRobotREportrequest is that if there is no robotReport for a robot requesting its report
+             * inside the tec.getRobotReport, then we will just echo back what the robot has previously sent as a report to us
+             * this is because we cant answer with any other robotreport before there is robotreports filled in the tec
+             * */
+
+            if(tec.getRobotReport(request.getRobotID()) == null){
+               // System.out.println("Responding with robotReport with robotIDtoRobotReport" + tec.getRobotReport(request.getRobotID()));
+                robotReport = robotIDtoRobotReport.get(request.getRobotID());
+            }
+            else {
+              //  System.out.println("Responding with robotReport with tec.getRobotReport" + tec.getRobotReport(request.getRobotID()));
+                robotReport = tec.getRobotReport(request.getRobotID());
+            }
             coordinatorgetRobotReportResponse(responseObserver, robotReport);
         }
 
     }
-public void coordinatorgetRobotReportResponse(StreamObserver<Coordinator.requestrobotreport> responseObserver, RobotReport rr){
 
-        Coordinator.requestrobotreport response = Coordinator.requestrobotreport.newBuilder()
-                .setRobotid(rr.getRobotID()).setX(rr.getPose().getX()).setY(rr.getPose().getY()).setZ(rr.getPose().getZ())
-                .setRoll(rr.getPose().getRoll()).setPitch(rr.getPose().getPitch()).setYaw(rr.getPose().getYaw())
-                .setPathIndex(rr.getPathIndex()).setVelocity(rr.getVelocity()).setDistanceTraveled(rr.getDistanceTraveled())
-                .setCriticalPoint(rr.getCriticalPoint()).build();
+    public void coordinatorgetRobotReportResponse(StreamObserver<Coordinator.requestrobotreport> responseObserver, RobotReport rr){
 
-        System.out.println("[CoordinatorServiceImpl] responding with RobotReport to Tracker ");
+            Coordinator.requestrobotreport response = Coordinator.requestrobotreport.newBuilder()
+                    .setRobotid(rr.getRobotID()).setX(rr.getPose().getX()).setY(rr.getPose().getY()).setZ(rr.getPose().getZ())
+                    .setRoll(rr.getPose().getRoll()).setPitch(rr.getPose().getPitch()).setYaw(rr.getPose().getYaw())
+                    .setPathIndex(rr.getPathIndex()).setVelocity(rr.getVelocity()).setDistanceTraveled(rr.getDistanceTraveled())
+                    .setCriticalPoint(rr.getCriticalPoint()).build();
+
+            System.out.println("[CoordinatorServiceImpl] responding with RobotReport to Tracker ");
+
+        try {
+            TimeUnit.SECONDS.sleep(2);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+    }
+
+    public void coordinatorgetOnPositionUpdate(Coordinator.onPositionUpdateMessage request,
+                                               StreamObserver<Coordinator.noneResponse> responseObserver){
+
+
+        Polygon footPrint = null;
+
+        try {
+            footPrint = (Polygon) convertFromBytes(request.getFootPrintBytes().toByteArray());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        RobotReport rr = new RobotReport(request.getRobotid(),
+                new Pose(request.getX(), request.getY(), request.getZ(),request.getRoll(),request.getPitch(),request.getYaw()),
+                request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
+
+        coordinatorgetOnPositionUpdateResponse(responseObserver);
+
+       /**
+        * Visualizing the movement that is done from the integration in RK4
+        *
+        */
+        //System.out.println("[CoordinatorServiceImpl] in onPositionUpdate() got footprint" + footPrint);
+        tec.getVisualization().displayRobotState(footPrint, rr, "Hi");
+
+    }
+
+    public void coordinatorgetOnPositionUpdateResponse(StreamObserver<Coordinator.noneResponse> responseObserver){
+
+
+        Coordinator.noneResponse response =
+        Coordinator.noneResponse.newBuilder().setNone("").build();
+
+
         responseObserver.onNext(response);
         responseObserver.onCompleted();
-}
+    }
 
 
 

@@ -119,8 +119,12 @@ public class Test1StartRobotGeneric {
         FleetClient client = new FleetClient(channel);
 
 
-        Coordinate[] fp = makeRandomFootprint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
-        Pose[] startAndGoal = makeRandomStartGoalPair(3, 1.5*maxRobotRadius, 1.1*maxRobotRadius, 1.1*maxRobotRadius);
+        //Coordinate[] fp = makeRandomFootprint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
+        //Pose[] startAndGoal = makeRandomStartGoalPair(3, 1.5*maxRobotRadius, 1.1*maxRobotRadius, 1.1*maxRobotRadius);
+
+        Coordinate[] fp = makeRandomFootprint(0, 0, 1, 14, minRobotRadius, maxRobotRadius);
+        Pose[] startAndGoal = makeRandomStartGoalPair(3, 4.2*maxRobotRadius, 2*maxRobotRadius, 1.8*maxRobotRadius);
+
 
         //Set the robot motion planner
         ReedsSheppCarPlanner rsp = new ReedsSheppCarPlanner();
@@ -131,7 +135,9 @@ public class Test1StartRobotGeneric {
 
         //Plan path from start to goal and vice-versa
         rsp.setStart(startAndGoal[0]);
+
         rsp.setGoals(startAndGoal[1]);
+
         if (!rsp.plan()) throw new Error ("No path between " + startAndGoal[0] + " and " + startAndGoal[1]);
         // making the rsp path from setStart to setGoal as overallPath for sending a poseSteering.. this way the
         // solver can be recreated from this on the trajectoryenvelopeCoordinator...?
@@ -147,9 +153,15 @@ public class Test1StartRobotGeneric {
 
         //Create the parking envelope of the robot and use it to initialize a TE-tracker
         TrajectoryEnvelopeSolver solver = new TrajectoryEnvelopeSolver(0,100000000);
-        //TrajectoryEnvelope parkingEnvelope = solver.createParkingEnvelope(robotID, PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp);
-        TrajectoryEnvelope trajectoryenvelope = solver.createEnvelopeNoParking(robotID, rsp.getPath() , "test", fp);
-        RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(trajectoryenvelope, 30, 1000, 2, 1.0, null) {
+        TrajectoryEnvelope parkingEnvelope = solver.createParkingEnvelope(robotID, PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp);
+        TrajectoryEnvelope runEnvelope = solver.createEnvelopeNoParking(robotID, rsp.getPath(),"(D)", fp);
+        //TrajectoryEnvelope parkingEnvelope =
+        RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(runEnvelope, 30, 1000, 2, 1.0, null) {
+            @Override
+            public RobotReport getRobotReport(int robotID) {
+                return null;
+            }
+
             @Override
             public long getCurrentTimeInMillis() {
                 //System.out.println("getCurrentTimeInMillis: " + this.getCurrentTimeInMillis());
@@ -157,8 +169,6 @@ public class Test1StartRobotGeneric {
                 return 0;
             }
         };
-
-        System.out.println("parkingEnvelope in test1-> " + trajectoryenvelope.getTrajectory().getPose());
 
         //Prepare the message to communicate the robot footprint to the coordinator
         MakeFootPrint footprint = new MakeFootPrint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
@@ -172,10 +182,11 @@ public class Test1StartRobotGeneric {
 
         int coordinatorResponse = 0;
         RobotReport rR = rk4.getRobotReport();
-        client.makeRobotReport("myRobotReport", rR.getRobotID(), rR.getPose().getX()
+        client.makeRobotReport("my RobotReport", rR.getRobotID(), rR.getPose().getX()
                 , rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
                 rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
                 , rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
+
         coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
 
         // to send id = 2 and 3 gonna remove these 2 greetings below later

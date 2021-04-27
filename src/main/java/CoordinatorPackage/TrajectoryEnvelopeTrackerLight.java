@@ -1,5 +1,6 @@
 package CoordinatorPackage;
 
+import GRPC.CoordinatorServiceImpl;
 import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelopeSolver;
@@ -20,6 +21,7 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	private RobotReport robotReport;
 	private boolean useInternalCPs = true;
 	public RemoteAbstractTrajectoryEnvelopeCoordinator tec;
+	public CoordinatorServiceImpl coordinatorServiceImpl;
 	
 	/**
 	 * Create a new {@link TrajectoryEnvelopeTrackerLight} to track a given {@link TrajectoryEnvelope},
@@ -33,9 +35,10 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 * @param cb An optional callback function.
 	 */
 
-	public TrajectoryEnvelopeTrackerLight(RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrajectoryEnvelope te, int timeStep, double temporalResolution, TrackingCallback cb) {
+	public TrajectoryEnvelopeTrackerLight(RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrajectoryEnvelope te, int timeStep, double temporalResolution, TrackingCallback cb, CoordinatorServiceImpl coordinatorServiceImpl) {
 		super(te, temporalResolution, timeStep, cb);
 		this.tec = tec;
+		this.coordinatorServiceImpl = coordinatorServiceImpl;
 		//this.th = new Thread((Runnable) this, "Light tracker " + te.getComponent());
 		//this.th.start();
 	}
@@ -52,19 +55,18 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 * This method should return a {@link RobotReport}, describing the current state of the robot.
 	 * @return A {@link RobotReport}, describing the current state of the robot.
 	 */
-	public RobotReport getRobotReport() {
-		//return the last communicated robot report.
-		return this.robotReport;
-	};
+
+
 
 	/**
 	 * This method should implement the mechanisms for notifying a robot of a new critical point.
 	 * @param criticalPoint The critical point to set (index of pose along the reference trajectory
 	 * beyond which the robot may not navigate).
 	 */
+
 	public void setCriticalPoint(int criticalPoint) {
 		//call your service to set the critical point
-		System.out.println("[Trajectory Light] in the setCriticalPoint method");
+		System.out.println("in CP()");
 	}
 
 	/**

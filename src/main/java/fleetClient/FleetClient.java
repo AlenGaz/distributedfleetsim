@@ -7,6 +7,7 @@ import CoordinatorPackage.containers.tecStuff;
 
 import aima.core.util.datastructure.Pair;
 import com.google.protobuf.ByteString;
+import com.vividsolutions.jts.geom.Polygon;
 import io.grpc.Channel;
 
 import java.io.*;
@@ -24,6 +25,7 @@ import io.grpc.fleetClients.FleetClientsServiceGrpc;
 import io.grpc.fleetClients.Fleetclients;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
+import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import se.oru.coordination.coordination_oru.Dependency;
 import se.oru.coordination.coordination_oru.RobotReport;
 
@@ -202,44 +204,44 @@ public class FleetClient {
         }
     }
 
-public long makeCurrentTimeRequest(){
-        Coordinator.timerequest request = Coordinator.timerequest.newBuilder().build();
-        Coordinator.timeresponse response;
+    public long makeCurrentTimeRequest(){
+            Coordinator.timerequest request = Coordinator.timerequest.newBuilder().build();
+            Coordinator.timeresponse response;
 
-        System.out.println("[FleetClient] requesting time from Cooridnator");
-        return coordinatorBlockingStub.coordinatorgetCurrentTime(request).getCurrentTime();
 
-}
+            return coordinatorBlockingStub.coordinatorgetCurrentTime(request).getCurrentTime();
 
-public boolean sendAllenInterval(String kan, tecAllenIntervalContainer allen){
-    ByteString allenIntervalByteString = null;
-    try {
-        allenIntervalByteString = ByteString.copyFrom(convertToBytes(allen));
-    } catch (IOException e) {
-        e.printStackTrace();
-        return false;
     }
-    Coordinator.allenInterval message = Coordinator.allenInterval.newBuilder().setKan(kan).setAllenIntervalBytes(allenIntervalByteString).build();
-    coordinatorBlockingStub.coordinatorgetAllenInterval(message);
-    return true;
-}
 
-public RobotReport makeRobotReportRequest(int robotID) {
-    Coordinator.trackerRobotReportRequest request = Coordinator.trackerRobotReportRequest.newBuilder().setKan("TrackerRequestRobotReport").setRobotID(robotID).build();
-    Coordinator.requestrobotreport response= null;
+    public boolean sendAllenInterval(String kan, tecAllenIntervalContainer allen){
+        ByteString allenIntervalByteString = null;
+        try {
+            allenIntervalByteString = ByteString.copyFrom(convertToBytes(allen));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        Coordinator.allenInterval message = Coordinator.allenInterval.newBuilder().setKan(kan).setAllenIntervalBytes(allenIntervalByteString).build();
+        coordinatorBlockingStub.coordinatorgetAllenInterval(message);
+        return true;
+    }
+
+    public RobotReport makeRobotReportRequest(int robotID) {
+        Coordinator.trackerRobotReportRequest request = Coordinator.trackerRobotReportRequest.newBuilder().setKan("TrackerRequestRobotReport").setRobotID(robotID).build();
+        Coordinator.requestrobotreport response= null;
+
+        System.out.println("[FleetClient] requesting inside makeRobotReportRequest");
+        response = coordinatorBlockingStub.coordinatorgetRobotReportRequest(request);
+
+        //System.out.println("[FleetClient] response from makeRobotReportRequest: " + response);
+
+        int _robotID = response.getRobotid();
+        Pose _pose = new Pose(response.getX(), response.getY(), response.getZ(), response.getRoll(), response.getPitch(), response.getYaw());
+        RobotReport rR = new RobotReport(_robotID, _pose, response.getPathIndex(), response.getVelocity(), response.getDistanceTraveled(), response.getCriticalPoint());
 
 
-    coordinatorBlockingStub.coordinatorgetRobotReportRequest(request);
-
-    System.out.println("response from makeRobotReportRequest" + response);
-
-    int _robotID = response.getRobotid();
-    Pose _pose = new Pose(response.getX(), response.getY(), response.getZ(), response.getRoll(), response.getPitch(), response.getYaw());
-    RobotReport rR = new RobotReport(_robotID, _pose, response.getPathIndex(), response.getVelocity(), response.getDistanceTraveled(), response.getCriticalPoint());
-
-
-    return rR;
-}
+        return rR;
+    }
 
     /*
     public FleetVisualization makeVisualizerRequest(){
@@ -276,8 +278,36 @@ public RobotReport makeRobotReportRequest(int robotID) {
     }
 
 
+    public void makeOnPositionUpdate(Polygon footprint, RobotReport robotReport) {
+
+        ByteString footPrint = null;
+        try {
+            footPrint = ByteString.copyFrom(convertToBytes(footprint));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //System.out.println("[FleetClient] in makeOnPositionUpdate .....");
+        Coordinator.onPositionUpdateMessage request = Coordinator.onPositionUpdateMessage.newBuilder().setFootPrintBytes(footPrint).
+                setRobotid(robotReport.getRobotID()).setX(robotReport.getPose().getX()).setY(robotReport.getPose().getY())
+                .setZ(robotReport.getPose().getZ())
+                .setRoll(robotReport.getPose().getRoll()).setPitch(robotReport.getPose().getPitch()).setYaw(robotReport.getPose().getYaw())
+                .setVelocity(robotReport.getVelocity()).setPathIndex(robotReport.getPathIndex())
+                .setDistanceTraveled(robotReport.getDistanceTraveled()).setCriticalPoint(robotReport.getCriticalPoint()).build();
+
+        Coordinator.noneResponse response = null;
 
 
+
+        response = coordinatorBlockingStub.coordinatorgetOnPositionUpdate(request);
+
+    }
+
+
+
+    /**
+    * Methods convertToBytes for serializing and convertFromBytes for deserializing objects...
+    * */
     private byte[] convertToBytes(Object object) throws IOException {
         try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
              ObjectOutputStream out = new ObjectOutputStream(bos)) {
@@ -293,4 +323,6 @@ public RobotReport makeRobotReportRequest(int robotID) {
             return in.readObject();
         }
     }
+
+
 }

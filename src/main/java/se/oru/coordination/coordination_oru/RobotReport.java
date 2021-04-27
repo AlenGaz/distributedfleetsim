@@ -36,10 +36,6 @@ public class RobotReport {
 		this.distanceTraveled = distanceTraveled;
 		this.criticalPoint = criticalPoint;
 
-/*		System.out.println("Iam in isDriving method.....");
-		ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
-		HelloWorldClient client = new HelloWorldClient(channel);
-		client.makeGreeting(Integer.toString(robotID));*/
 	}
 
     public RobotReport() {

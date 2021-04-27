@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinator;
 import CoordinatorPackage.containers.tecAllenIntervalContainer;
-import Launch.Test1StartRobotGeneric;
+import GRPC.CoordinatorServiceImpl;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.metacsp.framework.Constraint;
@@ -36,7 +37,7 @@ import se.oru.coordination.coordination_oru.TrackingCallback;
  * @author fpa
  *
  */
-public abstract class RemoteAbstractTrajectoryEnvelopeTracker extends Test1StartRobotGeneric {
+public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
     public  TrajectoryEnvelope te = null;
     protected Trajectory traj = null;
@@ -261,6 +262,9 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker extends Test1Start
      */
     public abstract RobotReport getRobotReport();
 
+
+    public abstract RobotReport getRobotReport(int robotID);
+
     /** Moved the code from { AbstractTrajectoryEnvelopeTracker} to the {@link RemoteTrajectoryEnvelopeCoordinator}
      */
     protected void onPositionUpdate() {}
@@ -389,23 +393,10 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker extends Test1Start
 
     public boolean controlRR = false;
 
-    protected void startMonitoringThread() {           /////////////////////////////////////////// This is where Tracking Starts
+    protected void startMonitoringThread() {
+        /////////////////////////////////////////// This is where Tracking Starts
 
-
-/*        //Create the parking envelope of the robot and use it to initialize a TE-tracker
-        TrajectoryEnvelopeSolver solver = new TrajectoryEnvelopeSolver(0,100000000);
-        //TrajectoryEnvelope parkingEnvelope = solver.createParkingEnvelope(robotID, PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp);
-        //TrajectoryEnvelope trajectoryenvelope = solver.createEnvelopeNoParking(te.getRobotID(), rsp.getPath() , "test", fp);
-        RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(te, 30, 1000, 2, 1.0, null) {
-            @Override
-            public long getCurrentTimeInMillis() {
-                //System.out.println("getCurrentTimeInMillis: " + this.getCurrentTimeInMillis());
-                //return this.getCurrentTimeInMillis();
-                return 0;
-            }
-        };*/
-
-
+        System.out.println("inside startMonitoringThread");
         //Start a thread that monitors the sub-envelopes and finishes them when appropriate
         Thread monitorSubEnvelopes = new Thread("Abstract tracker " + te.getComponent()) {
             @Override
@@ -423,13 +414,16 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker extends Test1Start
 
 
                     if (te.getTemporalVariable().getEST() <= getCurrentTimeInMillis()) {
+
                         if (cb != null && !calledOnTrackingStart) {
                             calledOnTrackingStart = true;
+
                             cb.onTrackingStart();
                         }
 
                         if (!calledStartTracking) {
                             calledStartTracking = true;
+
                             startTracking();
                         }
 
@@ -440,24 +434,30 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker extends Test1Start
 
                         /**
                          * FIXME quick fix for not having the RobotReport from the coordinator before its needed in the rk4
-                         * Here if the robot report is needed in the coordinator server can just get from coordserviceimpl..
+                         * Here we send a robot report before requesting one from the coordinator, this is because the coordinator should respond
+                         * with a robotreport from another place than where the updates of robot reports are saved in the coordinator,
+                         *  what is done on the coordinator side is that we will just echo back the same robotreport that the client has sent
+                         *  if we dont have one that has been changed yet.
                          * */
-                        int currentSeqNumber = 0;
+
+                        client.makeRobotReport("my RobotReport", getRobotReport().getRobotID(), getRobotReport().getPose().getX()
+                                , getRobotReport().getPose().getY(), getRobotReport().getPose().getZ(), getRobotReport().getPose().getRoll(),
+                                getRobotReport().getPose().getPitch(), getRobotReport().getPose().getYaw(), getRobotReport().getVelocity()
+                                , getRobotReport().getPathIndex(), getRobotReport().getDistanceTraveled(), getRobotReport().getCriticalPoint());
+
+
+                        rr = client.makeRobotReportRequest(te.getRobotID());
+
+
                         rr= getRobotReport();  // (((alen))) not sure if this is the correct way of getting robotreport.. (its not using id so which one is it getting when?
-                        //System.out.println("getRobotReport in Abstract Tracker" + getRobotReport());
                         if(rr==null) {
                             metaCSPLogger.info("(waiting for "+te.getComponent()+"'s tracker to come online)");
                             try { Thread.sleep(10); }
                             catch (InterruptedException e) { e.printStackTrace(); }
                         }
-/*                        else {
-                            //Get current sequence number from robot report...
-                             currentSeqNumber = rr.getPathIndex();
-                        }*/
 
                         //Get current sequence number from robot report...
-                        currentSeqNumber = rr.getPathIndex();
-
+                        int currentSeqNumber = rr.getPathIndex();
 
                         //Get all ground envelopes of this super-envelope that are not finished (except the last one)...
                         for (TrajectoryEnvelope subEnv : getAllSubEnvelopes()) {

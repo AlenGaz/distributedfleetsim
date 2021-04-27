@@ -22,6 +22,8 @@ service CoordinatorService {
 
   rpc coordinatorgetRobotReportRequest(trackerRobotReportRequest) returns (requestrobotreport);
 
+  rpc coordinatorgetOnPositionUpdate(onPositionUpdateMessage) returns (noneResponse);
+
 
 
 
@@ -148,4 +150,23 @@ message allenInterval{
   string kan =1;
   bytes allenIntervalBytes = 2;
 
+}
+
+message onPositionUpdateMessage{
+  /*
+  invoking an onPositionUpdate() method in the class holding the browser
+  */
+  bytes footPrintBytes = 1;
+  // building a robotReport
+  int32 robotid = 2;
+  double x = 3;
+  double y = 4;
+  double z = 5;
+  double roll = 6;
+  double pitch = 7;
+  double yaw = 8;
+  int32 pathIndex = 9;
+  double velocity = 10;
+  double distanceTraveled = 11;
+  int32 criticalPoint = 12;
 }

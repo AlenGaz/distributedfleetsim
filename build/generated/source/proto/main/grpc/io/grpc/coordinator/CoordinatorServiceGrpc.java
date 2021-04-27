@@ -306,6 +306,37 @@ public final class CoordinatorServiceGrpc {
     return getCoordinatorgetRobotReportRequestMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.onPositionUpdateMessage,
+      io.grpc.coordinator.Coordinator.noneResponse> getCoordinatorgetOnPositionUpdateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "coordinatorgetOnPositionUpdate",
+      requestType = io.grpc.coordinator.Coordinator.onPositionUpdateMessage.class,
+      responseType = io.grpc.coordinator.Coordinator.noneResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.onPositionUpdateMessage,
+      io.grpc.coordinator.Coordinator.noneResponse> getCoordinatorgetOnPositionUpdateMethod() {
+    io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.onPositionUpdateMessage, io.grpc.coordinator.Coordinator.noneResponse> getCoordinatorgetOnPositionUpdateMethod;
+    if ((getCoordinatorgetOnPositionUpdateMethod = CoordinatorServiceGrpc.getCoordinatorgetOnPositionUpdateMethod) == null) {
+      synchronized (CoordinatorServiceGrpc.class) {
+        if ((getCoordinatorgetOnPositionUpdateMethod = CoordinatorServiceGrpc.getCoordinatorgetOnPositionUpdateMethod) == null) {
+          CoordinatorServiceGrpc.getCoordinatorgetOnPositionUpdateMethod = getCoordinatorgetOnPositionUpdateMethod =
+              io.grpc.MethodDescriptor.<io.grpc.coordinator.Coordinator.onPositionUpdateMessage, io.grpc.coordinator.Coordinator.noneResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "coordinatorgetOnPositionUpdate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.onPositionUpdateMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.noneResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoordinatorServiceMethodDescriptorSupplier("coordinatorgetOnPositionUpdate"))
+              .build();
+        }
+      }
+    }
+    return getCoordinatorgetOnPositionUpdateMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -427,6 +458,13 @@ public final class CoordinatorServiceGrpc {
       asyncUnimplementedUnaryCall(getCoordinatorgetRobotReportRequestMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void coordinatorgetOnPositionUpdate(io.grpc.coordinator.Coordinator.onPositionUpdateMessage request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCoordinatorgetOnPositionUpdateMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -492,6 +530,13 @@ public final class CoordinatorServiceGrpc {
                 io.grpc.coordinator.Coordinator.trackerRobotReportRequest,
                 io.grpc.coordinator.Coordinator.requestrobotreport>(
                   this, METHODID_COORDINATORGET_ROBOT_REPORT_REQUEST)))
+          .addMethod(
+            getCoordinatorgetOnPositionUpdateMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.coordinator.Coordinator.onPositionUpdateMessage,
+                io.grpc.coordinator.Coordinator.noneResponse>(
+                  this, METHODID_COORDINATORGET_ON_POSITION_UPDATE)))
           .build();
     }
   }
@@ -591,6 +636,14 @@ public final class CoordinatorServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getCoordinatorgetRobotReportRequestMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void coordinatorgetOnPositionUpdate(io.grpc.coordinator.Coordinator.onPositionUpdateMessage request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCoordinatorgetOnPositionUpdateMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -678,6 +731,13 @@ public final class CoordinatorServiceGrpc {
     public io.grpc.coordinator.Coordinator.requestrobotreport coordinatorgetRobotReportRequest(io.grpc.coordinator.Coordinator.trackerRobotReportRequest request) {
       return blockingUnaryCall(
           getChannel(), getCoordinatorgetRobotReportRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.grpc.coordinator.Coordinator.noneResponse coordinatorgetOnPositionUpdate(io.grpc.coordinator.Coordinator.onPositionUpdateMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getCoordinatorgetOnPositionUpdateMethod(), getCallOptions(), request);
     }
   }
 
@@ -776,6 +836,14 @@ public final class CoordinatorServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getCoordinatorgetRobotReportRequestMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.noneResponse> coordinatorgetOnPositionUpdate(
+        io.grpc.coordinator.Coordinator.onPositionUpdateMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCoordinatorgetOnPositionUpdateMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_COORDINATORROBOTREPORT = 0;
@@ -787,6 +855,7 @@ public final class CoordinatorServiceGrpc {
   private static final int METHODID_COORDINATORGET_VISUALIZER = 6;
   private static final int METHODID_COORDINATORGET_ALLEN_INTERVAL = 7;
   private static final int METHODID_COORDINATORGET_ROBOT_REPORT_REQUEST = 8;
+  private static final int METHODID_COORDINATORGET_ON_POSITION_UPDATE = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -840,6 +909,10 @@ public final class CoordinatorServiceGrpc {
         case METHODID_COORDINATORGET_ROBOT_REPORT_REQUEST:
           serviceImpl.coordinatorgetRobotReportRequest((io.grpc.coordinator.Coordinator.trackerRobotReportRequest) request,
               (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.requestrobotreport>) responseObserver);
+          break;
+        case METHODID_COORDINATORGET_ON_POSITION_UPDATE:
+          serviceImpl.coordinatorgetOnPositionUpdate((io.grpc.coordinator.Coordinator.onPositionUpdateMessage) request,
+              (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -911,6 +984,7 @@ public final class CoordinatorServiceGrpc {
               .addMethod(getCoordinatorgetVisualizerMethod())
               .addMethod(getCoordinatorgetAllenIntervalMethod())
               .addMethod(getCoordinatorgetRobotReportRequestMethod())
+              .addMethod(getCoordinatorgetOnPositionUpdateMethod())
               .build();
         }
       }

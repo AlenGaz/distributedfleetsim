@@ -193,6 +193,12 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
             protected void setCriticalPoint(int criticalPoint) {}
             @Override
             public RobotReport getRobotReport() { return null; }
+
+            @Override
+            public RobotReport getRobotReport(int robotID) {
+                return null;
+            }
+
             @Override public long getCurrentTimeInMillis() { return 0; }
 
             @Override

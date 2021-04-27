@@ -507,6 +507,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                     // Commenting out it for now (Alen))) 04-09
                     // externalCPCounters.replace(tracker,externalCPCounters.get(tracker)+1);
+                    System.out.println("[RemoteAbstractTrajectoryEnvelopeCoordinator] tracker.setCriticalPoint() :" + tracker);
+                    System.out.println("[RemoteAbstractTrajectoryEnvelopeCoordinator] tracker getstartingtimeinmillis :" + tracker.getStartingTimeInMillis());
                     tracker.setCriticalPoint(criticalPoint, externalCPCounters.get(tracker)%Integer.MAX_VALUE);
 
                     //for statistics
@@ -682,8 +684,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                 }
                 @Override
                 public void onTrackingStart() {
-                    System.out.println("on tracking start printing");
                     if (trackingCallbacks.containsKey(robotID)) trackingCallbacks.get(robotID).onTrackingStart();
+
                 }
 
 
@@ -708,6 +710,12 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
             //Now start the tracker for this parking (will be ended by call to addMissions for this robot)
             final RemoteTrajectoryEnvelopeTrackerDummy tracker = new RemoteTrajectoryEnvelopeTrackerDummy(parking, 300, TEMPORAL_RESOLUTION, this, cb) {
+
+                @Override
+                public RobotReport getRobotReport(int robotID) {
+                    return null;
+                }
+
                 @Override
                 public long getCurrentTimeInMillis() {
 
@@ -1535,8 +1543,11 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                     @Override
                     public void onTrackingStart() {
+                        System.out.println("in onTrackingStart");
                         if (trackingCallbacks.containsKey(myTE.getRobotID())) trackingCallbacks.get(myTE.getRobotID()).onTrackingStart();
+                        System.out.println("before viz");
                         if (viz != null){
+                            System.out.println("inside onTrackingStart viz!=null");
                             viz.addEnvelope(myTE);
                         }
                     }
@@ -1914,6 +1925,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
      * @return which robot is ahead (1 if Robot 1 is ahead, -1 if Robot 2 is ahead, 0 if nothing can be stated.
      * Returning -2 if the critical section is no more active.
      */
+
     protected int isAhead(CriticalSection cs, RobotReport rr1, RobotReport rr2) {
         //FIXME
         //1) add code for the checking the network delay.
@@ -1947,6 +1959,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
      * @param cb A callback that is called every tracking period.
      * @return An instance of a trajectory envelope tracker.
      */
+
     public abstract TrajectoryEnvelopeTrackerLight getNewTracker(TrajectoryEnvelope te, TrackingCallback cb);
 
     /**

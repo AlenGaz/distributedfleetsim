@@ -175,7 +175,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                 if (rr != null ) {
                     int currentPP = rr.getPathIndex();
                     st += tracker.getTrajectoryEnvelope().getComponent();
-                    if (tracker instanceof TrajectoryEnvelopeTrackerLight) st += " (P)";
+                    if (tracker instanceof RemoteTrajectoryEnvelopeTrackerDummy) st += " (P)";
                     else st += " (D)";
                     st += ": " + currentPP + "   ";
                 }
@@ -609,8 +609,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             for (int robotID : robotIDs) {
                 RemoteAbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID);
                 //Update the coordinator view
-                //RobotReport robotReport = robotTracker.getRobotReport();
-                RobotReport robotReport = coordinatorServicImpl.robotIDtoRobotReport.get(robotID);
+                RobotReport robotReport = robotTracker.getRobotReport();
                 currentReports.put(robotID, robotReport);
                 synchronized(stoppingPoints) {
                     if (stoppingPoints.containsKey(robotID)) {
@@ -2195,10 +2194,11 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             if (currentDependencies.containsKey(robotID)) {
                 Dependency dep = currentDependencies.get(robotID);
                 metaCSPLogger.finest("Set critical point " + dep.getWaitingPoint() + " to Robot" + dep.getWaitingRobotID() +".");
-                System.out.println("[Trajectory Coordinator] the dep.getWaitingPoint(): " + dep.getWaitingPoint());
+                System.out.println("[TRACJ CORD]->>>dep.getWaitingPoint()" + dep.getWaitingPoint());
                 retransmitt = retransmitt || communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == dep.getWaitingPoint() && currentReports.get(robotID).getCriticalPoint() != dep.getWaitingPoint()
                         && ((int)(Calendar.getInstance().getTimeInMillis()-communicatedCPs.get(tracker).getSecond().longValue()) > maxDelay);
                 setCriticalPoint(dep.getWaitingRobotID(), dep.getWaitingPoint(), retransmitt);
+                // tec.robotIDtoCriticalPoint(robotID, criticalPoint)
 
             }
             else {

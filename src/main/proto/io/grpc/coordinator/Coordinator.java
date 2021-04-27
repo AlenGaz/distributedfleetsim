@@ -12867,6 +12867,1242 @@ public final class Coordinator {
 
   }
 
+  public interface onPositionUpdateMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:gradlegRPC.onPositionUpdateMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *invoking an onPositionUpdate() method in the class holding the browser
+     * </pre>
+     *
+     * <code>bytes footPrintBytes = 1;</code>
+     */
+    com.google.protobuf.ByteString getFootPrintBytes();
+
+    /**
+     * <pre>
+     * building a robotReport
+     * </pre>
+     *
+     * <code>int32 robotid = 2;</code>
+     */
+    int getRobotid();
+
+    /**
+     * <code>double x = 3;</code>
+     */
+    double getX();
+
+    /**
+     * <code>double y = 4;</code>
+     */
+    double getY();
+
+    /**
+     * <code>double z = 5;</code>
+     */
+    double getZ();
+
+    /**
+     * <code>double roll = 6;</code>
+     */
+    double getRoll();
+
+    /**
+     * <code>double pitch = 7;</code>
+     */
+    double getPitch();
+
+    /**
+     * <code>double yaw = 8;</code>
+     */
+    double getYaw();
+
+    /**
+     * <code>int32 pathIndex = 9;</code>
+     */
+    int getPathIndex();
+
+    /**
+     * <code>double velocity = 10;</code>
+     */
+    double getVelocity();
+
+    /**
+     * <code>double distanceTraveled = 11;</code>
+     */
+    double getDistanceTraveled();
+
+    /**
+     * <code>int32 criticalPoint = 12;</code>
+     */
+    int getCriticalPoint();
+  }
+  /**
+   * Protobuf type {@code gradlegRPC.onPositionUpdateMessage}
+   */
+  public  static final class onPositionUpdateMessage extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:gradlegRPC.onPositionUpdateMessage)
+      onPositionUpdateMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use onPositionUpdateMessage.newBuilder() to construct.
+    private onPositionUpdateMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private onPositionUpdateMessage() {
+      footPrintBytes_ = com.google.protobuf.ByteString.EMPTY;
+      robotid_ = 0;
+      x_ = 0D;
+      y_ = 0D;
+      z_ = 0D;
+      roll_ = 0D;
+      pitch_ = 0D;
+      yaw_ = 0D;
+      pathIndex_ = 0;
+      velocity_ = 0D;
+      distanceTraveled_ = 0D;
+      criticalPoint_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private onPositionUpdateMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              footPrintBytes_ = input.readBytes();
+              break;
+            }
+            case 16: {
+
+              robotid_ = input.readInt32();
+              break;
+            }
+            case 25: {
+
+              x_ = input.readDouble();
+              break;
+            }
+            case 33: {
+
+              y_ = input.readDouble();
+              break;
+            }
+            case 41: {
+
+              z_ = input.readDouble();
+              break;
+            }
+            case 49: {
+
+              roll_ = input.readDouble();
+              break;
+            }
+            case 57: {
+
+              pitch_ = input.readDouble();
+              break;
+            }
+            case 65: {
+
+              yaw_ = input.readDouble();
+              break;
+            }
+            case 72: {
+
+              pathIndex_ = input.readInt32();
+              break;
+            }
+            case 81: {
+
+              velocity_ = input.readDouble();
+              break;
+            }
+            case 89: {
+
+              distanceTraveled_ = input.readDouble();
+              break;
+            }
+            case 96: {
+
+              criticalPoint_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_onPositionUpdateMessage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_onPositionUpdateMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grpc.coordinator.Coordinator.onPositionUpdateMessage.class, io.grpc.coordinator.Coordinator.onPositionUpdateMessage.Builder.class);
+    }
+
+    public static final int FOOTPRINTBYTES_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString footPrintBytes_;
+    /**
+     * <pre>
+     *invoking an onPositionUpdate() method in the class holding the browser
+     * </pre>
+     *
+     * <code>bytes footPrintBytes = 1;</code>
+     */
+    public com.google.protobuf.ByteString getFootPrintBytes() {
+      return footPrintBytes_;
+    }
+
+    public static final int ROBOTID_FIELD_NUMBER = 2;
+    private int robotid_;
+    /**
+     * <pre>
+     * building a robotReport
+     * </pre>
+     *
+     * <code>int32 robotid = 2;</code>
+     */
+    public int getRobotid() {
+      return robotid_;
+    }
+
+    public static final int X_FIELD_NUMBER = 3;
+    private double x_;
+    /**
+     * <code>double x = 3;</code>
+     */
+    public double getX() {
+      return x_;
+    }
+
+    public static final int Y_FIELD_NUMBER = 4;
+    private double y_;
+    /**
+     * <code>double y = 4;</code>
+     */
+    public double getY() {
+      return y_;
+    }
+
+    public static final int Z_FIELD_NUMBER = 5;
+    private double z_;
+    /**
+     * <code>double z = 5;</code>
+     */
+    public double getZ() {
+      return z_;
+    }
+
+    public static final int ROLL_FIELD_NUMBER = 6;
+    private double roll_;
+    /**
+     * <code>double roll = 6;</code>
+     */
+    public double getRoll() {
+      return roll_;
+    }
+
+    public static final int PITCH_FIELD_NUMBER = 7;
+    private double pitch_;
+    /**
+     * <code>double pitch = 7;</code>
+     */
+    public double getPitch() {
+      return pitch_;
+    }
+
+    public static final int YAW_FIELD_NUMBER = 8;
+    private double yaw_;
+    /**
+     * <code>double yaw = 8;</code>
+     */
+    public double getYaw() {
+      return yaw_;
+    }
+
+    public static final int PATHINDEX_FIELD_NUMBER = 9;
+    private int pathIndex_;
+    /**
+     * <code>int32 pathIndex = 9;</code>
+     */
+    public int getPathIndex() {
+      return pathIndex_;
+    }
+
+    public static final int VELOCITY_FIELD_NUMBER = 10;
+    private double velocity_;
+    /**
+     * <code>double velocity = 10;</code>
+     */
+    public double getVelocity() {
+      return velocity_;
+    }
+
+    public static final int DISTANCETRAVELED_FIELD_NUMBER = 11;
+    private double distanceTraveled_;
+    /**
+     * <code>double distanceTraveled = 11;</code>
+     */
+    public double getDistanceTraveled() {
+      return distanceTraveled_;
+    }
+
+    public static final int CRITICALPOINT_FIELD_NUMBER = 12;
+    private int criticalPoint_;
+    /**
+     * <code>int32 criticalPoint = 12;</code>
+     */
+    public int getCriticalPoint() {
+      return criticalPoint_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!footPrintBytes_.isEmpty()) {
+        output.writeBytes(1, footPrintBytes_);
+      }
+      if (robotid_ != 0) {
+        output.writeInt32(2, robotid_);
+      }
+      if (x_ != 0D) {
+        output.writeDouble(3, x_);
+      }
+      if (y_ != 0D) {
+        output.writeDouble(4, y_);
+      }
+      if (z_ != 0D) {
+        output.writeDouble(5, z_);
+      }
+      if (roll_ != 0D) {
+        output.writeDouble(6, roll_);
+      }
+      if (pitch_ != 0D) {
+        output.writeDouble(7, pitch_);
+      }
+      if (yaw_ != 0D) {
+        output.writeDouble(8, yaw_);
+      }
+      if (pathIndex_ != 0) {
+        output.writeInt32(9, pathIndex_);
+      }
+      if (velocity_ != 0D) {
+        output.writeDouble(10, velocity_);
+      }
+      if (distanceTraveled_ != 0D) {
+        output.writeDouble(11, distanceTraveled_);
+      }
+      if (criticalPoint_ != 0) {
+        output.writeInt32(12, criticalPoint_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!footPrintBytes_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, footPrintBytes_);
+      }
+      if (robotid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, robotid_);
+      }
+      if (x_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, x_);
+      }
+      if (y_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, y_);
+      }
+      if (z_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, z_);
+      }
+      if (roll_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, roll_);
+      }
+      if (pitch_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(7, pitch_);
+      }
+      if (yaw_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(8, yaw_);
+      }
+      if (pathIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, pathIndex_);
+      }
+      if (velocity_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(10, velocity_);
+      }
+      if (distanceTraveled_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(11, distanceTraveled_);
+      }
+      if (criticalPoint_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, criticalPoint_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.grpc.coordinator.Coordinator.onPositionUpdateMessage)) {
+        return super.equals(obj);
+      }
+      io.grpc.coordinator.Coordinator.onPositionUpdateMessage other = (io.grpc.coordinator.Coordinator.onPositionUpdateMessage) obj;
+
+      boolean result = true;
+      result = result && getFootPrintBytes()
+          .equals(other.getFootPrintBytes());
+      result = result && (getRobotid()
+          == other.getRobotid());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getX())
+          == java.lang.Double.doubleToLongBits(
+              other.getX()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getY())
+          == java.lang.Double.doubleToLongBits(
+              other.getY()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getZ())
+          == java.lang.Double.doubleToLongBits(
+              other.getZ()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getRoll())
+          == java.lang.Double.doubleToLongBits(
+              other.getRoll()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPitch())
+          == java.lang.Double.doubleToLongBits(
+              other.getPitch()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getYaw())
+          == java.lang.Double.doubleToLongBits(
+              other.getYaw()));
+      result = result && (getPathIndex()
+          == other.getPathIndex());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getVelocity())
+          == java.lang.Double.doubleToLongBits(
+              other.getVelocity()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getDistanceTraveled())
+          == java.lang.Double.doubleToLongBits(
+              other.getDistanceTraveled()));
+      result = result && (getCriticalPoint()
+          == other.getCriticalPoint());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FOOTPRINTBYTES_FIELD_NUMBER;
+      hash = (53 * hash) + getFootPrintBytes().hashCode();
+      hash = (37 * hash) + ROBOTID_FIELD_NUMBER;
+      hash = (53 * hash) + getRobotid();
+      hash = (37 * hash) + X_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getX()));
+      hash = (37 * hash) + Y_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getY()));
+      hash = (37 * hash) + Z_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getZ()));
+      hash = (37 * hash) + ROLL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRoll()));
+      hash = (37 * hash) + PITCH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPitch()));
+      hash = (37 * hash) + YAW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getYaw()));
+      hash = (37 * hash) + PATHINDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getPathIndex();
+      hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getVelocity()));
+      hash = (37 * hash) + DISTANCETRAVELED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getDistanceTraveled()));
+      hash = (37 * hash) + CRITICALPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getCriticalPoint();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.grpc.coordinator.Coordinator.onPositionUpdateMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code gradlegRPC.onPositionUpdateMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:gradlegRPC.onPositionUpdateMessage)
+        io.grpc.coordinator.Coordinator.onPositionUpdateMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_onPositionUpdateMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_onPositionUpdateMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grpc.coordinator.Coordinator.onPositionUpdateMessage.class, io.grpc.coordinator.Coordinator.onPositionUpdateMessage.Builder.class);
+      }
+
+      // Construct using io.grpc.coordinator.Coordinator.onPositionUpdateMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        footPrintBytes_ = com.google.protobuf.ByteString.EMPTY;
+
+        robotid_ = 0;
+
+        x_ = 0D;
+
+        y_ = 0D;
+
+        z_ = 0D;
+
+        roll_ = 0D;
+
+        pitch_ = 0D;
+
+        yaw_ = 0D;
+
+        pathIndex_ = 0;
+
+        velocity_ = 0D;
+
+        distanceTraveled_ = 0D;
+
+        criticalPoint_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_onPositionUpdateMessage_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.onPositionUpdateMessage getDefaultInstanceForType() {
+        return io.grpc.coordinator.Coordinator.onPositionUpdateMessage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.onPositionUpdateMessage build() {
+        io.grpc.coordinator.Coordinator.onPositionUpdateMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grpc.coordinator.Coordinator.onPositionUpdateMessage buildPartial() {
+        io.grpc.coordinator.Coordinator.onPositionUpdateMessage result = new io.grpc.coordinator.Coordinator.onPositionUpdateMessage(this);
+        result.footPrintBytes_ = footPrintBytes_;
+        result.robotid_ = robotid_;
+        result.x_ = x_;
+        result.y_ = y_;
+        result.z_ = z_;
+        result.roll_ = roll_;
+        result.pitch_ = pitch_;
+        result.yaw_ = yaw_;
+        result.pathIndex_ = pathIndex_;
+        result.velocity_ = velocity_;
+        result.distanceTraveled_ = distanceTraveled_;
+        result.criticalPoint_ = criticalPoint_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grpc.coordinator.Coordinator.onPositionUpdateMessage) {
+          return mergeFrom((io.grpc.coordinator.Coordinator.onPositionUpdateMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grpc.coordinator.Coordinator.onPositionUpdateMessage other) {
+        if (other == io.grpc.coordinator.Coordinator.onPositionUpdateMessage.getDefaultInstance()) return this;
+        if (other.getFootPrintBytes() != com.google.protobuf.ByteString.EMPTY) {
+          setFootPrintBytes(other.getFootPrintBytes());
+        }
+        if (other.getRobotid() != 0) {
+          setRobotid(other.getRobotid());
+        }
+        if (other.getX() != 0D) {
+          setX(other.getX());
+        }
+        if (other.getY() != 0D) {
+          setY(other.getY());
+        }
+        if (other.getZ() != 0D) {
+          setZ(other.getZ());
+        }
+        if (other.getRoll() != 0D) {
+          setRoll(other.getRoll());
+        }
+        if (other.getPitch() != 0D) {
+          setPitch(other.getPitch());
+        }
+        if (other.getYaw() != 0D) {
+          setYaw(other.getYaw());
+        }
+        if (other.getPathIndex() != 0) {
+          setPathIndex(other.getPathIndex());
+        }
+        if (other.getVelocity() != 0D) {
+          setVelocity(other.getVelocity());
+        }
+        if (other.getDistanceTraveled() != 0D) {
+          setDistanceTraveled(other.getDistanceTraveled());
+        }
+        if (other.getCriticalPoint() != 0) {
+          setCriticalPoint(other.getCriticalPoint());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.grpc.coordinator.Coordinator.onPositionUpdateMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.grpc.coordinator.Coordinator.onPositionUpdateMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString footPrintBytes_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       *invoking an onPositionUpdate() method in the class holding the browser
+       * </pre>
+       *
+       * <code>bytes footPrintBytes = 1;</code>
+       */
+      public com.google.protobuf.ByteString getFootPrintBytes() {
+        return footPrintBytes_;
+      }
+      /**
+       * <pre>
+       *invoking an onPositionUpdate() method in the class holding the browser
+       * </pre>
+       *
+       * <code>bytes footPrintBytes = 1;</code>
+       */
+      public Builder setFootPrintBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        footPrintBytes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *invoking an onPositionUpdate() method in the class holding the browser
+       * </pre>
+       *
+       * <code>bytes footPrintBytes = 1;</code>
+       */
+      public Builder clearFootPrintBytes() {
+        
+        footPrintBytes_ = getDefaultInstance().getFootPrintBytes();
+        onChanged();
+        return this;
+      }
+
+      private int robotid_ ;
+      /**
+       * <pre>
+       * building a robotReport
+       * </pre>
+       *
+       * <code>int32 robotid = 2;</code>
+       */
+      public int getRobotid() {
+        return robotid_;
+      }
+      /**
+       * <pre>
+       * building a robotReport
+       * </pre>
+       *
+       * <code>int32 robotid = 2;</code>
+       */
+      public Builder setRobotid(int value) {
+        
+        robotid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * building a robotReport
+       * </pre>
+       *
+       * <code>int32 robotid = 2;</code>
+       */
+      public Builder clearRobotid() {
+        
+        robotid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private double x_ ;
+      /**
+       * <code>double x = 3;</code>
+       */
+      public double getX() {
+        return x_;
+      }
+      /**
+       * <code>double x = 3;</code>
+       */
+      public Builder setX(double value) {
+        
+        x_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double x = 3;</code>
+       */
+      public Builder clearX() {
+        
+        x_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double y_ ;
+      /**
+       * <code>double y = 4;</code>
+       */
+      public double getY() {
+        return y_;
+      }
+      /**
+       * <code>double y = 4;</code>
+       */
+      public Builder setY(double value) {
+        
+        y_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double y = 4;</code>
+       */
+      public Builder clearY() {
+        
+        y_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double z_ ;
+      /**
+       * <code>double z = 5;</code>
+       */
+      public double getZ() {
+        return z_;
+      }
+      /**
+       * <code>double z = 5;</code>
+       */
+      public Builder setZ(double value) {
+        
+        z_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double z = 5;</code>
+       */
+      public Builder clearZ() {
+        
+        z_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double roll_ ;
+      /**
+       * <code>double roll = 6;</code>
+       */
+      public double getRoll() {
+        return roll_;
+      }
+      /**
+       * <code>double roll = 6;</code>
+       */
+      public Builder setRoll(double value) {
+        
+        roll_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double roll = 6;</code>
+       */
+      public Builder clearRoll() {
+        
+        roll_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double pitch_ ;
+      /**
+       * <code>double pitch = 7;</code>
+       */
+      public double getPitch() {
+        return pitch_;
+      }
+      /**
+       * <code>double pitch = 7;</code>
+       */
+      public Builder setPitch(double value) {
+        
+        pitch_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double pitch = 7;</code>
+       */
+      public Builder clearPitch() {
+        
+        pitch_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double yaw_ ;
+      /**
+       * <code>double yaw = 8;</code>
+       */
+      public double getYaw() {
+        return yaw_;
+      }
+      /**
+       * <code>double yaw = 8;</code>
+       */
+      public Builder setYaw(double value) {
+        
+        yaw_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double yaw = 8;</code>
+       */
+      public Builder clearYaw() {
+        
+        yaw_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int pathIndex_ ;
+      /**
+       * <code>int32 pathIndex = 9;</code>
+       */
+      public int getPathIndex() {
+        return pathIndex_;
+      }
+      /**
+       * <code>int32 pathIndex = 9;</code>
+       */
+      public Builder setPathIndex(int value) {
+        
+        pathIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 pathIndex = 9;</code>
+       */
+      public Builder clearPathIndex() {
+        
+        pathIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private double velocity_ ;
+      /**
+       * <code>double velocity = 10;</code>
+       */
+      public double getVelocity() {
+        return velocity_;
+      }
+      /**
+       * <code>double velocity = 10;</code>
+       */
+      public Builder setVelocity(double value) {
+        
+        velocity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double velocity = 10;</code>
+       */
+      public Builder clearVelocity() {
+        
+        velocity_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double distanceTraveled_ ;
+      /**
+       * <code>double distanceTraveled = 11;</code>
+       */
+      public double getDistanceTraveled() {
+        return distanceTraveled_;
+      }
+      /**
+       * <code>double distanceTraveled = 11;</code>
+       */
+      public Builder setDistanceTraveled(double value) {
+        
+        distanceTraveled_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double distanceTraveled = 11;</code>
+       */
+      public Builder clearDistanceTraveled() {
+        
+        distanceTraveled_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int criticalPoint_ ;
+      /**
+       * <code>int32 criticalPoint = 12;</code>
+       */
+      public int getCriticalPoint() {
+        return criticalPoint_;
+      }
+      /**
+       * <code>int32 criticalPoint = 12;</code>
+       */
+      public Builder setCriticalPoint(int value) {
+        
+        criticalPoint_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 criticalPoint = 12;</code>
+       */
+      public Builder clearCriticalPoint() {
+        
+        criticalPoint_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:gradlegRPC.onPositionUpdateMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:gradlegRPC.onPositionUpdateMessage)
+    private static final io.grpc.coordinator.Coordinator.onPositionUpdateMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.onPositionUpdateMessage();
+    }
+
+    public static io.grpc.coordinator.Coordinator.onPositionUpdateMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<onPositionUpdateMessage>
+        PARSER = new com.google.protobuf.AbstractParser<onPositionUpdateMessage>() {
+      @java.lang.Override
+      public onPositionUpdateMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new onPositionUpdateMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<onPositionUpdateMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<onPositionUpdateMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grpc.coordinator.Coordinator.onPositionUpdateMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_gradlegRPC_requestrobotreport_descriptor;
   private static final 
@@ -12957,6 +14193,11 @@ public final class Coordinator {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_gradlegRPC_allenInterval_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_gradlegRPC_onPositionUpdateMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_gradlegRPC_onPositionUpdateMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -13004,29 +14245,37 @@ public final class Coordinator {
       "ualizerrequest\022\013\n\003kan\030\001 \001(\t\"(\n\022visualize" +
       "rresponse\022\022\n\nvisualizer\030\001 \001(\014\"8\n\rallenIn" +
       "terval\022\013\n\003kan\030\001 \001(\t\022\032\n\022allenIntervalByte" +
-      "s\030\002 \001(\0142\344\006\n\022CoordinatorService\022[\n\026coordi" +
-      "natorrobotreport\022\036.gradlegRPC.requestrob" +
-      "otreport\032\037.gradlegRPC.responserobotrepor" +
-      "t\"\000\022\211\001\n\030coordinatorcriticalpoint\0225.gradl" +
-      "egRPC.coordinatorGetCriticalPointRequest" +
-      "Message\0326.gradlegRPC.coordinatorGetCriti" +
-      "calPointResponseMessage\022W\n\027coordinatorde" +
-      "pendencies\022\".gradlegRPC.getCurrentDepend" +
-      "encies\032\030.gradlegRPC.noneResponse\022W\n\026coor" +
-      "dinatorgetGreeting\022\032.gradlegRPC.robotsGr" +
-      "eeting\032!.gradlegRPC.robotgreetingRespons" +
-      "e\022I\n\026coordinatorgetTecStuff\022\026.gradlegRPC" +
-      ".tecrequest\032\027.gradlegRPC.tecresponse\022N\n\031" +
-      "coordinatorgetCurrentTime\022\027.gradlegRPC.t" +
-      "imerequest\032\030.gradlegRPC.timeresponse\022Y\n\030" +
-      "coordinatorgetVisualizer\022\035.gradlegRPC.vi" +
-      "sualizerrequest\032\036.gradlegRPC.visualizerr" +
-      "esponse\022R\n\033coordinatorgetAllenInterval\022\031" +
-      ".gradlegRPC.allenInterval\032\030.gradlegRPC.n" +
-      "oneResponse\022i\n coordinatorgetRobotReport" +
-      "Request\022%.gradlegRPC.trackerRobotReportR" +
-      "equest\032\036.gradlegRPC.requestrobotreportB\025" +
-      "\n\023io.grpc.coordinatorb\006proto3"
+      "s\030\002 \001(\014\"\343\001\n\027onPositionUpdateMessage\022\026\n\016f" +
+      "ootPrintBytes\030\001 \001(\014\022\017\n\007robotid\030\002 \001(\005\022\t\n\001" +
+      "x\030\003 \001(\001\022\t\n\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006 " +
+      "\001(\001\022\r\n\005pitch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpathI" +
+      "ndex\030\t \001(\005\022\020\n\010velocity\030\n \001(\001\022\030\n\020distance" +
+      "Traveled\030\013 \001(\001\022\025\n\rcriticalPoint\030\014 \001(\0052\305\007" +
+      "\n\022CoordinatorService\022[\n\026coordinatorrobot" +
+      "report\022\036.gradlegRPC.requestrobotreport\032\037" +
+      ".gradlegRPC.responserobotreport\"\000\022\211\001\n\030co" +
+      "ordinatorcriticalpoint\0225.gradlegRPC.coor" +
+      "dinatorGetCriticalPointRequestMessage\0326." +
+      "gradlegRPC.coordinatorGetCriticalPointRe" +
+      "sponseMessage\022W\n\027coordinatordependencies" +
+      "\022\".gradlegRPC.getCurrentDependencies\032\030.g" +
+      "radlegRPC.noneResponse\022W\n\026coordinatorget" +
+      "Greeting\022\032.gradlegRPC.robotsGreeting\032!.g" +
+      "radlegRPC.robotgreetingResponse\022I\n\026coord" +
+      "inatorgetTecStuff\022\026.gradlegRPC.tecreques" +
+      "t\032\027.gradlegRPC.tecresponse\022N\n\031coordinato" +
+      "rgetCurrentTime\022\027.gradlegRPC.timerequest" +
+      "\032\030.gradlegRPC.timeresponse\022Y\n\030coordinato" +
+      "rgetVisualizer\022\035.gradlegRPC.visualizerre" +
+      "quest\032\036.gradlegRPC.visualizerresponse\022R\n" +
+      "\033coordinatorgetAllenInterval\022\031.gradlegRP" +
+      "C.allenInterval\032\030.gradlegRPC.noneRespons" +
+      "e\022i\n coordinatorgetRobotReportRequest\022%." +
+      "gradlegRPC.trackerRobotReportRequest\032\036.g" +
+      "radlegRPC.requestrobotreport\022_\n\036coordina" +
+      "torgetOnPositionUpdate\022#.gradlegRPC.onPo" +
+      "sitionUpdateMessage\032\030.gradlegRPC.noneRes" +
+      "ponseB\025\n\023io.grpc.coordinatorb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13149,6 +14398,12 @@ public final class Coordinator {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_allenInterval_descriptor,
         new java.lang.String[] { "Kan", "AllenIntervalBytes", });
+    internal_static_gradlegRPC_onPositionUpdateMessage_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_gradlegRPC_onPositionUpdateMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_gradlegRPC_onPositionUpdateMessage_descriptor,
+        new java.lang.String[] { "FootPrintBytes", "Robotid", "X", "Y", "Z", "Roll", "Pitch", "Yaw", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 
