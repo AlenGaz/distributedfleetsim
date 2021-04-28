@@ -1019,8 +1019,6 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
      */
     protected void computeCriticalSections() {
 
-        System.out.println("->>>>>>" + trackers.get(1).getTrajectoryEnvelope());
-
 
         int numberOfCriticalSections = 0;
 
@@ -1489,7 +1487,6 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
         //FIXME: if this is not placed into the control loop (), then a robot can pass from (P) to (D) without
         //affecting the set of dependencies.
-        System.out.println("in StartTrackingAddedMissions");
 
         synchronized (solver) {
             for (final TrajectoryEnvelope te : envelopesToTrack) {
@@ -1543,11 +1540,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                     @Override
                     public void onTrackingStart() {
-                        System.out.println("in onTrackingStart");
                         if (trackingCallbacks.containsKey(myTE.getRobotID())) trackingCallbacks.get(myTE.getRobotID()).onTrackingStart();
-                        System.out.println("before viz");
                         if (viz != null){
-                            System.out.println("inside onTrackingStart viz!=null");
                             viz.addEnvelope(myTE);
                         }
                     }
@@ -1639,7 +1633,6 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
 
                     trackers.put(te.getRobotID(), tracker);
-                    System.out.println("te. get robot id printing" + te.getRobotID());
                     trackers.get(te.getRobotID());
 
                     externalCPCounters.put(tracker, -1);

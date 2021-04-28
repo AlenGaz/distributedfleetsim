@@ -78,7 +78,6 @@ public class Test1StartCoordinator {
 		//see the {@Missions} class.
 
 
-		//2. INSTANTIATE THE COORDINATIONSERVER
 
 
 		//2. INSTANTIATE THE COORDINATIONSERVER
@@ -101,54 +100,46 @@ public class Test1StartCoordinator {
 
 
 		//
-		//Start dispatching threads for each robot, each of which
+		//Start dispatching each robot, each of which
+
 
 		boolean dispatched = false;
 		HashMap<Integer, Boolean> dispatchedRobot = new HashMap<Integer, Boolean>();
+
+
+		//FIXME This may run on a different PC in the future
+		BrowserVisualization viz = new BrowserVisualization();
+		viz.setInitialTransform(18, 35, 20);
+		tec.setVisualization(viz);
+
 		while (true) {
 
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(2);
 			System.out.println("[Test1StartCoordinator] robotIDtoClientConnection Keyset: " + coordinatorServiceImpl.robotIDtoClientConnection.keySet());
-
-
 			// just a test of dispatching some robots
-			if (tec.coordinatorServicImpl.robotIDtoClientConnection.containsKey(1) && !dispatched) {
-
-				//FIXME This may run on a different PC in the future
-				BrowserVisualization viz = new BrowserVisualization();
-				viz.setInitialTransform(18, 35, 20);
-				tec.setVisualization(viz);
-
-				TimeUnit.SECONDS.sleep(2);
-
-				Mission m = new Mission(1, coordinatorServiceImpl.robotIDtoClientConnection.get(1).getPoseSteerings());
-				Missions.enqueueMission(m);
-				dispatchedRobot.put(1, true);
+			for(int i = 0; i < coordinatorServiceImpl.robotIDtoClientConnection.size(); i++) {
 
 
-				Pose testpose = new Pose(8, 8, 0 ,3 ,0 ,0);
+				if (tec.coordinatorServicImpl.robotIDtoClientConnection.containsKey(i)) {
+					if(!dispatchedRobot.containsKey(i)) {
 
 
-				//tec.placeRobot(1, testpose);
-				tec.placeRobot(1,coordinatorServiceImpl.robotIDtoClientConnection.get(1).getStartPose());
-				tec.addMissions(m);
+						TimeUnit.MILLISECONDS.sleep(100);
 
+						Mission m = new Mission(i, coordinatorServiceImpl.robotIDtoClientConnection.get(i).getPoseSteerings());
+						Missions.enqueueMission(m);
+						dispatchedRobot.put(i, true);
 
-				Missions.startMissionDispatchers(tec, new int[]{1, 2, 3});
+						tec.placeRobot(i, coordinatorServiceImpl.robotIDtoClientConnection.get(i).getStartPose());
+						//tec.addMissions(m);
+						System.out.println("[StartCoordinator] dispatching robot .. " + i + " with path length" + m.getPath().length);
 
+						Missions.startMissionDispatchers(tec, new int[]{1, 2, 3});
+						TimeUnit.SECONDS.sleep(2);
 
-				dispatched = true;
-
-				TimeUnit.SECONDS.sleep(2);
-
-				//tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(1), coordinatorServiceImpl.robotIDtoRobotReport.get(1), "Yes");
-
-
+					}
+				}
 			}
-
 		}
-
-
 	}
 }
-

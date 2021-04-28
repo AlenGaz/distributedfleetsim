@@ -1,32 +1,29 @@
 package Launch;
 
+import CoordinatorPackage.containers.MakeFootPrint;
+import com.vividsolutions.jts.geom.Coordinate;
+import fleetClient.FleetClient;
+import fleetClient.RemoteTrajectoryEnvelopeTrackerRK4;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import org.metacsp.multi.spatioTemporal.paths.Pose;
+import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
+import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
+import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelopeSolver;
+import se.oru.coordination.coordination_oru.Mission;
+import se.oru.coordination.coordination_oru.RobotReport;
+import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
+import se.oru.coordination.coordination_oru.util.Missions;
+import se.oru.coordination.coordination_oru.util.Pair;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import CoordinatorPackage.containers.MakeFootPrint;
-import javassist.compiler.ast.Symbol;
-import se.oru.coordination.coordination_oru.util.Missions;
-import fleetClient.FleetClient;
-import fleetClient.RemoteAbstractTrajectoryEnvelopeTracker;
-import fleetClient.RemoteTrajectoryEnvelopeTrackerRK4;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
-import org.metacsp.multi.spatioTemporal.paths.Pose;
 
-import com.vividsolutions.jts.geom.Coordinate;
-
-import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
-import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
-import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelopeSolver;
-import se.oru.coordination.coordination_oru.*;
-import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
-import se.oru.coordination.coordination_oru.util.Pair;
-
-
-public class Test1StartRobotGeneric {
+public class Test2StartRobotGeneric {
 
     private static Random rand = new Random(123213);
     private static ArrayList<Pair<Integer>> placements = new ArrayList<Pair<Integer>>();
@@ -101,10 +98,10 @@ public class Test1StartRobotGeneric {
         /**
          * Necessary params for the class below
          **/
-        String robotName = "r1p";
+        String robotName = "r2p";
         double minRobotRadius = 0.2;
         double maxRobotRadius = 2.0;
-        int robotID = 1;
+        int robotID = 2;
         double maxAccel = 2.0;
         double maxVel = 1;
         Integer port = 50051;
@@ -120,7 +117,7 @@ public class Test1StartRobotGeneric {
 
 
         Coordinate[] fp = makeRandomFootprint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
-        Pose[] startAndGoal = makeRandomStartGoalPair(3, 2.5*maxRobotRadius, 1.1*maxRobotRadius, 1.1*maxRobotRadius);
+        Pose[] startAndGoal = makeRandomStartGoalPair(3, 4.5*maxRobotRadius, 2.1*maxRobotRadius, 1.1*maxRobotRadius);
 
         //Coordinate[] fp = makeRandomFootprint(0, 0, 1, 8, minRobotRadius, maxRobotRadius);
         //Pose[] startAndGoal = makeRandomStartGoalPair(3, 4.2*maxRobotRadius, 2*maxRobotRadius, 1.1*maxRobotRadius);
@@ -128,9 +125,9 @@ public class Test1StartRobotGeneric {
 
         //Set the robot motion planner
         ReedsSheppCarPlanner rsp = new ReedsSheppCarPlanner();
-        rsp.setRadius(0.8);
-        rsp.setTurningRadius(4.0);
-        rsp.setDistanceBetweenPathPoints(1.5);
+        rsp.setRadius(0.4);
+        rsp.setTurningRadius(6.0);
+        rsp.setDistanceBetweenPathPoints(1.0);
         rsp.setFootprint(fp);
 
 
