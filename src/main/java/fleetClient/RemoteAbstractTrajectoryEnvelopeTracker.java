@@ -65,7 +65,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
     String target = "localhost:50051";  // coordinator IP
     ManagedChannel channel = ManagedChannelBuilder.forTarget(target).maxInboundMessageSize(100*1000*1000).usePlaintext().build();
     public FleetClient client = new FleetClient(channel);
-
+    public boolean isClient;
 
     /**
      * Create a new {@link RemoteAbstractTrajectoryEnvelopeTracker} to track a given {@link TrajectoryEnvelope},
@@ -78,7 +78,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
      * @param trackingPeriodInMillis The tracking period.
      * @param cb An optional callback function.
      */
-    public RemoteAbstractTrajectoryEnvelopeTracker(TrajectoryEnvelope te, double temporalResolution, int trackingPeriodInMillis, TrackingCallback cb) {
+    public RemoteAbstractTrajectoryEnvelopeTracker(TrajectoryEnvelope te, double temporalResolution, int trackingPeriodInMillis, TrackingCallback cb, boolean isClient) {
         this.te = te;
         this.traj = te.getTrajectory();
         this.externalCPCounter = -1;
@@ -87,6 +87,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         this.startingTimeInMillis = Calendar.getInstance().getTimeInMillis();
         this.trackingPeriodInMillis = trackingPeriodInMillis;
         this.cb = cb;
+        this.isClient = isClient;
         startMonitoringThread();
     }
 
@@ -440,17 +441,25 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
                          *  if we dont have one that has been changed yet.
                          * */
 
-                        client.makeRobotReport("my RobotReport", getRobotReport().getRobotID(), getRobotReport().getPose().getX()
-                                , getRobotReport().getPose().getY(), getRobotReport().getPose().getZ(), getRobotReport().getPose().getRoll(),
-                                getRobotReport().getPose().getPitch(), getRobotReport().getPose().getYaw(), getRobotReport().getVelocity()
-                                , getRobotReport().getPathIndex(), getRobotReport().getDistanceTraveled(), getRobotReport().getCriticalPoint());
 
 
-                        rr = client.makeRobotReportRequest(te.getRobotID());
+                        if(isClient) {
+                            // this rpc below is for sending a robot report
+                            client.makeRobotReport("my RobotReport", getRobotReport().getRobotID(), getRobotReport().getPose().getX()
+                                    , getRobotReport().getPose().getY(), getRobotReport().getPose().getZ(), getRobotReport().getPose().getRoll(),
+                                    getRobotReport().getPose().getPitch(), getRobotReport().getPose().getYaw(), getRobotReport().getVelocity()
+                                    , getRobotReport().getPathIndex(), getRobotReport().getDistanceTraveled(), getRobotReport().getCriticalPoint());
 
+                            // this is for getting a robot report
+                            rr = client.makeRobotReportRequest(te.getRobotID());
+                        }
+                        else{ // if this function is called on a coordinator then we return cause we wont be able to get a robotReport from here..
+                            return;
+                        }
 
-                        rr= getRobotReport();  // (((alen))) not sure if this is the correct way of getting robotreport.. (its not using id so which one is it getting when?
+                        rr= getRobotReport();
                         if(rr==null) {
+                            System.out.println("[RemoteAbstract...Tracker] rr is null !");
                             metaCSPLogger.info("(waiting for "+te.getComponent()+"'s tracker to come online)");
                             try { Thread.sleep(10); }
                             catch (InterruptedException e) { e.printStackTrace(); }

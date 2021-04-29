@@ -703,6 +703,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                 }
                 @Override
                 public String[] onPositionUpdate() {
+                    System.out.println("[RemoteAbstract..Coordinator] in String onPositionUpdate() line 706");
                     if (trackingCallbacks.containsKey(robotID)) return trackingCallbacks.get(robotID).onPositionUpdate();
                     return null;
                 }
@@ -1052,6 +1053,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                 for (int i = 0; i < drivingEnvelopes.size(); i++) {
                     for (int j = 0; j < envelopesToTrack.size(); j++) {
                         if (drivingEnvelopes.get(i).getRobotID() != envelopesToTrack.get(j).getRobotID()) {
+                            // TODO fix minstart1 and minstart2 nullexceptions in the Test1StartCoordinator...
                             int minStart1 = currentReports.containsKey(drivingEnvelopes.get(i).getRobotID()) ? currentReports.get(drivingEnvelopes.get(i).getRobotID()).getPathIndex() : -1;
                             int minStart2 = currentReports.containsKey(envelopesToTrack.get(j).getRobotID()) ? currentReports.get(envelopesToTrack.get(j).getRobotID()).getPathIndex() : -1;
                             double maxDimensionOfSmallestRobot = Math.min(getMaxFootprintDimension(drivingEnvelopes.get(i).getRobotID()), getMaxFootprintDimension(envelopesToTrack.get(j).getRobotID()));
@@ -1487,6 +1489,10 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
         //FIXME: if this is not placed into the control loop (), then a robot can pass from (P) to (D) without
         //affecting the set of dependencies.
+<<<<<<< HEAD
+
+=======
+>>>>>>> e6d645c54b1c42a79157489a2e4754a1b66ecd2f
 
         synchronized (solver) {
             for (final TrajectoryEnvelope te : envelopesToTrack) {
@@ -1541,6 +1547,10 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                     @Override
                     public void onTrackingStart() {
                         if (trackingCallbacks.containsKey(myTE.getRobotID())) trackingCallbacks.get(myTE.getRobotID()).onTrackingStart();
+<<<<<<< HEAD
+                        System.out.println("in onTrackingstart starting envelope for robot: " + myTE.getRobotID());
+=======
+>>>>>>> e6d645c54b1c42a79157489a2e4754a1b66ecd2f
                         if (viz != null){
                             viz.addEnvelope(myTE);
                         }
@@ -1609,6 +1619,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                     @Override
                     public String[] onPositionUpdate() {
+                        System.out.println("[RemoteAbstract...Coordinator] in onposition ubdate line 1615");
                         if (viz != null && !trackingFinished && viz.periodicEnvelopeRefreshInMillis() > 0) {
                             long timeNow = Calendar.getInstance().getTimeInMillis();
                             if (timeNow-lastEnvelopeRefresh > viz.periodicEnvelopeRefreshInMillis()) {

@@ -36,7 +36,7 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 */
 
 	public TrajectoryEnvelopeTrackerLight(RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrajectoryEnvelope te, int timeStep, double temporalResolution, TrackingCallback cb, CoordinatorServiceImpl coordinatorServiceImpl) {
-		super(te, temporalResolution, timeStep, cb);
+		super(te, temporalResolution, timeStep, cb, false);
 		this.tec = tec;
 		this.coordinatorServiceImpl = coordinatorServiceImpl;
 		//this.th = new Thread((Runnable) this, "Light tracker " + te.getComponent());
@@ -55,8 +55,10 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 * This method should return a {@link RobotReport}, describing the current state of the robot.
 	 * @return A {@link RobotReport}, describing the current state of the robot.
 	 */
-
-
+	@Override
+	public RobotReport getRobotReport(int robotID) {
+		return tec.coordinatorServicImpl.robotIDtoRobotReport.get(robotID);
+	}
 
 	/**
 	 * This method should implement the mechanisms for notifying a robot of a new critical point.

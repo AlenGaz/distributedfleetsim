@@ -32,7 +32,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerDummy extends RemoteAbstrac
      * @param cb An optional callback that will be called during tracking.
      */
     public RemoteTrajectoryEnvelopeTrackerDummy(TrajectoryEnvelope te, int timeStep, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
-        super(te, temporalResolution, timeStep, cb);
+        super(te, temporalResolution, timeStep, cb, false);
         this.tec = tec;
         this.th = new Thread(this, "Parking tracker " + te.getComponent());
         this.th.start();

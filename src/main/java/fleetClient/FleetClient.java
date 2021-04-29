@@ -278,7 +278,7 @@ public class FleetClient {
     }
 
 
-    public void makeOnPositionUpdate(Polygon footprint, RobotReport robotReport) {
+    public void makeOnPositionUpdate(TrajectoryEnvelope footprint, RobotReport robotReport) {
 
         ByteString footPrint = null;
         try {

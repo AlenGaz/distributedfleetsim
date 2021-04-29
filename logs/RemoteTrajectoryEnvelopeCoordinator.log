@@ -1,3 +1,80 @@
+<<<<<<< HEAD
+1619646694427@[RemoteTrajectoryEnvelopeCoordinator] Number of replicas for each send: 3
+1619646694630@[RemoteTrajectoryEnvelopeCoordinator] Status @ 278 ms
+1619646694630@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 0 ms
+1619646694631@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1619646694631@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1619646694631@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1619646694631@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1619646694631@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1619646694631@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1619646694632@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1619646695555@[RemoteTrajectoryEnvelopeCoordinator] Status @ 1299 ms
+1619646695555@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1619646695555@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1619646695555@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1619646695555@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1619646695555@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1619646695555@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1619646695555@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1619646695555@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1619646696516@[RemoteTrajectoryEnvelopeCoordinator] Status @ 2261 ms
+1619646696516@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1619646696517@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1619646696517@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1619646696517@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1619646696517@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1619646696517@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1619646696517@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1619646696517@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1619646697151@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot1 in pose (12.2000, 2.2000, 5.4141): TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((12.2000, 2.2000, 5.4141))
+1619646697197@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot1: [8, 6]
+1619646697520@[RemoteTrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1619646697526@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot1is not specified. Returning the default value.
+1619646697534@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [8, 6]
+1619646697535@[RemoteTrajectoryEnvelopeCoordinator] Status @ 3280 ms
+1619646697535@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1619646697535@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 3 variables, 8 constraints
+1619646697535@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1619646697535@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1619646697535@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1619646697536@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 1, retransmitted: 0, number of replicas: 3.
+1619646697536@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1619646697536@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1619646698518@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [8, 6]
+1619646698518@[RemoteTrajectoryEnvelopeCoordinator] Status @ 4263 ms
+1619646698518@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1619646698519@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 3 variables, 8 constraints
+1619646698519@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1619646698519@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1619646698519@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1619646698519@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 1, retransmitted: 0, number of replicas: 3.
+1619646698519@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1619646698519@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1619646699259@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot2 in pose (22.2000, 2.2000, 5.4141): TrajectoryEnvelope 3 (Robot 2, SE 10) [0;0] Parking ((22.2000, 2.2000, 5.4141))
+1619646699518@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [8, 6]
+1619646699520@[RemoteTrajectoryEnvelopeCoordinator] Status @ 5264 ms
+1619646699520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1619646699520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 4 variables, 11 constraints
+1619646699520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot2 (P): -1   
+1619646699520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1619646699520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1619646699520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 1, retransmitted: 0, number of replicas: 3.
+1619646699520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1619646699521@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1619646700519@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [8, 6]
+1619646700520@[RemoteTrajectoryEnvelopeCoordinator] Status @ 6265 ms
+1619646700520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1619646700520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 4 variables, 11 constraints
+1619646700520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot2 (P): -1   
+1619646700520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1619646700520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1619646700520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 1, retransmitted: 0, number of replicas: 3.
+1619646700520@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1619646700520@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1619646701225@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot2: [26]
+1619646703249@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot2: [26]
+=======
 1619616943097@[RemoteTrajectoryEnvelopeCoordinator] Number of replicas for each send: 3
 1619616943449@[RemoteTrajectoryEnvelopeCoordinator] Status @ 776 ms
 1619616943451@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 0 ms
@@ -305,3 +382,4 @@
 1619616975469@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot2 in pose (12.2000, 2.2000, 5.4141): TrajectoryEnvelope 3 (Robot 2, SE 10) [0;0] Parking ((12.2000, 2.2000, 5.4141))
 1619616975713@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot2: [8, 6]
 1619616977755@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot2: [8, 6]
+>>>>>>> e6d645c54b1c42a79157489a2e4754a1b66ecd2f

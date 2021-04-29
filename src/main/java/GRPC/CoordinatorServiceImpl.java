@@ -357,10 +357,10 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
                                                StreamObserver<Coordinator.noneResponse> responseObserver){
 
 
-        Polygon footPrint = null;
+        TrajectoryEnvelope footPrint = null;
 
         try {
-            footPrint = (Polygon) convertFromBytes(request.getFootPrintBytes().toByteArray());
+            footPrint = (TrajectoryEnvelope) convertFromBytes(request.getFootPrintBytes().toByteArray());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -377,12 +377,27 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
        /**
         * Visualizing the movement that is done from the integration in RK4
         *
+<<<<<<< HEAD
+        *some alternative below
+        *  System.out.println("[CoordinatorServiceImpl] in onPositionUpdate() got footprint" + footPrint);
+        *  tec.getVisualization().displayRobotState(footPrint, rr, "Hi");
+        *  tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(1), rr, "A");
+        *  tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(2), rr, "A");
+        * */
+
+        tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()), rr, String.valueOf(rr.getCriticalPoint()));
+        tec.getVisualization().addEnvelope(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()));
+
+        //tec.getVisualization().addEnvelope(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()));
+        //tec.getVisualization().displayRobotState(footPrint, rr, String.valueOf(rr.getCriticalPoint()));
+=======
         */
         //System.out.println("[CoordinatorServiceImpl] in onPositionUpdate() got footprint" + footPrint);
         //tec.getVisualization().displayRobotState(footPrint, rr, "Hi");
         tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()), rr, String.valueOf(rr.getCriticalPoint()));
         //tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(1), rr, "A");
         //tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(2), rr, "A");
+>>>>>>> e6d645c54b1c42a79157489a2e4754a1b66ecd2f
 
     }
 
@@ -391,7 +406,6 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
         Coordinator.noneResponse response =
         Coordinator.noneResponse.newBuilder().setNone("").build();
-
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();

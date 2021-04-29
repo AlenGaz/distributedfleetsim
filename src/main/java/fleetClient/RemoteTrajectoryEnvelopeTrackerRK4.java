@@ -124,7 +124,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 	}
 
 	public RemoteTrajectoryEnvelopeTrackerRK4(TrajectoryEnvelope te, int timeStep, double temporalResolution, double maxVelocity, double maxAcceleration, TrackingCallback cb) {
-		super(te, temporalResolution, timeStep, cb);
+		super(te, temporalResolution, timeStep, cb, true);
 		this.MAX_VELOCITY = maxVelocity;
 		this.MAX_ACCELERATION = maxAcceleration;
 		this.state = new State(0.0, 0.0);
@@ -659,8 +659,8 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			//Do some user function on position update
 			//onPositionUpdate();
 			//System.out.println("[Remote..TrackerRK4] te.getFootprint(): " + te.getFootprint() +" and getRobotReport(): " + getRobotReport());
-
-			client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
+			//onPositionUpdate();
+			client.makeOnPositionUpdate(te, getRobotReport());
 			// this needs to send an RPC
 			// to invoke .. >-> if (tec.getVisualization() != null) tec.getVisualization().displayRobotState(te.getFootprint(), getRobotReport());
 
