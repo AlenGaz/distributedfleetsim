@@ -117,7 +117,7 @@ public class Test2StartRobotGeneric {
 
 
         Coordinate[] fp = makeRandomFootprint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
-        Pose[] startAndGoal = makeRandomStartGoalPair(3, 4.5*maxRobotRadius, 2.1*maxRobotRadius, 1.1*maxRobotRadius);
+        Pose[] startAndGoal = makeRandomStartGoalPair(3, 4*maxRobotRadius, 4*maxRobotRadius, 2.1*maxRobotRadius);
 
         //Coordinate[] fp = makeRandomFootprint(0, 0, 1, 8, minRobotRadius, maxRobotRadius);
         //Pose[] startAndGoal = makeRandomStartGoalPair(3, 4.2*maxRobotRadius, 2*maxRobotRadius, 1.1*maxRobotRadius);
@@ -125,8 +125,8 @@ public class Test2StartRobotGeneric {
 
         //Set the robot motion planner
         ReedsSheppCarPlanner rsp = new ReedsSheppCarPlanner();
-        rsp.setRadius(0.4);
-        rsp.setTurningRadius(6.0);
+        rsp.setRadius(0.2);
+        rsp.setTurningRadius(35.0);
         rsp.setDistanceBetweenPathPoints(1.0);
         rsp.setFootprint(fp);
 
@@ -144,6 +144,7 @@ public class Test2StartRobotGeneric {
         Missions.enqueueMission(new Mission(robotID, rsp.getPathInv()));
 
         //2. instantiating tracker
+
         //TODO Trajectory Envelope te?? // get parking envelope
 
 
@@ -210,7 +211,7 @@ public class Test2StartRobotGeneric {
 
             System.out.println("[Test1StartRobotGeneric] asked the coordinator for currentTime and got: " + client.makeCurrentTimeRequest());
 
-            coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
+            coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPathInv());
             rk4.setNumberOfReplicas(coordinatorResponse); //FIXME is the coordinator answering only the number of replicas?
         }
 
@@ -231,7 +232,8 @@ public class Test2StartRobotGeneric {
         try {
             requestResponse = client.makeGreeting("greeting", robotID, "simulated", InetAddress.getLocalHost().toString(), port, startPose, endPose,
                     String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint, poseSteerings);
-        } catch (UnknownHostException e) {
+            }
+        catch (UnknownHostException e) {
             e.printStackTrace();
         }
         return requestResponse;

@@ -39,6 +39,7 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 		super(te, temporalResolution, timeStep, cb, false);
 		this.tec = tec;
 		this.coordinatorServiceImpl = coordinatorServiceImpl;
+		// commenting out, dont want to start a new thread per tracker on the coordinator...
 		//this.th = new Thread((Runnable) this, "Light tracker " + te.getComponent());
 		//this.th.start();
 	}
@@ -55,9 +56,9 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 * This method should return a {@link RobotReport}, describing the current state of the robot.
 	 * @return A {@link RobotReport}, describing the current state of the robot.
 	 */
-	@Override
+
 	public RobotReport getRobotReport(int robotID) {
-		return tec.coordinatorServicImpl.robotIDtoRobotReport.get(robotID);
+		return coordinatorServiceImpl.robotIDtoRobotReport.get(robotID);
 	}
 
 	/**
@@ -65,6 +66,7 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 * @param criticalPoint The critical point to set (index of pose along the reference trajectory
 	 * beyond which the robot may not navigate).
 	 */
+
 
 	public void setCriticalPoint(int criticalPoint) {
 		//call your service to set the critical point
@@ -80,6 +82,13 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 			th.notify();
 		}
 	}
+
+
+	// .. may need to do this, shouldnt have to though but problem of robotReport being null on a Light tracker is occuring..
+	public void setRobotReport(RobotReport r){
+		//this
+	}
+
 
 	public boolean isParkingFinished() {
 		return parkingFinished;

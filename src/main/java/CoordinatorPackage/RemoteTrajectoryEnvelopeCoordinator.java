@@ -1109,6 +1109,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                             while (!missionsPool.isEmpty() && numberNewAddedMissions < MAX_ADDED_MISSIONS) {
                                 Pair<TrajectoryEnvelope,Long> te = missionsPool.pollFirst();
                                 System.out.println("in envelopes to track");
+                                assert te != null;
                                 envelopesToTrack.add(te.getFirst());
                                 numberNewAddedMissions++;
                             }
@@ -1604,8 +1605,9 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                 RemoteAbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID);
                 //Update the coordinator view
                 //RobotReport robotReport = robotTracker.getRobotReport();
+                System.out.println("[RemoteTrajectoryEnvelopeCoordinator] robotTracker getRobotReport " + robotTracker.getRobotReport());
                 RobotReport robotReport = coordinatorServicImpl.robotIDtoRobotReport.get(robotID);
-                System.out.println("{RemoteTrajectoryEnvelopeCoordinator} coordserviceimpl<*>robotReport :" + robotReport);
+                //System.out.println("{RemoteTrajectoryEnvelopeCoordinator} coordserviceimpl<*>robotReport :" + robotReport);
                 currentReports.put(robotID, robotReport);
                 synchronized(stoppingPoints) {
                     if (stoppingPoints.containsKey(robotID)) {
@@ -1772,9 +1774,9 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                                 else robot2Yields = false;
                             }
                             else robot2Yields = (CSToDepsOrder.get(cs).getFirst() == robotReport2.getRobotID());
-                            metaCSPLogger.finest("Robot" + robotTracker1.getRobotReport().getRobotID() + ": " + robotTracker1.getStartingTimeInMillis() + ", " +
-                                    "Robot" + robotTracker2.getRobotReport().getRobotID() + ": " + robotTracker2.getStartingTimeInMillis() + ", yielding: " + (robot2Yields ?
-                                    robotReport2.getRobotID() : robotReport1.getRobotID()));
+//                            metaCSPLogger.finest("Robot" + robotTracker1.getRobotReport().getRobotID() + ": " + robotTracker1.getStartingTimeInMillis() + ", " +
+//                                    "Robot" + robotTracker2.getRobotReport().getRobotID() + ": " + robotTracker2.getStartingTimeInMillis() + ", yielding: " + (robot2Yields ?
+//                                    robotReport2.getRobotID() : robotReport1.getRobotID()));
                             drivingCurrentIndex = robot2Yields ? robotReport1.getPathIndex() : robotReport2.getPathIndex();
                             drivingTracker = robot2Yields ? robotTracker1 : robotTracker2;
                             waitingTracker = robot2Yields ? robotTracker2 : robotTracker1;

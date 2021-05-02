@@ -293,6 +293,9 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
     protected synchronized void updateDeadline(TrajectoryEnvelope trajEnv, long delta) {
         long time = getCurrentTimeInMillis()+delta;
+        // in updating the deadline the time comparison of the coordinator and the trajectory envelope for robots is compared first..
+        System.out.println("[RemoteAbstract..Coordinator] trajEnv robotID: " + trajEnv.getRobotID());
+        System.out.println("[RemoteAbstract..Coordinator] in updateDeadline , trajEnv.getTemporal.getEET: " + trajEnv.getTemporalVariable().getEET());
         if (time > trajEnv.getTemporalVariable().getEET()) {
 
             tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
@@ -318,6 +321,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
     protected synchronized void fixDeadline(TrajectoryEnvelope trajEnv, long delta) {
         long time = getCurrentTimeInMillis()+delta;
+        System.out.println("trajenv getEET() is : " + trajEnv.getTemporalVariable().getEET());
         if (time > trajEnv.getTemporalVariable().getEET()) {
 
             // - tec.getSolver().removeConstraint(deadlines.get(trajEnv));
@@ -395,7 +399,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
     public boolean controlRR = false;
 
     protected void startMonitoringThread() {
-        /////////////////////////////////////////// This is where Tracking Starts
+        // This is where Tracking Starts
 
         System.out.println("inside startMonitoringThread");
         //Start a thread that monitors the sub-envelopes and finishes them when appropriate
@@ -413,7 +417,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
                     //Track if past start time
 
-
+                    System.out.println("in te.getTemportalVariable().getEST() : " + te.getTemporalVariable().getEST());
                     if (te.getTemporalVariable().getEST() <= getCurrentTimeInMillis()) {
 
                         if (cb != null && !calledOnTrackingStart) {

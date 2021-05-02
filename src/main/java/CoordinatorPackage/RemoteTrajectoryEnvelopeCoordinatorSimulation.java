@@ -63,7 +63,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 
 	/**
 	 * Enable fake coordination.
-	 * @param enable <code>true</code> whether the coordinator does not impose any precedence constraints.
+	 *  enable <code>true</code> whether the coordinator does not impose any precedence constraints.
 	 */
 	public void setFakeCoordination(boolean fake) {
 		this.fake = fake;
@@ -286,7 +286,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 
 			@Override
 			public RobotReport getRobotReport() {
-				return null;
+				return coordinatorServiceImpl.robotIDtoRobotReport.get(te.getRobotID());
 			}
 
 			@Override

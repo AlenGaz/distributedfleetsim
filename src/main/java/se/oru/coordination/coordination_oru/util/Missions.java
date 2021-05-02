@@ -524,6 +524,7 @@ public class Missions {
 	 * @param m The mission to enqueue.
 	 */
 	public static void enqueueMission(Mission m) {
+		System.out.println("Enqueued mission for robot: " + m.getRobotID() + " with pathLength: "+m.getPath().length);
 		if (!missions.containsKey(m.getRobotID())) missions.put(m.getRobotID(), new ArrayList<Mission>());
 		missions.get(m.getRobotID()).add(m);
 	}

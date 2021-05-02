@@ -71,7 +71,7 @@ public class FleetClient {
 
         try {
             greetingresponse = coordinatorBlockingStub.coordinatorgetGreeting(greetingBuild);
-            System.out.println("[FleetClient] making greeting");
+            // System.out.println("[FleetClient] making greeting");
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
 
@@ -230,7 +230,7 @@ public class FleetClient {
         Coordinator.trackerRobotReportRequest request = Coordinator.trackerRobotReportRequest.newBuilder().setKan("TrackerRequestRobotReport").setRobotID(robotID).build();
         Coordinator.requestrobotreport response= null;
 
-        System.out.println("[FleetClient] requesting inside makeRobotReportRequest");
+        //System.out.println("[FleetClient] requesting inside makeRobotReportRequest");
         response = coordinatorBlockingStub.coordinatorgetRobotReportRequest(request);
 
         //System.out.println("[FleetClient] response from makeRobotReportRequest: " + response);

@@ -109,7 +109,7 @@ public class Test1StartCoordinator {
 
 		//FIXME This may run on a different PC in the future
 		BrowserVisualization viz = new BrowserVisualization();
-		viz.setInitialTransform(18, 35, 20);
+		viz.setInitialTransform(10, 35, 20);
 		tec.setVisualization(viz);
 
 		while (true) {
@@ -126,8 +126,21 @@ public class Test1StartCoordinator {
 
 						TimeUnit.MILLISECONDS.sleep(100);
 
-						Mission m = new Mission(i, coordinatorServiceImpl.robotIDtoClientConnection.get(i).getPoseSteerings());
+						PoseSteering[] path = coordinatorServiceImpl.robotIDtoClientConnection.get(i).getPoseSteerings();
+
+						ReedsSheppCarPlanner rsp = new ReedsSheppCarPlanner();
+						rsp.setStart(coordinatorServiceImpl.robotIDtoClientConnection.get(i).getStartPose());
+						rsp.setGoals(coordinatorServiceImpl.robotIDtoClientConnection.get(i).getEndPose());
+
+
+						//PoseSteering[] path = rsp.getPath();
+						//PoseSteering[] pathInv = rsp.getPathInv();
+
+						Mission m = new Mission(i, path);
+						//Mission mInv = new Mission(i, pathInv);
 						Missions.enqueueMission(m);
+						//Missions.enqueueMission(mInv);
+
 						dispatchedRobot.put(i, true);
 
 						tec.placeRobot(i, coordinatorServiceImpl.robotIDtoClientConnection.get(i).getStartPose());

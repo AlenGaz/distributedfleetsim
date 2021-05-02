@@ -491,7 +491,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     public void setCriticalPoint(int robotID, int criticalPoint, boolean retransmitt) {
 
         //criticalPoint = 8;
-        System.out.println("[Abstract Coordinator] the critical point: " + criticalPoint);
+        // System.out.println("[Abstract Coordinator] the critical point: " + criticalPoint);
 
         synchronized (trackers) {
             RemoteAbstractTrajectoryEnvelopeTracker tracker = trackers.get(robotID);
@@ -530,8 +530,9 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
         //Read the last message received
         synchronized (trackers) {
-            if (!trackers.containsKey(robotID)) return null;
-            return trackers.get(robotID).getRobotReport();
+            //if (!trackers.containsKey(robotID)) return null;
+            //return trackers.get(robotID).getRobotReport();
+            return coordinatorServicImpl.robotIDtoRobotReport.get(robotID);
         }
 
     }
@@ -757,14 +758,14 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     }
 
     /**
-     * Get the path index beyond which a robot should not navigate, given the {@link TrajectoryEnvelope} of another robot.
-     * @param te1 The {@link TrajectoryEnvelope} of the leading robot.
-     * @param te2 The {@link TrajectoryEnvelope} of the yielding robot.
-     * @param currentPIR1 The current path index of the leading robot.
-     * @param te1Start The path index
-     * @param te1End
-     * @param te2Start
-     * @return The path index beyond which a robot should not navigate, given the {@link TrajectoryEnvelope} of another robot.
+     *  te2 The {@link TrajectoryEnvelope} of the yielding robot.
+     *  currentPIR1 The current path index of the leading robot.
+     *  Get the path index beyond which a robot should not navigate, given the {@link TrajectoryEnvelope} of another robot.
+     *  te1End
+     *  te1Start The path index
+     *  te1 The {@link TrajectoryEnvelope} of the leading robot.
+     *  te2Start
+     *  The path index beyond which a robot should not navigate, given the {@link TrajectoryEnvelope} of another robot.
      */
     protected int getCriticalPoint(int yieldingRobotID, CriticalSection cs, int leadingRobotCurrentPathIndex) {
 
@@ -1006,7 +1007,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
     /**
      * Add a criterion for determining the order of robots through critical sections
-     * (comparator of {@link AbstractTrajectoryEnvelopeTracker}s).
+     * (comparator of { AbstractTrajectoryEnvelopeTracker}s).
      * Comparators are considered in the order in which they are added.
      * @param c A new comparator for determining robot ordering through critical sections.
      */
@@ -1020,6 +1021,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
      */
     protected void computeCriticalSections() {
 
+        System.out.println("in computeCriticalSections");
 
         int numberOfCriticalSections = 0;
 
@@ -1027,11 +1029,17 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
             synchronized (trackers) {
 
+
+                // TODO trackers..getrobotreport always null..., this
                 //Update the coordinator view
                 HashMap<Integer,RobotReport> currentReports = new HashMap<Integer,RobotReport>();
-                for (int robotID : trackers.keySet()) currentReports.put(robotID, this.getRobotReport(robotID));
-                //metaCSPLogger.info("Current reports: " + currentReports.toString());
-
+                for (int robotID : trackers.keySet()) {
+                    System.out.println("in putting currentReports.. " + trackers.get(robotID).getRobotReport());
+                    trackers.get(robotID).setCriticalPoint(coordinatorServicImpl.robotIDtoRobotReport.get(robotID).getPathIndex(), 0);
+                    currentReports.put(robotID, this.getRobotReport(robotID));
+                    metaCSPLogger.info("Current reports: " + currentReports.toString());
+                    System.out.println("Current reports size: " + currentReports.size());
+                }
                 //Collect all driving envelopes and current pose indices
 
                 /***
@@ -1041,10 +1049,17 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                 ArrayList<TrajectoryEnvelope> drivingEnvelopes = new ArrayList<TrajectoryEnvelope>();
 
+                /// changing to read instead of from robotIDtoRobotReport ..?
                 for (RemoteAbstractTrajectoryEnvelopeTracker atet : trackers.values()) {
-                    System.out.println("#->" + trackers.values() + "#->" + atet);
+                    // TODO atet.getRobotReport() is null
+
+                    System.out.println("[trackers.get in atet robotID: " + atet.getRobotReport());
+                   // System.out.println("#-> trackers.values() : " + trackers.get(atet.getRobotReport().getRobotID()).getRobotReport() + " \n #-> atet: " + atet);
                     if (!(atet instanceof RemoteTrajectoryEnvelopeTrackerDummy)) {
                         drivingEnvelopes.add(atet.getTrajectoryEnvelope());
+                        System.out.println("atet.getRobotID which it is... : " + atet);
+                        //System.out.println("Drivingenvelopes should be added, size is: " + drivingEnvelopes.size());
+                        System.out.println("driving envelopes: " + drivingEnvelopes);
                         //metaCSPLogger.info(atet.getRobotReport().getRobotID() + " is driving.");
                     }
                 }
@@ -1054,8 +1069,27 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                     for (int j = 0; j < envelopesToTrack.size(); j++) {
                         if (drivingEnvelopes.get(i).getRobotID() != envelopesToTrack.get(j).getRobotID()) {
                             // TODO fix minstart1 and minstart2 nullexceptions in the Test1StartCoordinator...
-                            int minStart1 = currentReports.containsKey(drivingEnvelopes.get(i).getRobotID()) ? currentReports.get(drivingEnvelopes.get(i).getRobotID()).getPathIndex() : -1;
-                            int minStart2 = currentReports.containsKey(envelopesToTrack.get(j).getRobotID()) ? currentReports.get(envelopesToTrack.get(j).getRobotID()).getPathIndex() : -1;
+
+                            //int minStart1 = currentReports.containsKey(drivingEnvelopes.get(i).getRobotID()) ? currentReports.get(drivingEnvelopes.get(i).getRobotID()).getPathIndex() : -1;
+                            int minStart1 = 1;
+                            System.out.println("values of currentReports ;" + currentReports.keySet());
+                            if(currentReports.containsKey(drivingEnvelopes.get(i).getRobotID())) {
+                                System.out.println("in minstart1 currentreports get");
+                                System.out.println("currentReports get via i" + currentReports.get(i));
+                                System.out.println("currentReports get via drivingEnvelopes.." + currentReports.get(drivingEnvelopes.get(i).getRobotID()));
+
+                                minStart1 = currentReports.get(drivingEnvelopes.get(i).getRobotID()).getPathIndex();
+                            }
+
+                            //int minStart2 = currentReports.containsKey(envelopesToTrack.get(j).getRobotID()) ? currentReports.get(envelopesToTrack.get(j).getRobotID()).getPathIndex() : -1;
+                            int minStart2 = -1;
+                            if(currentReports.containsKey(envelopesToTrack.get(j).getRobotID())){
+                                System.out.println("in minstart2 currrentreportsget..");
+                                minStart2 = currentReports.get(envelopesToTrack.get(j).getRobotID()).getPathIndex();
+                            }
+
+
+
                             double maxDimensionOfSmallestRobot = Math.min(getMaxFootprintDimension(drivingEnvelopes.get(i).getRobotID()), getMaxFootprintDimension(envelopesToTrack.get(j).getRobotID()));
                             for (CriticalSection cs : getCriticalSections(null, null, drivingEnvelopes.get(i), minStart1, envelopesToTrack.get(j), minStart2, this.checkEscapePoses, maxDimensionOfSmallestRobot)) {
                                 this.allCriticalSections.add(cs);
@@ -1489,11 +1523,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
         //FIXME: if this is not placed into the control loop (), then a robot can pass from (P) to (D) without
         //affecting the set of dependencies.
-<<<<<<< HEAD
 
-=======
->>>>>>> e6d645c54b1c42a79157489a2e4754a1b66ecd2f
-
+        System.out.println("in startTracking Added Missions ");
         synchronized (solver) {
             for (final TrajectoryEnvelope te : envelopesToTrack) {
                 RemoteTrajectoryEnvelopeTrackerDummy startParkingTracker = null;
@@ -1547,10 +1578,9 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                     @Override
                     public void onTrackingStart() {
                         if (trackingCallbacks.containsKey(myTE.getRobotID())) trackingCallbacks.get(myTE.getRobotID()).onTrackingStart();
-<<<<<<< HEAD
+
                         System.out.println("in onTrackingstart starting envelope for robot: " + myTE.getRobotID());
-=======
->>>>>>> e6d645c54b1c42a79157489a2e4754a1b66ecd2f
+
                         if (viz != null){
                             viz.addEnvelope(myTE);
                         }
@@ -1617,7 +1647,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                     }
 
-                    @Override
+
                     public String[] onPositionUpdate() {
                         System.out.println("[RemoteAbstract...Coordinator] in onposition ubdate line 1615");
                         if (viz != null && !trackingFinished && viz.periodicEnvelopeRefreshInMillis() > 0) {
@@ -1644,7 +1674,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
 
                     trackers.put(te.getRobotID(), tracker);
-                    trackers.get(te.getRobotID());
+                    System.out.println("Trackers.put te.getRobotID: robotReport: -> -> " + trackers.get(te.getRobotID()).getRobotReport());
+
 
                     externalCPCounters.put(tracker, -1);
                 }
@@ -1889,6 +1920,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                                 Pair<TrajectoryEnvelope,Long> te = missionsPool.pollFirst();
 
                                 envelopesToTrack.add(te.getFirst());
+                                System.out.println("[RemoteAbstract..Coordinator] in envelopes to track of size: " + envelopesToTrack.size() + " ,and added " + te.getFirst().getRobotID());
                                 numberNewAddedMissions++;
                             }
                             computeCriticalSections();

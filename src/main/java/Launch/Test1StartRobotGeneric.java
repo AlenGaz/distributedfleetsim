@@ -106,7 +106,7 @@ public class Test1StartRobotGeneric {
         double maxRobotRadius = 2.0;
         int robotID = 1;
         double maxAccel = 2.0;
-        double maxVel = 1;
+        double maxVel = 0.3;
         Integer port = 50051;
         double MAX_VELOCITY;
         double MAX_ACCELERATION;
@@ -120,7 +120,7 @@ public class Test1StartRobotGeneric {
 
 
         Coordinate[] fp = makeRandomFootprint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
-        Pose[] startAndGoal = makeRandomStartGoalPair(3, 2.5*maxRobotRadius, 1.1*maxRobotRadius, 1.1*maxRobotRadius);
+        Pose[] startAndGoal = makeRandomStartGoalPair(3, 6*maxRobotRadius, 1.8*maxRobotRadius, -1.5*maxRobotRadius);
 
         //Coordinate[] fp = makeRandomFootprint(0, 0, 1, 8, minRobotRadius, maxRobotRadius);
         //Pose[] startAndGoal = makeRandomStartGoalPair(3, 4.2*maxRobotRadius, 2*maxRobotRadius, 1.1*maxRobotRadius);
@@ -128,9 +128,9 @@ public class Test1StartRobotGeneric {
 
         //Set the robot motion planner
         ReedsSheppCarPlanner rsp = new ReedsSheppCarPlanner();
-        rsp.setRadius(0.8);
-        rsp.setTurningRadius(4.0);
-        rsp.setDistanceBetweenPathPoints(1.5);
+        rsp.setRadius(0.2);
+        rsp.setTurningRadius(8.0);
+        rsp.setDistanceBetweenPathPoints(0.75);
         rsp.setFootprint(fp);
 
 
@@ -218,11 +218,10 @@ public class Test1StartRobotGeneric {
         }
 
         // FleetClient.makeGreeting will return -1 if coordinator isnt there //FIXME: it will never be triggered
-        if (coordinatorResponse == -1) System.out.println("[Test1StartRobotGeneric] exiting...CoordinatorServer not running");
+        if (coordinatorResponse == -1)
+            System.out.println("[Test1StartRobotGeneric] exiting...CoordinatorServer not running");
 
     }
-
-
 
     /**
      * This is our simple greeting for now that is going to the client, just calling this
