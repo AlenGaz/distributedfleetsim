@@ -117,14 +117,14 @@ public class Test1StartCoordinator {
 			TimeUnit.SECONDS.sleep(2);
 			System.out.println("[Test1StartCoordinator] robotIDtoClientConnection Keyset: " + coordinatorServiceImpl.robotIDtoClientConnection.keySet());
 			// just a test of dispatching some robots
-			for(int i = 0; i < coordinatorServiceImpl.robotIDtoClientConnection.size(); i++) {
+			for(int i = 0; i <= coordinatorServiceImpl.robotIDtoClientConnection.size(); i++) {
 
 
 				if (tec.coordinatorServicImpl.robotIDtoClientConnection.containsKey(i)) {
 					if(!dispatchedRobot.containsKey(i)) {
 
 
-						TimeUnit.MILLISECONDS.sleep(100);
+						TimeUnit.MILLISECONDS.sleep(200);
 
 						PoseSteering[] path = coordinatorServiceImpl.robotIDtoClientConnection.get(i).getPoseSteerings();
 
@@ -136,19 +136,25 @@ public class Test1StartCoordinator {
 						//PoseSteering[] path = rsp.getPath();
 						//PoseSteering[] pathInv = rsp.getPathInv();
 
+						//if(!tec.isFree(i)){ return; }
+
 						Mission m = new Mission(i, path);
 						//Mission mInv = new Mission(i, pathInv);
 						Missions.enqueueMission(m);
 						//Missions.enqueueMission(mInv);
 
+
+
 						dispatchedRobot.put(i, true);
 
 						tec.placeRobot(i, coordinatorServiceImpl.robotIDtoClientConnection.get(i).getStartPose());
-						//tec.addMissions(m);
-						System.out.println("[StartCoordinator] dispatching robot .. " + i + " with path length" + m.getPath().length);
 
-						Missions.startMissionDispatchers(tec, new int[]{1, 2, 3});
-						TimeUnit.SECONDS.sleep(2);
+						System.out.println("[StartCoordinator] dispatching robot .. " + i + " with path length" + m.getPath().length);
+						System.out.println("[StartCoordinator] isFree: " + tec.isFree(i));
+
+							Missions.startMissionDispatchers(tec, true, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
+
+							//TimeUnit.MILLISECONDS.sleep(50);
 
 					}
 				}

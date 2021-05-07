@@ -147,7 +147,7 @@ public class Test1StartRobotFileMp {
             }
 
             @Override
-            protected void setCriticalPoint(int criticalPoint) {
+            public void setCriticalPoint(int criticalPoint) {
 
             }
 

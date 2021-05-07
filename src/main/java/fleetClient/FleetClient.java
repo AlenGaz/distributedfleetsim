@@ -49,6 +49,7 @@ public class FleetClient {
                             String timeStamp, double maxAccel, double maxVel,
                             double trackingPeriodInMillis, MakeFootPrint makeFootPrint, PoseSteering[] poseSteerings) {
 
+        System.out.println("[FleetClient] makeGreeting kan: " + kan);
 
         ByteString poseSteeringBytes = null;
         try {
@@ -77,11 +78,13 @@ public class FleetClient {
 
         }
         if(greetingresponse!=null){
+            System.out.println("[FleetClient] makegreeting request: " + kan + " got response; " + greetingresponse.getNumofReplicas());
             return greetingresponse.getNumofReplicas();
         }
         else{
             return -1;
         }
+
 
     }
 
@@ -117,11 +120,11 @@ public class FleetClient {
         }
     }
 
-    public int makeCriticalPointreq(String myreq, int robotID) {
+    public int makeCriticalPointreq(int robotID) {
         Coordinator.coordinatorGetCriticalPointRequestMessage req = Coordinator.coordinatorGetCriticalPointRequestMessage
-                .newBuilder().setKan(myreq).setRobotID(robotID).build();
+                .newBuilder().setKan("requestcriticalpoint").setRobotID(robotID).build();
         Coordinator.coordinatorGetCriticalPointResponseMessage coordinatorRsp = null;
-        
+
         try {
             coordinatorRsp = coordinatorBlockingStub.coordinatorcriticalpoint(req);
         }
@@ -130,11 +133,8 @@ public class FleetClient {
 
         }
 
-        //System.out.println("In fleet client: " + coordinatorcriticalpoint(req));
-        //int cp = coordinatorRsp.getCriticalPoint();
-        //System.out.println("before return" + cp);
-        //return cp;
 
+        //System.out.println("[FleetClient] getCriticalPoint response was: " + coordinatorRsp.getCriticalPoint() + " for robotID: " + robotID);
         return coordinatorRsp.getCriticalPoint();
 
     }
@@ -221,8 +221,10 @@ public class FleetClient {
             e.printStackTrace();
             return false;
         }
+
         Coordinator.allenInterval message = Coordinator.allenInterval.newBuilder().setKan(kan).setAllenIntervalBytes(allenIntervalByteString).build();
         coordinatorBlockingStub.coordinatorgetAllenInterval(message);
+
         return true;
     }
 

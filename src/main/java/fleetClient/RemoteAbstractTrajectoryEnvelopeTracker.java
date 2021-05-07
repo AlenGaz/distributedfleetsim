@@ -1,5 +1,6 @@
 package fleetClient;
 
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -193,7 +194,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
      * @param criticalPoint The critical point to set (index of pose along the reference trajectory
      * beyond which the robot may not navigate).
      */
-    protected abstract void setCriticalPoint(int criticalPoint);
+    public abstract void setCriticalPoint(int criticalPoint);
 
     /**
      * This method should implement the mechanisms for notifying a robot of a new critical point, caring about network delays.
@@ -203,14 +204,14 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
      * @param externalCPCounter A counter related to the current notification ("timestamp").
      */
     public void setCriticalPoint(int criticalPointToSet, int externalCPCounter) {
-
-        if (
+      /* if (
                 (externalCPCounter < this.externalCPCounter && externalCPCounter-this.externalCPCounter > Integer.MAX_VALUE/2.0) ||
                         (this.externalCPCounter > externalCPCounter && this.externalCPCounter-externalCPCounter < Integer.MAX_VALUE/2.0)) {
             metaCSPLogger.info("Ignored critical point " + criticalPointToSet + " related to counter " + externalCPCounter + " because counter is already at " + this.externalCPCounter + ".");
             return;
         }
-
+      */
+        System.out.println("[RemoteAbstract..Tracker] in setCriticalPoint , using criticalPointToSet: " + criticalPointToSet);
         setCriticalPoint(criticalPointToSet);
         this.externalCPCounter = externalCPCounter;
     }
@@ -295,11 +296,11 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         long time = getCurrentTimeInMillis()+delta;
         // in updating the deadline the time comparison of the coordinator and the trajectory envelope for robots is compared first..
         System.out.println("[RemoteAbstract..Coordinator] trajEnv robotID: " + trajEnv.getRobotID());
-        System.out.println("[RemoteAbstract..Coordinator] in updateDeadline , trajEnv.getTemporal.getEET: " + trajEnv.getTemporalVariable().getEET());
+        //System.out.println("[RemoteAbstract..Coordinator] in updateDeadline , trajEnv.getTemporal.getEET: " + trajEnv.getTemporalVariable().getEET());
         if (time > trajEnv.getTemporalVariable().getEET()) {
 
             tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
-            client.sendAllenInterval("Remove", deadLines); // this client.sendinterval ... replaces tec.getSolver().removeConstraint(deadlines.get)
+            //client.sendAllenInterval("Remove", deadLines); // this client.sendinterval ... replaces tec.getSolver().removeConstraint(deadlines.get)
 
             long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
             long bound2 = APSPSolver.INF;
@@ -309,7 +310,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
             deadline.setTo(trajEnv);
 
             /*
-             * this replaces the  //boolean added = tec.getSolver().addConstraint(deadline); */
+             * this replaces the  //boolean added = tec.getSolver().addConstraint(deadline);
+             * */
             if (!client.sendAllenInterval("Add", deadLine)) {
                 metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
                 throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
@@ -326,7 +328,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
             // - tec.getSolver().removeConstraint(deadlines.get(trajEnv));
             tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
-            client.sendAllenInterval("Remove", deadLines);
+            //client.sendAllenInterval("Remove", deadLines);
             // -
             long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
             long bound2 = bound1;
@@ -336,11 +338,19 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
             deadline.setFrom(trajEnv);
             deadline.setTo(trajEnv);
 
-            if (!client.sendAllenInterval("Add",deadLine)) {
+            /**
+             * Did some changes here first with sending AllenInterval but i notcied that
+             * it doesnt matter if tec.getSolver removeConstraint and addConstraint is done.
+             */
+
+
+            deadlines.put(trajEnv, deadline);
+            //if (!client.sendAllenInterval("Add",deadLine)) {
                 metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
                 throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
-            }
-            else deadlines.put(trajEnv, deadline);
+            //}
+            //else
+
         }
     }
 
@@ -417,7 +427,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
                     //Track if past start time
 
-                    System.out.println("in te.getTemportalVariable().getEST() : " + te.getTemporalVariable().getEST());
+                    //System.out.println("in te.getTemportalVariable().getEST() : " + te.getTemporalVariable().getEST());
                     if (te.getTemporalVariable().getEST() <= getCurrentTimeInMillis()) {
 
                         if (cb != null && !calledOnTrackingStart) {
@@ -446,16 +456,17 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
                          * */
 
 
-
                         if(isClient) {
                             // this rpc below is for sending a robot report
-                            client.makeRobotReport("my RobotReport", getRobotReport().getRobotID(), getRobotReport().getPose().getX()
+                           client.makeRobotReport("my RobotReport", getRobotReport().getRobotID(), getRobotReport().getPose().getX()
                                     , getRobotReport().getPose().getY(), getRobotReport().getPose().getZ(), getRobotReport().getPose().getRoll(),
                                     getRobotReport().getPose().getPitch(), getRobotReport().getPose().getYaw(), getRobotReport().getVelocity()
                                     , getRobotReport().getPathIndex(), getRobotReport().getDistanceTraveled(), getRobotReport().getCriticalPoint());
 
                             // this is for getting a robot report
-                            rr = client.makeRobotReportRequest(te.getRobotID());
+                            //rr = client.makeRobotReportRequest(te.getRobotID());
+
+
                         }
                         else{ // if this function is called on a coordinator then we return cause we wont be able to get a robotReport from here..
                             return;
@@ -512,7 +523,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
                 // synchronized(tec.getSolver()) {
                 if (cb != null) cb.beforeTrackingFinished();
                 finishTracking();
-                if (cb != null) cb.onTrackingFinished();
+                if (cb != null) cb.onTrackingFinished(getRobotReport().getRobotID(), getRobotReport().getPose());
             }
 
             //}
@@ -525,7 +536,10 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
     protected void finishTracking() {
         metaCSPLogger.info("<<<< Finished (super envelope) " + this.te);
+        // so this is where we would set up a new mission
+        // client.makeNewMissionRequest(int robotID);
         fixDeadline(te, 0);
+
     }
 
     /**

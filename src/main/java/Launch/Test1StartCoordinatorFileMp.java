@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
 
 import GRPC.CoordinatorServiceImpl;
+import org.metacsp.multi.spatioTemporal.paths.Pose;
 import se.oru.coordination.coordination_oru.util.BrowserVisualization;
 import se.oru.coordination.coordination_oru.util.Missions;
 import io.grpc.Server;
@@ -86,6 +87,11 @@ public class Test1StartCoordinatorFileMp {
 
             @Override
             public void onTrackingFinished() { }
+
+            @Override
+            public void onTrackingFinished(int robotID, Pose currentPose) {
+
+            }
 
             @Override
             public String[] onPositionUpdate() {

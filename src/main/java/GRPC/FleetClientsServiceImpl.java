@@ -190,7 +190,7 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
             @Override
             protected void onTrajectoryEnvelopeUpdate(TrajectoryEnvelope te) {}
             @Override
-            protected void setCriticalPoint(int criticalPoint) {}
+            public void setCriticalPoint(int criticalPoint) {}
             @Override
             public RobotReport getRobotReport() { return null; }
 

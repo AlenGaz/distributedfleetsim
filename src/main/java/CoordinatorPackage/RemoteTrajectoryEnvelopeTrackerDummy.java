@@ -45,7 +45,9 @@ public abstract class RemoteTrajectoryEnvelopeTrackerDummy extends RemoteAbstrac
     public void startTracking() { }
 
     @Override
-    public void setCriticalPoint(int criticalPointToSet) { }
+    public void setCriticalPoint(int criticalPointToSet) {
+        System.out.println("[RemoteTrajectoryEnvelopeTrackerDummy] setCriticalPoint method called in dummy tracker");
+    }
 
     @Override
     public RobotReport getRobotReport() {

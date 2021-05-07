@@ -586,8 +586,9 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
         return ret;
     }
 
-    @Override
+
     protected void updateDependencies() {
+        System.out.println("[RemoteTrajectoryEnvelopeCoordinator]Inside update dependencies: .......");
         synchronized(solver) {
             if (this.avoidDeadlockGlobally.get()) globalCheckAndRevise();
             else localCheckAndRevise();
@@ -596,7 +597,8 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
     protected void localCheckAndRevise() {
 
-        //System.out.println("Caller of updateDependencies(): " + Thread.currentThread().getStackTrace()[2]);
+        System.out.println("Caller of updateDependencies(): " + Thread.currentThread().getStackTrace()[2]);
+        System.out.println("In local CHeck and Revise of TrajectoryEnvelopeCoordinator");
         synchronized(solver) {
             HashMap<Integer,RobotReport> currentReports = new HashMap<Integer,RobotReport>();
             HashMap<Integer,HashSet<Dependency>> currentDeps = new HashMap<Integer,HashSet<Dependency>>();
@@ -622,8 +624,10 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                                 if (!currentDeps.containsKey(robotID)) currentDeps.put(robotID, new HashSet<Dependency>());
                                 currentDeps.get(robotID).add(dep);
                             }
+
                             //Start waiting thread if the stopping point has been reached
                             //if (Math.abs(robotReport.getPathIndex()-stoppingPoint) <= 1 && robotReport.getCriticalPoint() == stoppingPoint && !stoppingPointTimers.containsKey(robotID)) {
+
                             if (Math.abs(robotReport.getPathIndex()-stoppingPoint) <= 1 && robotReport.getCriticalPoint() <= stoppingPoint && !stoppingPointTimers.containsKey(robotID)) {
                                 spawnWaitingThread(robotID, i, duration);
                             }
@@ -1070,7 +1074,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
             @Override
             public void run() {
-
+                System.out.println("in setupinferencecallback run run run");
                 String fileName = new String(System.getProperty("user.home")+File.separator+"coordinator_stat.txt");
                 initStat(fileName, "Init statistics: @"+Calendar.getInstance().getTimeInMillis() + "\n");
                 String stat = new String(//"Legend: at each control period\n\t 1. elapsed time to compute critical sections\n\t 2.elapsed time to update dependencies\n\t 3. number of new critical sections\n\t"
@@ -1108,7 +1112,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                             //FIXME critical sections should be computed incrementally/asynchronously
                             while (!missionsPool.isEmpty() && numberNewAddedMissions < MAX_ADDED_MISSIONS) {
                                 Pair<TrajectoryEnvelope,Long> te = missionsPool.pollFirst();
-                                System.out.println("in envelopes to track");
+
                                 assert te != null;
                                 envelopesToTrack.add(te.getFirst());
                                 numberNewAddedMissions++;
@@ -1122,8 +1126,10 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
                             startTrackingAddedMissions();
                         }
+                        System.out.println("[RemoteTrajectoryEnvelopeCoordinator] inb4 updateDependencies() is calaled");
                         elapsedTimeUpdateDependencies = Calendar.getInstance().getTimeInMillis();
                         updateDependencies();
+                        System.out.println("[RemoteTrajectoryEnvelopeCoordinator] after updateDependencies() is calaled");
                         elapsedTimeUpdateDependencies = Calendar.getInstance().getTimeInMillis()-elapsedTimeUpdateDependencies;
                         numberAllCriticalSections = allCriticalSections.size();
 
@@ -1209,7 +1215,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
      * @param newPath The path based on which the new {@link TrajectoryEnvelope} should be computed.
      * @param breakingPathIndex Last point on the current path to preserve.
      * @param lockedRobotIDs The set of robots which have been locked when the re-plan started.
-     * @param <code>true</code> whether the robot should be at the current critical point before starting a re-plan.
+     * <code>true</code> whether the robot should be at the current critical point before starting a re-plan.
      */
     public void replacePath(int robotID, PoseSteering[] newPath, int breakingPathIndex, Set<Integer> lockedRobotIDs) {
 
@@ -1280,6 +1286,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
                 //Add as if it were a new envelope, that way it will be accounted for in computeCriticalSections()
                 envelopesToTrack.add(newTE);
+                System.out.println("in envelopes to track pirnitng it : " + envelopesToTrack);
 
                 //Recompute CSs involving this robot
                 computeCriticalSections();
@@ -1344,7 +1351,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
 
     /**
-     * Truncate the {@link TrajectoryEnvelope} of a given robot at the closest dynamically-feasible path point. This path point is computed via the robot's {@link ForwardModel}.
+     * Truncate the {@link TrajectoryEnvelope} of a given robot at the closest dynamically-feasible path point. This path point is computed via the robot's ForwardModel}.
      * @param robotID The ID of the robot whose {@link TrajectoryEnvelope} should be truncated.
      * @return <code>true</code> iff the envelope is successfully truncated.
      */
@@ -1353,9 +1360,9 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
     }
 
     /**
-     * Truncate the {@link TrajectoryEnvelope} of a given robot at the closest dynamically-feasible path point. This path point is computed via the robot's {@link ForwardModel}.
+     * Truncate the {@link TrajectoryEnvelope} of a given robot at the closest dynamically-feasible path point. This path point is computed via the robot's {ForwardModel}.
      * @param robotID The ID of the robot whose {@link TrajectoryEnvelope} should be truncated.
-     * @param ensureDynamicFeasibility If <code>true</code>, truncate at the closest dynamically-feasible path point, which is computed via the robot's {@link ForwardModel}; if <code>false</code>, truncate at the current path index.
+     * @param ensureDynamicFeasibility If <code>true</code>, truncate at the closest dynamically-feasible path point, which is computed via the robot's ForwardModel}; if <code>false</code>, truncate at the current path index.
      * @return <code>true</code> iff the envelope is successfully truncated.
      */
     public boolean truncateEnvelope(int robotID, boolean ensureDynamicFeasibility) {
@@ -1398,7 +1405,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
     /**
      * Reverse the {@link TrajectoryEnvelope} of a given robot at the closest dynamically-feasible path point.
-     * This path point is computed via the robot's {@link ForwardModel}.
+     * This path point is computed via the robot's {ForwardModel}.
      * @param robotID The ID of the robot whose {@link TrajectoryEnvelope} should be reversed.
      * @return <code>true</code> iff the envelope is successfully truncated.
      */
@@ -1604,9 +1611,9 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             for (int robotID : robotIDs) {
                 RemoteAbstractTrajectoryEnvelopeTracker robotTracker = trackers.get(robotID);
                 //Update the coordinator view
-                //RobotReport robotReport = robotTracker.getRobotReport();
-                System.out.println("[RemoteTrajectoryEnvelopeCoordinator] robotTracker getRobotReport " + robotTracker.getRobotReport());
-                RobotReport robotReport = coordinatorServicImpl.robotIDtoRobotReport.get(robotID);
+                RobotReport robotReport = robotTracker.getRobotReport();
+                //System.out.println("[RemoteTrajectoryEnvelopeCoordinator] robotTracker getRobotReport " + robotTracker.getRobotReport());
+                //RobotReport robotReport = coordinatorServicImpl.robotIDtoRobotReport.get(robotID);
                 //System.out.println("{RemoteTrajectoryEnvelopeCoordinator} coordserviceimpl<*>robotReport :" + robotReport);
                 currentReports.put(robotID, robotReport);
                 synchronized(stoppingPoints) {
@@ -1616,22 +1623,21 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                             int stoppingPoint = stoppingPoints.get(robotID).get(i);
                             int duration = stoppingTimes.get(robotID).get(i);
 
-                            /**
-                             * Skipping this part atm because robotTracker.getTrajectoryEnvelope() is null...
-                             * (((Alen)))
+
                             if (robotReport.getPathIndex() <= stoppingPoint) {
-                                System.out.println("{RemoteTrajectoryEnvelopeCoordinator} robottracker.getTrajectoryEnvelope: " + robotTracker.getTrajectoryEnvelope());
+                               // System.out.println("{RemoteTrajectoryEnvelopeCoordinator} robottracker.getTrajectoryEnvelope: " + robotTracker.getTrajectoryEnvelope());
                                 Dependency dep = new Dependency(robotTracker.getTrajectoryEnvelope(), null, stoppingPoint, 0);
                                 if (!currentDeps.containsKey(robotID)) currentDeps.put(robotID, new HashSet<Dependency>());
                                 if (!currentDeps.get(robotID).add(dep)) {
                                     metaCSPLogger.severe("<<<<<<<<< Add dependency fails (1). Dep: " + dep);
                                 }
                             }
-                            */
+
 
                             //Start waiting thread if the stopping point has been reached
                             //if (Math.abs(robotReport.getPathIndex()-stoppingPoint) <= 1 && robotReport.getCriticalPoint() == stoppingPoint && !stoppingPointTimers.containsKey(robotID)) {
                             if (Math.abs(robotReport.getPathIndex()-stoppingPoint) <= 1 && robotReport.getCriticalPoint() <= stoppingPoint && !stoppingPointTimers.containsKey(robotID)) {
+                                System.out.println("[RemoteTrajectoryEnvelopeCoordinator] in spawnWaitingThread because robot is at stoppingPOINT!!!!!!!");
                                 spawnWaitingThread(robotID, i, duration);
                             }
                         }
@@ -2186,6 +2192,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
     }//end checkAndRevise
 
     private void sendCriticalPoint(int robotID, HashMap<Integer, RobotReport> currentReports) {
+        System.out.println("[RemoteTrajectoryEnvelopeCoordinator] in sendCriticalPoint...");
         RemoteAbstractTrajectoryEnvelopeTracker tracker = null;
         synchronized (trackers) {
             tracker = trackers.get(robotID);
@@ -2196,17 +2203,22 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             if (currentDependencies.containsKey(robotID)) {
                 Dependency dep = currentDependencies.get(robotID);
                 metaCSPLogger.finest("Set critical point " + dep.getWaitingPoint() + " to Robot" + dep.getWaitingRobotID() +".");
-                System.out.println("[TRACJ CORD]->>>dep.getWaitingPoint()" + dep.getWaitingPoint());
+                System.out.println("[RemoteTrajectoryEnvelopeCoordinator]->>>dep.getWaitingPoint()" + dep.getWaitingPoint() + " dep RobotID" + dep.getWaitingRobotID());
                 retransmitt = retransmitt || communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == dep.getWaitingPoint() && currentReports.get(robotID).getCriticalPoint() != dep.getWaitingPoint()
                         && ((int)(Calendar.getInstance().getTimeInMillis()-communicatedCPs.get(tracker).getSecond().longValue()) > maxDelay);
                 setCriticalPoint(dep.getWaitingRobotID(), dep.getWaitingPoint(), retransmitt);
-                // tec.robotIDtoCriticalPoint(robotID, criticalPoint)
+
+                //
+                robotIDtoCriticalPoint.put(dep.getWaitingRobotID(), dep.getWaitingPoint());
+
 
             }
             else {
                 retransmitt = retransmitt || communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == -1 && currentReports.get(robotID).getCriticalPoint() != -1
                         && ((int)(Calendar.getInstance().getTimeInMillis()-communicatedCPs.get(tracker).getSecond().longValue()) > maxDelay);
                 setCriticalPoint(robotID, -1, retransmitt);
+                System.out.println("[RemoteTrajectoryEnvelopeCoordinator] else-> replace the robotID in criticalPoints, this should remove old ones???");
+                robotIDtoCriticalPoint.replace(robotID, -1);
             }
             forceCriticalPointReTransmission.put(robotID, false);
         }

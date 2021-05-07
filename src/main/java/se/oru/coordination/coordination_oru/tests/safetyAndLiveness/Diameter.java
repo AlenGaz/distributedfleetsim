@@ -191,7 +191,12 @@ public class Diameter {
 					writeStat(statFilename, stat);
 				}
 
-				@Override
+						@Override
+						public void onTrackingFinished(int robotID, Pose currentPose) {
+
+						}
+
+						@Override
 				public void onNewGroundEnvelope() {
 					// TODO Auto-generated method stub
 					

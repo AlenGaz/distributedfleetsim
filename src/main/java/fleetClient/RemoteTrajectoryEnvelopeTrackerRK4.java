@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
+import org.metacsp.utility.logging.MetaCSPLogging;
 import se.oru.coordination.coordination_oru.util.Missions;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinator;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
@@ -110,7 +111,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			double sinTheta = Math.sin(Missions.wrapAngle180b(path[i].getTheta()));
 			double deltaSinThetaNew = sinTheta-sinThetaPrev;
 			if (deltaSinThetaNew*deltaSinTheta < 0 && i != 1) {
-				System.out.println("Direction change for Robot" + this.te.getRobotID() + " in " + i);
+				//System.out.println("Direction change for Robot" + this.te.getRobotID() + " in " + i);
 				this.curvatureDampening[i] = 0.2;
 			}
 			deltaSinTheta = deltaSinThetaNew;
@@ -388,12 +389,19 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 	@Override
 	public void setCriticalPoint(int criticalPointToSet, int extCPCounter) {
 
+/** X X X X X X X X
+ * this one with 2 parameters is not used, the one with 1 parameter is..
+ * **/
+
+
 		final int criticalPoint = criticalPointToSet;
 		final int externalCPCount = extCPCounter;
 		final int numberOfReplicas = this.numberOfReplicas;
 
-		System.out.println("[RemoteTracker..RK4] in setCritical point, criticalPoint is :" + criticalPoint);
+		//System.out.println("[RemoteTracker..RK4] in setCritical point, criticalPoint is :" + criticalPoint);
 		//Define a thread that will send the information
+
+
 		Thread waitToTXThread = new Thread("Wait to TX thread for robot " + te.getRobotID()) {
 			public void run() {
 				//System.out.println("[RemoteTracker..RK4] in run() of setCriticalPoint() method");
@@ -458,6 +466,11 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 	@Override
 	public void setCriticalPoint(int criticalPointToSet) {
 
+
+
+		//criticalPointToSet = client.makeCriticalPointreq(getRobotReport().getRobotID());
+		//System.out.println("[RemoteTrajectoryEnvelopeTrackerRK4] got critical point from request (robotID was:) " + getRobotReport().getRobotID() + " criticalpoint: " + criticalPointToSet);
+
 		if (this.criticalPoint != criticalPointToSet) {
 
 			//A new intermediate index to stop at has been given
@@ -484,7 +497,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 				}
 			}
 
-			//Critical point <= current position, ignore -- WHY??
+
 			else if (criticalPointToSet != -1 && criticalPointToSet <= getRobotReport().getPathIndex()) {
 				metaCSPLogger.warning("Ignored critical point (" + te.getComponent() + "): " + criticalPointToSet + " because robot is already at " + getRobotReport().getPathIndex() + " (and current CP is " + this.criticalPoint + ")");
 			}
@@ -501,6 +514,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 		//Same critical point was already set
 		else {
 			metaCSPLogger.warning("Critical point (" + te.getComponent() + ") " + criticalPointToSet + " was already set!");
+
 		}
 
 	}
@@ -609,7 +623,11 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			pauseFirst = false;
 		}
 
+
 		while (true) {
+
+			int criticalPointx = client.makeCriticalPointreq(getRobotReport().getRobotID());
+			setCriticalPoint(criticalPointx);
 
 			//End condition: passed the middle AND velocity < 0 AND no criticalPoint
 			boolean skipIntegration = false;
@@ -620,12 +638,16 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 
 					//set state to final position, just in case it didn't quite get there (it's certainly close enough)
 					state = new State(totalDistance, 0.0);
-					onPositionUpdate();
+					client.makeOnPositionUpdate(te, getRobotReport());
+
+					//onPositionUpdate();
 					break;
 				}
 
 				//Vel < 0 hence we are at CP, thus we need to skip integration
-				if (!atCP /*&& getRobotReport().getPathIndex() == criticalPoint*/) {
+			
+				//System.out.println("inb4 stopping + got criticalpoint: " + criticalPoint + "my pathIndex..> " + getRobotReport().getPathIndex());
+				if (!atCP && getRobotReport().getPathIndex() == criticalPoint) {
 					int pathIndex = getRobotReport().getPathIndex();
 
 					metaCSPLogger.info("At critical point (" + te.getComponent() + "): " + criticalPoint + " (" + pathIndex + ")");
@@ -653,26 +675,25 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 				double dampening = getCurvatureDampening(getRobotReport().getPathIndex(), false);
 
 				integrateRK4(state, elapsedTrackingTime, deltaTime, slowingDown, MAX_VELOCITY, dampening, MAX_ACCELERATION);
-				//System.out.println("in rk4 update the state" + state.getPosition());
+
 			}
 
 			//Do some user function on position update
 			//onPositionUpdate();
 			//System.out.println("[Remote..TrackerRK4] te.getFootprint(): " + te.getFootprint() +" and getRobotReport(): " + getRobotReport());
-			//onPositionUpdate();
+
 			client.makeOnPositionUpdate(te, getRobotReport());
-			// this needs to send an RPC
-			// to invoke .. >-> if (tec.getVisualization() != null) tec.getVisualization().displayRobotState(te.getFootprint(), getRobotReport());
 
 
 			enqueueOneReport();
 
 			//Sleep for tracking period
-			int delay = trackingPeriodInMillis;
+
+		/*	int delay = trackingPeriodInMillis;
 			if (NetworkConfiguration.getMaximumTxDelay() > 0) delay += rand.nextInt(NetworkConfiguration.getMaximumTxDelay());
 			try { Thread.sleep(delay); }
 			catch (InterruptedException e) { e.printStackTrace(); }
-
+*/
 			//Advance time to reflect how much we have slept (~ trackingPeriod)
 			long deltaTimeInMillis = Calendar.getInstance().getTimeInMillis()-timeStart;
 			deltaTime = deltaTimeInMillis/this.temporalResolution;
@@ -721,10 +742,9 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 
 		//First compute time to stop (can do FW here...)
 		while (state.getPosition() < distance/2.0 && state.getVelocity() < maxVel) {
-			System.out.println("[RK4] printing robots state before integration " + state.getPosition());
-			System.out.println("[RK4] printing robots state before integration " + state.getPosition());
+
 			integrateRK4(state, time, deltaTime, false, maxVel, 1.0, maxAccel);
-			System.out.println("[RK4] printing robots state after integration" + state.getPosition());
+			//System.out.println("[RK4] printing robots state after integration" + state.getPosition());
 			time += deltaTime;
 		}
 		double positionToSlowDown = distance-state.getPosition();

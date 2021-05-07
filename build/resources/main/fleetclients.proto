@@ -5,14 +5,13 @@ option java_package = "io.grpc.fleetClients";
 
 service FleetClientsService {
   rpc gCriticalPoint(getCriticalPointRequestMessage) returns (getCriticalPointResponseMessage);
-  /////////////////////////////
+
   rpc message(requestMessage) returns (responseMessage){}
   rpc grobotID(getRobotID) returns (robotID){}
   rpc grobotReport(robotReportRequest) returns (robotReportResponse);
   rpc coordinatorrobotreport(coordinatorrequestrobotid) returns (coordinatorrespondrobotreport);
   rpc clientCriticalpoint(clientGetCriticalPointRequestMessage) returns (clientGetCriticalPointResponseMessage);
 
-  // Lesh
   //rpc trajectoryEnv(requestTrajectoryEnvelope) returns (respondTrajectoryEnvelope);
 
 }
@@ -26,7 +25,6 @@ message getCriticalPointResponseMessage{
   int32 criticalPoint = 1;
 }
 
-/////////////////////////////////////////
 
 message requestMessage {
   string name = 1;
@@ -97,6 +95,7 @@ message clientGetCriticalPointRequestMessage {
 message clientGetCriticalPointResponseMessage {
   int32 criticalPoint = 1;
 }
+
 /*
 message requestTrajectoryEnvelope{
   string kan = 1;

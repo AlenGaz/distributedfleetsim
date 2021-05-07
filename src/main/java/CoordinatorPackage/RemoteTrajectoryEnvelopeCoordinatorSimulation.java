@@ -34,8 +34,8 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 	//protected AtomicInteger totalPacketsLost = new AtomicInteger(0);
 
 	//protected int DEFAULT_ROBOT_TRACKING_PERIOD;
-	protected double DEFAULT_MAX_VELOCITY;
-	protected double DEFAULT_MAX_ACCELERATION;
+	protected double DEFAULT_MAX_VELOCITY = 5;
+	protected double DEFAULT_MAX_ACCELERATION = 10;
 
 	/**
 	 * The default footprint used for robots if none is specified.

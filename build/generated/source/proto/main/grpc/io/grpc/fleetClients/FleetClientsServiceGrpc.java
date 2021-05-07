@@ -269,9 +269,6 @@ public final class FleetClientsServiceGrpc {
     }
 
     /**
-     * <pre>
-     *&#47;//////////////////////////
-     * </pre>
      */
     public void message(io.grpc.fleetClients.Fleetclients.requestMessage request,
         io.grpc.stub.StreamObserver<io.grpc.fleetClients.Fleetclients.responseMessage> responseObserver) {
@@ -377,9 +374,6 @@ public final class FleetClientsServiceGrpc {
     }
 
     /**
-     * <pre>
-     *&#47;//////////////////////////
-     * </pre>
      */
     public void message(io.grpc.fleetClients.Fleetclients.requestMessage request,
         io.grpc.stub.StreamObserver<io.grpc.fleetClients.Fleetclients.responseMessage> responseObserver) {
@@ -442,9 +436,6 @@ public final class FleetClientsServiceGrpc {
     }
 
     /**
-     * <pre>
-     *&#47;//////////////////////////
-     * </pre>
      */
     public io.grpc.fleetClients.Fleetclients.responseMessage message(io.grpc.fleetClients.Fleetclients.requestMessage request) {
       return blockingUnaryCall(
@@ -503,9 +494,6 @@ public final class FleetClientsServiceGrpc {
     }
 
     /**
-     * <pre>
-     *&#47;//////////////////////////
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<io.grpc.fleetClients.Fleetclients.responseMessage> message(
         io.grpc.fleetClients.Fleetclients.requestMessage request) {

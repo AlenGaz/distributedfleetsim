@@ -3,6 +3,7 @@ package se.oru.coordination.coordination_oru.tests;
 import java.util.Comparator;
 import java.util.HashMap;
 
+import org.metacsp.multi.spatioTemporal.paths.Pose;
 import se.oru.coordination.coordination_oru.ConstantAccelerationForwardModel;
 import se.oru.coordination.coordination_oru.CriticalSection;
 import se.oru.coordination.coordination_oru.Mission;
@@ -69,7 +70,12 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobotsReverseEnvelope {
 			
 			@Override
 			public void onTrackingFinished() { }
-			
+
+			@Override
+			public void onTrackingFinished(int robotID, Pose currentPose) {
+
+			}
+
 			@Override
 			public String[] onPositionUpdate() {
 				return new String[] {"a","b","c"};

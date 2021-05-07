@@ -1,5 +1,6 @@
 package se.oru.coordination.coordination_oru.tests;
 
+import org.metacsp.multi.spatioTemporal.paths.Pose;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import se.oru.coordination.coordination_oru.util.BrowserVisualization;
@@ -70,6 +71,11 @@ import se.oru.coordination.coordination_oru.TrackingCallback;
 
                 @Override
                 public void onTrackingFinished() { }
+
+                @Override
+                public void onTrackingFinished(int robotID, Pose currentPose) {
+
+                }
 
                 @Override
                 public String[] onPositionUpdate() {
