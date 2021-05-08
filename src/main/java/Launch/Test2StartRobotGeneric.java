@@ -180,8 +180,7 @@ public class Test2StartRobotGeneric {
         int coordinatorResponse = 0;
         RobotReport rR = rk4.getRobotReport();
         client.makeRobotReport("my RobotReport", rR.getRobotID(), rR.getPose().getX()
-                , rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
-                rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
+                , rR.getPose().getY(), rR.getPose().getTheta(), rR.getVelocity()
                 , rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
 
         coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
@@ -205,8 +204,7 @@ public class Test2StartRobotGeneric {
 
             rR = rk4.getRobotReport();
             client.makeRobotReport("my RobotReport", rR.getRobotID(), rR.getPose().getX()
-                    , rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
-                    rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
+                    , rR.getPose().getY(), rR.getPose().getTheta(), rR.getVelocity()
                     , rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
 
             System.out.println("[Test1StartRobotGeneric] asked the coordinator for currentTime and got: " + client.makeCurrentTimeRequest());
@@ -231,7 +229,7 @@ public class Test2StartRobotGeneric {
         int requestResponse = 0;
         try {
             requestResponse = client.makeGreeting("greeting", robotID, "simulated", InetAddress.getLocalHost().toString(), port, startPose, endPose,
-                    String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint, poseSteerings);
+                    String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint, poseSteerings,1);
             }
         catch (UnknownHostException e) {
             e.printStackTrace();

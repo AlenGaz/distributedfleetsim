@@ -337,6 +337,37 @@ public final class CoordinatorServiceGrpc {
     return getCoordinatorgetOnPositionUpdateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.onPositionUpdateMessage,
+      io.grpc.coordinator.Coordinator.noneResponse> getCoordinatorgetOnPositionUpdateEvenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "coordinatorgetOnPositionUpdateEven",
+      requestType = io.grpc.coordinator.Coordinator.onPositionUpdateMessage.class,
+      responseType = io.grpc.coordinator.Coordinator.noneResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.onPositionUpdateMessage,
+      io.grpc.coordinator.Coordinator.noneResponse> getCoordinatorgetOnPositionUpdateEvenMethod() {
+    io.grpc.MethodDescriptor<io.grpc.coordinator.Coordinator.onPositionUpdateMessage, io.grpc.coordinator.Coordinator.noneResponse> getCoordinatorgetOnPositionUpdateEvenMethod;
+    if ((getCoordinatorgetOnPositionUpdateEvenMethod = CoordinatorServiceGrpc.getCoordinatorgetOnPositionUpdateEvenMethod) == null) {
+      synchronized (CoordinatorServiceGrpc.class) {
+        if ((getCoordinatorgetOnPositionUpdateEvenMethod = CoordinatorServiceGrpc.getCoordinatorgetOnPositionUpdateEvenMethod) == null) {
+          CoordinatorServiceGrpc.getCoordinatorgetOnPositionUpdateEvenMethod = getCoordinatorgetOnPositionUpdateEvenMethod =
+              io.grpc.MethodDescriptor.<io.grpc.coordinator.Coordinator.onPositionUpdateMessage, io.grpc.coordinator.Coordinator.noneResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "coordinatorgetOnPositionUpdateEven"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.onPositionUpdateMessage.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.coordinator.Coordinator.noneResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoordinatorServiceMethodDescriptorSupplier("coordinatorgetOnPositionUpdateEven"))
+              .build();
+        }
+      }
+    }
+    return getCoordinatorgetOnPositionUpdateEvenMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -465,6 +496,13 @@ public final class CoordinatorServiceGrpc {
       asyncUnimplementedUnaryCall(getCoordinatorgetOnPositionUpdateMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void coordinatorgetOnPositionUpdateEven(io.grpc.coordinator.Coordinator.onPositionUpdateMessage request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getCoordinatorgetOnPositionUpdateEvenMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -537,6 +575,13 @@ public final class CoordinatorServiceGrpc {
                 io.grpc.coordinator.Coordinator.onPositionUpdateMessage,
                 io.grpc.coordinator.Coordinator.noneResponse>(
                   this, METHODID_COORDINATORGET_ON_POSITION_UPDATE)))
+          .addMethod(
+            getCoordinatorgetOnPositionUpdateEvenMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                io.grpc.coordinator.Coordinator.onPositionUpdateMessage,
+                io.grpc.coordinator.Coordinator.noneResponse>(
+                  this, METHODID_COORDINATORGET_ON_POSITION_UPDATE_EVEN)))
           .build();
     }
   }
@@ -644,6 +689,14 @@ public final class CoordinatorServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getCoordinatorgetOnPositionUpdateMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void coordinatorgetOnPositionUpdateEven(io.grpc.coordinator.Coordinator.onPositionUpdateMessage request,
+        io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCoordinatorgetOnPositionUpdateEvenMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -738,6 +791,13 @@ public final class CoordinatorServiceGrpc {
     public io.grpc.coordinator.Coordinator.noneResponse coordinatorgetOnPositionUpdate(io.grpc.coordinator.Coordinator.onPositionUpdateMessage request) {
       return blockingUnaryCall(
           getChannel(), getCoordinatorgetOnPositionUpdateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.grpc.coordinator.Coordinator.noneResponse coordinatorgetOnPositionUpdateEven(io.grpc.coordinator.Coordinator.onPositionUpdateMessage request) {
+      return blockingUnaryCall(
+          getChannel(), getCoordinatorgetOnPositionUpdateEvenMethod(), getCallOptions(), request);
     }
   }
 
@@ -844,6 +904,14 @@ public final class CoordinatorServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getCoordinatorgetOnPositionUpdateMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.coordinator.Coordinator.noneResponse> coordinatorgetOnPositionUpdateEven(
+        io.grpc.coordinator.Coordinator.onPositionUpdateMessage request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCoordinatorgetOnPositionUpdateEvenMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_COORDINATORROBOTREPORT = 0;
@@ -856,6 +924,7 @@ public final class CoordinatorServiceGrpc {
   private static final int METHODID_COORDINATORGET_ALLEN_INTERVAL = 7;
   private static final int METHODID_COORDINATORGET_ROBOT_REPORT_REQUEST = 8;
   private static final int METHODID_COORDINATORGET_ON_POSITION_UPDATE = 9;
+  private static final int METHODID_COORDINATORGET_ON_POSITION_UPDATE_EVEN = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -912,6 +981,10 @@ public final class CoordinatorServiceGrpc {
           break;
         case METHODID_COORDINATORGET_ON_POSITION_UPDATE:
           serviceImpl.coordinatorgetOnPositionUpdate((io.grpc.coordinator.Coordinator.onPositionUpdateMessage) request,
+              (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse>) responseObserver);
+          break;
+        case METHODID_COORDINATORGET_ON_POSITION_UPDATE_EVEN:
+          serviceImpl.coordinatorgetOnPositionUpdateEven((io.grpc.coordinator.Coordinator.onPositionUpdateMessage) request,
               (io.grpc.stub.StreamObserver<io.grpc.coordinator.Coordinator.noneResponse>) responseObserver);
           break;
         default:
@@ -985,6 +1058,7 @@ public final class CoordinatorServiceGrpc {
               .addMethod(getCoordinatorgetAllenIntervalMethod())
               .addMethod(getCoordinatorgetRobotReportRequestMethod())
               .addMethod(getCoordinatorgetOnPositionUpdateMethod())
+              .addMethod(getCoordinatorgetOnPositionUpdateEvenMethod())
               .build();
         }
       }

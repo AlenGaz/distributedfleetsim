@@ -240,7 +240,7 @@ public class Test1StartRobotFileMp {
         int requestResponse = 0;
         try {
             requestResponse = client.makeGreeting("greeting", robotID, "simulated", InetAddress.getLocalHost().toString(), port, startPose, endPose,
-                    String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint,poseSteerings);
+                    String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint,poseSteerings,1);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }

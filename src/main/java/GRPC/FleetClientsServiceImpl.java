@@ -98,13 +98,12 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
 
 
     //generic response to stub
-    public void respondToRobotReport(StreamObserver<Fleetclients.robotReportResponse> responseObserver, int _robotID, double _x, double _y, double _z,
-                                     double _roll, double _pitch, double _yaw, int _pathindex, double _velocity, double _distancetraveled, int _criticalpoint) {
+    public void respondToRobotReport(StreamObserver<Fleetclients.robotReportResponse> responseObserver, int _robotID, double _x, double _y, double _theta,
+                                 int _pathindex, double _velocity, double _distancetraveled, int _criticalpoint) {
 
         System.out.println("[FC S] before robotReportResponse");
         Fleetclients.robotReportResponse response = Fleetclients.robotReportResponse.newBuilder()
-                .setRobotID(_robotID).setX(_x).setY(_y).setZ(_z).setRoll(_roll).setPitch(_pitch)
-                .setYaw(_yaw).setPathIndex(_pathindex).setVelocity(_velocity).setDistanceTraveled(_distancetraveled)
+                .setRobotID(_robotID).setX(_x).setY(_y).setTheta(_theta).setPathIndex(_pathindex).setVelocity(_velocity).setDistanceTraveled(_distancetraveled)
                 .setCriticalPoint(_criticalpoint).build();
         System.out.println("[FC S] after robotReportResponse");
 
@@ -138,10 +137,7 @@ public class FleetClientsServiceImpl extends FleetClientsServiceGrpc.FleetClient
         System.out.println("[FleetClientService] ... in responsemethod");
         double _x = robotIDtoRobotReport.get(requestID).getPose().getX();
         double _y = robotIDtoRobotReport.get(requestID).getPose().getY();
-        double _z = robotIDtoRobotReport.get(requestID).getPose().getZ();
-        double _roll = robotIDtoRobotReport.get(requestID).getPose().getRoll();
-        double _pitch = robotIDtoRobotReport.get(requestID).getPose().getPitch();
-        double _yaw = robotIDtoRobotReport.get(requestID).getPose().getYaw();
+        double _z = robotIDtoRobotReport.get(requestID).getPose().getTheta();
         int _pathindex = robotIDtoRobotReport.get(requestID).getPathIndex();
         double _velocity = robotIDtoRobotReport.get(requestID).getVelocity();
         double _distancetraveled = robotIDtoRobotReport.get(requestID).getDistanceTraveled();

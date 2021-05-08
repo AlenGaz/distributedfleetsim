@@ -34,6 +34,7 @@ import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelopeSolver;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope.SpatialEnvelope;
 import org.metacsp.time.Bounds;
 import org.metacsp.utility.UI.Callback;
+import org.metacsp.utility.UI.JTSDrawingPanel;
 import org.metacsp.utility.logging.MetaCSPLogging;
 
 import com.vividsolutions.jts.geom.Coordinate;
@@ -45,6 +46,7 @@ import aima.core.util.datastructure.Pair;
 import se.oru.coordination.coordination_oru.*;
 import se.oru.coordination.coordination_oru.motionplanning.AbstractMotionPlanner;
 import se.oru.coordination.coordination_oru.util.FleetVisualization;
+import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
 import se.oru.coordination.coordination_oru.util.StringUtils;
 import CoordinatorPackage.containers.*;
 
@@ -94,7 +96,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     protected Thread inference = null;
     protected volatile Boolean stopInference = new Boolean(true);
 
-    //protected JTSDrawingPanel panel = null;
+    protected JTSDrawingPanel panel = null;
     protected FleetVisualization viz = null;
     protected TreeSet<Pair<TrajectoryEnvelope,Long>> missionsPool = new TreeSet<Pair<TrajectoryEnvelope,Long>>(new Comparator<Pair<TrajectoryEnvelope,Long>>() {
         @Override
@@ -164,6 +166,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
 
     public CoordinatorServiceImpl coordinatorServicImpl = null;
+
 
 
     /**
@@ -668,7 +671,10 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             long time = getCurrentTimeInMillis();
 
             //Can provide null parking or null currentPose, but not both
-            if (parking == null) parking = solver.createParkingEnvelope(robotID, PARKING_DURATION, currentPose, location, getFootprint(robotID));
+            if (parking == null){
+                parking = solver.createParkingEnvelope(robotID, PARKING_DURATION, currentPose, location, getFootprint(robotID));
+
+            }
             else currentPose = parking.getTrajectory().getPose()[0];
 
             /**
@@ -767,6 +773,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     public FleetVisualization getVisualization() {
         return this.viz;
     }
+    
+
 
     /**
      * Get the list of current dependencies between robots.
@@ -1681,6 +1689,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                     public String[] onPositionUpdate() {
                         System.out.println("[RemoteAbstract...Coordinator] in onposition ubdate line 1615");
+
                         if (viz != null && !trackingFinished && viz.periodicEnvelopeRefreshInMillis() > 0) {
                             long timeNow = Calendar.getInstance().getTimeInMillis();
                             if (timeNow-lastEnvelopeRefresh > viz.periodicEnvelopeRefreshInMillis()) {
@@ -1840,9 +1849,17 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     /**
      * Sets up a GUI which shows the current status of robots.
      */
+
     public void setVisualization(FleetVisualization viz) {
         this.viz = viz;
     }
+
+
+
+  /*  public void setVisualization(JTSDrawingPanelVisualization viz) {
+        this.viz = viz;
+    }
+*/
 
     protected void setPriorityOfEDT(final int prio) {
         try {

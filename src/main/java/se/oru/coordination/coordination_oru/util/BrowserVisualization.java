@@ -251,7 +251,7 @@ public class BrowserVisualization implements FleetVisualization {
 	@Override
 	public void displayDependency(RobotReport rrWaiting, RobotReport rrDriving, String dependencyDescriptor) {
 		Geometry arrow = createArrow(rrWaiting.getPose(), rrDriving.getPose());
-		System.out.println("[BrowserVisualization] inside displayDependency : " + dependencyDescriptor );
+
 		String jsonString = "{ \"operation\" : \"addGeometry\", \"data\" : " + this.geometryToJSONString(dependencyDescriptor, arrow, "#adccff", 1000, true, null) + "}";
 		enqueueMessage(jsonString);
 	}

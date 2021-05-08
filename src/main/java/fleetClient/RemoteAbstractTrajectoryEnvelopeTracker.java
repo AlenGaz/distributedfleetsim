@@ -459,8 +459,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
                         if(isClient) {
                             // this rpc below is for sending a robot report
                            client.makeRobotReport("my RobotReport", getRobotReport().getRobotID(), getRobotReport().getPose().getX()
-                                    , getRobotReport().getPose().getY(), getRobotReport().getPose().getZ(), getRobotReport().getPose().getRoll(),
-                                    getRobotReport().getPose().getPitch(), getRobotReport().getPose().getYaw(), getRobotReport().getVelocity()
+                                    , getRobotReport().getPose().getY(), getRobotReport().getPose().getTheta(), getRobotReport().getVelocity()
                                     , getRobotReport().getPathIndex(), getRobotReport().getDistanceTraveled(), getRobotReport().getCriticalPoint());
 
                             // this is for getting a robot report

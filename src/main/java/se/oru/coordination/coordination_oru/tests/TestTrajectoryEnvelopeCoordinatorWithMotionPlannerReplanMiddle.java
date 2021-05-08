@@ -84,7 +84,7 @@ public class TestTrajectoryEnvelopeCoordinatorWithMotionPlannerReplanMiddle {
 		BrowserVisualization viz = new BrowserVisualization();
 		viz.setInitialTransform(44, 0, 0);
 		//viz.setSize(1800, 450);
-		tec.setVisualization(viz);
+		//tec.setVisualization(viz);
 
 		Pose startRobot1 = new Pose(10.0,5.0,0.0);
 		Pose goalRobot13 = new Pose(15.0,5.0,0.0);

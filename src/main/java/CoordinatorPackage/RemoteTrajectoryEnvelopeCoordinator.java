@@ -923,6 +923,8 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
                 //FIXME: already synchronized (so maybe is ok currentDependencies = computeClosestDependencies(currentDeps, artificialDependencies);)
                 HashMap<Integer, Dependency> closestDeps  = computeClosestDependencies(currentDeps, artificialDependencies);
+
+                System.out.println("[]");
                 currentDependencies.clear();
                 currentDependencies.putAll(closestDeps);
 
@@ -1281,6 +1283,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                 }
 
                 if (viz != null) {
+                    System.out.println("[RemoteTrajectoryEnvelopeCoordinator] viz != null -> adding envelope");
                     viz.addEnvelope(newTE);
                 }
 
@@ -2020,7 +2023,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                             for (int v : currentOrdersGraph.vertexSet()) backupGraph.addVertex(v);
                             for (DefaultWeightedEdge e : currentOrdersGraph.edgeSet()) {
                                 DefaultWeightedEdge e_ = backupGraph.addEdge(currentOrdersGraph.getEdgeSource(e), currentOrdersGraph.getEdgeTarget(e));
-                                if (e_ == null) metaCSPLogger.severe("<<<<<<<<< Add egde fails (7). Edge: " + e.toString());
+                               // if (e_ == null) metaCSPLogger.severe("<<<<<<<<< Add egde fails (7). Edge: " + e.toString());
                                 backupGraph.setEdgeWeight(e_, currentOrdersGraph.getEdgeWeight(e));
                             }
 

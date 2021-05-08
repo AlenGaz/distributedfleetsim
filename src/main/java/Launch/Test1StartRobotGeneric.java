@@ -182,15 +182,14 @@ public class Test1StartRobotGeneric {
         int coordinatorResponse = 0;
         RobotReport rR = rk4.getRobotReport();
         client.makeRobotReport("my RobotReport", rR.getRobotID(), rR.getPose().getX()
-                , rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
-                rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
+                , rR.getPose().getY(), rR.getPose().getTheta(), rR.getVelocity()
                 , rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
 
-        coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
+        coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath(), 1);
 
         // to send id = 2 and 3 gonna remove these 2 greetings below later
-        coordinatorResponse = simpleGreeting(2, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
-        coordinatorResponse = simpleGreeting(3, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
+        //coordinatorResponse = simpleGreeting(2, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
+        //coordinatorResponse = simpleGreeting(3, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
 
 
         System.out.println("[Test1StartRobotGeneric] coordinatorResponse is: " + coordinatorResponse);
@@ -207,13 +206,12 @@ public class Test1StartRobotGeneric {
 
             rR = rk4.getRobotReport();
             client.makeRobotReport("my RobotReport", rR.getRobotID(), rR.getPose().getX()
-                    , rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
-                    rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
+                    , rR.getPose().getY(), rR.getPose().getTheta(), rR.getVelocity()
                     , rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
 
             System.out.println("[Test1StartRobotGeneric] asked the coordinator for currentTime and got: " + client.makeCurrentTimeRequest());
 
-            coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
+            coordinatorResponse = simpleGreeting(robotID, maxAccel, maxVel, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath(), 1);
             rk4.setNumberOfReplicas(coordinatorResponse); //FIXME is the coordinator answering only the number of replicas?
         }
 
@@ -228,11 +226,11 @@ public class Test1StartRobotGeneric {
      * with the correct parameters will handle rest of the messaging to the server,
      * note that the String target declaration in this class needs to be correct
      * */
-    public static int simpleGreeting(int robotID, double maxAccel, double maxVel, int port, Pose startPose, Pose endPose, FleetClient client, MakeFootPrint footprint, PoseSteering[] poseSteerings) {
+    public static int simpleGreeting(int robotID, double maxAccel, double maxVel, int port, Pose startPose, Pose endPose, FleetClient client, MakeFootPrint footprint, PoseSteering[] poseSteerings, int numberOfRobots) {
         int requestResponse = 0;
         try {
             requestResponse = client.makeGreeting("greeting", robotID, "simulated", InetAddress.getLocalHost().toString(), port, startPose, endPose,
-                    String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint, poseSteerings);
+                    String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint, poseSteerings, numberOfRobots);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }

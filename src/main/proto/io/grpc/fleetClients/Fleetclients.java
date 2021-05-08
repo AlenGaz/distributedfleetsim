@@ -20,18 +20,20 @@ public final class Fleetclients {
 
     /**
      * <code>int32 robotID = 1;</code>
+     * @return The robotID.
      */
     int getRobotID();
 
     /**
      * <code>int32 criticalPoint = 2;</code>
+     * @return The criticalPoint.
      */
     int getCriticalPoint();
   }
   /**
    * Protobuf type {@code gradlegRPC.getCriticalPointRequestMessage}
    */
-  public  static final class getCriticalPointRequestMessage extends
+  public static final class getCriticalPointRequestMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.getCriticalPointRequestMessage)
       getCriticalPointRequestMessageOrBuilder {
@@ -41,8 +43,13 @@ public final class Fleetclients {
       super(builder);
     }
     private getCriticalPointRequestMessage() {
-      robotID_ = 0;
-      criticalPoint_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getCriticalPointRequestMessage();
     }
 
     @java.lang.Override
@@ -58,7 +65,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -80,7 +86,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -115,7 +121,9 @@ public final class Fleetclients {
     private int robotID_;
     /**
      * <code>int32 robotID = 1;</code>
+     * @return The robotID.
      */
+    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -124,7 +132,9 @@ public final class Fleetclients {
     private int criticalPoint_;
     /**
      * <code>int32 criticalPoint = 2;</code>
+     * @return The criticalPoint.
      */
+    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -181,13 +191,12 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.getCriticalPointRequestMessage other = (io.grpc.fleetClients.Fleetclients.getCriticalPointRequestMessage) obj;
 
-      boolean result = true;
-      result = result && (getRobotID()
-          == other.getRobotID());
-      result = result && (getCriticalPoint()
-          == other.getCriticalPoint());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getRobotID()
+          != other.getRobotID()) return false;
+      if (getCriticalPoint()
+          != other.getCriticalPoint()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -372,35 +381,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -452,12 +461,16 @@ public final class Fleetclients {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 1;</code>
+       * @return The robotID.
        */
+      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 1;</code>
+       * @param value The robotID to set.
+       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -467,6 +480,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 robotID = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -478,12 +492,16 @@ public final class Fleetclients {
       private int criticalPoint_ ;
       /**
        * <code>int32 criticalPoint = 2;</code>
+       * @return The criticalPoint.
        */
+      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
        * <code>int32 criticalPoint = 2;</code>
+       * @param value The criticalPoint to set.
+       * @return This builder for chaining.
        */
       public Builder setCriticalPoint(int value) {
         
@@ -493,6 +511,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 criticalPoint = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
         
@@ -503,7 +522,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -559,13 +578,14 @@ public final class Fleetclients {
 
     /**
      * <code>int32 criticalPoint = 1;</code>
+     * @return The criticalPoint.
      */
     int getCriticalPoint();
   }
   /**
    * Protobuf type {@code gradlegRPC.getCriticalPointResponseMessage}
    */
-  public  static final class getCriticalPointResponseMessage extends
+  public static final class getCriticalPointResponseMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.getCriticalPointResponseMessage)
       getCriticalPointResponseMessageOrBuilder {
@@ -575,7 +595,13 @@ public final class Fleetclients {
       super(builder);
     }
     private getCriticalPointResponseMessage() {
-      criticalPoint_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getCriticalPointResponseMessage();
     }
 
     @java.lang.Override
@@ -591,7 +617,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -608,7 +633,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -643,7 +668,9 @@ public final class Fleetclients {
     private int criticalPoint_;
     /**
      * <code>int32 criticalPoint = 1;</code>
+     * @return The criticalPoint.
      */
+    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -693,11 +720,10 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.getCriticalPointResponseMessage other = (io.grpc.fleetClients.Fleetclients.getCriticalPointResponseMessage) obj;
 
-      boolean result = true;
-      result = result && (getCriticalPoint()
-          == other.getCriticalPoint());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getCriticalPoint()
+          != other.getCriticalPoint()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -877,35 +903,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -954,12 +980,16 @@ public final class Fleetclients {
       private int criticalPoint_ ;
       /**
        * <code>int32 criticalPoint = 1;</code>
+       * @return The criticalPoint.
        */
+      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
        * <code>int32 criticalPoint = 1;</code>
+       * @param value The criticalPoint to set.
+       * @return This builder for chaining.
        */
       public Builder setCriticalPoint(int value) {
         
@@ -969,6 +999,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 criticalPoint = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
         
@@ -979,7 +1010,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1035,10 +1066,12 @@ public final class Fleetclients {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -1046,7 +1079,7 @@ public final class Fleetclients {
   /**
    * Protobuf type {@code gradlegRPC.requestMessage}
    */
-  public  static final class requestMessage extends
+  public static final class requestMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.requestMessage)
       requestMessageOrBuilder {
@@ -1057,6 +1090,13 @@ public final class Fleetclients {
     }
     private requestMessage() {
       name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new requestMessage();
     }
 
     @java.lang.Override
@@ -1072,7 +1112,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1090,7 +1129,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1125,7 +1164,9 @@ public final class Fleetclients {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1140,7 +1181,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -1199,11 +1242,10 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.requestMessage other = (io.grpc.fleetClients.Fleetclients.requestMessage) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1383,35 +1425,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1461,6 +1503,7 @@ public final class Fleetclients {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1476,6 +1519,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1492,6 +1536,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1505,6 +1551,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1514,6 +1561,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1529,7 +1578,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -1585,10 +1634,12 @@ public final class Fleetclients {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -1596,7 +1647,7 @@ public final class Fleetclients {
   /**
    * Protobuf type {@code gradlegRPC.responseMessage}
    */
-  public  static final class responseMessage extends
+  public static final class responseMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.responseMessage)
       responseMessageOrBuilder {
@@ -1607,6 +1658,13 @@ public final class Fleetclients {
     }
     private responseMessage() {
       name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new responseMessage();
     }
 
     @java.lang.Override
@@ -1622,7 +1680,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1640,7 +1697,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1675,7 +1732,9 @@ public final class Fleetclients {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1690,7 +1749,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -1749,11 +1810,10 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.responseMessage other = (io.grpc.fleetClients.Fleetclients.responseMessage) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1933,35 +1993,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2011,6 +2071,7 @@ public final class Fleetclients {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -2026,6 +2087,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -2042,6 +2104,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -2055,6 +2119,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -2064,6 +2129,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2079,7 +2146,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2135,58 +2202,68 @@ public final class Fleetclients {
 
     /**
      * <code>string key = 1;</code>
+     * @return The key.
      */
     java.lang.String getKey();
     /**
      * <code>string key = 1;</code>
+     * @return The bytes for key.
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
      * <code>int32 value = 2;</code>
+     * @return The value.
      */
     int getValue();
 
     /**
      * <code>string type = 3;</code>
+     * @return The type.
      */
     java.lang.String getType();
     /**
      * <code>string type = 3;</code>
+     * @return The bytes for type.
      */
     com.google.protobuf.ByteString
         getTypeBytes();
 
     /**
      * <code>string connection = 4;</code>
+     * @return The connection.
      */
     java.lang.String getConnection();
     /**
      * <code>string connection = 4;</code>
+     * @return The bytes for connection.
      */
     com.google.protobuf.ByteString
         getConnectionBytes();
 
     /**
      * <code>string timeStamp = 5;</code>
+     * @return The timeStamp.
      */
     java.lang.String getTimeStamp();
     /**
      * <code>string timeStamp = 5;</code>
+     * @return The bytes for timeStamp.
      */
     com.google.protobuf.ByteString
         getTimeStampBytes();
 
     /**
      * <code>int32 port = 6;</code>
+     * @return The port.
      */
     int getPort();
   }
   /**
    * Protobuf type {@code gradlegRPC.getRobotID}
    */
-  public  static final class getRobotID extends
+  public static final class getRobotID extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.getRobotID)
       getRobotIDOrBuilder {
@@ -2197,11 +2274,16 @@ public final class Fleetclients {
     }
     private getRobotID() {
       key_ = "";
-      value_ = 0;
       type_ = "";
       connection_ = "";
       timeStamp_ = "";
-      port_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new getRobotID();
     }
 
     @java.lang.Override
@@ -2217,7 +2299,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2263,7 +2344,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -2298,7 +2379,9 @@ public final class Fleetclients {
     private volatile java.lang.Object key_;
     /**
      * <code>string key = 1;</code>
+     * @return The key.
      */
+    @java.lang.Override
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
@@ -2313,7 +2396,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string key = 1;</code>
+     * @return The bytes for key.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKeyBytes() {
       java.lang.Object ref = key_;
@@ -2332,7 +2417,9 @@ public final class Fleetclients {
     private int value_;
     /**
      * <code>int32 value = 2;</code>
+     * @return The value.
      */
+    @java.lang.Override
     public int getValue() {
       return value_;
     }
@@ -2341,7 +2428,9 @@ public final class Fleetclients {
     private volatile java.lang.Object type_;
     /**
      * <code>string type = 3;</code>
+     * @return The type.
      */
+    @java.lang.Override
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
@@ -2356,7 +2445,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string type = 3;</code>
+     * @return The bytes for type.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTypeBytes() {
       java.lang.Object ref = type_;
@@ -2375,7 +2466,9 @@ public final class Fleetclients {
     private volatile java.lang.Object connection_;
     /**
      * <code>string connection = 4;</code>
+     * @return The connection.
      */
+    @java.lang.Override
     public java.lang.String getConnection() {
       java.lang.Object ref = connection_;
       if (ref instanceof java.lang.String) {
@@ -2390,7 +2483,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string connection = 4;</code>
+     * @return The bytes for connection.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getConnectionBytes() {
       java.lang.Object ref = connection_;
@@ -2409,7 +2504,9 @@ public final class Fleetclients {
     private volatile java.lang.Object timeStamp_;
     /**
      * <code>string timeStamp = 5;</code>
+     * @return The timeStamp.
      */
+    @java.lang.Override
     public java.lang.String getTimeStamp() {
       java.lang.Object ref = timeStamp_;
       if (ref instanceof java.lang.String) {
@@ -2424,7 +2521,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string timeStamp = 5;</code>
+     * @return The bytes for timeStamp.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTimeStampBytes() {
       java.lang.Object ref = timeStamp_;
@@ -2443,7 +2542,9 @@ public final class Fleetclients {
     private int port_;
     /**
      * <code>int32 port = 6;</code>
+     * @return The port.
      */
+    @java.lang.Override
     public int getPort() {
       return port_;
     }
@@ -2524,21 +2625,20 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.getRobotID other = (io.grpc.fleetClients.Fleetclients.getRobotID) obj;
 
-      boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && (getValue()
-          == other.getValue());
-      result = result && getType()
-          .equals(other.getType());
-      result = result && getConnection()
-          .equals(other.getConnection());
-      result = result && getTimeStamp()
-          .equals(other.getTimeStamp());
-      result = result && (getPort()
-          == other.getPort());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (getValue()
+          != other.getValue()) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getConnection()
+          .equals(other.getConnection())) return false;
+      if (!getTimeStamp()
+          .equals(other.getTimeStamp())) return false;
+      if (getPort()
+          != other.getPort()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2743,35 +2843,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2839,6 +2939,7 @@ public final class Fleetclients {
       private java.lang.Object key_ = "";
       /**
        * <code>string key = 1;</code>
+       * @return The key.
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -2854,6 +2955,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string key = 1;</code>
+       * @return The bytes for key.
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -2870,6 +2972,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(
           java.lang.String value) {
@@ -2883,6 +2987,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -2892,6 +2997,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string key = 1;</code>
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -2908,12 +3015,16 @@ public final class Fleetclients {
       private int value_ ;
       /**
        * <code>int32 value = 2;</code>
+       * @return The value.
        */
+      @java.lang.Override
       public int getValue() {
         return value_;
       }
       /**
        * <code>int32 value = 2;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(int value) {
         
@@ -2923,6 +3034,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 value = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -2934,6 +3046,7 @@ public final class Fleetclients {
       private java.lang.Object type_ = "";
       /**
        * <code>string type = 3;</code>
+       * @return The type.
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -2949,6 +3062,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string type = 3;</code>
+       * @return The bytes for type.
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
@@ -2965,6 +3079,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string type = 3;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(
           java.lang.String value) {
@@ -2978,6 +3094,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string type = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -2987,6 +3104,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string type = 3;</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -3003,6 +3122,7 @@ public final class Fleetclients {
       private java.lang.Object connection_ = "";
       /**
        * <code>string connection = 4;</code>
+       * @return The connection.
        */
       public java.lang.String getConnection() {
         java.lang.Object ref = connection_;
@@ -3018,6 +3138,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string connection = 4;</code>
+       * @return The bytes for connection.
        */
       public com.google.protobuf.ByteString
           getConnectionBytes() {
@@ -3034,6 +3155,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string connection = 4;</code>
+       * @param value The connection to set.
+       * @return This builder for chaining.
        */
       public Builder setConnection(
           java.lang.String value) {
@@ -3047,6 +3170,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string connection = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearConnection() {
         
@@ -3056,6 +3180,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string connection = 4;</code>
+       * @param value The bytes for connection to set.
+       * @return This builder for chaining.
        */
       public Builder setConnectionBytes(
           com.google.protobuf.ByteString value) {
@@ -3072,6 +3198,7 @@ public final class Fleetclients {
       private java.lang.Object timeStamp_ = "";
       /**
        * <code>string timeStamp = 5;</code>
+       * @return The timeStamp.
        */
       public java.lang.String getTimeStamp() {
         java.lang.Object ref = timeStamp_;
@@ -3087,6 +3214,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string timeStamp = 5;</code>
+       * @return The bytes for timeStamp.
        */
       public com.google.protobuf.ByteString
           getTimeStampBytes() {
@@ -3103,6 +3231,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string timeStamp = 5;</code>
+       * @param value The timeStamp to set.
+       * @return This builder for chaining.
        */
       public Builder setTimeStamp(
           java.lang.String value) {
@@ -3116,6 +3246,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string timeStamp = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearTimeStamp() {
         
@@ -3125,6 +3256,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string timeStamp = 5;</code>
+       * @param value The bytes for timeStamp to set.
+       * @return This builder for chaining.
        */
       public Builder setTimeStampBytes(
           com.google.protobuf.ByteString value) {
@@ -3141,12 +3274,16 @@ public final class Fleetclients {
       private int port_ ;
       /**
        * <code>int32 port = 6;</code>
+       * @return The port.
        */
+      @java.lang.Override
       public int getPort() {
         return port_;
       }
       /**
        * <code>int32 port = 6;</code>
+       * @param value The port to set.
+       * @return This builder for chaining.
        */
       public Builder setPort(int value) {
         
@@ -3156,6 +3293,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 port = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPort() {
         
@@ -3166,7 +3304,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3222,10 +3360,12 @@ public final class Fleetclients {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -3233,7 +3373,7 @@ public final class Fleetclients {
   /**
    * Protobuf type {@code gradlegRPC.robotID}
    */
-  public  static final class robotID extends
+  public static final class robotID extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.robotID)
       robotIDOrBuilder {
@@ -3244,6 +3384,13 @@ public final class Fleetclients {
     }
     private robotID() {
       name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new robotID();
     }
 
     @java.lang.Override
@@ -3259,7 +3406,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3277,7 +3423,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -3312,7 +3458,9 @@ public final class Fleetclients {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -3327,7 +3475,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -3386,11 +3536,10 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.robotID other = (io.grpc.fleetClients.Fleetclients.robotID) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3570,35 +3719,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3648,6 +3797,7 @@ public final class Fleetclients {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3663,6 +3813,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -3679,6 +3830,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -3692,6 +3845,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -3701,6 +3855,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -3716,7 +3872,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -3776,6 +3932,7 @@ public final class Fleetclients {
      * </pre>
      *
      * <code>string kan = 1;</code>
+     * @return The kan.
      */
     java.lang.String getKan();
     /**
@@ -3784,19 +3941,21 @@ public final class Fleetclients {
      * </pre>
      *
      * <code>string kan = 1;</code>
+     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>int32 robotID = 2;</code>
+     * @return The robotID.
      */
     int getRobotID();
   }
   /**
    * Protobuf type {@code gradlegRPC.robotReportRequest}
    */
-  public  static final class robotReportRequest extends
+  public static final class robotReportRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.robotReportRequest)
       robotReportRequestOrBuilder {
@@ -3807,7 +3966,13 @@ public final class Fleetclients {
     }
     private robotReportRequest() {
       kan_ = "";
-      robotID_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new robotReportRequest();
     }
 
     @java.lang.Override
@@ -3823,7 +3988,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3846,7 +4010,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -3885,7 +4049,9 @@ public final class Fleetclients {
      * </pre>
      *
      * <code>string kan = 1;</code>
+     * @return The kan.
      */
+    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -3904,7 +4070,9 @@ public final class Fleetclients {
      * </pre>
      *
      * <code>string kan = 1;</code>
+     * @return The bytes for kan.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -3923,7 +4091,9 @@ public final class Fleetclients {
     private int robotID_;
     /**
      * <code>int32 robotID = 2;</code>
+     * @return The robotID.
      */
+    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -3979,13 +4149,12 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.robotReportRequest other = (io.grpc.fleetClients.Fleetclients.robotReportRequest) obj;
 
-      boolean result = true;
-      result = result && getKan()
-          .equals(other.getKan());
-      result = result && (getRobotID()
-          == other.getRobotID());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getKan()
+          .equals(other.getKan())) return false;
+      if (getRobotID()
+          != other.getRobotID()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4170,35 +4339,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4255,6 +4424,7 @@ public final class Fleetclients {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -4274,6 +4444,7 @@ public final class Fleetclients {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -4294,6 +4465,8 @@ public final class Fleetclients {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @param value The kan to set.
+       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -4311,6 +4484,7 @@ public final class Fleetclients {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -4324,6 +4498,8 @@ public final class Fleetclients {
        * </pre>
        *
        * <code>string kan = 1;</code>
+       * @param value The bytes for kan to set.
+       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -4340,12 +4516,16 @@ public final class Fleetclients {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 2;</code>
+       * @return The robotID.
        */
+      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 2;</code>
+       * @param value The robotID to set.
+       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -4355,6 +4535,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 robotID = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -4365,7 +4546,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -4421,63 +4602,56 @@ public final class Fleetclients {
 
     /**
      * <code>int32 robotID = 1;</code>
+     * @return The robotID.
      */
     int getRobotID();
 
     /**
      * <code>double x = 2;</code>
+     * @return The x.
      */
     double getX();
 
     /**
      * <code>double y = 3;</code>
+     * @return The y.
      */
     double getY();
 
     /**
-     * <code>double z = 4;</code>
+     * <code>double theta = 4;</code>
+     * @return The theta.
      */
-    double getZ();
+    double getTheta();
 
     /**
-     * <code>double roll = 5;</code>
-     */
-    double getRoll();
-
-    /**
-     * <code>double pitch = 6;</code>
-     */
-    double getPitch();
-
-    /**
-     * <code>double yaw = 7;</code>
-     */
-    double getYaw();
-
-    /**
-     * <code>int32 pathIndex = 8;</code>
+     * <code>int32 pathIndex = 5;</code>
+     * @return The pathIndex.
      */
     int getPathIndex();
 
     /**
-     * <code>double velocity = 9;</code>
+     * <code>double velocity = 6;</code>
+     * @return The velocity.
      */
     double getVelocity();
 
     /**
-     * <code>double distanceTraveled = 10;</code>
+     * <code>double distanceTraveled = 7;</code>
+     * @return The distanceTraveled.
      */
     double getDistanceTraveled();
 
     /**
-     * <code>int32 criticalPoint = 11;</code>
+     * <code>int32 criticalPoint = 8;</code>
+     * @return The criticalPoint.
      */
     int getCriticalPoint();
   }
   /**
    * Protobuf type {@code gradlegRPC.robotReportResponse}
    */
-  public  static final class robotReportResponse extends
+  public static final class robotReportResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.robotReportResponse)
       robotReportResponseOrBuilder {
@@ -4487,17 +4661,13 @@ public final class Fleetclients {
       super(builder);
     }
     private robotReportResponse() {
-      robotID_ = 0;
-      x_ = 0D;
-      y_ = 0D;
-      z_ = 0D;
-      roll_ = 0D;
-      pitch_ = 0D;
-      yaw_ = 0D;
-      pathIndex_ = 0;
-      velocity_ = 0D;
-      distanceTraveled_ = 0D;
-      criticalPoint_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new robotReportResponse();
     }
 
     @java.lang.Override
@@ -4513,7 +4683,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4541,46 +4710,31 @@ public final class Fleetclients {
             }
             case 33: {
 
-              z_ = input.readDouble();
+              theta_ = input.readDouble();
               break;
             }
-            case 41: {
-
-              roll_ = input.readDouble();
-              break;
-            }
-            case 49: {
-
-              pitch_ = input.readDouble();
-              break;
-            }
-            case 57: {
-
-              yaw_ = input.readDouble();
-              break;
-            }
-            case 64: {
+            case 40: {
 
               pathIndex_ = input.readInt32();
               break;
             }
-            case 73: {
+            case 49: {
 
               velocity_ = input.readDouble();
               break;
             }
-            case 81: {
+            case 57: {
 
               distanceTraveled_ = input.readDouble();
               break;
             }
-            case 88: {
+            case 64: {
 
               criticalPoint_ = input.readInt32();
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -4615,7 +4769,9 @@ public final class Fleetclients {
     private int robotID_;
     /**
      * <code>int32 robotID = 1;</code>
+     * @return The robotID.
      */
+    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -4624,7 +4780,9 @@ public final class Fleetclients {
     private double x_;
     /**
      * <code>double x = 2;</code>
+     * @return The x.
      */
+    @java.lang.Override
     public double getX() {
       return x_;
     }
@@ -4633,79 +4791,64 @@ public final class Fleetclients {
     private double y_;
     /**
      * <code>double y = 3;</code>
+     * @return The y.
      */
+    @java.lang.Override
     public double getY() {
       return y_;
     }
 
-    public static final int Z_FIELD_NUMBER = 4;
-    private double z_;
+    public static final int THETA_FIELD_NUMBER = 4;
+    private double theta_;
     /**
-     * <code>double z = 4;</code>
+     * <code>double theta = 4;</code>
+     * @return The theta.
      */
-    public double getZ() {
-      return z_;
+    @java.lang.Override
+    public double getTheta() {
+      return theta_;
     }
 
-    public static final int ROLL_FIELD_NUMBER = 5;
-    private double roll_;
-    /**
-     * <code>double roll = 5;</code>
-     */
-    public double getRoll() {
-      return roll_;
-    }
-
-    public static final int PITCH_FIELD_NUMBER = 6;
-    private double pitch_;
-    /**
-     * <code>double pitch = 6;</code>
-     */
-    public double getPitch() {
-      return pitch_;
-    }
-
-    public static final int YAW_FIELD_NUMBER = 7;
-    private double yaw_;
-    /**
-     * <code>double yaw = 7;</code>
-     */
-    public double getYaw() {
-      return yaw_;
-    }
-
-    public static final int PATHINDEX_FIELD_NUMBER = 8;
+    public static final int PATHINDEX_FIELD_NUMBER = 5;
     private int pathIndex_;
     /**
-     * <code>int32 pathIndex = 8;</code>
+     * <code>int32 pathIndex = 5;</code>
+     * @return The pathIndex.
      */
+    @java.lang.Override
     public int getPathIndex() {
       return pathIndex_;
     }
 
-    public static final int VELOCITY_FIELD_NUMBER = 9;
+    public static final int VELOCITY_FIELD_NUMBER = 6;
     private double velocity_;
     /**
-     * <code>double velocity = 9;</code>
+     * <code>double velocity = 6;</code>
+     * @return The velocity.
      */
+    @java.lang.Override
     public double getVelocity() {
       return velocity_;
     }
 
-    public static final int DISTANCETRAVELED_FIELD_NUMBER = 10;
+    public static final int DISTANCETRAVELED_FIELD_NUMBER = 7;
     private double distanceTraveled_;
     /**
-     * <code>double distanceTraveled = 10;</code>
+     * <code>double distanceTraveled = 7;</code>
+     * @return The distanceTraveled.
      */
+    @java.lang.Override
     public double getDistanceTraveled() {
       return distanceTraveled_;
     }
 
-    public static final int CRITICALPOINT_FIELD_NUMBER = 11;
+    public static final int CRITICALPOINT_FIELD_NUMBER = 8;
     private int criticalPoint_;
     /**
-     * <code>int32 criticalPoint = 11;</code>
+     * <code>int32 criticalPoint = 8;</code>
+     * @return The criticalPoint.
      */
+    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -4733,29 +4876,20 @@ public final class Fleetclients {
       if (y_ != 0D) {
         output.writeDouble(3, y_);
       }
-      if (z_ != 0D) {
-        output.writeDouble(4, z_);
-      }
-      if (roll_ != 0D) {
-        output.writeDouble(5, roll_);
-      }
-      if (pitch_ != 0D) {
-        output.writeDouble(6, pitch_);
-      }
-      if (yaw_ != 0D) {
-        output.writeDouble(7, yaw_);
+      if (theta_ != 0D) {
+        output.writeDouble(4, theta_);
       }
       if (pathIndex_ != 0) {
-        output.writeInt32(8, pathIndex_);
+        output.writeInt32(5, pathIndex_);
       }
       if (velocity_ != 0D) {
-        output.writeDouble(9, velocity_);
+        output.writeDouble(6, velocity_);
       }
       if (distanceTraveled_ != 0D) {
-        output.writeDouble(10, distanceTraveled_);
+        output.writeDouble(7, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
-        output.writeInt32(11, criticalPoint_);
+        output.writeInt32(8, criticalPoint_);
       }
       unknownFields.writeTo(output);
     }
@@ -4778,37 +4912,25 @@ public final class Fleetclients {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, y_);
       }
-      if (z_ != 0D) {
+      if (theta_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, z_);
-      }
-      if (roll_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, roll_);
-      }
-      if (pitch_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, pitch_);
-      }
-      if (yaw_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, yaw_);
+          .computeDoubleSize(4, theta_);
       }
       if (pathIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, pathIndex_);
+          .computeInt32Size(5, pathIndex_);
       }
       if (velocity_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, velocity_);
+          .computeDoubleSize(6, velocity_);
       }
       if (distanceTraveled_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, distanceTraveled_);
+          .computeDoubleSize(7, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, criticalPoint_);
+          .computeInt32Size(8, criticalPoint_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4825,47 +4947,29 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.robotReportResponse other = (io.grpc.fleetClients.Fleetclients.robotReportResponse) obj;
 
-      boolean result = true;
-      result = result && (getRobotID()
-          == other.getRobotID());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getX())
-          == java.lang.Double.doubleToLongBits(
-              other.getX()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getY())
-          == java.lang.Double.doubleToLongBits(
-              other.getY()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getZ())
-          == java.lang.Double.doubleToLongBits(
-              other.getZ()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getRoll())
-          == java.lang.Double.doubleToLongBits(
-              other.getRoll()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getPitch())
-          == java.lang.Double.doubleToLongBits(
-              other.getPitch()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getYaw())
-          == java.lang.Double.doubleToLongBits(
-              other.getYaw()));
-      result = result && (getPathIndex()
-          == other.getPathIndex());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getVelocity())
-          == java.lang.Double.doubleToLongBits(
-              other.getVelocity()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getDistanceTraveled())
-          == java.lang.Double.doubleToLongBits(
-              other.getDistanceTraveled()));
-      result = result && (getCriticalPoint()
-          == other.getCriticalPoint());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getRobotID()
+          != other.getRobotID()) return false;
+      if (java.lang.Double.doubleToLongBits(getX())
+          != java.lang.Double.doubleToLongBits(
+              other.getX())) return false;
+      if (java.lang.Double.doubleToLongBits(getY())
+          != java.lang.Double.doubleToLongBits(
+              other.getY())) return false;
+      if (java.lang.Double.doubleToLongBits(getTheta())
+          != java.lang.Double.doubleToLongBits(
+              other.getTheta())) return false;
+      if (getPathIndex()
+          != other.getPathIndex()) return false;
+      if (java.lang.Double.doubleToLongBits(getVelocity())
+          != java.lang.Double.doubleToLongBits(
+              other.getVelocity())) return false;
+      if (java.lang.Double.doubleToLongBits(getDistanceTraveled())
+          != java.lang.Double.doubleToLongBits(
+              other.getDistanceTraveled())) return false;
+      if (getCriticalPoint()
+          != other.getCriticalPoint()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4883,18 +4987,9 @@ public final class Fleetclients {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + Z_FIELD_NUMBER;
+      hash = (37 * hash) + THETA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getZ()));
-      hash = (37 * hash) + ROLL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getRoll()));
-      hash = (37 * hash) + PITCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getPitch()));
-      hash = (37 * hash) + YAW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getYaw()));
+          java.lang.Double.doubleToLongBits(getTheta()));
       hash = (37 * hash) + PATHINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPathIndex();
       hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
@@ -5044,13 +5139,7 @@ public final class Fleetclients {
 
         y_ = 0D;
 
-        z_ = 0D;
-
-        roll_ = 0D;
-
-        pitch_ = 0D;
-
-        yaw_ = 0D;
+        theta_ = 0D;
 
         pathIndex_ = 0;
 
@@ -5089,10 +5178,7 @@ public final class Fleetclients {
         result.robotID_ = robotID_;
         result.x_ = x_;
         result.y_ = y_;
-        result.z_ = z_;
-        result.roll_ = roll_;
-        result.pitch_ = pitch_;
-        result.yaw_ = yaw_;
+        result.theta_ = theta_;
         result.pathIndex_ = pathIndex_;
         result.velocity_ = velocity_;
         result.distanceTraveled_ = distanceTraveled_;
@@ -5103,35 +5189,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -5154,17 +5240,8 @@ public final class Fleetclients {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getZ() != 0D) {
-          setZ(other.getZ());
-        }
-        if (other.getRoll() != 0D) {
-          setRoll(other.getRoll());
-        }
-        if (other.getPitch() != 0D) {
-          setPitch(other.getPitch());
-        }
-        if (other.getYaw() != 0D) {
-          setYaw(other.getYaw());
+        if (other.getTheta() != 0D) {
+          setTheta(other.getTheta());
         }
         if (other.getPathIndex() != 0) {
           setPathIndex(other.getPathIndex());
@@ -5210,12 +5287,16 @@ public final class Fleetclients {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 1;</code>
+       * @return The robotID.
        */
+      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 1;</code>
+       * @param value The robotID to set.
+       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -5225,6 +5306,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 robotID = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -5236,12 +5318,16 @@ public final class Fleetclients {
       private double x_ ;
       /**
        * <code>double x = 2;</code>
+       * @return The x.
        */
+      @java.lang.Override
       public double getX() {
         return x_;
       }
       /**
        * <code>double x = 2;</code>
+       * @param value The x to set.
+       * @return This builder for chaining.
        */
       public Builder setX(double value) {
         
@@ -5251,6 +5337,7 @@ public final class Fleetclients {
       }
       /**
        * <code>double x = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearX() {
         
@@ -5262,12 +5349,16 @@ public final class Fleetclients {
       private double y_ ;
       /**
        * <code>double y = 3;</code>
+       * @return The y.
        */
+      @java.lang.Override
       public double getY() {
         return y_;
       }
       /**
        * <code>double y = 3;</code>
+       * @param value The y to set.
+       * @return This builder for chaining.
        */
       public Builder setY(double value) {
         
@@ -5277,6 +5368,7 @@ public final class Fleetclients {
       }
       /**
        * <code>double y = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearY() {
         
@@ -5285,119 +5377,50 @@ public final class Fleetclients {
         return this;
       }
 
-      private double z_ ;
+      private double theta_ ;
       /**
-       * <code>double z = 4;</code>
+       * <code>double theta = 4;</code>
+       * @return The theta.
        */
-      public double getZ() {
-        return z_;
+      @java.lang.Override
+      public double getTheta() {
+        return theta_;
       }
       /**
-       * <code>double z = 4;</code>
+       * <code>double theta = 4;</code>
+       * @param value The theta to set.
+       * @return This builder for chaining.
        */
-      public Builder setZ(double value) {
+      public Builder setTheta(double value) {
         
-        z_ = value;
+        theta_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double z = 4;</code>
+       * <code>double theta = 4;</code>
+       * @return This builder for chaining.
        */
-      public Builder clearZ() {
+      public Builder clearTheta() {
         
-        z_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double roll_ ;
-      /**
-       * <code>double roll = 5;</code>
-       */
-      public double getRoll() {
-        return roll_;
-      }
-      /**
-       * <code>double roll = 5;</code>
-       */
-      public Builder setRoll(double value) {
-        
-        roll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double roll = 5;</code>
-       */
-      public Builder clearRoll() {
-        
-        roll_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double pitch_ ;
-      /**
-       * <code>double pitch = 6;</code>
-       */
-      public double getPitch() {
-        return pitch_;
-      }
-      /**
-       * <code>double pitch = 6;</code>
-       */
-      public Builder setPitch(double value) {
-        
-        pitch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double pitch = 6;</code>
-       */
-      public Builder clearPitch() {
-        
-        pitch_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double yaw_ ;
-      /**
-       * <code>double yaw = 7;</code>
-       */
-      public double getYaw() {
-        return yaw_;
-      }
-      /**
-       * <code>double yaw = 7;</code>
-       */
-      public Builder setYaw(double value) {
-        
-        yaw_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double yaw = 7;</code>
-       */
-      public Builder clearYaw() {
-        
-        yaw_ = 0D;
+        theta_ = 0D;
         onChanged();
         return this;
       }
 
       private int pathIndex_ ;
       /**
-       * <code>int32 pathIndex = 8;</code>
+       * <code>int32 pathIndex = 5;</code>
+       * @return The pathIndex.
        */
+      @java.lang.Override
       public int getPathIndex() {
         return pathIndex_;
       }
       /**
-       * <code>int32 pathIndex = 8;</code>
+       * <code>int32 pathIndex = 5;</code>
+       * @param value The pathIndex to set.
+       * @return This builder for chaining.
        */
       public Builder setPathIndex(int value) {
         
@@ -5406,7 +5429,8 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>int32 pathIndex = 8;</code>
+       * <code>int32 pathIndex = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPathIndex() {
         
@@ -5417,13 +5441,17 @@ public final class Fleetclients {
 
       private double velocity_ ;
       /**
-       * <code>double velocity = 9;</code>
+       * <code>double velocity = 6;</code>
+       * @return The velocity.
        */
+      @java.lang.Override
       public double getVelocity() {
         return velocity_;
       }
       /**
-       * <code>double velocity = 9;</code>
+       * <code>double velocity = 6;</code>
+       * @param value The velocity to set.
+       * @return This builder for chaining.
        */
       public Builder setVelocity(double value) {
         
@@ -5432,7 +5460,8 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>double velocity = 9;</code>
+       * <code>double velocity = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVelocity() {
         
@@ -5443,13 +5472,17 @@ public final class Fleetclients {
 
       private double distanceTraveled_ ;
       /**
-       * <code>double distanceTraveled = 10;</code>
+       * <code>double distanceTraveled = 7;</code>
+       * @return The distanceTraveled.
        */
+      @java.lang.Override
       public double getDistanceTraveled() {
         return distanceTraveled_;
       }
       /**
-       * <code>double distanceTraveled = 10;</code>
+       * <code>double distanceTraveled = 7;</code>
+       * @param value The distanceTraveled to set.
+       * @return This builder for chaining.
        */
       public Builder setDistanceTraveled(double value) {
         
@@ -5458,7 +5491,8 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>double distanceTraveled = 10;</code>
+       * <code>double distanceTraveled = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDistanceTraveled() {
         
@@ -5469,13 +5503,17 @@ public final class Fleetclients {
 
       private int criticalPoint_ ;
       /**
-       * <code>int32 criticalPoint = 11;</code>
+       * <code>int32 criticalPoint = 8;</code>
+       * @return The criticalPoint.
        */
+      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
-       * <code>int32 criticalPoint = 11;</code>
+       * <code>int32 criticalPoint = 8;</code>
+       * @param value The criticalPoint to set.
+       * @return This builder for chaining.
        */
       public Builder setCriticalPoint(int value) {
         
@@ -5484,7 +5522,8 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>int32 criticalPoint = 11;</code>
+       * <code>int32 criticalPoint = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
         
@@ -5495,7 +5534,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -5551,73 +5590,68 @@ public final class Fleetclients {
 
     /**
      * <code>string req = 1;</code>
+     * @return The req.
      */
     java.lang.String getReq();
     /**
      * <code>string req = 1;</code>
+     * @return The bytes for req.
      */
     com.google.protobuf.ByteString
         getReqBytes();
 
     /**
      * <code>int32 robotid = 2;</code>
+     * @return The robotid.
      */
     int getRobotid();
 
     /**
      * <code>double x = 3;</code>
+     * @return The x.
      */
     double getX();
 
     /**
      * <code>double y = 4;</code>
+     * @return The y.
      */
     double getY();
 
     /**
-     * <code>double z = 5;</code>
+     * <code>double theta = 5;</code>
+     * @return The theta.
      */
-    double getZ();
+    double getTheta();
 
     /**
-     * <code>double roll = 6;</code>
-     */
-    double getRoll();
-
-    /**
-     * <code>double pitch = 7;</code>
-     */
-    double getPitch();
-
-    /**
-     * <code>double yaw = 8;</code>
-     */
-    double getYaw();
-
-    /**
-     * <code>int32 pathIndex = 9;</code>
+     * <code>int32 pathIndex = 6;</code>
+     * @return The pathIndex.
      */
     int getPathIndex();
 
     /**
-     * <code>double velocity = 10;</code>
+     * <code>double velocity = 7;</code>
+     * @return The velocity.
      */
     double getVelocity();
 
     /**
-     * <code>double distanceTraveled = 11;</code>
+     * <code>double distanceTraveled = 8;</code>
+     * @return The distanceTraveled.
      */
     double getDistanceTraveled();
 
     /**
-     * <code>int32 criticalPoint = 12;</code>
+     * <code>int32 criticalPoint = 9;</code>
+     * @return The criticalPoint.
      */
     int getCriticalPoint();
   }
   /**
    * Protobuf type {@code gradlegRPC.coordinatorrequestrobotid}
    */
-  public  static final class coordinatorrequestrobotid extends
+  public static final class coordinatorrequestrobotid extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.coordinatorrequestrobotid)
       coordinatorrequestrobotidOrBuilder {
@@ -5628,17 +5662,13 @@ public final class Fleetclients {
     }
     private coordinatorrequestrobotid() {
       req_ = "";
-      robotid_ = 0;
-      x_ = 0D;
-      y_ = 0D;
-      z_ = 0D;
-      roll_ = 0D;
-      pitch_ = 0D;
-      yaw_ = 0D;
-      pathIndex_ = 0;
-      velocity_ = 0D;
-      distanceTraveled_ = 0D;
-      criticalPoint_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new coordinatorrequestrobotid();
     }
 
     @java.lang.Override
@@ -5654,7 +5684,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5688,46 +5717,31 @@ public final class Fleetclients {
             }
             case 41: {
 
-              z_ = input.readDouble();
+              theta_ = input.readDouble();
               break;
             }
-            case 49: {
-
-              roll_ = input.readDouble();
-              break;
-            }
-            case 57: {
-
-              pitch_ = input.readDouble();
-              break;
-            }
-            case 65: {
-
-              yaw_ = input.readDouble();
-              break;
-            }
-            case 72: {
+            case 48: {
 
               pathIndex_ = input.readInt32();
               break;
             }
-            case 81: {
+            case 57: {
 
               velocity_ = input.readDouble();
               break;
             }
-            case 89: {
+            case 65: {
 
               distanceTraveled_ = input.readDouble();
               break;
             }
-            case 96: {
+            case 72: {
 
               criticalPoint_ = input.readInt32();
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -5762,7 +5776,9 @@ public final class Fleetclients {
     private volatile java.lang.Object req_;
     /**
      * <code>string req = 1;</code>
+     * @return The req.
      */
+    @java.lang.Override
     public java.lang.String getReq() {
       java.lang.Object ref = req_;
       if (ref instanceof java.lang.String) {
@@ -5777,7 +5793,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string req = 1;</code>
+     * @return The bytes for req.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getReqBytes() {
       java.lang.Object ref = req_;
@@ -5796,7 +5814,9 @@ public final class Fleetclients {
     private int robotid_;
     /**
      * <code>int32 robotid = 2;</code>
+     * @return The robotid.
      */
+    @java.lang.Override
     public int getRobotid() {
       return robotid_;
     }
@@ -5805,7 +5825,9 @@ public final class Fleetclients {
     private double x_;
     /**
      * <code>double x = 3;</code>
+     * @return The x.
      */
+    @java.lang.Override
     public double getX() {
       return x_;
     }
@@ -5814,79 +5836,64 @@ public final class Fleetclients {
     private double y_;
     /**
      * <code>double y = 4;</code>
+     * @return The y.
      */
+    @java.lang.Override
     public double getY() {
       return y_;
     }
 
-    public static final int Z_FIELD_NUMBER = 5;
-    private double z_;
+    public static final int THETA_FIELD_NUMBER = 5;
+    private double theta_;
     /**
-     * <code>double z = 5;</code>
+     * <code>double theta = 5;</code>
+     * @return The theta.
      */
-    public double getZ() {
-      return z_;
+    @java.lang.Override
+    public double getTheta() {
+      return theta_;
     }
 
-    public static final int ROLL_FIELD_NUMBER = 6;
-    private double roll_;
-    /**
-     * <code>double roll = 6;</code>
-     */
-    public double getRoll() {
-      return roll_;
-    }
-
-    public static final int PITCH_FIELD_NUMBER = 7;
-    private double pitch_;
-    /**
-     * <code>double pitch = 7;</code>
-     */
-    public double getPitch() {
-      return pitch_;
-    }
-
-    public static final int YAW_FIELD_NUMBER = 8;
-    private double yaw_;
-    /**
-     * <code>double yaw = 8;</code>
-     */
-    public double getYaw() {
-      return yaw_;
-    }
-
-    public static final int PATHINDEX_FIELD_NUMBER = 9;
+    public static final int PATHINDEX_FIELD_NUMBER = 6;
     private int pathIndex_;
     /**
-     * <code>int32 pathIndex = 9;</code>
+     * <code>int32 pathIndex = 6;</code>
+     * @return The pathIndex.
      */
+    @java.lang.Override
     public int getPathIndex() {
       return pathIndex_;
     }
 
-    public static final int VELOCITY_FIELD_NUMBER = 10;
+    public static final int VELOCITY_FIELD_NUMBER = 7;
     private double velocity_;
     /**
-     * <code>double velocity = 10;</code>
+     * <code>double velocity = 7;</code>
+     * @return The velocity.
      */
+    @java.lang.Override
     public double getVelocity() {
       return velocity_;
     }
 
-    public static final int DISTANCETRAVELED_FIELD_NUMBER = 11;
+    public static final int DISTANCETRAVELED_FIELD_NUMBER = 8;
     private double distanceTraveled_;
     /**
-     * <code>double distanceTraveled = 11;</code>
+     * <code>double distanceTraveled = 8;</code>
+     * @return The distanceTraveled.
      */
+    @java.lang.Override
     public double getDistanceTraveled() {
       return distanceTraveled_;
     }
 
-    public static final int CRITICALPOINT_FIELD_NUMBER = 12;
+    public static final int CRITICALPOINT_FIELD_NUMBER = 9;
     private int criticalPoint_;
     /**
-     * <code>int32 criticalPoint = 12;</code>
+     * <code>int32 criticalPoint = 9;</code>
+     * @return The criticalPoint.
      */
+    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -5917,29 +5924,20 @@ public final class Fleetclients {
       if (y_ != 0D) {
         output.writeDouble(4, y_);
       }
-      if (z_ != 0D) {
-        output.writeDouble(5, z_);
-      }
-      if (roll_ != 0D) {
-        output.writeDouble(6, roll_);
-      }
-      if (pitch_ != 0D) {
-        output.writeDouble(7, pitch_);
-      }
-      if (yaw_ != 0D) {
-        output.writeDouble(8, yaw_);
+      if (theta_ != 0D) {
+        output.writeDouble(5, theta_);
       }
       if (pathIndex_ != 0) {
-        output.writeInt32(9, pathIndex_);
+        output.writeInt32(6, pathIndex_);
       }
       if (velocity_ != 0D) {
-        output.writeDouble(10, velocity_);
+        output.writeDouble(7, velocity_);
       }
       if (distanceTraveled_ != 0D) {
-        output.writeDouble(11, distanceTraveled_);
+        output.writeDouble(8, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
-        output.writeInt32(12, criticalPoint_);
+        output.writeInt32(9, criticalPoint_);
       }
       unknownFields.writeTo(output);
     }
@@ -5965,37 +5963,25 @@ public final class Fleetclients {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, y_);
       }
-      if (z_ != 0D) {
+      if (theta_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, z_);
-      }
-      if (roll_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, roll_);
-      }
-      if (pitch_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, pitch_);
-      }
-      if (yaw_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, yaw_);
+          .computeDoubleSize(5, theta_);
       }
       if (pathIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, pathIndex_);
+          .computeInt32Size(6, pathIndex_);
       }
       if (velocity_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, velocity_);
+          .computeDoubleSize(7, velocity_);
       }
       if (distanceTraveled_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, distanceTraveled_);
+          .computeDoubleSize(8, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, criticalPoint_);
+          .computeInt32Size(9, criticalPoint_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6012,49 +5998,31 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.coordinatorrequestrobotid other = (io.grpc.fleetClients.Fleetclients.coordinatorrequestrobotid) obj;
 
-      boolean result = true;
-      result = result && getReq()
-          .equals(other.getReq());
-      result = result && (getRobotid()
-          == other.getRobotid());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getX())
-          == java.lang.Double.doubleToLongBits(
-              other.getX()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getY())
-          == java.lang.Double.doubleToLongBits(
-              other.getY()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getZ())
-          == java.lang.Double.doubleToLongBits(
-              other.getZ()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getRoll())
-          == java.lang.Double.doubleToLongBits(
-              other.getRoll()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getPitch())
-          == java.lang.Double.doubleToLongBits(
-              other.getPitch()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getYaw())
-          == java.lang.Double.doubleToLongBits(
-              other.getYaw()));
-      result = result && (getPathIndex()
-          == other.getPathIndex());
-      result = result && (
-          java.lang.Double.doubleToLongBits(getVelocity())
-          == java.lang.Double.doubleToLongBits(
-              other.getVelocity()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getDistanceTraveled())
-          == java.lang.Double.doubleToLongBits(
-              other.getDistanceTraveled()));
-      result = result && (getCriticalPoint()
-          == other.getCriticalPoint());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getReq()
+          .equals(other.getReq())) return false;
+      if (getRobotid()
+          != other.getRobotid()) return false;
+      if (java.lang.Double.doubleToLongBits(getX())
+          != java.lang.Double.doubleToLongBits(
+              other.getX())) return false;
+      if (java.lang.Double.doubleToLongBits(getY())
+          != java.lang.Double.doubleToLongBits(
+              other.getY())) return false;
+      if (java.lang.Double.doubleToLongBits(getTheta())
+          != java.lang.Double.doubleToLongBits(
+              other.getTheta())) return false;
+      if (getPathIndex()
+          != other.getPathIndex()) return false;
+      if (java.lang.Double.doubleToLongBits(getVelocity())
+          != java.lang.Double.doubleToLongBits(
+              other.getVelocity())) return false;
+      if (java.lang.Double.doubleToLongBits(getDistanceTraveled())
+          != java.lang.Double.doubleToLongBits(
+              other.getDistanceTraveled())) return false;
+      if (getCriticalPoint()
+          != other.getCriticalPoint()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -6074,18 +6042,9 @@ public final class Fleetclients {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + Z_FIELD_NUMBER;
+      hash = (37 * hash) + THETA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getZ()));
-      hash = (37 * hash) + ROLL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getRoll()));
-      hash = (37 * hash) + PITCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getPitch()));
-      hash = (37 * hash) + YAW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getYaw()));
+          java.lang.Double.doubleToLongBits(getTheta()));
       hash = (37 * hash) + PATHINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPathIndex();
       hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
@@ -6237,13 +6196,7 @@ public final class Fleetclients {
 
         y_ = 0D;
 
-        z_ = 0D;
-
-        roll_ = 0D;
-
-        pitch_ = 0D;
-
-        yaw_ = 0D;
+        theta_ = 0D;
 
         pathIndex_ = 0;
 
@@ -6283,10 +6236,7 @@ public final class Fleetclients {
         result.robotid_ = robotid_;
         result.x_ = x_;
         result.y_ = y_;
-        result.z_ = z_;
-        result.roll_ = roll_;
-        result.pitch_ = pitch_;
-        result.yaw_ = yaw_;
+        result.theta_ = theta_;
         result.pathIndex_ = pathIndex_;
         result.velocity_ = velocity_;
         result.distanceTraveled_ = distanceTraveled_;
@@ -6297,35 +6247,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -6352,17 +6302,8 @@ public final class Fleetclients {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getZ() != 0D) {
-          setZ(other.getZ());
-        }
-        if (other.getRoll() != 0D) {
-          setRoll(other.getRoll());
-        }
-        if (other.getPitch() != 0D) {
-          setPitch(other.getPitch());
-        }
-        if (other.getYaw() != 0D) {
-          setYaw(other.getYaw());
+        if (other.getTheta() != 0D) {
+          setTheta(other.getTheta());
         }
         if (other.getPathIndex() != 0) {
           setPathIndex(other.getPathIndex());
@@ -6408,6 +6349,7 @@ public final class Fleetclients {
       private java.lang.Object req_ = "";
       /**
        * <code>string req = 1;</code>
+       * @return The req.
        */
       public java.lang.String getReq() {
         java.lang.Object ref = req_;
@@ -6423,6 +6365,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string req = 1;</code>
+       * @return The bytes for req.
        */
       public com.google.protobuf.ByteString
           getReqBytes() {
@@ -6439,6 +6382,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string req = 1;</code>
+       * @param value The req to set.
+       * @return This builder for chaining.
        */
       public Builder setReq(
           java.lang.String value) {
@@ -6452,6 +6397,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string req = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearReq() {
         
@@ -6461,6 +6407,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string req = 1;</code>
+       * @param value The bytes for req to set.
+       * @return This builder for chaining.
        */
       public Builder setReqBytes(
           com.google.protobuf.ByteString value) {
@@ -6477,12 +6425,16 @@ public final class Fleetclients {
       private int robotid_ ;
       /**
        * <code>int32 robotid = 2;</code>
+       * @return The robotid.
        */
+      @java.lang.Override
       public int getRobotid() {
         return robotid_;
       }
       /**
        * <code>int32 robotid = 2;</code>
+       * @param value The robotid to set.
+       * @return This builder for chaining.
        */
       public Builder setRobotid(int value) {
         
@@ -6492,6 +6444,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 robotid = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRobotid() {
         
@@ -6503,12 +6456,16 @@ public final class Fleetclients {
       private double x_ ;
       /**
        * <code>double x = 3;</code>
+       * @return The x.
        */
+      @java.lang.Override
       public double getX() {
         return x_;
       }
       /**
        * <code>double x = 3;</code>
+       * @param value The x to set.
+       * @return This builder for chaining.
        */
       public Builder setX(double value) {
         
@@ -6518,6 +6475,7 @@ public final class Fleetclients {
       }
       /**
        * <code>double x = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearX() {
         
@@ -6529,12 +6487,16 @@ public final class Fleetclients {
       private double y_ ;
       /**
        * <code>double y = 4;</code>
+       * @return The y.
        */
+      @java.lang.Override
       public double getY() {
         return y_;
       }
       /**
        * <code>double y = 4;</code>
+       * @param value The y to set.
+       * @return This builder for chaining.
        */
       public Builder setY(double value) {
         
@@ -6544,6 +6506,7 @@ public final class Fleetclients {
       }
       /**
        * <code>double y = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearY() {
         
@@ -6552,119 +6515,50 @@ public final class Fleetclients {
         return this;
       }
 
-      private double z_ ;
+      private double theta_ ;
       /**
-       * <code>double z = 5;</code>
+       * <code>double theta = 5;</code>
+       * @return The theta.
        */
-      public double getZ() {
-        return z_;
+      @java.lang.Override
+      public double getTheta() {
+        return theta_;
       }
       /**
-       * <code>double z = 5;</code>
+       * <code>double theta = 5;</code>
+       * @param value The theta to set.
+       * @return This builder for chaining.
        */
-      public Builder setZ(double value) {
+      public Builder setTheta(double value) {
         
-        z_ = value;
+        theta_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double z = 5;</code>
+       * <code>double theta = 5;</code>
+       * @return This builder for chaining.
        */
-      public Builder clearZ() {
+      public Builder clearTheta() {
         
-        z_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double roll_ ;
-      /**
-       * <code>double roll = 6;</code>
-       */
-      public double getRoll() {
-        return roll_;
-      }
-      /**
-       * <code>double roll = 6;</code>
-       */
-      public Builder setRoll(double value) {
-        
-        roll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double roll = 6;</code>
-       */
-      public Builder clearRoll() {
-        
-        roll_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double pitch_ ;
-      /**
-       * <code>double pitch = 7;</code>
-       */
-      public double getPitch() {
-        return pitch_;
-      }
-      /**
-       * <code>double pitch = 7;</code>
-       */
-      public Builder setPitch(double value) {
-        
-        pitch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double pitch = 7;</code>
-       */
-      public Builder clearPitch() {
-        
-        pitch_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double yaw_ ;
-      /**
-       * <code>double yaw = 8;</code>
-       */
-      public double getYaw() {
-        return yaw_;
-      }
-      /**
-       * <code>double yaw = 8;</code>
-       */
-      public Builder setYaw(double value) {
-        
-        yaw_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double yaw = 8;</code>
-       */
-      public Builder clearYaw() {
-        
-        yaw_ = 0D;
+        theta_ = 0D;
         onChanged();
         return this;
       }
 
       private int pathIndex_ ;
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
+       * @return The pathIndex.
        */
+      @java.lang.Override
       public int getPathIndex() {
         return pathIndex_;
       }
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
+       * @param value The pathIndex to set.
+       * @return This builder for chaining.
        */
       public Builder setPathIndex(int value) {
         
@@ -6673,7 +6567,8 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearPathIndex() {
         
@@ -6684,13 +6579,17 @@ public final class Fleetclients {
 
       private double velocity_ ;
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
+       * @return The velocity.
        */
+      @java.lang.Override
       public double getVelocity() {
         return velocity_;
       }
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
+       * @param value The velocity to set.
+       * @return This builder for chaining.
        */
       public Builder setVelocity(double value) {
         
@@ -6699,7 +6598,8 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVelocity() {
         
@@ -6710,13 +6610,17 @@ public final class Fleetclients {
 
       private double distanceTraveled_ ;
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
+       * @return The distanceTraveled.
        */
+      @java.lang.Override
       public double getDistanceTraveled() {
         return distanceTraveled_;
       }
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
+       * @param value The distanceTraveled to set.
+       * @return This builder for chaining.
        */
       public Builder setDistanceTraveled(double value) {
         
@@ -6725,7 +6629,8 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDistanceTraveled() {
         
@@ -6736,13 +6641,17 @@ public final class Fleetclients {
 
       private int criticalPoint_ ;
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
+       * @return The criticalPoint.
        */
+      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
+       * @param value The criticalPoint to set.
+       * @return This builder for chaining.
        */
       public Builder setCriticalPoint(int value) {
         
@@ -6751,7 +6660,8 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
         
@@ -6762,7 +6672,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -6818,23 +6728,26 @@ public final class Fleetclients {
 
     /**
      * <code>string kan = 1;</code>
+     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
+     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>int32 robotID = 2;</code>
+     * @return The robotID.
      */
     int getRobotID();
   }
   /**
    * Protobuf type {@code gradlegRPC.coordinatorrespondrobotreport}
    */
-  public  static final class coordinatorrespondrobotreport extends
+  public static final class coordinatorrespondrobotreport extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.coordinatorrespondrobotreport)
       coordinatorrespondrobotreportOrBuilder {
@@ -6845,7 +6758,13 @@ public final class Fleetclients {
     }
     private coordinatorrespondrobotreport() {
       kan_ = "";
-      robotID_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new coordinatorrespondrobotreport();
     }
 
     @java.lang.Override
@@ -6861,7 +6780,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6884,7 +6802,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -6919,7 +6837,9 @@ public final class Fleetclients {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
+     * @return The kan.
      */
+    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -6934,7 +6854,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string kan = 1;</code>
+     * @return The bytes for kan.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -6953,7 +6875,9 @@ public final class Fleetclients {
     private int robotID_;
     /**
      * <code>int32 robotID = 2;</code>
+     * @return The robotID.
      */
+    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -7009,13 +6933,12 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.coordinatorrespondrobotreport other = (io.grpc.fleetClients.Fleetclients.coordinatorrespondrobotreport) obj;
 
-      boolean result = true;
-      result = result && getKan()
-          .equals(other.getKan());
-      result = result && (getRobotID()
-          == other.getRobotID());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getKan()
+          .equals(other.getKan())) return false;
+      if (getRobotID()
+          != other.getRobotID()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7200,35 +7123,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -7281,6 +7204,7 @@ public final class Fleetclients {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
+       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -7296,6 +7220,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string kan = 1;</code>
+       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -7312,6 +7237,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string kan = 1;</code>
+       * @param value The kan to set.
+       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -7325,6 +7252,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string kan = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -7334,6 +7262,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string kan = 1;</code>
+       * @param value The bytes for kan to set.
+       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -7350,12 +7280,16 @@ public final class Fleetclients {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 2;</code>
+       * @return The robotID.
        */
+      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 2;</code>
+       * @param value The robotID to set.
+       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -7365,6 +7299,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 robotID = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -7375,7 +7310,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -7431,23 +7366,26 @@ public final class Fleetclients {
 
     /**
      * <code>string kan = 1;</code>
+     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
+     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>int32 robotID = 2;</code>
+     * @return The robotID.
      */
     int getRobotID();
   }
   /**
    * Protobuf type {@code gradlegRPC.clientGetCriticalPointRequestMessage}
    */
-  public  static final class clientGetCriticalPointRequestMessage extends
+  public static final class clientGetCriticalPointRequestMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.clientGetCriticalPointRequestMessage)
       clientGetCriticalPointRequestMessageOrBuilder {
@@ -7458,7 +7396,13 @@ public final class Fleetclients {
     }
     private clientGetCriticalPointRequestMessage() {
       kan_ = "";
-      robotID_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new clientGetCriticalPointRequestMessage();
     }
 
     @java.lang.Override
@@ -7474,7 +7418,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7497,7 +7440,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -7532,7 +7475,9 @@ public final class Fleetclients {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
+     * @return The kan.
      */
+    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -7547,7 +7492,9 @@ public final class Fleetclients {
     }
     /**
      * <code>string kan = 1;</code>
+     * @return The bytes for kan.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -7566,7 +7513,9 @@ public final class Fleetclients {
     private int robotID_;
     /**
      * <code>int32 robotID = 2;</code>
+     * @return The robotID.
      */
+    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -7622,13 +7571,12 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.clientGetCriticalPointRequestMessage other = (io.grpc.fleetClients.Fleetclients.clientGetCriticalPointRequestMessage) obj;
 
-      boolean result = true;
-      result = result && getKan()
-          .equals(other.getKan());
-      result = result && (getRobotID()
-          == other.getRobotID());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getKan()
+          .equals(other.getKan())) return false;
+      if (getRobotID()
+          != other.getRobotID()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -7813,35 +7761,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -7894,6 +7842,7 @@ public final class Fleetclients {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
+       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -7909,6 +7858,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string kan = 1;</code>
+       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -7925,6 +7875,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string kan = 1;</code>
+       * @param value The kan to set.
+       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -7938,6 +7890,7 @@ public final class Fleetclients {
       }
       /**
        * <code>string kan = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -7947,6 +7900,8 @@ public final class Fleetclients {
       }
       /**
        * <code>string kan = 1;</code>
+       * @param value The bytes for kan to set.
+       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -7963,12 +7918,16 @@ public final class Fleetclients {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 2;</code>
+       * @return The robotID.
        */
+      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 2;</code>
+       * @param value The robotID to set.
+       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -7978,6 +7937,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 robotID = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -7988,7 +7948,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -8044,13 +8004,14 @@ public final class Fleetclients {
 
     /**
      * <code>int32 criticalPoint = 1;</code>
+     * @return The criticalPoint.
      */
     int getCriticalPoint();
   }
   /**
    * Protobuf type {@code gradlegRPC.clientGetCriticalPointResponseMessage}
    */
-  public  static final class clientGetCriticalPointResponseMessage extends
+  public static final class clientGetCriticalPointResponseMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.clientGetCriticalPointResponseMessage)
       clientGetCriticalPointResponseMessageOrBuilder {
@@ -8060,7 +8021,13 @@ public final class Fleetclients {
       super(builder);
     }
     private clientGetCriticalPointResponseMessage() {
-      criticalPoint_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new clientGetCriticalPointResponseMessage();
     }
 
     @java.lang.Override
@@ -8076,7 +8043,6 @@ public final class Fleetclients {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8093,7 +8059,7 @@ public final class Fleetclients {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -8128,7 +8094,9 @@ public final class Fleetclients {
     private int criticalPoint_;
     /**
      * <code>int32 criticalPoint = 1;</code>
+     * @return The criticalPoint.
      */
+    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -8178,11 +8146,10 @@ public final class Fleetclients {
       }
       io.grpc.fleetClients.Fleetclients.clientGetCriticalPointResponseMessage other = (io.grpc.fleetClients.Fleetclients.clientGetCriticalPointResponseMessage) obj;
 
-      boolean result = true;
-      result = result && (getCriticalPoint()
-          == other.getCriticalPoint());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getCriticalPoint()
+          != other.getCriticalPoint()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -8362,35 +8329,35 @@ public final class Fleetclients {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -8439,12 +8406,16 @@ public final class Fleetclients {
       private int criticalPoint_ ;
       /**
        * <code>int32 criticalPoint = 1;</code>
+       * @return The criticalPoint.
        */
+      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
        * <code>int32 criticalPoint = 1;</code>
+       * @param value The criticalPoint to set.
+       * @return This builder for chaining.
        */
       public Builder setCriticalPoint(int value) {
         
@@ -8454,6 +8425,7 @@ public final class Fleetclients {
       }
       /**
        * <code>int32 criticalPoint = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
         
@@ -8464,7 +8436,7 @@ public final class Fleetclients {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -8509,1172 +8481,6 @@ public final class Fleetclients {
 
     @java.lang.Override
     public io.grpc.fleetClients.Fleetclients.clientGetCriticalPointResponseMessage getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface requestTrajectoryEnvelopeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:gradlegRPC.requestTrajectoryEnvelope)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string kan = 1;</code>
-     */
-    java.lang.String getKan();
-    /**
-     * <code>string kan = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getKanBytes();
-
-    /**
-     * <code>bytes serializedTe = 2;</code>
-     */
-    com.google.protobuf.ByteString getSerializedTe();
-  }
-  /**
-   * Protobuf type {@code gradlegRPC.requestTrajectoryEnvelope}
-   */
-  public  static final class requestTrajectoryEnvelope extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:gradlegRPC.requestTrajectoryEnvelope)
-      requestTrajectoryEnvelopeOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use requestTrajectoryEnvelope.newBuilder() to construct.
-    private requestTrajectoryEnvelope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private requestTrajectoryEnvelope() {
-      kan_ = "";
-      serializedTe_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private requestTrajectoryEnvelope(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              kan_ = s;
-              break;
-            }
-            case 18: {
-
-              serializedTe_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_requestTrajectoryEnvelope_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_requestTrajectoryEnvelope_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope.class, io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope.Builder.class);
-    }
-
-    public static final int KAN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object kan_;
-    /**
-     * <code>string kan = 1;</code>
-     */
-    public java.lang.String getKan() {
-      java.lang.Object ref = kan_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        kan_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string kan = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getKanBytes() {
-      java.lang.Object ref = kan_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        kan_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SERIALIZEDTE_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString serializedTe_;
-    /**
-     * <code>bytes serializedTe = 2;</code>
-     */
-    public com.google.protobuf.ByteString getSerializedTe() {
-      return serializedTe_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getKanBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kan_);
-      }
-      if (!serializedTe_.isEmpty()) {
-        output.writeBytes(2, serializedTe_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getKanBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kan_);
-      }
-      if (!serializedTe_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, serializedTe_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope)) {
-        return super.equals(obj);
-      }
-      io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope other = (io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope) obj;
-
-      boolean result = true;
-      result = result && getKan()
-          .equals(other.getKan());
-      result = result && getSerializedTe()
-          .equals(other.getSerializedTe());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KAN_FIELD_NUMBER;
-      hash = (53 * hash) + getKan().hashCode();
-      hash = (37 * hash) + SERIALIZEDTE_FIELD_NUMBER;
-      hash = (53 * hash) + getSerializedTe().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code gradlegRPC.requestTrajectoryEnvelope}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:gradlegRPC.requestTrajectoryEnvelope)
-        io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelopeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_requestTrajectoryEnvelope_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_requestTrajectoryEnvelope_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope.class, io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope.Builder.class);
-      }
-
-      // Construct using io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        kan_ = "";
-
-        serializedTe_ = com.google.protobuf.ByteString.EMPTY;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_requestTrajectoryEnvelope_descriptor;
-      }
-
-      @java.lang.Override
-      public io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope getDefaultInstanceForType() {
-        return io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope build() {
-        io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope buildPartial() {
-        io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope result = new io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope(this);
-        result.kan_ = kan_;
-        result.serializedTe_ = serializedTe_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope) {
-          return mergeFrom((io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope other) {
-        if (other == io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope.getDefaultInstance()) return this;
-        if (!other.getKan().isEmpty()) {
-          kan_ = other.kan_;
-          onChanged();
-        }
-        if (other.getSerializedTe() != com.google.protobuf.ByteString.EMPTY) {
-          setSerializedTe(other.getSerializedTe());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object kan_ = "";
-      /**
-       * <code>string kan = 1;</code>
-       */
-      public java.lang.String getKan() {
-        java.lang.Object ref = kan_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          kan_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string kan = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getKanBytes() {
-        java.lang.Object ref = kan_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          kan_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string kan = 1;</code>
-       */
-      public Builder setKan(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        kan_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string kan = 1;</code>
-       */
-      public Builder clearKan() {
-        
-        kan_ = getDefaultInstance().getKan();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string kan = 1;</code>
-       */
-      public Builder setKanBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        kan_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString serializedTe_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes serializedTe = 2;</code>
-       */
-      public com.google.protobuf.ByteString getSerializedTe() {
-        return serializedTe_;
-      }
-      /**
-       * <code>bytes serializedTe = 2;</code>
-       */
-      public Builder setSerializedTe(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        serializedTe_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bytes serializedTe = 2;</code>
-       */
-      public Builder clearSerializedTe() {
-        
-        serializedTe_ = getDefaultInstance().getSerializedTe();
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:gradlegRPC.requestTrajectoryEnvelope)
-    }
-
-    // @@protoc_insertion_point(class_scope:gradlegRPC.requestTrajectoryEnvelope)
-    private static final io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope();
-    }
-
-    public static io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<requestTrajectoryEnvelope>
-        PARSER = new com.google.protobuf.AbstractParser<requestTrajectoryEnvelope>() {
-      @java.lang.Override
-      public requestTrajectoryEnvelope parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new requestTrajectoryEnvelope(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<requestTrajectoryEnvelope> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<requestTrajectoryEnvelope> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.grpc.fleetClients.Fleetclients.requestTrajectoryEnvelope getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface respondTrajectoryEnvelopeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:gradlegRPC.respondTrajectoryEnvelope)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string end = 1;</code>
-     */
-    java.lang.String getEnd();
-    /**
-     * <code>string end = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getEndBytes();
-  }
-  /**
-   * Protobuf type {@code gradlegRPC.respondTrajectoryEnvelope}
-   */
-  public  static final class respondTrajectoryEnvelope extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:gradlegRPC.respondTrajectoryEnvelope)
-      respondTrajectoryEnvelopeOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use respondTrajectoryEnvelope.newBuilder() to construct.
-    private respondTrajectoryEnvelope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private respondTrajectoryEnvelope() {
-      end_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private respondTrajectoryEnvelope(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              end_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_respondTrajectoryEnvelope_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_respondTrajectoryEnvelope_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope.class, io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope.Builder.class);
-    }
-
-    public static final int END_FIELD_NUMBER = 1;
-    private volatile java.lang.Object end_;
-    /**
-     * <code>string end = 1;</code>
-     */
-    public java.lang.String getEnd() {
-      java.lang.Object ref = end_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        end_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string end = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getEndBytes() {
-      java.lang.Object ref = end_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        end_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getEndBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, end_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getEndBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, end_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope)) {
-        return super.equals(obj);
-      }
-      io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope other = (io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope) obj;
-
-      boolean result = true;
-      result = result && getEnd()
-          .equals(other.getEnd());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + END_FIELD_NUMBER;
-      hash = (53 * hash) + getEnd().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code gradlegRPC.respondTrajectoryEnvelope}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:gradlegRPC.respondTrajectoryEnvelope)
-        io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelopeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_respondTrajectoryEnvelope_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_respondTrajectoryEnvelope_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope.class, io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope.Builder.class);
-      }
-
-      // Construct using io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        end_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grpc.fleetClients.Fleetclients.internal_static_gradlegRPC_respondTrajectoryEnvelope_descriptor;
-      }
-
-      @java.lang.Override
-      public io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope getDefaultInstanceForType() {
-        return io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope build() {
-        io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope buildPartial() {
-        io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope result = new io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope(this);
-        result.end_ = end_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope) {
-          return mergeFrom((io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope other) {
-        if (other == io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope.getDefaultInstance()) return this;
-        if (!other.getEnd().isEmpty()) {
-          end_ = other.end_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object end_ = "";
-      /**
-       * <code>string end = 1;</code>
-       */
-      public java.lang.String getEnd() {
-        java.lang.Object ref = end_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          end_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string end = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getEndBytes() {
-        java.lang.Object ref = end_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          end_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string end = 1;</code>
-       */
-      public Builder setEnd(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        end_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string end = 1;</code>
-       */
-      public Builder clearEnd() {
-        
-        end_ = getDefaultInstance().getEnd();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string end = 1;</code>
-       */
-      public Builder setEndBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        end_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:gradlegRPC.respondTrajectoryEnvelope)
-    }
-
-    // @@protoc_insertion_point(class_scope:gradlegRPC.respondTrajectoryEnvelope)
-    private static final io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope();
-    }
-
-    public static io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<respondTrajectoryEnvelope>
-        PARSER = new com.google.protobuf.AbstractParser<respondTrajectoryEnvelope>() {
-      @java.lang.Override
-      public respondTrajectoryEnvelope parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new respondTrajectoryEnvelope(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<respondTrajectoryEnvelope> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<respondTrajectoryEnvelope> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.grpc.fleetClients.Fleetclients.respondTrajectoryEnvelope getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9740,16 +8546,6 @@ public final class Fleetclients {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_gradlegRPC_clientGetCriticalPointResponseMessage_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gradlegRPC_requestTrajectoryEnvelope_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gradlegRPC_requestTrajectoryEnvelope_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gradlegRPC_respondTrajectoryEnvelope_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gradlegRPC_respondTrajectoryEnvelope_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -9769,56 +8565,41 @@ public final class Fleetclients {
       "\003 \001(\t\022\022\n\nconnection\030\004 \001(\t\022\021\n\ttimeStamp\030\005" +
       " \001(\t\022\014\n\004port\030\006 \001(\005\"\027\n\007robotID\022\014\n\004name\030\001 " +
       "\001(\t\"2\n\022robotReportRequest\022\013\n\003kan\030\001 \001(\t\022\017" +
-      "\n\007robotID\030\002 \001(\005\"\307\001\n\023robotReportResponse\022" +
-      "\017\n\007robotID\030\001 \001(\005\022\t\n\001x\030\002 \001(\001\022\t\n\001y\030\003 \001(\001\022\t" +
-      "\n\001z\030\004 \001(\001\022\014\n\004roll\030\005 \001(\001\022\r\n\005pitch\030\006 \001(\001\022\013" +
-      "\n\003yaw\030\007 \001(\001\022\021\n\tpathIndex\030\010 \001(\005\022\020\n\010veloci" +
-      "ty\030\t \001(\001\022\030\n\020distanceTraveled\030\n \001(\001\022\025\n\rcr" +
-      "iticalPoint\030\013 \001(\005\"\332\001\n\031coordinatorrequest" +
-      "robotid\022\013\n\003req\030\001 \001(\t\022\017\n\007robotid\030\002 \001(\005\022\t\n" +
-      "\001x\030\003 \001(\001\022\t\n\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006" +
-      " \001(\001\022\r\n\005pitch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpath" +
-      "Index\030\t \001(\005\022\020\n\010velocity\030\n \001(\001\022\030\n\020distanc" +
-      "eTraveled\030\013 \001(\001\022\025\n\rcriticalPoint\030\014 \001(\005\"=" +
-      "\n\035coordinatorrespondrobotreport\022\013\n\003kan\030\001" +
-      " \001(\t\022\017\n\007robotID\030\002 \001(\005\"D\n$clientGetCritic" +
-      "alPointRequestMessage\022\013\n\003kan\030\001 \001(\t\022\017\n\007ro" +
-      "botID\030\002 \001(\005\">\n%clientGetCriticalPointRes" +
-      "ponseMessage\022\025\n\rcriticalPoint\030\001 \001(\005\">\n\031r" +
-      "equestTrajectoryEnvelope\022\013\n\003kan\030\001 \001(\t\022\024\n" +
-      "\014serializedTe\030\002 \001(\014\"(\n\031respondTrajectory" +
-      "Envelope\022\013\n\003end\030\001 \001(\t2\231\005\n\023FleetClientsSe" +
-      "rvice\022i\n\016gCriticalPoint\022*.gradlegRPC.get" +
-      "CriticalPointRequestMessage\032+.gradlegRPC" +
-      ".getCriticalPointResponseMessage\022D\n\007mess" +
-      "age\022\032.gradlegRPC.requestMessage\032\033.gradle" +
-      "gRPC.responseMessage\"\000\0229\n\010grobotID\022\026.gra" +
-      "dlegRPC.getRobotID\032\023.gradlegRPC.robotID\"" +
-      "\000\022O\n\014grobotReport\022\036.gradlegRPC.robotRepo" +
-      "rtRequest\032\037.gradlegRPC.robotReportRespon" +
-      "se\022j\n\026coordinatorrobotreport\022%.gradlegRP" +
-      "C.coordinatorrequestrobotid\032).gradlegRPC" +
-      ".coordinatorrespondrobotreport\022z\n\023client" +
-      "Criticalpoint\0220.gradlegRPC.clientGetCrit" +
-      "icalPointRequestMessage\0321.gradlegRPC.cli" +
-      "entGetCriticalPointResponseMessage\022]\n\rtr" +
-      "ajectoryEnv\022%.gradlegRPC.requestTrajecto" +
-      "ryEnvelope\032%.gradlegRPC.respondTrajector" +
-      "yEnvelopeB\026\n\024io.grpc.fleetClientsb\006proto" +
-      "3"
+      "\n\007robotID\030\002 \001(\005\"\241\001\n\023robotReportResponse\022" +
+      "\017\n\007robotID\030\001 \001(\005\022\t\n\001x\030\002 \001(\001\022\t\n\001y\030\003 \001(\001\022\r" +
+      "\n\005theta\030\004 \001(\001\022\021\n\tpathIndex\030\005 \001(\005\022\020\n\010velo" +
+      "city\030\006 \001(\001\022\030\n\020distanceTraveled\030\007 \001(\001\022\025\n\r" +
+      "criticalPoint\030\010 \001(\005\"\264\001\n\031coordinatorreque" +
+      "strobotid\022\013\n\003req\030\001 \001(\t\022\017\n\007robotid\030\002 \001(\005\022" +
+      "\t\n\001x\030\003 \001(\001\022\t\n\001y\030\004 \001(\001\022\r\n\005theta\030\005 \001(\001\022\021\n\t" +
+      "pathIndex\030\006 \001(\005\022\020\n\010velocity\030\007 \001(\001\022\030\n\020dis" +
+      "tanceTraveled\030\010 \001(\001\022\025\n\rcriticalPoint\030\t \001" +
+      "(\005\"=\n\035coordinatorrespondrobotreport\022\013\n\003k" +
+      "an\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"D\n$clientGetCr" +
+      "iticalPointRequestMessage\022\013\n\003kan\030\001 \001(\t\022\017" +
+      "\n\007robotID\030\002 \001(\005\">\n%clientGetCriticalPoin" +
+      "tResponseMessage\022\025\n\rcriticalPoint\030\001 \001(\0052" +
+      "\272\004\n\023FleetClientsService\022i\n\016gCriticalPoin" +
+      "t\022*.gradlegRPC.getCriticalPointRequestMe" +
+      "ssage\032+.gradlegRPC.getCriticalPointRespo" +
+      "nseMessage\022D\n\007message\022\032.gradlegRPC.reque" +
+      "stMessage\032\033.gradlegRPC.responseMessage\"\000" +
+      "\0229\n\010grobotID\022\026.gradlegRPC.getRobotID\032\023.g" +
+      "radlegRPC.robotID\"\000\022O\n\014grobotReport\022\036.gr" +
+      "adlegRPC.robotReportRequest\032\037.gradlegRPC" +
+      ".robotReportResponse\022j\n\026coordinatorrobot" +
+      "report\022%.gradlegRPC.coordinatorrequestro" +
+      "botid\032).gradlegRPC.coordinatorrespondrob" +
+      "otreport\022z\n\023clientCriticalpoint\0220.gradle" +
+      "gRPC.clientGetCriticalPointRequestMessag" +
+      "e\0321.gradlegRPC.clientGetCriticalPointRes" +
+      "ponseMessageB\026\n\024io.grpc.fleetClientsb\006pr" +
+      "oto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_gradlegRPC_getCriticalPointRequestMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_gradlegRPC_getCriticalPointRequestMessage_fieldAccessorTable = new
@@ -9866,13 +8647,13 @@ public final class Fleetclients {
     internal_static_gradlegRPC_robotReportResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotReportResponse_descriptor,
-        new java.lang.String[] { "RobotID", "X", "Y", "Z", "Roll", "Pitch", "Yaw", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
+        new java.lang.String[] { "RobotID", "X", "Y", "Theta", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
     internal_static_gradlegRPC_coordinatorrequestrobotid_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_gradlegRPC_coordinatorrequestrobotid_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_coordinatorrequestrobotid_descriptor,
-        new java.lang.String[] { "Req", "Robotid", "X", "Y", "Z", "Roll", "Pitch", "Yaw", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
+        new java.lang.String[] { "Req", "Robotid", "X", "Y", "Theta", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
     internal_static_gradlegRPC_coordinatorrespondrobotreport_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_gradlegRPC_coordinatorrespondrobotreport_fieldAccessorTable = new
@@ -9891,18 +8672,6 @@ public final class Fleetclients {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_clientGetCriticalPointResponseMessage_descriptor,
         new java.lang.String[] { "CriticalPoint", });
-    internal_static_gradlegRPC_requestTrajectoryEnvelope_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_gradlegRPC_requestTrajectoryEnvelope_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gradlegRPC_requestTrajectoryEnvelope_descriptor,
-        new java.lang.String[] { "Kan", "SerializedTe", });
-    internal_static_gradlegRPC_respondTrajectoryEnvelope_descriptor =
-      getDescriptor().getMessageTypes().get(13);
-    internal_static_gradlegRPC_respondTrajectoryEnvelope_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gradlegRPC_respondTrajectoryEnvelope_descriptor,
-        new java.lang.String[] { "End", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

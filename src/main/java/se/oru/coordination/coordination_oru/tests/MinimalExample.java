@@ -145,7 +145,7 @@ public class MinimalExample {
 		//Start a visualization (will open a new browser tab)
 		BrowserVisualization viz = new BrowserVisualization();
 		viz.setInitialTransform(49, 5, 0);
-		tec.setVisualization(viz);
+		//tec.setVisualization(viz);
 		
 		//Start dispatching threads for each robot, each of which
 		//dispatches the next mission as soon as the robot is idle

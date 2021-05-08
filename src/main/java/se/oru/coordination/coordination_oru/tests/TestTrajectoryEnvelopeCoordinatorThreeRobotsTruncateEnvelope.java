@@ -61,7 +61,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobotsTruncateEnvelope {
 		//RVizVisualization viz = new RVizVisualization();
 		BrowserVisualization viz = new BrowserVisualization();
 		viz.setInitialTransform(19, 56.5, 35.17);
-		tec.setVisualization(viz);
+		//tec.setVisualization(viz);
 		
 		//Example of how you can add extra info Strings to the visualization of robot status
 		TrackingCallback cb = new TrackingCallback(null) {

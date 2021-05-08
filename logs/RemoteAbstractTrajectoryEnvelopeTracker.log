@@ -1,18 +1,16 @@
-1620393327227@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
-1620393327440@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
-1620393327622@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
-1620393327645@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
-1620393327851@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 4
-1620393328058@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 5
-1620393328271@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 6
-1620393328477@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 7
-1620393329617@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 7
-1620393330643@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 6
-1620393331661@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 5
-1620393331676@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 17259 TrajectoryEnvelope 6 (Robot 5, SE 19) [0;0] Parking ((51.8200, 59.0000, 5.0873)) (ET bounds: [16650,99974201])
-1620393331692@[RemoteAbstractTrajectoryEnvelopeTracker] ERROR: Could not add deadline constraint (TrajectoryEnvelope 6 (Robot 5, SE 19) [0;0] Parking ((51.8200, 59.0000, 5.0873))) --[Deadline] [17259, 17259] AR false  ID 0 --> (TrajectoryEnvelope 6 (Robot 5, SE 19) [0;0] Parking ((51.8200, 59.0000, 5.0873))) whose ET bounds are [16650,99974201]
-1620393332634@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 4
-1620393332634@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 18232 TrajectoryEnvelope 5 (Robot 4, SE 16) [0;0] Parking ((11.0200, 48.8000, 4.2644)) (ET bounds: [16444,99969505])
-1620393332634@[RemoteAbstractTrajectoryEnvelopeTracker] ERROR: Could not add deadline constraint (TrajectoryEnvelope 5 (Robot 4, SE 16) [0;0] Parking ((11.0200, 48.8000, 4.2644))) --[Deadline] [18232, 18232] AR false  ID 0 --> (TrajectoryEnvelope 5 (Robot 4, SE 16) [0;0] Parking ((11.0200, 48.8000, 4.2644))) whose ET bounds are [16444,99969505]
-1620393333654@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
-1620393334678@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1620499753968@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1620499754817@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1620499755628@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1620499755878@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1620499755983@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 4
+1620499756023@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 5
+1620499756458@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1620499756491@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 9224 TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((1.8200, 9.0000, 5.4141)) (ET bounds: [9214,99973107])
+1620499756517@[RemoteAbstractTrajectoryEnvelopeTracker] ERROR: Could not add deadline constraint (TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((1.8200, 9.0000, 5.4141))) --[Deadline] [9224, 9224] AR false  ID 0 --> (TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((1.8200, 9.0000, 5.4141))) whose ET bounds are [9214,99973107]
+1620499758381@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 5
+1620499759635@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 4
+1620499759635@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 12401 TrajectoryEnvelope 6 (Robot 4, SE 19) [0;0] Parking ((15.0200, 22.2000, 4.2644)) (ET bounds: [11649,99973808])
+1620499759636@[RemoteAbstractTrajectoryEnvelopeTracker] ERROR: Could not add deadline constraint (TrajectoryEnvelope 6 (Robot 4, SE 19) [0;0] Parking ((15.0200, 22.2000, 4.2644))) --[Deadline] [12401, 12401] AR false  ID 0 --> (TrajectoryEnvelope 6 (Robot 4, SE 19) [0;0] Parking ((15.0200, 22.2000, 4.2644))) whose ET bounds are [11649,99973808]
+1620499760518@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1620499760518@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 13284 TrajectoryEnvelope 5 (Robot 3, SE 16) [0;0] Parking ((44.6200, 51.8000, 1.8465)) (ET bounds: [11562,99972507])
+1620499760518@[RemoteAbstractTrajectoryEnvelopeTracker] ERROR: Could not add deadline constraint (TrajectoryEnvelope 5 (Robot 3, SE 16) [0;0] Parking ((44.6200, 51.8000, 1.8465))) --[Deadline] [13284, 13284] AR false  ID 0 --> (TrajectoryEnvelope 5 (Robot 3, SE 16) [0;0] Parking ((44.6200, 51.8000, 1.8465))) whose ET bounds are [11562,99972507]

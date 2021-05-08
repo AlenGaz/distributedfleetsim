@@ -17,6 +17,7 @@ public class clientConnection {
     private double trackingPeriodInMillis;
     private MakeFootPrint footPrint;
     private PoseSteering[] poseSteerings;
+    private int numberOfRobots;
 
     public clientConnection(String type, String ip, int port, Pose startPose, Pose endPose,
                             String timeStamp, double maxAccel, double maxVel,
@@ -123,5 +124,13 @@ public class clientConnection {
 
     public void setEndPose(Pose endPose) {
         this.endPose = endPose;
+    }
+
+    public int getNumberOfRobots() {
+        return numberOfRobots;
+    }
+
+    public void setNumberOfRobots(int numberOfRobots) {
+        this.numberOfRobots = numberOfRobots;
     }
 }

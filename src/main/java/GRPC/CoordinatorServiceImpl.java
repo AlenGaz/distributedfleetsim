@@ -84,10 +84,8 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             _type = request.getType();
             _ip = request.getIP();
             _port = request.getPort();
-            _startPose = new Pose(request.getStartPose().getX(), request.getStartPose().getY(), request.getStartPose().getZ(),
-                    request.getStartPose().getRoll(), request.getStartPose().getPitch(), request.getStartPose().getYaw());
-            _endPose = new Pose(request.getEndPose().getX(), request.getEndPose().getY(), request.getEndPose().getZ(),
-                    request.getEndPose().getRoll(), request.getEndPose().getPitch(), request.getEndPose().getYaw());
+            _startPose = new Pose(request.getStartPose().getX(), request.getStartPose().getY(), request.getStartPose().getTheta());
+            _endPose = new Pose(request.getEndPose().getX(), request.getEndPose().getY(), request.getEndPose().getTheta());
             _maxAccel = request.getMaxAccel();
             _maxVel = request.getMaxVel();
             _timeStamp = request.getTimeStamp();
@@ -144,7 +142,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
             tec.placeRobot(_robotID, robotIDtoClientConnection.get(_robotID).getStartPose());
 
-            System.out.println("[CoordinatorServiceImpl] enqueueing new mission for" + _robotID + " with path length" + m.getPath().length);
+
 
 
             Missions.startMissionDispatchers((RemoteTrajectoryEnvelopeCoordinator) tec, true, _robotID);
@@ -177,7 +175,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
              * the necessary data is being sent from the clients
              */
             _robotID = request.getRobotid();
-            Pose _pose = new Pose(request.getX(), request.getY(),request.getZ(), request.getRoll(),request.getPitch(),request.getYaw());
+            Pose _pose = new Pose(request.getX(), request.getY(),request.getTheta());
             RobotReport rR = new RobotReport(_robotID, _pose, request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
 
 
@@ -229,7 +227,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
             }
             else{
-                System.out.println("[CoordinatorServiceImpl] criticalPoint set to -1.. ");
+              //  System.out.println("[CoordinatorServiceImpl] criticalPoint set to -1.. ");
                         criticalPoint = -1;
             }
 
@@ -281,7 +279,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             currentDepResponse(responseObserver);
         }
 
-        System.out.println("[CoordinatorServiceImpl] deserialized into (outer): " + depdes);
+
     }
 
 
@@ -321,7 +319,6 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             e.printStackTrace();
         }
 
-        System.out.println("[CoordinatorServiceImpl] Size of tes" + tecStuffSerialized.length);
 
         coordinatorRespondTecStuff(responseObserver, tecStuffSerialized);
     }
@@ -400,8 +397,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
     public void coordinatorgetRobotReportResponse(StreamObserver<Coordinator.requestrobotreport> responseObserver, RobotReport rr){
 
         Coordinator.requestrobotreport response = Coordinator.requestrobotreport.newBuilder()
-                .setRobotid(rr.getRobotID()).setX(rr.getPose().getX()).setY(rr.getPose().getY()).setZ(rr.getPose().getZ())
-                .setRoll(rr.getPose().getRoll()).setPitch(rr.getPose().getPitch()).setYaw(rr.getPose().getYaw())
+                .setRobotid(rr.getRobotID()).setX(rr.getPose().getX()).setY(rr.getPose().getY()).setTheta(rr.getPose().getTheta())
                 .setPathIndex(rr.getPathIndex()).setVelocity(rr.getVelocity()).setDistanceTraveled(rr.getDistanceTraveled())
                 .setCriticalPoint(rr.getCriticalPoint()).build();
 
@@ -421,20 +417,27 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
     public void coordinatorgetOnPositionUpdate(Coordinator.onPositionUpdateMessage request,
                                                StreamObserver<Coordinator.noneResponse> responseObserver){
 
-
+        System.out.println("[coordinatorgetOnPositionUpdateOdd from robot: " + request.getRobotid());
+        //Polygon footPrint = null;
         TrajectoryEnvelope footPrint = null;
+     /*   if(request.getFootPrintBytes() != null) {
+            try {
+                //footPrint = (Polygon) convertFromBytes(request.getFootPrintBytes().toByteArray());
+                footPrint = (TrajectoryEnvelope) convertFromBytes(request.getFootPrintBytes().toByteArray());
 
-        try {
-            footPrint = (TrajectoryEnvelope) convertFromBytes(request.getFootPrintBytes().toByteArray());
+                System.out.println("[CoordinatorServiceImpl] size of the message of footPrint is: " + request.getFootPrintBytes().toByteArray().length);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
 
+      */
+
         RobotReport rr = new RobotReport(request.getRobotid(),
-                new Pose(request.getX(), request.getY(), request.getZ(),request.getRoll(),request.getPitch(),request.getYaw()),
+                new Pose(request.getX(), request.getY(), request.getTheta()),
                 request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
 
         coordinatorgetOnPositionUpdateResponse(responseObserver);
@@ -458,49 +461,61 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
                 + " {R" + String.valueOf(tec.getCurrentDependencies().get(request.getRobotid()).getDrivingRobotID())
                 + "@" + String.valueOf(tec.getCurrentDependencies().get(request.getRobotid()).getWaitingPoint()) + "}");
 */
-
-        if(( tec.getCurrentDependencies().containsKey(request.getRobotid())) && tec.getCurrentDependencies().containsKey(request.getRobotid())){
-
-            tec.getVisualization().displayRobotState(tec.getCurrentSuperEnvelope(rr.getRobotID()), rr, footPrint.getPathLength()
-                    + " {R" + tec.getCurrentDependencies().get(request.getRobotid()).getDrivingRobotID()
-                    + "@" + tec.getCurrentDependencies().get(request.getRobotid()).getWaitingPoint() + "}");
-        }
-        else{
-            tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()), rr,
-                    String.valueOf(footPrint.getPathLength() + " | " + rr.getCriticalPoint()));
-        }
+            synchronized (tec.getCurrentDependencies()) {
+                if ((tec.getCurrentDependencies().containsKey(request.getRobotid())) && tec.getCurrentDependencies().containsKey(request.getRobotid())) {
 
 
-        //tec.getVisualization().addEnvelope(footPrint);
+                    tec.getVisualization().displayRobotState(tec.getCurrentSuperEnvelope(rr.getRobotID()), rr,
+                            " ¡ " + tec.getCurrentTrajectoryEnvelope(rr.getRobotID()).getPathLength());
 
-        // here below displaying Dependency arrows, its not supposed to be here just now..
-        RobotReport rrWaiting = robotIDtoRobotReport.get(request.getRobotid());
-            for (int robotID : tec.getCurrentDependencies().keySet()) {
-                Dependency dep = tec.getCurrentDependencies().get(robotID);
 
-                if(dep==null){
-                    System.out.println("[CoordinatorServiceImpl] returning cause dep is null ");
-                    return;
+          /*  tec.getVisualization().displayRobotState(footPrint, rr,
+                    String.valueOf(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()).getPathLength()));
+
+           */
+                } else {
+                    tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()), rr,
+                            String.valueOf(" | " + rr.getCriticalPoint()));
+
+                    //    trying with Polygon instead of the trajecvelope
+        /*      tec.getVisualization().displayRobotState(footPrint, rr,
+                    String.valueOf(" | " + rr.getCriticalPoint()));
+       */
                 }
+
+                // trying to just display the geometry and send
+
+
+                //tec.getVisualization().addEnvelope(footPrint);
+
+                // here below displaying Dependency arrows, its not supposed to be here just now..
+
+
+                for (int robotID : tec.getCurrentDependencies().keySet()) {
+                    Dependency dep = tec.getCurrentDependencies().get(robotID);
+
+                    if (dep == null) {
+                        System.out.println("[CoordinatorServiceImpl] returning cause dep is null ");
+                        return;
+                    }
                     RemoteAbstractTrajectoryEnvelopeTracker waitingTrackers = tec.trackers.get(dep.getWaitingRobotID());
                     RemoteAbstractTrajectoryEnvelopeTracker drivingTrackers = tec.trackers.get(dep.getDrivingRobotID());
 
-                    if (waitingTrackers !=null) {
+                    if (waitingTrackers != null) {
                         if (drivingTrackers != null) {
                             RobotReport rrDriving = drivingTrackers.getRobotReport();
-                            String arrowIdentifier = "_"+dep.getWaitingRobotID()+"-"+dep.getDrivingRobotID();
+                            RobotReport rrWaiting = waitingTrackers.getRobotReport();
+                            String arrowIdentifier = "_" + dep.getWaitingRobotID() + "-" + dep.getDrivingRobotID();
 
 
-                        //    tec.getVisualization().displayDependency(rrWaiting, rrDriving, arrowIdentifier);
+                            tec.getVisualization().displayDependency(rrWaiting, rrDriving, arrowIdentifier);
                         }
                     }
                 }
-
+            }
         //tec.getVisualization().updateVisualization();
 
     }
-
-
 
     public void coordinatorgetOnPositionUpdateResponse(StreamObserver<Coordinator.noneResponse> responseObserver){
 
@@ -510,6 +525,110 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();
+    }
+
+    public void coordinatorgetOnPositionUpdateEven(Coordinator.onPositionUpdateMessage request,
+                                               StreamObserver<Coordinator.noneResponse> responseObserver) {
+
+        System.out.println("[coordinatorgetOnPositionUpdateEven from robot: " + request.getRobotid());
+        //Polygon footPrint = null;
+        TrajectoryEnvelope footPrint = null;
+     /*   if(request.getFootPrintBytes() != null) {
+            try {
+                //footPrint = (Polygon) convertFromBytes(request.getFootPrintBytes().toByteArray());
+                footPrint = (TrajectoryEnvelope) convertFromBytes(request.getFootPrintBytes().toByteArray());
+
+                System.out.println("[CoordinatorServiceImpl] size of the message of footPrint is: " + request.getFootPrintBytes().toByteArray().length);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+      */
+
+        RobotReport rr = new RobotReport(request.getRobotid(),
+                new Pose(request.getX(), request.getY(), request.getTheta()),
+                request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
+
+        coordinatorgetOnPositionUpdateResponse(responseObserver);
+
+        /**
+         * Visualizing the movement that is done from the integration in RK4
+         *
+
+         *  some alternative below
+         *  System.out.println("[CoordinatorServiceImpl] in onPositionUpdate() got footprint" + footPrint);
+         *  tec.getVisualization().displayRobotState(footPrint, rr, "Hi");
+         *  tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(1), rr, "A");
+         *  tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(2), rr, "A");
+         * */
+
+
+
+        // in extra info shown in, % of path: critical point: {RobotID@waitingPoint}
+   /*     tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()), rr
+                , ":cp:" + robotIDtoRobotReport.get(request.getRobotid()).getCriticalPoint()
+                + " {R" + String.valueOf(tec.getCurrentDependencies().get(request.getRobotid()).getDrivingRobotID())
+                + "@" + String.valueOf(tec.getCurrentDependencies().get(request.getRobotid()).getWaitingPoint()) + "}");
+*/
+        synchronized (tec.getCurrentDependencies()) {
+            if ((tec.getCurrentDependencies().containsKey(request.getRobotid())) && tec.getCurrentDependencies().containsKey(request.getRobotid())) {
+
+
+                tec.getVisualization().displayRobotState(tec.getCurrentSuperEnvelope(rr.getRobotID()), rr,
+                        " ¡ " + tec.getCurrentTrajectoryEnvelope(rr.getRobotID()).getPathLength());
+
+
+          /*  tec.getVisualization().displayRobotState(footPrint, rr,
+                    String.valueOf(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()).getPathLength()));
+
+           */
+            } else {
+                tec.getVisualization().displayRobotState(tec.getCurrentTrajectoryEnvelope(rr.getRobotID()), rr,
+                        String.valueOf(" | " + rr.getCriticalPoint()));
+
+                //    trying with Polygon instead of the trajecvelope
+        /*      tec.getVisualization().displayRobotState(footPrint, rr,
+                    String.valueOf(" | " + rr.getCriticalPoint()));
+       */
+            }
+
+            // trying to just display the geometry and send
+
+
+            //tec.getVisualization().addEnvelope(footPrint);
+
+            // here below displaying Dependency arrows, its not supposed to be here just now..
+
+
+            for (int robotID : tec.getCurrentDependencies().keySet()) {
+                Dependency dep = tec.getCurrentDependencies().get(robotID);
+
+                if (dep == null) {
+                    System.out.println("[CoordinatorServiceImpl] returning cause dep is null ");
+                    return;
+                }
+                RemoteAbstractTrajectoryEnvelopeTracker waitingTrackers = tec.trackers.get(dep.getWaitingRobotID());
+                RemoteAbstractTrajectoryEnvelopeTracker drivingTrackers = tec.trackers.get(dep.getDrivingRobotID());
+
+                if (waitingTrackers != null) {
+                    if (drivingTrackers != null) {
+                        RobotReport rrDriving = drivingTrackers.getRobotReport();
+                        RobotReport rrWaiting = waitingTrackers.getRobotReport();
+                        String arrowIdentifier = "_" + dep.getWaitingRobotID() + "-" + dep.getDrivingRobotID();
+
+
+                        tec.getVisualization().displayDependency(rrWaiting, rrDriving, arrowIdentifier);
+                    }
+                }
+            }
+        }
+        //tec.getVisualization().updateVisualization();
+
+
     }
 
 

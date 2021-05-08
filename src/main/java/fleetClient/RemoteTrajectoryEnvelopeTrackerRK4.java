@@ -638,7 +638,17 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 
 					//set state to final position, just in case it didn't quite get there (it's certainly close enough)
 					state = new State(totalDistance, 0.0);
-					client.makeOnPositionUpdate(te, getRobotReport());
+
+					if(getRobotReport().getRobotID() % 2 == 0) {
+						client.makeOnPositionUpdate2(te, getRobotReport());
+						//client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
+						//client.makeOnPositionUpdate(getRobotReport());
+					}
+					if(getRobotReport().getRobotID() % 2 == 1) {
+						client.makeOnPositionUpdate(te, getRobotReport());
+						//client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
+						//client.makeOnPositionUpdate(getRobotReport());
+					}
 
 					//onPositionUpdate();
 					break;
@@ -682,9 +692,16 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			//onPositionUpdate();
 			//System.out.println("[Remote..TrackerRK4] te.getFootprint(): " + te.getFootprint() +" and getRobotReport(): " + getRobotReport());
 
-			client.makeOnPositionUpdate(te, getRobotReport());
-
-
+			if(getRobotReport().getRobotID() % 2 == 0) {
+				client.makeOnPositionUpdate2(te, getRobotReport());
+				//client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
+				//client.makeOnPositionUpdate(getRobotReport());
+			}
+			if(getRobotReport().getRobotID() % 2 == 1) {
+				client.makeOnPositionUpdate(te, getRobotReport());
+				//client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
+				//client.makeOnPositionUpdate(getRobotReport());
+			}
 			enqueueOneReport();
 
 			//Sleep for tracking period

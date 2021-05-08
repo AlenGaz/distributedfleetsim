@@ -4619,49 +4619,31 @@ public final class Fleetclients {
     double getY();
 
     /**
-     * <code>double z = 4;</code>
-     * @return The z.
+     * <code>double theta = 4;</code>
+     * @return The theta.
      */
-    double getZ();
+    double getTheta();
 
     /**
-     * <code>double roll = 5;</code>
-     * @return The roll.
-     */
-    double getRoll();
-
-    /**
-     * <code>double pitch = 6;</code>
-     * @return The pitch.
-     */
-    double getPitch();
-
-    /**
-     * <code>double yaw = 7;</code>
-     * @return The yaw.
-     */
-    double getYaw();
-
-    /**
-     * <code>int32 pathIndex = 8;</code>
+     * <code>int32 pathIndex = 5;</code>
      * @return The pathIndex.
      */
     int getPathIndex();
 
     /**
-     * <code>double velocity = 9;</code>
+     * <code>double velocity = 6;</code>
      * @return The velocity.
      */
     double getVelocity();
 
     /**
-     * <code>double distanceTraveled = 10;</code>
+     * <code>double distanceTraveled = 7;</code>
      * @return The distanceTraveled.
      */
     double getDistanceTraveled();
 
     /**
-     * <code>int32 criticalPoint = 11;</code>
+     * <code>int32 criticalPoint = 8;</code>
      * @return The criticalPoint.
      */
     int getCriticalPoint();
@@ -4728,40 +4710,25 @@ public final class Fleetclients {
             }
             case 33: {
 
-              z_ = input.readDouble();
+              theta_ = input.readDouble();
               break;
             }
-            case 41: {
-
-              roll_ = input.readDouble();
-              break;
-            }
-            case 49: {
-
-              pitch_ = input.readDouble();
-              break;
-            }
-            case 57: {
-
-              yaw_ = input.readDouble();
-              break;
-            }
-            case 64: {
+            case 40: {
 
               pathIndex_ = input.readInt32();
               break;
             }
-            case 73: {
+            case 49: {
 
               velocity_ = input.readDouble();
               break;
             }
-            case 81: {
+            case 57: {
 
               distanceTraveled_ = input.readDouble();
               break;
             }
-            case 88: {
+            case 64: {
 
               criticalPoint_ = input.readInt32();
               break;
@@ -4831,54 +4798,21 @@ public final class Fleetclients {
       return y_;
     }
 
-    public static final int Z_FIELD_NUMBER = 4;
-    private double z_;
+    public static final int THETA_FIELD_NUMBER = 4;
+    private double theta_;
     /**
-     * <code>double z = 4;</code>
-     * @return The z.
+     * <code>double theta = 4;</code>
+     * @return The theta.
      */
     @java.lang.Override
-    public double getZ() {
-      return z_;
+    public double getTheta() {
+      return theta_;
     }
 
-    public static final int ROLL_FIELD_NUMBER = 5;
-    private double roll_;
-    /**
-     * <code>double roll = 5;</code>
-     * @return The roll.
-     */
-    @java.lang.Override
-    public double getRoll() {
-      return roll_;
-    }
-
-    public static final int PITCH_FIELD_NUMBER = 6;
-    private double pitch_;
-    /**
-     * <code>double pitch = 6;</code>
-     * @return The pitch.
-     */
-    @java.lang.Override
-    public double getPitch() {
-      return pitch_;
-    }
-
-    public static final int YAW_FIELD_NUMBER = 7;
-    private double yaw_;
-    /**
-     * <code>double yaw = 7;</code>
-     * @return The yaw.
-     */
-    @java.lang.Override
-    public double getYaw() {
-      return yaw_;
-    }
-
-    public static final int PATHINDEX_FIELD_NUMBER = 8;
+    public static final int PATHINDEX_FIELD_NUMBER = 5;
     private int pathIndex_;
     /**
-     * <code>int32 pathIndex = 8;</code>
+     * <code>int32 pathIndex = 5;</code>
      * @return The pathIndex.
      */
     @java.lang.Override
@@ -4886,10 +4820,10 @@ public final class Fleetclients {
       return pathIndex_;
     }
 
-    public static final int VELOCITY_FIELD_NUMBER = 9;
+    public static final int VELOCITY_FIELD_NUMBER = 6;
     private double velocity_;
     /**
-     * <code>double velocity = 9;</code>
+     * <code>double velocity = 6;</code>
      * @return The velocity.
      */
     @java.lang.Override
@@ -4897,10 +4831,10 @@ public final class Fleetclients {
       return velocity_;
     }
 
-    public static final int DISTANCETRAVELED_FIELD_NUMBER = 10;
+    public static final int DISTANCETRAVELED_FIELD_NUMBER = 7;
     private double distanceTraveled_;
     /**
-     * <code>double distanceTraveled = 10;</code>
+     * <code>double distanceTraveled = 7;</code>
      * @return The distanceTraveled.
      */
     @java.lang.Override
@@ -4908,10 +4842,10 @@ public final class Fleetclients {
       return distanceTraveled_;
     }
 
-    public static final int CRITICALPOINT_FIELD_NUMBER = 11;
+    public static final int CRITICALPOINT_FIELD_NUMBER = 8;
     private int criticalPoint_;
     /**
-     * <code>int32 criticalPoint = 11;</code>
+     * <code>int32 criticalPoint = 8;</code>
      * @return The criticalPoint.
      */
     @java.lang.Override
@@ -4942,29 +4876,20 @@ public final class Fleetclients {
       if (y_ != 0D) {
         output.writeDouble(3, y_);
       }
-      if (z_ != 0D) {
-        output.writeDouble(4, z_);
-      }
-      if (roll_ != 0D) {
-        output.writeDouble(5, roll_);
-      }
-      if (pitch_ != 0D) {
-        output.writeDouble(6, pitch_);
-      }
-      if (yaw_ != 0D) {
-        output.writeDouble(7, yaw_);
+      if (theta_ != 0D) {
+        output.writeDouble(4, theta_);
       }
       if (pathIndex_ != 0) {
-        output.writeInt32(8, pathIndex_);
+        output.writeInt32(5, pathIndex_);
       }
       if (velocity_ != 0D) {
-        output.writeDouble(9, velocity_);
+        output.writeDouble(6, velocity_);
       }
       if (distanceTraveled_ != 0D) {
-        output.writeDouble(10, distanceTraveled_);
+        output.writeDouble(7, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
-        output.writeInt32(11, criticalPoint_);
+        output.writeInt32(8, criticalPoint_);
       }
       unknownFields.writeTo(output);
     }
@@ -4987,37 +4912,25 @@ public final class Fleetclients {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(3, y_);
       }
-      if (z_ != 0D) {
+      if (theta_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, z_);
-      }
-      if (roll_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, roll_);
-      }
-      if (pitch_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, pitch_);
-      }
-      if (yaw_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, yaw_);
+          .computeDoubleSize(4, theta_);
       }
       if (pathIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, pathIndex_);
+          .computeInt32Size(5, pathIndex_);
       }
       if (velocity_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, velocity_);
+          .computeDoubleSize(6, velocity_);
       }
       if (distanceTraveled_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, distanceTraveled_);
+          .computeDoubleSize(7, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, criticalPoint_);
+          .computeInt32Size(8, criticalPoint_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5042,18 +4955,9 @@ public final class Fleetclients {
       if (java.lang.Double.doubleToLongBits(getY())
           != java.lang.Double.doubleToLongBits(
               other.getY())) return false;
-      if (java.lang.Double.doubleToLongBits(getZ())
+      if (java.lang.Double.doubleToLongBits(getTheta())
           != java.lang.Double.doubleToLongBits(
-              other.getZ())) return false;
-      if (java.lang.Double.doubleToLongBits(getRoll())
-          != java.lang.Double.doubleToLongBits(
-              other.getRoll())) return false;
-      if (java.lang.Double.doubleToLongBits(getPitch())
-          != java.lang.Double.doubleToLongBits(
-              other.getPitch())) return false;
-      if (java.lang.Double.doubleToLongBits(getYaw())
-          != java.lang.Double.doubleToLongBits(
-              other.getYaw())) return false;
+              other.getTheta())) return false;
       if (getPathIndex()
           != other.getPathIndex()) return false;
       if (java.lang.Double.doubleToLongBits(getVelocity())
@@ -5083,18 +4987,9 @@ public final class Fleetclients {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + Z_FIELD_NUMBER;
+      hash = (37 * hash) + THETA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getZ()));
-      hash = (37 * hash) + ROLL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getRoll()));
-      hash = (37 * hash) + PITCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getPitch()));
-      hash = (37 * hash) + YAW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getYaw()));
+          java.lang.Double.doubleToLongBits(getTheta()));
       hash = (37 * hash) + PATHINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPathIndex();
       hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
@@ -5244,13 +5139,7 @@ public final class Fleetclients {
 
         y_ = 0D;
 
-        z_ = 0D;
-
-        roll_ = 0D;
-
-        pitch_ = 0D;
-
-        yaw_ = 0D;
+        theta_ = 0D;
 
         pathIndex_ = 0;
 
@@ -5289,10 +5178,7 @@ public final class Fleetclients {
         result.robotID_ = robotID_;
         result.x_ = x_;
         result.y_ = y_;
-        result.z_ = z_;
-        result.roll_ = roll_;
-        result.pitch_ = pitch_;
-        result.yaw_ = yaw_;
+        result.theta_ = theta_;
         result.pathIndex_ = pathIndex_;
         result.velocity_ = velocity_;
         result.distanceTraveled_ = distanceTraveled_;
@@ -5354,17 +5240,8 @@ public final class Fleetclients {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getZ() != 0D) {
-          setZ(other.getZ());
-        }
-        if (other.getRoll() != 0D) {
-          setRoll(other.getRoll());
-        }
-        if (other.getPitch() != 0D) {
-          setPitch(other.getPitch());
-        }
-        if (other.getYaw() != 0D) {
-          setYaw(other.getYaw());
+        if (other.getTheta() != 0D) {
+          setTheta(other.getTheta());
         }
         if (other.getPathIndex() != 0) {
           setPathIndex(other.getPathIndex());
@@ -5500,133 +5377,40 @@ public final class Fleetclients {
         return this;
       }
 
-      private double z_ ;
+      private double theta_ ;
       /**
-       * <code>double z = 4;</code>
-       * @return The z.
+       * <code>double theta = 4;</code>
+       * @return The theta.
        */
       @java.lang.Override
-      public double getZ() {
-        return z_;
+      public double getTheta() {
+        return theta_;
       }
       /**
-       * <code>double z = 4;</code>
-       * @param value The z to set.
+       * <code>double theta = 4;</code>
+       * @param value The theta to set.
        * @return This builder for chaining.
        */
-      public Builder setZ(double value) {
+      public Builder setTheta(double value) {
         
-        z_ = value;
+        theta_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double z = 4;</code>
+       * <code>double theta = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearZ() {
+      public Builder clearTheta() {
         
-        z_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double roll_ ;
-      /**
-       * <code>double roll = 5;</code>
-       * @return The roll.
-       */
-      @java.lang.Override
-      public double getRoll() {
-        return roll_;
-      }
-      /**
-       * <code>double roll = 5;</code>
-       * @param value The roll to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoll(double value) {
-        
-        roll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double roll = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoll() {
-        
-        roll_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double pitch_ ;
-      /**
-       * <code>double pitch = 6;</code>
-       * @return The pitch.
-       */
-      @java.lang.Override
-      public double getPitch() {
-        return pitch_;
-      }
-      /**
-       * <code>double pitch = 6;</code>
-       * @param value The pitch to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPitch(double value) {
-        
-        pitch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double pitch = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPitch() {
-        
-        pitch_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double yaw_ ;
-      /**
-       * <code>double yaw = 7;</code>
-       * @return The yaw.
-       */
-      @java.lang.Override
-      public double getYaw() {
-        return yaw_;
-      }
-      /**
-       * <code>double yaw = 7;</code>
-       * @param value The yaw to set.
-       * @return This builder for chaining.
-       */
-      public Builder setYaw(double value) {
-        
-        yaw_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double yaw = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearYaw() {
-        
-        yaw_ = 0D;
+        theta_ = 0D;
         onChanged();
         return this;
       }
 
       private int pathIndex_ ;
       /**
-       * <code>int32 pathIndex = 8;</code>
+       * <code>int32 pathIndex = 5;</code>
        * @return The pathIndex.
        */
       @java.lang.Override
@@ -5634,7 +5418,7 @@ public final class Fleetclients {
         return pathIndex_;
       }
       /**
-       * <code>int32 pathIndex = 8;</code>
+       * <code>int32 pathIndex = 5;</code>
        * @param value The pathIndex to set.
        * @return This builder for chaining.
        */
@@ -5645,7 +5429,7 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>int32 pathIndex = 8;</code>
+       * <code>int32 pathIndex = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearPathIndex() {
@@ -5657,7 +5441,7 @@ public final class Fleetclients {
 
       private double velocity_ ;
       /**
-       * <code>double velocity = 9;</code>
+       * <code>double velocity = 6;</code>
        * @return The velocity.
        */
       @java.lang.Override
@@ -5665,7 +5449,7 @@ public final class Fleetclients {
         return velocity_;
       }
       /**
-       * <code>double velocity = 9;</code>
+       * <code>double velocity = 6;</code>
        * @param value The velocity to set.
        * @return This builder for chaining.
        */
@@ -5676,7 +5460,7 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>double velocity = 9;</code>
+       * <code>double velocity = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearVelocity() {
@@ -5688,7 +5472,7 @@ public final class Fleetclients {
 
       private double distanceTraveled_ ;
       /**
-       * <code>double distanceTraveled = 10;</code>
+       * <code>double distanceTraveled = 7;</code>
        * @return The distanceTraveled.
        */
       @java.lang.Override
@@ -5696,7 +5480,7 @@ public final class Fleetclients {
         return distanceTraveled_;
       }
       /**
-       * <code>double distanceTraveled = 10;</code>
+       * <code>double distanceTraveled = 7;</code>
        * @param value The distanceTraveled to set.
        * @return This builder for chaining.
        */
@@ -5707,7 +5491,7 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>double distanceTraveled = 10;</code>
+       * <code>double distanceTraveled = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearDistanceTraveled() {
@@ -5719,7 +5503,7 @@ public final class Fleetclients {
 
       private int criticalPoint_ ;
       /**
-       * <code>int32 criticalPoint = 11;</code>
+       * <code>int32 criticalPoint = 8;</code>
        * @return The criticalPoint.
        */
       @java.lang.Override
@@ -5727,7 +5511,7 @@ public final class Fleetclients {
         return criticalPoint_;
       }
       /**
-       * <code>int32 criticalPoint = 11;</code>
+       * <code>int32 criticalPoint = 8;</code>
        * @param value The criticalPoint to set.
        * @return This builder for chaining.
        */
@@ -5738,7 +5522,7 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>int32 criticalPoint = 11;</code>
+       * <code>int32 criticalPoint = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
@@ -5835,49 +5619,31 @@ public final class Fleetclients {
     double getY();
 
     /**
-     * <code>double z = 5;</code>
-     * @return The z.
+     * <code>double theta = 5;</code>
+     * @return The theta.
      */
-    double getZ();
+    double getTheta();
 
     /**
-     * <code>double roll = 6;</code>
-     * @return The roll.
-     */
-    double getRoll();
-
-    /**
-     * <code>double pitch = 7;</code>
-     * @return The pitch.
-     */
-    double getPitch();
-
-    /**
-     * <code>double yaw = 8;</code>
-     * @return The yaw.
-     */
-    double getYaw();
-
-    /**
-     * <code>int32 pathIndex = 9;</code>
+     * <code>int32 pathIndex = 6;</code>
      * @return The pathIndex.
      */
     int getPathIndex();
 
     /**
-     * <code>double velocity = 10;</code>
+     * <code>double velocity = 7;</code>
      * @return The velocity.
      */
     double getVelocity();
 
     /**
-     * <code>double distanceTraveled = 11;</code>
+     * <code>double distanceTraveled = 8;</code>
      * @return The distanceTraveled.
      */
     double getDistanceTraveled();
 
     /**
-     * <code>int32 criticalPoint = 12;</code>
+     * <code>int32 criticalPoint = 9;</code>
      * @return The criticalPoint.
      */
     int getCriticalPoint();
@@ -5951,40 +5717,25 @@ public final class Fleetclients {
             }
             case 41: {
 
-              z_ = input.readDouble();
+              theta_ = input.readDouble();
               break;
             }
-            case 49: {
-
-              roll_ = input.readDouble();
-              break;
-            }
-            case 57: {
-
-              pitch_ = input.readDouble();
-              break;
-            }
-            case 65: {
-
-              yaw_ = input.readDouble();
-              break;
-            }
-            case 72: {
+            case 48: {
 
               pathIndex_ = input.readInt32();
               break;
             }
-            case 81: {
+            case 57: {
 
               velocity_ = input.readDouble();
               break;
             }
-            case 89: {
+            case 65: {
 
               distanceTraveled_ = input.readDouble();
               break;
             }
-            case 96: {
+            case 72: {
 
               criticalPoint_ = input.readInt32();
               break;
@@ -6092,54 +5843,21 @@ public final class Fleetclients {
       return y_;
     }
 
-    public static final int Z_FIELD_NUMBER = 5;
-    private double z_;
+    public static final int THETA_FIELD_NUMBER = 5;
+    private double theta_;
     /**
-     * <code>double z = 5;</code>
-     * @return The z.
+     * <code>double theta = 5;</code>
+     * @return The theta.
      */
     @java.lang.Override
-    public double getZ() {
-      return z_;
+    public double getTheta() {
+      return theta_;
     }
 
-    public static final int ROLL_FIELD_NUMBER = 6;
-    private double roll_;
-    /**
-     * <code>double roll = 6;</code>
-     * @return The roll.
-     */
-    @java.lang.Override
-    public double getRoll() {
-      return roll_;
-    }
-
-    public static final int PITCH_FIELD_NUMBER = 7;
-    private double pitch_;
-    /**
-     * <code>double pitch = 7;</code>
-     * @return The pitch.
-     */
-    @java.lang.Override
-    public double getPitch() {
-      return pitch_;
-    }
-
-    public static final int YAW_FIELD_NUMBER = 8;
-    private double yaw_;
-    /**
-     * <code>double yaw = 8;</code>
-     * @return The yaw.
-     */
-    @java.lang.Override
-    public double getYaw() {
-      return yaw_;
-    }
-
-    public static final int PATHINDEX_FIELD_NUMBER = 9;
+    public static final int PATHINDEX_FIELD_NUMBER = 6;
     private int pathIndex_;
     /**
-     * <code>int32 pathIndex = 9;</code>
+     * <code>int32 pathIndex = 6;</code>
      * @return The pathIndex.
      */
     @java.lang.Override
@@ -6147,10 +5865,10 @@ public final class Fleetclients {
       return pathIndex_;
     }
 
-    public static final int VELOCITY_FIELD_NUMBER = 10;
+    public static final int VELOCITY_FIELD_NUMBER = 7;
     private double velocity_;
     /**
-     * <code>double velocity = 10;</code>
+     * <code>double velocity = 7;</code>
      * @return The velocity.
      */
     @java.lang.Override
@@ -6158,10 +5876,10 @@ public final class Fleetclients {
       return velocity_;
     }
 
-    public static final int DISTANCETRAVELED_FIELD_NUMBER = 11;
+    public static final int DISTANCETRAVELED_FIELD_NUMBER = 8;
     private double distanceTraveled_;
     /**
-     * <code>double distanceTraveled = 11;</code>
+     * <code>double distanceTraveled = 8;</code>
      * @return The distanceTraveled.
      */
     @java.lang.Override
@@ -6169,10 +5887,10 @@ public final class Fleetclients {
       return distanceTraveled_;
     }
 
-    public static final int CRITICALPOINT_FIELD_NUMBER = 12;
+    public static final int CRITICALPOINT_FIELD_NUMBER = 9;
     private int criticalPoint_;
     /**
-     * <code>int32 criticalPoint = 12;</code>
+     * <code>int32 criticalPoint = 9;</code>
      * @return The criticalPoint.
      */
     @java.lang.Override
@@ -6206,29 +5924,20 @@ public final class Fleetclients {
       if (y_ != 0D) {
         output.writeDouble(4, y_);
       }
-      if (z_ != 0D) {
-        output.writeDouble(5, z_);
-      }
-      if (roll_ != 0D) {
-        output.writeDouble(6, roll_);
-      }
-      if (pitch_ != 0D) {
-        output.writeDouble(7, pitch_);
-      }
-      if (yaw_ != 0D) {
-        output.writeDouble(8, yaw_);
+      if (theta_ != 0D) {
+        output.writeDouble(5, theta_);
       }
       if (pathIndex_ != 0) {
-        output.writeInt32(9, pathIndex_);
+        output.writeInt32(6, pathIndex_);
       }
       if (velocity_ != 0D) {
-        output.writeDouble(10, velocity_);
+        output.writeDouble(7, velocity_);
       }
       if (distanceTraveled_ != 0D) {
-        output.writeDouble(11, distanceTraveled_);
+        output.writeDouble(8, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
-        output.writeInt32(12, criticalPoint_);
+        output.writeInt32(9, criticalPoint_);
       }
       unknownFields.writeTo(output);
     }
@@ -6254,37 +5963,25 @@ public final class Fleetclients {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, y_);
       }
-      if (z_ != 0D) {
+      if (theta_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, z_);
-      }
-      if (roll_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, roll_);
-      }
-      if (pitch_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, pitch_);
-      }
-      if (yaw_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, yaw_);
+          .computeDoubleSize(5, theta_);
       }
       if (pathIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, pathIndex_);
+          .computeInt32Size(6, pathIndex_);
       }
       if (velocity_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, velocity_);
+          .computeDoubleSize(7, velocity_);
       }
       if (distanceTraveled_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, distanceTraveled_);
+          .computeDoubleSize(8, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, criticalPoint_);
+          .computeInt32Size(9, criticalPoint_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6311,18 +6008,9 @@ public final class Fleetclients {
       if (java.lang.Double.doubleToLongBits(getY())
           != java.lang.Double.doubleToLongBits(
               other.getY())) return false;
-      if (java.lang.Double.doubleToLongBits(getZ())
+      if (java.lang.Double.doubleToLongBits(getTheta())
           != java.lang.Double.doubleToLongBits(
-              other.getZ())) return false;
-      if (java.lang.Double.doubleToLongBits(getRoll())
-          != java.lang.Double.doubleToLongBits(
-              other.getRoll())) return false;
-      if (java.lang.Double.doubleToLongBits(getPitch())
-          != java.lang.Double.doubleToLongBits(
-              other.getPitch())) return false;
-      if (java.lang.Double.doubleToLongBits(getYaw())
-          != java.lang.Double.doubleToLongBits(
-              other.getYaw())) return false;
+              other.getTheta())) return false;
       if (getPathIndex()
           != other.getPathIndex()) return false;
       if (java.lang.Double.doubleToLongBits(getVelocity())
@@ -6354,18 +6042,9 @@ public final class Fleetclients {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + Z_FIELD_NUMBER;
+      hash = (37 * hash) + THETA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getZ()));
-      hash = (37 * hash) + ROLL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getRoll()));
-      hash = (37 * hash) + PITCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getPitch()));
-      hash = (37 * hash) + YAW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getYaw()));
+          java.lang.Double.doubleToLongBits(getTheta()));
       hash = (37 * hash) + PATHINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPathIndex();
       hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
@@ -6517,13 +6196,7 @@ public final class Fleetclients {
 
         y_ = 0D;
 
-        z_ = 0D;
-
-        roll_ = 0D;
-
-        pitch_ = 0D;
-
-        yaw_ = 0D;
+        theta_ = 0D;
 
         pathIndex_ = 0;
 
@@ -6563,10 +6236,7 @@ public final class Fleetclients {
         result.robotid_ = robotid_;
         result.x_ = x_;
         result.y_ = y_;
-        result.z_ = z_;
-        result.roll_ = roll_;
-        result.pitch_ = pitch_;
-        result.yaw_ = yaw_;
+        result.theta_ = theta_;
         result.pathIndex_ = pathIndex_;
         result.velocity_ = velocity_;
         result.distanceTraveled_ = distanceTraveled_;
@@ -6632,17 +6302,8 @@ public final class Fleetclients {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getZ() != 0D) {
-          setZ(other.getZ());
-        }
-        if (other.getRoll() != 0D) {
-          setRoll(other.getRoll());
-        }
-        if (other.getPitch() != 0D) {
-          setPitch(other.getPitch());
-        }
-        if (other.getYaw() != 0D) {
-          setYaw(other.getYaw());
+        if (other.getTheta() != 0D) {
+          setTheta(other.getTheta());
         }
         if (other.getPathIndex() != 0) {
           setPathIndex(other.getPathIndex());
@@ -6854,133 +6515,40 @@ public final class Fleetclients {
         return this;
       }
 
-      private double z_ ;
+      private double theta_ ;
       /**
-       * <code>double z = 5;</code>
-       * @return The z.
+       * <code>double theta = 5;</code>
+       * @return The theta.
        */
       @java.lang.Override
-      public double getZ() {
-        return z_;
+      public double getTheta() {
+        return theta_;
       }
       /**
-       * <code>double z = 5;</code>
-       * @param value The z to set.
+       * <code>double theta = 5;</code>
+       * @param value The theta to set.
        * @return This builder for chaining.
        */
-      public Builder setZ(double value) {
+      public Builder setTheta(double value) {
         
-        z_ = value;
+        theta_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double z = 5;</code>
+       * <code>double theta = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearZ() {
+      public Builder clearTheta() {
         
-        z_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double roll_ ;
-      /**
-       * <code>double roll = 6;</code>
-       * @return The roll.
-       */
-      @java.lang.Override
-      public double getRoll() {
-        return roll_;
-      }
-      /**
-       * <code>double roll = 6;</code>
-       * @param value The roll to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoll(double value) {
-        
-        roll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double roll = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoll() {
-        
-        roll_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double pitch_ ;
-      /**
-       * <code>double pitch = 7;</code>
-       * @return The pitch.
-       */
-      @java.lang.Override
-      public double getPitch() {
-        return pitch_;
-      }
-      /**
-       * <code>double pitch = 7;</code>
-       * @param value The pitch to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPitch(double value) {
-        
-        pitch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double pitch = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPitch() {
-        
-        pitch_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double yaw_ ;
-      /**
-       * <code>double yaw = 8;</code>
-       * @return The yaw.
-       */
-      @java.lang.Override
-      public double getYaw() {
-        return yaw_;
-      }
-      /**
-       * <code>double yaw = 8;</code>
-       * @param value The yaw to set.
-       * @return This builder for chaining.
-       */
-      public Builder setYaw(double value) {
-        
-        yaw_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double yaw = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearYaw() {
-        
-        yaw_ = 0D;
+        theta_ = 0D;
         onChanged();
         return this;
       }
 
       private int pathIndex_ ;
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
        * @return The pathIndex.
        */
       @java.lang.Override
@@ -6988,7 +6556,7 @@ public final class Fleetclients {
         return pathIndex_;
       }
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
        * @param value The pathIndex to set.
        * @return This builder for chaining.
        */
@@ -6999,7 +6567,7 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearPathIndex() {
@@ -7011,7 +6579,7 @@ public final class Fleetclients {
 
       private double velocity_ ;
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
        * @return The velocity.
        */
       @java.lang.Override
@@ -7019,7 +6587,7 @@ public final class Fleetclients {
         return velocity_;
       }
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
        * @param value The velocity to set.
        * @return This builder for chaining.
        */
@@ -7030,7 +6598,7 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearVelocity() {
@@ -7042,7 +6610,7 @@ public final class Fleetclients {
 
       private double distanceTraveled_ ;
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
        * @return The distanceTraveled.
        */
       @java.lang.Override
@@ -7050,7 +6618,7 @@ public final class Fleetclients {
         return distanceTraveled_;
       }
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
        * @param value The distanceTraveled to set.
        * @return This builder for chaining.
        */
@@ -7061,7 +6629,7 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearDistanceTraveled() {
@@ -7073,7 +6641,7 @@ public final class Fleetclients {
 
       private int criticalPoint_ ;
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
        * @return The criticalPoint.
        */
       @java.lang.Override
@@ -7081,7 +6649,7 @@ public final class Fleetclients {
         return criticalPoint_;
       }
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
        * @param value The criticalPoint to set.
        * @return This builder for chaining.
        */
@@ -7092,7 +6660,7 @@ public final class Fleetclients {
         return this;
       }
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
@@ -8997,37 +8565,36 @@ public final class Fleetclients {
       "\003 \001(\t\022\022\n\nconnection\030\004 \001(\t\022\021\n\ttimeStamp\030\005" +
       " \001(\t\022\014\n\004port\030\006 \001(\005\"\027\n\007robotID\022\014\n\004name\030\001 " +
       "\001(\t\"2\n\022robotReportRequest\022\013\n\003kan\030\001 \001(\t\022\017" +
-      "\n\007robotID\030\002 \001(\005\"\307\001\n\023robotReportResponse\022" +
-      "\017\n\007robotID\030\001 \001(\005\022\t\n\001x\030\002 \001(\001\022\t\n\001y\030\003 \001(\001\022\t" +
-      "\n\001z\030\004 \001(\001\022\014\n\004roll\030\005 \001(\001\022\r\n\005pitch\030\006 \001(\001\022\013" +
-      "\n\003yaw\030\007 \001(\001\022\021\n\tpathIndex\030\010 \001(\005\022\020\n\010veloci" +
-      "ty\030\t \001(\001\022\030\n\020distanceTraveled\030\n \001(\001\022\025\n\rcr" +
-      "iticalPoint\030\013 \001(\005\"\332\001\n\031coordinatorrequest" +
-      "robotid\022\013\n\003req\030\001 \001(\t\022\017\n\007robotid\030\002 \001(\005\022\t\n" +
-      "\001x\030\003 \001(\001\022\t\n\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006" +
-      " \001(\001\022\r\n\005pitch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpath" +
-      "Index\030\t \001(\005\022\020\n\010velocity\030\n \001(\001\022\030\n\020distanc" +
-      "eTraveled\030\013 \001(\001\022\025\n\rcriticalPoint\030\014 \001(\005\"=" +
-      "\n\035coordinatorrespondrobotreport\022\013\n\003kan\030\001" +
-      " \001(\t\022\017\n\007robotID\030\002 \001(\005\"D\n$clientGetCritic" +
-      "alPointRequestMessage\022\013\n\003kan\030\001 \001(\t\022\017\n\007ro" +
-      "botID\030\002 \001(\005\">\n%clientGetCriticalPointRes" +
-      "ponseMessage\022\025\n\rcriticalPoint\030\001 \001(\0052\272\004\n\023" +
-      "FleetClientsService\022i\n\016gCriticalPoint\022*." +
-      "gradlegRPC.getCriticalPointRequestMessag" +
-      "e\032+.gradlegRPC.getCriticalPointResponseM" +
-      "essage\022D\n\007message\022\032.gradlegRPC.requestMe" +
-      "ssage\032\033.gradlegRPC.responseMessage\"\000\0229\n\010" +
-      "grobotID\022\026.gradlegRPC.getRobotID\032\023.gradl" +
-      "egRPC.robotID\"\000\022O\n\014grobotReport\022\036.gradle" +
-      "gRPC.robotReportRequest\032\037.gradlegRPC.rob" +
-      "otReportResponse\022j\n\026coordinatorrobotrepo" +
-      "rt\022%.gradlegRPC.coordinatorrequestroboti" +
-      "d\032).gradlegRPC.coordinatorrespondrobotre" +
-      "port\022z\n\023clientCriticalpoint\0220.gradlegRPC" +
-      ".clientGetCriticalPointRequestMessage\0321." +
-      "gradlegRPC.clientGetCriticalPointRespons" +
-      "eMessageB\026\n\024io.grpc.fleetClientsb\006proto3"
+      "\n\007robotID\030\002 \001(\005\"\241\001\n\023robotReportResponse\022" +
+      "\017\n\007robotID\030\001 \001(\005\022\t\n\001x\030\002 \001(\001\022\t\n\001y\030\003 \001(\001\022\r" +
+      "\n\005theta\030\004 \001(\001\022\021\n\tpathIndex\030\005 \001(\005\022\020\n\010velo" +
+      "city\030\006 \001(\001\022\030\n\020distanceTraveled\030\007 \001(\001\022\025\n\r" +
+      "criticalPoint\030\010 \001(\005\"\264\001\n\031coordinatorreque" +
+      "strobotid\022\013\n\003req\030\001 \001(\t\022\017\n\007robotid\030\002 \001(\005\022" +
+      "\t\n\001x\030\003 \001(\001\022\t\n\001y\030\004 \001(\001\022\r\n\005theta\030\005 \001(\001\022\021\n\t" +
+      "pathIndex\030\006 \001(\005\022\020\n\010velocity\030\007 \001(\001\022\030\n\020dis" +
+      "tanceTraveled\030\010 \001(\001\022\025\n\rcriticalPoint\030\t \001" +
+      "(\005\"=\n\035coordinatorrespondrobotreport\022\013\n\003k" +
+      "an\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"D\n$clientGetCr" +
+      "iticalPointRequestMessage\022\013\n\003kan\030\001 \001(\t\022\017" +
+      "\n\007robotID\030\002 \001(\005\">\n%clientGetCriticalPoin" +
+      "tResponseMessage\022\025\n\rcriticalPoint\030\001 \001(\0052" +
+      "\272\004\n\023FleetClientsService\022i\n\016gCriticalPoin" +
+      "t\022*.gradlegRPC.getCriticalPointRequestMe" +
+      "ssage\032+.gradlegRPC.getCriticalPointRespo" +
+      "nseMessage\022D\n\007message\022\032.gradlegRPC.reque" +
+      "stMessage\032\033.gradlegRPC.responseMessage\"\000" +
+      "\0229\n\010grobotID\022\026.gradlegRPC.getRobotID\032\023.g" +
+      "radlegRPC.robotID\"\000\022O\n\014grobotReport\022\036.gr" +
+      "adlegRPC.robotReportRequest\032\037.gradlegRPC" +
+      ".robotReportResponse\022j\n\026coordinatorrobot" +
+      "report\022%.gradlegRPC.coordinatorrequestro" +
+      "botid\032).gradlegRPC.coordinatorrespondrob" +
+      "otreport\022z\n\023clientCriticalpoint\0220.gradle" +
+      "gRPC.clientGetCriticalPointRequestMessag" +
+      "e\0321.gradlegRPC.clientGetCriticalPointRes" +
+      "ponseMessageB\026\n\024io.grpc.fleetClientsb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9080,13 +8647,13 @@ public final class Fleetclients {
     internal_static_gradlegRPC_robotReportResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotReportResponse_descriptor,
-        new java.lang.String[] { "RobotID", "X", "Y", "Z", "Roll", "Pitch", "Yaw", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
+        new java.lang.String[] { "RobotID", "X", "Y", "Theta", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
     internal_static_gradlegRPC_coordinatorrequestrobotid_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_gradlegRPC_coordinatorrequestrobotid_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_coordinatorrequestrobotid_descriptor,
-        new java.lang.String[] { "Req", "Robotid", "X", "Y", "Z", "Roll", "Pitch", "Yaw", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
+        new java.lang.String[] { "Req", "Robotid", "X", "Y", "Theta", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
     internal_static_gradlegRPC_coordinatorrespondrobotreport_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_gradlegRPC_coordinatorrespondrobotreport_fieldAccessorTable = new

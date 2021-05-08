@@ -49,49 +49,31 @@ public final class Coordinator {
     double getY();
 
     /**
-     * <code>double z = 5;</code>
-     * @return The z.
+     * <code>double theta = 5;</code>
+     * @return The theta.
      */
-    double getZ();
+    double getTheta();
 
     /**
-     * <code>double roll = 6;</code>
-     * @return The roll.
-     */
-    double getRoll();
-
-    /**
-     * <code>double pitch = 7;</code>
-     * @return The pitch.
-     */
-    double getPitch();
-
-    /**
-     * <code>double yaw = 8;</code>
-     * @return The yaw.
-     */
-    double getYaw();
-
-    /**
-     * <code>int32 pathIndex = 9;</code>
+     * <code>int32 pathIndex = 6;</code>
      * @return The pathIndex.
      */
     int getPathIndex();
 
     /**
-     * <code>double velocity = 10;</code>
+     * <code>double velocity = 7;</code>
      * @return The velocity.
      */
     double getVelocity();
 
     /**
-     * <code>double distanceTraveled = 11;</code>
+     * <code>double distanceTraveled = 8;</code>
      * @return The distanceTraveled.
      */
     double getDistanceTraveled();
 
     /**
-     * <code>int32 criticalPoint = 12;</code>
+     * <code>int32 criticalPoint = 9;</code>
      * @return The criticalPoint.
      */
     int getCriticalPoint();
@@ -169,40 +151,25 @@ public final class Coordinator {
             }
             case 41: {
 
-              z_ = input.readDouble();
+              theta_ = input.readDouble();
               break;
             }
-            case 49: {
-
-              roll_ = input.readDouble();
-              break;
-            }
-            case 57: {
-
-              pitch_ = input.readDouble();
-              break;
-            }
-            case 65: {
-
-              yaw_ = input.readDouble();
-              break;
-            }
-            case 72: {
+            case 48: {
 
               pathIndex_ = input.readInt32();
               break;
             }
-            case 81: {
+            case 57: {
 
               velocity_ = input.readDouble();
               break;
             }
-            case 89: {
+            case 65: {
 
               distanceTraveled_ = input.readDouble();
               break;
             }
-            case 96: {
+            case 72: {
 
               criticalPoint_ = input.readInt32();
               break;
@@ -310,54 +277,21 @@ public final class Coordinator {
       return y_;
     }
 
-    public static final int Z_FIELD_NUMBER = 5;
-    private double z_;
+    public static final int THETA_FIELD_NUMBER = 5;
+    private double theta_;
     /**
-     * <code>double z = 5;</code>
-     * @return The z.
+     * <code>double theta = 5;</code>
+     * @return The theta.
      */
     @java.lang.Override
-    public double getZ() {
-      return z_;
+    public double getTheta() {
+      return theta_;
     }
 
-    public static final int ROLL_FIELD_NUMBER = 6;
-    private double roll_;
-    /**
-     * <code>double roll = 6;</code>
-     * @return The roll.
-     */
-    @java.lang.Override
-    public double getRoll() {
-      return roll_;
-    }
-
-    public static final int PITCH_FIELD_NUMBER = 7;
-    private double pitch_;
-    /**
-     * <code>double pitch = 7;</code>
-     * @return The pitch.
-     */
-    @java.lang.Override
-    public double getPitch() {
-      return pitch_;
-    }
-
-    public static final int YAW_FIELD_NUMBER = 8;
-    private double yaw_;
-    /**
-     * <code>double yaw = 8;</code>
-     * @return The yaw.
-     */
-    @java.lang.Override
-    public double getYaw() {
-      return yaw_;
-    }
-
-    public static final int PATHINDEX_FIELD_NUMBER = 9;
+    public static final int PATHINDEX_FIELD_NUMBER = 6;
     private int pathIndex_;
     /**
-     * <code>int32 pathIndex = 9;</code>
+     * <code>int32 pathIndex = 6;</code>
      * @return The pathIndex.
      */
     @java.lang.Override
@@ -365,10 +299,10 @@ public final class Coordinator {
       return pathIndex_;
     }
 
-    public static final int VELOCITY_FIELD_NUMBER = 10;
+    public static final int VELOCITY_FIELD_NUMBER = 7;
     private double velocity_;
     /**
-     * <code>double velocity = 10;</code>
+     * <code>double velocity = 7;</code>
      * @return The velocity.
      */
     @java.lang.Override
@@ -376,10 +310,10 @@ public final class Coordinator {
       return velocity_;
     }
 
-    public static final int DISTANCETRAVELED_FIELD_NUMBER = 11;
+    public static final int DISTANCETRAVELED_FIELD_NUMBER = 8;
     private double distanceTraveled_;
     /**
-     * <code>double distanceTraveled = 11;</code>
+     * <code>double distanceTraveled = 8;</code>
      * @return The distanceTraveled.
      */
     @java.lang.Override
@@ -387,10 +321,10 @@ public final class Coordinator {
       return distanceTraveled_;
     }
 
-    public static final int CRITICALPOINT_FIELD_NUMBER = 12;
+    public static final int CRITICALPOINT_FIELD_NUMBER = 9;
     private int criticalPoint_;
     /**
-     * <code>int32 criticalPoint = 12;</code>
+     * <code>int32 criticalPoint = 9;</code>
      * @return The criticalPoint.
      */
     @java.lang.Override
@@ -424,29 +358,20 @@ public final class Coordinator {
       if (y_ != 0D) {
         output.writeDouble(4, y_);
       }
-      if (z_ != 0D) {
-        output.writeDouble(5, z_);
-      }
-      if (roll_ != 0D) {
-        output.writeDouble(6, roll_);
-      }
-      if (pitch_ != 0D) {
-        output.writeDouble(7, pitch_);
-      }
-      if (yaw_ != 0D) {
-        output.writeDouble(8, yaw_);
+      if (theta_ != 0D) {
+        output.writeDouble(5, theta_);
       }
       if (pathIndex_ != 0) {
-        output.writeInt32(9, pathIndex_);
+        output.writeInt32(6, pathIndex_);
       }
       if (velocity_ != 0D) {
-        output.writeDouble(10, velocity_);
+        output.writeDouble(7, velocity_);
       }
       if (distanceTraveled_ != 0D) {
-        output.writeDouble(11, distanceTraveled_);
+        output.writeDouble(8, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
-        output.writeInt32(12, criticalPoint_);
+        output.writeInt32(9, criticalPoint_);
       }
       unknownFields.writeTo(output);
     }
@@ -472,37 +397,25 @@ public final class Coordinator {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, y_);
       }
-      if (z_ != 0D) {
+      if (theta_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, z_);
-      }
-      if (roll_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, roll_);
-      }
-      if (pitch_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, pitch_);
-      }
-      if (yaw_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, yaw_);
+          .computeDoubleSize(5, theta_);
       }
       if (pathIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, pathIndex_);
+          .computeInt32Size(6, pathIndex_);
       }
       if (velocity_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, velocity_);
+          .computeDoubleSize(7, velocity_);
       }
       if (distanceTraveled_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, distanceTraveled_);
+          .computeDoubleSize(8, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, criticalPoint_);
+          .computeInt32Size(9, criticalPoint_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -529,18 +442,9 @@ public final class Coordinator {
       if (java.lang.Double.doubleToLongBits(getY())
           != java.lang.Double.doubleToLongBits(
               other.getY())) return false;
-      if (java.lang.Double.doubleToLongBits(getZ())
+      if (java.lang.Double.doubleToLongBits(getTheta())
           != java.lang.Double.doubleToLongBits(
-              other.getZ())) return false;
-      if (java.lang.Double.doubleToLongBits(getRoll())
-          != java.lang.Double.doubleToLongBits(
-              other.getRoll())) return false;
-      if (java.lang.Double.doubleToLongBits(getPitch())
-          != java.lang.Double.doubleToLongBits(
-              other.getPitch())) return false;
-      if (java.lang.Double.doubleToLongBits(getYaw())
-          != java.lang.Double.doubleToLongBits(
-              other.getYaw())) return false;
+              other.getTheta())) return false;
       if (getPathIndex()
           != other.getPathIndex()) return false;
       if (java.lang.Double.doubleToLongBits(getVelocity())
@@ -572,18 +476,9 @@ public final class Coordinator {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + Z_FIELD_NUMBER;
+      hash = (37 * hash) + THETA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getZ()));
-      hash = (37 * hash) + ROLL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getRoll()));
-      hash = (37 * hash) + PITCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getPitch()));
-      hash = (37 * hash) + YAW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getYaw()));
+          java.lang.Double.doubleToLongBits(getTheta()));
       hash = (37 * hash) + PATHINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPathIndex();
       hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
@@ -739,13 +634,7 @@ public final class Coordinator {
 
         y_ = 0D;
 
-        z_ = 0D;
-
-        roll_ = 0D;
-
-        pitch_ = 0D;
-
-        yaw_ = 0D;
+        theta_ = 0D;
 
         pathIndex_ = 0;
 
@@ -785,10 +674,7 @@ public final class Coordinator {
         result.robotid_ = robotid_;
         result.x_ = x_;
         result.y_ = y_;
-        result.z_ = z_;
-        result.roll_ = roll_;
-        result.pitch_ = pitch_;
-        result.yaw_ = yaw_;
+        result.theta_ = theta_;
         result.pathIndex_ = pathIndex_;
         result.velocity_ = velocity_;
         result.distanceTraveled_ = distanceTraveled_;
@@ -854,17 +740,8 @@ public final class Coordinator {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getZ() != 0D) {
-          setZ(other.getZ());
-        }
-        if (other.getRoll() != 0D) {
-          setRoll(other.getRoll());
-        }
-        if (other.getPitch() != 0D) {
-          setPitch(other.getPitch());
-        }
-        if (other.getYaw() != 0D) {
-          setYaw(other.getYaw());
+        if (other.getTheta() != 0D) {
+          setTheta(other.getTheta());
         }
         if (other.getPathIndex() != 0) {
           setPathIndex(other.getPathIndex());
@@ -1076,133 +953,40 @@ public final class Coordinator {
         return this;
       }
 
-      private double z_ ;
+      private double theta_ ;
       /**
-       * <code>double z = 5;</code>
-       * @return The z.
+       * <code>double theta = 5;</code>
+       * @return The theta.
        */
       @java.lang.Override
-      public double getZ() {
-        return z_;
+      public double getTheta() {
+        return theta_;
       }
       /**
-       * <code>double z = 5;</code>
-       * @param value The z to set.
+       * <code>double theta = 5;</code>
+       * @param value The theta to set.
        * @return This builder for chaining.
        */
-      public Builder setZ(double value) {
+      public Builder setTheta(double value) {
         
-        z_ = value;
+        theta_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double z = 5;</code>
+       * <code>double theta = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearZ() {
+      public Builder clearTheta() {
         
-        z_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double roll_ ;
-      /**
-       * <code>double roll = 6;</code>
-       * @return The roll.
-       */
-      @java.lang.Override
-      public double getRoll() {
-        return roll_;
-      }
-      /**
-       * <code>double roll = 6;</code>
-       * @param value The roll to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoll(double value) {
-        
-        roll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double roll = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoll() {
-        
-        roll_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double pitch_ ;
-      /**
-       * <code>double pitch = 7;</code>
-       * @return The pitch.
-       */
-      @java.lang.Override
-      public double getPitch() {
-        return pitch_;
-      }
-      /**
-       * <code>double pitch = 7;</code>
-       * @param value The pitch to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPitch(double value) {
-        
-        pitch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double pitch = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPitch() {
-        
-        pitch_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double yaw_ ;
-      /**
-       * <code>double yaw = 8;</code>
-       * @return The yaw.
-       */
-      @java.lang.Override
-      public double getYaw() {
-        return yaw_;
-      }
-      /**
-       * <code>double yaw = 8;</code>
-       * @param value The yaw to set.
-       * @return This builder for chaining.
-       */
-      public Builder setYaw(double value) {
-        
-        yaw_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double yaw = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearYaw() {
-        
-        yaw_ = 0D;
+        theta_ = 0D;
         onChanged();
         return this;
       }
 
       private int pathIndex_ ;
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
        * @return The pathIndex.
        */
       @java.lang.Override
@@ -1210,7 +994,7 @@ public final class Coordinator {
         return pathIndex_;
       }
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
        * @param value The pathIndex to set.
        * @return This builder for chaining.
        */
@@ -1221,7 +1005,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearPathIndex() {
@@ -1233,7 +1017,7 @@ public final class Coordinator {
 
       private double velocity_ ;
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
        * @return The velocity.
        */
       @java.lang.Override
@@ -1241,7 +1025,7 @@ public final class Coordinator {
         return velocity_;
       }
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
        * @param value The velocity to set.
        * @return This builder for chaining.
        */
@@ -1252,7 +1036,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearVelocity() {
@@ -1264,7 +1048,7 @@ public final class Coordinator {
 
       private double distanceTraveled_ ;
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
        * @return The distanceTraveled.
        */
       @java.lang.Override
@@ -1272,7 +1056,7 @@ public final class Coordinator {
         return distanceTraveled_;
       }
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
        * @param value The distanceTraveled to set.
        * @return This builder for chaining.
        */
@@ -1283,7 +1067,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearDistanceTraveled() {
@@ -1295,7 +1079,7 @@ public final class Coordinator {
 
       private int criticalPoint_ ;
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
        * @return The criticalPoint.
        */
       @java.lang.Override
@@ -1303,7 +1087,7 @@ public final class Coordinator {
         return criticalPoint_;
       }
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
        * @param value The criticalPoint to set.
        * @return This builder for chaining.
        */
@@ -1314,7 +1098,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
@@ -3926,6 +3710,12 @@ public final class Coordinator {
      * @return The poseSteering.
      */
     com.google.protobuf.ByteString getPoseSteering();
+
+    /**
+     * <code>int32 numberofrobots = 14;</code>
+     * @return The numberofrobots.
+     */
+    int getNumberofrobots();
   }
   /**
    * Protobuf type {@code gradlegRPC.robotsGreeting}
@@ -4068,6 +3858,11 @@ public final class Coordinator {
             case 106: {
 
               poseSteering_ = input.readBytes();
+              break;
+            }
+            case 112: {
+
+              numberofrobots_ = input.readInt32();
               break;
             }
             default: {
@@ -4406,6 +4201,17 @@ public final class Coordinator {
       return poseSteering_;
     }
 
+    public static final int NUMBEROFROBOTS_FIELD_NUMBER = 14;
+    private int numberofrobots_;
+    /**
+     * <code>int32 numberofrobots = 14;</code>
+     * @return The numberofrobots.
+     */
+    @java.lang.Override
+    public int getNumberofrobots() {
+      return numberofrobots_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4458,6 +4264,9 @@ public final class Coordinator {
       }
       if (!poseSteering_.isEmpty()) {
         output.writeBytes(13, poseSteering_);
+      }
+      if (numberofrobots_ != 0) {
+        output.writeInt32(14, numberofrobots_);
       }
       unknownFields.writeTo(output);
     }
@@ -4516,6 +4325,10 @@ public final class Coordinator {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(13, poseSteering_);
       }
+      if (numberofrobots_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, numberofrobots_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4569,6 +4382,8 @@ public final class Coordinator {
       }
       if (!getPoseSteering()
           .equals(other.getPoseSteering())) return false;
+      if (getNumberofrobots()
+          != other.getNumberofrobots()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4615,6 +4430,8 @@ public final class Coordinator {
       }
       hash = (37 * hash) + POSESTEERING_FIELD_NUMBER;
       hash = (53 * hash) + getPoseSteering().hashCode();
+      hash = (37 * hash) + NUMBEROFROBOTS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberofrobots();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4786,6 +4603,8 @@ public final class Coordinator {
         }
         poseSteering_ = com.google.protobuf.ByteString.EMPTY;
 
+        numberofrobots_ = 0;
+
         return this;
       }
 
@@ -4837,6 +4656,7 @@ public final class Coordinator {
           result.makeFootPrint_ = makeFootPrintBuilder_.build();
         }
         result.poseSteering_ = poseSteering_;
+        result.numberofrobots_ = numberofrobots_;
         onBuilt();
         return result;
       }
@@ -4927,6 +4747,9 @@ public final class Coordinator {
         }
         if (other.getPoseSteering() != com.google.protobuf.ByteString.EMPTY) {
           setPoseSteering(other.getPoseSteering());
+        }
+        if (other.getNumberofrobots() != 0) {
+          setNumberofrobots(other.getNumberofrobots());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5826,6 +5649,37 @@ public final class Coordinator {
         onChanged();
         return this;
       }
+
+      private int numberofrobots_ ;
+      /**
+       * <code>int32 numberofrobots = 14;</code>
+       * @return The numberofrobots.
+       */
+      @java.lang.Override
+      public int getNumberofrobots() {
+        return numberofrobots_;
+      }
+      /**
+       * <code>int32 numberofrobots = 14;</code>
+       * @param value The numberofrobots to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumberofrobots(int value) {
+        
+        numberofrobots_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 numberofrobots = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumberofrobots() {
+        
+        numberofrobots_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5896,28 +5750,10 @@ public final class Coordinator {
     double getY();
 
     /**
-     * <code>double z = 3;</code>
-     * @return The z.
+     * <code>double theta = 3;</code>
+     * @return The theta.
      */
-    double getZ();
-
-    /**
-     * <code>double roll = 4;</code>
-     * @return The roll.
-     */
-    double getRoll();
-
-    /**
-     * <code>double pitch = 5;</code>
-     * @return The pitch.
-     */
-    double getPitch();
-
-    /**
-     * <code>double yaw = 6;</code>
-     * @return The yaw.
-     */
-    double getYaw();
+    double getTheta();
   }
   /**
    * Protobuf type {@code gradlegRPC.robotPose}
@@ -5976,22 +5812,7 @@ public final class Coordinator {
             }
             case 25: {
 
-              z_ = input.readDouble();
-              break;
-            }
-            case 33: {
-
-              roll_ = input.readDouble();
-              break;
-            }
-            case 41: {
-
-              pitch_ = input.readDouble();
-              break;
-            }
-            case 49: {
-
-              yaw_ = input.readDouble();
+              theta_ = input.readDouble();
               break;
             }
             default: {
@@ -6048,48 +5869,15 @@ public final class Coordinator {
       return y_;
     }
 
-    public static final int Z_FIELD_NUMBER = 3;
-    private double z_;
+    public static final int THETA_FIELD_NUMBER = 3;
+    private double theta_;
     /**
-     * <code>double z = 3;</code>
-     * @return The z.
+     * <code>double theta = 3;</code>
+     * @return The theta.
      */
     @java.lang.Override
-    public double getZ() {
-      return z_;
-    }
-
-    public static final int ROLL_FIELD_NUMBER = 4;
-    private double roll_;
-    /**
-     * <code>double roll = 4;</code>
-     * @return The roll.
-     */
-    @java.lang.Override
-    public double getRoll() {
-      return roll_;
-    }
-
-    public static final int PITCH_FIELD_NUMBER = 5;
-    private double pitch_;
-    /**
-     * <code>double pitch = 5;</code>
-     * @return The pitch.
-     */
-    @java.lang.Override
-    public double getPitch() {
-      return pitch_;
-    }
-
-    public static final int YAW_FIELD_NUMBER = 6;
-    private double yaw_;
-    /**
-     * <code>double yaw = 6;</code>
-     * @return The yaw.
-     */
-    @java.lang.Override
-    public double getYaw() {
-      return yaw_;
+    public double getTheta() {
+      return theta_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6112,17 +5900,8 @@ public final class Coordinator {
       if (y_ != 0D) {
         output.writeDouble(2, y_);
       }
-      if (z_ != 0D) {
-        output.writeDouble(3, z_);
-      }
-      if (roll_ != 0D) {
-        output.writeDouble(4, roll_);
-      }
-      if (pitch_ != 0D) {
-        output.writeDouble(5, pitch_);
-      }
-      if (yaw_ != 0D) {
-        output.writeDouble(6, yaw_);
+      if (theta_ != 0D) {
+        output.writeDouble(3, theta_);
       }
       unknownFields.writeTo(output);
     }
@@ -6141,21 +5920,9 @@ public final class Coordinator {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, y_);
       }
-      if (z_ != 0D) {
+      if (theta_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, z_);
-      }
-      if (roll_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, roll_);
-      }
-      if (pitch_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, pitch_);
-      }
-      if (yaw_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, yaw_);
+          .computeDoubleSize(3, theta_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6178,18 +5945,9 @@ public final class Coordinator {
       if (java.lang.Double.doubleToLongBits(getY())
           != java.lang.Double.doubleToLongBits(
               other.getY())) return false;
-      if (java.lang.Double.doubleToLongBits(getZ())
+      if (java.lang.Double.doubleToLongBits(getTheta())
           != java.lang.Double.doubleToLongBits(
-              other.getZ())) return false;
-      if (java.lang.Double.doubleToLongBits(getRoll())
-          != java.lang.Double.doubleToLongBits(
-              other.getRoll())) return false;
-      if (java.lang.Double.doubleToLongBits(getPitch())
-          != java.lang.Double.doubleToLongBits(
-              other.getPitch())) return false;
-      if (java.lang.Double.doubleToLongBits(getYaw())
-          != java.lang.Double.doubleToLongBits(
-              other.getYaw())) return false;
+              other.getTheta())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6207,18 +5965,9 @@ public final class Coordinator {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + Z_FIELD_NUMBER;
+      hash = (37 * hash) + THETA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getZ()));
-      hash = (37 * hash) + ROLL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getRoll()));
-      hash = (37 * hash) + PITCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getPitch()));
-      hash = (37 * hash) + YAW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getYaw()));
+          java.lang.Double.doubleToLongBits(getTheta()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6356,13 +6105,7 @@ public final class Coordinator {
 
         y_ = 0D;
 
-        z_ = 0D;
-
-        roll_ = 0D;
-
-        pitch_ = 0D;
-
-        yaw_ = 0D;
+        theta_ = 0D;
 
         return this;
       }
@@ -6392,10 +6135,7 @@ public final class Coordinator {
         io.grpc.coordinator.Coordinator.robotPose result = new io.grpc.coordinator.Coordinator.robotPose(this);
         result.x_ = x_;
         result.y_ = y_;
-        result.z_ = z_;
-        result.roll_ = roll_;
-        result.pitch_ = pitch_;
-        result.yaw_ = yaw_;
+        result.theta_ = theta_;
         onBuilt();
         return result;
       }
@@ -6450,17 +6190,8 @@ public final class Coordinator {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getZ() != 0D) {
-          setZ(other.getZ());
-        }
-        if (other.getRoll() != 0D) {
-          setRoll(other.getRoll());
-        }
-        if (other.getPitch() != 0D) {
-          setPitch(other.getPitch());
-        }
-        if (other.getYaw() != 0D) {
-          setYaw(other.getYaw());
+        if (other.getTheta() != 0D) {
+          setTheta(other.getTheta());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6553,126 +6284,33 @@ public final class Coordinator {
         return this;
       }
 
-      private double z_ ;
+      private double theta_ ;
       /**
-       * <code>double z = 3;</code>
-       * @return The z.
+       * <code>double theta = 3;</code>
+       * @return The theta.
        */
       @java.lang.Override
-      public double getZ() {
-        return z_;
+      public double getTheta() {
+        return theta_;
       }
       /**
-       * <code>double z = 3;</code>
-       * @param value The z to set.
+       * <code>double theta = 3;</code>
+       * @param value The theta to set.
        * @return This builder for chaining.
        */
-      public Builder setZ(double value) {
+      public Builder setTheta(double value) {
         
-        z_ = value;
+        theta_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double z = 3;</code>
+       * <code>double theta = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearZ() {
+      public Builder clearTheta() {
         
-        z_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double roll_ ;
-      /**
-       * <code>double roll = 4;</code>
-       * @return The roll.
-       */
-      @java.lang.Override
-      public double getRoll() {
-        return roll_;
-      }
-      /**
-       * <code>double roll = 4;</code>
-       * @param value The roll to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoll(double value) {
-        
-        roll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double roll = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoll() {
-        
-        roll_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double pitch_ ;
-      /**
-       * <code>double pitch = 5;</code>
-       * @return The pitch.
-       */
-      @java.lang.Override
-      public double getPitch() {
-        return pitch_;
-      }
-      /**
-       * <code>double pitch = 5;</code>
-       * @param value The pitch to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPitch(double value) {
-        
-        pitch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double pitch = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPitch() {
-        
-        pitch_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double yaw_ ;
-      /**
-       * <code>double yaw = 6;</code>
-       * @return The yaw.
-       */
-      @java.lang.Override
-      public double getYaw() {
-        return yaw_;
-      }
-      /**
-       * <code>double yaw = 6;</code>
-       * @param value The yaw to set.
-       * @return This builder for chaining.
-       */
-      public Builder setYaw(double value) {
-        
-        yaw_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double yaw = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearYaw() {
-        
-        yaw_ = 0D;
+        theta_ = 0D;
         onChanged();
         return this;
       }
@@ -13495,49 +13133,31 @@ public final class Coordinator {
     double getY();
 
     /**
-     * <code>double z = 5;</code>
-     * @return The z.
+     * <code>double theta = 5;</code>
+     * @return The theta.
      */
-    double getZ();
+    double getTheta();
 
     /**
-     * <code>double roll = 6;</code>
-     * @return The roll.
-     */
-    double getRoll();
-
-    /**
-     * <code>double pitch = 7;</code>
-     * @return The pitch.
-     */
-    double getPitch();
-
-    /**
-     * <code>double yaw = 8;</code>
-     * @return The yaw.
-     */
-    double getYaw();
-
-    /**
-     * <code>int32 pathIndex = 9;</code>
+     * <code>int32 pathIndex = 6;</code>
      * @return The pathIndex.
      */
     int getPathIndex();
 
     /**
-     * <code>double velocity = 10;</code>
+     * <code>double velocity = 7;</code>
      * @return The velocity.
      */
     double getVelocity();
 
     /**
-     * <code>double distanceTraveled = 11;</code>
+     * <code>double distanceTraveled = 8;</code>
      * @return The distanceTraveled.
      */
     double getDistanceTraveled();
 
     /**
-     * <code>int32 criticalPoint = 12;</code>
+     * <code>int32 criticalPoint = 9;</code>
      * @return The criticalPoint.
      */
     int getCriticalPoint();
@@ -13610,40 +13230,25 @@ public final class Coordinator {
             }
             case 41: {
 
-              z_ = input.readDouble();
+              theta_ = input.readDouble();
               break;
             }
-            case 49: {
-
-              roll_ = input.readDouble();
-              break;
-            }
-            case 57: {
-
-              pitch_ = input.readDouble();
-              break;
-            }
-            case 65: {
-
-              yaw_ = input.readDouble();
-              break;
-            }
-            case 72: {
+            case 48: {
 
               pathIndex_ = input.readInt32();
               break;
             }
-            case 81: {
+            case 57: {
 
               velocity_ = input.readDouble();
               break;
             }
-            case 89: {
+            case 65: {
 
               distanceTraveled_ = input.readDouble();
               break;
             }
-            case 96: {
+            case 72: {
 
               criticalPoint_ = input.readInt32();
               break;
@@ -13732,54 +13337,21 @@ public final class Coordinator {
       return y_;
     }
 
-    public static final int Z_FIELD_NUMBER = 5;
-    private double z_;
+    public static final int THETA_FIELD_NUMBER = 5;
+    private double theta_;
     /**
-     * <code>double z = 5;</code>
-     * @return The z.
+     * <code>double theta = 5;</code>
+     * @return The theta.
      */
     @java.lang.Override
-    public double getZ() {
-      return z_;
+    public double getTheta() {
+      return theta_;
     }
 
-    public static final int ROLL_FIELD_NUMBER = 6;
-    private double roll_;
-    /**
-     * <code>double roll = 6;</code>
-     * @return The roll.
-     */
-    @java.lang.Override
-    public double getRoll() {
-      return roll_;
-    }
-
-    public static final int PITCH_FIELD_NUMBER = 7;
-    private double pitch_;
-    /**
-     * <code>double pitch = 7;</code>
-     * @return The pitch.
-     */
-    @java.lang.Override
-    public double getPitch() {
-      return pitch_;
-    }
-
-    public static final int YAW_FIELD_NUMBER = 8;
-    private double yaw_;
-    /**
-     * <code>double yaw = 8;</code>
-     * @return The yaw.
-     */
-    @java.lang.Override
-    public double getYaw() {
-      return yaw_;
-    }
-
-    public static final int PATHINDEX_FIELD_NUMBER = 9;
+    public static final int PATHINDEX_FIELD_NUMBER = 6;
     private int pathIndex_;
     /**
-     * <code>int32 pathIndex = 9;</code>
+     * <code>int32 pathIndex = 6;</code>
      * @return The pathIndex.
      */
     @java.lang.Override
@@ -13787,10 +13359,10 @@ public final class Coordinator {
       return pathIndex_;
     }
 
-    public static final int VELOCITY_FIELD_NUMBER = 10;
+    public static final int VELOCITY_FIELD_NUMBER = 7;
     private double velocity_;
     /**
-     * <code>double velocity = 10;</code>
+     * <code>double velocity = 7;</code>
      * @return The velocity.
      */
     @java.lang.Override
@@ -13798,10 +13370,10 @@ public final class Coordinator {
       return velocity_;
     }
 
-    public static final int DISTANCETRAVELED_FIELD_NUMBER = 11;
+    public static final int DISTANCETRAVELED_FIELD_NUMBER = 8;
     private double distanceTraveled_;
     /**
-     * <code>double distanceTraveled = 11;</code>
+     * <code>double distanceTraveled = 8;</code>
      * @return The distanceTraveled.
      */
     @java.lang.Override
@@ -13809,10 +13381,10 @@ public final class Coordinator {
       return distanceTraveled_;
     }
 
-    public static final int CRITICALPOINT_FIELD_NUMBER = 12;
+    public static final int CRITICALPOINT_FIELD_NUMBER = 9;
     private int criticalPoint_;
     /**
-     * <code>int32 criticalPoint = 12;</code>
+     * <code>int32 criticalPoint = 9;</code>
      * @return The criticalPoint.
      */
     @java.lang.Override
@@ -13846,29 +13418,20 @@ public final class Coordinator {
       if (y_ != 0D) {
         output.writeDouble(4, y_);
       }
-      if (z_ != 0D) {
-        output.writeDouble(5, z_);
-      }
-      if (roll_ != 0D) {
-        output.writeDouble(6, roll_);
-      }
-      if (pitch_ != 0D) {
-        output.writeDouble(7, pitch_);
-      }
-      if (yaw_ != 0D) {
-        output.writeDouble(8, yaw_);
+      if (theta_ != 0D) {
+        output.writeDouble(5, theta_);
       }
       if (pathIndex_ != 0) {
-        output.writeInt32(9, pathIndex_);
+        output.writeInt32(6, pathIndex_);
       }
       if (velocity_ != 0D) {
-        output.writeDouble(10, velocity_);
+        output.writeDouble(7, velocity_);
       }
       if (distanceTraveled_ != 0D) {
-        output.writeDouble(11, distanceTraveled_);
+        output.writeDouble(8, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
-        output.writeInt32(12, criticalPoint_);
+        output.writeInt32(9, criticalPoint_);
       }
       unknownFields.writeTo(output);
     }
@@ -13895,37 +13458,25 @@ public final class Coordinator {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, y_);
       }
-      if (z_ != 0D) {
+      if (theta_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, z_);
-      }
-      if (roll_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, roll_);
-      }
-      if (pitch_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, pitch_);
-      }
-      if (yaw_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, yaw_);
+          .computeDoubleSize(5, theta_);
       }
       if (pathIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, pathIndex_);
+          .computeInt32Size(6, pathIndex_);
       }
       if (velocity_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, velocity_);
+          .computeDoubleSize(7, velocity_);
       }
       if (distanceTraveled_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, distanceTraveled_);
+          .computeDoubleSize(8, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, criticalPoint_);
+          .computeInt32Size(9, criticalPoint_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13952,18 +13503,9 @@ public final class Coordinator {
       if (java.lang.Double.doubleToLongBits(getY())
           != java.lang.Double.doubleToLongBits(
               other.getY())) return false;
-      if (java.lang.Double.doubleToLongBits(getZ())
+      if (java.lang.Double.doubleToLongBits(getTheta())
           != java.lang.Double.doubleToLongBits(
-              other.getZ())) return false;
-      if (java.lang.Double.doubleToLongBits(getRoll())
-          != java.lang.Double.doubleToLongBits(
-              other.getRoll())) return false;
-      if (java.lang.Double.doubleToLongBits(getPitch())
-          != java.lang.Double.doubleToLongBits(
-              other.getPitch())) return false;
-      if (java.lang.Double.doubleToLongBits(getYaw())
-          != java.lang.Double.doubleToLongBits(
-              other.getYaw())) return false;
+              other.getTheta())) return false;
       if (getPathIndex()
           != other.getPathIndex()) return false;
       if (java.lang.Double.doubleToLongBits(getVelocity())
@@ -13995,18 +13537,9 @@ public final class Coordinator {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + Z_FIELD_NUMBER;
+      hash = (37 * hash) + THETA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getZ()));
-      hash = (37 * hash) + ROLL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getRoll()));
-      hash = (37 * hash) + PITCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getPitch()));
-      hash = (37 * hash) + YAW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getYaw()));
+          java.lang.Double.doubleToLongBits(getTheta()));
       hash = (37 * hash) + PATHINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPathIndex();
       hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
@@ -14158,13 +13691,7 @@ public final class Coordinator {
 
         y_ = 0D;
 
-        z_ = 0D;
-
-        roll_ = 0D;
-
-        pitch_ = 0D;
-
-        yaw_ = 0D;
+        theta_ = 0D;
 
         pathIndex_ = 0;
 
@@ -14204,10 +13731,7 @@ public final class Coordinator {
         result.robotid_ = robotid_;
         result.x_ = x_;
         result.y_ = y_;
-        result.z_ = z_;
-        result.roll_ = roll_;
-        result.pitch_ = pitch_;
-        result.yaw_ = yaw_;
+        result.theta_ = theta_;
         result.pathIndex_ = pathIndex_;
         result.velocity_ = velocity_;
         result.distanceTraveled_ = distanceTraveled_;
@@ -14272,17 +13796,8 @@ public final class Coordinator {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getZ() != 0D) {
-          setZ(other.getZ());
-        }
-        if (other.getRoll() != 0D) {
-          setRoll(other.getRoll());
-        }
-        if (other.getPitch() != 0D) {
-          setPitch(other.getPitch());
-        }
-        if (other.getYaw() != 0D) {
-          setYaw(other.getYaw());
+        if (other.getTheta() != 0D) {
+          setTheta(other.getTheta());
         }
         if (other.getPathIndex() != 0) {
           setPathIndex(other.getPathIndex());
@@ -14476,133 +13991,40 @@ public final class Coordinator {
         return this;
       }
 
-      private double z_ ;
+      private double theta_ ;
       /**
-       * <code>double z = 5;</code>
-       * @return The z.
+       * <code>double theta = 5;</code>
+       * @return The theta.
        */
       @java.lang.Override
-      public double getZ() {
-        return z_;
+      public double getTheta() {
+        return theta_;
       }
       /**
-       * <code>double z = 5;</code>
-       * @param value The z to set.
+       * <code>double theta = 5;</code>
+       * @param value The theta to set.
        * @return This builder for chaining.
        */
-      public Builder setZ(double value) {
+      public Builder setTheta(double value) {
         
-        z_ = value;
+        theta_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double z = 5;</code>
+       * <code>double theta = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearZ() {
+      public Builder clearTheta() {
         
-        z_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double roll_ ;
-      /**
-       * <code>double roll = 6;</code>
-       * @return The roll.
-       */
-      @java.lang.Override
-      public double getRoll() {
-        return roll_;
-      }
-      /**
-       * <code>double roll = 6;</code>
-       * @param value The roll to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoll(double value) {
-        
-        roll_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double roll = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRoll() {
-        
-        roll_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double pitch_ ;
-      /**
-       * <code>double pitch = 7;</code>
-       * @return The pitch.
-       */
-      @java.lang.Override
-      public double getPitch() {
-        return pitch_;
-      }
-      /**
-       * <code>double pitch = 7;</code>
-       * @param value The pitch to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPitch(double value) {
-        
-        pitch_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double pitch = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPitch() {
-        
-        pitch_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double yaw_ ;
-      /**
-       * <code>double yaw = 8;</code>
-       * @return The yaw.
-       */
-      @java.lang.Override
-      public double getYaw() {
-        return yaw_;
-      }
-      /**
-       * <code>double yaw = 8;</code>
-       * @param value The yaw to set.
-       * @return This builder for chaining.
-       */
-      public Builder setYaw(double value) {
-        
-        yaw_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double yaw = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearYaw() {
-        
-        yaw_ = 0D;
+        theta_ = 0D;
         onChanged();
         return this;
       }
 
       private int pathIndex_ ;
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
        * @return The pathIndex.
        */
       @java.lang.Override
@@ -14610,7 +14032,7 @@ public final class Coordinator {
         return pathIndex_;
       }
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
        * @param value The pathIndex to set.
        * @return This builder for chaining.
        */
@@ -14621,7 +14043,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>int32 pathIndex = 9;</code>
+       * <code>int32 pathIndex = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearPathIndex() {
@@ -14633,7 +14055,7 @@ public final class Coordinator {
 
       private double velocity_ ;
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
        * @return The velocity.
        */
       @java.lang.Override
@@ -14641,7 +14063,7 @@ public final class Coordinator {
         return velocity_;
       }
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
        * @param value The velocity to set.
        * @return This builder for chaining.
        */
@@ -14652,7 +14074,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double velocity = 10;</code>
+       * <code>double velocity = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearVelocity() {
@@ -14664,7 +14086,7 @@ public final class Coordinator {
 
       private double distanceTraveled_ ;
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
        * @return The distanceTraveled.
        */
       @java.lang.Override
@@ -14672,7 +14094,7 @@ public final class Coordinator {
         return distanceTraveled_;
       }
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
        * @param value The distanceTraveled to set.
        * @return This builder for chaining.
        */
@@ -14683,7 +14105,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double distanceTraveled = 11;</code>
+       * <code>double distanceTraveled = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearDistanceTraveled() {
@@ -14695,7 +14117,7 @@ public final class Coordinator {
 
       private int criticalPoint_ ;
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
        * @return The criticalPoint.
        */
       @java.lang.Override
@@ -14703,7 +14125,7 @@ public final class Coordinator {
         return criticalPoint_;
       }
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
        * @param value The criticalPoint to set.
        * @return This builder for chaining.
        */
@@ -14714,7 +14136,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>int32 criticalPoint = 12;</code>
+       * <code>int32 criticalPoint = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
@@ -14881,74 +14303,75 @@ public final class Coordinator {
   static {
     java.lang.String[] descriptorData = {
       "\n\021coordinator.proto\022\ngradlegRPC\032\033google/" +
-      "protobuf/empty.proto\"\323\001\n\022requestrobotrep" +
+      "protobuf/empty.proto\"\255\001\n\022requestrobotrep" +
       "ort\022\013\n\003req\030\001 \001(\t\022\017\n\007robotid\030\002 \001(\005\022\t\n\001x\030\003" +
-      " \001(\001\022\t\n\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006 \001(\001" +
-      "\022\r\n\005pitch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpathInde" +
-      "x\030\t \001(\005\022\020\n\010velocity\030\n \001(\001\022\030\n\020distanceTra" +
-      "veled\030\013 \001(\001\022\025\n\rcriticalPoint\030\014 \001(\005\":\n\023re" +
-      "sponserobotreport\022\014\n\004name\030\001 \001(\t\022\025\n\rcriti" +
-      "calPoint\030\002 \001(\005\"9\n\031trackerRobotReportRequ" +
-      "est\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"I\n)coo" +
-      "rdinatorGetCriticalPointRequestMessage\022\013" +
-      "\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"C\n*coordina" +
-      "torGetCriticalPointResponseMessage\022\025\n\rcr" +
-      "iticalPoint\030\001 \001(\005\"\305\002\n\016robotsGreeting\022\013\n\003" +
-      "kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\022\014\n\004type\030\003 \001(\t" +
-      "\022\n\n\002IP\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\022(\n\tstartPose\030" +
-      "\006 \001(\0132\025.gradlegRPC.robotPose\022&\n\007endPose\030" +
-      "\007 \001(\0132\025.gradlegRPC.robotPose\022\021\n\ttimeStam" +
-      "p\030\010 \001(\t\022\020\n\010maxAccel\030\t \001(\001\022\016\n\006maxVel\030\n \001(" +
-      "\001\022\036\n\026trackingPeriodInMillis\030\013 \001(\001\0220\n\rmak" +
-      "eFootPrint\030\014 \001(\0132\031.gradlegRPC.MakeFootPr" +
-      "int\022\024\n\014poseSteering\030\r \001(\014\"V\n\trobotPose\022\t" +
-      "\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\022\014\n\004roll\030" +
-      "\004 \001(\001\022\r\n\005pitch\030\005 \001(\001\022\013\n\003yaw\030\006 \001(\001\"{\n\rMak" +
-      "eFootPrint\022\017\n\007centerX\030\001 \001(\005\022\017\n\007centerY\030\002" +
-      " \001(\005\022\020\n\010minVerts\030\003 \001(\005\022\020\n\010maxVerts\030\004 \001(\005" +
-      "\022\021\n\tminRadius\030\005 \001(\001\022\021\n\tmaxRadius\030\006 \001(\001\"<" +
-      "\n\025robotgreetingResponse\022\014\n\004name\030\001 \001(\t\022\025\n" +
-      "\rnumofReplicas\030\002 \001(\005\"7\n\026getCurrentDepend" +
-      "encies\022\013\n\003kan\030\001 \001(\t\022\020\n\010depBytes\030\002 \001(\014\"\034\n" +
-      "\014noneResponse\022\014\n\004none\030\001 \001(\t\"*\n\ntecreques" +
-      "t\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"7\n\013tecre" +
-      "sponse\022\026\n\016stringresponse\030\001 \001(\t\022\020\n\010tecStu" +
-      "ff\030\002 \001(\014\"\032\n\013timerequest\022\013\n\003kan\030\001 \001(\t\"#\n\014" +
-      "timeresponse\022\023\n\013currentTime\030\001 \001(\004\" \n\021vis" +
-      "ualizerrequest\022\013\n\003kan\030\001 \001(\t\"(\n\022visualize" +
-      "rresponse\022\022\n\nvisualizer\030\001 \001(\014\"8\n\rallenIn" +
-      "terval\022\013\n\003kan\030\001 \001(\t\022\032\n\022allenIntervalByte" +
-      "s\030\002 \001(\014\"\343\001\n\027onPositionUpdateMessage\022\026\n\016f" +
-      "ootPrintBytes\030\001 \001(\014\022\017\n\007robotid\030\002 \001(\005\022\t\n\001" +
-      "x\030\003 \001(\001\022\t\n\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006 " +
-      "\001(\001\022\r\n\005pitch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpathI" +
-      "ndex\030\t \001(\005\022\020\n\010velocity\030\n \001(\001\022\030\n\020distance" +
-      "Traveled\030\013 \001(\001\022\025\n\rcriticalPoint\030\014 \001(\0052\305\007" +
-      "\n\022CoordinatorService\022[\n\026coordinatorrobot" +
-      "report\022\036.gradlegRPC.requestrobotreport\032\037" +
-      ".gradlegRPC.responserobotreport\"\000\022\211\001\n\030co" +
-      "ordinatorcriticalpoint\0225.gradlegRPC.coor" +
-      "dinatorGetCriticalPointRequestMessage\0326." +
-      "gradlegRPC.coordinatorGetCriticalPointRe" +
-      "sponseMessage\022W\n\027coordinatordependencies" +
-      "\022\".gradlegRPC.getCurrentDependencies\032\030.g" +
-      "radlegRPC.noneResponse\022W\n\026coordinatorget" +
-      "Greeting\022\032.gradlegRPC.robotsGreeting\032!.g" +
-      "radlegRPC.robotgreetingResponse\022I\n\026coord" +
-      "inatorgetTecStuff\022\026.gradlegRPC.tecreques" +
-      "t\032\027.gradlegRPC.tecresponse\022N\n\031coordinato" +
-      "rgetCurrentTime\022\027.gradlegRPC.timerequest" +
-      "\032\030.gradlegRPC.timeresponse\022Y\n\030coordinato" +
-      "rgetVisualizer\022\035.gradlegRPC.visualizerre" +
-      "quest\032\036.gradlegRPC.visualizerresponse\022R\n" +
-      "\033coordinatorgetAllenInterval\022\031.gradlegRP" +
-      "C.allenInterval\032\030.gradlegRPC.noneRespons" +
-      "e\022i\n coordinatorgetRobotReportRequest\022%." +
-      "gradlegRPC.trackerRobotReportRequest\032\036.g" +
-      "radlegRPC.requestrobotreport\022_\n\036coordina" +
-      "torgetOnPositionUpdate\022#.gradlegRPC.onPo" +
-      "sitionUpdateMessage\032\030.gradlegRPC.noneRes" +
-      "ponseB\025\n\023io.grpc.coordinatorb\006proto3"
+      " \001(\001\022\t\n\001y\030\004 \001(\001\022\r\n\005theta\030\005 \001(\001\022\021\n\tpathIn" +
+      "dex\030\006 \001(\005\022\020\n\010velocity\030\007 \001(\001\022\030\n\020distanceT" +
+      "raveled\030\010 \001(\001\022\025\n\rcriticalPoint\030\t \001(\005\":\n\023" +
+      "responserobotreport\022\014\n\004name\030\001 \001(\t\022\025\n\rcri" +
+      "ticalPoint\030\002 \001(\005\"9\n\031trackerRobotReportRe" +
+      "quest\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"I\n)c" +
+      "oordinatorGetCriticalPointRequestMessage" +
+      "\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"C\n*coordi" +
+      "natorGetCriticalPointResponseMessage\022\025\n\r" +
+      "criticalPoint\030\001 \001(\005\"\335\002\n\016robotsGreeting\022\013" +
+      "\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\022\014\n\004type\030\003 \001" +
+      "(\t\022\n\n\002IP\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\022(\n\tstartPos" +
+      "e\030\006 \001(\0132\025.gradlegRPC.robotPose\022&\n\007endPos" +
+      "e\030\007 \001(\0132\025.gradlegRPC.robotPose\022\021\n\ttimeSt" +
+      "amp\030\010 \001(\t\022\020\n\010maxAccel\030\t \001(\001\022\016\n\006maxVel\030\n " +
+      "\001(\001\022\036\n\026trackingPeriodInMillis\030\013 \001(\001\0220\n\rm" +
+      "akeFootPrint\030\014 \001(\0132\031.gradlegRPC.MakeFoot" +
+      "Print\022\024\n\014poseSteering\030\r \001(\014\022\026\n\016numberofr" +
+      "obots\030\016 \001(\005\"0\n\trobotPose\022\t\n\001x\030\001 \001(\001\022\t\n\001y" +
+      "\030\002 \001(\001\022\r\n\005theta\030\003 \001(\001\"{\n\rMakeFootPrint\022\017" +
+      "\n\007centerX\030\001 \001(\005\022\017\n\007centerY\030\002 \001(\005\022\020\n\010minV" +
+      "erts\030\003 \001(\005\022\020\n\010maxVerts\030\004 \001(\005\022\021\n\tminRadiu" +
+      "s\030\005 \001(\001\022\021\n\tmaxRadius\030\006 \001(\001\"<\n\025robotgreet" +
+      "ingResponse\022\014\n\004name\030\001 \001(\t\022\025\n\rnumofReplic" +
+      "as\030\002 \001(\005\"7\n\026getCurrentDependencies\022\013\n\003ka" +
+      "n\030\001 \001(\t\022\020\n\010depBytes\030\002 \001(\014\"\034\n\014noneRespons" +
+      "e\022\014\n\004none\030\001 \001(\t\"*\n\ntecrequest\022\013\n\003kan\030\001 \001" +
+      "(\t\022\017\n\007robotID\030\002 \001(\005\"7\n\013tecresponse\022\026\n\016st" +
+      "ringresponse\030\001 \001(\t\022\020\n\010tecStuff\030\002 \001(\014\"\032\n\013" +
+      "timerequest\022\013\n\003kan\030\001 \001(\t\"#\n\014timeresponse" +
+      "\022\023\n\013currentTime\030\001 \001(\004\" \n\021visualizerreque" +
+      "st\022\013\n\003kan\030\001 \001(\t\"(\n\022visualizerresponse\022\022\n" +
+      "\nvisualizer\030\001 \001(\014\"8\n\rallenInterval\022\013\n\003ka" +
+      "n\030\001 \001(\t\022\032\n\022allenIntervalBytes\030\002 \001(\014\"\275\001\n\027" +
+      "onPositionUpdateMessage\022\026\n\016footPrintByte" +
+      "s\030\001 \001(\014\022\017\n\007robotid\030\002 \001(\005\022\t\n\001x\030\003 \001(\001\022\t\n\001y" +
+      "\030\004 \001(\001\022\r\n\005theta\030\005 \001(\001\022\021\n\tpathIndex\030\006 \001(\005" +
+      "\022\020\n\010velocity\030\007 \001(\001\022\030\n\020distanceTraveled\030\010" +
+      " \001(\001\022\025\n\rcriticalPoint\030\t \001(\0052\252\010\n\022Coordina" +
+      "torService\022[\n\026coordinatorrobotreport\022\036.g" +
+      "radlegRPC.requestrobotreport\032\037.gradlegRP" +
+      "C.responserobotreport\"\000\022\211\001\n\030coordinatorc" +
+      "riticalpoint\0225.gradlegRPC.coordinatorGet" +
+      "CriticalPointRequestMessage\0326.gradlegRPC" +
+      ".coordinatorGetCriticalPointResponseMess" +
+      "age\022W\n\027coordinatordependencies\022\".gradleg" +
+      "RPC.getCurrentDependencies\032\030.gradlegRPC." +
+      "noneResponse\022W\n\026coordinatorgetGreeting\022\032" +
+      ".gradlegRPC.robotsGreeting\032!.gradlegRPC." +
+      "robotgreetingResponse\022I\n\026coordinatorgetT" +
+      "ecStuff\022\026.gradlegRPC.tecrequest\032\027.gradle" +
+      "gRPC.tecresponse\022N\n\031coordinatorgetCurren" +
+      "tTime\022\027.gradlegRPC.timerequest\032\030.gradleg" +
+      "RPC.timeresponse\022Y\n\030coordinatorgetVisual" +
+      "izer\022\035.gradlegRPC.visualizerrequest\032\036.gr" +
+      "adlegRPC.visualizerresponse\022R\n\033coordinat" +
+      "orgetAllenInterval\022\031.gradlegRPC.allenInt" +
+      "erval\032\030.gradlegRPC.noneResponse\022i\n coord" +
+      "inatorgetRobotReportRequest\022%.gradlegRPC" +
+      ".trackerRobotReportRequest\032\036.gradlegRPC." +
+      "requestrobotreport\022_\n\036coordinatorgetOnPo" +
+      "sitionUpdate\022#.gradlegRPC.onPositionUpda" +
+      "teMessage\032\030.gradlegRPC.noneResponse\022c\n\"c" +
+      "oordinatorgetOnPositionUpdateEven\022#.grad" +
+      "legRPC.onPositionUpdateMessage\032\030.gradleg" +
+      "RPC.noneResponseB\025\n\023io.grpc.coordinatorb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14960,7 +14383,7 @@ public final class Coordinator {
     internal_static_gradlegRPC_requestrobotreport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_requestrobotreport_descriptor,
-        new java.lang.String[] { "Req", "Robotid", "X", "Y", "Z", "Roll", "Pitch", "Yaw", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
+        new java.lang.String[] { "Req", "Robotid", "X", "Y", "Theta", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
     internal_static_gradlegRPC_responserobotreport_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_gradlegRPC_responserobotreport_fieldAccessorTable = new
@@ -14990,13 +14413,13 @@ public final class Coordinator {
     internal_static_gradlegRPC_robotsGreeting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotsGreeting_descriptor,
-        new java.lang.String[] { "Kan", "RobotID", "Type", "IP", "Port", "StartPose", "EndPose", "TimeStamp", "MaxAccel", "MaxVel", "TrackingPeriodInMillis", "MakeFootPrint", "PoseSteering", });
+        new java.lang.String[] { "Kan", "RobotID", "Type", "IP", "Port", "StartPose", "EndPose", "TimeStamp", "MaxAccel", "MaxVel", "TrackingPeriodInMillis", "MakeFootPrint", "PoseSteering", "Numberofrobots", });
     internal_static_gradlegRPC_robotPose_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_gradlegRPC_robotPose_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotPose_descriptor,
-        new java.lang.String[] { "X", "Y", "Z", "Roll", "Pitch", "Yaw", });
+        new java.lang.String[] { "X", "Y", "Theta", });
     internal_static_gradlegRPC_MakeFootPrint_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_gradlegRPC_MakeFootPrint_fieldAccessorTable = new
@@ -15068,7 +14491,7 @@ public final class Coordinator {
     internal_static_gradlegRPC_onPositionUpdateMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_onPositionUpdateMessage_descriptor,
-        new java.lang.String[] { "FootPrintBytes", "Robotid", "X", "Y", "Z", "Roll", "Pitch", "Yaw", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
+        new java.lang.String[] { "FootPrintBytes", "Robotid", "X", "Y", "Theta", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 

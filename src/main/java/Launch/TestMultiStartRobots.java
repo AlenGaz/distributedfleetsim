@@ -10,13 +10,12 @@ import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelopeSolver;
-import se.oru.coordination.coordination_oru.Mission;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.TrackingCallback;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
-import se.oru.coordination.coordination_oru.util.Missions;
 import se.oru.coordination.coordination_oru.util.Pair;
 
+import java.lang.reflect.Array;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -79,21 +78,29 @@ public class TestMultiStartRobots  {
     }
 
 
+    /**
+     * Here's a method that will concatenate two arrays and return the result (used for adding path and pathInv).
+     */
+
+    public static PoseSteering[] concatenate(PoseSteering[] pathA, PoseSteering[] pathB) {
+        int pathA_Length = pathA.length;
+        int pathB_Length = pathB.length;
+
+        PoseSteering[] robotPath = (PoseSteering[]) Array.newInstance(pathA.getClass().getComponentType(), pathA_Length + pathB_Length);
+        System.arraycopy(pathA, 0, robotPath, 0, pathA_Length);
+        System.arraycopy(pathB, 0, robotPath, pathA_Length, pathB_Length);
+
+        return robotPath;
+    }
+
 
     static double minRobotRadius = 0.2;
     static double maxRobotRadius = 2.0;
-
-
     public static Integer port = 50051;
-
     double TEMPORAL_RESOLUTION;
-
     public static String target = "localhost:" + port.toString();  // coordinator IP;
+    public static int numberOfRobots = 5;
 
-
-
-
-    public static int numberOfRobots = 7;
 
     public static void main(String[] args) {
 
@@ -127,7 +134,7 @@ public class TestMultiStartRobots  {
 
         String robotName = "r" + i + "p";
         Random random = new Random();
-        float randomFactor = random.nextFloat() * 15 + 1f;
+        float randomFactor = random.nextFloat() * 8 + 1f;
         double MAX_VELOCITY = random.nextInt(3) + 2;
         double MAX_ACCELERATION = MAX_VELOCITY - 1;
         int robotID = i;
@@ -137,7 +144,7 @@ public class TestMultiStartRobots  {
 
 
                 Coordinate[] fp = makeRandomFootprint(0, 0, 3, 6, minRobotRadius, maxRobotRadius);
-                Pose[] startAndGoal = makeRandomStartGoalPair(numberOfRobots, 5.1*maxRobotRadius, 4.1*minRobotRadius, 4*maxRobotRadius);
+                Pose[] startAndGoal = makeRandomStartGoalPair(numberOfRobots, 5.1*maxRobotRadius, i+ 4.1*minRobotRadius,i + 4*maxRobotRadius);
 
                 //Coordinate[] fp = makeRandomFootprint(0, 0, 1, 8, minRobotRadius, maxRobotRadius);
                 //Pose[] startAndGoal = makeRandomStartGoalPair(3, 4.2*maxRobotRadius, 2*maxRobotRadius, 1.1*maxRobotRadius);
@@ -163,9 +170,17 @@ public class TestMultiStartRobots  {
                 // making the rsp path from setStart to setGoal as overallPath for sending a poseSteering.. this way the
                 // solver can be recreated from this on the trajectoryenvelopeCoordinator...?
 
-                //Define forward and backward missions and enqueue them
-                Missions.enqueueMission(new Mission(robotID, rsp.getPath()));
-                Missions.enqueueMission(new Mission(robotID, rsp.getPathInv()));
+
+
+               // poseteeringsToSend should be concatetanea rsp.getPath + rsp.getPathInv()
+
+               //Define forward and backward missions and enqueue them
+               org.metacsp.multi.spatioTemporal.paths.PoseSteering[] path = rsp.getPath();
+               org.metacsp.multi.spatioTemporal.paths.PoseSteering[] pathInv = rsp.getPathInv();
+
+               //Mission m = new Mission(robotID, concatenate(path,pathInv));
+               //System.out.println("elkabir->" + m);
+
 
                 //2. instantiating tracker
                 //TODO Trajectory Envelope te?? // get parking envelope
@@ -177,7 +192,7 @@ public class TestMultiStartRobots  {
                 // This below is to start a parked robot only..
                 // TrajectoryEnvelope parkingEnvelope = solver.createParkingEnvelope(robotID, PARKING_DURATION, startAndGoal[0], startAndGoal[0].toString() , fp);
 
-                TrajectoryEnvelope runEnvelope = solver.createEnvelopeNoParking(robotID, rsp.getPath(),"(D)", fp);
+                TrajectoryEnvelope runEnvelope = solver.createEnvelopeNoParking(robotID, concatenate(path,pathInv),"(D)", fp);
                 System.out.println("parkingEnvelope.getTemporalVariable() : " + runEnvelope.getTemporalVariable());
                 TrackingCallback cb = new TrackingCallback(runEnvelope) {
                     @Override
@@ -205,7 +220,13 @@ public class TestMultiStartRobots  {
 
                     @Override
                     public void onTrackingFinished(int robotID, Pose currentPose) {
-                   /*    System.out.println("On Tracking Finished!!!! for robotID: " + robotID + " currentPose: " + currentPose);
+
+                   /*    Attempt of requeuing new missions after a tracking finished.
+                         .. what can be done here is instead having some randomization of a number
+                         with a probability of setting an entirely new mission instead of having the same
+                         mission which makes the robot go forward and backwards all the time
+
+                        System.out.println("On Tracking Finished!!!! for robotID: " + robotID + " currentPose: " + currentPose);
 
                         Pose[] startAndGoal = makeNewGoalFromStart(numberOfRobots, currentPose, 1.1*maxRobotRadius, 1.1*minRobotRadius, 2.1*maxRobotRadius);
                         simpleGreeting("newmission",myTE.getRobotID(), MAX_ACCELERATION, MAX_VELOCITY,port, startAndGoal[0], startAndGoal[1] , client, footprint, rsp.getPath());
@@ -245,7 +266,7 @@ public class TestMultiStartRobots  {
                 RemoteTrajectoryEnvelopeTrackerRK4 rk4 = new RemoteTrajectoryEnvelopeTrackerRK4(runEnvelope, 30, 1000, MAX_VELOCITY, MAX_ACCELERATION, cb) {
                     @Override
                     public RobotReport getRobotReport(int robotID) {
-                        return null;
+                        return getRobotReport();
                     }
 
                     @Override
@@ -254,8 +275,6 @@ public class TestMultiStartRobots  {
                         //return this.getCurrentTimeInMillis();
                         return 0;
                     }
-
-
 
                 };
 
@@ -270,11 +289,10 @@ public class TestMultiStartRobots  {
             int coordinatorResponse = 0;
             RobotReport rR = rk4.getRobotReport();
             client.makeRobotReport("my RobotReport", rR.getRobotID(), rR.getPose().getX()
-                    , rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
-                    rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
+                    , rR.getPose().getY(), rR.getPose().getTheta(), rR.getVelocity()
                     , rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
 
-            coordinatorResponse = simpleGreeting("greeting",robotID, MAX_VELOCITY, MAX_ACCELERATION, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
+            coordinatorResponse = simpleGreeting("greeting",robotID, MAX_VELOCITY, MAX_ACCELERATION, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath(), numberOfRobots);
 
 
             if (coordinatorResponse != -1) {
@@ -282,13 +300,12 @@ public class TestMultiStartRobots  {
                 //System.out.println("[Test1StartRobotGeneric] CoordinatorServer is alive, numberOfReplicas: " + coordinatorResponse);
                 rR = rk4.getRobotReport();
                 client.makeRobotReport("my RobotReport", rR.getRobotID(), rR.getPose().getX()
-                        , rR.getPose().getY(), rR.getPose().getZ(), rR.getPose().getRoll(),
-                        rR.getPose().getPitch(), rR.getPose().getYaw(), rR.getVelocity()
+                        , rR.getPose().getY(), rR.getPose().getTheta(), rR.getVelocity()
                         , rR.getPathIndex(), rR.getDistanceTraveled(), rR.getCriticalPoint());
 
                 //System.out.println("[Test1StartRobotGeneric] asked the coordinator for currentTime and got: " + client.makeCurrentTimeRequest());
 
-                coordinatorResponse = simpleGreeting("greeting",robotID, MAX_VELOCITY, MAX_ACCELERATION, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath());
+                coordinatorResponse = simpleGreeting("greeting",robotID, MAX_VELOCITY, MAX_ACCELERATION, port, startAndGoal[0], startAndGoal[1], client, footprint, rsp.getPath(), numberOfRobots);
                 rk4.setNumberOfReplicas(coordinatorResponse); //FIXME is the coordinator answering only the number of replicas?
             }
 
@@ -307,12 +324,12 @@ public class TestMultiStartRobots  {
      * note that the String target declaration in this class needs to be correct
      * */
 
-    public static int simpleGreeting(String kan, int robotID, double maxAccel, double maxVel, int port, Pose startPose, Pose endPose, FleetClient client, MakeFootPrint footprint, PoseSteering[] poseSteerings) {
+    public static int simpleGreeting(String kan, int robotID, double maxAccel, double maxVel, int port, Pose startPose, Pose endPose, FleetClient client, MakeFootPrint footprint, org.metacsp.multi.spatioTemporal.paths.PoseSteering[] poseSteerings, int numberOfRobots) {
         int requestResponse = 0;
         System.out.println("[TestMultiStartRobots] in simpleGreeting kan: " + kan);
         try {
             requestResponse = client.makeGreeting(kan, robotID, "simulated", InetAddress.getLocalHost().toString(), port, startPose, endPose,
-                    String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint, poseSteerings);
+                    String.valueOf(System.currentTimeMillis()), maxAccel, maxVel, 1000, footprint, poseSteerings, numberOfRobots);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
