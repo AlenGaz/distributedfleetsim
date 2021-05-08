@@ -3,12 +3,13 @@ package se.oru.coordination.coordination_oru.util;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinator;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import org.metacsp.multi.spatial.DE9IM.GeometricShapeDomain;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import org.metacsp.utility.UI.JTSDrawingPanel;
@@ -16,11 +17,9 @@ import org.metacsp.utility.UI.JTSDrawingPanel;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.geom.Polygon;
 
 import se.oru.coordination.coordination_oru.RobotReport;
-import se.oru.coordination.coordination_oru.TrajectoryEnvelopeCoordinator;
 
 public class JTSDrawingPanelVisualization implements FleetVisualization {
 
@@ -83,8 +82,8 @@ public class JTSDrawingPanelVisualization implements FleetVisualization {
 		//setPriorityOfEDT(Thread.MIN_PRIORITY);
 		//setPriorityOfEDT(Thread.MAX_PRIORITY);
 		panel.setSmoothTransitions(true);
-		panel.setArrowHeadSizeInMeters(0.6*TrajectoryEnvelopeCoordinator.MAX_DEFAULT_FOOTPRINT_DIMENSION);
-		panel.setTextSizeInMeters(0.8*TrajectoryEnvelopeCoordinator.MAX_DEFAULT_FOOTPRINT_DIMENSION);
+		panel.setArrowHeadSizeInMeters(0.6* RemoteTrajectoryEnvelopeCoordinatorSimulation.MAX_DEFAULT_FOOTPRINT_DIMENSION);
+		panel.setTextSizeInMeters(0.8* RemoteTrajectoryEnvelopeCoordinatorSimulation.MAX_DEFAULT_FOOTPRINT_DIMENSION);
 		//System.out.println("TEXT SIZE IN METERS IS " + 0.5*getMaxFootprintDimension(1));
 		if (mapYAMLFile != null) panel.setMap(mapYAMLFile);
 		panel.addKeyListener(new KeyListener() {

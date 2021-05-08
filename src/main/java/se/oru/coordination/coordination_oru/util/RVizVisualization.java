@@ -9,7 +9,6 @@ import java.awt.image.DataBufferByte;
 import java.awt.image.WritableRaster;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -41,11 +40,8 @@ import org.ros.node.topic.Publisher;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
-import geometry_msgs.Transform;
 import nav_msgs.OccupancyGrid;
 import se.oru.coordination.coordination_oru.RobotReport;
-import se.oru.coordination.coordination_oru.util.FleetVisualization;
-import se.oru.coordination.coordination_oru.util.Missions;
 import com.vividsolutions.jts.geom.Polygon;
 //import org.ros.visualization_msgs.MarkerArray;
 import visualization_msgs.MarkerArray;

@@ -1,0 +1,727 @@
+1620491691625@[RemoteTrajectoryEnvelopeCoordinator] Number of replicas for each send: 3
+1620491691719@[RemoteTrajectoryEnvelopeCoordinator] Status @ 237 ms
+1620491691732@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 0 ms
+1620491691734@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1620491691734@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1620491691734@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491691734@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1620491691734@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1620491691734@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1620491691734@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491692700@[RemoteTrajectoryEnvelopeCoordinator] Status @ 1243 ms
+1620491692700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1620491692701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1620491692701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1620491692701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491692701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1620491692701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1620491692701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1620491692701@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491693690@[RemoteTrajectoryEnvelopeCoordinator] Status @ 2233 ms
+1620491693690@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491693690@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 0 variables, 0 constraints
+1620491693690@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... 
+1620491693690@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491693690@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1620491693690@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 0, retransmitted: 0, number of replicas: 3.
+1620491693690@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1620491693690@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491694087@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot1is not specified. Returning the default value.
+1620491694132@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot1 in pose (1.8200, 9.0000, 5.4141): TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((1.8200, 9.0000, 5.4141))
+1620491694140@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot2is not specified. Returning the default value.
+1620491694324@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot1: [5]
+1620491694331@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot2 in pose (64.0200, 30.4000, 3.2489): TrajectoryEnvelope 2 (Robot 2, SE 7) [0;0] Parking ((64.0200, 30.4000, 3.2489))
+1620491694332@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot3is not specified. Returning the default value.
+1620491694401@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot2: [20]
+1620491694406@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot3 in pose (24.2200, 62.0000, 1.7770): TrajectoryEnvelope 4 (Robot 3, SE 13) [0;0] Parking ((24.2200, 62.0000, 1.7770))
+1620491694407@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot4is not specified. Returning the default value.
+1620491694439@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot4 in pose (55.8200, 22.2000, 0.3471): TrajectoryEnvelope 6 (Robot 4, SE 19) [0;0] Parking ((55.8200, 22.2000, 0.3471))
+1620491694441@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot5is not specified. Returning the default value.
+1620491694479@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot4: [30]
+1620491694485@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot5 in pose (67.0200, 53.8000, 0.3904): TrajectoryEnvelope 8 (Robot 5, SE 25) [0;0] Parking ((67.0200, 53.8000, 0.3904))
+1620491694487@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot6is not specified. Returning the default value.
+1620491694513@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot6 in pose (78.2200, 24.2000, 0.7153): TrajectoryEnvelope 10 (Robot 6, SE 31) [0;0] Parking ((78.2200, 24.2000, 0.7153))
+1620491694514@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot7is not specified. Returning the default value.
+1620491694567@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot6: [166]
+1620491694572@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot7 in pose (58.8200, 35.4000, 5.8984): TrajectoryEnvelope 12 (Robot 7, SE 37) [0;0] Parking ((58.8200, 35.4000, 5.8984))
+1620491694575@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot8is not specified. Returning the default value.
+1620491694604@[RemoteTrajectoryEnvelopeCoordinator] Stopping points along trajectory for Robot7: [81, 51]
+1620491694609@[RemoteTrajectoryEnvelopeCoordinator] Placed Robot8 in pose (49.6200, 46.6000, 6.2244): TrajectoryEnvelope 14 (Robot 8, SE 43) [0;0] Parking ((49.6200, 46.6000, 6.2244))
+1620491694700@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000}
+1620491694701@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000}
+1620491694701@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000}
+1620491694702@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000}
+1620491694703@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000}
+1620491694704@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000}
+1620491694705@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000}
+1620491694706@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000, 8=Distance: 0.0000  Pose: (49.6200, 46.6000, -0.0587)  Index: 0  Velocity: 0.0000}
+1620491694708@[RemoteTrajectoryEnvelopeCoordinator] Critical sections: []
+1620491694708@[RemoteTrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1620491694711@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot8is not specified. Returning the default value.
+1620491694715@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491694718@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: [20]
+1620491694718@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491694718@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491694718@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491694725@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point -1 to Robot8.
+1620491694728@[RemoteTrajectoryEnvelopeCoordinator] Status @ 3270 ms
+1620491694728@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1620491694728@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 17 variables, 43 constraints
+1620491694728@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (P): 0   Robot2 (P): 0   Robot3 (P): 0   Robot4 (P): 0   Robot5 (P): 0   Robot6 (P): 0   Robot7 (P): 0   Robot8 (D): 0   
+1620491694728@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/5(TE0)-0/0(TE0), 2=2/20(TE2)-0/0(TE0), 4=4/30(TE6)-0/0(TE0), 6=6/166(TE10)-0/0(TE0), 7=7/51(TE12)-0/0(TE0)}
+1620491694728@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1620491694728@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 1, retransmitted: 0, number of replicas: 3.
+1620491694728@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1620491694728@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491695692@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000}
+1620491695693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000}
+1620491695693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000}
+1620491695694@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000}
+1620491695695@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000}
+1620491695695@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000}
+1620491695696@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000}
+1620491695697@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000, 8=Distance: 0.0000  Pose: (49.6200, 46.6000, -0.0587)  Index: 0  Velocity: 0.0000}
+1620491695700@[RemoteTrajectoryEnvelopeCoordinator] 8 is driving.
+1620491695703@[RemoteTrajectoryEnvelopeCoordinator] Critical sections: []
+1620491695703@[RemoteTrajectoryEnvelopeCoordinator] There are now 0 critical sections
+1620491695706@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot7is not specified. Returning the default value.
+1620491695707@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491695707@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: [20]
+1620491695707@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491695707@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491695707@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491695708@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 51 to Robot7.
+1620491695708@[RemoteTrajectoryEnvelopeCoordinator] Status @ 4251 ms
+1620491695708@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1620491695708@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 18 variables, 46 constraints
+1620491695708@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (P): 0   Robot2 (P): 0   Robot3 (P): 0   Robot4 (P): 0   Robot5 (P): 0   Robot6 (P): 0   Robot7 (D): 0   Robot8 (D): 0   
+1620491695708@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/5(TE0)-0/0(TE0), 2=2/20(TE2)-0/0(TE0), 4=4/30(TE6)-0/0(TE0), 6=6/166(TE10)-0/0(TE0), 7=7/51(TE13)-0/0(TE0)}
+1620491695708@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1620491695708@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 2, retransmitted: 0, number of replicas: 3.
+1620491695709@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1620491695709@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491696692@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000}
+1620491696693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000}
+1620491696693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000}
+1620491696693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000}
+1620491696694@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000}
+1620491696694@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000}
+1620491696695@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000}
+1620491696695@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000, 8=Distance: 0.0000  Pose: (49.6200, 46.6000, -0.0587)  Index: 0  Velocity: 0.0000}
+1620491696696@[RemoteTrajectoryEnvelopeCoordinator] 7 is driving.
+1620491696696@[RemoteTrajectoryEnvelopeCoordinator] 8 is driving.
+1620491696708@[RemoteTrajectoryEnvelopeCoordinator] Critical sections: [CriticalSection (Robot6 [38;55], Robot4 [0;0])]
+1620491696708@[RemoteTrajectoryEnvelopeCoordinator] There are now 1 critical sections
+1620491696713@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot6is not specified. Returning the default value.
+1620491696714@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491696714@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: [20]
+1620491696714@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491696714@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491696714@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491696743@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 35 to Robot6.
+1620491696744@[RemoteTrajectoryEnvelopeCoordinator] Status @ 5286 ms
+1620491696744@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491696744@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 19 variables, 49 constraints
+1620491696744@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (P): 0   Robot2 (P): 0   Robot3 (P): 0   Robot4 (P): 0   Robot5 (P): 0   Robot6 (D): 0   Robot7 (D): 0   Robot8 (D): 0   
+1620491696744@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/5(TE0)-0/0(TE0), 2=2/20(TE2)-0/0(TE0), 4=4/30(TE6)-0/0(TE0), 6=6/35(TE11)-4/0(TE6), 7=7/51(TE13)-0/0(TE0)}
+1620491696744@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1620491696744@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 3, retransmitted: 0, number of replicas: 3.
+1620491696744@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1620491696744@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491697692@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000}
+1620491697692@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000}
+1620491697692@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000}
+1620491697693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000}
+1620491697693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000}
+1620491697693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000}
+1620491697693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000}
+1620491697694@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 0.0000  Pose: (1.8200, 9.0000, -0.8691)  Index: 0  Velocity: 0.0000, 2=Distance: 0.0000  Pose: (64.0200, 30.4000, -3.0343)  Index: 0  Velocity: 0.0000, 3=Distance: 0.0000  Pose: (24.2200, 62.0000, 1.7770)  Index: 0  Velocity: 0.0000, 4=Distance: 0.0000  Pose: (55.8200, 22.2000, 0.3471)  Index: 0  Velocity: 0.0000, 5=Distance: 0.0000  Pose: (67.0200, 53.8000, 0.3904)  Index: 0  Velocity: 0.0000, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000, 8=Distance: 0.0000  Pose: (49.6200, 46.6000, -0.0587)  Index: 0  Velocity: 0.0000}
+1620491697694@[RemoteTrajectoryEnvelopeCoordinator] 6 is driving.
+1620491697694@[RemoteTrajectoryEnvelopeCoordinator] 7 is driving.
+1620491697694@[RemoteTrajectoryEnvelopeCoordinator] 8 is driving.
+1620491697706@[RemoteTrajectoryEnvelopeCoordinator] Critical sections: [CriticalSection (Robot8 [0;21], Robot5 [31;56]), CriticalSection (Robot5 [31;45], Robot8 [0;0]), CriticalSection (Robot6 [38;55], Robot4 [0;0])]
+1620491697706@[RemoteTrajectoryEnvelopeCoordinator] There are now 3 critical sections
+1620491697712@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot5is not specified. Returning the default value.
+1620491697713@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491697713@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: [20]
+1620491697713@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491697713@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491697713@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491697728@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 28 to Robot5.
+1620491697728@[RemoteTrajectoryEnvelopeCoordinator] Status @ 6271 ms
+1620491697729@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491697729@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 20 variables, 52 constraints
+1620491697729@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (P): 0   Robot2 (P): 0   Robot3 (P): 0   Robot4 (P): 0   Robot5 (D): 0   Robot6 (D): 0   Robot7 (D): 0   Robot8 (D): 0   
+1620491697729@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/5(TE0)-0/0(TE0), 2=2/20(TE2)-0/0(TE0), 4=4/30(TE6)-0/0(TE0), 5=5/28(TE9)-8/0(TE15), 6=6/35(TE11)-4/0(TE6), 7=7/51(TE13)-0/0(TE0)}
+1620491697729@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1620491697729@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 4, retransmitted: 0, number of replicas: 3.
+1620491697729@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 0.
+1620491697729@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491698692@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 1.0012  Pose: (1.1485, 9.7425, -0.8023)  Index: 1  Velocity: 2.4510}
+1620491698692@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 1.0012  Pose: (1.1485, 9.7425, -0.8023)  Index: 1  Velocity: 2.4510, 2=Distance: 0.2043  Pose: (63.8173, 30.3747, -3.0207)  Index: 0  Velocity: 0.9040}
+1620491698693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 1.0012  Pose: (1.1485, 9.7425, -0.8023)  Index: 1  Velocity: 2.4510, 2=Distance: 0.2043  Pose: (63.8173, 30.3747, -3.0207)  Index: 0  Velocity: 0.9040, 3=Distance: 0.1933  Pose: (24.2628, 61.8115, 1.7899)  Index: 0  Velocity: 1.0770}
+1620491698693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 1.0012  Pose: (1.1485, 9.7425, -0.8023)  Index: 1  Velocity: 2.4510, 2=Distance: 0.2043  Pose: (63.8173, 30.3747, -3.0207)  Index: 0  Velocity: 0.9040, 3=Distance: 0.1933  Pose: (24.2628, 61.8115, 1.7899)  Index: 0  Velocity: 1.0770, 4=Distance: 0.1332  Pose: (55.6955, 22.1526, 0.3559)  Index: 0  Velocity: 0.8940}
+1620491698693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 1.0012  Pose: (1.1485, 9.7425, -0.8023)  Index: 1  Velocity: 2.4510, 2=Distance: 0.2043  Pose: (63.8173, 30.3747, -3.0207)  Index: 0  Velocity: 0.9040, 3=Distance: 0.1933  Pose: (24.2628, 61.8115, 1.7899)  Index: 0  Velocity: 1.0770, 4=Distance: 0.1332  Pose: (55.6955, 22.1526, 0.3559)  Index: 0  Velocity: 0.8940, 5=Distance: 0.0444  Pose: (66.9787, 53.7838, 0.3874)  Index: 0  Velocity: 0.5160}
+1620491698693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 1.0012  Pose: (1.1485, 9.7425, -0.8023)  Index: 1  Velocity: 2.4510, 2=Distance: 0.2043  Pose: (63.8173, 30.3747, -3.0207)  Index: 0  Velocity: 0.9040, 3=Distance: 0.1933  Pose: (24.2628, 61.8115, 1.7899)  Index: 0  Velocity: 1.0770, 4=Distance: 0.1332  Pose: (55.6955, 22.1526, 0.3559)  Index: 0  Velocity: 0.8940, 5=Distance: 0.0444  Pose: (66.9787, 53.7838, 0.3874)  Index: 0  Velocity: 0.5160, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000}
+1620491698693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 1.0012  Pose: (1.1485, 9.7425, -0.8023)  Index: 1  Velocity: 2.4510, 2=Distance: 0.2043  Pose: (63.8173, 30.3747, -3.0207)  Index: 0  Velocity: 0.9040, 3=Distance: 0.1933  Pose: (24.2628, 61.8115, 1.7899)  Index: 0  Velocity: 1.0770, 4=Distance: 0.1332  Pose: (55.6955, 22.1526, 0.3559)  Index: 0  Velocity: 0.8940, 5=Distance: 0.0444  Pose: (66.9787, 53.7838, 0.3874)  Index: 0  Velocity: 0.5160, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000}
+1620491698694@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 1.0012  Pose: (1.1485, 9.7425, -0.8023)  Index: 1  Velocity: 2.4510, 2=Distance: 0.2043  Pose: (63.8173, 30.3747, -3.0207)  Index: 0  Velocity: 0.9040, 3=Distance: 0.1933  Pose: (24.2628, 61.8115, 1.7899)  Index: 0  Velocity: 1.0770, 4=Distance: 0.1332  Pose: (55.6955, 22.1526, 0.3559)  Index: 0  Velocity: 0.8940, 5=Distance: 0.0444  Pose: (66.9787, 53.7838, 0.3874)  Index: 0  Velocity: 0.5160, 6=Distance: 0.0000  Pose: (78.2200, 24.2000, 0.7153)  Index: 0  Velocity: 0.0000, 7=Distance: 0.0000  Pose: (58.8200, 35.4000, -0.3848)  Index: 0  Velocity: 0.0000, 8=Distance: 0.0000  Pose: (49.6200, 46.6000, -0.0587)  Index: 0  Velocity: 0.0000}
+1620491698694@[RemoteTrajectoryEnvelopeCoordinator] 5 is driving.
+1620491698694@[RemoteTrajectoryEnvelopeCoordinator] 6 is driving.
+1620491698694@[RemoteTrajectoryEnvelopeCoordinator] 7 is driving.
+1620491698694@[RemoteTrajectoryEnvelopeCoordinator] 8 is driving.
+1620491698715@[RemoteTrajectoryEnvelopeCoordinator] Critical sections: [CriticalSection (Robot6 [67;84], Robot4 [51;67]), CriticalSection (Robot8 [0;21], Robot5 [31;56]), CriticalSection (Robot5 [31;45], Robot8 [0;0]), CriticalSection (Robot6 [38;55], Robot4 [0;0]), CriticalSection (Robot6 [38;56], Robot4 [0;9])]
+1620491698715@[RemoteTrajectoryEnvelopeCoordinator] There are now 5 critical sections
+1620491698724@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot4is not specified. Returning the default value.
+1620491698727@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491698727@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: [20]
+1620491698727@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491698728@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491698728@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491698741@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 30 to Robot4.
+1620491698751@[RemoteTrajectoryEnvelopeCoordinator] Status @ 7294 ms
+1620491698751@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491698751@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 21 variables, 55 constraints
+1620491698751@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (P): 1   Robot2 (P): 0   Robot3 (P): 0   Robot4 (D): 0   Robot5 (D): 0   Robot6 (D): 0   Robot7 (D): 0   Robot8 (D): 0   
+1620491698751@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/5(TE0)-0/0(TE0), 2=2/20(TE2)-0/0(TE0), 4=4/30(TE7)-0/0(TE0), 5=5/28(TE9)-8/0(TE15), 6=6/35(TE11)-4/0(TE7), 7=7/51(TE13)-0/0(TE0)}
+1620491698751@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 0.
+1620491698751@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 5, retransmitted: 0, number of replicas: 3.
+1620491698751@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 1.
+1620491698751@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491699696@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 2.9573  Pose: (-0.2994, 11.0557, -0.6719)  Index: 5  Velocity: 0.8310}
+1620491699697@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 2.9573  Pose: (-0.2994, 11.0557, -0.6719)  Index: 5  Velocity: 0.8310, 2=Distance: 2.3562  Pose: (61.7071, 29.9632, -2.8772)  Index: 4  Velocity: 2.9950}
+1620491699697@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 2.9573  Pose: (-0.2994, 11.0557, -0.6719)  Index: 5  Velocity: 0.8310, 2=Distance: 2.3562  Pose: (61.7071, 29.9632, -2.8772)  Index: 4  Velocity: 2.9950, 3=Distance: 2.4768  Pose: (24.9255, 59.6286, 1.9422)  Index: 4  Velocity: 3.8550}
+1620491699698@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 2.9573  Pose: (-0.2994, 11.0557, -0.6719)  Index: 5  Velocity: 0.8310, 2=Distance: 2.3562  Pose: (61.7071, 29.9632, -2.8772)  Index: 4  Velocity: 2.9950, 3=Distance: 2.4768  Pose: (24.9255, 59.6286, 1.9422)  Index: 4  Velocity: 3.8550, 4=Distance: 2.1099  Pose: (53.8933, 21.3443, 0.4877)  Index: 4  Velocity: 3.5580}
+1620491699698@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 2.9573  Pose: (-0.2994, 11.0557, -0.6719)  Index: 5  Velocity: 0.8310, 2=Distance: 2.3562  Pose: (61.7071, 29.9632, -2.8772)  Index: 4  Velocity: 2.9950, 3=Distance: 2.4768  Pose: (24.9255, 59.6286, 1.9422)  Index: 4  Velocity: 3.8550, 4=Distance: 2.1099  Pose: (53.8933, 21.3443, 0.4877)  Index: 4  Velocity: 3.5580, 5=Distance: 1.8051  Pose: (65.3259, 53.1772, 0.3429)  Index: 3  Velocity: 3.2910}
+1620491699698@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 2.9573  Pose: (-0.2994, 11.0557, -0.6719)  Index: 5  Velocity: 0.8310, 2=Distance: 2.3562  Pose: (61.7071, 29.9632, -2.8772)  Index: 4  Velocity: 2.9950, 3=Distance: 2.4768  Pose: (24.9255, 59.6286, 1.9422)  Index: 4  Velocity: 3.8550, 4=Distance: 2.1099  Pose: (53.8933, 21.3443, 0.4877)  Index: 4  Velocity: 3.5580, 5=Distance: 1.8051  Pose: (65.3259, 53.1772, 0.3429)  Index: 3  Velocity: 3.2910, 6=Distance: 1.7238  Pose: (76.8555, 23.1483, 0.6004)  Index: 3  Velocity: 3.2160}
+1620491699699@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 2.9573  Pose: (-0.2994, 11.0557, -0.6719)  Index: 5  Velocity: 0.8310, 2=Distance: 2.3562  Pose: (61.7071, 29.9632, -2.8772)  Index: 4  Velocity: 2.9950, 3=Distance: 2.4768  Pose: (24.9255, 59.6286, 1.9422)  Index: 4  Velocity: 3.8550, 4=Distance: 2.1099  Pose: (53.8933, 21.3443, 0.4877)  Index: 4  Velocity: 3.5580, 5=Distance: 1.8051  Pose: (65.3259, 53.1772, 0.3429)  Index: 3  Velocity: 3.2910, 6=Distance: 1.7238  Pose: (76.8555, 23.1483, 0.6004)  Index: 3  Velocity: 3.2160, 7=Distance: 0.3996  Pose: (59.1929, 35.2562, -0.3582)  Index: 0  Velocity: 0.8940}
+1620491699699@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 2.9573  Pose: (-0.2994, 11.0557, -0.6719)  Index: 5  Velocity: 0.8310, 2=Distance: 2.3562  Pose: (61.7071, 29.9632, -2.8772)  Index: 4  Velocity: 2.9950, 3=Distance: 2.4768  Pose: (24.9255, 59.6286, 1.9422)  Index: 4  Velocity: 3.8550, 4=Distance: 2.1099  Pose: (53.8933, 21.3443, 0.4877)  Index: 4  Velocity: 3.5580, 5=Distance: 1.8051  Pose: (65.3259, 53.1772, 0.3429)  Index: 3  Velocity: 3.2910, 6=Distance: 1.7238  Pose: (76.8555, 23.1483, 0.6004)  Index: 3  Velocity: 3.2160, 7=Distance: 0.3996  Pose: (59.1929, 35.2562, -0.3582)  Index: 0  Velocity: 0.8940, 8=Distance: 0.8780  Pose: (48.7425, 46.6240, -0.0002)  Index: 1  Velocity: 1.8740}
+1620491699700@[RemoteTrajectoryEnvelopeCoordinator] 4 is driving.
+1620491699701@[RemoteTrajectoryEnvelopeCoordinator] 5 is driving.
+1620491699701@[RemoteTrajectoryEnvelopeCoordinator] 6 is driving.
+1620491699701@[RemoteTrajectoryEnvelopeCoordinator] 7 is driving.
+1620491699702@[RemoteTrajectoryEnvelopeCoordinator] 8 is driving.
+1620491699711@[RemoteTrajectoryEnvelopeCoordinator] Critical sections: [CriticalSection (Robot6 [67;84], Robot4 [51;67]), CriticalSection (Robot8 [7;23], Robot3 [42;59]), CriticalSection (Robot8 [0;21], Robot5 [31;56]), CriticalSection (Robot5 [42;56], Robot3 [46;60]), CriticalSection (Robot5 [31;45], Robot8 [0;0]), CriticalSection (Robot6 [38;55], Robot4 [0;0]), CriticalSection (Robot6 [38;56], Robot4 [0;9])]
+1620491699711@[RemoteTrajectoryEnvelopeCoordinator] There are now 7 critical sections
+1620491699715@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot3is not specified. Returning the default value.
+1620491699717@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491699717@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: [20]
+1620491699717@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491699717@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491699717@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491699736@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 39 to Robot3.
+1620491699736@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 39 to Robot6.
+1620491699736@[RemoteTrajectoryEnvelopeCoordinator] Status @ 8279 ms
+1620491699737@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1620491699737@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 22 variables, 58 constraints
+1620491699737@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (P): 5   Robot2 (P): 4   Robot3 (D): 4   Robot4 (D): 4   Robot5 (D): 3   Robot6 (D): 3   Robot7 (D): 0   Robot8 (D): 1   
+1620491699737@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/5(TE0)-0/0(TE0), 2=2/20(TE2)-0/0(TE0), 3=3/39(TE5)-8/23(TE15), 4=4/30(TE7)-0/0(TE0), 5=5/28(TE9)-8/21(TE15), 6=6/39(TE11)-4/9(TE7), 7=7/51(TE13)-0/0(TE0)}
+1620491699737@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 2.
+1620491699737@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 7, retransmitted: 0, number of replicas: 3.
+1620491699737@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 1.
+1620491699737@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491700693@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 4.2191  Pose: (0.6339, 10.4237, -0.5631)  Index: 9  Velocity: 2.6460}
+1620491700694@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 4.2191  Pose: (0.6339, 10.4237, -0.5631)  Index: 9  Velocity: 2.6460, 2=Distance: 5.4442  Pose: (58.8303, 28.8565, -2.6713)  Index: 10  Velocity: 3.2210}
+1620491700694@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 4.2191  Pose: (0.6339, 10.4237, -0.5631)  Index: 9  Velocity: 2.6460, 2=Distance: 5.4442  Pose: (58.8303, 28.8565, -2.6713)  Index: 10  Velocity: 3.2210, 3=Distance: 6.6323  Pose: (26.9470, 56.0132, 2.2192)  Index: 13  Velocity: 4.1985}
+1620491700694@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 4.2191  Pose: (0.6339, 10.4237, -0.5631)  Index: 9  Velocity: 2.6460, 2=Distance: 5.4442  Pose: (58.8303, 28.8565, -2.6713)  Index: 10  Velocity: 3.2210, 3=Distance: 6.6323  Pose: (26.9470, 56.0132, 2.2192)  Index: 13  Velocity: 4.1985, 4=Distance: 6.4289  Pose: (50.4203, 18.8023, 0.7757)  Index: 12  Velocity: 4.0455}
+1620491700694@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 4.2191  Pose: (0.6339, 10.4237, -0.5631)  Index: 9  Velocity: 2.6460, 2=Distance: 5.4442  Pose: (58.8303, 28.8565, -2.6713)  Index: 10  Velocity: 3.2210, 3=Distance: 6.6323  Pose: (26.9470, 56.0132, 2.2192)  Index: 13  Velocity: 4.1985, 4=Distance: 6.4289  Pose: (50.4203, 18.8023, 0.7757)  Index: 12  Velocity: 4.0455, 5=Distance: 6.2123  Pose: (61.1753, 51.6954, 0.3429)  Index: 12  Velocity: 4.2140}
+1620491700695@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 4.2191  Pose: (0.6339, 10.4237, -0.5631)  Index: 9  Velocity: 2.6460, 2=Distance: 5.4442  Pose: (58.8303, 28.8565, -2.6713)  Index: 10  Velocity: 3.2210, 3=Distance: 6.6323  Pose: (26.9470, 56.0132, 2.2192)  Index: 13  Velocity: 4.1985, 4=Distance: 6.4289  Pose: (50.4203, 18.8023, 0.7757)  Index: 12  Velocity: 4.0455, 5=Distance: 6.2123  Pose: (61.1753, 51.6954, 0.3429)  Index: 12  Velocity: 4.2140, 6=Distance: 5.6214  Pose: (73.3916, 21.3860, 0.3405)  Index: 11  Velocity: 4.2780}
+1620491700695@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 4.2191  Pose: (0.6339, 10.4237, -0.5631)  Index: 9  Velocity: 2.6460, 2=Distance: 5.4442  Pose: (58.8303, 28.8565, -2.6713)  Index: 10  Velocity: 3.2210, 3=Distance: 6.6323  Pose: (26.9470, 56.0132, 2.2192)  Index: 13  Velocity: 4.1985, 4=Distance: 6.4289  Pose: (50.4203, 18.8023, 0.7757)  Index: 12  Velocity: 4.0455, 5=Distance: 6.2123  Pose: (61.1753, 51.6954, 0.3429)  Index: 12  Velocity: 4.2140, 6=Distance: 5.6214  Pose: (73.3916, 21.3860, 0.3405)  Index: 11  Velocity: 4.2780, 7=Distance: 1.8779  Pose: (60.6006, 34.8073, -0.2596)  Index: 3  Velocity: 1.9380}
+1620491700695@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 4.2191  Pose: (0.6339, 10.4237, -0.5631)  Index: 9  Velocity: 2.6460, 2=Distance: 5.4442  Pose: (58.8303, 28.8565, -2.6713)  Index: 10  Velocity: 3.2210, 3=Distance: 6.6323  Pose: (26.9470, 56.0132, 2.2192)  Index: 13  Velocity: 4.1985, 4=Distance: 6.4289  Pose: (50.4203, 18.8023, 0.7757)  Index: 12  Velocity: 4.0455, 5=Distance: 6.2123  Pose: (61.1753, 51.6954, 0.3429)  Index: 12  Velocity: 4.2140, 6=Distance: 5.6214  Pose: (73.3916, 21.3860, 0.3405)  Index: 11  Velocity: 4.2780, 7=Distance: 1.8779  Pose: (60.6006, 34.8073, -0.2596)  Index: 3  Velocity: 1.9380, 8=Distance: 3.5544  Pose: (46.0722, 46.4576, 0.0818)  Index: 6  Velocity: 3.0297}
+1620491700696@[RemoteTrajectoryEnvelopeCoordinator] 3 is driving.
+1620491700696@[RemoteTrajectoryEnvelopeCoordinator] 4 is driving.
+1620491700696@[RemoteTrajectoryEnvelopeCoordinator] 5 is driving.
+1620491700696@[RemoteTrajectoryEnvelopeCoordinator] 6 is driving.
+1620491700696@[RemoteTrajectoryEnvelopeCoordinator] 7 is driving.
+1620491700696@[RemoteTrajectoryEnvelopeCoordinator] 8 is driving.
+1620491700709@[RemoteTrajectoryEnvelopeCoordinator] Critical sections: [CriticalSection (Robot6 [67;84], Robot4 [51;67]), CriticalSection (Robot8 [7;23], Robot3 [42;59]), CriticalSection (Robot3 [76;76], Robot2 [54;61]), CriticalSection (Robot8 [0;21], Robot5 [31;56]), CriticalSection (Robot5 [42;56], Robot3 [46;60]), CriticalSection (Robot6 [49;57], Robot2 [21;21]), CriticalSection (Robot7 [0;5], Robot2 [38;50]), CriticalSection (Robot6 [38;56], Robot4 [0;9]), CriticalSection (Robot5 [26;38], Robot2 [67;80])]
+1620491700709@[RemoteTrajectoryEnvelopeCoordinator] There are now 9 critical sections
+1620491700713@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot2is not specified. Returning the default value.
+1620491700716@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491700716@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: [20]
+1620491700716@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491700716@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491700716@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491700731@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 20 to Robot2.
+1620491700731@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 31 to Robot5.
+1620491700732@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 46 to Robot6.
+1620491700733@[RemoteTrajectoryEnvelopeCoordinator] Status @ 9275 ms
+1620491700733@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491700733@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 23 variables, 61 constraints
+1620491700733@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (P): 9   Robot2 (D): 10   Robot3 (D): 14   Robot4 (D): 12   Robot5 (D): 12   Robot6 (D): 11   Robot7 (D): 3   Robot8 (D): 6   
+1620491700733@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/5(TE0)-0/0(TE0), 2=2/20(TE3)-0/0(TE0), 3=3/39(TE5)-8/23(TE15), 4=4/30(TE7)-0/0(TE0), 5=5/31(TE9)-8/21(TE15), 6=6/46(TE11)-2/21(TE3), 7=7/51(TE13)-0/0(TE0)}
+1620491700733@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 3.
+1620491700733@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 10, retransmitted: 0, number of replicas: 3.
+1620491700733@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 3.
+1620491700733@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491701695@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 8.5099  Pose: (4.5387, 8.6811, -0.2770)  Index: 17  Velocity: 4.2000}
+1620491701696@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 8.5099  Pose: (4.5387, 8.6811, -0.2770)  Index: 17  Velocity: 4.2000, 2=Distance: 8.7477  Pose: (56.0737, 27.0486, -2.4511)  Index: 17  Velocity: 2.8550}
+1620491701697@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 8.5099  Pose: (4.5387, 8.6811, -0.2770)  Index: 17  Velocity: 4.2000, 2=Distance: 8.7477  Pose: (56.0737, 27.0486, -2.4511)  Index: 17  Velocity: 2.8550, 3=Distance: 10.8560  Pose: (29.9359, 53.0490, 2.5008)  Index: 21  Velocity: 4.1985}
+1620491701699@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 8.5099  Pose: (4.5387, 8.6811, -0.2770)  Index: 17  Velocity: 4.2000, 2=Distance: 8.7477  Pose: (56.0737, 27.0486, -2.4511)  Index: 17  Velocity: 2.8550, 3=Distance: 10.8560  Pose: (29.9359, 53.0490, 2.5008)  Index: 21  Velocity: 4.1985, 4=Distance: 10.2559  Pose: (48.0576, 15.8053, 1.0308)  Index: 20  Velocity: 4.0455}
+1620491701701@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 8.5099  Pose: (4.5387, 8.6811, -0.2770)  Index: 17  Velocity: 4.2000, 2=Distance: 8.7477  Pose: (56.0737, 27.0486, -2.4511)  Index: 17  Velocity: 2.8550, 3=Distance: 10.8560  Pose: (29.9359, 53.0490, 2.5008)  Index: 21  Velocity: 4.1985, 4=Distance: 10.2559  Pose: (48.0576, 15.8053, 1.0308)  Index: 20  Velocity: 4.0455, 5=Distance: 9.9038  Pose: (57.6987, 50.4542, 0.3429)  Index: 19  Velocity: 4.2140}
+1620491701704@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 8.5099  Pose: (4.5387, 8.6811, -0.2770)  Index: 17  Velocity: 4.2000, 2=Distance: 8.7477  Pose: (56.0737, 27.0486, -2.4511)  Index: 17  Velocity: 2.8550, 3=Distance: 10.8560  Pose: (29.9359, 53.0490, 2.5008)  Index: 21  Velocity: 4.1985, 4=Distance: 10.2559  Pose: (48.0576, 15.8053, 1.0308)  Index: 20  Velocity: 4.0455, 5=Distance: 9.9038  Pose: (57.6987, 50.4542, 0.3429)  Index: 19  Velocity: 4.2140, 6=Distance: 9.6556  Pose: (69.4548, 20.5633, 0.0715)  Index: 19  Velocity: 4.2780}
+1620491701706@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 8.5099  Pose: (4.5387, 8.6811, -0.2770)  Index: 17  Velocity: 4.2000, 2=Distance: 8.7477  Pose: (56.0737, 27.0486, -2.4511)  Index: 17  Velocity: 2.8550, 3=Distance: 10.8560  Pose: (29.9359, 53.0490, 2.5008)  Index: 21  Velocity: 4.1985, 4=Distance: 10.2559  Pose: (48.0576, 15.8053, 1.0308)  Index: 20  Velocity: 4.0455, 5=Distance: 9.9038  Pose: (57.6987, 50.4542, 0.3429)  Index: 19  Velocity: 4.2140, 6=Distance: 9.6556  Pose: (69.4548, 20.5633, 0.0715)  Index: 19  Velocity: 4.2780, 7=Distance: 3.9126  Pose: (62.5963, 34.4197, -0.1240)  Index: 7  Velocity: 2.0395}
+1620491701707@[RemoteTrajectoryEnvelopeCoordinator] Current reports: {1=Distance: 8.5099  Pose: (4.5387, 8.6811, -0.2770)  Index: 17  Velocity: 4.2000, 2=Distance: 8.7477  Pose: (56.0737, 27.0486, -2.4511)  Index: 17  Velocity: 2.8550, 3=Distance: 10.8560  Pose: (29.9359, 53.0490, 2.5008)  Index: 21  Velocity: 4.1985, 4=Distance: 10.2559  Pose: (48.0576, 15.8053, 1.0308)  Index: 20  Velocity: 4.0455, 5=Distance: 9.9038  Pose: (57.6987, 50.4542, 0.3429)  Index: 19  Velocity: 4.2140, 6=Distance: 9.6556  Pose: (69.4548, 20.5633, 0.0715)  Index: 19  Velocity: 4.2780, 7=Distance: 3.9126  Pose: (62.5963, 34.4197, -0.1240)  Index: 7  Velocity: 2.0395, 8=Distance: 6.6083  Pose: (43.0285, 46.2081, 0.0818)  Index: 12  Velocity: 3.0297}
+1620491701707@[RemoteTrajectoryEnvelopeCoordinator] 2 is driving.
+1620491701707@[RemoteTrajectoryEnvelopeCoordinator] 3 is driving.
+1620491701707@[RemoteTrajectoryEnvelopeCoordinator] 4 is driving.
+1620491701707@[RemoteTrajectoryEnvelopeCoordinator] 5 is driving.
+1620491701708@[RemoteTrajectoryEnvelopeCoordinator] 6 is driving.
+1620491701708@[RemoteTrajectoryEnvelopeCoordinator] 7 is driving.
+1620491701708@[RemoteTrajectoryEnvelopeCoordinator] 8 is driving.
+1620491701719@[RemoteTrajectoryEnvelopeCoordinator] Critical sections: [CriticalSection (Robot8 [7;23], Robot3 [42;59]), CriticalSection (Robot2 [76;87], Robot1 [140;150]), CriticalSection (Robot3 [50;61], Robot1 [124;135]), CriticalSection (Robot3 [76;76], Robot2 [54;61]), CriticalSection (Robot8 [0;21], Robot5 [31;56]), CriticalSection (Robot5 [42;56], Robot3 [46;60]), CriticalSection (Robot6 [49;57], Robot2 [21;21]), CriticalSection (Robot6 [93;106], Robot1 [77;89]), CriticalSection (Robot7 [0;5], Robot2 [38;50]), CriticalSection (Robot6 [67;84], Robot4 [51;67]), CriticalSection (Robot5 [38;55], Robot1 [123;141]), CriticalSection (Robot8 [2;16], Robot1 [126;140]), CriticalSection (Robot4 [75;87], Robot1 [84;96]), CriticalSection (Robot5 [26;38], Robot2 [67;80])]
+1620491701719@[RemoteTrajectoryEnvelopeCoordinator] There are now 14 critical sections
+1620491701724@[RemoteTrajectoryEnvelopeCoordinator] Tracking period of Robot1is not specified. Returning the default value.
+1620491701727@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491701727@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: [20]
+1620491701727@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491701727@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491701727@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491701742@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 81 to Robot1.
+1620491701742@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 37 to Robot5.
+1620491701752@[RemoteTrajectoryEnvelopeCoordinator] Status @ 10286 ms
+1620491701752@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1620491701752@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491701752@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 17   Robot2 (D): 17   Robot3 (D): 21   Robot4 (D): 20   Robot5 (D): 21   Robot6 (D): 19   Robot7 (D): 7   Robot8 (D): 12   
+1620491701752@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/81(TE1)-4/87(TE7), 2=2/20(TE3)-0/0(TE0), 3=3/39(TE5)-8/23(TE15), 4=4/30(TE7)-0/0(TE0), 5=5/37(TE9)-8/21(TE15), 6=6/46(TE11)-2/21(TE3), 7=7/51(TE13)-0/0(TE0)}
+1620491701752@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 4.
+1620491701752@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 12, retransmitted: 0, number of replicas: 3.
+1620491701752@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491701752@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491702694@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491702694@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: [20]
+1620491702695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491702695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491702695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491702695@[RemoteTrajectoryEnvelopeCoordinator] Waiting thread starts for 2
+1620491702698@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 43 to Robot5.
+1620491702699@[RemoteTrajectoryEnvelopeCoordinator] Status @ 11242 ms
+1620491702699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1620491702699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491702699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 24   Robot2 (D): 20   Robot3 (D): 29   Robot4 (D): 27   Robot5 (D): 27   Robot6 (D): 26   Robot7 (D): 11   Robot8 (D): 18   
+1620491702699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/81(TE1)-4/87(TE7), 2=2/20(TE3)-0/0(TE0), 3=3/39(TE5)-8/23(TE15), 4=4/30(TE7)-0/0(TE0), 5=5/43(TE9)-8/21(TE15), 6=6/46(TE11)-2/21(TE3), 7=7/51(TE13)-0/0(TE0)}
+1620491702699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 5.
+1620491702699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 13, retransmitted: 0, number of replicas: 3.
+1620491702699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491702699@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491702797@[RemoteTrajectoryEnvelopeCoordinator] Waiting thread finishes for 2
+1620491702798@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491702800@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491702800@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491702800@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491702800@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491702818@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 64 to Robot2.
+1620491703695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491703695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491703695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491703695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491703695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491703697@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 65 to Robot2.
+1620491703697@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point -1 to Robot4.
+1620491703697@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point -1 to Robot5.
+1620491703697@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 64 to Robot6.
+1620491703697@[RemoteTrajectoryEnvelopeCoordinator] Status @ 12240 ms
+1620491703697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491703697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491703697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 33   Robot2 (D): 24   Robot3 (D): 37   Robot4 (D): 32   Robot5 (D): 36   Robot6 (D): 35   Robot7 (D): 15   Robot8 (D): 23   
+1620491703698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/81(TE1)-4/87(TE7), 2=2/65(TE3)-5/38(TE9), 3=3/39(TE5)-8/23(TE15), 6=6/64(TE11)-4/67(TE7), 7=7/51(TE13)-0/0(TE0)}
+1620491703698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 7.
+1620491703698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 18, retransmitted: 0, number of replicas: 3.
+1620491703698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491703698@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491704695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491704695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491704695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491704695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491704695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491704711@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point -1 to Robot2.
+1620491704711@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 43 to Robot3.
+1620491704712@[RemoteTrajectoryEnvelopeCoordinator] Status @ 13255 ms
+1620491704712@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491704712@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491704712@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 41   Robot2 (D): 30   Robot3 (D): 40   Robot4 (D): 39   Robot5 (D): 45   Robot6 (D): 44   Robot7 (D): 19   Robot8 (D): 29   
+1620491704712@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/81(TE1)-4/87(TE7), 3=3/43(TE5)-5/56(TE9), 6=6/64(TE11)-4/67(TE7), 7=7/51(TE13)-0/0(TE0)}
+1620491704712@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 9.
+1620491704712@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 20, retransmitted: 0, number of replicas: 3.
+1620491704712@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491704712@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491705695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491705695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491705695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491705696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491705696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491705700@[RemoteTrajectoryEnvelopeCoordinator] Status @ 14243 ms
+1620491705700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491705700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491705700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 49   Robot2 (D): 36   Robot3 (D): 42   Robot4 (D): 48   Robot5 (D): 53   Robot6 (D): 53   Robot7 (D): 24   Robot8 (D): 35   
+1620491705700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/81(TE1)-4/87(TE7), 3=3/43(TE5)-5/56(TE9), 6=6/64(TE11)-4/67(TE7), 7=7/51(TE13)-0/0(TE0)}
+1620491705700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 9.
+1620491705700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 20, retransmitted: 0, number of replicas: 3.
+1620491705700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491705700@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491706696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491706696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491706696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491706696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491706696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 73 to Robot3.
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] Status @ 15250 ms
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 57   Robot2 (D): 42   Robot3 (D): 43   Robot4 (D): 56   Robot5 (D): 60   Robot6 (D): 60   Robot7 (D): 27   Robot8 (D): 41   
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/81(TE1)-4/87(TE7), 3=3/73(TE5)-2/61(TE3), 6=6/64(TE11)-4/67(TE7), 7=7/51(TE13)-0/0(TE0)}
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 11.
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 21, retransmitted: 0, number of replicas: 3.
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491706707@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491707695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491707695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491707695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491707695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491707695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491707699@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 68 to Robot6.
+1620491707700@[RemoteTrajectoryEnvelopeCoordinator] Status @ 16242 ms
+1620491707700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491707700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491707700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 67   Robot2 (D): 48   Robot3 (D): 45   Robot4 (D): 63   Robot5 (D): 63   Robot6 (D): 64   Robot7 (D): 31   Robot8 (D): 47   
+1620491707700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/81(TE1)-4/87(TE7), 3=3/73(TE5)-2/61(TE3), 6=6/68(TE11)-4/67(TE7), 7=7/51(TE13)-0/0(TE0)}
+1620491707700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 11.
+1620491707700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 22, retransmitted: 0, number of replicas: 3.
+1620491707700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491707700@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491708695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491708695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491708695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491708695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491708696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491708702@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 90 to Robot6.
+1620491708703@[RemoteTrajectoryEnvelopeCoordinator] Status @ 17245 ms
+1620491708703@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491708703@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491708703@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 74   Robot2 (D): 54   Robot3 (D): 53   Robot4 (D): 71   Robot5 (D): 63   Robot6 (D): 67   Robot7 (D): 35   Robot8 (D): 53   
+1620491708703@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/81(TE1)-4/87(TE7), 3=3/73(TE5)-2/61(TE3), 6=6/90(TE11)-1/89(TE1), 7=7/51(TE13)-0/0(TE0)}
+1620491708703@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 12.
+1620491708703@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 23, retransmitted: 0, number of replicas: 3.
+1620491708703@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491708703@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491709695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491709695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491709695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491709695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491709695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491709699@[RemoteTrajectoryEnvelopeCoordinator] Status @ 18242 ms
+1620491709699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491709699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491709699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 81   Robot2 (D): 60   Robot3 (D): 61   Robot4 (D): 79   Robot5 (D): 63   Robot6 (D): 74   Robot7 (D): 40   Robot8 (D): 58   
+1620491709699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/81(TE1)-4/87(TE7), 3=3/73(TE5)-2/61(TE3), 6=6/90(TE11)-1/89(TE1), 7=7/51(TE13)-0/0(TE0)}
+1620491709699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 12.
+1620491709699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 23, retransmitted: 0, number of replicas: 3.
+1620491709699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491709699@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491710695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491710695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491710695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491710695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491710695@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491710699@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 137 to Robot1.
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point -1 to Robot3.
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] Status @ 19243 ms
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 81   Robot2 (D): 67   Robot3 (D): 69   Robot4 (D): 88   Robot5 (D): 63   Robot6 (D): 83   Robot7 (D): 43   Robot8 (D): 60   
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/137(TE1)-2/87(TE3), 6=6/90(TE11)-1/89(TE1), 7=7/51(TE13)-0/0(TE0)}
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 15.
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 25, retransmitted: 0, number of replicas: 3.
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491710700@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491711696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491711696@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491711697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491711697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491711697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491711701@[RemoteTrajectoryEnvelopeCoordinator] Status @ 20244 ms
+1620491711701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1620491711701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491711701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 84   Robot2 (D): 73   Robot3 (D): 75   Robot4 (D): 95   Robot5 (D): 63   Robot6 (D): 89   Robot7 (D): 47   Robot8 (D): 60   
+1620491711701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/137(TE1)-2/87(TE3), 6=6/90(TE11)-1/89(TE1), 7=7/51(TE13)-0/0(TE0)}
+1620491711701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 15.
+1620491711701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 25, retransmitted: 0, number of replicas: 3.
+1620491711701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491711701@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491712697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491712697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491712697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491712697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491712697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81, 51]
+1620491712698@[RemoteTrajectoryEnvelopeCoordinator] Waiting thread starts for 7
+1620491712703@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 166 to Robot6.
+1620491712704@[RemoteTrajectoryEnvelopeCoordinator] Status @ 21246 ms
+1620491712704@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1620491712704@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491712704@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 91   Robot2 (D): 78   Robot3 (D): 76   Robot4 (D): 103   Robot5 (D): 63   Robot6 (D): 91   Robot7 (D): 50   Robot8 (D): 60   
+1620491712704@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/137(TE1)-2/87(TE3), 6=6/166(TE11)-0/0(TE0), 7=7/51(TE13)-0/0(TE0)}
+1620491712704@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 16.
+1620491712704@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 26, retransmitted: 0, number of replicas: 3.
+1620491712704@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491712704@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491712798@[RemoteTrajectoryEnvelopeCoordinator] Waiting thread finishes for 7
+1620491712798@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491712798@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491712798@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491712798@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491712798@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81]
+1620491712802@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point 81 to Robot7.
+1620491713697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491713697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491713697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491713697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491713697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81]
+1620491713700@[RemoteTrajectoryEnvelopeCoordinator] Status @ 22243 ms
+1620491713700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491713700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491713700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 99   Robot2 (D): 85   Robot3 (D): 76   Robot4 (D): 111   Robot5 (D): 63   Robot6 (D): 93   Robot7 (D): 53   Robot8 (D): 60   
+1620491713701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {1=1/137(TE1)-2/87(TE3), 6=6/166(TE11)-0/0(TE0), 7=7/81(TE13)-0/0(TE0)}
+1620491713701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 16.
+1620491713701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 27, retransmitted: 0, number of replicas: 3.
+1620491713701@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491713701@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491714697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491714697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491714697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491714697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491714697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81]
+1620491714698@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point -1 to Robot1.
+1620491714699@[RemoteTrajectoryEnvelopeCoordinator] Status @ 23242 ms
+1620491714699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491714699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491714699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 107   Robot2 (D): 91   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 101   Robot7 (D): 57   Robot8 (D): 60   
+1620491714699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {6=6/166(TE11)-0/0(TE0), 7=7/81(TE13)-0/0(TE0)}
+1620491714699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491714699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 28, retransmitted: 0, number of replicas: 3.
+1620491714699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491714699@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491715697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491715697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491715697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491715697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491715697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81]
+1620491715698@[RemoteTrajectoryEnvelopeCoordinator] Status @ 24241 ms
+1620491715698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491715698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491715698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 115   Robot2 (D): 97   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 108   Robot7 (D): 61   Robot8 (D): 60   
+1620491715698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {6=6/166(TE11)-0/0(TE0), 7=7/81(TE13)-0/0(TE0)}
+1620491715698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491715698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 28, retransmitted: 0, number of replicas: 3.
+1620491715699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491715699@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491716697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491716697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491716697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491716697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491716697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81]
+1620491716698@[RemoteTrajectoryEnvelopeCoordinator] Status @ 25241 ms
+1620491716698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491716698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491716698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 124   Robot2 (D): 103   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 117   Robot7 (D): 65   Robot8 (D): 60   
+1620491716698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {6=6/166(TE11)-0/0(TE0), 7=7/81(TE13)-0/0(TE0)}
+1620491716698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491716698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 28, retransmitted: 0, number of replicas: 3.
+1620491716698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491716698@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81]
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] Status @ 26240 ms
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 131   Robot2 (D): 109   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 125   Robot7 (D): 69   Robot8 (D): 60   
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {6=6/166(TE11)-0/0(TE0), 7=7/81(TE13)-0/0(TE0)}
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 28, retransmitted: 0, number of replicas: 3.
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491717697@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491718697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491718697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491718697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491718697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491718697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81]
+1620491718698@[RemoteTrajectoryEnvelopeCoordinator] Status @ 27241 ms
+1620491718698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1001 ms
+1620491718698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491718698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 139   Robot2 (D): 115   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 133   Robot7 (D): 73   Robot8 (D): 60   
+1620491718698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {6=6/166(TE11)-0/0(TE0), 7=7/81(TE13)-0/0(TE0)}
+1620491718698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491718698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 28, retransmitted: 0, number of replicas: 3.
+1620491718698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491718698@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491719698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491719698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491719698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491719698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491719698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81]
+1620491719699@[RemoteTrajectoryEnvelopeCoordinator] Status @ 28242 ms
+1620491719699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491719699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491719699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 147   Robot2 (D): 121   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 142   Robot7 (D): 77   Robot8 (D): 60   
+1620491719699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {6=6/166(TE11)-0/0(TE0), 7=7/81(TE13)-0/0(TE0)}
+1620491719699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491719699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 28, retransmitted: 0, number of replicas: 3.
+1620491719699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491719699@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491720698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491720698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491720698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491720698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491720698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: [81]
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] Waiting thread starts for 7
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] Status @ 29242 ms
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 155   Robot2 (D): 127   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 150   Robot7 (D): 80   Robot8 (D): 60   
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {6=6/166(TE11)-0/0(TE0), 7=7/81(TE13)-0/0(TE0)}
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 28, retransmitted: 0, number of replicas: 3.
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491720699@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491720799@[RemoteTrajectoryEnvelopeCoordinator] Waiting thread finishes for 7
+1620491720799@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491720799@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491720799@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491720799@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491720799@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491720800@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point -1 to Robot7.
+1620491721698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491721698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491721698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491721699@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491721699@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491721700@[RemoteTrajectoryEnvelopeCoordinator] Status @ 30242 ms
+1620491721700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491721700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491721700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 163   Robot2 (D): 133   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 158   Robot7 (D): 83   Robot8 (D): 60   
+1620491721700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {6=6/166(TE11)-0/0(TE0)}
+1620491721700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491721700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 29, retransmitted: 0, number of replicas: 3.
+1620491721700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491721700@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491722698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491722698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491722698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491722698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: [166]
+1620491722699@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491722699@[RemoteTrajectoryEnvelopeCoordinator] Waiting thread starts for 6
+1620491722699@[RemoteTrajectoryEnvelopeCoordinator] Status @ 31242 ms
+1620491722699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491722699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491722700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 171   Robot2 (D): 139   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 165   Robot7 (D): 87   Robot8 (D): 60   
+1620491722700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {6=6/166(TE11)-0/0(TE0)}
+1620491722700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491722700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 29, retransmitted: 0, number of replicas: 3.
+1620491722700@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491722700@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491722799@[RemoteTrajectoryEnvelopeCoordinator] Waiting thread finishes for 6
+1620491722800@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491722800@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491722800@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491722800@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: []
+1620491722800@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491722801@[RemoteTrajectoryEnvelopeCoordinator] Sent critical point -1 to Robot6.
+1620491723697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: []
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] Status @ 32241 ms
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 180   Robot2 (D): 144   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 168   Robot7 (D): 91   Robot8 (D): 60   
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 30, retransmitted: 0, number of replicas: 3.
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491723698@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491724698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491724698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491724698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491724698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: []
+1620491724698@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491724699@[RemoteTrajectoryEnvelopeCoordinator] Status @ 33241 ms
+1620491724699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491724699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491724699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 187   Robot2 (D): 146   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 168   Robot7 (D): 93   Robot8 (D): 60   
+1620491724699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491724699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491724699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 30, retransmitted: 0, number of replicas: 3.
+1620491724699@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491724699@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491725697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491725697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491725697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491725697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: []
+1620491725697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491725698@[RemoteTrajectoryEnvelopeCoordinator] Status @ 34241 ms
+1620491725698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491725698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491725698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 193   Robot2 (D): 146   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 168   Robot7 (D): 93   Robot8 (D): 60   
+1620491725698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491725698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491725698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 30, retransmitted: 0, number of replicas: 3.
+1620491725698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491725698@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491726697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491726697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491726697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491726697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: []
+1620491726697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491726698@[RemoteTrajectoryEnvelopeCoordinator] Status @ 35241 ms
+1620491726698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491726698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491726698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 193   Robot2 (D): 146   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 168   Robot7 (D): 93   Robot8 (D): 60   
+1620491726698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491726698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491726698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 30, retransmitted: 0, number of replicas: 3.
+1620491726698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491726698@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491727697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491727697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491727697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491727697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: []
+1620491727697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491727698@[RemoteTrajectoryEnvelopeCoordinator] Status @ 36241 ms
+1620491727698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491727698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491727698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 193   Robot2 (D): 146   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 168   Robot7 (D): 93   Robot8 (D): 60   
+1620491727698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491727698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491727698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 30, retransmitted: 0, number of replicas: 3.
+1620491727698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491727698@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491728697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491728697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491728697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491728697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: []
+1620491728697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491728698@[RemoteTrajectoryEnvelopeCoordinator] Status @ 37240 ms
+1620491728698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491728698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491728698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 193   Robot2 (D): 146   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 168   Robot7 (D): 93   Robot8 (D): 60   
+1620491728698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491728698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491728698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 30, retransmitted: 0, number of replicas: 3.
+1620491728698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491728698@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.
+1620491729697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot1: [5]
+1620491729697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot2: []
+1620491729697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot4: [30]
+1620491729697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot6: []
+1620491729697@[RemoteTrajectoryEnvelopeCoordinator] Stopping points Robot7: []
+1620491729698@[RemoteTrajectoryEnvelopeCoordinator] Status @ 38240 ms
+1620491729698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Eff period ..... 1000 ms
+1620491729698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Network ........ 24 variables, 64 constraints
+1620491729698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Robots view .... Robot1 (D): 193   Robot2 (D): 146   Robot3 (D): 76   Robot4 (D): 116   Robot5 (D): 63   Robot6 (D): 168   Robot7 (D): 93   Robot8 (D): 60   
+1620491729698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Dependencies ... {}
+1620491729698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total number of obsolete critical sections ... 17.
+1620491729698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total messages sent: ... 30, retransmitted: 0, number of replicas: 3.
+1620491729698@[RemoteTrajectoryEnvelopeCoordinator] ├─ Total nonlive states detected: ... 0, avoided: 0, revised according to heuristic: 4.
+1620491729698@[RemoteTrajectoryEnvelopeCoordinator] └─ Total re-planned path: ... 0, successful: 0.

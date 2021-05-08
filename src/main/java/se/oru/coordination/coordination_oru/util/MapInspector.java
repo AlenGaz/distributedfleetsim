@@ -12,7 +12,6 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 
 import com.vividsolutions.jts.geom.Coordinate;
 

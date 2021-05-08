@@ -12,7 +12,7 @@
       <operations public="true" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeTracker" 
+  <class id="2" language="java" name="fleetClient.AbstractTrajectoryEnvelopeTracker"
     project="coordination_oru" 
     file="/coordination_oru/src/main/java/se/oru/coordination/coordination_oru/AbstractTrajectoryEnvelopeTracker.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -45,7 +45,7 @@
     </display>  
   </class>  
   <class id="5" language="java" 
-    name="se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation" 
+    name="se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeCoordinatorSimulation"
     project="coordination_oru" 
     file="/coordination_oru/src/main/java/se/oru/coordination/coordination_oru/simulation2D/TrajectoryEnvelopeCoordinatorSimulation.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -56,7 +56,7 @@
       <operations public="true" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeTrackerRK4" 
+  <class id="6" language="java" name="se.oru.coordination.coordination_oru.simulation2D.RemoteTrajectoryEnvelopeTrackerRK4"
     project="coordination_oru" 
     file="/coordination_oru/src/main/java/se/oru/coordination/coordination_oru/simulation2D/TrajectoryEnvelopeTrackerRK4.java" 
     binary="false" corner="BOTTOM_RIGHT">    

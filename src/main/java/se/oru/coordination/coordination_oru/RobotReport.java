@@ -1,8 +1,5 @@
 package se.oru.coordination.coordination_oru;
 
-import GRPC.HelloWorldClient;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.utility.logging.MetaCSPLogging;
 
@@ -39,13 +36,13 @@ public class RobotReport {
 		this.distanceTraveled = distanceTraveled;
 		this.criticalPoint = criticalPoint;
 
-/*		System.out.println("Iam in isDriving method.....");
-		ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051").usePlaintext().build();
-		HelloWorldClient client = new HelloWorldClient(channel);
-		client.makeGreeting(Integer.toString(robotID));*/
 	}
-	
-	/**
+
+    public RobotReport() {
+
+    }
+
+    /**
 	 * Get the ID of the robot to which this report refers to.
 	 * @return The ID of the robot.
 	 */

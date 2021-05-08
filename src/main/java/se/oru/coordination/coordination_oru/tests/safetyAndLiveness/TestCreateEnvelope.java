@@ -1,28 +1,16 @@
 package se.oru.coordination.coordination_oru.tests.safetyAndLiveness;
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
 
+import CoordinatorPackage.RemoteAbstractTrajectoryEnvelopeCoordinator;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
-import org.metacsp.multi.spatioTemporal.paths.Trajectory;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope.SpatialEnvelope;
 
 import com.vividsolutions.jts.geom.Coordinate;
 
-import se.oru.coordination.coordination_oru.AbstractTrajectoryEnvelopeCoordinator;
-import se.oru.coordination.coordination_oru.ConstantAccelerationForwardModel;
 import se.oru.coordination.coordination_oru.CriticalSection;
-import se.oru.coordination.coordination_oru.Mission;
-import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
-import se.oru.coordination.coordination_oru.RobotReport;
-import se.oru.coordination.coordination_oru.TrackingCallback;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
-import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
-import se.oru.coordination.coordination_oru.util.BrowserVisualization;
-import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
-import se.oru.coordination.coordination_oru.util.Missions;
 
 public class TestCreateEnvelope {
 
@@ -56,7 +44,7 @@ public class TestCreateEnvelope {
 			if (!rsp.plan()) throw new Error("Cannot plan for Robot2");
 			SpatialEnvelope se2 = TrajectoryEnvelope.createSpatialEnvelope(rsp.getPath(), footprint1, footprint2, footprint3, footprint4);
 			
-			CriticalSection[] css = AbstractTrajectoryEnvelopeCoordinator.getCriticalSections(se1, se2, 2.0);
+			CriticalSection[] css = RemoteAbstractTrajectoryEnvelopeCoordinator.getCriticalSections(se1, se2, 2.0);
 			System.out.println("Found " + css.length + " critical sections");
 			
 			System.out.println(Arrays.toString(css));

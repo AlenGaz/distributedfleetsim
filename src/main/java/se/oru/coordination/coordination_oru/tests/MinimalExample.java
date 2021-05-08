@@ -16,7 +16,7 @@ import se.oru.coordination.coordination_oru.NetworkConfiguration;
 import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
-import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import se.oru.coordination.coordination_oru.util.BrowserVisualization;
 import se.oru.coordination.coordination_oru.util.Missions;
 import se.oru.coordination.coordination_oru.util.Pair;
@@ -66,7 +66,7 @@ public class MinimalExample {
 		
 		//Create a coordinator with interfaces to robots
 		//in the built-in 2D simulator
-		final TrajectoryEnvelopeCoordinatorSimulation tec = new TrajectoryEnvelopeCoordinatorSimulation(MAX_VEL,MAX_ACCEL);
+		final RemoteTrajectoryEnvelopeCoordinatorSimulation tec = new RemoteTrajectoryEnvelopeCoordinatorSimulation(MAX_VEL,MAX_ACCEL);
 		
 		//Provide a heuristic (here, closest to critical section goes first)
 		tec.addComparator(new Comparator<RobotAtCriticalSection> () {
@@ -93,6 +93,7 @@ public class MinimalExample {
 
 		//Start the thread that revises precedences at every period
 		tec.startInference();
+		System.out.println("[MinimalExample] after if" + tec.getCurrentDependencies());
 
 		//Robot IDs can be non-sequential (but must be unique)
 		int[] robotIDs = new int[] {22,7,54,13,1,14};
@@ -125,6 +126,7 @@ public class MinimalExample {
 			//Plan path from start to goal and vice-versa
 			rsp.setStart(startAndGoal[0]);
 			rsp.setGoals(startAndGoal[1]);
+
 			if (!rsp.plan()) throw new Error ("No path between " + startAndGoal[0] + " and " + startAndGoal[1]);
 			PoseSteering[] path = rsp.getPath();
 			PoseSteering[] pathInv = rsp.getPathInv();
@@ -143,13 +145,11 @@ public class MinimalExample {
 		//Start a visualization (will open a new browser tab)
 		BrowserVisualization viz = new BrowserVisualization();
 		viz.setInitialTransform(49, 5, 0);
-		tec.setVisualization(viz);
+		//tec.setVisualization(viz);
 		
 		//Start dispatching threads for each robot, each of which
 		//dispatches the next mission as soon as the robot is idle
 		Missions.startMissionDispatchers(tec, robotIDs);	
-		
 
 	}
-
 }

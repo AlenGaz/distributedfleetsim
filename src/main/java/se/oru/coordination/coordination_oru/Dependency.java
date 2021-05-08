@@ -2,6 +2,7 @@ package se.oru.coordination.coordination_oru;
 
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
+import java.io.Serializable;
 
 /**
  * A dependency is a tuple (teWaiting, teDriving, waitingPoint, thresholdPoint), representing
@@ -12,7 +13,7 @@ import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
  * @author fpa
  *
  */
-public class Dependency implements Comparable<Dependency> {
+public class Dependency implements Comparable<Dependency>, Serializable{
 	
 	private int robotIDWaiting, robotIDDriving;
 	private TrajectoryEnvelope teWaiting, teDriving;

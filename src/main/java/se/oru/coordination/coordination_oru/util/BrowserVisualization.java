@@ -251,6 +251,7 @@ public class BrowserVisualization implements FleetVisualization {
 	@Override
 	public void displayDependency(RobotReport rrWaiting, RobotReport rrDriving, String dependencyDescriptor) {
 		Geometry arrow = createArrow(rrWaiting.getPose(), rrDriving.getPose());
+
 		String jsonString = "{ \"operation\" : \"addGeometry\", \"data\" : " + this.geometryToJSONString(dependencyDescriptor, arrow, "#adccff", 1000, true, null) + "}";
 		enqueueMessage(jsonString);
 	}
@@ -388,3 +389,25 @@ public class BrowserVisualization implements FleetVisualization {
 	}
 
 }
+
+
+//@TODO have a while loop doing the visualization on the coordinator
+     /*     synchronized (tec.getCurrentDependencies()) {
+                for (Dependency dep : tec.getCurrentDependencies()) {
+                    synchronized (tec.trackers) {
+
+                        AbstractTrajectoryEnvelopeTracker waitingTrackers = tec.trackers.get(dep.getWaitingRobotID());
+                        AbstractTrajectoryEnvelopeTracker drivingTrackers = tec.trackers.get(dep.getDrivingRobotID());
+                        if (waitingTrackers.equals(this)) {
+                            if (drivingTrackers != null) {
+                                RobotReport rrDriving = drivingTrackers.getRobotReport();
+                                String arrowIdentifier = "_"+dep.getWaitingRobotID()+"-"+dep.getDrivingRobotID();
+                                tec.getVisualization().displayDependency(rrWaiting, rrDriving, arrowIdentifier);
+                            }
+                        }
+                    }
+                }
+            }
+
+	   */
+

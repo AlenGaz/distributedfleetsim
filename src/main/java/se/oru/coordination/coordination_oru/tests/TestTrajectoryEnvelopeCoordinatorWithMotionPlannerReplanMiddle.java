@@ -1,6 +1,5 @@
 package se.oru.coordination.coordination_oru.tests;
 
-import java.io.File;
 import java.util.Comparator;
 
 import org.metacsp.multi.spatioTemporal.paths.Pose;
@@ -14,9 +13,8 @@ import se.oru.coordination.coordination_oru.RobotAtCriticalSection;
 import se.oru.coordination.coordination_oru.RobotReport;
 import se.oru.coordination.coordination_oru.demo.DemoDescription;
 import se.oru.coordination.coordination_oru.motionplanning.ompl.ReedsSheppCarPlanner;
-import se.oru.coordination.coordination_oru.simulation2D.TrajectoryEnvelopeCoordinatorSimulation;
+import CoordinatorPackage.RemoteTrajectoryEnvelopeCoordinatorSimulation;
 import se.oru.coordination.coordination_oru.util.BrowserVisualization;
-import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
 import se.oru.coordination.coordination_oru.util.Missions;
 
 @DemoDescription(desc = "Example showing coordination in opposing directions (following should not happen here).")
@@ -46,7 +44,7 @@ public class TestTrajectoryEnvelopeCoordinatorWithMotionPlannerReplanMiddle {
 		// -- the factory method getNewTracker() which returns a trajectory envelope tracker
 		// -- the getCurrentTimeInMillis() method, which is used by the coordinator to keep time
 		//You still need to add one or more comparators to determine robot orderings thru critical sections (comparators are evaluated in the order in which they are added)
-		final TrajectoryEnvelopeCoordinatorSimulation tec = new TrajectoryEnvelopeCoordinatorSimulation(MAX_VEL,MAX_ACCEL);
+		final RemoteTrajectoryEnvelopeCoordinatorSimulation tec = new RemoteTrajectoryEnvelopeCoordinatorSimulation(MAX_VEL,MAX_ACCEL);
 		
 		tec.addComparator(new Comparator<RobotAtCriticalSection> () {
 			@Override
@@ -86,7 +84,7 @@ public class TestTrajectoryEnvelopeCoordinatorWithMotionPlannerReplanMiddle {
 		BrowserVisualization viz = new BrowserVisualization();
 		viz.setInitialTransform(44, 0, 0);
 		//viz.setSize(1800, 450);
-		tec.setVisualization(viz);
+		//tec.setVisualization(viz);
 
 		Pose startRobot1 = new Pose(10.0,5.0,0.0);
 		Pose goalRobot13 = new Pose(15.0,5.0,0.0);

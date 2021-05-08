@@ -5,7 +5,9 @@ import com.vividsolutions.jts.geom.Polygon;
 
 import se.oru.coordination.coordination_oru.RobotReport;
 
-public interface FleetVisualization {
+import java.io.Serializable;
+
+public interface FleetVisualization extends Serializable {
 	
 	@Deprecated
 	public void displayRobotState(TrajectoryEnvelope te, RobotReport rr, String ... extraStatusInfo);

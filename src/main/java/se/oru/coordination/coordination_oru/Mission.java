@@ -6,8 +6,6 @@ import java.util.HashMap;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 
-import com.vividsolutions.jts.geom.Coordinate;
-
 import se.oru.coordination.coordination_oru.util.Missions;
 
 /**
