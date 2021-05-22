@@ -434,7 +434,7 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 									//check intersection
 									if (placement1.intersects(placement2)) {
 										if (!previousCollidingCS.contains(cs)) {
-											metaCSPLogger.info(" * NEW COLLISION *");
+											metaCSPLogger.info(" * NEW COLLISIgN *");
 											CollisionEvent ce = new CollisionEvent(Calendar.getInstance().getTimeInMillis(),robotReport1,robotReport2);
 											synchronized (collisionsList) {
 												collisionsList.add(ce);

@@ -46,9 +46,7 @@ import aima.core.util.datastructure.Pair;
 import se.oru.coordination.coordination_oru.*;
 import se.oru.coordination.coordination_oru.motionplanning.AbstractMotionPlanner;
 import se.oru.coordination.coordination_oru.util.FleetVisualization;
-import se.oru.coordination.coordination_oru.util.JTSDrawingPanelVisualization;
 import se.oru.coordination.coordination_oru.util.StringUtils;
-import CoordinatorPackage.containers.*;
 
 /**
  * This class provides coordination for a fleet of robots. An instantiatable {AbstractTrajectoryEnvelopeCoordinator}
@@ -773,7 +771,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     public FleetVisualization getVisualization() {
         return this.viz;
     }
-    
+
 
 
     /**
@@ -1083,7 +1081,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                     // TODO atet.getRobotReport() is null
 
                     System.out.println("[trackers.get in atet robotID: " + atet.getRobotReport());
-                   // System.out.println("#-> trackers.values() : " + trackers.get(atet.getRobotReport().getRobotID()).getRobotReport() + " \n #-> atet: " + atet);
+                    // System.out.println("#-> trackers.values() : " + trackers.get(atet.getRobotReport().getRobotID()).getRobotReport() + " \n #-> atet: " + atet);
                     if (!(atet instanceof RemoteTrajectoryEnvelopeTrackerDummy)) {
                         drivingEnvelopes.add(atet.getTrajectoryEnvelope());
                         System.out.println("atet.getRobotID which it is... : " + atet);
@@ -1101,13 +1099,13 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                             //int minStart1 = currentReports.containsKey(drivingEnvelopes.get(i).getRobotID()) ? currentReports.get(drivingEnvelopes.get(i).getRobotID()).getPathIndex() : -1;
                             int minStart1 = 1;
-                   //         System.out.println("values of currentReports ;" + currentReports.keySet());
-                          //  System.out.println("values inside of envelopes to track " + envelopesToTrack);
-                     //       System.out.println("values inside of envelopes to track get Internal COnstraints" + envelopesToTrack.get(j).getInternalConstraints());
+                            //         System.out.println("values of currentReports ;" + currentReports.keySet());
+                            //  System.out.println("values inside of envelopes to track " + envelopesToTrack);
+                            //       System.out.println("values inside of envelopes to track get Internal COnstraints" + envelopesToTrack.get(j).getInternalConstraints());
                             if(currentReports.containsKey(drivingEnvelopes.get(i).getRobotID())) {
 
-                   //             System.out.println("currentReports get via i" + currentReports.get(i));
-                 //               System.out.println("currentReports get via drivingEnvelopes.." + currentReports.get(drivingEnvelopes.get(i).getRobotID()));
+                                //             System.out.println("currentReports get via i" + currentReports.get(i));
+                                //               System.out.println("currentReports get via drivingEnvelopes.." + currentReports.get(drivingEnvelopes.get(i).getRobotID()));
 
                                 minStart1 = currentReports.get(drivingEnvelopes.get(i).getRobotID()).getPathIndex();
                             }
@@ -1604,18 +1602,18 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 //						//Sleep for one control period
 //						//(allows to impose critical points before tracking actually starts)
 //						try { Thread.sleep(CONTROL_PERIOD); }
-//						catch (InterruptedException e) { e.printStackTrace(); }
+//					        catch (InterruptedException e) { e.printStackTrace(); }
                     }
 
                     @Override
                     public void onTrackingStart() {
                         if (trackingCallbacks.containsKey(myTE.getRobotID())) trackingCallbacks.get(myTE.getRobotID()).onTrackingStart();
 
-                        System.out.println("[RemoteAbstract...Coordinator] in onTrackingstart starting envelope for robot: " + myTE.getRobotID());
+                        //System.out.println("[RemoteAbstract...Coordinator] in onTrackingstart starting envelope for robot: " + myTE.getRobotID());
 
                         if (viz != null){
 
-                            viz.addEnvelope(myTE);
+                            //viz.addEnvelope(myTE);
                         }
                     }
 
@@ -1693,7 +1691,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                         if (viz != null && !trackingFinished && viz.periodicEnvelopeRefreshInMillis() > 0) {
                             long timeNow = Calendar.getInstance().getTimeInMillis();
                             if (timeNow-lastEnvelopeRefresh > viz.periodicEnvelopeRefreshInMillis()) {
-                                viz.addEnvelope(myTE);
+                                //viz.addEnvelope(myTE);
                                 lastEnvelopeRefresh = timeNow;
                             }
                         }
@@ -1781,6 +1779,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                 System.out.println("in addMissions where addEnvelope should happen");
                 viz.addEnvelope(te);
+                // viz.addEnvelope(coordinatorServicImpl.robotIDtoClientConnection.get(robotID).getTe());
 
 
 

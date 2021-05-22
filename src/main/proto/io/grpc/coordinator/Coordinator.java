@@ -20,61 +20,66 @@ public final class Coordinator {
 
     /**
      * <code>string req = 1;</code>
-     * @return The req.
      */
     java.lang.String getReq();
     /**
      * <code>string req = 1;</code>
-     * @return The bytes for req.
      */
     com.google.protobuf.ByteString
         getReqBytes();
 
     /**
      * <code>int32 robotid = 2;</code>
-     * @return The robotid.
      */
     int getRobotid();
 
     /**
      * <code>double x = 3;</code>
-     * @return The x.
      */
     double getX();
 
     /**
      * <code>double y = 4;</code>
-     * @return The y.
      */
     double getY();
 
     /**
-     * <code>double theta = 5;</code>
-     * @return The theta.
+     * <code>double z = 5;</code>
      */
-    double getTheta();
+    double getZ();
 
     /**
-     * <code>int32 pathIndex = 6;</code>
-     * @return The pathIndex.
+     * <code>double roll = 6;</code>
+     */
+    double getRoll();
+
+    /**
+     * <code>double pitch = 7;</code>
+     */
+    double getPitch();
+
+    /**
+     * <code>double yaw = 8;</code>
+     */
+    double getYaw();
+
+    /**
+     * <code>int32 pathIndex = 9;</code>
      */
     int getPathIndex();
 
     /**
-     * <code>double velocity = 7;</code>
-     * @return The velocity.
+     * <code>double velocity = 10;</code>
      */
     double getVelocity();
 
     /**
-     * <code>double distanceTraveled = 8;</code>
-     * @return The distanceTraveled.
+     * <code>double distanceTraveled = 11;</code>
      */
     double getDistanceTraveled();
 
     /**
-     * <code>int32 criticalPoint = 9;</code>
-     * @return The criticalPoint.
+     * <code>int32 criticalPoint = 12;</code>
      */
     int getCriticalPoint();
   }
@@ -85,7 +90,7 @@ public final class Coordinator {
    *
    * Protobuf type {@code gradlegRPC.requestrobotreport}
    */
-  public static final class requestrobotreport extends
+  public  static final class requestrobotreport extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.requestrobotreport)
       requestrobotreportOrBuilder {
@@ -96,13 +101,17 @@ public final class Coordinator {
     }
     private requestrobotreport() {
       req_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new requestrobotreport();
+      robotid_ = 0;
+      x_ = 0D;
+      y_ = 0D;
+      z_ = 0D;
+      roll_ = 0D;
+      pitch_ = 0D;
+      yaw_ = 0D;
+      pathIndex_ = 0;
+      velocity_ = 0D;
+      distanceTraveled_ = 0D;
+      criticalPoint_ = 0;
     }
 
     @java.lang.Override
@@ -118,6 +127,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -151,31 +161,46 @@ public final class Coordinator {
             }
             case 41: {
 
-              theta_ = input.readDouble();
+              z_ = input.readDouble();
               break;
             }
-            case 48: {
+            case 49: {
 
-              pathIndex_ = input.readInt32();
+              roll_ = input.readDouble();
               break;
             }
             case 57: {
 
-              velocity_ = input.readDouble();
+              pitch_ = input.readDouble();
               break;
             }
             case 65: {
 
-              distanceTraveled_ = input.readDouble();
+              yaw_ = input.readDouble();
               break;
             }
             case 72: {
+
+              pathIndex_ = input.readInt32();
+              break;
+            }
+            case 81: {
+
+              velocity_ = input.readDouble();
+              break;
+            }
+            case 89: {
+
+              distanceTraveled_ = input.readDouble();
+              break;
+            }
+            case 96: {
 
               criticalPoint_ = input.readInt32();
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -210,9 +235,7 @@ public final class Coordinator {
     private volatile java.lang.Object req_;
     /**
      * <code>string req = 1;</code>
-     * @return The req.
      */
-    @java.lang.Override
     public java.lang.String getReq() {
       java.lang.Object ref = req_;
       if (ref instanceof java.lang.String) {
@@ -227,9 +250,7 @@ public final class Coordinator {
     }
     /**
      * <code>string req = 1;</code>
-     * @return The bytes for req.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getReqBytes() {
       java.lang.Object ref = req_;
@@ -248,9 +269,7 @@ public final class Coordinator {
     private int robotid_;
     /**
      * <code>int32 robotid = 2;</code>
-     * @return The robotid.
      */
-    @java.lang.Override
     public int getRobotid() {
       return robotid_;
     }
@@ -259,9 +278,7 @@ public final class Coordinator {
     private double x_;
     /**
      * <code>double x = 3;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public double getX() {
       return x_;
     }
@@ -270,64 +287,79 @@ public final class Coordinator {
     private double y_;
     /**
      * <code>double y = 4;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public double getY() {
       return y_;
     }
 
-    public static final int THETA_FIELD_NUMBER = 5;
-    private double theta_;
+    public static final int Z_FIELD_NUMBER = 5;
+    private double z_;
     /**
-     * <code>double theta = 5;</code>
-     * @return The theta.
+     * <code>double z = 5;</code>
      */
-    @java.lang.Override
-    public double getTheta() {
-      return theta_;
+    public double getZ() {
+      return z_;
     }
 
-    public static final int PATHINDEX_FIELD_NUMBER = 6;
+    public static final int ROLL_FIELD_NUMBER = 6;
+    private double roll_;
+    /**
+     * <code>double roll = 6;</code>
+     */
+    public double getRoll() {
+      return roll_;
+    }
+
+    public static final int PITCH_FIELD_NUMBER = 7;
+    private double pitch_;
+    /**
+     * <code>double pitch = 7;</code>
+     */
+    public double getPitch() {
+      return pitch_;
+    }
+
+    public static final int YAW_FIELD_NUMBER = 8;
+    private double yaw_;
+    /**
+     * <code>double yaw = 8;</code>
+     */
+    public double getYaw() {
+      return yaw_;
+    }
+
+    public static final int PATHINDEX_FIELD_NUMBER = 9;
     private int pathIndex_;
     /**
-     * <code>int32 pathIndex = 6;</code>
-     * @return The pathIndex.
+     * <code>int32 pathIndex = 9;</code>
      */
-    @java.lang.Override
     public int getPathIndex() {
       return pathIndex_;
     }
 
-    public static final int VELOCITY_FIELD_NUMBER = 7;
+    public static final int VELOCITY_FIELD_NUMBER = 10;
     private double velocity_;
     /**
-     * <code>double velocity = 7;</code>
-     * @return The velocity.
+     * <code>double velocity = 10;</code>
      */
-    @java.lang.Override
     public double getVelocity() {
       return velocity_;
     }
 
-    public static final int DISTANCETRAVELED_FIELD_NUMBER = 8;
+    public static final int DISTANCETRAVELED_FIELD_NUMBER = 11;
     private double distanceTraveled_;
     /**
-     * <code>double distanceTraveled = 8;</code>
-     * @return The distanceTraveled.
+     * <code>double distanceTraveled = 11;</code>
      */
-    @java.lang.Override
     public double getDistanceTraveled() {
       return distanceTraveled_;
     }
 
-    public static final int CRITICALPOINT_FIELD_NUMBER = 9;
+    public static final int CRITICALPOINT_FIELD_NUMBER = 12;
     private int criticalPoint_;
     /**
-     * <code>int32 criticalPoint = 9;</code>
-     * @return The criticalPoint.
+     * <code>int32 criticalPoint = 12;</code>
      */
-    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -358,20 +390,29 @@ public final class Coordinator {
       if (y_ != 0D) {
         output.writeDouble(4, y_);
       }
-      if (theta_ != 0D) {
-        output.writeDouble(5, theta_);
+      if (z_ != 0D) {
+        output.writeDouble(5, z_);
+      }
+      if (roll_ != 0D) {
+        output.writeDouble(6, roll_);
+      }
+      if (pitch_ != 0D) {
+        output.writeDouble(7, pitch_);
+      }
+      if (yaw_ != 0D) {
+        output.writeDouble(8, yaw_);
       }
       if (pathIndex_ != 0) {
-        output.writeInt32(6, pathIndex_);
+        output.writeInt32(9, pathIndex_);
       }
       if (velocity_ != 0D) {
-        output.writeDouble(7, velocity_);
+        output.writeDouble(10, velocity_);
       }
       if (distanceTraveled_ != 0D) {
-        output.writeDouble(8, distanceTraveled_);
+        output.writeDouble(11, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
-        output.writeInt32(9, criticalPoint_);
+        output.writeInt32(12, criticalPoint_);
       }
       unknownFields.writeTo(output);
     }
@@ -397,25 +438,37 @@ public final class Coordinator {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, y_);
       }
-      if (theta_ != 0D) {
+      if (z_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, theta_);
+          .computeDoubleSize(5, z_);
+      }
+      if (roll_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, roll_);
+      }
+      if (pitch_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(7, pitch_);
+      }
+      if (yaw_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(8, yaw_);
       }
       if (pathIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, pathIndex_);
+          .computeInt32Size(9, pathIndex_);
       }
       if (velocity_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, velocity_);
+          .computeDoubleSize(10, velocity_);
       }
       if (distanceTraveled_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, distanceTraveled_);
+          .computeDoubleSize(11, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, criticalPoint_);
+          .computeInt32Size(12, criticalPoint_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -432,31 +485,49 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.requestrobotreport other = (io.grpc.coordinator.Coordinator.requestrobotreport) obj;
 
-      if (!getReq()
-          .equals(other.getReq())) return false;
-      if (getRobotid()
-          != other.getRobotid()) return false;
-      if (java.lang.Double.doubleToLongBits(getX())
-          != java.lang.Double.doubleToLongBits(
-              other.getX())) return false;
-      if (java.lang.Double.doubleToLongBits(getY())
-          != java.lang.Double.doubleToLongBits(
-              other.getY())) return false;
-      if (java.lang.Double.doubleToLongBits(getTheta())
-          != java.lang.Double.doubleToLongBits(
-              other.getTheta())) return false;
-      if (getPathIndex()
-          != other.getPathIndex()) return false;
-      if (java.lang.Double.doubleToLongBits(getVelocity())
-          != java.lang.Double.doubleToLongBits(
-              other.getVelocity())) return false;
-      if (java.lang.Double.doubleToLongBits(getDistanceTraveled())
-          != java.lang.Double.doubleToLongBits(
-              other.getDistanceTraveled())) return false;
-      if (getCriticalPoint()
-          != other.getCriticalPoint()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getReq()
+          .equals(other.getReq());
+      result = result && (getRobotid()
+          == other.getRobotid());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getX())
+          == java.lang.Double.doubleToLongBits(
+              other.getX()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getY())
+          == java.lang.Double.doubleToLongBits(
+              other.getY()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getZ())
+          == java.lang.Double.doubleToLongBits(
+              other.getZ()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getRoll())
+          == java.lang.Double.doubleToLongBits(
+              other.getRoll()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPitch())
+          == java.lang.Double.doubleToLongBits(
+              other.getPitch()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getYaw())
+          == java.lang.Double.doubleToLongBits(
+              other.getYaw()));
+      result = result && (getPathIndex()
+          == other.getPathIndex());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getVelocity())
+          == java.lang.Double.doubleToLongBits(
+              other.getVelocity()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getDistanceTraveled())
+          == java.lang.Double.doubleToLongBits(
+              other.getDistanceTraveled()));
+      result = result && (getCriticalPoint()
+          == other.getCriticalPoint());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -476,9 +547,18 @@ public final class Coordinator {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + THETA_FIELD_NUMBER;
+      hash = (37 * hash) + Z_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getTheta()));
+          java.lang.Double.doubleToLongBits(getZ()));
+      hash = (37 * hash) + ROLL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRoll()));
+      hash = (37 * hash) + PITCH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPitch()));
+      hash = (37 * hash) + YAW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getYaw()));
       hash = (37 * hash) + PATHINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPathIndex();
       hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
@@ -634,7 +714,13 @@ public final class Coordinator {
 
         y_ = 0D;
 
-        theta_ = 0D;
+        z_ = 0D;
+
+        roll_ = 0D;
+
+        pitch_ = 0D;
+
+        yaw_ = 0D;
 
         pathIndex_ = 0;
 
@@ -674,7 +760,10 @@ public final class Coordinator {
         result.robotid_ = robotid_;
         result.x_ = x_;
         result.y_ = y_;
-        result.theta_ = theta_;
+        result.z_ = z_;
+        result.roll_ = roll_;
+        result.pitch_ = pitch_;
+        result.yaw_ = yaw_;
         result.pathIndex_ = pathIndex_;
         result.velocity_ = velocity_;
         result.distanceTraveled_ = distanceTraveled_;
@@ -685,35 +774,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -740,8 +829,17 @@ public final class Coordinator {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getTheta() != 0D) {
-          setTheta(other.getTheta());
+        if (other.getZ() != 0D) {
+          setZ(other.getZ());
+        }
+        if (other.getRoll() != 0D) {
+          setRoll(other.getRoll());
+        }
+        if (other.getPitch() != 0D) {
+          setPitch(other.getPitch());
+        }
+        if (other.getYaw() != 0D) {
+          setYaw(other.getYaw());
         }
         if (other.getPathIndex() != 0) {
           setPathIndex(other.getPathIndex());
@@ -787,7 +885,6 @@ public final class Coordinator {
       private java.lang.Object req_ = "";
       /**
        * <code>string req = 1;</code>
-       * @return The req.
        */
       public java.lang.String getReq() {
         java.lang.Object ref = req_;
@@ -803,7 +900,6 @@ public final class Coordinator {
       }
       /**
        * <code>string req = 1;</code>
-       * @return The bytes for req.
        */
       public com.google.protobuf.ByteString
           getReqBytes() {
@@ -820,8 +916,6 @@ public final class Coordinator {
       }
       /**
        * <code>string req = 1;</code>
-       * @param value The req to set.
-       * @return This builder for chaining.
        */
       public Builder setReq(
           java.lang.String value) {
@@ -835,7 +929,6 @@ public final class Coordinator {
       }
       /**
        * <code>string req = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearReq() {
         
@@ -845,8 +938,6 @@ public final class Coordinator {
       }
       /**
        * <code>string req = 1;</code>
-       * @param value The bytes for req to set.
-       * @return This builder for chaining.
        */
       public Builder setReqBytes(
           com.google.protobuf.ByteString value) {
@@ -863,16 +954,12 @@ public final class Coordinator {
       private int robotid_ ;
       /**
        * <code>int32 robotid = 2;</code>
-       * @return The robotid.
        */
-      @java.lang.Override
       public int getRobotid() {
         return robotid_;
       }
       /**
        * <code>int32 robotid = 2;</code>
-       * @param value The robotid to set.
-       * @return This builder for chaining.
        */
       public Builder setRobotid(int value) {
         
@@ -882,7 +969,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 robotid = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRobotid() {
         
@@ -894,16 +980,12 @@ public final class Coordinator {
       private double x_ ;
       /**
        * <code>double x = 3;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public double getX() {
         return x_;
       }
       /**
        * <code>double x = 3;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(double value) {
         
@@ -913,7 +995,6 @@ public final class Coordinator {
       }
       /**
        * <code>double x = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         
@@ -925,16 +1006,12 @@ public final class Coordinator {
       private double y_ ;
       /**
        * <code>double y = 4;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public double getY() {
         return y_;
       }
       /**
        * <code>double y = 4;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(double value) {
         
@@ -944,7 +1021,6 @@ public final class Coordinator {
       }
       /**
        * <code>double y = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         
@@ -953,50 +1029,119 @@ public final class Coordinator {
         return this;
       }
 
-      private double theta_ ;
+      private double z_ ;
       /**
-       * <code>double theta = 5;</code>
-       * @return The theta.
+       * <code>double z = 5;</code>
        */
-      @java.lang.Override
-      public double getTheta() {
-        return theta_;
+      public double getZ() {
+        return z_;
       }
       /**
-       * <code>double theta = 5;</code>
-       * @param value The theta to set.
-       * @return This builder for chaining.
+       * <code>double z = 5;</code>
        */
-      public Builder setTheta(double value) {
+      public Builder setZ(double value) {
         
-        theta_ = value;
+        z_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double theta = 5;</code>
-       * @return This builder for chaining.
+       * <code>double z = 5;</code>
        */
-      public Builder clearTheta() {
+      public Builder clearZ() {
         
-        theta_ = 0D;
+        z_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double roll_ ;
+      /**
+       * <code>double roll = 6;</code>
+       */
+      public double getRoll() {
+        return roll_;
+      }
+      /**
+       * <code>double roll = 6;</code>
+       */
+      public Builder setRoll(double value) {
+        
+        roll_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double roll = 6;</code>
+       */
+      public Builder clearRoll() {
+        
+        roll_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double pitch_ ;
+      /**
+       * <code>double pitch = 7;</code>
+       */
+      public double getPitch() {
+        return pitch_;
+      }
+      /**
+       * <code>double pitch = 7;</code>
+       */
+      public Builder setPitch(double value) {
+        
+        pitch_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double pitch = 7;</code>
+       */
+      public Builder clearPitch() {
+        
+        pitch_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double yaw_ ;
+      /**
+       * <code>double yaw = 8;</code>
+       */
+      public double getYaw() {
+        return yaw_;
+      }
+      /**
+       * <code>double yaw = 8;</code>
+       */
+      public Builder setYaw(double value) {
+        
+        yaw_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double yaw = 8;</code>
+       */
+      public Builder clearYaw() {
+        
+        yaw_ = 0D;
         onChanged();
         return this;
       }
 
       private int pathIndex_ ;
       /**
-       * <code>int32 pathIndex = 6;</code>
-       * @return The pathIndex.
+       * <code>int32 pathIndex = 9;</code>
        */
-      @java.lang.Override
       public int getPathIndex() {
         return pathIndex_;
       }
       /**
-       * <code>int32 pathIndex = 6;</code>
-       * @param value The pathIndex to set.
-       * @return This builder for chaining.
+       * <code>int32 pathIndex = 9;</code>
        */
       public Builder setPathIndex(int value) {
         
@@ -1005,8 +1150,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>int32 pathIndex = 6;</code>
-       * @return This builder for chaining.
+       * <code>int32 pathIndex = 9;</code>
        */
       public Builder clearPathIndex() {
         
@@ -1017,17 +1161,13 @@ public final class Coordinator {
 
       private double velocity_ ;
       /**
-       * <code>double velocity = 7;</code>
-       * @return The velocity.
+       * <code>double velocity = 10;</code>
        */
-      @java.lang.Override
       public double getVelocity() {
         return velocity_;
       }
       /**
-       * <code>double velocity = 7;</code>
-       * @param value The velocity to set.
-       * @return This builder for chaining.
+       * <code>double velocity = 10;</code>
        */
       public Builder setVelocity(double value) {
         
@@ -1036,8 +1176,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double velocity = 7;</code>
-       * @return This builder for chaining.
+       * <code>double velocity = 10;</code>
        */
       public Builder clearVelocity() {
         
@@ -1048,17 +1187,13 @@ public final class Coordinator {
 
       private double distanceTraveled_ ;
       /**
-       * <code>double distanceTraveled = 8;</code>
-       * @return The distanceTraveled.
+       * <code>double distanceTraveled = 11;</code>
        */
-      @java.lang.Override
       public double getDistanceTraveled() {
         return distanceTraveled_;
       }
       /**
-       * <code>double distanceTraveled = 8;</code>
-       * @param value The distanceTraveled to set.
-       * @return This builder for chaining.
+       * <code>double distanceTraveled = 11;</code>
        */
       public Builder setDistanceTraveled(double value) {
         
@@ -1067,8 +1202,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double distanceTraveled = 8;</code>
-       * @return This builder for chaining.
+       * <code>double distanceTraveled = 11;</code>
        */
       public Builder clearDistanceTraveled() {
         
@@ -1079,17 +1213,13 @@ public final class Coordinator {
 
       private int criticalPoint_ ;
       /**
-       * <code>int32 criticalPoint = 9;</code>
-       * @return The criticalPoint.
+       * <code>int32 criticalPoint = 12;</code>
        */
-      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
-       * <code>int32 criticalPoint = 9;</code>
-       * @param value The criticalPoint to set.
-       * @return This builder for chaining.
+       * <code>int32 criticalPoint = 12;</code>
        */
       public Builder setCriticalPoint(int value) {
         
@@ -1098,8 +1228,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>int32 criticalPoint = 9;</code>
-       * @return This builder for chaining.
+       * <code>int32 criticalPoint = 12;</code>
        */
       public Builder clearCriticalPoint() {
         
@@ -1110,7 +1239,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -1166,26 +1295,23 @@ public final class Coordinator {
 
     /**
      * <code>string name = 1;</code>
-     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
-     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>int32 criticalPoint = 2;</code>
-     * @return The criticalPoint.
      */
     int getCriticalPoint();
   }
   /**
    * Protobuf type {@code gradlegRPC.responserobotreport}
    */
-  public static final class responserobotreport extends
+  public  static final class responserobotreport extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.responserobotreport)
       responserobotreportOrBuilder {
@@ -1196,13 +1322,7 @@ public final class Coordinator {
     }
     private responserobotreport() {
       name_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new responserobotreport();
+      criticalPoint_ = 0;
     }
 
     @java.lang.Override
@@ -1218,6 +1338,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1240,7 +1361,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1275,9 +1396,7 @@ public final class Coordinator {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
-     * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -1292,9 +1411,7 @@ public final class Coordinator {
     }
     /**
      * <code>string name = 1;</code>
-     * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -1313,9 +1430,7 @@ public final class Coordinator {
     private int criticalPoint_;
     /**
      * <code>int32 criticalPoint = 2;</code>
-     * @return The criticalPoint.
      */
-    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -1371,12 +1486,13 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.responserobotreport other = (io.grpc.coordinator.Coordinator.responserobotreport) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (getCriticalPoint()
-          != other.getCriticalPoint()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getName()
+          .equals(other.getName());
+      result = result && (getCriticalPoint()
+          == other.getCriticalPoint());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1561,35 +1677,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1642,7 +1758,6 @@ public final class Coordinator {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
-       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1658,7 +1773,6 @@ public final class Coordinator {
       }
       /**
        * <code>string name = 1;</code>
-       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1675,8 +1789,6 @@ public final class Coordinator {
       }
       /**
        * <code>string name = 1;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1690,7 +1802,6 @@ public final class Coordinator {
       }
       /**
        * <code>string name = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1700,8 +1811,6 @@ public final class Coordinator {
       }
       /**
        * <code>string name = 1;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1718,16 +1827,12 @@ public final class Coordinator {
       private int criticalPoint_ ;
       /**
        * <code>int32 criticalPoint = 2;</code>
-       * @return The criticalPoint.
        */
-      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
        * <code>int32 criticalPoint = 2;</code>
-       * @param value The criticalPoint to set.
-       * @return This builder for chaining.
        */
       public Builder setCriticalPoint(int value) {
         
@@ -1737,7 +1842,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 criticalPoint = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
         
@@ -1748,7 +1852,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -1804,19 +1908,16 @@ public final class Coordinator {
 
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>int32 robotID = 2;</code>
-     * @return The robotID.
      */
     int getRobotID();
   }
@@ -1827,7 +1928,7 @@ public final class Coordinator {
    *
    * Protobuf type {@code gradlegRPC.trackerRobotReportRequest}
    */
-  public static final class trackerRobotReportRequest extends
+  public  static final class trackerRobotReportRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.trackerRobotReportRequest)
       trackerRobotReportRequestOrBuilder {
@@ -1838,13 +1939,7 @@ public final class Coordinator {
     }
     private trackerRobotReportRequest() {
       kan_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new trackerRobotReportRequest();
+      robotID_ = 0;
     }
 
     @java.lang.Override
@@ -1860,6 +1955,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1882,7 +1978,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1917,9 +2013,7 @@ public final class Coordinator {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
-    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -1934,9 +2028,7 @@ public final class Coordinator {
     }
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -1955,9 +2047,7 @@ public final class Coordinator {
     private int robotID_;
     /**
      * <code>int32 robotID = 2;</code>
-     * @return The robotID.
      */
-    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -2013,12 +2103,13 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.trackerRobotReportRequest other = (io.grpc.coordinator.Coordinator.trackerRobotReportRequest) obj;
 
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (getRobotID()
-          != other.getRobotID()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && (getRobotID()
+          == other.getRobotID());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2207,35 +2298,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2288,7 +2379,6 @@ public final class Coordinator {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
-       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -2304,7 +2394,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -2321,8 +2410,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -2336,7 +2423,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -2346,8 +2432,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -2364,16 +2448,12 @@ public final class Coordinator {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 2;</code>
-       * @return The robotID.
        */
-      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 2;</code>
-       * @param value The robotID to set.
-       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -2383,7 +2463,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 robotID = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -2394,7 +2473,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -2450,26 +2529,23 @@ public final class Coordinator {
 
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>int32 robotID = 2;</code>
-     * @return The robotID.
      */
     int getRobotID();
   }
   /**
    * Protobuf type {@code gradlegRPC.coordinatorGetCriticalPointRequestMessage}
    */
-  public static final class coordinatorGetCriticalPointRequestMessage extends
+  public  static final class coordinatorGetCriticalPointRequestMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.coordinatorGetCriticalPointRequestMessage)
       coordinatorGetCriticalPointRequestMessageOrBuilder {
@@ -2480,13 +2556,7 @@ public final class Coordinator {
     }
     private coordinatorGetCriticalPointRequestMessage() {
       kan_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new coordinatorGetCriticalPointRequestMessage();
+      robotID_ = 0;
     }
 
     @java.lang.Override
@@ -2502,6 +2572,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2524,7 +2595,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -2559,9 +2630,7 @@ public final class Coordinator {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
-    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -2576,9 +2645,7 @@ public final class Coordinator {
     }
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -2597,9 +2664,7 @@ public final class Coordinator {
     private int robotID_;
     /**
      * <code>int32 robotID = 2;</code>
-     * @return The robotID.
      */
-    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -2655,12 +2720,13 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.coordinatorGetCriticalPointRequestMessage other = (io.grpc.coordinator.Coordinator.coordinatorGetCriticalPointRequestMessage) obj;
 
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (getRobotID()
-          != other.getRobotID()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && (getRobotID()
+          == other.getRobotID());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2845,35 +2911,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2926,7 +2992,6 @@ public final class Coordinator {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
-       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -2942,7 +3007,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -2959,8 +3023,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -2974,7 +3036,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -2984,8 +3045,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -3002,16 +3061,12 @@ public final class Coordinator {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 2;</code>
-       * @return The robotID.
        */
-      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 2;</code>
-       * @param value The robotID to set.
-       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -3021,7 +3076,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 robotID = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -3032,7 +3086,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -3088,14 +3142,13 @@ public final class Coordinator {
 
     /**
      * <code>int32 criticalPoint = 1;</code>
-     * @return The criticalPoint.
      */
     int getCriticalPoint();
   }
   /**
    * Protobuf type {@code gradlegRPC.coordinatorGetCriticalPointResponseMessage}
    */
-  public static final class coordinatorGetCriticalPointResponseMessage extends
+  public  static final class coordinatorGetCriticalPointResponseMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.coordinatorGetCriticalPointResponseMessage)
       coordinatorGetCriticalPointResponseMessageOrBuilder {
@@ -3105,13 +3158,7 @@ public final class Coordinator {
       super(builder);
     }
     private coordinatorGetCriticalPointResponseMessage() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new coordinatorGetCriticalPointResponseMessage();
+      criticalPoint_ = 0;
     }
 
     @java.lang.Override
@@ -3127,6 +3174,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3143,7 +3191,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -3178,9 +3226,7 @@ public final class Coordinator {
     private int criticalPoint_;
     /**
      * <code>int32 criticalPoint = 1;</code>
-     * @return The criticalPoint.
      */
-    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -3230,10 +3276,11 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.coordinatorGetCriticalPointResponseMessage other = (io.grpc.coordinator.Coordinator.coordinatorGetCriticalPointResponseMessage) obj;
 
-      if (getCriticalPoint()
-          != other.getCriticalPoint()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (getCriticalPoint()
+          == other.getCriticalPoint());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -3413,35 +3460,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3490,16 +3537,12 @@ public final class Coordinator {
       private int criticalPoint_ ;
       /**
        * <code>int32 criticalPoint = 1;</code>
-       * @return The criticalPoint.
        */
-      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
        * <code>int32 criticalPoint = 1;</code>
-       * @param value The criticalPoint to set.
-       * @return This builder for chaining.
        */
       public Builder setCriticalPoint(int value) {
         
@@ -3509,7 +3552,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 criticalPoint = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCriticalPoint() {
         
@@ -3520,7 +3562,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -3576,60 +3618,50 @@ public final class Coordinator {
 
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>int32 robotID = 2;</code>
-     * @return The robotID.
      */
     int getRobotID();
 
     /**
      * <code>string type = 3;</code>
-     * @return The type.
      */
     java.lang.String getType();
     /**
      * <code>string type = 3;</code>
-     * @return The bytes for type.
      */
     com.google.protobuf.ByteString
         getTypeBytes();
 
     /**
      * <code>string IP = 4;</code>
-     * @return The iP.
      */
     java.lang.String getIP();
     /**
      * <code>string IP = 4;</code>
-     * @return The bytes for iP.
      */
     com.google.protobuf.ByteString
         getIPBytes();
 
     /**
      * <code>int32 port = 5;</code>
-     * @return The port.
      */
     int getPort();
 
     /**
      * <code>.gradlegRPC.robotPose startPose = 6;</code>
-     * @return Whether the startPose field is set.
      */
     boolean hasStartPose();
     /**
      * <code>.gradlegRPC.robotPose startPose = 6;</code>
-     * @return The startPose.
      */
     io.grpc.coordinator.Coordinator.robotPose getStartPose();
     /**
@@ -3639,12 +3671,10 @@ public final class Coordinator {
 
     /**
      * <code>.gradlegRPC.robotPose endPose = 7;</code>
-     * @return Whether the endPose field is set.
      */
     boolean hasEndPose();
     /**
      * <code>.gradlegRPC.robotPose endPose = 7;</code>
-     * @return The endPose.
      */
     io.grpc.coordinator.Coordinator.robotPose getEndPose();
     /**
@@ -3658,7 +3688,6 @@ public final class Coordinator {
      * </pre>
      *
      * <code>string timeStamp = 8;</code>
-     * @return The timeStamp.
      */
     java.lang.String getTimeStamp();
     /**
@@ -3667,37 +3696,31 @@ public final class Coordinator {
      * </pre>
      *
      * <code>string timeStamp = 8;</code>
-     * @return The bytes for timeStamp.
      */
     com.google.protobuf.ByteString
         getTimeStampBytes();
 
     /**
      * <code>double maxAccel = 9;</code>
-     * @return The maxAccel.
      */
     double getMaxAccel();
 
     /**
      * <code>double maxVel = 10;</code>
-     * @return The maxVel.
      */
     double getMaxVel();
 
     /**
      * <code>double trackingPeriodInMillis = 11;</code>
-     * @return The trackingPeriodInMillis.
      */
     double getTrackingPeriodInMillis();
 
     /**
      * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     * @return Whether the makeFootPrint field is set.
      */
     boolean hasMakeFootPrint();
     /**
      * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     * @return The makeFootPrint.
      */
     io.grpc.coordinator.Coordinator.MakeFootPrint getMakeFootPrint();
     /**
@@ -3707,20 +3730,18 @@ public final class Coordinator {
 
     /**
      * <code>bytes poseSteering = 13;</code>
-     * @return The poseSteering.
      */
     com.google.protobuf.ByteString getPoseSteering();
 
     /**
      * <code>int32 numberofrobots = 14;</code>
-     * @return The numberofrobots.
      */
     int getNumberofrobots();
   }
   /**
    * Protobuf type {@code gradlegRPC.robotsGreeting}
    */
-  public static final class robotsGreeting extends
+  public  static final class robotsGreeting extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.robotsGreeting)
       robotsGreetingOrBuilder {
@@ -3731,17 +3752,16 @@ public final class Coordinator {
     }
     private robotsGreeting() {
       kan_ = "";
+      robotID_ = 0;
       type_ = "";
       iP_ = "";
+      port_ = 0;
       timeStamp_ = "";
+      maxAccel_ = 0D;
+      maxVel_ = 0D;
+      trackingPeriodInMillis_ = 0D;
       poseSteering_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new robotsGreeting();
+      numberofrobots_ = 0;
     }
 
     @java.lang.Override
@@ -3757,6 +3777,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3866,7 +3887,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -3901,9 +3922,7 @@ public final class Coordinator {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
-    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -3918,9 +3937,7 @@ public final class Coordinator {
     }
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -3939,9 +3956,7 @@ public final class Coordinator {
     private int robotID_;
     /**
      * <code>int32 robotID = 2;</code>
-     * @return The robotID.
      */
-    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -3950,9 +3965,7 @@ public final class Coordinator {
     private volatile java.lang.Object type_;
     /**
      * <code>string type = 3;</code>
-     * @return The type.
      */
-    @java.lang.Override
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
@@ -3967,9 +3980,7 @@ public final class Coordinator {
     }
     /**
      * <code>string type = 3;</code>
-     * @return The bytes for type.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTypeBytes() {
       java.lang.Object ref = type_;
@@ -3988,9 +3999,7 @@ public final class Coordinator {
     private volatile java.lang.Object iP_;
     /**
      * <code>string IP = 4;</code>
-     * @return The iP.
      */
-    @java.lang.Override
     public java.lang.String getIP() {
       java.lang.Object ref = iP_;
       if (ref instanceof java.lang.String) {
@@ -4005,9 +4014,7 @@ public final class Coordinator {
     }
     /**
      * <code>string IP = 4;</code>
-     * @return The bytes for iP.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getIPBytes() {
       java.lang.Object ref = iP_;
@@ -4026,9 +4033,7 @@ public final class Coordinator {
     private int port_;
     /**
      * <code>int32 port = 5;</code>
-     * @return The port.
      */
-    @java.lang.Override
     public int getPort() {
       return port_;
     }
@@ -4037,24 +4042,19 @@ public final class Coordinator {
     private io.grpc.coordinator.Coordinator.robotPose startPose_;
     /**
      * <code>.gradlegRPC.robotPose startPose = 6;</code>
-     * @return Whether the startPose field is set.
      */
-    @java.lang.Override
     public boolean hasStartPose() {
       return startPose_ != null;
     }
     /**
      * <code>.gradlegRPC.robotPose startPose = 6;</code>
-     * @return The startPose.
      */
-    @java.lang.Override
     public io.grpc.coordinator.Coordinator.robotPose getStartPose() {
       return startPose_ == null ? io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : startPose_;
     }
     /**
      * <code>.gradlegRPC.robotPose startPose = 6;</code>
      */
-    @java.lang.Override
     public io.grpc.coordinator.Coordinator.robotPoseOrBuilder getStartPoseOrBuilder() {
       return getStartPose();
     }
@@ -4063,24 +4063,19 @@ public final class Coordinator {
     private io.grpc.coordinator.Coordinator.robotPose endPose_;
     /**
      * <code>.gradlegRPC.robotPose endPose = 7;</code>
-     * @return Whether the endPose field is set.
      */
-    @java.lang.Override
     public boolean hasEndPose() {
       return endPose_ != null;
     }
     /**
      * <code>.gradlegRPC.robotPose endPose = 7;</code>
-     * @return The endPose.
      */
-    @java.lang.Override
     public io.grpc.coordinator.Coordinator.robotPose getEndPose() {
       return endPose_ == null ? io.grpc.coordinator.Coordinator.robotPose.getDefaultInstance() : endPose_;
     }
     /**
      * <code>.gradlegRPC.robotPose endPose = 7;</code>
      */
-    @java.lang.Override
     public io.grpc.coordinator.Coordinator.robotPoseOrBuilder getEndPoseOrBuilder() {
       return getEndPose();
     }
@@ -4093,9 +4088,7 @@ public final class Coordinator {
      * </pre>
      *
      * <code>string timeStamp = 8;</code>
-     * @return The timeStamp.
      */
-    @java.lang.Override
     public java.lang.String getTimeStamp() {
       java.lang.Object ref = timeStamp_;
       if (ref instanceof java.lang.String) {
@@ -4114,9 +4107,7 @@ public final class Coordinator {
      * </pre>
      *
      * <code>string timeStamp = 8;</code>
-     * @return The bytes for timeStamp.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTimeStampBytes() {
       java.lang.Object ref = timeStamp_;
@@ -4135,9 +4126,7 @@ public final class Coordinator {
     private double maxAccel_;
     /**
      * <code>double maxAccel = 9;</code>
-     * @return The maxAccel.
      */
-    @java.lang.Override
     public double getMaxAccel() {
       return maxAccel_;
     }
@@ -4146,9 +4135,7 @@ public final class Coordinator {
     private double maxVel_;
     /**
      * <code>double maxVel = 10;</code>
-     * @return The maxVel.
      */
-    @java.lang.Override
     public double getMaxVel() {
       return maxVel_;
     }
@@ -4157,9 +4144,7 @@ public final class Coordinator {
     private double trackingPeriodInMillis_;
     /**
      * <code>double trackingPeriodInMillis = 11;</code>
-     * @return The trackingPeriodInMillis.
      */
-    @java.lang.Override
     public double getTrackingPeriodInMillis() {
       return trackingPeriodInMillis_;
     }
@@ -4168,24 +4153,19 @@ public final class Coordinator {
     private io.grpc.coordinator.Coordinator.MakeFootPrint makeFootPrint_;
     /**
      * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     * @return Whether the makeFootPrint field is set.
      */
-    @java.lang.Override
     public boolean hasMakeFootPrint() {
       return makeFootPrint_ != null;
     }
     /**
      * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     * @return The makeFootPrint.
      */
-    @java.lang.Override
     public io.grpc.coordinator.Coordinator.MakeFootPrint getMakeFootPrint() {
       return makeFootPrint_ == null ? io.grpc.coordinator.Coordinator.MakeFootPrint.getDefaultInstance() : makeFootPrint_;
     }
     /**
      * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
      */
-    @java.lang.Override
     public io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder getMakeFootPrintOrBuilder() {
       return getMakeFootPrint();
     }
@@ -4194,9 +4174,7 @@ public final class Coordinator {
     private com.google.protobuf.ByteString poseSteering_;
     /**
      * <code>bytes poseSteering = 13;</code>
-     * @return The poseSteering.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getPoseSteering() {
       return poseSteering_;
     }
@@ -4205,9 +4183,7 @@ public final class Coordinator {
     private int numberofrobots_;
     /**
      * <code>int32 numberofrobots = 14;</code>
-     * @return The numberofrobots.
      */
-    @java.lang.Override
     public int getNumberofrobots() {
       return numberofrobots_;
     }
@@ -4344,48 +4320,52 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.robotsGreeting other = (io.grpc.coordinator.Coordinator.robotsGreeting) obj;
 
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (getRobotID()
-          != other.getRobotID()) return false;
-      if (!getType()
-          .equals(other.getType())) return false;
-      if (!getIP()
-          .equals(other.getIP())) return false;
-      if (getPort()
-          != other.getPort()) return false;
-      if (hasStartPose() != other.hasStartPose()) return false;
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && (getRobotID()
+          == other.getRobotID());
+      result = result && getType()
+          .equals(other.getType());
+      result = result && getIP()
+          .equals(other.getIP());
+      result = result && (getPort()
+          == other.getPort());
+      result = result && (hasStartPose() == other.hasStartPose());
       if (hasStartPose()) {
-        if (!getStartPose()
-            .equals(other.getStartPose())) return false;
+        result = result && getStartPose()
+            .equals(other.getStartPose());
       }
-      if (hasEndPose() != other.hasEndPose()) return false;
+      result = result && (hasEndPose() == other.hasEndPose());
       if (hasEndPose()) {
-        if (!getEndPose()
-            .equals(other.getEndPose())) return false;
+        result = result && getEndPose()
+            .equals(other.getEndPose());
       }
-      if (!getTimeStamp()
-          .equals(other.getTimeStamp())) return false;
-      if (java.lang.Double.doubleToLongBits(getMaxAccel())
-          != java.lang.Double.doubleToLongBits(
-              other.getMaxAccel())) return false;
-      if (java.lang.Double.doubleToLongBits(getMaxVel())
-          != java.lang.Double.doubleToLongBits(
-              other.getMaxVel())) return false;
-      if (java.lang.Double.doubleToLongBits(getTrackingPeriodInMillis())
-          != java.lang.Double.doubleToLongBits(
-              other.getTrackingPeriodInMillis())) return false;
-      if (hasMakeFootPrint() != other.hasMakeFootPrint()) return false;
+      result = result && getTimeStamp()
+          .equals(other.getTimeStamp());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getMaxAccel())
+          == java.lang.Double.doubleToLongBits(
+              other.getMaxAccel()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getMaxVel())
+          == java.lang.Double.doubleToLongBits(
+              other.getMaxVel()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getTrackingPeriodInMillis())
+          == java.lang.Double.doubleToLongBits(
+              other.getTrackingPeriodInMillis()));
+      result = result && (hasMakeFootPrint() == other.hasMakeFootPrint());
       if (hasMakeFootPrint()) {
-        if (!getMakeFootPrint()
-            .equals(other.getMakeFootPrint())) return false;
+        result = result && getMakeFootPrint()
+            .equals(other.getMakeFootPrint());
       }
-      if (!getPoseSteering()
-          .equals(other.getPoseSteering())) return false;
-      if (getNumberofrobots()
-          != other.getNumberofrobots()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && getPoseSteering()
+          .equals(other.getPoseSteering());
+      result = result && (getNumberofrobots()
+          == other.getNumberofrobots());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -4663,35 +4643,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4783,7 +4763,6 @@ public final class Coordinator {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
-       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -4799,7 +4778,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -4816,8 +4794,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -4831,7 +4807,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -4841,8 +4816,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -4859,16 +4832,12 @@ public final class Coordinator {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 2;</code>
-       * @return The robotID.
        */
-      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 2;</code>
-       * @param value The robotID to set.
-       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -4878,7 +4847,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 robotID = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -4890,7 +4858,6 @@ public final class Coordinator {
       private java.lang.Object type_ = "";
       /**
        * <code>string type = 3;</code>
-       * @return The type.
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -4906,7 +4873,6 @@ public final class Coordinator {
       }
       /**
        * <code>string type = 3;</code>
-       * @return The bytes for type.
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
@@ -4923,8 +4889,6 @@ public final class Coordinator {
       }
       /**
        * <code>string type = 3;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
        */
       public Builder setType(
           java.lang.String value) {
@@ -4938,7 +4902,6 @@ public final class Coordinator {
       }
       /**
        * <code>string type = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -4948,8 +4911,6 @@ public final class Coordinator {
       }
       /**
        * <code>string type = 3;</code>
-       * @param value The bytes for type to set.
-       * @return This builder for chaining.
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -4966,7 +4927,6 @@ public final class Coordinator {
       private java.lang.Object iP_ = "";
       /**
        * <code>string IP = 4;</code>
-       * @return The iP.
        */
       public java.lang.String getIP() {
         java.lang.Object ref = iP_;
@@ -4982,7 +4942,6 @@ public final class Coordinator {
       }
       /**
        * <code>string IP = 4;</code>
-       * @return The bytes for iP.
        */
       public com.google.protobuf.ByteString
           getIPBytes() {
@@ -4999,8 +4958,6 @@ public final class Coordinator {
       }
       /**
        * <code>string IP = 4;</code>
-       * @param value The iP to set.
-       * @return This builder for chaining.
        */
       public Builder setIP(
           java.lang.String value) {
@@ -5014,7 +4971,6 @@ public final class Coordinator {
       }
       /**
        * <code>string IP = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearIP() {
         
@@ -5024,8 +4980,6 @@ public final class Coordinator {
       }
       /**
        * <code>string IP = 4;</code>
-       * @param value The bytes for iP to set.
-       * @return This builder for chaining.
        */
       public Builder setIPBytes(
           com.google.protobuf.ByteString value) {
@@ -5042,16 +4996,12 @@ public final class Coordinator {
       private int port_ ;
       /**
        * <code>int32 port = 5;</code>
-       * @return The port.
        */
-      @java.lang.Override
       public int getPort() {
         return port_;
       }
       /**
        * <code>int32 port = 5;</code>
-       * @param value The port to set.
-       * @return This builder for chaining.
        */
       public Builder setPort(int value) {
         
@@ -5061,7 +5011,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 port = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPort() {
         
@@ -5070,19 +5019,17 @@ public final class Coordinator {
         return this;
       }
 
-      private io.grpc.coordinator.Coordinator.robotPose startPose_;
+      private io.grpc.coordinator.Coordinator.robotPose startPose_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.grpc.coordinator.Coordinator.robotPose, io.grpc.coordinator.Coordinator.robotPose.Builder, io.grpc.coordinator.Coordinator.robotPoseOrBuilder> startPoseBuilder_;
       /**
        * <code>.gradlegRPC.robotPose startPose = 6;</code>
-       * @return Whether the startPose field is set.
        */
       public boolean hasStartPose() {
         return startPoseBuilder_ != null || startPose_ != null;
       }
       /**
        * <code>.gradlegRPC.robotPose startPose = 6;</code>
-       * @return The startPose.
        */
       public io.grpc.coordinator.Coordinator.robotPose getStartPose() {
         if (startPoseBuilder_ == null) {
@@ -5189,19 +5136,17 @@ public final class Coordinator {
         return startPoseBuilder_;
       }
 
-      private io.grpc.coordinator.Coordinator.robotPose endPose_;
+      private io.grpc.coordinator.Coordinator.robotPose endPose_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.grpc.coordinator.Coordinator.robotPose, io.grpc.coordinator.Coordinator.robotPose.Builder, io.grpc.coordinator.Coordinator.robotPoseOrBuilder> endPoseBuilder_;
       /**
        * <code>.gradlegRPC.robotPose endPose = 7;</code>
-       * @return Whether the endPose field is set.
        */
       public boolean hasEndPose() {
         return endPoseBuilder_ != null || endPose_ != null;
       }
       /**
        * <code>.gradlegRPC.robotPose endPose = 7;</code>
-       * @return The endPose.
        */
       public io.grpc.coordinator.Coordinator.robotPose getEndPose() {
         if (endPoseBuilder_ == null) {
@@ -5315,7 +5260,6 @@ public final class Coordinator {
        * </pre>
        *
        * <code>string timeStamp = 8;</code>
-       * @return The timeStamp.
        */
       public java.lang.String getTimeStamp() {
         java.lang.Object ref = timeStamp_;
@@ -5335,7 +5279,6 @@ public final class Coordinator {
        * </pre>
        *
        * <code>string timeStamp = 8;</code>
-       * @return The bytes for timeStamp.
        */
       public com.google.protobuf.ByteString
           getTimeStampBytes() {
@@ -5356,8 +5299,6 @@ public final class Coordinator {
        * </pre>
        *
        * <code>string timeStamp = 8;</code>
-       * @param value The timeStamp to set.
-       * @return This builder for chaining.
        */
       public Builder setTimeStamp(
           java.lang.String value) {
@@ -5375,7 +5316,6 @@ public final class Coordinator {
        * </pre>
        *
        * <code>string timeStamp = 8;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTimeStamp() {
         
@@ -5389,8 +5329,6 @@ public final class Coordinator {
        * </pre>
        *
        * <code>string timeStamp = 8;</code>
-       * @param value The bytes for timeStamp to set.
-       * @return This builder for chaining.
        */
       public Builder setTimeStampBytes(
           com.google.protobuf.ByteString value) {
@@ -5407,16 +5345,12 @@ public final class Coordinator {
       private double maxAccel_ ;
       /**
        * <code>double maxAccel = 9;</code>
-       * @return The maxAccel.
        */
-      @java.lang.Override
       public double getMaxAccel() {
         return maxAccel_;
       }
       /**
        * <code>double maxAccel = 9;</code>
-       * @param value The maxAccel to set.
-       * @return This builder for chaining.
        */
       public Builder setMaxAccel(double value) {
         
@@ -5426,7 +5360,6 @@ public final class Coordinator {
       }
       /**
        * <code>double maxAccel = 9;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMaxAccel() {
         
@@ -5438,16 +5371,12 @@ public final class Coordinator {
       private double maxVel_ ;
       /**
        * <code>double maxVel = 10;</code>
-       * @return The maxVel.
        */
-      @java.lang.Override
       public double getMaxVel() {
         return maxVel_;
       }
       /**
        * <code>double maxVel = 10;</code>
-       * @param value The maxVel to set.
-       * @return This builder for chaining.
        */
       public Builder setMaxVel(double value) {
         
@@ -5457,7 +5386,6 @@ public final class Coordinator {
       }
       /**
        * <code>double maxVel = 10;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMaxVel() {
         
@@ -5469,16 +5397,12 @@ public final class Coordinator {
       private double trackingPeriodInMillis_ ;
       /**
        * <code>double trackingPeriodInMillis = 11;</code>
-       * @return The trackingPeriodInMillis.
        */
-      @java.lang.Override
       public double getTrackingPeriodInMillis() {
         return trackingPeriodInMillis_;
       }
       /**
        * <code>double trackingPeriodInMillis = 11;</code>
-       * @param value The trackingPeriodInMillis to set.
-       * @return This builder for chaining.
        */
       public Builder setTrackingPeriodInMillis(double value) {
         
@@ -5488,7 +5412,6 @@ public final class Coordinator {
       }
       /**
        * <code>double trackingPeriodInMillis = 11;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTrackingPeriodInMillis() {
         
@@ -5497,19 +5420,17 @@ public final class Coordinator {
         return this;
       }
 
-      private io.grpc.coordinator.Coordinator.MakeFootPrint makeFootPrint_;
+      private io.grpc.coordinator.Coordinator.MakeFootPrint makeFootPrint_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.grpc.coordinator.Coordinator.MakeFootPrint, io.grpc.coordinator.Coordinator.MakeFootPrint.Builder, io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder> makeFootPrintBuilder_;
       /**
        * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       * @return Whether the makeFootPrint field is set.
        */
       public boolean hasMakeFootPrint() {
         return makeFootPrintBuilder_ != null || makeFootPrint_ != null;
       }
       /**
        * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       * @return The makeFootPrint.
        */
       public io.grpc.coordinator.Coordinator.MakeFootPrint getMakeFootPrint() {
         if (makeFootPrintBuilder_ == null) {
@@ -5619,16 +5540,12 @@ public final class Coordinator {
       private com.google.protobuf.ByteString poseSteering_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>bytes poseSteering = 13;</code>
-       * @return The poseSteering.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getPoseSteering() {
         return poseSteering_;
       }
       /**
        * <code>bytes poseSteering = 13;</code>
-       * @param value The poseSteering to set.
-       * @return This builder for chaining.
        */
       public Builder setPoseSteering(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5641,7 +5558,6 @@ public final class Coordinator {
       }
       /**
        * <code>bytes poseSteering = 13;</code>
-       * @return This builder for chaining.
        */
       public Builder clearPoseSteering() {
         
@@ -5653,16 +5569,12 @@ public final class Coordinator {
       private int numberofrobots_ ;
       /**
        * <code>int32 numberofrobots = 14;</code>
-       * @return The numberofrobots.
        */
-      @java.lang.Override
       public int getNumberofrobots() {
         return numberofrobots_;
       }
       /**
        * <code>int32 numberofrobots = 14;</code>
-       * @param value The numberofrobots to set.
-       * @return This builder for chaining.
        */
       public Builder setNumberofrobots(int value) {
         
@@ -5672,7 +5584,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 numberofrobots = 14;</code>
-       * @return This builder for chaining.
        */
       public Builder clearNumberofrobots() {
         
@@ -5683,7 +5594,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -5739,26 +5650,38 @@ public final class Coordinator {
 
     /**
      * <code>double x = 1;</code>
-     * @return The x.
      */
     double getX();
 
     /**
      * <code>double y = 2;</code>
-     * @return The y.
      */
     double getY();
 
     /**
-     * <code>double theta = 3;</code>
-     * @return The theta.
+     * <code>double z = 3;</code>
      */
-    double getTheta();
+    double getZ();
+
+    /**
+     * <code>double roll = 4;</code>
+     */
+    double getRoll();
+
+    /**
+     * <code>double pitch = 5;</code>
+     */
+    double getPitch();
+
+    /**
+     * <code>double yaw = 6;</code>
+     */
+    double getYaw();
   }
   /**
    * Protobuf type {@code gradlegRPC.robotPose}
    */
-  public static final class robotPose extends
+  public  static final class robotPose extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.robotPose)
       robotPoseOrBuilder {
@@ -5768,13 +5691,12 @@ public final class Coordinator {
       super(builder);
     }
     private robotPose() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new robotPose();
+      x_ = 0D;
+      y_ = 0D;
+      z_ = 0D;
+      roll_ = 0D;
+      pitch_ = 0D;
+      yaw_ = 0D;
     }
 
     @java.lang.Override
@@ -5790,6 +5712,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5812,11 +5735,26 @@ public final class Coordinator {
             }
             case 25: {
 
-              theta_ = input.readDouble();
+              z_ = input.readDouble();
+              break;
+            }
+            case 33: {
+
+              roll_ = input.readDouble();
+              break;
+            }
+            case 41: {
+
+              pitch_ = input.readDouble();
+              break;
+            }
+            case 49: {
+
+              yaw_ = input.readDouble();
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -5851,9 +5789,7 @@ public final class Coordinator {
     private double x_;
     /**
      * <code>double x = 1;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public double getX() {
       return x_;
     }
@@ -5862,22 +5798,45 @@ public final class Coordinator {
     private double y_;
     /**
      * <code>double y = 2;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public double getY() {
       return y_;
     }
 
-    public static final int THETA_FIELD_NUMBER = 3;
-    private double theta_;
+    public static final int Z_FIELD_NUMBER = 3;
+    private double z_;
     /**
-     * <code>double theta = 3;</code>
-     * @return The theta.
+     * <code>double z = 3;</code>
      */
-    @java.lang.Override
-    public double getTheta() {
-      return theta_;
+    public double getZ() {
+      return z_;
+    }
+
+    public static final int ROLL_FIELD_NUMBER = 4;
+    private double roll_;
+    /**
+     * <code>double roll = 4;</code>
+     */
+    public double getRoll() {
+      return roll_;
+    }
+
+    public static final int PITCH_FIELD_NUMBER = 5;
+    private double pitch_;
+    /**
+     * <code>double pitch = 5;</code>
+     */
+    public double getPitch() {
+      return pitch_;
+    }
+
+    public static final int YAW_FIELD_NUMBER = 6;
+    private double yaw_;
+    /**
+     * <code>double yaw = 6;</code>
+     */
+    public double getYaw() {
+      return yaw_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5900,8 +5859,17 @@ public final class Coordinator {
       if (y_ != 0D) {
         output.writeDouble(2, y_);
       }
-      if (theta_ != 0D) {
-        output.writeDouble(3, theta_);
+      if (z_ != 0D) {
+        output.writeDouble(3, z_);
+      }
+      if (roll_ != 0D) {
+        output.writeDouble(4, roll_);
+      }
+      if (pitch_ != 0D) {
+        output.writeDouble(5, pitch_);
+      }
+      if (yaw_ != 0D) {
+        output.writeDouble(6, yaw_);
       }
       unknownFields.writeTo(output);
     }
@@ -5920,9 +5888,21 @@ public final class Coordinator {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, y_);
       }
-      if (theta_ != 0D) {
+      if (z_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, theta_);
+          .computeDoubleSize(3, z_);
+      }
+      if (roll_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, roll_);
+      }
+      if (pitch_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, pitch_);
+      }
+      if (yaw_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, yaw_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5939,17 +5919,33 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.robotPose other = (io.grpc.coordinator.Coordinator.robotPose) obj;
 
-      if (java.lang.Double.doubleToLongBits(getX())
-          != java.lang.Double.doubleToLongBits(
-              other.getX())) return false;
-      if (java.lang.Double.doubleToLongBits(getY())
-          != java.lang.Double.doubleToLongBits(
-              other.getY())) return false;
-      if (java.lang.Double.doubleToLongBits(getTheta())
-          != java.lang.Double.doubleToLongBits(
-              other.getTheta())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getX())
+          == java.lang.Double.doubleToLongBits(
+              other.getX()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getY())
+          == java.lang.Double.doubleToLongBits(
+              other.getY()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getZ())
+          == java.lang.Double.doubleToLongBits(
+              other.getZ()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getRoll())
+          == java.lang.Double.doubleToLongBits(
+              other.getRoll()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPitch())
+          == java.lang.Double.doubleToLongBits(
+              other.getPitch()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getYaw())
+          == java.lang.Double.doubleToLongBits(
+              other.getYaw()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -5965,9 +5961,18 @@ public final class Coordinator {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + THETA_FIELD_NUMBER;
+      hash = (37 * hash) + Z_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getTheta()));
+          java.lang.Double.doubleToLongBits(getZ()));
+      hash = (37 * hash) + ROLL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRoll()));
+      hash = (37 * hash) + PITCH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPitch()));
+      hash = (37 * hash) + YAW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getYaw()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6105,7 +6110,13 @@ public final class Coordinator {
 
         y_ = 0D;
 
-        theta_ = 0D;
+        z_ = 0D;
+
+        roll_ = 0D;
+
+        pitch_ = 0D;
+
+        yaw_ = 0D;
 
         return this;
       }
@@ -6135,42 +6146,45 @@ public final class Coordinator {
         io.grpc.coordinator.Coordinator.robotPose result = new io.grpc.coordinator.Coordinator.robotPose(this);
         result.x_ = x_;
         result.y_ = y_;
-        result.theta_ = theta_;
+        result.z_ = z_;
+        result.roll_ = roll_;
+        result.pitch_ = pitch_;
+        result.yaw_ = yaw_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -6190,8 +6204,17 @@ public final class Coordinator {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getTheta() != 0D) {
-          setTheta(other.getTheta());
+        if (other.getZ() != 0D) {
+          setZ(other.getZ());
+        }
+        if (other.getRoll() != 0D) {
+          setRoll(other.getRoll());
+        }
+        if (other.getPitch() != 0D) {
+          setPitch(other.getPitch());
+        }
+        if (other.getYaw() != 0D) {
+          setYaw(other.getYaw());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6225,16 +6248,12 @@ public final class Coordinator {
       private double x_ ;
       /**
        * <code>double x = 1;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public double getX() {
         return x_;
       }
       /**
        * <code>double x = 1;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(double value) {
         
@@ -6244,7 +6263,6 @@ public final class Coordinator {
       }
       /**
        * <code>double x = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         
@@ -6256,16 +6274,12 @@ public final class Coordinator {
       private double y_ ;
       /**
        * <code>double y = 2;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public double getY() {
         return y_;
       }
       /**
        * <code>double y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(double value) {
         
@@ -6275,7 +6289,6 @@ public final class Coordinator {
       }
       /**
        * <code>double y = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         
@@ -6284,40 +6297,113 @@ public final class Coordinator {
         return this;
       }
 
-      private double theta_ ;
+      private double z_ ;
       /**
-       * <code>double theta = 3;</code>
-       * @return The theta.
+       * <code>double z = 3;</code>
        */
-      @java.lang.Override
-      public double getTheta() {
-        return theta_;
+      public double getZ() {
+        return z_;
       }
       /**
-       * <code>double theta = 3;</code>
-       * @param value The theta to set.
-       * @return This builder for chaining.
+       * <code>double z = 3;</code>
        */
-      public Builder setTheta(double value) {
+      public Builder setZ(double value) {
         
-        theta_ = value;
+        z_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double theta = 3;</code>
-       * @return This builder for chaining.
+       * <code>double z = 3;</code>
        */
-      public Builder clearTheta() {
+      public Builder clearZ() {
         
-        theta_ = 0D;
+        z_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double roll_ ;
+      /**
+       * <code>double roll = 4;</code>
+       */
+      public double getRoll() {
+        return roll_;
+      }
+      /**
+       * <code>double roll = 4;</code>
+       */
+      public Builder setRoll(double value) {
+        
+        roll_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double roll = 4;</code>
+       */
+      public Builder clearRoll() {
+        
+        roll_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double pitch_ ;
+      /**
+       * <code>double pitch = 5;</code>
+       */
+      public double getPitch() {
+        return pitch_;
+      }
+      /**
+       * <code>double pitch = 5;</code>
+       */
+      public Builder setPitch(double value) {
+        
+        pitch_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double pitch = 5;</code>
+       */
+      public Builder clearPitch() {
+        
+        pitch_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double yaw_ ;
+      /**
+       * <code>double yaw = 6;</code>
+       */
+      public double getYaw() {
+        return yaw_;
+      }
+      /**
+       * <code>double yaw = 6;</code>
+       */
+      public Builder setYaw(double value) {
+        
+        yaw_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double yaw = 6;</code>
+       */
+      public Builder clearYaw() {
+        
+        yaw_ = 0D;
         onChanged();
         return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -6373,44 +6459,38 @@ public final class Coordinator {
 
     /**
      * <code>int32 centerX = 1;</code>
-     * @return The centerX.
      */
     int getCenterX();
 
     /**
      * <code>int32 centerY = 2;</code>
-     * @return The centerY.
      */
     int getCenterY();
 
     /**
      * <code>int32 minVerts = 3;</code>
-     * @return The minVerts.
      */
     int getMinVerts();
 
     /**
      * <code>int32 maxVerts = 4;</code>
-     * @return The maxVerts.
      */
     int getMaxVerts();
 
     /**
      * <code>double minRadius = 5;</code>
-     * @return The minRadius.
      */
     double getMinRadius();
 
     /**
      * <code>double maxRadius = 6;</code>
-     * @return The maxRadius.
      */
     double getMaxRadius();
   }
   /**
    * Protobuf type {@code gradlegRPC.MakeFootPrint}
    */
-  public static final class MakeFootPrint extends
+  public  static final class MakeFootPrint extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.MakeFootPrint)
       MakeFootPrintOrBuilder {
@@ -6420,13 +6500,12 @@ public final class Coordinator {
       super(builder);
     }
     private MakeFootPrint() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MakeFootPrint();
+      centerX_ = 0;
+      centerY_ = 0;
+      minVerts_ = 0;
+      maxVerts_ = 0;
+      minRadius_ = 0D;
+      maxRadius_ = 0D;
     }
 
     @java.lang.Override
@@ -6442,6 +6521,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6483,7 +6563,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -6518,9 +6598,7 @@ public final class Coordinator {
     private int centerX_;
     /**
      * <code>int32 centerX = 1;</code>
-     * @return The centerX.
      */
-    @java.lang.Override
     public int getCenterX() {
       return centerX_;
     }
@@ -6529,9 +6607,7 @@ public final class Coordinator {
     private int centerY_;
     /**
      * <code>int32 centerY = 2;</code>
-     * @return The centerY.
      */
-    @java.lang.Override
     public int getCenterY() {
       return centerY_;
     }
@@ -6540,9 +6616,7 @@ public final class Coordinator {
     private int minVerts_;
     /**
      * <code>int32 minVerts = 3;</code>
-     * @return The minVerts.
      */
-    @java.lang.Override
     public int getMinVerts() {
       return minVerts_;
     }
@@ -6551,9 +6625,7 @@ public final class Coordinator {
     private int maxVerts_;
     /**
      * <code>int32 maxVerts = 4;</code>
-     * @return The maxVerts.
      */
-    @java.lang.Override
     public int getMaxVerts() {
       return maxVerts_;
     }
@@ -6562,9 +6634,7 @@ public final class Coordinator {
     private double minRadius_;
     /**
      * <code>double minRadius = 5;</code>
-     * @return The minRadius.
      */
-    @java.lang.Override
     public double getMinRadius() {
       return minRadius_;
     }
@@ -6573,9 +6643,7 @@ public final class Coordinator {
     private double maxRadius_;
     /**
      * <code>double maxRadius = 6;</code>
-     * @return The maxRadius.
      */
-    @java.lang.Override
     public double getMaxRadius() {
       return maxRadius_;
     }
@@ -6660,22 +6728,25 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.MakeFootPrint other = (io.grpc.coordinator.Coordinator.MakeFootPrint) obj;
 
-      if (getCenterX()
-          != other.getCenterX()) return false;
-      if (getCenterY()
-          != other.getCenterY()) return false;
-      if (getMinVerts()
-          != other.getMinVerts()) return false;
-      if (getMaxVerts()
-          != other.getMaxVerts()) return false;
-      if (java.lang.Double.doubleToLongBits(getMinRadius())
-          != java.lang.Double.doubleToLongBits(
-              other.getMinRadius())) return false;
-      if (java.lang.Double.doubleToLongBits(getMaxRadius())
-          != java.lang.Double.doubleToLongBits(
-              other.getMaxRadius())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (getCenterX()
+          == other.getCenterX());
+      result = result && (getCenterY()
+          == other.getCenterY());
+      result = result && (getMinVerts()
+          == other.getMinVerts());
+      result = result && (getMaxVerts()
+          == other.getMaxVerts());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getMinRadius())
+          == java.lang.Double.doubleToLongBits(
+              other.getMinRadius()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getMaxRadius())
+          == java.lang.Double.doubleToLongBits(
+              other.getMaxRadius()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -6882,35 +6953,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -6974,16 +7045,12 @@ public final class Coordinator {
       private int centerX_ ;
       /**
        * <code>int32 centerX = 1;</code>
-       * @return The centerX.
        */
-      @java.lang.Override
       public int getCenterX() {
         return centerX_;
       }
       /**
        * <code>int32 centerX = 1;</code>
-       * @param value The centerX to set.
-       * @return This builder for chaining.
        */
       public Builder setCenterX(int value) {
         
@@ -6993,7 +7060,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 centerX = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCenterX() {
         
@@ -7005,16 +7071,12 @@ public final class Coordinator {
       private int centerY_ ;
       /**
        * <code>int32 centerY = 2;</code>
-       * @return The centerY.
        */
-      @java.lang.Override
       public int getCenterY() {
         return centerY_;
       }
       /**
        * <code>int32 centerY = 2;</code>
-       * @param value The centerY to set.
-       * @return This builder for chaining.
        */
       public Builder setCenterY(int value) {
         
@@ -7024,7 +7086,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 centerY = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCenterY() {
         
@@ -7036,16 +7097,12 @@ public final class Coordinator {
       private int minVerts_ ;
       /**
        * <code>int32 minVerts = 3;</code>
-       * @return The minVerts.
        */
-      @java.lang.Override
       public int getMinVerts() {
         return minVerts_;
       }
       /**
        * <code>int32 minVerts = 3;</code>
-       * @param value The minVerts to set.
-       * @return This builder for chaining.
        */
       public Builder setMinVerts(int value) {
         
@@ -7055,7 +7112,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 minVerts = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMinVerts() {
         
@@ -7067,16 +7123,12 @@ public final class Coordinator {
       private int maxVerts_ ;
       /**
        * <code>int32 maxVerts = 4;</code>
-       * @return The maxVerts.
        */
-      @java.lang.Override
       public int getMaxVerts() {
         return maxVerts_;
       }
       /**
        * <code>int32 maxVerts = 4;</code>
-       * @param value The maxVerts to set.
-       * @return This builder for chaining.
        */
       public Builder setMaxVerts(int value) {
         
@@ -7086,7 +7138,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 maxVerts = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMaxVerts() {
         
@@ -7098,16 +7149,12 @@ public final class Coordinator {
       private double minRadius_ ;
       /**
        * <code>double minRadius = 5;</code>
-       * @return The minRadius.
        */
-      @java.lang.Override
       public double getMinRadius() {
         return minRadius_;
       }
       /**
        * <code>double minRadius = 5;</code>
-       * @param value The minRadius to set.
-       * @return This builder for chaining.
        */
       public Builder setMinRadius(double value) {
         
@@ -7117,7 +7164,6 @@ public final class Coordinator {
       }
       /**
        * <code>double minRadius = 5;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMinRadius() {
         
@@ -7129,16 +7175,12 @@ public final class Coordinator {
       private double maxRadius_ ;
       /**
        * <code>double maxRadius = 6;</code>
-       * @return The maxRadius.
        */
-      @java.lang.Override
       public double getMaxRadius() {
         return maxRadius_;
       }
       /**
        * <code>double maxRadius = 6;</code>
-       * @param value The maxRadius to set.
-       * @return This builder for chaining.
        */
       public Builder setMaxRadius(double value) {
         
@@ -7148,7 +7190,6 @@ public final class Coordinator {
       }
       /**
        * <code>double maxRadius = 6;</code>
-       * @return This builder for chaining.
        */
       public Builder clearMaxRadius() {
         
@@ -7159,7 +7200,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -7215,26 +7256,23 @@ public final class Coordinator {
 
     /**
      * <code>string name = 1;</code>
-     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
-     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>int32 numofReplicas = 2;</code>
-     * @return The numofReplicas.
      */
     int getNumofReplicas();
   }
   /**
    * Protobuf type {@code gradlegRPC.robotgreetingResponse}
    */
-  public static final class robotgreetingResponse extends
+  public  static final class robotgreetingResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.robotgreetingResponse)
       robotgreetingResponseOrBuilder {
@@ -7245,13 +7283,7 @@ public final class Coordinator {
     }
     private robotgreetingResponse() {
       name_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new robotgreetingResponse();
+      numofReplicas_ = 0;
     }
 
     @java.lang.Override
@@ -7267,6 +7299,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7289,7 +7322,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -7324,9 +7357,7 @@ public final class Coordinator {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
-     * @return The name.
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -7341,9 +7372,7 @@ public final class Coordinator {
     }
     /**
      * <code>string name = 1;</code>
-     * @return The bytes for name.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -7362,9 +7391,7 @@ public final class Coordinator {
     private int numofReplicas_;
     /**
      * <code>int32 numofReplicas = 2;</code>
-     * @return The numofReplicas.
      */
-    @java.lang.Override
     public int getNumofReplicas() {
       return numofReplicas_;
     }
@@ -7420,12 +7447,13 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.robotgreetingResponse other = (io.grpc.coordinator.Coordinator.robotgreetingResponse) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (getNumofReplicas()
-          != other.getNumofReplicas()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getName()
+          .equals(other.getName());
+      result = result && (getNumofReplicas()
+          == other.getNumofReplicas());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -7610,35 +7638,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -7691,7 +7719,6 @@ public final class Coordinator {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
-       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -7707,7 +7734,6 @@ public final class Coordinator {
       }
       /**
        * <code>string name = 1;</code>
-       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -7724,8 +7750,6 @@ public final class Coordinator {
       }
       /**
        * <code>string name = 1;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -7739,7 +7763,6 @@ public final class Coordinator {
       }
       /**
        * <code>string name = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -7749,8 +7772,6 @@ public final class Coordinator {
       }
       /**
        * <code>string name = 1;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -7767,16 +7788,12 @@ public final class Coordinator {
       private int numofReplicas_ ;
       /**
        * <code>int32 numofReplicas = 2;</code>
-       * @return The numofReplicas.
        */
-      @java.lang.Override
       public int getNumofReplicas() {
         return numofReplicas_;
       }
       /**
        * <code>int32 numofReplicas = 2;</code>
-       * @param value The numofReplicas to set.
-       * @return This builder for chaining.
        */
       public Builder setNumofReplicas(int value) {
         
@@ -7786,7 +7803,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 numofReplicas = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearNumofReplicas() {
         
@@ -7797,7 +7813,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -7853,26 +7869,23 @@ public final class Coordinator {
 
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>bytes depBytes = 2;</code>
-     * @return The depBytes.
      */
     com.google.protobuf.ByteString getDepBytes();
   }
   /**
    * Protobuf type {@code gradlegRPC.getCurrentDependencies}
    */
-  public static final class getCurrentDependencies extends
+  public  static final class getCurrentDependencies extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.getCurrentDependencies)
       getCurrentDependenciesOrBuilder {
@@ -7884,13 +7897,6 @@ public final class Coordinator {
     private getCurrentDependencies() {
       kan_ = "";
       depBytes_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new getCurrentDependencies();
     }
 
     @java.lang.Override
@@ -7906,6 +7912,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7928,7 +7935,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -7963,9 +7970,7 @@ public final class Coordinator {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
-    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -7980,9 +7985,7 @@ public final class Coordinator {
     }
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -8001,9 +8004,7 @@ public final class Coordinator {
     private com.google.protobuf.ByteString depBytes_;
     /**
      * <code>bytes depBytes = 2;</code>
-     * @return The depBytes.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getDepBytes() {
       return depBytes_;
     }
@@ -8059,12 +8060,13 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.getCurrentDependencies other = (io.grpc.coordinator.Coordinator.getCurrentDependencies) obj;
 
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (!getDepBytes()
-          .equals(other.getDepBytes())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && getDepBytes()
+          .equals(other.getDepBytes());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -8249,35 +8251,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -8330,7 +8332,6 @@ public final class Coordinator {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
-       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -8346,7 +8347,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -8363,8 +8363,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -8378,7 +8376,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -8388,8 +8385,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -8406,16 +8401,12 @@ public final class Coordinator {
       private com.google.protobuf.ByteString depBytes_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>bytes depBytes = 2;</code>
-       * @return The depBytes.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getDepBytes() {
         return depBytes_;
       }
       /**
        * <code>bytes depBytes = 2;</code>
-       * @param value The depBytes to set.
-       * @return This builder for chaining.
        */
       public Builder setDepBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -8428,7 +8419,6 @@ public final class Coordinator {
       }
       /**
        * <code>bytes depBytes = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearDepBytes() {
         
@@ -8439,7 +8429,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -8495,12 +8485,10 @@ public final class Coordinator {
 
     /**
      * <code>string none = 1;</code>
-     * @return The none.
      */
     java.lang.String getNone();
     /**
      * <code>string none = 1;</code>
-     * @return The bytes for none.
      */
     com.google.protobuf.ByteString
         getNoneBytes();
@@ -8508,7 +8496,7 @@ public final class Coordinator {
   /**
    * Protobuf type {@code gradlegRPC.noneResponse}
    */
-  public static final class noneResponse extends
+  public  static final class noneResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.noneResponse)
       noneResponseOrBuilder {
@@ -8519,13 +8507,6 @@ public final class Coordinator {
     }
     private noneResponse() {
       none_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new noneResponse();
     }
 
     @java.lang.Override
@@ -8541,6 +8522,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8558,7 +8540,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -8593,9 +8575,7 @@ public final class Coordinator {
     private volatile java.lang.Object none_;
     /**
      * <code>string none = 1;</code>
-     * @return The none.
      */
-    @java.lang.Override
     public java.lang.String getNone() {
       java.lang.Object ref = none_;
       if (ref instanceof java.lang.String) {
@@ -8610,9 +8590,7 @@ public final class Coordinator {
     }
     /**
      * <code>string none = 1;</code>
-     * @return The bytes for none.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNoneBytes() {
       java.lang.Object ref = none_;
@@ -8671,10 +8649,11 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.noneResponse other = (io.grpc.coordinator.Coordinator.noneResponse) obj;
 
-      if (!getNone()
-          .equals(other.getNone())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getNone()
+          .equals(other.getNone());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -8854,35 +8833,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -8932,7 +8911,6 @@ public final class Coordinator {
       private java.lang.Object none_ = "";
       /**
        * <code>string none = 1;</code>
-       * @return The none.
        */
       public java.lang.String getNone() {
         java.lang.Object ref = none_;
@@ -8948,7 +8926,6 @@ public final class Coordinator {
       }
       /**
        * <code>string none = 1;</code>
-       * @return The bytes for none.
        */
       public com.google.protobuf.ByteString
           getNoneBytes() {
@@ -8965,8 +8942,6 @@ public final class Coordinator {
       }
       /**
        * <code>string none = 1;</code>
-       * @param value The none to set.
-       * @return This builder for chaining.
        */
       public Builder setNone(
           java.lang.String value) {
@@ -8980,7 +8955,6 @@ public final class Coordinator {
       }
       /**
        * <code>string none = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearNone() {
         
@@ -8990,8 +8964,6 @@ public final class Coordinator {
       }
       /**
        * <code>string none = 1;</code>
-       * @param value The bytes for none to set.
-       * @return This builder for chaining.
        */
       public Builder setNoneBytes(
           com.google.protobuf.ByteString value) {
@@ -9007,7 +8979,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -9063,26 +9035,23 @@ public final class Coordinator {
 
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>int32 robotID = 2;</code>
-     * @return The robotID.
      */
     int getRobotID();
   }
   /**
    * Protobuf type {@code gradlegRPC.tecrequest}
    */
-  public static final class tecrequest extends
+  public  static final class tecrequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.tecrequest)
       tecrequestOrBuilder {
@@ -9093,13 +9062,7 @@ public final class Coordinator {
     }
     private tecrequest() {
       kan_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new tecrequest();
+      robotID_ = 0;
     }
 
     @java.lang.Override
@@ -9115,6 +9078,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9137,7 +9101,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -9172,9 +9136,7 @@ public final class Coordinator {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
-    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -9189,9 +9151,7 @@ public final class Coordinator {
     }
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -9210,9 +9170,7 @@ public final class Coordinator {
     private int robotID_;
     /**
      * <code>int32 robotID = 2;</code>
-     * @return The robotID.
      */
-    @java.lang.Override
     public int getRobotID() {
       return robotID_;
     }
@@ -9268,12 +9226,13 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.tecrequest other = (io.grpc.coordinator.Coordinator.tecrequest) obj;
 
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (getRobotID()
-          != other.getRobotID()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && (getRobotID()
+          == other.getRobotID());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -9458,35 +9417,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -9539,7 +9498,6 @@ public final class Coordinator {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
-       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -9555,7 +9513,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -9572,8 +9529,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -9587,7 +9542,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -9597,8 +9551,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -9615,16 +9567,12 @@ public final class Coordinator {
       private int robotID_ ;
       /**
        * <code>int32 robotID = 2;</code>
-       * @return The robotID.
        */
-      @java.lang.Override
       public int getRobotID() {
         return robotID_;
       }
       /**
        * <code>int32 robotID = 2;</code>
-       * @param value The robotID to set.
-       * @return This builder for chaining.
        */
       public Builder setRobotID(int value) {
         
@@ -9634,7 +9582,6 @@ public final class Coordinator {
       }
       /**
        * <code>int32 robotID = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRobotID() {
         
@@ -9645,7 +9592,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -9701,26 +9648,23 @@ public final class Coordinator {
 
     /**
      * <code>string stringresponse = 1;</code>
-     * @return The stringresponse.
      */
     java.lang.String getStringresponse();
     /**
      * <code>string stringresponse = 1;</code>
-     * @return The bytes for stringresponse.
      */
     com.google.protobuf.ByteString
         getStringresponseBytes();
 
     /**
      * <code>bytes tecStuff = 2;</code>
-     * @return The tecStuff.
      */
     com.google.protobuf.ByteString getTecStuff();
   }
   /**
    * Protobuf type {@code gradlegRPC.tecresponse}
    */
-  public static final class tecresponse extends
+  public  static final class tecresponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.tecresponse)
       tecresponseOrBuilder {
@@ -9732,13 +9676,6 @@ public final class Coordinator {
     private tecresponse() {
       stringresponse_ = "";
       tecStuff_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new tecresponse();
     }
 
     @java.lang.Override
@@ -9754,6 +9691,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9776,7 +9714,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -9811,9 +9749,7 @@ public final class Coordinator {
     private volatile java.lang.Object stringresponse_;
     /**
      * <code>string stringresponse = 1;</code>
-     * @return The stringresponse.
      */
-    @java.lang.Override
     public java.lang.String getStringresponse() {
       java.lang.Object ref = stringresponse_;
       if (ref instanceof java.lang.String) {
@@ -9828,9 +9764,7 @@ public final class Coordinator {
     }
     /**
      * <code>string stringresponse = 1;</code>
-     * @return The bytes for stringresponse.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getStringresponseBytes() {
       java.lang.Object ref = stringresponse_;
@@ -9849,9 +9783,7 @@ public final class Coordinator {
     private com.google.protobuf.ByteString tecStuff_;
     /**
      * <code>bytes tecStuff = 2;</code>
-     * @return The tecStuff.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getTecStuff() {
       return tecStuff_;
     }
@@ -9907,12 +9839,13 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.tecresponse other = (io.grpc.coordinator.Coordinator.tecresponse) obj;
 
-      if (!getStringresponse()
-          .equals(other.getStringresponse())) return false;
-      if (!getTecStuff()
-          .equals(other.getTecStuff())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getStringresponse()
+          .equals(other.getStringresponse());
+      result = result && getTecStuff()
+          .equals(other.getTecStuff());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -10097,35 +10030,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -10178,7 +10111,6 @@ public final class Coordinator {
       private java.lang.Object stringresponse_ = "";
       /**
        * <code>string stringresponse = 1;</code>
-       * @return The stringresponse.
        */
       public java.lang.String getStringresponse() {
         java.lang.Object ref = stringresponse_;
@@ -10194,7 +10126,6 @@ public final class Coordinator {
       }
       /**
        * <code>string stringresponse = 1;</code>
-       * @return The bytes for stringresponse.
        */
       public com.google.protobuf.ByteString
           getStringresponseBytes() {
@@ -10211,8 +10142,6 @@ public final class Coordinator {
       }
       /**
        * <code>string stringresponse = 1;</code>
-       * @param value The stringresponse to set.
-       * @return This builder for chaining.
        */
       public Builder setStringresponse(
           java.lang.String value) {
@@ -10226,7 +10155,6 @@ public final class Coordinator {
       }
       /**
        * <code>string stringresponse = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearStringresponse() {
         
@@ -10236,8 +10164,6 @@ public final class Coordinator {
       }
       /**
        * <code>string stringresponse = 1;</code>
-       * @param value The bytes for stringresponse to set.
-       * @return This builder for chaining.
        */
       public Builder setStringresponseBytes(
           com.google.protobuf.ByteString value) {
@@ -10254,16 +10180,12 @@ public final class Coordinator {
       private com.google.protobuf.ByteString tecStuff_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>bytes tecStuff = 2;</code>
-       * @return The tecStuff.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getTecStuff() {
         return tecStuff_;
       }
       /**
        * <code>bytes tecStuff = 2;</code>
-       * @param value The tecStuff to set.
-       * @return This builder for chaining.
        */
       public Builder setTecStuff(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -10276,7 +10198,6 @@ public final class Coordinator {
       }
       /**
        * <code>bytes tecStuff = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearTecStuff() {
         
@@ -10287,7 +10208,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -10343,12 +10264,10 @@ public final class Coordinator {
 
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
@@ -10356,7 +10275,7 @@ public final class Coordinator {
   /**
    * Protobuf type {@code gradlegRPC.timerequest}
    */
-  public static final class timerequest extends
+  public  static final class timerequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.timerequest)
       timerequestOrBuilder {
@@ -10367,13 +10286,6 @@ public final class Coordinator {
     }
     private timerequest() {
       kan_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new timerequest();
     }
 
     @java.lang.Override
@@ -10389,6 +10301,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10406,7 +10319,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -10441,9 +10354,7 @@ public final class Coordinator {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
-    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -10458,9 +10369,7 @@ public final class Coordinator {
     }
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -10519,10 +10428,11 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.timerequest other = (io.grpc.coordinator.Coordinator.timerequest) obj;
 
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -10702,35 +10612,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -10780,7 +10690,6 @@ public final class Coordinator {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
-       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -10796,7 +10705,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -10813,8 +10721,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -10828,7 +10734,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -10838,8 +10743,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -10855,7 +10758,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -10911,14 +10814,13 @@ public final class Coordinator {
 
     /**
      * <code>uint64 currentTime = 1;</code>
-     * @return The currentTime.
      */
     long getCurrentTime();
   }
   /**
    * Protobuf type {@code gradlegRPC.timeresponse}
    */
-  public static final class timeresponse extends
+  public  static final class timeresponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.timeresponse)
       timeresponseOrBuilder {
@@ -10928,13 +10830,7 @@ public final class Coordinator {
       super(builder);
     }
     private timeresponse() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new timeresponse();
+      currentTime_ = 0L;
     }
 
     @java.lang.Override
@@ -10950,6 +10846,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10966,7 +10863,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -11001,9 +10898,7 @@ public final class Coordinator {
     private long currentTime_;
     /**
      * <code>uint64 currentTime = 1;</code>
-     * @return The currentTime.
      */
-    @java.lang.Override
     public long getCurrentTime() {
       return currentTime_;
     }
@@ -11053,10 +10948,11 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.timeresponse other = (io.grpc.coordinator.Coordinator.timeresponse) obj;
 
-      if (getCurrentTime()
-          != other.getCurrentTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (getCurrentTime()
+          == other.getCurrentTime());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -11237,35 +11133,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -11314,16 +11210,12 @@ public final class Coordinator {
       private long currentTime_ ;
       /**
        * <code>uint64 currentTime = 1;</code>
-       * @return The currentTime.
        */
-      @java.lang.Override
       public long getCurrentTime() {
         return currentTime_;
       }
       /**
        * <code>uint64 currentTime = 1;</code>
-       * @param value The currentTime to set.
-       * @return This builder for chaining.
        */
       public Builder setCurrentTime(long value) {
         
@@ -11333,7 +11225,6 @@ public final class Coordinator {
       }
       /**
        * <code>uint64 currentTime = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearCurrentTime() {
         
@@ -11344,7 +11235,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -11400,12 +11291,10 @@ public final class Coordinator {
 
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
@@ -11413,7 +11302,7 @@ public final class Coordinator {
   /**
    * Protobuf type {@code gradlegRPC.visualizerrequest}
    */
-  public static final class visualizerrequest extends
+  public  static final class visualizerrequest extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.visualizerrequest)
       visualizerrequestOrBuilder {
@@ -11424,13 +11313,6 @@ public final class Coordinator {
     }
     private visualizerrequest() {
       kan_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new visualizerrequest();
     }
 
     @java.lang.Override
@@ -11446,6 +11328,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -11463,7 +11346,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -11498,9 +11381,7 @@ public final class Coordinator {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
-    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -11515,9 +11396,7 @@ public final class Coordinator {
     }
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -11576,10 +11455,11 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.visualizerrequest other = (io.grpc.coordinator.Coordinator.visualizerrequest) obj;
 
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -11759,35 +11639,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -11837,7 +11717,6 @@ public final class Coordinator {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
-       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -11853,7 +11732,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -11870,8 +11748,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -11885,7 +11761,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -11895,8 +11770,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -11912,7 +11785,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -11968,14 +11841,13 @@ public final class Coordinator {
 
     /**
      * <code>bytes visualizer = 1;</code>
-     * @return The visualizer.
      */
     com.google.protobuf.ByteString getVisualizer();
   }
   /**
    * Protobuf type {@code gradlegRPC.visualizerresponse}
    */
-  public static final class visualizerresponse extends
+  public  static final class visualizerresponse extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.visualizerresponse)
       visualizerresponseOrBuilder {
@@ -11986,13 +11858,6 @@ public final class Coordinator {
     }
     private visualizerresponse() {
       visualizer_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new visualizerresponse();
     }
 
     @java.lang.Override
@@ -12008,6 +11873,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12024,7 +11890,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -12059,9 +11925,7 @@ public final class Coordinator {
     private com.google.protobuf.ByteString visualizer_;
     /**
      * <code>bytes visualizer = 1;</code>
-     * @return The visualizer.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getVisualizer() {
       return visualizer_;
     }
@@ -12111,10 +11975,11 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.visualizerresponse other = (io.grpc.coordinator.Coordinator.visualizerresponse) obj;
 
-      if (!getVisualizer()
-          .equals(other.getVisualizer())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getVisualizer()
+          .equals(other.getVisualizer());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -12294,35 +12159,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -12371,16 +12236,12 @@ public final class Coordinator {
       private com.google.protobuf.ByteString visualizer_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>bytes visualizer = 1;</code>
-       * @return The visualizer.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getVisualizer() {
         return visualizer_;
       }
       /**
        * <code>bytes visualizer = 1;</code>
-       * @param value The visualizer to set.
-       * @return This builder for chaining.
        */
       public Builder setVisualizer(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -12393,7 +12254,6 @@ public final class Coordinator {
       }
       /**
        * <code>bytes visualizer = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearVisualizer() {
         
@@ -12404,7 +12264,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -12460,26 +12320,23 @@ public final class Coordinator {
 
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
     java.lang.String getKan();
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
     com.google.protobuf.ByteString
         getKanBytes();
 
     /**
      * <code>bytes allenIntervalBytes = 2;</code>
-     * @return The allenIntervalBytes.
      */
     com.google.protobuf.ByteString getAllenIntervalBytes();
   }
   /**
    * Protobuf type {@code gradlegRPC.allenInterval}
    */
-  public static final class allenInterval extends
+  public  static final class allenInterval extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.allenInterval)
       allenIntervalOrBuilder {
@@ -12491,13 +12348,6 @@ public final class Coordinator {
     private allenInterval() {
       kan_ = "";
       allenIntervalBytes_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new allenInterval();
     }
 
     @java.lang.Override
@@ -12513,6 +12363,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12535,7 +12386,7 @@ public final class Coordinator {
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -12570,9 +12421,7 @@ public final class Coordinator {
     private volatile java.lang.Object kan_;
     /**
      * <code>string kan = 1;</code>
-     * @return The kan.
      */
-    @java.lang.Override
     public java.lang.String getKan() {
       java.lang.Object ref = kan_;
       if (ref instanceof java.lang.String) {
@@ -12587,9 +12436,7 @@ public final class Coordinator {
     }
     /**
      * <code>string kan = 1;</code>
-     * @return The bytes for kan.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getKanBytes() {
       java.lang.Object ref = kan_;
@@ -12608,9 +12455,7 @@ public final class Coordinator {
     private com.google.protobuf.ByteString allenIntervalBytes_;
     /**
      * <code>bytes allenIntervalBytes = 2;</code>
-     * @return The allenIntervalBytes.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getAllenIntervalBytes() {
       return allenIntervalBytes_;
     }
@@ -12666,12 +12511,13 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.allenInterval other = (io.grpc.coordinator.Coordinator.allenInterval) obj;
 
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (!getAllenIntervalBytes()
-          .equals(other.getAllenIntervalBytes())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getKan()
+          .equals(other.getKan());
+      result = result && getAllenIntervalBytes()
+          .equals(other.getAllenIntervalBytes());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -12856,35 +12702,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -12937,7 +12783,6 @@ public final class Coordinator {
       private java.lang.Object kan_ = "";
       /**
        * <code>string kan = 1;</code>
-       * @return The kan.
        */
       public java.lang.String getKan() {
         java.lang.Object ref = kan_;
@@ -12953,7 +12798,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return The bytes for kan.
        */
       public com.google.protobuf.ByteString
           getKanBytes() {
@@ -12970,8 +12814,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKan(
           java.lang.String value) {
@@ -12985,7 +12827,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearKan() {
         
@@ -12995,8 +12836,6 @@ public final class Coordinator {
       }
       /**
        * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
        */
       public Builder setKanBytes(
           com.google.protobuf.ByteString value) {
@@ -13013,16 +12852,12 @@ public final class Coordinator {
       private com.google.protobuf.ByteString allenIntervalBytes_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>bytes allenIntervalBytes = 2;</code>
-       * @return The allenIntervalBytes.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getAllenIntervalBytes() {
         return allenIntervalBytes_;
       }
       /**
        * <code>bytes allenIntervalBytes = 2;</code>
-       * @param value The allenIntervalBytes to set.
-       * @return This builder for chaining.
        */
       public Builder setAllenIntervalBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -13035,7 +12870,6 @@ public final class Coordinator {
       }
       /**
        * <code>bytes allenIntervalBytes = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearAllenIntervalBytes() {
         
@@ -13046,7 +12880,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -13106,7 +12940,6 @@ public final class Coordinator {
      * </pre>
      *
      * <code>bytes footPrintBytes = 1;</code>
-     * @return The footPrintBytes.
      */
     com.google.protobuf.ByteString getFootPrintBytes();
 
@@ -13116,56 +12949,63 @@ public final class Coordinator {
      * </pre>
      *
      * <code>int32 robotid = 2;</code>
-     * @return The robotid.
      */
     int getRobotid();
 
     /**
      * <code>double x = 3;</code>
-     * @return The x.
      */
     double getX();
 
     /**
      * <code>double y = 4;</code>
-     * @return The y.
      */
     double getY();
 
     /**
-     * <code>double theta = 5;</code>
-     * @return The theta.
+     * <code>double z = 5;</code>
      */
-    double getTheta();
+    double getZ();
 
     /**
-     * <code>int32 pathIndex = 6;</code>
-     * @return The pathIndex.
+     * <code>double roll = 6;</code>
+     */
+    double getRoll();
+
+    /**
+     * <code>double pitch = 7;</code>
+     */
+    double getPitch();
+
+    /**
+     * <code>double yaw = 8;</code>
+     */
+    double getYaw();
+
+    /**
+     * <code>int32 pathIndex = 9;</code>
      */
     int getPathIndex();
 
     /**
-     * <code>double velocity = 7;</code>
-     * @return The velocity.
+     * <code>double velocity = 10;</code>
      */
     double getVelocity();
 
     /**
-     * <code>double distanceTraveled = 8;</code>
-     * @return The distanceTraveled.
+     * <code>double distanceTraveled = 11;</code>
      */
     double getDistanceTraveled();
 
     /**
-     * <code>int32 criticalPoint = 9;</code>
-     * @return The criticalPoint.
+     * <code>int32 criticalPoint = 12;</code>
      */
     int getCriticalPoint();
   }
   /**
    * Protobuf type {@code gradlegRPC.onPositionUpdateMessage}
    */
-  public static final class onPositionUpdateMessage extends
+  public  static final class onPositionUpdateMessage extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:gradlegRPC.onPositionUpdateMessage)
       onPositionUpdateMessageOrBuilder {
@@ -13176,13 +13016,17 @@ public final class Coordinator {
     }
     private onPositionUpdateMessage() {
       footPrintBytes_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new onPositionUpdateMessage();
+      robotid_ = 0;
+      x_ = 0D;
+      y_ = 0D;
+      z_ = 0D;
+      roll_ = 0D;
+      pitch_ = 0D;
+      yaw_ = 0D;
+      pathIndex_ = 0;
+      velocity_ = 0D;
+      distanceTraveled_ = 0D;
+      criticalPoint_ = 0;
     }
 
     @java.lang.Override
@@ -13198,6 +13042,7 @@ public final class Coordinator {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -13230,31 +13075,46 @@ public final class Coordinator {
             }
             case 41: {
 
-              theta_ = input.readDouble();
+              z_ = input.readDouble();
               break;
             }
-            case 48: {
+            case 49: {
 
-              pathIndex_ = input.readInt32();
+              roll_ = input.readDouble();
               break;
             }
             case 57: {
 
-              velocity_ = input.readDouble();
+              pitch_ = input.readDouble();
               break;
             }
             case 65: {
 
-              distanceTraveled_ = input.readDouble();
+              yaw_ = input.readDouble();
               break;
             }
             case 72: {
+
+              pathIndex_ = input.readInt32();
+              break;
+            }
+            case 81: {
+
+              velocity_ = input.readDouble();
+              break;
+            }
+            case 89: {
+
+              distanceTraveled_ = input.readDouble();
+              break;
+            }
+            case 96: {
 
               criticalPoint_ = input.readInt32();
               break;
             }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -13293,9 +13153,7 @@ public final class Coordinator {
      * </pre>
      *
      * <code>bytes footPrintBytes = 1;</code>
-     * @return The footPrintBytes.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getFootPrintBytes() {
       return footPrintBytes_;
     }
@@ -13308,9 +13166,7 @@ public final class Coordinator {
      * </pre>
      *
      * <code>int32 robotid = 2;</code>
-     * @return The robotid.
      */
-    @java.lang.Override
     public int getRobotid() {
       return robotid_;
     }
@@ -13319,9 +13175,7 @@ public final class Coordinator {
     private double x_;
     /**
      * <code>double x = 3;</code>
-     * @return The x.
      */
-    @java.lang.Override
     public double getX() {
       return x_;
     }
@@ -13330,64 +13184,79 @@ public final class Coordinator {
     private double y_;
     /**
      * <code>double y = 4;</code>
-     * @return The y.
      */
-    @java.lang.Override
     public double getY() {
       return y_;
     }
 
-    public static final int THETA_FIELD_NUMBER = 5;
-    private double theta_;
+    public static final int Z_FIELD_NUMBER = 5;
+    private double z_;
     /**
-     * <code>double theta = 5;</code>
-     * @return The theta.
+     * <code>double z = 5;</code>
      */
-    @java.lang.Override
-    public double getTheta() {
-      return theta_;
+    public double getZ() {
+      return z_;
     }
 
-    public static final int PATHINDEX_FIELD_NUMBER = 6;
+    public static final int ROLL_FIELD_NUMBER = 6;
+    private double roll_;
+    /**
+     * <code>double roll = 6;</code>
+     */
+    public double getRoll() {
+      return roll_;
+    }
+
+    public static final int PITCH_FIELD_NUMBER = 7;
+    private double pitch_;
+    /**
+     * <code>double pitch = 7;</code>
+     */
+    public double getPitch() {
+      return pitch_;
+    }
+
+    public static final int YAW_FIELD_NUMBER = 8;
+    private double yaw_;
+    /**
+     * <code>double yaw = 8;</code>
+     */
+    public double getYaw() {
+      return yaw_;
+    }
+
+    public static final int PATHINDEX_FIELD_NUMBER = 9;
     private int pathIndex_;
     /**
-     * <code>int32 pathIndex = 6;</code>
-     * @return The pathIndex.
+     * <code>int32 pathIndex = 9;</code>
      */
-    @java.lang.Override
     public int getPathIndex() {
       return pathIndex_;
     }
 
-    public static final int VELOCITY_FIELD_NUMBER = 7;
+    public static final int VELOCITY_FIELD_NUMBER = 10;
     private double velocity_;
     /**
-     * <code>double velocity = 7;</code>
-     * @return The velocity.
+     * <code>double velocity = 10;</code>
      */
-    @java.lang.Override
     public double getVelocity() {
       return velocity_;
     }
 
-    public static final int DISTANCETRAVELED_FIELD_NUMBER = 8;
+    public static final int DISTANCETRAVELED_FIELD_NUMBER = 11;
     private double distanceTraveled_;
     /**
-     * <code>double distanceTraveled = 8;</code>
-     * @return The distanceTraveled.
+     * <code>double distanceTraveled = 11;</code>
      */
-    @java.lang.Override
     public double getDistanceTraveled() {
       return distanceTraveled_;
     }
 
-    public static final int CRITICALPOINT_FIELD_NUMBER = 9;
+    public static final int CRITICALPOINT_FIELD_NUMBER = 12;
     private int criticalPoint_;
     /**
-     * <code>int32 criticalPoint = 9;</code>
-     * @return The criticalPoint.
+     * <code>int32 criticalPoint = 12;</code>
      */
-    @java.lang.Override
     public int getCriticalPoint() {
       return criticalPoint_;
     }
@@ -13418,20 +13287,29 @@ public final class Coordinator {
       if (y_ != 0D) {
         output.writeDouble(4, y_);
       }
-      if (theta_ != 0D) {
-        output.writeDouble(5, theta_);
+      if (z_ != 0D) {
+        output.writeDouble(5, z_);
+      }
+      if (roll_ != 0D) {
+        output.writeDouble(6, roll_);
+      }
+      if (pitch_ != 0D) {
+        output.writeDouble(7, pitch_);
+      }
+      if (yaw_ != 0D) {
+        output.writeDouble(8, yaw_);
       }
       if (pathIndex_ != 0) {
-        output.writeInt32(6, pathIndex_);
+        output.writeInt32(9, pathIndex_);
       }
       if (velocity_ != 0D) {
-        output.writeDouble(7, velocity_);
+        output.writeDouble(10, velocity_);
       }
       if (distanceTraveled_ != 0D) {
-        output.writeDouble(8, distanceTraveled_);
+        output.writeDouble(11, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
-        output.writeInt32(9, criticalPoint_);
+        output.writeInt32(12, criticalPoint_);
       }
       unknownFields.writeTo(output);
     }
@@ -13458,25 +13336,37 @@ public final class Coordinator {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(4, y_);
       }
-      if (theta_ != 0D) {
+      if (z_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, theta_);
+          .computeDoubleSize(5, z_);
+      }
+      if (roll_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, roll_);
+      }
+      if (pitch_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(7, pitch_);
+      }
+      if (yaw_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(8, yaw_);
       }
       if (pathIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, pathIndex_);
+          .computeInt32Size(9, pathIndex_);
       }
       if (velocity_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(7, velocity_);
+          .computeDoubleSize(10, velocity_);
       }
       if (distanceTraveled_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(8, distanceTraveled_);
+          .computeDoubleSize(11, distanceTraveled_);
       }
       if (criticalPoint_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, criticalPoint_);
+          .computeInt32Size(12, criticalPoint_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13493,31 +13383,49 @@ public final class Coordinator {
       }
       io.grpc.coordinator.Coordinator.onPositionUpdateMessage other = (io.grpc.coordinator.Coordinator.onPositionUpdateMessage) obj;
 
-      if (!getFootPrintBytes()
-          .equals(other.getFootPrintBytes())) return false;
-      if (getRobotid()
-          != other.getRobotid()) return false;
-      if (java.lang.Double.doubleToLongBits(getX())
-          != java.lang.Double.doubleToLongBits(
-              other.getX())) return false;
-      if (java.lang.Double.doubleToLongBits(getY())
-          != java.lang.Double.doubleToLongBits(
-              other.getY())) return false;
-      if (java.lang.Double.doubleToLongBits(getTheta())
-          != java.lang.Double.doubleToLongBits(
-              other.getTheta())) return false;
-      if (getPathIndex()
-          != other.getPathIndex()) return false;
-      if (java.lang.Double.doubleToLongBits(getVelocity())
-          != java.lang.Double.doubleToLongBits(
-              other.getVelocity())) return false;
-      if (java.lang.Double.doubleToLongBits(getDistanceTraveled())
-          != java.lang.Double.doubleToLongBits(
-              other.getDistanceTraveled())) return false;
-      if (getCriticalPoint()
-          != other.getCriticalPoint()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getFootPrintBytes()
+          .equals(other.getFootPrintBytes());
+      result = result && (getRobotid()
+          == other.getRobotid());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getX())
+          == java.lang.Double.doubleToLongBits(
+              other.getX()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getY())
+          == java.lang.Double.doubleToLongBits(
+              other.getY()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getZ())
+          == java.lang.Double.doubleToLongBits(
+              other.getZ()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getRoll())
+          == java.lang.Double.doubleToLongBits(
+              other.getRoll()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPitch())
+          == java.lang.Double.doubleToLongBits(
+              other.getPitch()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getYaw())
+          == java.lang.Double.doubleToLongBits(
+              other.getYaw()));
+      result = result && (getPathIndex()
+          == other.getPathIndex());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getVelocity())
+          == java.lang.Double.doubleToLongBits(
+              other.getVelocity()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getDistanceTraveled())
+          == java.lang.Double.doubleToLongBits(
+              other.getDistanceTraveled()));
+      result = result && (getCriticalPoint()
+          == other.getCriticalPoint());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -13537,9 +13445,18 @@ public final class Coordinator {
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getY()));
-      hash = (37 * hash) + THETA_FIELD_NUMBER;
+      hash = (37 * hash) + Z_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getTheta()));
+          java.lang.Double.doubleToLongBits(getZ()));
+      hash = (37 * hash) + ROLL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRoll()));
+      hash = (37 * hash) + PITCH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPitch()));
+      hash = (37 * hash) + YAW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getYaw()));
       hash = (37 * hash) + PATHINDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPathIndex();
       hash = (37 * hash) + VELOCITY_FIELD_NUMBER;
@@ -13691,7 +13608,13 @@ public final class Coordinator {
 
         y_ = 0D;
 
-        theta_ = 0D;
+        z_ = 0D;
+
+        roll_ = 0D;
+
+        pitch_ = 0D;
+
+        yaw_ = 0D;
 
         pathIndex_ = 0;
 
@@ -13731,7 +13654,10 @@ public final class Coordinator {
         result.robotid_ = robotid_;
         result.x_ = x_;
         result.y_ = y_;
-        result.theta_ = theta_;
+        result.z_ = z_;
+        result.roll_ = roll_;
+        result.pitch_ = pitch_;
+        result.yaw_ = yaw_;
         result.pathIndex_ = pathIndex_;
         result.velocity_ = velocity_;
         result.distanceTraveled_ = distanceTraveled_;
@@ -13742,35 +13668,35 @@ public final class Coordinator {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -13796,8 +13722,17 @@ public final class Coordinator {
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        if (other.getTheta() != 0D) {
-          setTheta(other.getTheta());
+        if (other.getZ() != 0D) {
+          setZ(other.getZ());
+        }
+        if (other.getRoll() != 0D) {
+          setRoll(other.getRoll());
+        }
+        if (other.getPitch() != 0D) {
+          setPitch(other.getPitch());
+        }
+        if (other.getYaw() != 0D) {
+          setYaw(other.getYaw());
         }
         if (other.getPathIndex() != 0) {
           setPathIndex(other.getPathIndex());
@@ -13847,9 +13782,7 @@ public final class Coordinator {
        * </pre>
        *
        * <code>bytes footPrintBytes = 1;</code>
-       * @return The footPrintBytes.
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getFootPrintBytes() {
         return footPrintBytes_;
       }
@@ -13859,8 +13792,6 @@ public final class Coordinator {
        * </pre>
        *
        * <code>bytes footPrintBytes = 1;</code>
-       * @param value The footPrintBytes to set.
-       * @return This builder for chaining.
        */
       public Builder setFootPrintBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -13877,7 +13808,6 @@ public final class Coordinator {
        * </pre>
        *
        * <code>bytes footPrintBytes = 1;</code>
-       * @return This builder for chaining.
        */
       public Builder clearFootPrintBytes() {
         
@@ -13893,9 +13823,7 @@ public final class Coordinator {
        * </pre>
        *
        * <code>int32 robotid = 2;</code>
-       * @return The robotid.
        */
-      @java.lang.Override
       public int getRobotid() {
         return robotid_;
       }
@@ -13905,8 +13833,6 @@ public final class Coordinator {
        * </pre>
        *
        * <code>int32 robotid = 2;</code>
-       * @param value The robotid to set.
-       * @return This builder for chaining.
        */
       public Builder setRobotid(int value) {
         
@@ -13920,7 +13846,6 @@ public final class Coordinator {
        * </pre>
        *
        * <code>int32 robotid = 2;</code>
-       * @return This builder for chaining.
        */
       public Builder clearRobotid() {
         
@@ -13932,16 +13857,12 @@ public final class Coordinator {
       private double x_ ;
       /**
        * <code>double x = 3;</code>
-       * @return The x.
        */
-      @java.lang.Override
       public double getX() {
         return x_;
       }
       /**
        * <code>double x = 3;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
        */
       public Builder setX(double value) {
         
@@ -13951,7 +13872,6 @@ public final class Coordinator {
       }
       /**
        * <code>double x = 3;</code>
-       * @return This builder for chaining.
        */
       public Builder clearX() {
         
@@ -13963,16 +13883,12 @@ public final class Coordinator {
       private double y_ ;
       /**
        * <code>double y = 4;</code>
-       * @return The y.
        */
-      @java.lang.Override
       public double getY() {
         return y_;
       }
       /**
        * <code>double y = 4;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
        */
       public Builder setY(double value) {
         
@@ -13982,7 +13898,6 @@ public final class Coordinator {
       }
       /**
        * <code>double y = 4;</code>
-       * @return This builder for chaining.
        */
       public Builder clearY() {
         
@@ -13991,50 +13906,119 @@ public final class Coordinator {
         return this;
       }
 
-      private double theta_ ;
+      private double z_ ;
       /**
-       * <code>double theta = 5;</code>
-       * @return The theta.
+       * <code>double z = 5;</code>
        */
-      @java.lang.Override
-      public double getTheta() {
-        return theta_;
+      public double getZ() {
+        return z_;
       }
       /**
-       * <code>double theta = 5;</code>
-       * @param value The theta to set.
-       * @return This builder for chaining.
+       * <code>double z = 5;</code>
        */
-      public Builder setTheta(double value) {
+      public Builder setZ(double value) {
         
-        theta_ = value;
+        z_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>double theta = 5;</code>
-       * @return This builder for chaining.
+       * <code>double z = 5;</code>
        */
-      public Builder clearTheta() {
+      public Builder clearZ() {
         
-        theta_ = 0D;
+        z_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double roll_ ;
+      /**
+       * <code>double roll = 6;</code>
+       */
+      public double getRoll() {
+        return roll_;
+      }
+      /**
+       * <code>double roll = 6;</code>
+       */
+      public Builder setRoll(double value) {
+        
+        roll_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double roll = 6;</code>
+       */
+      public Builder clearRoll() {
+        
+        roll_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double pitch_ ;
+      /**
+       * <code>double pitch = 7;</code>
+       */
+      public double getPitch() {
+        return pitch_;
+      }
+      /**
+       * <code>double pitch = 7;</code>
+       */
+      public Builder setPitch(double value) {
+        
+        pitch_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double pitch = 7;</code>
+       */
+      public Builder clearPitch() {
+        
+        pitch_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double yaw_ ;
+      /**
+       * <code>double yaw = 8;</code>
+       */
+      public double getYaw() {
+        return yaw_;
+      }
+      /**
+       * <code>double yaw = 8;</code>
+       */
+      public Builder setYaw(double value) {
+        
+        yaw_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double yaw = 8;</code>
+       */
+      public Builder clearYaw() {
+        
+        yaw_ = 0D;
         onChanged();
         return this;
       }
 
       private int pathIndex_ ;
       /**
-       * <code>int32 pathIndex = 6;</code>
-       * @return The pathIndex.
+       * <code>int32 pathIndex = 9;</code>
        */
-      @java.lang.Override
       public int getPathIndex() {
         return pathIndex_;
       }
       /**
-       * <code>int32 pathIndex = 6;</code>
-       * @param value The pathIndex to set.
-       * @return This builder for chaining.
+       * <code>int32 pathIndex = 9;</code>
        */
       public Builder setPathIndex(int value) {
         
@@ -14043,8 +14027,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>int32 pathIndex = 6;</code>
-       * @return This builder for chaining.
+       * <code>int32 pathIndex = 9;</code>
        */
       public Builder clearPathIndex() {
         
@@ -14055,17 +14038,13 @@ public final class Coordinator {
 
       private double velocity_ ;
       /**
-       * <code>double velocity = 7;</code>
-       * @return The velocity.
+       * <code>double velocity = 10;</code>
        */
-      @java.lang.Override
       public double getVelocity() {
         return velocity_;
       }
       /**
-       * <code>double velocity = 7;</code>
-       * @param value The velocity to set.
-       * @return This builder for chaining.
+       * <code>double velocity = 10;</code>
        */
       public Builder setVelocity(double value) {
         
@@ -14074,8 +14053,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double velocity = 7;</code>
-       * @return This builder for chaining.
+       * <code>double velocity = 10;</code>
        */
       public Builder clearVelocity() {
         
@@ -14086,17 +14064,13 @@ public final class Coordinator {
 
       private double distanceTraveled_ ;
       /**
-       * <code>double distanceTraveled = 8;</code>
-       * @return The distanceTraveled.
+       * <code>double distanceTraveled = 11;</code>
        */
-      @java.lang.Override
       public double getDistanceTraveled() {
         return distanceTraveled_;
       }
       /**
-       * <code>double distanceTraveled = 8;</code>
-       * @param value The distanceTraveled to set.
-       * @return This builder for chaining.
+       * <code>double distanceTraveled = 11;</code>
        */
       public Builder setDistanceTraveled(double value) {
         
@@ -14105,8 +14079,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>double distanceTraveled = 8;</code>
-       * @return This builder for chaining.
+       * <code>double distanceTraveled = 11;</code>
        */
       public Builder clearDistanceTraveled() {
         
@@ -14117,17 +14090,13 @@ public final class Coordinator {
 
       private int criticalPoint_ ;
       /**
-       * <code>int32 criticalPoint = 9;</code>
-       * @return The criticalPoint.
+       * <code>int32 criticalPoint = 12;</code>
        */
-      @java.lang.Override
       public int getCriticalPoint() {
         return criticalPoint_;
       }
       /**
-       * <code>int32 criticalPoint = 9;</code>
-       * @param value The criticalPoint to set.
-       * @return This builder for chaining.
+       * <code>int32 criticalPoint = 12;</code>
        */
       public Builder setCriticalPoint(int value) {
         
@@ -14136,8 +14105,7 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <code>int32 criticalPoint = 9;</code>
-       * @return This builder for chaining.
+       * <code>int32 criticalPoint = 12;</code>
        */
       public Builder clearCriticalPoint() {
         
@@ -14148,7 +14116,7 @@ public final class Coordinator {
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -14303,87 +14271,99 @@ public final class Coordinator {
   static {
     java.lang.String[] descriptorData = {
       "\n\021coordinator.proto\022\ngradlegRPC\032\033google/" +
-      "protobuf/empty.proto\"\255\001\n\022requestrobotrep" +
+      "protobuf/empty.proto\"\323\001\n\022requestrobotrep" +
       "ort\022\013\n\003req\030\001 \001(\t\022\017\n\007robotid\030\002 \001(\005\022\t\n\001x\030\003" +
-      " \001(\001\022\t\n\001y\030\004 \001(\001\022\r\n\005theta\030\005 \001(\001\022\021\n\tpathIn" +
-      "dex\030\006 \001(\005\022\020\n\010velocity\030\007 \001(\001\022\030\n\020distanceT" +
-      "raveled\030\010 \001(\001\022\025\n\rcriticalPoint\030\t \001(\005\":\n\023" +
-      "responserobotreport\022\014\n\004name\030\001 \001(\t\022\025\n\rcri" +
-      "ticalPoint\030\002 \001(\005\"9\n\031trackerRobotReportRe" +
-      "quest\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"I\n)c" +
-      "oordinatorGetCriticalPointRequestMessage" +
-      "\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"C\n*coordi" +
-      "natorGetCriticalPointResponseMessage\022\025\n\r" +
-      "criticalPoint\030\001 \001(\005\"\335\002\n\016robotsGreeting\022\013" +
-      "\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\022\014\n\004type\030\003 \001" +
-      "(\t\022\n\n\002IP\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\022(\n\tstartPos" +
-      "e\030\006 \001(\0132\025.gradlegRPC.robotPose\022&\n\007endPos" +
-      "e\030\007 \001(\0132\025.gradlegRPC.robotPose\022\021\n\ttimeSt" +
-      "amp\030\010 \001(\t\022\020\n\010maxAccel\030\t \001(\001\022\016\n\006maxVel\030\n " +
-      "\001(\001\022\036\n\026trackingPeriodInMillis\030\013 \001(\001\0220\n\rm" +
-      "akeFootPrint\030\014 \001(\0132\031.gradlegRPC.MakeFoot" +
-      "Print\022\024\n\014poseSteering\030\r \001(\014\022\026\n\016numberofr" +
-      "obots\030\016 \001(\005\"0\n\trobotPose\022\t\n\001x\030\001 \001(\001\022\t\n\001y" +
-      "\030\002 \001(\001\022\r\n\005theta\030\003 \001(\001\"{\n\rMakeFootPrint\022\017" +
-      "\n\007centerX\030\001 \001(\005\022\017\n\007centerY\030\002 \001(\005\022\020\n\010minV" +
-      "erts\030\003 \001(\005\022\020\n\010maxVerts\030\004 \001(\005\022\021\n\tminRadiu" +
-      "s\030\005 \001(\001\022\021\n\tmaxRadius\030\006 \001(\001\"<\n\025robotgreet" +
-      "ingResponse\022\014\n\004name\030\001 \001(\t\022\025\n\rnumofReplic" +
-      "as\030\002 \001(\005\"7\n\026getCurrentDependencies\022\013\n\003ka" +
-      "n\030\001 \001(\t\022\020\n\010depBytes\030\002 \001(\014\"\034\n\014noneRespons" +
-      "e\022\014\n\004none\030\001 \001(\t\"*\n\ntecrequest\022\013\n\003kan\030\001 \001" +
-      "(\t\022\017\n\007robotID\030\002 \001(\005\"7\n\013tecresponse\022\026\n\016st" +
-      "ringresponse\030\001 \001(\t\022\020\n\010tecStuff\030\002 \001(\014\"\032\n\013" +
-      "timerequest\022\013\n\003kan\030\001 \001(\t\"#\n\014timeresponse" +
-      "\022\023\n\013currentTime\030\001 \001(\004\" \n\021visualizerreque" +
-      "st\022\013\n\003kan\030\001 \001(\t\"(\n\022visualizerresponse\022\022\n" +
-      "\nvisualizer\030\001 \001(\014\"8\n\rallenInterval\022\013\n\003ka" +
-      "n\030\001 \001(\t\022\032\n\022allenIntervalBytes\030\002 \001(\014\"\275\001\n\027" +
-      "onPositionUpdateMessage\022\026\n\016footPrintByte" +
-      "s\030\001 \001(\014\022\017\n\007robotid\030\002 \001(\005\022\t\n\001x\030\003 \001(\001\022\t\n\001y" +
-      "\030\004 \001(\001\022\r\n\005theta\030\005 \001(\001\022\021\n\tpathIndex\030\006 \001(\005" +
-      "\022\020\n\010velocity\030\007 \001(\001\022\030\n\020distanceTraveled\030\010" +
-      " \001(\001\022\025\n\rcriticalPoint\030\t \001(\0052\252\010\n\022Coordina" +
-      "torService\022[\n\026coordinatorrobotreport\022\036.g" +
-      "radlegRPC.requestrobotreport\032\037.gradlegRP" +
-      "C.responserobotreport\"\000\022\211\001\n\030coordinatorc" +
-      "riticalpoint\0225.gradlegRPC.coordinatorGet" +
-      "CriticalPointRequestMessage\0326.gradlegRPC" +
-      ".coordinatorGetCriticalPointResponseMess" +
-      "age\022W\n\027coordinatordependencies\022\".gradleg" +
-      "RPC.getCurrentDependencies\032\030.gradlegRPC." +
-      "noneResponse\022W\n\026coordinatorgetGreeting\022\032" +
-      ".gradlegRPC.robotsGreeting\032!.gradlegRPC." +
-      "robotgreetingResponse\022I\n\026coordinatorgetT" +
-      "ecStuff\022\026.gradlegRPC.tecrequest\032\027.gradle" +
-      "gRPC.tecresponse\022N\n\031coordinatorgetCurren" +
-      "tTime\022\027.gradlegRPC.timerequest\032\030.gradleg" +
-      "RPC.timeresponse\022Y\n\030coordinatorgetVisual" +
-      "izer\022\035.gradlegRPC.visualizerrequest\032\036.gr" +
-      "adlegRPC.visualizerresponse\022R\n\033coordinat" +
-      "orgetAllenInterval\022\031.gradlegRPC.allenInt" +
-      "erval\032\030.gradlegRPC.noneResponse\022i\n coord" +
-      "inatorgetRobotReportRequest\022%.gradlegRPC" +
-      ".trackerRobotReportRequest\032\036.gradlegRPC." +
-      "requestrobotreport\022_\n\036coordinatorgetOnPo" +
-      "sitionUpdate\022#.gradlegRPC.onPositionUpda" +
-      "teMessage\032\030.gradlegRPC.noneResponse\022c\n\"c" +
-      "oordinatorgetOnPositionUpdateEven\022#.grad" +
-      "legRPC.onPositionUpdateMessage\032\030.gradleg" +
-      "RPC.noneResponseB\025\n\023io.grpc.coordinatorb" +
-      "\006proto3"
+      " \001(\001\022\t\n\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006 \001(\001" +
+      "\022\r\n\005pitch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpathInde" +
+      "x\030\t \001(\005\022\020\n\010velocity\030\n \001(\001\022\030\n\020distanceTra" +
+      "veled\030\013 \001(\001\022\025\n\rcriticalPoint\030\014 \001(\005\":\n\023re" +
+      "sponserobotreport\022\014\n\004name\030\001 \001(\t\022\025\n\rcriti" +
+      "calPoint\030\002 \001(\005\"9\n\031trackerRobotReportRequ" +
+      "est\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"I\n)coo" +
+      "rdinatorGetCriticalPointRequestMessage\022\013" +
+      "\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"C\n*coordina" +
+      "torGetCriticalPointResponseMessage\022\025\n\rcr" +
+      "iticalPoint\030\001 \001(\005\"\335\002\n\016robotsGreeting\022\013\n\003" +
+      "kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\022\014\n\004type\030\003 \001(\t" +
+      "\022\n\n\002IP\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\022(\n\tstartPose\030" +
+      "\006 \001(\0132\025.gradlegRPC.robotPose\022&\n\007endPose\030" +
+      "\007 \001(\0132\025.gradlegRPC.robotPose\022\021\n\ttimeStam" +
+      "p\030\010 \001(\t\022\020\n\010maxAccel\030\t \001(\001\022\016\n\006maxVel\030\n \001(" +
+      "\001\022\036\n\026trackingPeriodInMillis\030\013 \001(\001\0220\n\rmak" +
+      "eFootPrint\030\014 \001(\0132\031.gradlegRPC.MakeFootPr" +
+      "int\022\024\n\014poseSteering\030\r \001(\014\022\026\n\016numberofrob" +
+      "ots\030\016 \001(\005\"V\n\trobotPose\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002" +
+      " \001(\001\022\t\n\001z\030\003 \001(\001\022\014\n\004roll\030\004 \001(\001\022\r\n\005pitch\030\005" +
+      " \001(\001\022\013\n\003yaw\030\006 \001(\001\"{\n\rMakeFootPrint\022\017\n\007ce" +
+      "nterX\030\001 \001(\005\022\017\n\007centerY\030\002 \001(\005\022\020\n\010minVerts" +
+      "\030\003 \001(\005\022\020\n\010maxVerts\030\004 \001(\005\022\021\n\tminRadius\030\005 " +
+      "\001(\001\022\021\n\tmaxRadius\030\006 \001(\001\"<\n\025robotgreetingR" +
+      "esponse\022\014\n\004name\030\001 \001(\t\022\025\n\rnumofReplicas\030\002" +
+      " \001(\005\"7\n\026getCurrentDependencies\022\013\n\003kan\030\001 " +
+      "\001(\t\022\020\n\010depBytes\030\002 \001(\014\"\034\n\014noneResponse\022\014\n" +
+      "\004none\030\001 \001(\t\"*\n\ntecrequest\022\013\n\003kan\030\001 \001(\t\022\017" +
+      "\n\007robotID\030\002 \001(\005\"7\n\013tecresponse\022\026\n\016string" +
+      "response\030\001 \001(\t\022\020\n\010tecStuff\030\002 \001(\014\"\032\n\013time" +
+      "request\022\013\n\003kan\030\001 \001(\t\"#\n\014timeresponse\022\023\n\013" +
+      "currentTime\030\001 \001(\004\" \n\021visualizerrequest\022\013" +
+      "\n\003kan\030\001 \001(\t\"(\n\022visualizerresponse\022\022\n\nvis" +
+      "ualizer\030\001 \001(\014\"8\n\rallenInterval\022\013\n\003kan\030\001 " +
+      "\001(\t\022\032\n\022allenIntervalBytes\030\002 \001(\014\"\343\001\n\027onPo" +
+      "sitionUpdateMessage\022\026\n\016footPrintBytes\030\001 " +
+      "\001(\014\022\017\n\007robotid\030\002 \001(\005\022\t\n\001x\030\003 \001(\001\022\t\n\001y\030\004 \001" +
+      "(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006 \001(\001\022\r\n\005pitch\030\007 \001" +
+      "(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpathIndex\030\t \001(\005\022\020\n\010ve" +
+      "locity\030\n \001(\001\022\030\n\020distanceTraveled\030\013 \001(\001\022\025" +
+      "\n\rcriticalPoint\030\014 \001(\0052\352\010\n\022CoordinatorSer" +
+      "vice\022[\n\026coordinatorrobotreport\022\036.gradleg" +
+      "RPC.requestrobotreport\032\037.gradlegRPC.resp" +
+      "onserobotreport\"\000\022\211\001\n\030coordinatorcritica" +
+      "lpoint\0225.gradlegRPC.coordinatorGetCritic" +
+      "alPointRequestMessage\0326.gradlegRPC.coord" +
+      "inatorGetCriticalPointResponseMessage\022W\n" +
+      "\027coordinatordependencies\022\".gradlegRPC.ge" +
+      "tCurrentDependencies\032\030.gradlegRPC.noneRe" +
+      "sponse\022W\n\026coordinatorgetGreeting\022\032.gradl" +
+      "egRPC.robotsGreeting\032!.gradlegRPC.robotg" +
+      "reetingResponse\022I\n\026coordinatorgetTecStuf" +
+      "f\022\026.gradlegRPC.tecrequest\032\027.gradlegRPC.t" +
+      "ecresponse\022N\n\031coordinatorgetCurrentTime\022" +
+      "\027.gradlegRPC.timerequest\032\030.gradlegRPC.ti" +
+      "meresponse\022Y\n\030coordinatorgetVisualizer\022\035" +
+      ".gradlegRPC.visualizerrequest\032\036.gradlegR" +
+      "PC.visualizerresponse\022R\n\033coordinatorgetA" +
+      "llenInterval\022\031.gradlegRPC.allenInterval\032" +
+      "\030.gradlegRPC.noneResponse\022i\n coordinator" +
+      "getRobotReportRequest\022%.gradlegRPC.track" +
+      "erRobotReportRequest\032\036.gradlegRPC.reques" +
+      "trobotreport\022_\n\036coordinatorgetOnPosition" +
+      "Update\022#.gradlegRPC.onPositionUpdateMess" +
+      "age\032\030.gradlegRPC.noneResponse\022c\n\"coordin" +
+      "atorgetOnPositionUpdateEven\022#.gradlegRPC" +
+      ".onPositionUpdateMessage\032\030.gradlegRPC.no" +
+      "neResponse\022>\n\010kahboMax\022\030.gradlegRPC.none" +
+      "Response\032\030.gradlegRPC.noneResponseB\025\n\023io" +
+      ".grpc.coordinatorb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
-        });
+        }, assigner);
     internal_static_gradlegRPC_requestrobotreport_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_gradlegRPC_requestrobotreport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_requestrobotreport_descriptor,
-        new java.lang.String[] { "Req", "Robotid", "X", "Y", "Theta", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
+        new java.lang.String[] { "Req", "Robotid", "X", "Y", "Z", "Roll", "Pitch", "Yaw", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
     internal_static_gradlegRPC_responserobotreport_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_gradlegRPC_responserobotreport_fieldAccessorTable = new
@@ -14419,7 +14399,7 @@ public final class Coordinator {
     internal_static_gradlegRPC_robotPose_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotPose_descriptor,
-        new java.lang.String[] { "X", "Y", "Theta", });
+        new java.lang.String[] { "X", "Y", "Z", "Roll", "Pitch", "Yaw", });
     internal_static_gradlegRPC_MakeFootPrint_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_gradlegRPC_MakeFootPrint_fieldAccessorTable = new
@@ -14491,7 +14471,7 @@ public final class Coordinator {
     internal_static_gradlegRPC_onPositionUpdateMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_onPositionUpdateMessage_descriptor,
-        new java.lang.String[] { "FootPrintBytes", "Robotid", "X", "Y", "Theta", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
+        new java.lang.String[] { "FootPrintBytes", "Robotid", "X", "Y", "Z", "Roll", "Pitch", "Yaw", "PathIndex", "Velocity", "DistanceTraveled", "CriticalPoint", });
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 

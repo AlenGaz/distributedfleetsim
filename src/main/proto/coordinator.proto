@@ -25,11 +25,8 @@ service CoordinatorService {
   rpc coordinatorgetOnPositionUpdate(onPositionUpdateMessage) returns (noneResponse);
   rpc coordinatorgetOnPositionUpdateEven(onPositionUpdateMessage) returns (noneResponse);
 
-
-
-
-
 }
+
 
 // this one is used for robots just sending their robot reports to the coordinator
 message requestrobotreport{
@@ -37,11 +34,14 @@ message requestrobotreport{
   int32 robotid = 2;
   double x = 3;
   double y = 4;
-  double theta = 5;
-  int32 pathIndex = 6;
-  double velocity = 7;
-  double distanceTraveled = 8;
-  int32 criticalPoint = 9;
+  double z = 5;
+  double roll = 6;
+  double pitch = 7;
+  double yaw = 8;
+  int32 pathIndex = 9;
+  double velocity = 10;
+  double distanceTraveled = 11;
+  int32 criticalPoint = 12;
 }
 
 
@@ -90,7 +90,10 @@ message robotsGreeting {
 message robotPose {
   double x = 1;
   double y = 2;
-  double theta = 3;
+  double z = 3;
+  double roll = 4;
+  double pitch = 5;
+  double yaw = 6;
 }
 
 message MakeFootPrint {
@@ -158,9 +161,12 @@ message onPositionUpdateMessage{
   int32 robotid = 2;
   double x = 3;
   double y = 4;
-  double theta = 5;
-  int32 pathIndex = 6;
-  double velocity = 7;
-  double distanceTraveled = 8;
-  int32 criticalPoint = 9;
+  double z = 5;
+  double roll = 6;
+  double pitch = 7;
+  double yaw = 8;
+  int32 pathIndex = 9;
+  double velocity = 10;
+  double distanceTraveled = 11;
+  int32 criticalPoint = 12;
 }

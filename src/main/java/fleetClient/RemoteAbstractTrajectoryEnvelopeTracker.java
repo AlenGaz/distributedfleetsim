@@ -63,7 +63,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
 
 
-    String target = "localhost:50051";  // coordinator IP
+    //String target = "localhost:50051";  // coordinator IP
+    String target = "178.174.203.103:50053";  // coordinator IP
     ManagedChannel channel = ManagedChannelBuilder.forTarget(target).maxInboundMessageSize(100*1000*1000).usePlaintext().build();
     public FleetClient client = new FleetClient(channel);
     public boolean isClient;
@@ -346,8 +347,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
             deadlines.put(trajEnv, deadline);
             //if (!client.sendAllenInterval("Add",deadLine)) {
-                metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
-                throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
+   //             metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
+   //             throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
             //}
             //else
 
@@ -458,9 +459,6 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
                         if(isClient) {
                             // this rpc below is for sending a robot report
-                           client.makeRobotReport("my RobotReport", getRobotReport().getRobotID(), getRobotReport().getPose().getX()
-                                    , getRobotReport().getPose().getY(), getRobotReport().getPose().getTheta(), getRobotReport().getVelocity()
-                                    , getRobotReport().getPathIndex(), getRobotReport().getDistanceTraveled(), getRobotReport().getCriticalPoint());
 
                             // this is for getting a robot report
                             //rr = client.makeRobotReportRequest(te.getRobotID());
@@ -535,6 +533,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
     protected void finishTracking() {
         metaCSPLogger.info("<<<< Finished (super envelope) " + this.te);
+
         // so this is where we would set up a new mission
         // client.makeNewMissionRequest(int robotID);
         fixDeadline(te, 0);

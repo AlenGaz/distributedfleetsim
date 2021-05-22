@@ -39,7 +39,7 @@ public class FleetClient {
     public fleetClient.FleetClient FleetClient;
 
     public FleetClient(Channel channel) {
-        //blockingStub = HelloWorldServiceGrpc.newBlockingStub(channel);
+
         blockingStub = FleetClientsServiceGrpc.newBlockingStub(channel);
         coordinatorBlockingStub = CoordinatorServiceGrpc.newBlockingStub(channel);
     }
@@ -59,8 +59,10 @@ public class FleetClient {
         }
 
         Coordinator.robotsGreeting greetingBuild = Coordinator.robotsGreeting.newBuilder().setKan(kan).setRobotID(robotID).setType(type).setIP(IP).setPort(port)
-                .setStartPose(Coordinator.robotPose.newBuilder().setX(startPose.getX()).setY(startPose.getY()).setTheta(startPose.getTheta()).build()).
-                setEndPose(Coordinator.robotPose.newBuilder().setX(endPose.getX()).setY(endPose.getY()).setTheta(endPose.getTheta()).build()).
+                .setStartPose(Coordinator.robotPose.newBuilder().setX(startPose.getX()).setY(startPose.getY()).setZ(startPose.getZ())
+                        .setRoll(startPose.getRoll()).setPitch(startPose.getPitch()).setYaw(startPose.getYaw()).build()).
+                setEndPose(Coordinator.robotPose.newBuilder().setX(endPose.getX()).setY(endPose.getY()).setZ(endPose.getZ())
+                .setRoll(endPose.getRoll()).setPitch(endPose.getPitch()).setYaw(endPose.getYaw()).build()).
                         setTimeStamp(timeStamp).setMaxAccel(maxAccel).setMaxVel(maxVel).setTrackingPeriodInMillis(trackingPeriodInMillis)
                 .setMakeFootPrint(Coordinator.MakeFootPrint.newBuilder().setCenterX(makeFootPrint.getCenterX())
                         .setCenterY(makeFootPrint.getCenterY()).setMinVerts(makeFootPrint.getMinVerts()).setMaxVerts(makeFootPrint.getMaxVerts())
@@ -73,8 +75,8 @@ public class FleetClient {
             // System.out.println("[FleetClient] making greeting");
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
-
         }
+
         if(greetingresponse!=null){
             System.out.println("[FleetClient] makegreeting request: " + kan + " got response; " + greetingresponse.getNumofReplicas());
             return greetingresponse.getNumofReplicas();
@@ -102,8 +104,9 @@ public class FleetClient {
         System.out.println("Logging the response of the server ...");
     }
 
-    public void makeRobotReport(String my_robotReport, int robotid, double x, double y, double theta, double velocity, int pathIndex, double distanceTraveled, int criticalPoint) {
-        Coordinator.requestrobotreport getRR = Coordinator.requestrobotreport.newBuilder().setReq(my_robotReport).setRobotid(robotid).setX(x).setY(y).setTheta(theta).setVelocity(velocity).setPathIndex(pathIndex)
+    public void makeRobotReport(String my_robotReport, int robotid, double x, double y, double z, double roll, double pitch, double yaw, double velocity, int pathIndex, double distanceTraveled, int criticalPoint) {
+        Coordinator.requestrobotreport getRR = Coordinator.requestrobotreport.newBuilder().setReq(my_robotReport).setRobotid(robotid).setX(x).setY(y).setZ(z)
+                .setRoll(roll).setPitch(pitch).setYaw(yaw).setVelocity(velocity).setPathIndex(pathIndex)
                 .setDistanceTraveled(distanceTraveled).setCriticalPoint(criticalPoint).build();
        Coordinator.responserobotreport responserobotreport;
 
@@ -123,17 +126,21 @@ public class FleetClient {
         Coordinator.coordinatorGetCriticalPointResponseMessage coordinatorRsp = null;
 
         try {
-            coordinatorRsp = coordinatorBlockingStub.coordinatorcriticalpoint(req);
+            coordinatorRsp = coordinatorBlockingStub.withDeadlineAfter(1, TimeUnit.SECONDS).coordinatorcriticalpoint(req);
         }
         catch(StatusRuntimeException e){
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
 
         }
+        if (coordinatorRsp != null){
+            return coordinatorRsp.getCriticalPoint();
 
-
+            }
+        else {
+            return 50;
+        }
         //System.out.println("[FleetClient] getCriticalPoint response was: " + coordinatorRsp.getCriticalPoint() + " for robotID: " + robotID);
-        return coordinatorRsp.getCriticalPoint();
-
+        //return coordinatorRsp.getCriticalPoint();
     }
 
     public void makeCurrentDependenciesMessage(HashSet<Dependency> dependencyHashSet){
@@ -235,7 +242,7 @@ public class FleetClient {
         //System.out.println("[FleetClient] response from makeRobotReportRequest: " + response);
 
         int _robotID = response.getRobotid();
-        Pose _pose = new Pose(response.getX(), response.getY(), response.getTheta());
+        Pose _pose = new Pose(response.getX(), response.getY(), response.getZ(), response.getRoll(), response.getPitch(), response.getYaw());
         RobotReport rR = new RobotReport(_robotID, _pose, response.getPathIndex(), response.getVelocity(), response.getDistanceTraveled(), response.getCriticalPoint());
 
 
@@ -251,37 +258,11 @@ public class FleetClient {
 
 
 
-    public static void main(String[] args) throws InterruptedException {
-
-        String messageToSend;
-        String target = "localhost:50050";
-
-
-        ManagedChannel channel = ManagedChannelBuilder.forTarget(target).maxInboundMessageSize(40*1000*1000).usePlaintext().build();
-
-        try {
-            //FleetClient client = new FleetClient(channel);
-            //client.makeGreeting((messageToSend));
-
-            //FleetClient client = new FleetClient(channel);
-            //client.makeCriticalPointreq("98",99);
-
-        }catch (StatusRuntimeException e) {
-                System.out.println("Could not connect");
-                return;
-
-        } finally {
-
-            channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
-        }
-    }
-
-
-    public void makeOnPositionUpdate(TrajectoryEnvelope footprint, RobotReport robotReport) {
+    public void makeOnPositionUpdate(RobotReport robotReport) {
 
         ByteString footPrint = null;
 
-
+/*
         try {
             footPrint = ByteString.copyFrom(convertToBytes(footprint));
         } catch (IOException e) {
@@ -289,10 +270,15 @@ public class FleetClient {
         }
 
 
+ */
+
         //System.out.println("[FleetClient] in makeOnPositionUpdate .....");
         Coordinator.onPositionUpdateMessage request = Coordinator.onPositionUpdateMessage.newBuilder().
                // setFootPrintBytes(footPrint).
-                setRobotid(robotReport.getRobotID()).setX(robotReport.getPose().getX()).setY(robotReport.getPose().getY()).setTheta(robotReport.getPose().getTheta())
+
+                setRobotid(robotReport.getRobotID()).setX(robotReport.getPose().getX()).setY(robotReport.getPose().getY())
+                .setZ(robotReport.getPose().getZ())
+                .setRoll(robotReport.getPose().getRoll()).setPitch(robotReport.getPose().getPitch()).setYaw(robotReport.getPose().getYaw())
                 .setVelocity(robotReport.getVelocity()).setPathIndex(robotReport.getPathIndex())
                 .setDistanceTraveled(robotReport.getDistanceTraveled()).setCriticalPoint(robotReport.getCriticalPoint()).build();
 
@@ -305,22 +291,24 @@ public class FleetClient {
     }
 
 
-    public void makeOnPositionUpdate2(TrajectoryEnvelope footprint, RobotReport robotReport) {
+    public void makeOnPositionUpdate2(Polygon footprint, RobotReport robotReport) {
 
         ByteString footPrint = null;
 
-
+/*
         try {
             footPrint = ByteString.copyFrom(convertToBytes(footprint));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+*/
 
         //System.out.println("[FleetClient] in makeOnPositionUpdate .....");
         Coordinator.onPositionUpdateMessage request = Coordinator.onPositionUpdateMessage.newBuilder().
                 // setFootPrintBytes(footPrint).
-                        setRobotid(robotReport.getRobotID()).setX(robotReport.getPose().getX()).setY(robotReport.getPose().getY()).setTheta(robotReport.getPose().getTheta())
+                        setRobotid(robotReport.getRobotID()).setX(robotReport.getPose().getX()).setY(robotReport.getPose().getY())
+                .setZ(robotReport.getPose().getZ())
+                .setRoll(robotReport.getPose().getRoll()).setPitch(robotReport.getPose().getPitch()).setYaw(robotReport.getPose().getYaw())
                 .setVelocity(robotReport.getVelocity()).setPathIndex(robotReport.getPathIndex())
                 .setDistanceTraveled(robotReport.getDistanceTraveled()).setCriticalPoint(robotReport.getCriticalPoint()).build();
 
@@ -352,5 +340,30 @@ public class FleetClient {
         }
     }
 
+
+/*    public static void main(String[] args) throws InterruptedException {
+
+        String messageToSend;
+        String target = "localhost:50050";
+
+
+        ManagedChannel channel = ManagedChannelBuilder.forTarget(target).maxInboundMessageSize(40*1000*1000).usePlaintext().build();
+
+        try {
+            //FleetClient client = new FleetClient(channel);
+            //client.makeGreeting((messageToSend));
+
+            //FleetClient client = new FleetClient(channel);
+            //client.makeCriticalPointreq("98",99);
+
+        }catch (StatusRuntimeException e) {
+            System.out.println("Could not connect");
+            return;
+
+        } finally {
+
+            channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
+        }
+    }*/
 
 }

@@ -57,6 +57,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 
 
 	public int RK4controlPeriod=1000;
+	private boolean reportOnce = false;
 	//public static int RK4numberOfReplicas = 0;
 
 
@@ -626,6 +627,15 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 
 		while (true) {
 
+			if(!reportOnce) {
+				client.makeRobotReport("my RobotReport", getRobotReport().getRobotID(), getRobotReport().getPose().getX()
+						, getRobotReport().getPose().getY(), getRobotReport().getPose().getZ(), getRobotReport().getPose().getRoll(),
+						getRobotReport().getPose().getPitch(), getRobotReport().getPose().getYaw(), getRobotReport().getVelocity()
+						, getRobotReport().getPathIndex(), getRobotReport().getDistanceTraveled(), getRobotReport().getCriticalPoint());
+				reportOnce =true;
+			}
+
+
 			int criticalPointx = client.makeCriticalPointreq(getRobotReport().getRobotID());
 			setCriticalPoint(criticalPointx);
 
@@ -640,14 +650,14 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 					state = new State(totalDistance, 0.0);
 
 					if(getRobotReport().getRobotID() % 2 == 0) {
-						client.makeOnPositionUpdate2(te, getRobotReport());
+						//client.makeOnPositionUpdate2(te, getRobotReport());
 						//client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
-						//client.makeOnPositionUpdate(getRobotReport());
+						client.makeOnPositionUpdate(getRobotReport());
 					}
 					if(getRobotReport().getRobotID() % 2 == 1) {
-						client.makeOnPositionUpdate(te, getRobotReport());
-						//client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
-						//client.makeOnPositionUpdate(getRobotReport());
+						//client.makeOnPositionUpdate(te, getRobotReport());
+						//client.makeOnPositionUpdate2(te.getFootprint(), getRobotReport());
+						client.makeOnPositionUpdate(getRobotReport());
 					}
 
 					//onPositionUpdate();
@@ -693,14 +703,14 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			//System.out.println("[Remote..TrackerRK4] te.getFootprint(): " + te.getFootprint() +" and getRobotReport(): " + getRobotReport());
 
 			if(getRobotReport().getRobotID() % 2 == 0) {
-				client.makeOnPositionUpdate2(te, getRobotReport());
-				//client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
-				//client.makeOnPositionUpdate(getRobotReport());
+				//client.makeOnPositionUpdate2(te, getRobotReport());
+			//	client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
+				client.makeOnPositionUpdate(getRobotReport());
 			}
 			if(getRobotReport().getRobotID() % 2 == 1) {
-				client.makeOnPositionUpdate(te, getRobotReport());
-				//client.makeOnPositionUpdate(te.getFootprint(), getRobotReport());
-				//client.makeOnPositionUpdate(getRobotReport());
+				//client.makeOnPositionUpdate(te, getRobotReport());
+				//client.makeOnPositionUpdate2(te.getFootprint(), getRobotReport());
+				client.makeOnPositionUpdate(getRobotReport());
 			}
 			enqueueOneReport();
 

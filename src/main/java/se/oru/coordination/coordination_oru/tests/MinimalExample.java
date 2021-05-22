@@ -93,7 +93,6 @@ public class MinimalExample {
 
 		//Start the thread that revises precedences at every period
 		tec.startInference();
-		System.out.println("[MinimalExample] after if" + tec.getCurrentDependencies());
 
 		//Robot IDs can be non-sequential (but must be unique)
 		int[] robotIDs = new int[] {22,7,54,13,1,14};

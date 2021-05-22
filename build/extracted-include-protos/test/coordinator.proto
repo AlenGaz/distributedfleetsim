@@ -1,0 +1,172 @@
+syntax = "proto3";
+package gradlegRPC;
+option java_package = "io.grpc.coordinator";
+
+import "google/protobuf/empty.proto";
+
+
+service CoordinatorService {
+  rpc coordinatorrobotreport(requestrobotreport) returns (responserobotreport){}
+  rpc coordinatorcriticalpoint(coordinatorGetCriticalPointRequestMessage) returns (coordinatorGetCriticalPointResponseMessage);
+  rpc coordinatordependencies(getCurrentDependencies) returns (noneResponse); //google.protobuf.Empty?
+  rpc coordinatorgetGreeting(robotsGreeting) returns (robotgreetingResponse);
+  rpc coordinatorgetTecStuff(tecrequest) returns (tecresponse);
+
+  // RemoteAbstract...Tracker stuff
+  rpc coordinatorgetCurrentTime(timerequest) returns (timeresponse);
+  rpc coordinatorgetVisualizer(visualizerrequest) returns (visualizerresponse);
+
+  // an update of the allenInterval in the coordinator coming from the tracker
+  // (can return google/protobuf/empty.proto also but not atm since not sure if it will block
+  rpc coordinatorgetAllenInterval(allenInterval) returns (noneResponse);
+
+  rpc coordinatorgetRobotReportRequest(trackerRobotReportRequest) returns (requestrobotreport);
+
+  rpc coordinatorgetOnPositionUpdate(onPositionUpdateMessage) returns (noneResponse);
+  rpc coordinatorgetOnPositionUpdateEven(onPositionUpdateMessage) returns (noneResponse);
+
+}
+
+
+// this one is used for robots just sending their robot reports to the coordinator
+message requestrobotreport{
+  string req = 1;
+  int32 robotid = 2;
+  double x = 3;
+  double y = 4;
+  double z = 5;
+  double roll = 6;
+  double pitch = 7;
+  double yaw = 8;
+  int32 pathIndex = 9;
+  double velocity = 10;
+  double distanceTraveled = 11;
+  int32 criticalPoint = 12;
+}
+
+
+message responserobotreport{
+  string name = 1;
+  int32 criticalPoint =2;
+}
+
+
+// tracker (on the client) asks coordinator for the report of a robots id
+message trackerRobotReportRequest{
+  string kan = 1;
+  int32 robotID = 2;
+}
+
+
+
+message coordinatorGetCriticalPointRequestMessage {
+  string kan = 1;
+  int32 robotID = 2;
+}
+
+message coordinatorGetCriticalPointResponseMessage {
+  int32 criticalPoint = 1;
+}
+
+
+message robotsGreeting {
+  string kan = 1;
+  int32 robotID = 2;
+  string type = 3;
+  string IP = 4;
+  int32 port = 5;
+  robotPose startPose = 6;
+  robotPose endPose = 7;
+  // footPrint
+  string timeStamp = 8;
+  double maxAccel = 9;
+  double maxVel = 10;
+  double trackingPeriodInMillis = 11;
+  MakeFootPrint makeFootPrint = 12;
+  bytes poseSteering = 13;
+  int32 numberofrobots = 14;
+}
+
+message robotPose {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+  double roll = 4;
+  double pitch = 5;
+  double yaw = 6;
+}
+
+message MakeFootPrint {
+  int32 centerX = 1;
+  int32 centerY = 2;
+  int32 minVerts = 3;
+  int32 maxVerts = 4;
+  double minRadius = 5;
+  double maxRadius = 6;
+}
+
+message robotgreetingResponse {
+  string name = 1;
+  int32 numofReplicas = 2;
+}
+
+message getCurrentDependencies{
+  string kan = 1;
+  bytes depBytes = 2;
+}
+
+message noneResponse{
+  string none = 1;
+}
+
+message tecrequest{
+  string kan = 1;
+  int32 robotID=2;
+
+}
+
+message tecresponse{
+  string stringresponse =1;
+  bytes tecStuff = 2;
+}
+
+message timerequest{
+  string kan = 1;
+}
+
+message timeresponse{
+  uint64 currentTime = 1;
+}
+
+message visualizerrequest{
+  string kan = 1;
+}
+
+message visualizerresponse{
+  bytes visualizer = 1;
+}
+
+message allenInterval{
+  string kan =1;
+  bytes allenIntervalBytes = 2;
+
+}
+
+message onPositionUpdateMessage{
+  /*
+  invoking an onPositionUpdate() method in the class holding the browser
+  */
+  bytes footPrintBytes = 1;
+  // building a robotReport
+  int32 robotid = 2;
+  double x = 3;
+  double y = 4;
+  double z = 5;
+  double roll = 6;
+  double pitch = 7;
+  double yaw = 8;
+  int32 pathIndex = 9;
+  double velocity = 10;
+  double distanceTraveled = 11;
+  int32 criticalPoint = 12;
+}

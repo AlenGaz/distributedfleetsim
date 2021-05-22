@@ -4,8 +4,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Comparator;
 
-import CoordinatorPackage.CoordinatorServer;
-import GRPC.CoordinatorServiceImpl;
+//import CoordinatorPackage.CoordinatorServer;
 import fleetClient.FleetClient;
 import aima.core.util.datastructure.Pair;
 import io.grpc.ManagedChannel;
@@ -174,14 +173,15 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 								client.makeGreeting2(pair2, "simulated", InetAddress.getLocalHost().toString(), String.valueOf( System.currentTimeMillis()));
 
 								client.makeRobotReport("my RobotReport", tec.getRobotReport(robotID).getRobotID()
-										, tec.getRobotReport(robotID).getPose().getX(), tec.getRobotReport(robotID).getPose().getY(), tec.getRobotReport(robotID).getPose().getTheta(), tec.getRobotReport(robotID).getVelocity()
+										, tec.getRobotReport(robotID).getPose().getX(), tec.getRobotReport(robotID).getPose().getY(), tec.getRobotReport(robotID).getPose().getZ(), tec.getRobotReport(robotID).getPose().getRoll()
+										,tec.getRobotReport(robotID).getPose().getPitch(),tec.getRobotReport(robotID).getPose().getYaw(), tec.getRobotReport(robotID).getVelocity()
 										, tec.getRobotReport(robotID).getPathIndex(), tec.getRobotReport(robotID).getDistanceTraveled(), tec.getRobotReport(robotID).getCriticalPoint());
 
 
 								//client.makeCurrentDependenciesMessage(tec.getCurrentDependencies());
 
-								CoordinatorServiceImpl cs = CoordinatorServer.getInstance();
-								System.out.println("Singleton Instance RobotReport: " + cs.robotIDtoRobotReport);
+								//CoordinatorServiceImpl cs = CoordinatorServer.getInstance();
+								//System.out.println("Singleton Instance RobotReport: " + cs.robotIDtoRobotReport);
 
 
 

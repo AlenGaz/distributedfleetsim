@@ -56,11 +56,14 @@ message robotReportResponse {
   int32 robotID = 1;
   double x = 2;
   double y = 3;
-  double theta = 4;
-  int32 pathIndex = 5;
-  double velocity = 6;
-  double distanceTraveled = 7;
-  int32 criticalPoint = 8;
+  double z = 4;
+  double roll = 5;
+  double pitch = 6;
+  double yaw = 7;
+  int32 pathIndex = 8;
+  double velocity = 9;
+  double distanceTraveled = 10;
+  int32 criticalPoint = 11;
 }
 
 message coordinatorrequestrobotid{
@@ -68,11 +71,14 @@ message coordinatorrequestrobotid{
   int32 robotid = 2;
   double x = 3;
   double y = 4;
-  double theta = 5;
-  int32 pathIndex = 6;
-  double velocity = 7;
-  double distanceTraveled = 8;
-  int32 criticalPoint = 9;
+  double z = 5;
+  double roll = 6;
+  double pitch = 7;
+  double yaw = 8;
+  int32 pathIndex = 9;
+  double velocity = 10;
+  double distanceTraveled = 11;
+  int32 criticalPoint = 12;
 }
 
 message coordinatorrespondrobotreport {

@@ -3,8 +3,6 @@ package se.oru.coordination.coordination_oru;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.TrajectoryEnvelope;
 
-import se.oru.coordination.coordination_oru.util.FleetVisualization;
-
 /**
  * Implement this class to provide a callback to pass on to an {@link AbstractTrajectoryEnvelopeTracker} which
  * will be called at important points during tracking.
@@ -41,7 +39,7 @@ public abstract class TrackingCallback {
 
 	/**
 	 * Will be called on position update.
-	 * @return Can return an array of strings that will be displayed if there is a {@link FleetVisualization} that supports it.
+	 * @return
 	 */
 	public abstract String[] onPositionUpdate();
 	

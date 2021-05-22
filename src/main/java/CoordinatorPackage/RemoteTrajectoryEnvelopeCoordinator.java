@@ -2165,7 +2165,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
 
                         }
                     }
-                }//end for reversibleCS*/
+                }//end for reversibleCS*/o
             }//end synchronized(allCriticalSections)
 
             //update and communicate critical points
@@ -2195,7 +2195,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
     }//end checkAndRevise
 
     private void sendCriticalPoint(int robotID, HashMap<Integer, RobotReport> currentReports) {
-        System.out.println("[RemoteTrajectoryEnvelopeCoordinator] in sendCriticalPoint...");
+
         RemoteAbstractTrajectoryEnvelopeTracker tracker = null;
         synchronized (trackers) {
             tracker = trackers.get(robotID);
@@ -2206,7 +2206,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
             if (currentDependencies.containsKey(robotID)) {
                 Dependency dep = currentDependencies.get(robotID);
                 metaCSPLogger.finest("Set critical point " + dep.getWaitingPoint() + " to Robot" + dep.getWaitingRobotID() +".");
-                System.out.println("[RemoteTrajectoryEnvelopeCoordinator]->>>dep.getWaitingPoint()" + dep.getWaitingPoint() + " dep RobotID" + dep.getWaitingRobotID());
+
                 retransmitt = retransmitt || communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == dep.getWaitingPoint() && currentReports.get(robotID).getCriticalPoint() != dep.getWaitingPoint()
                         && ((int)(Calendar.getInstance().getTimeInMillis()-communicatedCPs.get(tracker).getSecond().longValue()) > maxDelay);
                 setCriticalPoint(dep.getWaitingRobotID(), dep.getWaitingPoint(), retransmitt);
@@ -2220,7 +2220,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
                 retransmitt = retransmitt || communicatedCPs.containsKey(tracker) && communicatedCPs.get(tracker).getFirst() == -1 && currentReports.get(robotID).getCriticalPoint() != -1
                         && ((int)(Calendar.getInstance().getTimeInMillis()-communicatedCPs.get(tracker).getSecond().longValue()) > maxDelay);
                 setCriticalPoint(robotID, -1, retransmitt);
-                System.out.println("[RemoteTrajectoryEnvelopeCoordinator] else-> replace the robotID in criticalPoints, this should remove old ones???");
+
                 robotIDtoCriticalPoint.replace(robotID, -1);
             }
             forceCriticalPointReTransmission.put(robotID, false);

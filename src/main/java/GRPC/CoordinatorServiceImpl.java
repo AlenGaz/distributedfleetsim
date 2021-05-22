@@ -35,7 +35,7 @@ import java.util.logging.Logger;
 public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorServiceImplBase {
 
     private static final Logger logger = Logger.getLogger(CoordinatorServiceImpl.class.getName());
-    private final FleetClientsServiceGrpc.FleetClientsServiceBlockingStub blockingStubClient;
+  //  private final FleetClientsServiceGrpc.FleetClientsServiceBlockingStub blockingStubClient;
 
     public HashMap<Integer, RobotReport> robotIDtoRobotReport = new HashMap<Integer, RobotReport>();
     public volatile HashMap<Integer, clientConnection> robotIDtoClientConnection = new HashMap<Integer,clientConnection>();
@@ -44,19 +44,19 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
     RemoteAbstractTrajectoryEnvelopeCoordinator tec = null;
 
 
-    String target = "localhost:50057";
-    ManagedChannel fleetServiceChannel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
+   // String target = "localhost:50057";
+   // ManagedChannel fleetServiceChannel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
 
     public CoordinatorServiceImpl() {
 
-        blockingStubClient = FleetClientsServiceGrpc.newBlockingStub(fleetServiceChannel);
+  //     blockingStubClient = FleetClientsServiceGrpc.newBlockingStub(fleetServiceChannel);
 
     }
 
     public CoordinatorServiceImpl(RemoteAbstractTrajectoryEnvelopeCoordinator tec) {
 
         this.tec = tec;
-        blockingStubClient = FleetClientsServiceGrpc.newBlockingStub(fleetServiceChannel);
+    //    blockingStubClient = FleetClientsServiceGrpc.newBlockingStub(fleetServiceChannel);
     }
 
 
@@ -84,8 +84,10 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
             _type = request.getType();
             _ip = request.getIP();
             _port = request.getPort();
-            _startPose = new Pose(request.getStartPose().getX(), request.getStartPose().getY(), request.getStartPose().getTheta());
-            _endPose = new Pose(request.getEndPose().getX(), request.getEndPose().getY(), request.getEndPose().getTheta());
+            _startPose = new Pose(request.getStartPose().getX(), request.getStartPose().getY(), request.getStartPose().getZ(),
+                    request.getStartPose().getRoll(), request.getStartPose().getPitch(), request.getStartPose().getYaw());
+            _endPose = new Pose(request.getEndPose().getX(), request.getEndPose().getY(), request.getEndPose().getZ(),
+                    request.getEndPose().getRoll(), request.getEndPose().getPitch(), request.getEndPose().getYaw());
             _maxAccel = request.getMaxAccel();
             _maxVel = request.getMaxVel();
             _timeStamp = request.getTimeStamp();
@@ -109,7 +111,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
         }
         //System.out.println("Got ClientConnections timeStamp: " + robotIDtoClientConnection.get(1).getTimeStamp());
-        //System.out.println("Got ClientConnections type: " + robotIDtoClientConnection.get(1).getType());
+        System.out.println("Got ClientConnections type: " + robotIDtoClientConnection.keySet());
 
         if (request.getKan().equals("newmission")) {
 
@@ -150,13 +152,18 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
 
 
 
-            robotgreetingResponse(responseObserver);
+            robotgreetingResponse(responseObserver, _robotID);
 
     }
 
-    public void robotgreetingResponse(StreamObserver<Coordinator.robotgreetingResponse> responseObserver){
+    public void robotgreetingResponse(StreamObserver<Coordinator.robotgreetingResponse> responseObserver, int robotID){
+
+        /**
+         * Number of replicas can be used to warn if id's are sent that alrdy exist
+         * */
 
         //System.out.println("[CoordinatorServiceImpl] tec.numberOfReplicas is: " + tec.getNumberOfReplicas());
+        robotIDtoClientConnection.containsKey(robotID);
         Coordinator.robotgreetingResponse response = Coordinator.robotgreetingResponse.newBuilder().setName("Response").setNumofReplicas(tec.getNumberOfReplicas()).build();
 
         responseObserver.onNext(response);
@@ -175,7 +182,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
              * the necessary data is being sent from the clients
              */
             _robotID = request.getRobotid();
-            Pose _pose = new Pose(request.getX(), request.getY(),request.getTheta());
+            Pose _pose = new Pose(request.getX(), request.getY(),request.getZ(), request.getRoll(),request.getPitch(),request.getYaw());
             RobotReport rR = new RobotReport(_robotID, _pose, request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
 
 
@@ -397,7 +404,8 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
     public void coordinatorgetRobotReportResponse(StreamObserver<Coordinator.requestrobotreport> responseObserver, RobotReport rr){
 
         Coordinator.requestrobotreport response = Coordinator.requestrobotreport.newBuilder()
-                .setRobotid(rr.getRobotID()).setX(rr.getPose().getX()).setY(rr.getPose().getY()).setTheta(rr.getPose().getTheta())
+                .setRobotid(rr.getRobotID()).setX(rr.getPose().getX()).setY(rr.getPose().getY()).setZ(rr.getPose().getZ())
+                .setRoll(rr.getPose().getRoll()).setPitch(rr.getPose().getPitch()).setYaw(rr.getPose().getYaw())
                 .setPathIndex(rr.getPathIndex()).setVelocity(rr.getVelocity()).setDistanceTraveled(rr.getDistanceTraveled())
                 .setCriticalPoint(rr.getCriticalPoint()).build();
 
@@ -417,7 +425,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
     public void coordinatorgetOnPositionUpdate(Coordinator.onPositionUpdateMessage request,
                                                StreamObserver<Coordinator.noneResponse> responseObserver){
 
-        System.out.println("[coordinatorgetOnPositionUpdateOdd from robot: " + request.getRobotid());
+       // System.out.println("[coordinatorgetOnPositionUpdateOdd from robot: " + request.getRobotid());
         //Polygon footPrint = null;
         TrajectoryEnvelope footPrint = null;
      /*   if(request.getFootPrintBytes() != null) {
@@ -437,9 +445,9 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
       */
 
         RobotReport rr = new RobotReport(request.getRobotid(),
-                new Pose(request.getX(), request.getY(), request.getTheta()),
+                new Pose(request.getX(), request.getY(), request.getZ(),request.getRoll(),request.getPitch(),request.getYaw()),
                 request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
-
+        robotIDtoRobotReport.put(request.getRobotid(),rr);
         coordinatorgetOnPositionUpdateResponse(responseObserver);
 
        /**
@@ -530,7 +538,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
     public void coordinatorgetOnPositionUpdateEven(Coordinator.onPositionUpdateMessage request,
                                                StreamObserver<Coordinator.noneResponse> responseObserver) {
 
-        System.out.println("[coordinatorgetOnPositionUpdateEven from robot: " + request.getRobotid());
+      //  System.out.println("[coordinatorgetOnPositionUpdateEven from robot: " + request.getRobotid());
         //Polygon footPrint = null;
         TrajectoryEnvelope footPrint = null;
      /*   if(request.getFootPrintBytes() != null) {
@@ -550,7 +558,7 @@ public class CoordinatorServiceImpl extends CoordinatorServiceGrpc.CoordinatorSe
       */
 
         RobotReport rr = new RobotReport(request.getRobotid(),
-                new Pose(request.getX(), request.getY(), request.getTheta()),
+                new Pose(request.getX(), request.getY(), request.getZ(),request.getRoll(),request.getPitch(),request.getYaw()),
                 request.getPathIndex(),request.getVelocity(),request.getDistanceTraveled(),request.getCriticalPoint());
 
         coordinatorgetOnPositionUpdateResponse(responseObserver);
