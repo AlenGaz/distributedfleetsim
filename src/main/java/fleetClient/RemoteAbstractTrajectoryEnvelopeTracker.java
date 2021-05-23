@@ -63,11 +63,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
 
 
-    //String target = "localhost:50051";  // coordinator IP
-    String target = "178.174.203.103:50053";  // coordinator IP
-    ManagedChannel channel = ManagedChannelBuilder.forTarget(target).maxInboundMessageSize(100*1000*1000).usePlaintext().build();
-    public FleetClient client = new FleetClient(channel);
-    public boolean isClient;
+
 
     /**
      * Create a new {@link RemoteAbstractTrajectoryEnvelopeTracker} to track a given {@link TrajectoryEnvelope},
@@ -80,7 +76,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
      * @param trackingPeriodInMillis The tracking period.
      * @param cb An optional callback function.
      */
-    public RemoteAbstractTrajectoryEnvelopeTracker(TrajectoryEnvelope te, double temporalResolution, int trackingPeriodInMillis, TrackingCallback cb, boolean isClient) {
+    public RemoteAbstractTrajectoryEnvelopeTracker(TrajectoryEnvelope te, double temporalResolution, int trackingPeriodInMillis, TrackingCallback cb) {
         this.te = te;
         this.traj = te.getTrajectory();
         this.externalCPCounter = -1;
@@ -89,7 +85,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         this.startingTimeInMillis = Calendar.getInstance().getTimeInMillis();
         this.trackingPeriodInMillis = trackingPeriodInMillis;
         this.cb = cb;
-        this.isClient = isClient;
+
         startMonitoringThread();
     }
 
@@ -301,7 +297,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         if (time > trajEnv.getTemporalVariable().getEET()) {
 
             tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
-            //client.sendAllenInterval("Remove", deadLines); // this client.sendinterval ... replaces tec.getSolver().removeConstraint(deadlines.get)
+
 
             long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
             long bound2 = APSPSolver.INF;
@@ -310,14 +306,15 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
             deadline.setFrom(trajEnv);
             deadline.setTo(trajEnv);
 
+            deadlines.put(trajEnv, deadline);
             /*
              * this replaces the  //boolean added = tec.getSolver().addConstraint(deadline);
              * */
-            if (!client.sendAllenInterval("Add", deadLine)) {
+
                 metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
                 throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
-            }
-            else deadlines.put(trajEnv, deadline);
+
+
         }
     }
 
@@ -329,7 +326,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
             // - tec.getSolver().removeConstraint(deadlines.get(trajEnv));
             tecAllenIntervalContainer deadLines = new tecAllenIntervalContainer(deadlines.get(trajEnv));
-            //client.sendAllenInterval("Remove", deadLines);
+
             // -
             long bound1 = Math.max(time, trajEnv.getTemporalVariable().getEET());
             long bound2 = bound1;
@@ -346,7 +343,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
 
             deadlines.put(trajEnv, deadline);
-            //if (!client.sendAllenInterval("Add",deadLine)) {
+
    //             metaCSPLogger.severe("ERROR: Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
    //             throw new Error("Could not add deadline constraint " + deadline + " whose ET bounds are [" + trajEnv.getTemporalVariable().getEET() + "," + trajEnv.getTemporalVariable().getLET() +"]");
             //}
@@ -357,7 +354,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
 
 
     protected synchronized void setRelease(TrajectoryEnvelope trajEnv) {
-        long time = client.makeCurrentTimeRequest();
+        long time = 0; // fixme shant be 0
         time = Math.max(time, trajEnv.getTemporalVariable().getEST());
         metaCSPLogger.info("Releasing @ " + time + " " + trajEnv + " (ST bounds: [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() + "])");
 
@@ -367,10 +364,10 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         release.setTo(trajEnv);
 
         //  boolean added = tec.getSolver().addConstraint(release);
-        if (!client.sendAllenInterval("Add",Release)) {
+
             metaCSPLogger.severe("ERROR: Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
             throw new Error("Could not add release " + release + " constraint on envelope " + trajEnv + " whose ST bounds are [" + trajEnv.getTemporalVariable().getEST() + "," + trajEnv.getTemporalVariable().getLST() +"]");
-        }
+
 
     }
 
@@ -446,28 +443,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
                         //if (!startedGroundEnvelopes.isEmpty()) printStartedGroundEnvelopes();
 
                         RobotReport rr = null;
-                        //while ((rr = tec.getRobotReport(te.getRobotID())) == null).. replaced with the rpc below
-
-                        /**
-                         * FIXME quick fix for not having the RobotReport from the coordinator before its needed in the rk4
-                         * Here we send a robot report before requesting one from the coordinator, this is because the coordinator should respond
-                         * with a robotreport from another place than where the updates of robot reports are saved in the coordinator,
-                         *  what is done on the coordinator side is that we will just echo back the same robotreport that the client has sent
-                         *  if we dont have one that has been changed yet.
-                         * */
 
 
-                        if(isClient) {
-                            // this rpc below is for sending a robot report
-
-                            // this is for getting a robot report
-                            //rr = client.makeRobotReportRequest(te.getRobotID());
-
-
-                        }
-                        else{ // if this function is called on a coordinator then we return cause we wont be able to get a robotReport from here..
-                            return;
-                        }
 
                         rr= getRobotReport();
                         if(rr==null) {
@@ -535,7 +512,6 @@ public abstract class RemoteAbstractTrajectoryEnvelopeTracker {
         metaCSPLogger.info("<<<< Finished (super envelope) " + this.te);
 
         // so this is where we would set up a new mission
-        // client.makeNewMissionRequest(int robotID);
         fixDeadline(te, 0);
 
     }

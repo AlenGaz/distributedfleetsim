@@ -32,7 +32,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerDummy extends RemoteAbstrac
      * @param cb An optional callback that will be called during tracking.
      */
     public RemoteTrajectoryEnvelopeTrackerDummy(TrajectoryEnvelope te, int timeStep, double temporalResolution, RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrackingCallback cb) {
-        super(te, temporalResolution, timeStep, cb, false);
+        super(te, temporalResolution, timeStep, cb);
         this.tec = tec;
         this.th = new Thread(this, "Parking tracker " + te.getComponent());
         this.th.start();
@@ -98,6 +98,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerDummy extends RemoteAbstrac
 
         //Just do prolong the earliest end time until finished by external call to finishParking()
         metaCSPLogger.info("Parking starts for Robot " + te.getRobotID());
+        System.out.println("[DummyTracker] inside run()......");
         updateDeadline(this.te, DELTA_FUTURE);
         onPositionUpdate();
 		/*while (!parkingFinished) {

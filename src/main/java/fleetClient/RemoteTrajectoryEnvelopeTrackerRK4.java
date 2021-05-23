@@ -58,6 +58,9 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 
 	public int RK4controlPeriod=1000;
 	private boolean reportOnce = false;
+	FleetClient client = null;
+
+
 	//public static int RK4numberOfReplicas = 0;
 
 
@@ -65,10 +68,10 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 		this.useInternalCPs = value;
 	}
 
-	public RemoteTrajectoryEnvelopeTrackerRK4(TrajectoryEnvelope te, int timeStep, double temporalResolution, TrackingCallback cb) {
-		this(te, timeStep, temporalResolution, 1.0, 0.1, cb);
-		setNumberOfReplicas(0, RK4controlPeriod); // @TODO set 0 atm i dont think it matters that much
-	}
+	//public RemoteTrajectoryEnvelopeTrackerRK4(TrajectoryEnvelope te, int timeStep, double temporalResolution, TrackingCallback cb) {
+//		this(te, timeStep, temporalResolution, 1.0, 0.1, cb);
+//		setNumberOfReplicas(0, RK4controlPeriod); // @TODO set 0 atm i dont think it matters that much
+//     }
 
 	private void computeInternalCriticalPoints() {
 		this.curvatureDampening = new double[te.getTrajectory().getPose().length];
@@ -125,8 +128,8 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 		return curvatureDampening[this.traj.getPose().length-1-index];
 	}
 
-	public RemoteTrajectoryEnvelopeTrackerRK4(TrajectoryEnvelope te, int timeStep, double temporalResolution, double maxVelocity, double maxAcceleration, TrackingCallback cb) {
-		super(te, temporalResolution, timeStep, cb, true);
+	public RemoteTrajectoryEnvelopeTrackerRK4(TrajectoryEnvelope te, int timeStep, double temporalResolution, double maxVelocity, double maxAcceleration, TrackingCallback cb, FleetClient client) {
+		super(te, temporalResolution, timeStep, cb);
 		this.MAX_VELOCITY = maxVelocity;
 		this.MAX_ACCELERATION = maxAcceleration;
 		this.state = new State(0.0, 0.0);
@@ -137,6 +140,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 		this.positionToSlowDown = this.computePositionToSlowDown();
 		this.th = new Thread(this, "RK4 tracker " + te.getComponent());
 		this.th.setPriority(Thread.MAX_PRIORITY);
+		this.client = client;
 	}
 
 	@Override
@@ -710,7 +714,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			if(getRobotReport().getRobotID() % 2 == 1) {
 				//client.makeOnPositionUpdate(te, getRobotReport());
 				//client.makeOnPositionUpdate2(te.getFootprint(), getRobotReport());
-				client.makeOnPositionUpdate(getRobotReport());
+				client.makeOnPositionUpdate2(getRobotReport());
 			}
 			enqueueOneReport();
 
@@ -801,7 +805,7 @@ public abstract class RemoteTrajectoryEnvelopeTrackerRK4 extends RemoteAbstractT
 			dts.add(time-times.get(traj.getPose().length-2));
 		}
 
-		//System.out.println("Time: " + MetaCSPLogging.printDouble(time,4) + "\tpos: " + MetaCSPLogging.printDouble(state.getPosition(),4) + "\tvel: " + MetaCSPLogging.printDouble(state.getVelocity(),4));
+		System.out.println("Time: " + MetaCSPLogging.printDouble(time,4) + "\tpos: " + MetaCSPLogging.printDouble(state.getPosition(),4) + "\tvel: " + MetaCSPLogging.printDouble(state.getVelocity(),4));
 
 		double[] ret = new double[dts.size()];
 		for (int i = 0; i < dts.size(); i++) ret[i] = dts.get(i);

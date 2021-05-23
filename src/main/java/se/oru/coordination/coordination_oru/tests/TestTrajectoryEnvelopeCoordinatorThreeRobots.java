@@ -170,7 +170,6 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 
 							try {
 								FleetClient client = new FleetClient(channel);
-								client.makeGreeting2(pair2, "simulated", InetAddress.getLocalHost().toString(), String.valueOf( System.currentTimeMillis()));
 
 								client.makeRobotReport("my RobotReport", tec.getRobotReport(robotID).getRobotID()
 										, tec.getRobotReport(robotID).getPose().getX(), tec.getRobotReport(robotID).getPose().getY(), tec.getRobotReport(robotID).getPose().getZ(), tec.getRobotReport(robotID).getPose().getRoll()
@@ -190,7 +189,7 @@ public class TestTrajectoryEnvelopeCoordinatorThreeRobots {
 							finally {
 							}
 						}
-						catch (InterruptedException | IOException e) { e.printStackTrace(); }
+						catch (InterruptedException e) { e.printStackTrace(); }
 
 
 					}

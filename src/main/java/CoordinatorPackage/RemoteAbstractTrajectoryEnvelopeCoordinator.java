@@ -872,6 +872,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
             private long startTime = Calendar.getInstance().getTimeInMillis();
             @Override
             public void run() {
+                System.out.println("[AbstractCoordinator] inside SpawnWaitingThread()....");
                 metaCSPLogger.info("Waiting thread starts for " + robotID);
                 while (Calendar.getInstance().getTimeInMillis()-startTime < duration) {
                     try { Thread.sleep(100); }
@@ -1076,6 +1077,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
                 ArrayList<TrajectoryEnvelope> drivingEnvelopes = new ArrayList<TrajectoryEnvelope>();
 
+                System.out.println("[AbstractCoordinator] DRIVING ENVELOPES" + drivingEnvelopes);
                 /// changing to read instead of from robotIDtoRobotReport ..?
                 for (RemoteAbstractTrajectoryEnvelopeTracker atet : trackers.values()) {
                     // TODO atet.getRobotReport() is null
@@ -1549,14 +1551,16 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
     /**
      * Start the trackers associated to the last batch of {@link Mission}s that has been added.
      */
-    protected void startTrackingAddedMissions() {
+    public void startTrackingAddedMissions() {
 
         //FIXME: if this is not placed into the control loop (), then a robot can pass from (P) to (D) without
         //affecting the set of dependencies.
 
         System.out.println("in startTracking Added Missions ");
+        System.out.println("envelopes to track: " + envelopesToTrack);
         synchronized (solver) {
             for (final TrajectoryEnvelope te : envelopesToTrack) {
+
                 RemoteTrajectoryEnvelopeTrackerDummy startParkingTracker = null;
                 synchronized (trackers) {
                     startParkingTracker = (RemoteTrajectoryEnvelopeTrackerDummy) trackers.get(te.getRobotID());
@@ -1631,6 +1635,8 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
                     @Override
                     public void onTrackingFinished() {
 
+
+                        System.out.println("INSIDE ON TRACKING FINISHEDDDDDDDDDDDDDDDDDDDDDEDEDDEDEEEEEEEEEEEEEDEDEDE");
                         synchronized (solver) {
                             metaCSPLogger.info("Tracking finished for " + myTE);
 
@@ -1937,7 +1943,7 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
         }
     }
 
-    protected void setupInferenceCallback() {
+    public void setupInferenceCallback() {
         System.out.println("in setupinferencecallback");
         this.stopInference = false;
         this.inference = new Thread("Coordinator inference") {
@@ -1945,10 +1951,12 @@ public abstract class RemoteAbstractTrajectoryEnvelopeCoordinator {
 
             @Override
             public void run() {
+                System.out.println("[AbstractCooridnator] in run() ");
                 long threadLastUpdate = Calendar.getInstance().getTimeInMillis();
                 int MAX_ADDED_MISSIONS = 1;
 
                 while (!stopInference) {
+                    System.out.println("[AbstractCooridnator] in run() !stopInference");
                     int numberNewAddedMissions = 0;
                     int numberDrivingRobots = 0;
                     synchronized (solver) {

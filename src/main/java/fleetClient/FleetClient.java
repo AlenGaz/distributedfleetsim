@@ -1,12 +1,13 @@
 package fleetClient;
 
 
-import CoordinatorPackage.containers.MakeFootPrint;
+
 import CoordinatorPackage.containers.tecAllenIntervalContainer;
 import CoordinatorPackage.containers.tecStuff;
 
 import aima.core.util.datastructure.Pair;
 import com.google.protobuf.ByteString;
+import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Polygon;
 import io.grpc.Channel;
 
@@ -47,13 +48,15 @@ public class FleetClient {
 
     public int makeGreeting(String kan, int robotID, String type, String IP, int port, Pose startPose, Pose endPose,
                             String timeStamp, double maxAccel, double maxVel,
-                            double trackingPeriodInMillis, MakeFootPrint makeFootPrint, PoseSteering[] poseSteerings, int numberOfRobots) {
+                            double trackingPeriodInMillis, PoseSteering[] poseSteerings, Coordinate[] footprint) {
 
         System.out.println("[FleetClient] makeGreeting kan: " + kan);
 
         ByteString poseSteeringBytes = null;
+        ByteString footprintBytes = null;
         try {
             poseSteeringBytes= ByteString.copyFrom(convertToBytes(poseSteerings));
+            footprintBytes = ByteString.copyFrom(convertToBytes(footprint));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,9 +67,7 @@ public class FleetClient {
                 setEndPose(Coordinator.robotPose.newBuilder().setX(endPose.getX()).setY(endPose.getY()).setZ(endPose.getZ())
                 .setRoll(endPose.getRoll()).setPitch(endPose.getPitch()).setYaw(endPose.getYaw()).build()).
                         setTimeStamp(timeStamp).setMaxAccel(maxAccel).setMaxVel(maxVel).setTrackingPeriodInMillis(trackingPeriodInMillis)
-                .setMakeFootPrint(Coordinator.MakeFootPrint.newBuilder().setCenterX(makeFootPrint.getCenterX())
-                        .setCenterY(makeFootPrint.getCenterY()).setMinVerts(makeFootPrint.getMinVerts()).setMaxVerts(makeFootPrint.getMaxVerts())
-                        .setMinRadius(makeFootPrint.getMinRadius()).setMaxRadius(makeFootPrint.getMaxRadius()).build()).setPoseSteering(poseSteeringBytes).build();
+                        .setPoseSteering(poseSteeringBytes).setFootPrint(footprintBytes).build();
 
         Coordinator.robotgreetingResponse greetingresponse = null;
 
@@ -89,30 +90,15 @@ public class FleetClient {
     }
 
 
-    public void makeGreeting2(Pair<String, Integer> pair, String type, String connection, String timeStamp) {
-
-        Fleetclients.getRobotID getrobotid = Fleetclients.getRobotID.newBuilder().setKey(pair.getFirst()).setValue(pair.getSecond()).setType(type).setConnection(connection).setTimeStamp(timeStamp).build();
-        Fleetclients.robotID robotid;
-
-        try {
-            System.out.println("[FleetClient] making greeting with: " + pair);
-            robotid = blockingStub.grobotID(getrobotid);
-        } catch (StatusRuntimeException e) {
-            logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
-            return;
-        }
-        System.out.println("Logging the response of the server ...");
-    }
-
     public void makeRobotReport(String my_robotReport, int robotid, double x, double y, double z, double roll, double pitch, double yaw, double velocity, int pathIndex, double distanceTraveled, int criticalPoint) {
         Coordinator.requestrobotreport getRR = Coordinator.requestrobotreport.newBuilder().setReq(my_robotReport).setRobotid(robotid).setX(x).setY(y).setZ(z)
                 .setRoll(roll).setPitch(pitch).setYaw(yaw).setVelocity(velocity).setPathIndex(pathIndex)
                 .setDistanceTraveled(distanceTraveled).setCriticalPoint(criticalPoint).build();
-       Coordinator.responserobotreport responserobotreport;
+
 
 
         try {
-            responserobotreport = coordinatorBlockingStub.coordinatorrobotreport(getRR);
+            coordinatorBlockingStub.coordinatorrobotreport(getRR);
 
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
@@ -143,70 +129,8 @@ public class FleetClient {
         //return coordinatorRsp.getCriticalPoint();
     }
 
-    public void makeCurrentDependenciesMessage(HashSet<Dependency> dependencyHashSet){
-
-        ByteString dependencyData = null;
-        HashSet<Dependency> depdes = null;
-        byte[] dependencyBytes = null;
-        try {
-            dependencyBytes = convertToBytes(dependencyHashSet);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("[FleetClient] inside makeCurrentDpendencies"+ dependencyHashSet);
 
 
-
-        try {
-            dependencyData = ByteString.copyFrom(convertToBytes(dependencyHashSet));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        System.out.println("[FleetClient] serializing currentDependencies: " + dependencyData);
-        System.out.println("[FleetClient] size of bytes" + dependencyBytes.length);
-
-
-        Coordinator.getCurrentDependencies req = Coordinator
-                .getCurrentDependencies.newBuilder().setKan("currentDependencies").setDepBytes(dependencyData).build();
-        Coordinator.noneResponse response;
-
-        try {
-            response = coordinatorBlockingStub.coordinatordependencies(req);
-        }
-        catch(StatusRuntimeException e){
-            logger.log(Level.WARNING, "Rpc Failed: {0}", e.getStatus());
-        }
-
-
-        try {
-            depdes = (HashSet<Dependency>) convertFromBytes(dependencyData.toByteArray());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("dependencyData deserialized" + depdes);
-
-    }
-
-    public void makeTecStuffRequest(int robotID){
-        Coordinator.tecrequest request = Coordinator.tecrequest.newBuilder().setKan("RequestTecStuff").setRobotID(robotID).build();
-        Coordinator.tecresponse response;
-
-        System.out.println("[FleetClient] requesting tecStuff ");
-        response = coordinatorBlockingStub.coordinatorgetTecStuff(request);
-        try {
-            tecStuff tesObject = (tecStuff) convertFromBytes(response.getTecStuff().toByteArray());
-            System.out.println("tecStuff responded with: " + tesObject.getCurrentTimeInM());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
     public long makeCurrentTimeRequest(){
             Coordinator.timerequest request = Coordinator.timerequest.newBuilder().build();
@@ -217,6 +141,8 @@ public class FleetClient {
 
     }
 
+
+/*
     public boolean sendAllenInterval(String kan, tecAllenIntervalContainer allen){
         ByteString allenIntervalByteString = null;
         try {
@@ -231,6 +157,8 @@ public class FleetClient {
 
         return true;
     }
+
+ */
 
     public RobotReport makeRobotReportRequest(int robotID) {
         Coordinator.trackerRobotReportRequest request = Coordinator.trackerRobotReportRequest.newBuilder().setKan("TrackerRequestRobotReport").setRobotID(robotID).build();
@@ -272,7 +200,7 @@ public class FleetClient {
 
  */
 
-        //System.out.println("[FleetClient] in makeOnPositionUpdate .....");
+
         Coordinator.onPositionUpdateMessage request = Coordinator.onPositionUpdateMessage.newBuilder().
                // setFootPrintBytes(footPrint).
 
@@ -285,27 +213,16 @@ public class FleetClient {
         Coordinator.noneResponse response = null;
 
 
-
-        response = coordinatorBlockingStub.coordinatorgetOnPositionUpdate(request);
+        coordinatorBlockingStub.coordinatorgetOnPositionUpdate(request);
 
     }
 
 
-    public void makeOnPositionUpdate2(Polygon footprint, RobotReport robotReport) {
+    public void makeOnPositionUpdate2(RobotReport robotReport) {
 
-        ByteString footPrint = null;
 
-/*
-        try {
-            footPrint = ByteString.copyFrom(convertToBytes(footprint));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-*/
 
-        //System.out.println("[FleetClient] in makeOnPositionUpdate .....");
         Coordinator.onPositionUpdateMessage request = Coordinator.onPositionUpdateMessage.newBuilder().
-                // setFootPrintBytes(footPrint).
                         setRobotid(robotReport.getRobotID()).setX(robotReport.getPose().getX()).setY(robotReport.getPose().getY())
                 .setZ(robotReport.getPose().getZ())
                 .setRoll(robotReport.getPose().getRoll()).setPitch(robotReport.getPose().getPitch()).setYaw(robotReport.getPose().getYaw())
@@ -316,7 +233,7 @@ public class FleetClient {
 
 
 
-        response = coordinatorBlockingStub.coordinatorgetOnPositionUpdateEven(request);
+        coordinatorBlockingStub.coordinatorgetOnPositionUpdateEven(request);
 
     }
 

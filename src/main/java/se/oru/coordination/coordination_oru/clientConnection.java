@@ -1,6 +1,7 @@
 package se.oru.coordination.coordination_oru;
 
 import CoordinatorPackage.containers.MakeFootPrint;
+import com.vividsolutions.jts.geom.Coordinate;
 import org.metacsp.multi.spatioTemporal.paths.Pose;
 import org.metacsp.multi.spatioTemporal.paths.PoseSteering;
 
@@ -15,13 +16,13 @@ public class clientConnection {
     private double maxAccel;
     private double maxVel;
     private double trackingPeriodInMillis;
-    private MakeFootPrint footPrint;
+    private Coordinate[] footPrint;
     private PoseSteering[] poseSteerings;
-    private int numberOfRobots;
+
 
     public clientConnection(String type, String ip, int port, Pose startPose, Pose endPose,
                             String timeStamp, double maxAccel, double maxVel,
-                            double trackingPeriodInMillis, MakeFootPrint footPrint, PoseSteering[] poseSteering) {
+                            double trackingPeriodInMillis, Coordinate[] footPrint, PoseSteering[] poseSteering) {
         this.setType(type);
         this.setIp(ip);
         this.setTimeStamp(timeStamp);
@@ -30,7 +31,7 @@ public class clientConnection {
         this.setStartPose(startPose);
         this.setEndPose(endPose);
         this.setTrackingPeriodInMillis(trackingPeriodInMillis);
-        this.setFootPrint(footPrint);
+        this.setfootPrint(footPrint);
         this.setPoseSteerings(poseSteering);
 
     }
@@ -94,11 +95,11 @@ public class clientConnection {
         this.trackingPeriodInMillis = trackingPeriodInMillis;
     }
 
-    public MakeFootPrint getFootPrint() {
+    public Coordinate[] getFootPrint() {
         return footPrint;
     }
 
-    public void setFootPrint(MakeFootPrint footPrint) {
+    public void setfootPrint(Coordinate[] footPrint) {
         this.footPrint = footPrint;
     }
 
@@ -126,11 +127,4 @@ public class clientConnection {
         this.endPose = endPose;
     }
 
-    public int getNumberOfRobots() {
-        return numberOfRobots;
-    }
-
-    public void setNumberOfRobots(int numberOfRobots) {
-        this.numberOfRobots = numberOfRobots;
-    }
 }

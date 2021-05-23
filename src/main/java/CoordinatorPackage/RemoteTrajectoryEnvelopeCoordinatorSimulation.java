@@ -397,6 +397,8 @@ public class RemoteTrajectoryEnvelopeCoordinatorSimulation extends RemoteTraject
 					while(true) {
 						newCollidingCS.clear();
 
+
+						System.out.println("[CoordinatorSimulation] inside onCriticalSectionUpdate()...");
 						//collisions can happen only in critical sections
 						synchronized (allCriticalSections) {
 							if (allCriticalSections.isEmpty())

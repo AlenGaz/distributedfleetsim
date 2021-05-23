@@ -1,3 +1,26 @@
-1621106677056@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
-1621106677190@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
-1621106677219@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1621805365078@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 1
+1621805365233@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 2
+1621805365347@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 3
+1621805365431@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 4
+1621805365508@[RemoteAbstractTrajectoryEnvelopeTracker] Parking starts for Robot 5
+1621805365978@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 1
+1621805366282@[RemoteAbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((4.1175, 18.9397, 5.4141))...
+1621805366283@[RemoteAbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 0 (Robot 1, SE 1) [0;0] Parking ((4.1175, 18.9397, 5.4141))
+1621805367974@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 5
+1621805368209@[RemoteAbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 5 (Robot 5, SE 16) [0;0] Parking ((53.9293, 28.6343, 0.3904))...
+1621805368209@[RemoteAbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 5 (Robot 5, SE 16) [0;0] Parking ((53.9293, 28.6343, 0.3904))
+1621805368980@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 4
+1621805368985@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 14134 TrajectoryEnvelope 4 (Robot 4, SE 13) [0;0] Parking ((51.3160, 63.3277, 4.2644)) (ET bounds: [13581,99964116])
+1621805369033@[RemoteAbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 4 (Robot 4, SE 13) [0;0] Parking ((51.3160, 63.3277, 4.2644))...
+1621805369033@[RemoteAbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 4 (Robot 4, SE 13) [0;0] Parking ((51.3160, 63.3277, 4.2644))
+1621805369033@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 14187 TrajectoryEnvelope 4 (Robot 4, SE 13) [0;0] Parking ((51.3160, 63.3277, 4.2644)) (ET bounds: [13581,99964116])
+1621805369966@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 3
+1621805369966@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 15120 TrajectoryEnvelope 3 (Robot 3, SE 10) [0;0] Parking ((176.0535, 201.6284, 1.8465)) (ET bounds: [13496,99952217])
+1621805370149@[RemoteAbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 3 (Robot 3, SE 10) [0;0] Parking ((176.0535, 201.6284, 1.8465))...
+1621805370150@[RemoteAbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 3 (Robot 3, SE 10) [0;0] Parking ((176.0535, 201.6284, 1.8465))
+1621805370150@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 15304 TrajectoryEnvelope 3 (Robot 3, SE 10) [0;0] Parking ((176.0535, 201.6284, 1.8465)) (ET bounds: [13496,99952217])
+1621805370979@[RemoteAbstractTrajectoryEnvelopeTracker] Parking finishes for Robot 2
+1621805370979@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 16133 TrajectoryEnvelope 2 (Robot 2, SE 7) [0;0] Parking ((6.0437, 103.5493, 1.9976)) (ET bounds: [13383,99948433])
+1621805371236@[RemoteAbstractTrajectoryEnvelopeTracker] At last path point (current: 0, prev: -1) of TrajectoryEnvelope 2 (Robot 2, SE 7) [0;0] Parking ((6.0437, 103.5493, 1.9976))...
+1621805371236@[RemoteAbstractTrajectoryEnvelopeTracker] <<<< Finished (super envelope) TrajectoryEnvelope 2 (Robot 2, SE 7) [0;0] Parking ((6.0437, 103.5493, 1.9976))
+1621805371236@[RemoteAbstractTrajectoryEnvelopeTracker] Finishing @ 16390 TrajectoryEnvelope 2 (Robot 2, SE 7) [0;0] Parking ((6.0437, 103.5493, 1.9976)) (ET bounds: [13383,99948433])

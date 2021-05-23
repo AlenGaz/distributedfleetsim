@@ -2037,10 +2037,6 @@ public final class Coordinator {
     int getRobotID();
   }
   /**
-   * <pre>
-   * tracker (on the client) asks coordinator for the report of a robots id
-   * </pre>
-   *
    * Protobuf type {@code gradlegRPC.trackerRobotReportRequest}
    */
   public static final class trackerRobotReportRequest extends
@@ -2344,10 +2340,6 @@ public final class Coordinator {
       return builder;
     }
     /**
-     * <pre>
-     * tracker (on the client) asks coordinator for the report of a robots id
-     * </pre>
-     *
      * Protobuf type {@code gradlegRPC.trackerRobotReportRequest}
      */
     public static final class Builder extends
@@ -3869,19 +3861,11 @@ public final class Coordinator {
     io.grpc.coordinator.Coordinator.robotPoseOrBuilder getEndPoseOrBuilder();
 
     /**
-     * <pre>
-     * footPrint
-     * </pre>
-     *
      * <code>string timeStamp = 8;</code>
      * @return The timeStamp.
      */
     java.lang.String getTimeStamp();
     /**
-     * <pre>
-     * footPrint
-     * </pre>
-     *
      * <code>string timeStamp = 8;</code>
      * @return The bytes for timeStamp.
      */
@@ -3907,31 +3891,16 @@ public final class Coordinator {
     double getTrackingPeriodInMillis();
 
     /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     * @return Whether the makeFootPrint field is set.
-     */
-    boolean hasMakeFootPrint();
-    /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     * @return The makeFootPrint.
-     */
-    io.grpc.coordinator.Coordinator.MakeFootPrint getMakeFootPrint();
-    /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     */
-    io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder getMakeFootPrintOrBuilder();
-
-    /**
      * <code>bytes poseSteering = 13;</code>
      * @return The poseSteering.
      */
     com.google.protobuf.ByteString getPoseSteering();
 
     /**
-     * <code>int32 numberofrobots = 14;</code>
-     * @return The numberofrobots.
+     * <code>bytes footPrint = 14;</code>
+     * @return The footPrint.
      */
-    int getNumberofrobots();
+    com.google.protobuf.ByteString getFootPrint();
   }
   /**
    * Protobuf type {@code gradlegRPC.robotsGreeting}
@@ -3951,6 +3920,7 @@ public final class Coordinator {
       iP_ = "";
       timeStamp_ = "";
       poseSteering_ = com.google.protobuf.ByteString.EMPTY;
+      footPrint_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -4058,27 +4028,14 @@ public final class Coordinator {
               trackingPeriodInMillis_ = input.readDouble();
               break;
             }
-            case 98: {
-              io.grpc.coordinator.Coordinator.MakeFootPrint.Builder subBuilder = null;
-              if (makeFootPrint_ != null) {
-                subBuilder = makeFootPrint_.toBuilder();
-              }
-              makeFootPrint_ = input.readMessage(io.grpc.coordinator.Coordinator.MakeFootPrint.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(makeFootPrint_);
-                makeFootPrint_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
             case 106: {
 
               poseSteering_ = input.readBytes();
               break;
             }
-            case 112: {
+            case 114: {
 
-              numberofrobots_ = input.readInt32();
+              footPrint_ = input.readBytes();
               break;
             }
             default: {
@@ -4304,10 +4261,6 @@ public final class Coordinator {
     public static final int TIMESTAMP_FIELD_NUMBER = 8;
     private volatile java.lang.Object timeStamp_;
     /**
-     * <pre>
-     * footPrint
-     * </pre>
-     *
      * <code>string timeStamp = 8;</code>
      * @return The timeStamp.
      */
@@ -4325,10 +4278,6 @@ public final class Coordinator {
       }
     }
     /**
-     * <pre>
-     * footPrint
-     * </pre>
-     *
      * <code>string timeStamp = 8;</code>
      * @return The bytes for timeStamp.
      */
@@ -4380,32 +4329,6 @@ public final class Coordinator {
       return trackingPeriodInMillis_;
     }
 
-    public static final int MAKEFOOTPRINT_FIELD_NUMBER = 12;
-    private io.grpc.coordinator.Coordinator.MakeFootPrint makeFootPrint_;
-    /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     * @return Whether the makeFootPrint field is set.
-     */
-    @java.lang.Override
-    public boolean hasMakeFootPrint() {
-      return makeFootPrint_ != null;
-    }
-    /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     * @return The makeFootPrint.
-     */
-    @java.lang.Override
-    public io.grpc.coordinator.Coordinator.MakeFootPrint getMakeFootPrint() {
-      return makeFootPrint_ == null ? io.grpc.coordinator.Coordinator.MakeFootPrint.getDefaultInstance() : makeFootPrint_;
-    }
-    /**
-     * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-     */
-    @java.lang.Override
-    public io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder getMakeFootPrintOrBuilder() {
-      return getMakeFootPrint();
-    }
-
     public static final int POSESTEERING_FIELD_NUMBER = 13;
     private com.google.protobuf.ByteString poseSteering_;
     /**
@@ -4417,15 +4340,15 @@ public final class Coordinator {
       return poseSteering_;
     }
 
-    public static final int NUMBEROFROBOTS_FIELD_NUMBER = 14;
-    private int numberofrobots_;
+    public static final int FOOTPRINT_FIELD_NUMBER = 14;
+    private com.google.protobuf.ByteString footPrint_;
     /**
-     * <code>int32 numberofrobots = 14;</code>
-     * @return The numberofrobots.
+     * <code>bytes footPrint = 14;</code>
+     * @return The footPrint.
      */
     @java.lang.Override
-    public int getNumberofrobots() {
-      return numberofrobots_;
+    public com.google.protobuf.ByteString getFootPrint() {
+      return footPrint_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4475,14 +4398,11 @@ public final class Coordinator {
       if (trackingPeriodInMillis_ != 0D) {
         output.writeDouble(11, trackingPeriodInMillis_);
       }
-      if (makeFootPrint_ != null) {
-        output.writeMessage(12, getMakeFootPrint());
-      }
       if (!poseSteering_.isEmpty()) {
         output.writeBytes(13, poseSteering_);
       }
-      if (numberofrobots_ != 0) {
-        output.writeInt32(14, numberofrobots_);
+      if (!footPrint_.isEmpty()) {
+        output.writeBytes(14, footPrint_);
       }
       unknownFields.writeTo(output);
     }
@@ -4533,17 +4453,13 @@ public final class Coordinator {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(11, trackingPeriodInMillis_);
       }
-      if (makeFootPrint_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getMakeFootPrint());
-      }
       if (!poseSteering_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(13, poseSteering_);
       }
-      if (numberofrobots_ != 0) {
+      if (!footPrint_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, numberofrobots_);
+          .computeBytesSize(14, footPrint_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4591,15 +4507,10 @@ public final class Coordinator {
       if (java.lang.Double.doubleToLongBits(getTrackingPeriodInMillis())
           != java.lang.Double.doubleToLongBits(
               other.getTrackingPeriodInMillis())) return false;
-      if (hasMakeFootPrint() != other.hasMakeFootPrint()) return false;
-      if (hasMakeFootPrint()) {
-        if (!getMakeFootPrint()
-            .equals(other.getMakeFootPrint())) return false;
-      }
       if (!getPoseSteering()
           .equals(other.getPoseSteering())) return false;
-      if (getNumberofrobots()
-          != other.getNumberofrobots()) return false;
+      if (!getFootPrint()
+          .equals(other.getFootPrint())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4640,14 +4551,10 @@ public final class Coordinator {
       hash = (37 * hash) + TRACKINGPERIODINMILLIS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getTrackingPeriodInMillis()));
-      if (hasMakeFootPrint()) {
-        hash = (37 * hash) + MAKEFOOTPRINT_FIELD_NUMBER;
-        hash = (53 * hash) + getMakeFootPrint().hashCode();
-      }
       hash = (37 * hash) + POSESTEERING_FIELD_NUMBER;
       hash = (53 * hash) + getPoseSteering().hashCode();
-      hash = (37 * hash) + NUMBEROFROBOTS_FIELD_NUMBER;
-      hash = (53 * hash) + getNumberofrobots();
+      hash = (37 * hash) + FOOTPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getFootPrint().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4811,15 +4718,9 @@ public final class Coordinator {
 
         trackingPeriodInMillis_ = 0D;
 
-        if (makeFootPrintBuilder_ == null) {
-          makeFootPrint_ = null;
-        } else {
-          makeFootPrint_ = null;
-          makeFootPrintBuilder_ = null;
-        }
         poseSteering_ = com.google.protobuf.ByteString.EMPTY;
 
-        numberofrobots_ = 0;
+        footPrint_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
       }
@@ -4866,13 +4767,8 @@ public final class Coordinator {
         result.maxAccel_ = maxAccel_;
         result.maxVel_ = maxVel_;
         result.trackingPeriodInMillis_ = trackingPeriodInMillis_;
-        if (makeFootPrintBuilder_ == null) {
-          result.makeFootPrint_ = makeFootPrint_;
-        } else {
-          result.makeFootPrint_ = makeFootPrintBuilder_.build();
-        }
         result.poseSteering_ = poseSteering_;
-        result.numberofrobots_ = numberofrobots_;
+        result.footPrint_ = footPrint_;
         onBuilt();
         return result;
       }
@@ -4958,14 +4854,11 @@ public final class Coordinator {
         if (other.getTrackingPeriodInMillis() != 0D) {
           setTrackingPeriodInMillis(other.getTrackingPeriodInMillis());
         }
-        if (other.hasMakeFootPrint()) {
-          mergeMakeFootPrint(other.getMakeFootPrint());
-        }
         if (other.getPoseSteering() != com.google.protobuf.ByteString.EMPTY) {
           setPoseSteering(other.getPoseSteering());
         }
-        if (other.getNumberofrobots() != 0) {
-          setNumberofrobots(other.getNumberofrobots());
+        if (other.getFootPrint() != com.google.protobuf.ByteString.EMPTY) {
+          setFootPrint(other.getFootPrint());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5526,10 +5419,6 @@ public final class Coordinator {
 
       private java.lang.Object timeStamp_ = "";
       /**
-       * <pre>
-       * footPrint
-       * </pre>
-       *
        * <code>string timeStamp = 8;</code>
        * @return The timeStamp.
        */
@@ -5546,10 +5435,6 @@ public final class Coordinator {
         }
       }
       /**
-       * <pre>
-       * footPrint
-       * </pre>
-       *
        * <code>string timeStamp = 8;</code>
        * @return The bytes for timeStamp.
        */
@@ -5567,10 +5452,6 @@ public final class Coordinator {
         }
       }
       /**
-       * <pre>
-       * footPrint
-       * </pre>
-       *
        * <code>string timeStamp = 8;</code>
        * @param value The timeStamp to set.
        * @return This builder for chaining.
@@ -5586,10 +5467,6 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <pre>
-       * footPrint
-       * </pre>
-       *
        * <code>string timeStamp = 8;</code>
        * @return This builder for chaining.
        */
@@ -5600,10 +5477,6 @@ public final class Coordinator {
         return this;
       }
       /**
-       * <pre>
-       * footPrint
-       * </pre>
-       *
        * <code>string timeStamp = 8;</code>
        * @param value The bytes for timeStamp to set.
        * @return This builder for chaining.
@@ -5713,125 +5586,6 @@ public final class Coordinator {
         return this;
       }
 
-      private io.grpc.coordinator.Coordinator.MakeFootPrint makeFootPrint_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.grpc.coordinator.Coordinator.MakeFootPrint, io.grpc.coordinator.Coordinator.MakeFootPrint.Builder, io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder> makeFootPrintBuilder_;
-      /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       * @return Whether the makeFootPrint field is set.
-       */
-      public boolean hasMakeFootPrint() {
-        return makeFootPrintBuilder_ != null || makeFootPrint_ != null;
-      }
-      /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       * @return The makeFootPrint.
-       */
-      public io.grpc.coordinator.Coordinator.MakeFootPrint getMakeFootPrint() {
-        if (makeFootPrintBuilder_ == null) {
-          return makeFootPrint_ == null ? io.grpc.coordinator.Coordinator.MakeFootPrint.getDefaultInstance() : makeFootPrint_;
-        } else {
-          return makeFootPrintBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       */
-      public Builder setMakeFootPrint(io.grpc.coordinator.Coordinator.MakeFootPrint value) {
-        if (makeFootPrintBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          makeFootPrint_ = value;
-          onChanged();
-        } else {
-          makeFootPrintBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       */
-      public Builder setMakeFootPrint(
-          io.grpc.coordinator.Coordinator.MakeFootPrint.Builder builderForValue) {
-        if (makeFootPrintBuilder_ == null) {
-          makeFootPrint_ = builderForValue.build();
-          onChanged();
-        } else {
-          makeFootPrintBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       */
-      public Builder mergeMakeFootPrint(io.grpc.coordinator.Coordinator.MakeFootPrint value) {
-        if (makeFootPrintBuilder_ == null) {
-          if (makeFootPrint_ != null) {
-            makeFootPrint_ =
-              io.grpc.coordinator.Coordinator.MakeFootPrint.newBuilder(makeFootPrint_).mergeFrom(value).buildPartial();
-          } else {
-            makeFootPrint_ = value;
-          }
-          onChanged();
-        } else {
-          makeFootPrintBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       */
-      public Builder clearMakeFootPrint() {
-        if (makeFootPrintBuilder_ == null) {
-          makeFootPrint_ = null;
-          onChanged();
-        } else {
-          makeFootPrint_ = null;
-          makeFootPrintBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       */
-      public io.grpc.coordinator.Coordinator.MakeFootPrint.Builder getMakeFootPrintBuilder() {
-        
-        onChanged();
-        return getMakeFootPrintFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       */
-      public io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder getMakeFootPrintOrBuilder() {
-        if (makeFootPrintBuilder_ != null) {
-          return makeFootPrintBuilder_.getMessageOrBuilder();
-        } else {
-          return makeFootPrint_ == null ?
-              io.grpc.coordinator.Coordinator.MakeFootPrint.getDefaultInstance() : makeFootPrint_;
-        }
-      }
-      /**
-       * <code>.gradlegRPC.MakeFootPrint makeFootPrint = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.grpc.coordinator.Coordinator.MakeFootPrint, io.grpc.coordinator.Coordinator.MakeFootPrint.Builder, io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder> 
-          getMakeFootPrintFieldBuilder() {
-        if (makeFootPrintBuilder_ == null) {
-          makeFootPrintBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.grpc.coordinator.Coordinator.MakeFootPrint, io.grpc.coordinator.Coordinator.MakeFootPrint.Builder, io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder>(
-                  getMakeFootPrint(),
-                  getParentForChildren(),
-                  isClean());
-          makeFootPrint_ = null;
-        }
-        return makeFootPrintBuilder_;
-      }
-
       private com.google.protobuf.ByteString poseSteering_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>bytes poseSteering = 13;</code>
@@ -5866,33 +5620,36 @@ public final class Coordinator {
         return this;
       }
 
-      private int numberofrobots_ ;
+      private com.google.protobuf.ByteString footPrint_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>int32 numberofrobots = 14;</code>
-       * @return The numberofrobots.
+       * <code>bytes footPrint = 14;</code>
+       * @return The footPrint.
        */
       @java.lang.Override
-      public int getNumberofrobots() {
-        return numberofrobots_;
+      public com.google.protobuf.ByteString getFootPrint() {
+        return footPrint_;
       }
       /**
-       * <code>int32 numberofrobots = 14;</code>
-       * @param value The numberofrobots to set.
+       * <code>bytes footPrint = 14;</code>
+       * @param value The footPrint to set.
        * @return This builder for chaining.
        */
-      public Builder setNumberofrobots(int value) {
-        
-        numberofrobots_ = value;
+      public Builder setFootPrint(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        footPrint_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 numberofrobots = 14;</code>
+       * <code>bytes footPrint = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNumberofrobots() {
+      public Builder clearFootPrint() {
         
-        numberofrobots_ = 0;
+        footPrint_ = getDefaultInstance().getFootPrint();
         onChanged();
         return this;
       }
@@ -6794,848 +6551,6 @@ public final class Coordinator {
 
     @java.lang.Override
     public io.grpc.coordinator.Coordinator.robotPose getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface MakeFootPrintOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:gradlegRPC.MakeFootPrint)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 centerX = 1;</code>
-     * @return The centerX.
-     */
-    int getCenterX();
-
-    /**
-     * <code>int32 centerY = 2;</code>
-     * @return The centerY.
-     */
-    int getCenterY();
-
-    /**
-     * <code>int32 minVerts = 3;</code>
-     * @return The minVerts.
-     */
-    int getMinVerts();
-
-    /**
-     * <code>int32 maxVerts = 4;</code>
-     * @return The maxVerts.
-     */
-    int getMaxVerts();
-
-    /**
-     * <code>double minRadius = 5;</code>
-     * @return The minRadius.
-     */
-    double getMinRadius();
-
-    /**
-     * <code>double maxRadius = 6;</code>
-     * @return The maxRadius.
-     */
-    double getMaxRadius();
-  }
-  /**
-   * Protobuf type {@code gradlegRPC.MakeFootPrint}
-   */
-  public static final class MakeFootPrint extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:gradlegRPC.MakeFootPrint)
-      MakeFootPrintOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MakeFootPrint.newBuilder() to construct.
-    private MakeFootPrint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MakeFootPrint() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MakeFootPrint();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MakeFootPrint(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              centerX_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              centerY_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              minVerts_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              maxVerts_ = input.readInt32();
-              break;
-            }
-            case 41: {
-
-              minRadius_ = input.readDouble();
-              break;
-            }
-            case 49: {
-
-              maxRadius_ = input.readDouble();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_MakeFootPrint_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_MakeFootPrint_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.grpc.coordinator.Coordinator.MakeFootPrint.class, io.grpc.coordinator.Coordinator.MakeFootPrint.Builder.class);
-    }
-
-    public static final int CENTERX_FIELD_NUMBER = 1;
-    private int centerX_;
-    /**
-     * <code>int32 centerX = 1;</code>
-     * @return The centerX.
-     */
-    @java.lang.Override
-    public int getCenterX() {
-      return centerX_;
-    }
-
-    public static final int CENTERY_FIELD_NUMBER = 2;
-    private int centerY_;
-    /**
-     * <code>int32 centerY = 2;</code>
-     * @return The centerY.
-     */
-    @java.lang.Override
-    public int getCenterY() {
-      return centerY_;
-    }
-
-    public static final int MINVERTS_FIELD_NUMBER = 3;
-    private int minVerts_;
-    /**
-     * <code>int32 minVerts = 3;</code>
-     * @return The minVerts.
-     */
-    @java.lang.Override
-    public int getMinVerts() {
-      return minVerts_;
-    }
-
-    public static final int MAXVERTS_FIELD_NUMBER = 4;
-    private int maxVerts_;
-    /**
-     * <code>int32 maxVerts = 4;</code>
-     * @return The maxVerts.
-     */
-    @java.lang.Override
-    public int getMaxVerts() {
-      return maxVerts_;
-    }
-
-    public static final int MINRADIUS_FIELD_NUMBER = 5;
-    private double minRadius_;
-    /**
-     * <code>double minRadius = 5;</code>
-     * @return The minRadius.
-     */
-    @java.lang.Override
-    public double getMinRadius() {
-      return minRadius_;
-    }
-
-    public static final int MAXRADIUS_FIELD_NUMBER = 6;
-    private double maxRadius_;
-    /**
-     * <code>double maxRadius = 6;</code>
-     * @return The maxRadius.
-     */
-    @java.lang.Override
-    public double getMaxRadius() {
-      return maxRadius_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (centerX_ != 0) {
-        output.writeInt32(1, centerX_);
-      }
-      if (centerY_ != 0) {
-        output.writeInt32(2, centerY_);
-      }
-      if (minVerts_ != 0) {
-        output.writeInt32(3, minVerts_);
-      }
-      if (maxVerts_ != 0) {
-        output.writeInt32(4, maxVerts_);
-      }
-      if (minRadius_ != 0D) {
-        output.writeDouble(5, minRadius_);
-      }
-      if (maxRadius_ != 0D) {
-        output.writeDouble(6, maxRadius_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (centerX_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, centerX_);
-      }
-      if (centerY_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, centerY_);
-      }
-      if (minVerts_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, minVerts_);
-      }
-      if (maxVerts_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, maxVerts_);
-      }
-      if (minRadius_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, minRadius_);
-      }
-      if (maxRadius_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, maxRadius_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.grpc.coordinator.Coordinator.MakeFootPrint)) {
-        return super.equals(obj);
-      }
-      io.grpc.coordinator.Coordinator.MakeFootPrint other = (io.grpc.coordinator.Coordinator.MakeFootPrint) obj;
-
-      if (getCenterX()
-          != other.getCenterX()) return false;
-      if (getCenterY()
-          != other.getCenterY()) return false;
-      if (getMinVerts()
-          != other.getMinVerts()) return false;
-      if (getMaxVerts()
-          != other.getMaxVerts()) return false;
-      if (java.lang.Double.doubleToLongBits(getMinRadius())
-          != java.lang.Double.doubleToLongBits(
-              other.getMinRadius())) return false;
-      if (java.lang.Double.doubleToLongBits(getMaxRadius())
-          != java.lang.Double.doubleToLongBits(
-              other.getMaxRadius())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CENTERX_FIELD_NUMBER;
-      hash = (53 * hash) + getCenterX();
-      hash = (37 * hash) + CENTERY_FIELD_NUMBER;
-      hash = (53 * hash) + getCenterY();
-      hash = (37 * hash) + MINVERTS_FIELD_NUMBER;
-      hash = (53 * hash) + getMinVerts();
-      hash = (37 * hash) + MAXVERTS_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxVerts();
-      hash = (37 * hash) + MINRADIUS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMinRadius()));
-      hash = (37 * hash) + MAXRADIUS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMaxRadius()));
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.grpc.coordinator.Coordinator.MakeFootPrint prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code gradlegRPC.MakeFootPrint}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:gradlegRPC.MakeFootPrint)
-        io.grpc.coordinator.Coordinator.MakeFootPrintOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_MakeFootPrint_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_MakeFootPrint_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.grpc.coordinator.Coordinator.MakeFootPrint.class, io.grpc.coordinator.Coordinator.MakeFootPrint.Builder.class);
-      }
-
-      // Construct using io.grpc.coordinator.Coordinator.MakeFootPrint.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        centerX_ = 0;
-
-        centerY_ = 0;
-
-        minVerts_ = 0;
-
-        maxVerts_ = 0;
-
-        minRadius_ = 0D;
-
-        maxRadius_ = 0D;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_MakeFootPrint_descriptor;
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.MakeFootPrint getDefaultInstanceForType() {
-        return io.grpc.coordinator.Coordinator.MakeFootPrint.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.MakeFootPrint build() {
-        io.grpc.coordinator.Coordinator.MakeFootPrint result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.MakeFootPrint buildPartial() {
-        io.grpc.coordinator.Coordinator.MakeFootPrint result = new io.grpc.coordinator.Coordinator.MakeFootPrint(this);
-        result.centerX_ = centerX_;
-        result.centerY_ = centerY_;
-        result.minVerts_ = minVerts_;
-        result.maxVerts_ = maxVerts_;
-        result.minRadius_ = minRadius_;
-        result.maxRadius_ = maxRadius_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.grpc.coordinator.Coordinator.MakeFootPrint) {
-          return mergeFrom((io.grpc.coordinator.Coordinator.MakeFootPrint)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.grpc.coordinator.Coordinator.MakeFootPrint other) {
-        if (other == io.grpc.coordinator.Coordinator.MakeFootPrint.getDefaultInstance()) return this;
-        if (other.getCenterX() != 0) {
-          setCenterX(other.getCenterX());
-        }
-        if (other.getCenterY() != 0) {
-          setCenterY(other.getCenterY());
-        }
-        if (other.getMinVerts() != 0) {
-          setMinVerts(other.getMinVerts());
-        }
-        if (other.getMaxVerts() != 0) {
-          setMaxVerts(other.getMaxVerts());
-        }
-        if (other.getMinRadius() != 0D) {
-          setMinRadius(other.getMinRadius());
-        }
-        if (other.getMaxRadius() != 0D) {
-          setMaxRadius(other.getMaxRadius());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.grpc.coordinator.Coordinator.MakeFootPrint parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grpc.coordinator.Coordinator.MakeFootPrint) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int centerX_ ;
-      /**
-       * <code>int32 centerX = 1;</code>
-       * @return The centerX.
-       */
-      @java.lang.Override
-      public int getCenterX() {
-        return centerX_;
-      }
-      /**
-       * <code>int32 centerX = 1;</code>
-       * @param value The centerX to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCenterX(int value) {
-        
-        centerX_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 centerX = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCenterX() {
-        
-        centerX_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int centerY_ ;
-      /**
-       * <code>int32 centerY = 2;</code>
-       * @return The centerY.
-       */
-      @java.lang.Override
-      public int getCenterY() {
-        return centerY_;
-      }
-      /**
-       * <code>int32 centerY = 2;</code>
-       * @param value The centerY to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCenterY(int value) {
-        
-        centerY_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 centerY = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCenterY() {
-        
-        centerY_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int minVerts_ ;
-      /**
-       * <code>int32 minVerts = 3;</code>
-       * @return The minVerts.
-       */
-      @java.lang.Override
-      public int getMinVerts() {
-        return minVerts_;
-      }
-      /**
-       * <code>int32 minVerts = 3;</code>
-       * @param value The minVerts to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMinVerts(int value) {
-        
-        minVerts_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 minVerts = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMinVerts() {
-        
-        minVerts_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int maxVerts_ ;
-      /**
-       * <code>int32 maxVerts = 4;</code>
-       * @return The maxVerts.
-       */
-      @java.lang.Override
-      public int getMaxVerts() {
-        return maxVerts_;
-      }
-      /**
-       * <code>int32 maxVerts = 4;</code>
-       * @param value The maxVerts to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxVerts(int value) {
-        
-        maxVerts_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 maxVerts = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxVerts() {
-        
-        maxVerts_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private double minRadius_ ;
-      /**
-       * <code>double minRadius = 5;</code>
-       * @return The minRadius.
-       */
-      @java.lang.Override
-      public double getMinRadius() {
-        return minRadius_;
-      }
-      /**
-       * <code>double minRadius = 5;</code>
-       * @param value The minRadius to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMinRadius(double value) {
-        
-        minRadius_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double minRadius = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMinRadius() {
-        
-        minRadius_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double maxRadius_ ;
-      /**
-       * <code>double maxRadius = 6;</code>
-       * @return The maxRadius.
-       */
-      @java.lang.Override
-      public double getMaxRadius() {
-        return maxRadius_;
-      }
-      /**
-       * <code>double maxRadius = 6;</code>
-       * @param value The maxRadius to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxRadius(double value) {
-        
-        maxRadius_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double maxRadius = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxRadius() {
-        
-        maxRadius_ = 0D;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:gradlegRPC.MakeFootPrint)
-    }
-
-    // @@protoc_insertion_point(class_scope:gradlegRPC.MakeFootPrint)
-    private static final io.grpc.coordinator.Coordinator.MakeFootPrint DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.MakeFootPrint();
-    }
-
-    public static io.grpc.coordinator.Coordinator.MakeFootPrint getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MakeFootPrint>
-        PARSER = new com.google.protobuf.AbstractParser<MakeFootPrint>() {
-      @java.lang.Override
-      public MakeFootPrint parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MakeFootPrint(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<MakeFootPrint> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MakeFootPrint> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.grpc.coordinator.Coordinator.MakeFootPrint getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11826,1708 +10741,6 @@ public final class Coordinator {
 
   }
 
-  public interface visualizerrequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:gradlegRPC.visualizerrequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string kan = 1;</code>
-     * @return The kan.
-     */
-    java.lang.String getKan();
-    /**
-     * <code>string kan = 1;</code>
-     * @return The bytes for kan.
-     */
-    com.google.protobuf.ByteString
-        getKanBytes();
-  }
-  /**
-   * Protobuf type {@code gradlegRPC.visualizerrequest}
-   */
-  public static final class visualizerrequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:gradlegRPC.visualizerrequest)
-      visualizerrequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use visualizerrequest.newBuilder() to construct.
-    private visualizerrequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private visualizerrequest() {
-      kan_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new visualizerrequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private visualizerrequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              kan_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.grpc.coordinator.Coordinator.visualizerrequest.class, io.grpc.coordinator.Coordinator.visualizerrequest.Builder.class);
-    }
-
-    public static final int KAN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object kan_;
-    /**
-     * <code>string kan = 1;</code>
-     * @return The kan.
-     */
-    @java.lang.Override
-    public java.lang.String getKan() {
-      java.lang.Object ref = kan_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        kan_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string kan = 1;</code>
-     * @return The bytes for kan.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKanBytes() {
-      java.lang.Object ref = kan_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        kan_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getKanBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kan_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getKanBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kan_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.grpc.coordinator.Coordinator.visualizerrequest)) {
-        return super.equals(obj);
-      }
-      io.grpc.coordinator.Coordinator.visualizerrequest other = (io.grpc.coordinator.Coordinator.visualizerrequest) obj;
-
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KAN_FIELD_NUMBER;
-      hash = (53 * hash) + getKan().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerrequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.grpc.coordinator.Coordinator.visualizerrequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code gradlegRPC.visualizerrequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:gradlegRPC.visualizerrequest)
-        io.grpc.coordinator.Coordinator.visualizerrequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.grpc.coordinator.Coordinator.visualizerrequest.class, io.grpc.coordinator.Coordinator.visualizerrequest.Builder.class);
-      }
-
-      // Construct using io.grpc.coordinator.Coordinator.visualizerrequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        kan_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerrequest_descriptor;
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.visualizerrequest getDefaultInstanceForType() {
-        return io.grpc.coordinator.Coordinator.visualizerrequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.visualizerrequest build() {
-        io.grpc.coordinator.Coordinator.visualizerrequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.visualizerrequest buildPartial() {
-        io.grpc.coordinator.Coordinator.visualizerrequest result = new io.grpc.coordinator.Coordinator.visualizerrequest(this);
-        result.kan_ = kan_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.grpc.coordinator.Coordinator.visualizerrequest) {
-          return mergeFrom((io.grpc.coordinator.Coordinator.visualizerrequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.grpc.coordinator.Coordinator.visualizerrequest other) {
-        if (other == io.grpc.coordinator.Coordinator.visualizerrequest.getDefaultInstance()) return this;
-        if (!other.getKan().isEmpty()) {
-          kan_ = other.kan_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.grpc.coordinator.Coordinator.visualizerrequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grpc.coordinator.Coordinator.visualizerrequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object kan_ = "";
-      /**
-       * <code>string kan = 1;</code>
-       * @return The kan.
-       */
-      public java.lang.String getKan() {
-        java.lang.Object ref = kan_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          kan_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string kan = 1;</code>
-       * @return The bytes for kan.
-       */
-      public com.google.protobuf.ByteString
-          getKanBytes() {
-        java.lang.Object ref = kan_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          kan_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKan(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        kan_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string kan = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKan() {
-        
-        kan_ = getDefaultInstance().getKan();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKanBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        kan_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:gradlegRPC.visualizerrequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:gradlegRPC.visualizerrequest)
-    private static final io.grpc.coordinator.Coordinator.visualizerrequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.visualizerrequest();
-    }
-
-    public static io.grpc.coordinator.Coordinator.visualizerrequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<visualizerrequest>
-        PARSER = new com.google.protobuf.AbstractParser<visualizerrequest>() {
-      @java.lang.Override
-      public visualizerrequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new visualizerrequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<visualizerrequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<visualizerrequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.grpc.coordinator.Coordinator.visualizerrequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface visualizerresponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:gradlegRPC.visualizerresponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>bytes visualizer = 1;</code>
-     * @return The visualizer.
-     */
-    com.google.protobuf.ByteString getVisualizer();
-  }
-  /**
-   * Protobuf type {@code gradlegRPC.visualizerresponse}
-   */
-  public static final class visualizerresponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:gradlegRPC.visualizerresponse)
-      visualizerresponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use visualizerresponse.newBuilder() to construct.
-    private visualizerresponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private visualizerresponse() {
-      visualizer_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new visualizerresponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private visualizerresponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-
-              visualizer_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.grpc.coordinator.Coordinator.visualizerresponse.class, io.grpc.coordinator.Coordinator.visualizerresponse.Builder.class);
-    }
-
-    public static final int VISUALIZER_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString visualizer_;
-    /**
-     * <code>bytes visualizer = 1;</code>
-     * @return The visualizer.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getVisualizer() {
-      return visualizer_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!visualizer_.isEmpty()) {
-        output.writeBytes(1, visualizer_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!visualizer_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, visualizer_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.grpc.coordinator.Coordinator.visualizerresponse)) {
-        return super.equals(obj);
-      }
-      io.grpc.coordinator.Coordinator.visualizerresponse other = (io.grpc.coordinator.Coordinator.visualizerresponse) obj;
-
-      if (!getVisualizer()
-          .equals(other.getVisualizer())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VISUALIZER_FIELD_NUMBER;
-      hash = (53 * hash) + getVisualizer().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.visualizerresponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.grpc.coordinator.Coordinator.visualizerresponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code gradlegRPC.visualizerresponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:gradlegRPC.visualizerresponse)
-        io.grpc.coordinator.Coordinator.visualizerresponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.grpc.coordinator.Coordinator.visualizerresponse.class, io.grpc.coordinator.Coordinator.visualizerresponse.Builder.class);
-      }
-
-      // Construct using io.grpc.coordinator.Coordinator.visualizerresponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        visualizer_ = com.google.protobuf.ByteString.EMPTY;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_visualizerresponse_descriptor;
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.visualizerresponse getDefaultInstanceForType() {
-        return io.grpc.coordinator.Coordinator.visualizerresponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.visualizerresponse build() {
-        io.grpc.coordinator.Coordinator.visualizerresponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.visualizerresponse buildPartial() {
-        io.grpc.coordinator.Coordinator.visualizerresponse result = new io.grpc.coordinator.Coordinator.visualizerresponse(this);
-        result.visualizer_ = visualizer_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.grpc.coordinator.Coordinator.visualizerresponse) {
-          return mergeFrom((io.grpc.coordinator.Coordinator.visualizerresponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.grpc.coordinator.Coordinator.visualizerresponse other) {
-        if (other == io.grpc.coordinator.Coordinator.visualizerresponse.getDefaultInstance()) return this;
-        if (other.getVisualizer() != com.google.protobuf.ByteString.EMPTY) {
-          setVisualizer(other.getVisualizer());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.grpc.coordinator.Coordinator.visualizerresponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grpc.coordinator.Coordinator.visualizerresponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.google.protobuf.ByteString visualizer_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes visualizer = 1;</code>
-       * @return The visualizer.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getVisualizer() {
-        return visualizer_;
-      }
-      /**
-       * <code>bytes visualizer = 1;</code>
-       * @param value The visualizer to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVisualizer(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        visualizer_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bytes visualizer = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVisualizer() {
-        
-        visualizer_ = getDefaultInstance().getVisualizer();
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:gradlegRPC.visualizerresponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:gradlegRPC.visualizerresponse)
-    private static final io.grpc.coordinator.Coordinator.visualizerresponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.visualizerresponse();
-    }
-
-    public static io.grpc.coordinator.Coordinator.visualizerresponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<visualizerresponse>
-        PARSER = new com.google.protobuf.AbstractParser<visualizerresponse>() {
-      @java.lang.Override
-      public visualizerresponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new visualizerresponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<visualizerresponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<visualizerresponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.grpc.coordinator.Coordinator.visualizerresponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface allenIntervalOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:gradlegRPC.allenInterval)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string kan = 1;</code>
-     * @return The kan.
-     */
-    java.lang.String getKan();
-    /**
-     * <code>string kan = 1;</code>
-     * @return The bytes for kan.
-     */
-    com.google.protobuf.ByteString
-        getKanBytes();
-
-    /**
-     * <code>bytes allenIntervalBytes = 2;</code>
-     * @return The allenIntervalBytes.
-     */
-    com.google.protobuf.ByteString getAllenIntervalBytes();
-  }
-  /**
-   * Protobuf type {@code gradlegRPC.allenInterval}
-   */
-  public static final class allenInterval extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:gradlegRPC.allenInterval)
-      allenIntervalOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use allenInterval.newBuilder() to construct.
-    private allenInterval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private allenInterval() {
-      kan_ = "";
-      allenIntervalBytes_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new allenInterval();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private allenInterval(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              kan_ = s;
-              break;
-            }
-            case 18: {
-
-              allenIntervalBytes_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.grpc.coordinator.Coordinator.allenInterval.class, io.grpc.coordinator.Coordinator.allenInterval.Builder.class);
-    }
-
-    public static final int KAN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object kan_;
-    /**
-     * <code>string kan = 1;</code>
-     * @return The kan.
-     */
-    @java.lang.Override
-    public java.lang.String getKan() {
-      java.lang.Object ref = kan_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        kan_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string kan = 1;</code>
-     * @return The bytes for kan.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKanBytes() {
-      java.lang.Object ref = kan_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        kan_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ALLENINTERVALBYTES_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString allenIntervalBytes_;
-    /**
-     * <code>bytes allenIntervalBytes = 2;</code>
-     * @return The allenIntervalBytes.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getAllenIntervalBytes() {
-      return allenIntervalBytes_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getKanBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kan_);
-      }
-      if (!allenIntervalBytes_.isEmpty()) {
-        output.writeBytes(2, allenIntervalBytes_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getKanBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kan_);
-      }
-      if (!allenIntervalBytes_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, allenIntervalBytes_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.grpc.coordinator.Coordinator.allenInterval)) {
-        return super.equals(obj);
-      }
-      io.grpc.coordinator.Coordinator.allenInterval other = (io.grpc.coordinator.Coordinator.allenInterval) obj;
-
-      if (!getKan()
-          .equals(other.getKan())) return false;
-      if (!getAllenIntervalBytes()
-          .equals(other.getAllenIntervalBytes())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KAN_FIELD_NUMBER;
-      hash = (53 * hash) + getKan().hashCode();
-      hash = (37 * hash) + ALLENINTERVALBYTES_FIELD_NUMBER;
-      hash = (53 * hash) + getAllenIntervalBytes().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.grpc.coordinator.Coordinator.allenInterval parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.grpc.coordinator.Coordinator.allenInterval prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code gradlegRPC.allenInterval}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:gradlegRPC.allenInterval)
-        io.grpc.coordinator.Coordinator.allenIntervalOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.grpc.coordinator.Coordinator.allenInterval.class, io.grpc.coordinator.Coordinator.allenInterval.Builder.class);
-      }
-
-      // Construct using io.grpc.coordinator.Coordinator.allenInterval.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        kan_ = "";
-
-        allenIntervalBytes_ = com.google.protobuf.ByteString.EMPTY;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grpc.coordinator.Coordinator.internal_static_gradlegRPC_allenInterval_descriptor;
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.allenInterval getDefaultInstanceForType() {
-        return io.grpc.coordinator.Coordinator.allenInterval.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.allenInterval build() {
-        io.grpc.coordinator.Coordinator.allenInterval result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.grpc.coordinator.Coordinator.allenInterval buildPartial() {
-        io.grpc.coordinator.Coordinator.allenInterval result = new io.grpc.coordinator.Coordinator.allenInterval(this);
-        result.kan_ = kan_;
-        result.allenIntervalBytes_ = allenIntervalBytes_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.grpc.coordinator.Coordinator.allenInterval) {
-          return mergeFrom((io.grpc.coordinator.Coordinator.allenInterval)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.grpc.coordinator.Coordinator.allenInterval other) {
-        if (other == io.grpc.coordinator.Coordinator.allenInterval.getDefaultInstance()) return this;
-        if (!other.getKan().isEmpty()) {
-          kan_ = other.kan_;
-          onChanged();
-        }
-        if (other.getAllenIntervalBytes() != com.google.protobuf.ByteString.EMPTY) {
-          setAllenIntervalBytes(other.getAllenIntervalBytes());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.grpc.coordinator.Coordinator.allenInterval parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grpc.coordinator.Coordinator.allenInterval) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object kan_ = "";
-      /**
-       * <code>string kan = 1;</code>
-       * @return The kan.
-       */
-      public java.lang.String getKan() {
-        java.lang.Object ref = kan_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          kan_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string kan = 1;</code>
-       * @return The bytes for kan.
-       */
-      public com.google.protobuf.ByteString
-          getKanBytes() {
-        java.lang.Object ref = kan_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          kan_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string kan = 1;</code>
-       * @param value The kan to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKan(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        kan_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string kan = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKan() {
-        
-        kan_ = getDefaultInstance().getKan();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string kan = 1;</code>
-       * @param value The bytes for kan to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKanBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        kan_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString allenIntervalBytes_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes allenIntervalBytes = 2;</code>
-       * @return The allenIntervalBytes.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getAllenIntervalBytes() {
-        return allenIntervalBytes_;
-      }
-      /**
-       * <code>bytes allenIntervalBytes = 2;</code>
-       * @param value The allenIntervalBytes to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAllenIntervalBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        allenIntervalBytes_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bytes allenIntervalBytes = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAllenIntervalBytes() {
-        
-        allenIntervalBytes_ = getDefaultInstance().getAllenIntervalBytes();
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:gradlegRPC.allenInterval)
-    }
-
-    // @@protoc_insertion_point(class_scope:gradlegRPC.allenInterval)
-    private static final io.grpc.coordinator.Coordinator.allenInterval DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.grpc.coordinator.Coordinator.allenInterval();
-    }
-
-    public static io.grpc.coordinator.Coordinator.allenInterval getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<allenInterval>
-        PARSER = new com.google.protobuf.AbstractParser<allenInterval>() {
-      @java.lang.Override
-      public allenInterval parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new allenInterval(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<allenInterval> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<allenInterval> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.grpc.coordinator.Coordinator.allenInterval getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface onPositionUpdateMessageOrBuilder extends
       // @@protoc_insertion_point(interface_extends:gradlegRPC.onPositionUpdateMessage)
       com.google.protobuf.MessageOrBuilder {
@@ -14882,11 +12095,6 @@ public final class Coordinator {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_gradlegRPC_robotPose_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gradlegRPC_MakeFootPrint_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gradlegRPC_MakeFootPrint_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_gradlegRPC_robotgreetingResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -14922,21 +12130,6 @@ public final class Coordinator {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_gradlegRPC_timeresponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gradlegRPC_visualizerrequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gradlegRPC_visualizerrequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gradlegRPC_visualizerresponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gradlegRPC_visualizerresponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_gradlegRPC_allenInterval_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_gradlegRPC_allenInterval_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_gradlegRPC_onPositionUpdateMessage_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -14963,66 +12156,49 @@ public final class Coordinator {
       "rdinatorGetCriticalPointRequestMessage\022\013" +
       "\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"C\n*coordina" +
       "torGetCriticalPointResponseMessage\022\025\n\rcr" +
-      "iticalPoint\030\001 \001(\005\"\335\002\n\016robotsGreeting\022\013\n\003" +
+      "iticalPoint\030\001 \001(\005\"\246\002\n\016robotsGreeting\022\013\n\003" +
       "kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\022\014\n\004type\030\003 \001(\t" +
       "\022\n\n\002IP\030\004 \001(\t\022\014\n\004port\030\005 \001(\005\022(\n\tstartPose\030" +
       "\006 \001(\0132\025.gradlegRPC.robotPose\022&\n\007endPose\030" +
       "\007 \001(\0132\025.gradlegRPC.robotPose\022\021\n\ttimeStam" +
       "p\030\010 \001(\t\022\020\n\010maxAccel\030\t \001(\001\022\016\n\006maxVel\030\n \001(" +
-      "\001\022\036\n\026trackingPeriodInMillis\030\013 \001(\001\0220\n\rmak" +
-      "eFootPrint\030\014 \001(\0132\031.gradlegRPC.MakeFootPr" +
-      "int\022\024\n\014poseSteering\030\r \001(\014\022\026\n\016numberofrob" +
-      "ots\030\016 \001(\005\"V\n\trobotPose\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002" +
-      " \001(\001\022\t\n\001z\030\003 \001(\001\022\014\n\004roll\030\004 \001(\001\022\r\n\005pitch\030\005" +
-      " \001(\001\022\013\n\003yaw\030\006 \001(\001\"{\n\rMakeFootPrint\022\017\n\007ce" +
-      "nterX\030\001 \001(\005\022\017\n\007centerY\030\002 \001(\005\022\020\n\010minVerts" +
-      "\030\003 \001(\005\022\020\n\010maxVerts\030\004 \001(\005\022\021\n\tminRadius\030\005 " +
-      "\001(\001\022\021\n\tmaxRadius\030\006 \001(\001\"<\n\025robotgreetingR" +
-      "esponse\022\014\n\004name\030\001 \001(\t\022\025\n\rnumofReplicas\030\002" +
-      " \001(\005\"7\n\026getCurrentDependencies\022\013\n\003kan\030\001 " +
-      "\001(\t\022\020\n\010depBytes\030\002 \001(\014\"\034\n\014noneResponse\022\014\n" +
-      "\004none\030\001 \001(\t\"*\n\ntecrequest\022\013\n\003kan\030\001 \001(\t\022\017" +
-      "\n\007robotID\030\002 \001(\005\"7\n\013tecresponse\022\026\n\016string" +
-      "response\030\001 \001(\t\022\020\n\010tecStuff\030\002 \001(\014\"\032\n\013time" +
-      "request\022\013\n\003kan\030\001 \001(\t\"#\n\014timeresponse\022\023\n\013" +
-      "currentTime\030\001 \001(\004\" \n\021visualizerrequest\022\013" +
-      "\n\003kan\030\001 \001(\t\"(\n\022visualizerresponse\022\022\n\nvis" +
-      "ualizer\030\001 \001(\014\"8\n\rallenInterval\022\013\n\003kan\030\001 " +
-      "\001(\t\022\032\n\022allenIntervalBytes\030\002 \001(\014\"\343\001\n\027onPo" +
-      "sitionUpdateMessage\022\026\n\016footPrintBytes\030\001 " +
-      "\001(\014\022\017\n\007robotid\030\002 \001(\005\022\t\n\001x\030\003 \001(\001\022\t\n\001y\030\004 \001" +
-      "(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006 \001(\001\022\r\n\005pitch\030\007 \001" +
-      "(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpathIndex\030\t \001(\005\022\020\n\010ve" +
-      "locity\030\n \001(\001\022\030\n\020distanceTraveled\030\013 \001(\001\022\025" +
-      "\n\rcriticalPoint\030\014 \001(\0052\252\010\n\022CoordinatorSer" +
-      "vice\022[\n\026coordinatorrobotreport\022\036.gradleg" +
-      "RPC.requestrobotreport\032\037.gradlegRPC.resp" +
-      "onserobotreport\"\000\022\211\001\n\030coordinatorcritica" +
-      "lpoint\0225.gradlegRPC.coordinatorGetCritic" +
-      "alPointRequestMessage\0326.gradlegRPC.coord" +
-      "inatorGetCriticalPointResponseMessage\022W\n" +
-      "\027coordinatordependencies\022\".gradlegRPC.ge" +
-      "tCurrentDependencies\032\030.gradlegRPC.noneRe" +
-      "sponse\022W\n\026coordinatorgetGreeting\022\032.gradl" +
-      "egRPC.robotsGreeting\032!.gradlegRPC.robotg" +
-      "reetingResponse\022I\n\026coordinatorgetTecStuf" +
-      "f\022\026.gradlegRPC.tecrequest\032\027.gradlegRPC.t" +
-      "ecresponse\022N\n\031coordinatorgetCurrentTime\022" +
-      "\027.gradlegRPC.timerequest\032\030.gradlegRPC.ti" +
-      "meresponse\022Y\n\030coordinatorgetVisualizer\022\035" +
-      ".gradlegRPC.visualizerrequest\032\036.gradlegR" +
-      "PC.visualizerresponse\022R\n\033coordinatorgetA" +
-      "llenInterval\022\031.gradlegRPC.allenInterval\032" +
-      "\030.gradlegRPC.noneResponse\022i\n coordinator" +
-      "getRobotReportRequest\022%.gradlegRPC.track" +
-      "erRobotReportRequest\032\036.gradlegRPC.reques" +
-      "trobotreport\022_\n\036coordinatorgetOnPosition" +
-      "Update\022#.gradlegRPC.onPositionUpdateMess" +
-      "age\032\030.gradlegRPC.noneResponse\022c\n\"coordin" +
-      "atorgetOnPositionUpdateEven\022#.gradlegRPC" +
-      ".onPositionUpdateMessage\032\030.gradlegRPC.no" +
-      "neResponseB\025\n\023io.grpc.coordinatorb\006proto" +
-      "3"
+      "\001\022\036\n\026trackingPeriodInMillis\030\013 \001(\001\022\024\n\014pos" +
+      "eSteering\030\r \001(\014\022\021\n\tfootPrint\030\016 \001(\014\"V\n\tro" +
+      "botPose\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001" +
+      "\022\014\n\004roll\030\004 \001(\001\022\r\n\005pitch\030\005 \001(\001\022\013\n\003yaw\030\006 \001" +
+      "(\001\"<\n\025robotgreetingResponse\022\014\n\004name\030\001 \001(" +
+      "\t\022\025\n\rnumofReplicas\030\002 \001(\005\"7\n\026getCurrentDe" +
+      "pendencies\022\013\n\003kan\030\001 \001(\t\022\020\n\010depBytes\030\002 \001(" +
+      "\014\"\034\n\014noneResponse\022\014\n\004none\030\001 \001(\t\"*\n\ntecre" +
+      "quest\022\013\n\003kan\030\001 \001(\t\022\017\n\007robotID\030\002 \001(\005\"7\n\013t" +
+      "ecresponse\022\026\n\016stringresponse\030\001 \001(\t\022\020\n\010te" +
+      "cStuff\030\002 \001(\014\"\032\n\013timerequest\022\013\n\003kan\030\001 \001(\t" +
+      "\"#\n\014timeresponse\022\023\n\013currentTime\030\001 \001(\004\"\343\001" +
+      "\n\027onPositionUpdateMessage\022\026\n\016footPrintBy" +
+      "tes\030\001 \001(\014\022\017\n\007robotid\030\002 \001(\005\022\t\n\001x\030\003 \001(\001\022\t\n" +
+      "\001y\030\004 \001(\001\022\t\n\001z\030\005 \001(\001\022\014\n\004roll\030\006 \001(\001\022\r\n\005pit" +
+      "ch\030\007 \001(\001\022\013\n\003yaw\030\010 \001(\001\022\021\n\tpathIndex\030\t \001(\005" +
+      "\022\020\n\010velocity\030\n \001(\001\022\030\n\020distanceTraveled\030\013" +
+      " \001(\001\022\025\n\rcriticalPoint\030\014 \001(\0052\327\005\n\022Coordina" +
+      "torService\022[\n\026coordinatorrobotreport\022\036.g" +
+      "radlegRPC.requestrobotreport\032\037.gradlegRP" +
+      "C.responserobotreport\"\000\022\211\001\n\030coordinatorc" +
+      "riticalpoint\0225.gradlegRPC.coordinatorGet" +
+      "CriticalPointRequestMessage\0326.gradlegRPC" +
+      ".coordinatorGetCriticalPointResponseMess" +
+      "age\022W\n\026coordinatorgetGreeting\022\032.gradlegR" +
+      "PC.robotsGreeting\032!.gradlegRPC.robotgree" +
+      "tingResponse\022N\n\031coordinatorgetCurrentTim" +
+      "e\022\027.gradlegRPC.timerequest\032\030.gradlegRPC." +
+      "timeresponse\022i\n coordinatorgetRobotRepor" +
+      "tRequest\022%.gradlegRPC.trackerRobotReport" +
+      "Request\032\036.gradlegRPC.requestrobotreport\022" +
+      "_\n\036coordinatorgetOnPositionUpdate\022#.grad" +
+      "legRPC.onPositionUpdateMessage\032\030.gradleg" +
+      "RPC.noneResponse\022c\n\"coordinatorgetOnPosi" +
+      "tionUpdateEven\022#.gradlegRPC.onPositionUp" +
+      "dateMessage\032\030.gradlegRPC.noneResponseB\025\n" +
+      "\023io.grpc.coordinatorb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15064,81 +12240,57 @@ public final class Coordinator {
     internal_static_gradlegRPC_robotsGreeting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotsGreeting_descriptor,
-        new java.lang.String[] { "Kan", "RobotID", "Type", "IP", "Port", "StartPose", "EndPose", "TimeStamp", "MaxAccel", "MaxVel", "TrackingPeriodInMillis", "MakeFootPrint", "PoseSteering", "Numberofrobots", });
+        new java.lang.String[] { "Kan", "RobotID", "Type", "IP", "Port", "StartPose", "EndPose", "TimeStamp", "MaxAccel", "MaxVel", "TrackingPeriodInMillis", "PoseSteering", "FootPrint", });
     internal_static_gradlegRPC_robotPose_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_gradlegRPC_robotPose_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotPose_descriptor,
         new java.lang.String[] { "X", "Y", "Z", "Roll", "Pitch", "Yaw", });
-    internal_static_gradlegRPC_MakeFootPrint_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_gradlegRPC_MakeFootPrint_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gradlegRPC_MakeFootPrint_descriptor,
-        new java.lang.String[] { "CenterX", "CenterY", "MinVerts", "MaxVerts", "MinRadius", "MaxRadius", });
     internal_static_gradlegRPC_robotgreetingResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_gradlegRPC_robotgreetingResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_robotgreetingResponse_descriptor,
         new java.lang.String[] { "Name", "NumofReplicas", });
     internal_static_gradlegRPC_getCurrentDependencies_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_gradlegRPC_getCurrentDependencies_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_getCurrentDependencies_descriptor,
         new java.lang.String[] { "Kan", "DepBytes", });
     internal_static_gradlegRPC_noneResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_gradlegRPC_noneResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_noneResponse_descriptor,
         new java.lang.String[] { "None", });
     internal_static_gradlegRPC_tecrequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_gradlegRPC_tecrequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_tecrequest_descriptor,
         new java.lang.String[] { "Kan", "RobotID", });
     internal_static_gradlegRPC_tecresponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_gradlegRPC_tecresponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_tecresponse_descriptor,
         new java.lang.String[] { "Stringresponse", "TecStuff", });
     internal_static_gradlegRPC_timerequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_gradlegRPC_timerequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_timerequest_descriptor,
         new java.lang.String[] { "Kan", });
     internal_static_gradlegRPC_timeresponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_gradlegRPC_timeresponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_timeresponse_descriptor,
         new java.lang.String[] { "CurrentTime", });
-    internal_static_gradlegRPC_visualizerrequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
-    internal_static_gradlegRPC_visualizerrequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gradlegRPC_visualizerrequest_descriptor,
-        new java.lang.String[] { "Kan", });
-    internal_static_gradlegRPC_visualizerresponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
-    internal_static_gradlegRPC_visualizerresponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gradlegRPC_visualizerresponse_descriptor,
-        new java.lang.String[] { "Visualizer", });
-    internal_static_gradlegRPC_allenInterval_descriptor =
-      getDescriptor().getMessageTypes().get(17);
-    internal_static_gradlegRPC_allenInterval_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_gradlegRPC_allenInterval_descriptor,
-        new java.lang.String[] { "Kan", "AllenIntervalBytes", });
     internal_static_gradlegRPC_onPositionUpdateMessage_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_gradlegRPC_onPositionUpdateMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gradlegRPC_onPositionUpdateMessage_descriptor,

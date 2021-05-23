@@ -1067,7 +1067,7 @@ public abstract class RemoteTrajectoryEnvelopeCoordinator extends RemoteAbstract
     }
 
     @Override
-    protected void setupInferenceCallback() {
+    public void setupInferenceCallback() {
 
         System.out.println("in setupinferencecallback");
         this.stopInference = false;

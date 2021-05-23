@@ -1,11 +1,14 @@
 package Launch;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import CoordinatorPackage.containers.MakeFootPrint;
 import GRPC.CoordinatorServiceImpl;
@@ -44,6 +47,9 @@ public class Test1StartCoordinator {
 		return ret;
 	}
 
+	public static final RemoteTrajectoryEnvelopeCoordinatorSimulation tec = new RemoteTrajectoryEnvelopeCoordinatorSimulation();
+
+
 	public static void main(String[] args) throws InterruptedException {
 
 		// Necessary server stuff . . . . . . . . . .
@@ -57,7 +63,8 @@ public class Test1StartCoordinator {
 		//1. INSTANTIATE THE COORDINATOR
 		//Create a coordinator with interfaces to robots in the built-in 2D simulator
 		//(FIXME we don't need to communicate the max acceleration and velocity, which will be passed while greeting).
-		final RemoteTrajectoryEnvelopeCoordinatorSimulation tec = new RemoteTrajectoryEnvelopeCoordinatorSimulation();
+
+
 
 		// V Below to make a setup in AbstractTrajectoryEnvelopeCoordinator so it has instance of the service implement..
 		CoordinatorServiceImpl coordinatorServiceImpl = new CoordinatorServiceImpl(tec);
@@ -131,72 +138,63 @@ public class Test1StartCoordinator {
 		viz.setInitialTransform(10, 35, 20);
 		tec.setVisualization(viz);
 
-		while (true) {
+	}
 
 
 
-			// just a test of dispatching some robots
-			for(int i = 0; i <= coordinatorServiceImpl.robotIDtoClientConnection.size(); i++) {
-				// need to loop through every object in the hashmap, this causes the ids to must be sequential
-
-
-				if (tec.coordinatorServicImpl.robotIDtoClientConnection.containsKey(i)) {
-					if(!dispatchedRobot.containsKey(i)) {
-				System.out.println("[Test1StartCoordinator] robotIDtoClientConnection Keyset: " + coordinatorServiceImpl.robotIDtoClientConnection.keySet());
-						PoseSteering[] path = coordinatorServiceImpl.robotIDtoClientConnection.get(i).getPoseSteerings();
-
-						ReedsSheppCarPlanner rsp = new ReedsSheppCarPlanner();
-						rsp.setStart(coordinatorServiceImpl.robotIDtoClientConnection.get(i).getStartPose());
-						rsp.setGoals(coordinatorServiceImpl.robotIDtoClientConnection.get(i).getEndPose());
-						MakeFootPrint fp = coordinatorServiceImpl.robotIDtoClientConnection.get(i).getFootPrint();
-						fp.getCenterX();
-						Coordinate[] _fp = makeRandomFootprint(fp.getCenterX(), fp.getCenterY(),fp.getMinVerts(), fp.getMaxVerts(),fp.getMinRadius(), fp.getMaxRadius());
-						rsp.setFootprint(_fp);
+	public static void serverDispatchRobot(Set<Integer> IDkeyset,int robotID, Pose startPose, Pose endPose, double maxAcceleration, double maxVelocity, Coordinate[] footprint, double trackingPeriodInMillis, PoseSteering[] poseSteerings) {
 
 
 
-						//PoseSteering[] path = rsp.getPath();
-						//PoseSteering[] pathInv = rsp.getPathInv();
+			RemoteTrajectoryEnvelopeCoordinatorSimulation tec = Test1StartCoordinator.tec;
 
-						//if(!tec.isFree(i)){ return; }
+			ReedsSheppCarPlanner rsp = new ReedsSheppCarPlanner();
+			//rsp.setStart(coordinatorServiceImpl.robotIDtoClientConnection.get(i).getStartPose());
+			rsp.setStart(startPose);
+			rsp.setGoals(endPose);
+			Coordinate[] fp = footprint;
+			rsp.setFootprint(fp);
+			rsp.setRadius(1.0);
+			rsp.setTurningRadius(20);
+			rsp.setDistanceBetweenPathPoints(2);
+			rsp.setFootprint(fp);
 
-						tec.setForwardModel(i, new ConstantAccelerationForwardModel(coordinatorServiceImpl.robotIDtoClientConnection.get(i).getMaxAccel(),
-								coordinatorServiceImpl.robotIDtoClientConnection.get(i).getMaxVel(), tec.getTemporalResolution(), tec.getControlPeriod(), (int) coordinatorServiceImpl.robotIDtoClientConnection.get(i).getTrackingPeriodInMillis()));
-
-						Mission m = new Mission(i, path);
-						//Mission mInv = new Mission(i, pathInv);
-						Missions.enqueueMission(m);
-						//Missions.enqueueMission(mInv);
-
-
-
-						dispatchedRobot.put(i, true);
-
-						//tec.placeRobot(i, coordinatorServiceImpl.robotIDtoClientConnection.get(i).getStartPose(), );
-
-						tec.placeRobot(i, coordinatorServiceImpl.robotIDtoClientConnection.get(i).getStartPose());
-
-						System.out.println("[StartCoordinator] dispatching robot .. " + i + " with path length" + m.getPath().length);
-						System.out.println("[StartCoordinator] isFree: " + tec.isFree(i));
+			tec.setFootprint(robotID,fp);
 
 
-						// use number Of Robots to make the third parameter of start missions dispatchers
+			PoseSteering[] path = poseSteerings;
 
 
-							Missions.startMissionDispatchers(tec, true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-									11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
-									, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50
-									, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70
-									, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
-									91, 92, 93, 94, 95, 96, 97, 98, 99,100,101,102,103,104,105,106,107,108,109,110,111,
-									112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,
-									134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155
-									, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173);
+			tec.setMotionPlanner(robotID, rsp);
 
 
-					}
+
+
+			tec.setForwardModel(robotID, new ConstantAccelerationForwardModel(maxAcceleration,
+				maxVelocity, tec.getTemporalResolution(), tec.getControlPeriod(), (int) trackingPeriodInMillis));
+
+
+			Mission m = new Mission(robotID, path);
+			Missions.enqueueMission(m);
+
+
+			//dispatchedRobot.put(i, true);
+
+
+
+			tec.placeRobot(robotID, startPose);
+
+			System.out.println("[StartCoordinator] dispatching robot .. " + robotID + " with path length" + m.getPath().length);
+			System.out.println("[StartCoordinator] isFree: " + tec.isFree(robotID));
+
+
+
+				for (int id : IDkeyset) {
+					Missions.startMissionDispatchers(tec, true, id);
 				}
-			}
+				tec.setBreakDeadlocks(true, false, true);
+
+
 		}
 	}
-}
+

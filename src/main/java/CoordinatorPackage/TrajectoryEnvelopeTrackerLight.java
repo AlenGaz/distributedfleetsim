@@ -36,7 +36,7 @@ public abstract class TrajectoryEnvelopeTrackerLight extends RemoteAbstractTraje
 	 */
 
 	public TrajectoryEnvelopeTrackerLight(RemoteAbstractTrajectoryEnvelopeCoordinator tec, TrajectoryEnvelope te, int timeStep, double temporalResolution, TrackingCallback cb, CoordinatorServiceImpl coordinatorServiceImpl) {
-		super(te, temporalResolution, timeStep, cb, false);
+		super(te, temporalResolution, timeStep, cb);
 		this.tec = tec;
 		this.coordinatorServiceImpl = coordinatorServiceImpl;
 		// commenting out, dont want to start a new thread per tracker on the coordinator...
